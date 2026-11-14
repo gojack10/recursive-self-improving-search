@@ -1,0 +1,1189 @@
+{
+ "attempt_id": "b0e3388664",
+ "method": "v000",
+ "hunt": "nobel_moon",
+ "kind": "list",
+ "x": "How many Nobel Prize laureates have an IAU-approved surface feature on Moon named after them? Satellite craters (e.g. \"Bohr A\") do not count separately. Count each person once. Use IAU names in force as of November 2026. List each laureate.",
+ "y": "",
+ "pool": "test",
+ "finds": [
+  {
+   "name": "Kurt Alder",
+   "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+  },
+  {
+   "name": "Edward Victor Appleton",
+   "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+  },
+  {
+   "name": "Svante Arrhenius",
+   "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+  },
+  {
+   "name": "Francis William Aston",
+   "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+  },
+  {
+   "name": "Frederick Banting",
+   "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+  },
+  {
+   "name": "Charles Glover Barkla",
+   "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+  },
+  {
+   "name": "Henri Becquerel",
+   "evidence_url": "https://en.wikipedia.org/wiki/Becquerel_(lunar_crater)"
+  },
+  {
+   "name": "Niels Bohr",
+   "evidence_url": "https://en.wikipedia.org/wiki/en:Bohr_(crater)"
+  },
+  {
+   "name": "Carl Bosch",
+   "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+  },
+  {
+   "name": "William Henry Bragg",
+   "evidence_url": "https://earth-and-space-news.blogspot.com/2012/03/bragg-crater-honors-british-physicist.html"
+  },
+  {
+   "name": "Santiago Ramón y Cajal",
+   "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+  },
+  {
+   "name": "James Chadwick",
+   "evidence_url": "https://earth-and-space-news.blogspot.com/2012/07/chadwick-crater-honors-british.html"
+  },
+  {
+   "name": "John Cockcroft",
+   "evidence_url": "https://en.wikipedia.org/wiki/Cockcroft_(crater)"
+  },
+  {
+   "name": "Clinton Davisson",
+   "evidence_url": "https://earth-and-space-news.blogspot.com/2012/10/davisson-crater-honors-american.html"
+  },
+  {
+   "name": "Peter Debye",
+   "evidence_url": "https://en.wikipedia.org/wiki/Debye_(crater)"
+  },
+  {
+   "name": "Albert Einstein",
+   "evidence_url": "https://earth-and-space-news.blogspot.com/2013/03/einstein-crater-honors-german-american.html"
+  },
+  {
+   "name": "Emil Fischer",
+   "evidence_url": "https://en.wikipedia.org/wiki/Fischer_(crater)"
+  },
+  {
+   "name": "Hans Fischer",
+   "evidence_url": "https://en.wikipedia.org/wiki/Fischer_(crater)"
+  },
+  {
+   "name": "Howard Florey",
+   "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+  },
+  {
+   "name": "Victor Grignard",
+   "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+  },
+  {
+   "name": "Fritz Haber",
+   "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+  },
+  {
+   "name": "Bernardo Houssay",
+   "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+  },
+  {
+   "name": "Robert Koch",
+   "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+  },
+  {
+   "name": "Theodor Kocher",
+   "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+  },
+  {
+   "name": "Max von Laue",
+   "evidence_url": "https://en.wikipedia.org/wiki/Laue_(crater)"
+  },
+  {
+   "name": "Guglielmo Marconi",
+   "evidence_url": "https://en.wikipedia.org/wiki/Marconi_(crater)"
+  },
+  {
+   "name": "C. V. Raman",
+   "evidence_url": "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r"
+  },
+  {
+   "name": "William Ramsay",
+   "evidence_url": "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r"
+  },
+  {
+   "name": "Owen Willans Richardson",
+   "evidence_url": "https://earth-and-space-news.blogspot.com/2012/04/richardson-crater-honors-british.html"
+  },
+  {
+   "name": "Paul Sabatier",
+   "evidence_url": "https://web.archive.org/web/20080916141628/http:/lunar.arc.nasa.gov/science/atlas/text/cratertex_s.html"
+  },
+  {
+   "name": "Erwin Schrödinger",
+   "evidence_url": "https://kuongeo.com/moon/names/from/austria"
+  }
+ ],
+ "notes": "These are supported matches, not an exhaustive count. The 1976 IAU list is a reserve of proposed names rather than evidence all those names were adopted, so it was not used to add laureates.",
+ "telem_calls": [
+  {
+   "kind": "search",
+   "query": [
+    "lunar craters named after Nobel prize winners laureates moon list"
+   ],
+   "requested": null,
+   "auto_routing": true,
+   "routing": [
+    {
+     "topic": "general",
+     "score": -0.00714111328125,
+     "providers": [
+      "exa",
+      "tavily",
+      "brave",
+      "parallel",
+      "ceramic",
+      "seltz",
+      "you"
+     ]
+    }
+   ],
+   "used": [
+    "exa",
+    "tavily",
+    "brave",
+    "parallel",
+    "ceramic",
+    "seltz",
+    "you"
+   ],
+   "n": 56,
+   "dropped_referee": 0,
+   "cost": 0.02805,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them",
+    "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+    "https://wenamethestars.inkleby.com/world/moon/f/AA"
+   ],
+   "ok": 3,
+   "cost": 0.003
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"lunar\" \"craters\" \"Nobel\" laureates list physics chemistry Nobel moon"
+   ],
+   "requested": null,
+   "auto_routing": true,
+   "routing": [
+    {
+     "topic": "general",
+     "score": 0.005389690399169922,
+     "providers": [
+      "exa",
+      "tavily",
+      "brave",
+      "parallel",
+      "ceramic",
+      "seltz",
+      "you"
+     ]
+    }
+   ],
+   "used": [
+    "exa",
+    "tavily",
+    "brave",
+    "parallel",
+    "ceramic",
+    "seltz",
+    "you"
+   ],
+   "n": 48,
+   "dropped_referee": 0,
+   "cost": 0.02805,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://the-moon.us/wiki/195_names_of_scientists",
+    "https://en.wikipedia.org/wiki/Fischer_(crater)",
+    "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r",
+    "https://www.kroneckerwallis.com/women-scientists-on-the-moon-lunar-craters-honoring-female-pioneers/"
+   ],
+   "ok": 4,
+   "cost": 0.004
+  }
+ ],
+ "telem_spent": 0.0631,
+ "telem_session": "d1205860-66ee-4eed-9687-2bc24321f42e",
+ "trace": [
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "lunar craters named after Nobel prize winners laureates moon list"
+   },
+   "summary": {
+    "providers_used": [
+     "exa",
+     "tavily",
+     "brave",
+     "parallel",
+     "ceramic",
+     "seltz",
+     "you"
+    ],
+    "cost": 0.02805,
+    "budget_left": 0.0519
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them",
+     "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+     "https://wenamethestars.inkleby.com/world/moon/f/AA"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.0489
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"lunar\" \"craters\" \"Nobel\" laureates list physics chemistry Nobel moon",
+    "also": [
+     "site:kuongeo.com/moon \"Nobel laureate\" crater physicist",
+     "\"moon\" craters named after \"nobel\" \"craters\" laureates list",
+     "site:wenamethestars.inkleby.com/world/moon \"Nobel laureate\""
+    ]
+   },
+   "summary": {
+    "providers_used": [
+     "exa",
+     "tavily",
+     "brave",
+     "parallel",
+     "ceramic",
+     "seltz",
+     "you"
+    ],
+    "cost": 0.02805,
+    "budget_left": 0.0209
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://the-moon.us/wiki/195_names_of_scientists",
+     "https://en.wikipedia.org/wiki/Fischer_(crater)",
+     "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r",
+     "https://www.kroneckerwallis.com/women-scientists-on-the-moon-lunar-craters-honoring-female-pioneers/"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.0169
+   }
+  },
+  {
+   "tool": "submit",
+   "args": {
+    "finds": [
+     {
+      "name": "Kurt Alder",
+      "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+     },
+     {
+      "name": "Edward Victor Appleton",
+      "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+     },
+     {
+      "name": "Svante Arrhenius",
+      "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+     },
+     {
+      "name": "Francis William Aston",
+      "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+     },
+     {
+      "name": "Frederick Banting",
+      "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+     },
+     {
+      "name": "Charles Glover Barkla",
+      "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+     },
+     {
+      "name": "Henri Becquerel",
+      "evidence_url": "https://en.wikipedia.org/wiki/Becquerel_(lunar_crater)"
+     },
+     {
+      "name": "Niels Bohr",
+      "evidence_url": "https://en.wikipedia.org/wiki/en:Bohr_(crater)"
+     },
+     {
+      "name": "Carl Bosch",
+      "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+     },
+     {
+      "name": "William Henry Bragg",
+      "evidence_url": "https://earth-and-space-news.blogspot.com/2012/03/bragg-crater-honors-british-physicist.html"
+     },
+     {
+      "name": "Santiago Ramón y Cajal",
+      "evidence_url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them"
+     },
+     {
+      "name": "James Chadwick",
+      "evidence_url": "https://earth-and-space-news.blogspot.com/2012/07/chadwick-crater-honors-british.html"
+     },
+     {
+      "name": "John Cockcroft",
+      "evidence_url": "https://en.wikipedia.org/wiki/Cockcroft_(crater)"
+     },
+     {
+      "name": "Clinton Davisson",
+      "evidence_url": "https://earth-and-space-news.blogspot.com/2012/10/davisson-crater-honors-american.html"
+     },
+     {
+      "name": "Peter Debye",
+      "evidence_url": "https://en.wikipedia.org/wiki/Debye_(crater)"
+     },
+     {
+      "name": "Albert Einstein",
+      "evidence_url": "https://earth-and-space-news.blogspot.com/2013/03/einstein-crater-honors-german-american.html"
+     },
+     {
+      "name": "Emil Fischer",
+      "evidence_url": "https://en.wikipedia.org/wiki/Fischer_(crater)"
+     },
+     {
+      "name": "Hans Fischer",
+      "evidence_url": "https://en.wikipedia.org/wiki/Fischer_(crater)"
+     },
+     {
+      "name": "Howard Florey",
+      "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+     },
+     {
+      "name": "Victor Grignard",
+      "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+     },
+     {
+      "name": "Fritz Haber",
+      "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+     },
+     {
+      "name": "Bernardo Houssay",
+      "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+     },
+     {
+      "name": "Robert Koch",
+      "evidence_url": "https://wenamethestars.inkleby.com/world/moon/f/AA"
+     },
+     {
+      "name": "Theodor Kocher",
+      "evidence_url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132"
+     },
+     {
+      "name": "Max von Laue",
+      "evidence_url": "https://en.wikipedia.org/wiki/Laue_(crater)"
+     },
+     {
+      "name": "Guglielmo Marconi",
+      "evidence_url": "https://en.wikipedia.org/wiki/Marconi_(crater)"
+     },
+     {
+      "name": "C. V. Raman",
+      "evidence_url": "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r"
+     },
+     {
+      "name": "William Ramsay",
+      "evidence_url": "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r"
+     },
+     {
+      "name": "Owen Willans Richardson",
+      "evidence_url": "https://earth-and-space-news.blogspot.com/2012/04/richardson-crater-honors-british.html"
+     },
+     {
+      "name": "Paul Sabatier",
+      "evidence_url": "https://web.archive.org/web/20080916141628/http:/lunar.arc.nasa.gov/science/atlas/text/cratertex_s.html"
+     },
+     {
+      "name": "Erwin Schrödinger",
+      "evidence_url": "https://kuongeo.com/moon/names/from/austria"
+     }
+    ],
+    "notes": "These are supported matches, not an exhaustive count. The 1976 IAU list is a reserve of proposed names rather than evidence all those names were adopted, so it was not used to add laureates."
+   },
+   "summary": {
+    "ok": true
+   }
+  }
+ ],
+ "url_providers": {
+  "https://web.archive.org/web/20090322111608/http:/lunar.arc.nasa.gov/printerready/science/geography_items/carters/craters_e.html": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them": [
+   "brave",
+   "exa",
+   "fetch:tavily",
+   "parallel",
+   "tavily",
+   "you"
+  ],
+  "https://craterregistry.com/lunar-nomenclature-database": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Laue_(crater)": [
+   "exa"
+  ],
+  "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132": [
+   "exa",
+   "fetch:tavily"
+  ],
+  "https://en.wikipedia.org/wiki/en:Bohr_(crater)": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Cockcroft_(crater)": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Marconi_(crater)": [
+   "exa"
+  ],
+  "https://www.lpi.usra.edu/features/101221/crater": [
+   "tavily"
+  ],
+  "https://blog.hmns.org/2019/05/who-picked-all-those-crater-names": [
+   "tavily"
+  ],
+  "https://www.facebook.com/groups/909318691354892/posts/1410363437917079": [
+   "tavily"
+  ],
+  "https://metode.org/issues/article-revistes/a-name-for-each-crater.html": [
+   "tavily"
+  ],
+  "https://mathshistory.st-andrews.ac.uk/Honours/LunarFeatures0": [
+   "tavily"
+  ],
+  "https://www.learntostargaze.com/blog/women-with-impact-viewable-lunar-features-named-after-women": [
+   "tavily"
+  ],
+  "https://web.mit.edu/tripathi/www/lunar_women.html": [
+   "tavily"
+  ],
+  "https://wenamethestars.inkleby.com/world/moon/f/AA": [
+   "brave",
+   "fetch:tavily"
+  ],
+  "https://cratercompany.com/lunar-nomenclature-database": [
+   "brave"
+  ],
+  "https://lunasociety.org/lunar-crater-catalog-r-moon-craters": [
+   "brave"
+  ],
+  "https://web.archive.org/web/20070714225535/http:/lunar.arc.nasa.gov/printerready/science/geography_items/carters/craters_g.html": [
+   "brave"
+  ],
+  "https://mathshistory.st-andrews.ac.uk/Honours/LunarFeatures0/": [
+   "brave",
+   "you"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?featureType=Crater%2C+craters&target=MOON": [
+   "brave"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_L%E2%80%93N": [
+   "brave",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&Origin=Nobel%20laureate&output=CSV&pageSize=500": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater,%20craters&Target=16_Moon&search=Nobel": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater,+craters&Origin=Nobel": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Origin=Nobel+Prize+winner+in+Chemistry&pageSize=500": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Target=16_Moon&search=Nobel": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_lunar_craters_named_for_space_explorers": [
+   "parallel"
+  ],
+  "http://www.stampio.org/search/label/Sweden": [
+   "ceramic"
+  ],
+  "https://en.wikipedia.org/wiki/Jewish_culture": [
+   "ceramic"
+  ],
+  "https://tug.org/utah/bibnet/authors/d/dirac-p-a-m.html": [
+   "ceramic"
+  ],
+  "http://ftp.math.utah.edu/pub/bibnet/authors/d/dirac-p-a-m.html": [
+   "ceramic"
+  ],
+  "https://mathisfunforum.com/viewtopic.php?id=22637&p=47": [
+   "ceramic"
+  ],
+  "https://netlib.org/bibnet/authors/f/fermi-enrico.html": [
+   "ceramic"
+  ],
+  "https://vdoc.pub/documents/encyclopedia-of-world-scientists-facts-on-file-science-library-35afk19e3qng": [
+   "ceramic"
+  ],
+  "https://vdoc.pub/documents/encyclopedia-of-world-scientists-2v-17ui8hnb8p80": [
+   "ceramic"
+  ],
+  "https://kuongeo.com/moon/names/from/england": [
+   "seltz"
+  ],
+  "https://www.astronomy.com/science/the-women-immortalized-on-the-moon/": [
+   "seltz"
+  ],
+  "https://earth-and-space-news.blogspot.com/2012/10/davisson-crater-honors-american.html": [
+   "seltz"
+  ],
+  "https://earth-and-space-news.blogspot.com/2012/03/bragg-crater-honors-british-physicist.html": [
+   "seltz"
+  ],
+  "https://kuongeo.com/moon/names/from/austria": [
+   "seltz"
+  ],
+  "https://www.kroneckerwallis.com/women-scientists-on-the-moon-lunar-craters-honoring-female-pioneers/": [
+   "fetch:tavily",
+   "seltz",
+   "you"
+  ],
+  "https://www.thespacecollective.com/us/apollo-17-flown-map-plates": [
+   "seltz"
+  ],
+  "https://earth-and-space-news.blogspot.com/2012/04/richardson-crater-honors-british.html": [
+   "seltz"
+  ],
+  "https://grokipedia.com/page/nobel_crater": [
+   "brave",
+   "you"
+  ],
+  "https://www.lpi.usra.edu/features/haskinCrater/": [
+   "you"
+  ],
+  "https://www.fourmilab.ch/earthview/lunarform/cratall.html": [
+   "brave",
+   "you"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon": [
+   "you"
+  ],
+  "https://blog.hmns.org/2019/05/who-picked-all-those-crater-names/": [
+   "you"
+  ],
+  "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r": [
+   "brave",
+   "exa",
+   "fetch:tavily",
+   "you"
+  ],
+  "https://web.archive.org/web/20080916141628/http:/lunar.arc.nasa.gov/science/atlas/text/cratertex_s.html": [
+   "exa"
+  ],
+  "https://the-moon.us/wiki/195_names_of_scientists": [
+   "exa",
+   "fetch:tavily"
+  ],
+  "https://en.wikipedia.org/wiki/Debye_(crater)": [
+   "exa"
+  ],
+  "https://aidb.si/d/lunar-craters": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Fischer_(crater)": [
+   "exa",
+   "fetch:tavily"
+  ],
+  "https://en.wikipedia.org/wiki/Becquerel_(lunar_crater)": [
+   "exa"
+  ],
+  "https://www.caltech.edu/about/legacy/awards-and-honors/nobel-laureates": [
+   "tavily"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics": [
+   "tavily"
+  ],
+  "https://www.sciencepub.net/nature/0403/13-0186-mahongbao-ns.pdf": [
+   "tavily"
+  ],
+  "https://www.uchicago.edu/who-we-are/global-impact/accolades/nobel-laureates": [
+   "tavily"
+  ],
+  "https://www.mpg.de/nobel-prize": [
+   "tavily"
+  ],
+  "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-chemistry": [
+   "tavily"
+  ],
+  "https://www.lanl.gov/about/awards-achievements/nobel-prize": [
+   "tavily"
+  ],
+  "https://science.osti.gov/About/Honors-and-Awards/DOE-Nobel-Laureates": [
+   "tavily"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters": [
+   "brave",
+   "you"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel&pageSize=500": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Target=16_Moon&search=Nobel&pageSize=5000": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&pageSize=500&search=Nobel%20laureate": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B": [
+   "parallel"
+  ],
+  "https://spaceflighthistory.blogspot.com/2015/12/harold-urey-and-moon-1961.html": [
+   "seltz"
+  ],
+  "https://wired.com/2012/06/harold-ureys-lunar-landing-sites-1961": [
+   "seltz"
+  ],
+  "https://earth-and-space-news.blogspot.com/2013/03/einstein-crater-honors-german-american.html": [
+   "seltz"
+  ],
+  "https://earth-and-space-news.blogspot.com/2012/07/chadwick-crater-honors-british.html": [
+   "seltz"
+  ],
+  "https://en.wikipedia.org/wiki/Arrhenius_(lunar_crater)": [
+   "you"
+  ],
+  "https://the-moon.us/wiki/Nobel": [
+   "you"
+  ],
+  "https://en.wikipedia.org/wiki/Nobel_(crater)": [
+   "you"
+  ]
+ },
+ "url_text": {
+  "https://web.archive.org/web/20090322111608/http:/lunar.arc.nasa.gov/printerready/science/geography_items/carters/craters_e.html": " Moon Nomenclature - Craters | Latin Name | Lat | Long | Diam | Origin | | --- | --- | --- | --- | --- | | Eckert | 17.3N | 58.3E | 2 | Wallace J.; American astronomer (1902-1971). | | Eddington | 21.3N | 72.2W | 118 | \"Sir Arthur S.; British astrophysicist, mathematician (1882-19\" | | Edison | 25.0N | 99.1E | 62 | Thomas A.; Americaninventor (1847-1931). | | Edith | 25.8S | 102.3E | 8 | English female name. | | Egede | 48.7N",
+  "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them": " List of people with craters of the Moon named after them ## N - Fridtjof Nansen - John Napier - Michael Neander - Necho II - Necho crater - Simon Newcomb - Isaac Newton - Friedrich Bernhard Gottfried Nicolai - Jean Nicholas Nicollet - Alfred Nobel - Emmy Noether - Robert Norman - Pedro Nuñez Salaciense - Joseph Nunn - František Nušl List of people with craters of the Moon named after them - Wikipedia ## N\n\n[edit]\n\n Fridtjof Nansen\n John Napier\n Michael Neander\n Necho II - Necho crater\n Simon Newcomb\n Isaac Newton\n Friedrich Bernhard Gottfried Nicolai\n Jean Nicholas Nicollet\n Alfred Nobel\n Emmy Noether\n Robert Norman\n Pedro Nuñez Salaciense\n Joseph Nunn\n František Nušl\n\n## O\n\n[edit]\n\n Hermann Oberth\n Marcus O'Day\n Heinrich Olbers\n Friedrich Wilhelm Opelt\n Otto Moritz Opelt\n J. Robert Oppenheime List of people with craters of the Moon named after them - Wikipedia The following is a list of people whose names were given to craters of the Moon. The list of approved names in the Gazetteer of Planetary Nomenclature maintained by the International Astronomical Union includes the person the crater is named for. ... Michael P. Anderson ... List of people with craters of the Moon named after them - Wikipedia See also\n[ edit ]\nLunar craters named for space explorers\nStars named after people\nList of minor planets named after people\nList of craters on Mars named after people\nNotes\n[ edit ]\n↑ \"Moon craters\" . Gazetteer of Planetary Nomenclature . International Astrophysical Union . Retrieved 3 February 2015 .\n↑ Grimaldi (crater)\n↑ \"Moon Crater To Be Designated In Memoriam Of Legendary Entertainer Michael  List of people with craters of the Moon named after them - Wikipedia The following is a list of people whose names were given to craters of the Moon. The list of approved names in the Gazetteer of Planetary Nomenclature maintained by the International Astronomical Union includes the person the crater is named for. ... Michael P. Anderson ... [Jump to content](#bodyContent)\n\n[![](/static/images/icons/enwiki-25.svg)  ![Wikipedia](/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg) ![The Free Encyclopedia](/static/images/mobile/copyright/wikipedia-tagline-en-25.svg)](/wiki/Main_Page)\n\n[Search](/wiki/Special:Search \"Search Wikipedia [f]\")\n\n# List of people with craters of the Moon named after them\n\n* [العربية](https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D8%A3%D8%B4%D8%AE%D8%A7%D8%B5_%D8%A7%D9%84%D8%B0%D9%8A%D9%86_%D8%B3%D9%85%D9%8A%D8%AA_%D9%81%D9%88%D9%87%D8%A7%D8%AA_%D8%A7%D9%84%D9%82%D9%85%D8%B1_%D8%A8%D8%A3%D8%B3%D9%85%D8%A7%D8%A6%D9%87%D9%85 \"قائمة الأشخاص الذين سميت فوهات القمر بأسمائهم – Arabic\")\n* [Català](https://ca.wikipedia.org/wiki/Llista_de_persones_amb_cr%C3%A0ters_de_la_Lluna_anomenats_en_el_seu_honor \"Llista de persones amb cràters de la Lluna anomenats en el seu honor – Catalan\")\n\n[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q6633223#sitelinks-wikipedia \"Edit interlanguage links\")\n\n* [Article](/wiki/List_of_people_with_craters_of_the_Moon_named_after_them \"View the content page [c]\")\n* [Talk](/wiki/Talk:List_of_people_with_craters_of_the_Moon_named_after_them \"Discuss improvements to the content page [t]\")\n\n* [Read](/wiki/List_of_people_with_craters_of_the_Moon_named_after_them)\n* [Edit](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=history \"Past revisions of this page [h]\")\n\n\n\nTools\n\nActions\n\n* [Read](/wiki/List_of_people_with_craters_of_the_Moon_named_after_them)\n* [Edit](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=history \"Past revisions of this page [h]\")\n\nGeneral\n\n* [What links here](/wiki/Special:WhatLinksHere/List_of_people_with_craters_of_the_Moon_named_after_them \"List of all English Wikipedia pages containing links to this page [j]\")\n* [Related changes](/wiki/Special:RecentChangesLinked/List_of_people_with_craters_of_the_Moon_named_after_them \"Recent changes in pages linked from this page [k]\")\n* [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard \"Upload files [u]\")\n* [Permanent link](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&oldid=1372755147 \"Permanent link to this revision of this page\")\n* [Page information](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=info \"More information about this page\")\n* [Cite this page](/w/index.php?title=Special:CiteThisPage&page=List_of_people_with_craters_of_the_Moon_named_after_them&id=1372755147&wpFormIdentifier=titleform \"Information on how to cite this page\")\n* [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_people_with_craters_of_the_Moon_named_after_them)\n* [Switch to legacy parser](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&useparsoid=0)\n\nPrint/export\n\n* [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=List_of_people_with_craters_of_the_Moon_named_after_them&action=show-download-screen \"Download this page as a PDF file\")\n* [Printable version](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&printable=yes \"Printable version of this page [p]\")\n\nIn other projects\n\n* [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q6633223 \"Structured data on this page hosted by Wikidata [g]\")\n\nAppearance\n\nFrom Wikipedia, the free encyclopedia\n\nMain article: [List of craters on the Moon](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon \"List of craters on the Moon\")\n\n|  |\n| --- |\n| This list is [incomplete](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lists#Incomplete_lists \"Wikipedia:WikiProject Lists\"); you can help by [adding missing items](https://en.wikipedia.org/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=edit). *(February 2024)* |\n\nThe following is a list of people whose **names were given to [craters](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") of the [Moon](https://en.wikipedia.org/wiki/Moon \"Moon\").** The list of approved names in the *[Gazetteer of Planetary Nomenclature](https://en.wikipedia.org/wiki/Planetary_nomenclature \"Planetary nomenclature\")* maintained by the [International Astronomical Union](https://en.wikipedia.org/wiki/International_Astronomical_Union \"International Astronomical Union\") includes the person the crater is named for.[[1]](#cite_note-1)\n\nContents:\n\n* [Top](#top)\n* [0–9](#0–9)\n* [A](#A)\n* [B](#B)\n* [C](#C)\n* [D](#D)\n* [E](#E)\n* [F](#F)\n* [G](#G)\n* [H](#H)\n* [I](#I)\n* [J](#J)\n* [K](#K)\n* [L](#L)\n* [M](#M)\n* [N](#N)\n* [O](#O)\n* [P](#P)\n* [Q](#Q)\n* [R](#R)\n* [S](#S)\n* [T](#T)\n* [U](#U)\n* [V](#V)\n* [W](#W)\n* [X](#X)\n* [Y](#Y)\n* [Z](#Z)\n\n## A\n\n[[edit](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=edit&section=1 \"Edit section: A\")]\n\n* [Ernst Karl Abbe](https://en.wikipedia.org/wiki/Ernst_Abbe \"Ernst Abbe\")\n* [Charles Greeley Abbot](https://en.wikipedia.org/wiki/Charles_Greeley_Abbot \"Charles Greeley Abbot\")\n* [Niels Henrik Abel](https://en.wikipedia.org/wiki/Niels_Henrik_Abel \"Niels Henrik Abel\")\n* [Antonio Abetti](https://en.wikipedia.org/wiki/Antonio_Abetti \"Antonio Abetti\")\n* [Giorgio Abetti](https://en.wikipedia.org/wiki/Giorgio_Abetti \"Giorgio Abetti\")\n* [Abu Abdullah al-Bakri](https://en.wikipedia.org/wiki/Abu_Abdullah_al-Bakri \"Abu Abdullah al-Bakri\")\n* [Abū al-Wafā' al-Būzjānī](https://en.wikipedia.org/wiki/Abū_al-Wafā'_al-Būzjānī \"Abū al-Wafā' al-Būzjānī\")\n* [Charles Hitchcock Adams](https://en.wikipedia.org/wiki/Charles_Hitchcock_Adams \"Charles Hitchcock Adams\")\n* [John Couch Adams](https://en.wikipedia.org/wiki/John_Couch_Adams \"John Couch Adams\")\n* [Walter Sydney Adams](https://en.wikipedia.org/wiki/Walter_Sydney_Adams \"Walter Sydney Adams\")\n* [Agatharchides](https://en.wikipedia.org/wiki/Agatharchides \"Agatharchides\")\n* [Agrippa](https://en.wikipedia.org/wiki/Agrippa_(astronomer) \"Agrippa (astronomer)\")\n* [Pierre d'Ailly](https://en.wikipedia.org/wiki/Pierre_d'Ailly \"Pierre d'Ailly\")\n* [George Biddell Airy](https://en.wikipedia.org/wiki/George_Biddell_Airy \"George Biddell Airy\")\n* [Robert Grant Aitken](https://en.wikipedia.org/wiki/Robert_Grant_Aitken \"Robert Grant Aitken\")\n* [Ajima Naonobu](https://en.wikipedia.org/wiki/Ajima_Naonobu \"Ajima Naonobu\")\n* [Harold Alden](https://en.wikipedia.org/wiki/Harold_Alden \"Harold Alden\")\n* [Kurt Alder](https://en.wikipedia.org/wiki/Kurt_Alder \"Kurt Alder\")\n* [Buzz Aldrin](https://en.wikipedia.org/wiki/Buzz_Aldrin \"Buzz Aldrin\")\n* [Nikolai Alekhin](https://en.wikipedia.org/wiki/Nikolai_Alekhin \"Nikolai Alekhin\")\n* [Alexander the Great](https://en.wikipedia.org/wiki/Alexander_the_Great \"Alexander the Great\")\n* [Alfonso X of Castile](https://en.wikipedia.org/wiki/Alfonso_X_of_Castile \"Alfonso X of Castile\")\n* [Alfraganus](https://en.wikipedia.org/wiki/Alfraganus \"Alfraganus\")\n* [Dinsmore Alter](https://en.wikipedia.org/wiki/Dinsmore_Alter \"Dinsmore Alter\")\n* [Florentino Ameghino](https://en.wikipedia.org/wiki/Florentino_Ameghino \"Florentino Ameghino\")\n* [Giovanni Battista Amici](https://en.wikipedia.org/wiki/Giovanni_Battista_Amici \"Giovanni Battista Amici\")\n* [Ammonius Saccas](https://en.wikipedia.org/wiki/Ammonius_Saccas \"Ammonius Saccas\")\n* [Guillaume Amontons](https://en.wikipedia.org/wiki/Guillaume_Amontons \"Guillaume Amontons\")\n* [Roald Amundsen](https://en.wikipedia.org/wiki/Roald_Amundsen \"Roald Amundsen\")\n* [Anaxagoras](https://en.wikipedia.org/wiki/Anaxagoras \"Anaxagoras\")\n* [Anaximander](https://en.wikipedia.org/wiki/Anaximander \"Anaximander\")\n* [Anaximenes of Miletus](https://en.wikipedia.org/wiki/Anaximenes_of_Miletus \"Anaximenes of Miletus\")\n* [Karel Anděl](https://en.wikipedia.org/wiki/Karel_Anděl \"Karel Anděl\")\n* [William Anders](https://en.wikipedia.org/wiki/William_Anders \"William Anders\")\n* [John August Anderson](https://en.wikipedia.org/wiki/John_August_Anderson \"John August Anderson\")\n* [Michael P. Anderson](https://en.wikipedia.org/wiki/Michael_P._Anderson \"Michael P. Anderson\")\n* [Leif Erland Andersson](https://en.wikipedia.org/wiki/Leif_Erland_Andersson \"Leif Erland Andersson\")\n* [Aleksandr Andronov](https://en.wikipedia.org/wiki/Aleksandr_Andronov \"Aleksandr Andronov\")\n* [Anders Jonas Ångström](https://en.wikipedia.org/wiki/Anders_Jonas_Ångström \"Anders Jonas Ångström\")\n* [Ansgar](https://en.wikipedia.org/wiki/Ansgar \"Ansgar\")\n* [Eugène Michel Antoniadi](https://en.wikipedia.org/wiki/Eugène_Michel_Antoniadi \"Eugène Michel Antoniadi\")\n* [Dmitry Nikolayevich Anuchin](https://en.wikipedia.org/wiki/Dmitry_Nikolayevich_Anuchin \"Dmitry Nikolayevich Anuchin\")\n* [Jean Baptiste Bourguignon d'Anville](https://en.wikipedia.org/wiki/Jean_Baptiste_Bourguignon_d'Anville \"Jean Baptiste Bourguignon d'Anville\")\n* [Petrus Apianus](https://en.wikipedia.org/wiki/Petrus_Apianus \"Petrus Apianus\")\n* [Apollonius of Perga](https://en.wikipedia.org/wiki/Apollonius_of_Perga \"Apollonius of Perga\")\n* [Edward Victor Appleton](https://en.wikipedia.org/wiki/Edward_Victor_Appleton \"Edward Victor Appleton\")\n* [François Arago](https://en.wikipedia.org/wiki/François_Arago \"François Arago\")\n* [Aratus](https://en.wikipedia.org/wiki/Aratus \"Aratus\")\n* [Archimedes](https://en.wikipedia.org/wiki/Archimedes \"Archimedes\")\n* [Archytas](https://en.wikipedia.org/wiki/Archytas \"Archytas\")\n* [Friedrich Wilhelm Argelander](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Argelander \"Friedrich Wilhelm Argelander\")\n* [Aristarchus of Samos](https://en.wikipedia.org/wiki/Aristarchus_of_Samos \"Aristarchus of Samos\")\n* [Aristillus](https://en.wikipedia.org/wiki/Aristillus \"Aristillus\")\n* [Aristotle](https://en.wikipedia.org/wiki/Aristotle \"Aristotle\")\n* [Franciszek Armiński](https://en.wikipedia.org/wiki/Franciszek_Armiński \"Franciszek Armiński\")\n* [Neil Armstrong](https://en.wikipedia.org/wiki/Neil_Armstrong \"Neil Armstrong\")\n* [Christoph Arnold](https://en.wikipedia.org/wiki/Christoph_Arnold \"Christoph Arnold\")\n* [Svante Arrhenius](https://en.wikipedia.org/wiki/Svante_Arrhenius \"Svante Arrhenius\")\n* [Lev Artsimovich](https://en.wikipedia.org/wiki/Lev_Artsimovich \"Lev Artsimovich\")\n* [Aryabhata](https://en.wikipedia.org/wiki/Aryabhata \"Aryabhata\")\n* [Arzachel](https://en.wikipedia.org/wiki/Arzachel \"Arzachel\")\n* [Goryu Asada](https://en.wikipedia.org/wiki/Goryu_Asada \"Goryu Asada\")\n* [Giuseppe Asclepi](https://en.wikipedia.org/wiki/Giuseppe_Asclepi \"Giuseppe Asclepi\")\n* [Joseph Ashbrook](https://en.wikipedia.org/wiki/Joseph_Ashbrook \"Joseph Ashbrook\")\n* [Francis William Aston](https://en.wikipedia.org/wiki/Francis_William_Aston \"Francis William Aston\")\n* [George Atwood](https://en.wikipedia.org/wiki/George_Atwood \"George Atwood\")\n* [Autolycus of Pitane](https://en.wikipedia.org/wiki/Autolycus_of_Pitane \"Autolycus of Pitane\")\n* [Arthur Auwers](https://en.wikipedia.org/wiki/Arthur_Auwers \"Arthur Auwers\")\n* [Adrien Auzout](https://en.wikipedia.org/wiki/Adrien_Auzout \"Adrien Auzout\")\n* [Oswald Avery](https://en.wikipedia.org/wiki/Oswald_Avery \"Oswald Avery\")\n* [Avicenna](https://en.wikipedia.org/wiki/Avicenna \"Avicenna\")\n\n## B\n\n[[edit](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=edit&section=2 \"Edit section: B\")]\n\n* [Walter Baade](https://en.wikipedia.org/wiki/Walter_Baade \"Walter Baade\")\n* [Georgi Babakin](https://en.wikipedia.org/wiki/Georgi_Babakin \"Georgi Babakin\")\n* [Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage \"Charles Babbage\")\n* [Harold D. Babcock](https://en.wikipedia.org/wiki/Harold_D._Babcock \"Harold D. Babcock\")\n* [Ernst Emil Alexander Back](https://en.wikipedia.org/wiki/Ernst_Emil_Alexander_Back \"Ernst Emil Alexander Back\")\n* [Oskar Backlund](https://en.wikipedia.org/wiki/Oskar_Backlund \"Oskar Backlund\")\n* [Roger Bacon](https://en.wikipedia.org/wiki/Roger_Bacon \"Roger Bacon\")\n* [Benjamin Baillaud](https://en.wikipedia.org/wiki/Benjamin_Baillaud \"Benjamin Baillaud\")\n* [Jean Sylvain Bailly](https://en.wikipedia.org/wiki/Jean_Sylvain_Bailly \"Jean Sylvain Bailly\")\n* [Francis Baily](https://en.wikipedia.org/wiki/Francis_Baily \"Francis Baily\")\n* [Ibn Bajjah](https://en.wikipedia.org/wiki/Ibn_Bajjah \"Ibn Bajjah\")\n* [Aleksei Balandin](https://en.wikipedia.org/wiki/Aleksei_Balandin \"Aleksei Balandin\")\n* [Vasco Núñez de Balboa](https://en.wikipedia.org/wiki/Vasco_Núñez_de_Balboa \"Vasco Núñez de Balboa\")\n* [Fernand Baldet](https://en.wikipedia.org/wiki/Fernand_Baldet \"Fernand Baldet\")\n* [William Ball](https://en.wikipedia.org/wiki/William_Ball_(astronomer) \"William Ball (astronomer)\")\n* [Johann Jakob Balmer](https://en.wikipedia.org/wiki/Johann_Jakob_Balmer \"Johann Jakob Balmer\")\n* [Tadeusz Banachiewicz](https://en.wikipedia.org/wiki/Tadeusz_Banachiewicz \"Tadeusz Banachiewicz\")\n* [Wilder Dwight Bancroft](https://en.wikipedia.org/wiki/Wilder_Dwight_Bancroft \"Wilder Dwight Bancroft\")\n* [Frederick Banting](https://en.wikipedia.org/wiki/Frederick_Banting \"Frederick Banting\")\n* [Charles Glover Barkla](https://en.wikipedia.org/wiki/Charles_Glover_Barkla \"Charles Glover Barkla\")\n* [Edward Emerson Barnard](https://en.wikipedia.org/wiki/Edward_Emerson_Barnard \"Edward Emerson Barnard\")\n* [Francesco Barozzi](https://en.wikipedia.org/wiki/Francesco_Barozzi \"Francesco Barozzi\")\n* [Daniel Barringer](https://en.wikipedia.org/wiki/Daniel_Barringer_(geologist) \"Daniel Barringer (geologist)\")\n* [Muhammad ibn Jābir al-Harrānī al-Battānī](https://en.wikipedia.org/wiki/Muhammad_ibn_Jābir_al-Harrānī_al-Battānī \"Muhammad ibn Jābir al-Harrānī al-Battānī\")\n* [Ibn Battuta](https://en.wikipedia.org/wiki/Ibn_Battuta \"Ibn Battuta\")\n* [Johann Bayer](https://en.wikipedia.org/wiki/Johann_Bayer \"Johann Bayer\")\n* [Antonín Bečvář](https://en.wikipedia.org/wiki/Antonín_Bečvář \"Antonín Bečvář\")\n* [Wilhelm Beer](https://en.wikipedia.org/wiki/Wilhelm_Beer \"Wilhelm Beer\")\n* [Torbern Bergman](https://en.wikipedia.org/wiki/Torbern_Bergman \"Torbern Bergman\")\n* [Friedrich Wilhelm Bessel](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Bessel \"Friedrich Wilhelm Bessel\")\n* [Nur Ed-Din Al Betrugi](https://en.wikipedia.org/wiki/Nur_Ed-Din_Al_Betrugi \"Nur Ed-Din Al Betrugi\")\n* [Giuseppe Biancani](https://en.wikipedia.org/wiki/Giuseppe_Biancani \"Giuseppe Biancani\")\n* [Francesco Bianchini](https://en.wikipedia.org/wiki/Francesco_Bianchini \"Francesco Bianchini\") - Bianchini crater north of Sinus Iridum\n* [Giovanni Bianchini](https://en.wikipedia.org/wiki/Giovanni_Bianchini \"Giovanni Bianchini\") - Blanchinus crater - Southern Hemisphere\n* [Wilhelm von Biela](https://en.wikipedia.org/wiki/Wilhelm_von_Biela \"Wilhelm von Biela\")\n* [Jacques de Billy](https://en.wikipedia.org/wiki/Jacques_de_Billy \"Jacques de Billy\")\n* [Hiram Bingham III](https://en.wikipedia.org/wiki/Hiram_Bingham_III \"Hiram Bingham III\")\n* [Abū Rayhān al-Bīrūnī](https://en.wikipedia.org/wiki/Abū_Rayhān_al-Bīrūnī \"Abū Rayhān al-Bīrūnī\")\n* [Mary Adela Blagg](https://en.wikipedia.org/wiki/Mary_Adela_Blagg \"Mary Adela Blagg\")\n* [Nathaniel Bliss](https://en.wikipedia.org/wiki/Nathaniel_Bliss \"Nathaniel Bliss\")\n* [Étienne Bobillier](https://en.wikipedia.org/wiki/Étienne_Bobillier \"Étienne Bobillier\")\n* [Johann Elert Bode](https://en.wikipedia.org/wiki/Johann_Elert_Bode \"Johann Elert Bode\")\n* [Niels Bohr](https://en.wikipedia.org/wiki/Niels_Bohr \"Niels Bohr\")\n* [Priscilla Fairfield Bok](https://en.wikipedia.org/wiki/Priscilla_Fairfield_Bok \"Priscilla Fairfield Bok\")\n* [János Bolyai](https://en.wikipedia.org/wiki/János_Bolyai \"János Bolyai\")\n* [George Phillips Bond](https://en.wikipedia.org/wiki/George_Phillips_Bond \"George Phillips Bond\") - named for G. Bond crater\n* [Aimé Bonpland](https://en.wikipedia.org/wiki/Aimé_Bonpland \"Aimé Bonpland\")\n* [George Boole](https://en.wikipedia.org/wiki/George_Boole \"George Boole\")\n* [Émile Borel](https://en.wikipedia.org/wiki/Émile_Borel \"Émile Borel\")\n* [Roger Joseph Boscovich](https://en.wikipedia.org/wiki/Roger_Joseph_Boscovich \"Roger Joseph Boscovich\") (or Rudjer Bošković)\n* [Jagdish Chandra Bose](https://en.wikipedia.org/wiki/Jagdish_Chandra_Bose \"Jagdish Chandra Bose\")\n* [Ira S. Bowen](https://en.wikipedia.org/wiki/Ira_S._Bowen \"Ira S. Bowen\")\n* [Frederick Sumner Brackett](https://en.wikipedia.org/wiki/Frederick_Sumner_Brackett \"Frederick Sumner Brackett\")\n* [Tycho Brahe](https://en.wikipedia.org/wiki/Tycho_Brahe \"Tycho Brahe\")\n* [Edward William Brayley](https://en.wikipedia.org/wiki/Edward_William_Brayley \"Edward William Brayley\")\n* Sir [David Brewster](https://en.wikipedia.org/wiki/David_Brewster \"David Brewster\")\n* [David McDowell Brown](https://en.wikipedia.org/wiki/David_McDowell_Brown \"David McDowell Brown\")\n* [Catherine Wolfe Bruce](https://en.wikipedia.org/wiki/Catherine_Wolfe_Bruce \"Catherine Wolfe Bruce\")\n* [Giordano Bruno](https://en.wikipedia.org/wiki/Giordano_Bruno \"Giordano Bruno\")\n* [Henri Buisson](https://en.wikipedia.org/wiki/Henri_Buisson \"Henri Buisson\")\n* [Johann Tobias Bürg](https://en.wikipedia.org/wiki/Johann_Tobias_Bürg \"Johann Tobias Bürg\")\n* [Joost Bürgi](https://en.wikipedia.org/wiki/Joost_Bürgi \"Joost Bürgi\")\n* [Johann K. Burckhardt](https://en.wikipedia.org/wiki/Johann_K._Burckhardt?action=edit&redlink=1 \"Johann K. Burckhardt (page does not exist)\")\n* [Sherburne Wesley Burnham](https://en.wikipedia.org/wiki/Sherburne_Wesley_Burnham \"Sherburne Wesley Burnham\")\n* [Richard Evelyn Byrd](https://en.wikipedia.org/wiki/Richard_Evelyn_Byrd \"Richard Evelyn Byrd\")\n\n## C\n\n[[edit](/w/index.php?title=List_of_people_with_craters_of_the_Moon_named_after_them&action=edit&section=3 \"Edit section: C\")]\n\n* [Cai Lun](https://en.wikipedia.org/wiki/Cai_Lun \"Cai Lun\")\n* [Santiago Ramón y Cajal](https://en.wikipedia.org/wiki/Santiago_Ramón_y_Cajal \"Santiago Ramón y Cajal\")\n* [Calippus](https://en.wikipedia.org/wiki/Callippus \"Callippus\")\n* [Robert Curry Cameron](https://en.wikipedia.org/wiki/Robert_Curry_Cameron \"Robert Curry Cameron\")\n* [Campanus of Novara](https://en.wikipedia.org/wiki/Campanus_of_Novara \"Campanus of Novara\")\n* [Annie Jump Cannon](https://en.wikipedia.org/wiki/Annie_Jump_Cannon \"Annie Jump Cannon\")\n* [Francesco Capuano di Manfredonia](https://en.wikipedia.org/wiki/Francesco_Capuano_Di_Manfredonia \"Francesco Capuano Di Manfredonia\")\n* [Francesco Carlini](https://en.wikipedia.org/wiki/Francesco_Carlini \"Francesco Carlini\")\n* [Paolo Casati](https://en.wikipedia.org/wiki/Paolo_Casati \"Paolo Casati\")\n* [Miguel A. Catalán](https://en.wikipedia.org/wiki/Miguel_A._Catalán \"Miguel A. Catalán\")\n* [Saint Catherine of Alexandria](https://en.wikipedia.org/wiki/Catherine_of_Alexandria \"Catherine of Alexandria\")\n* [Augustin Louis Cauchy](https://en.wikipedia.org/wiki/Augustin_Louis_Cauchy \"Augustin Louis Cauchy\")\n* [Bonaventura Cavalieri](https://en.wikipedia.org/wiki/Bonaventura_Cavalieri \"Bonaventura Cavalieri\")\n* [Henry Cavendish](https://en.wikipedia.org/wiki/Henry_Cavendish \"Henry Cavendish\")\n* [Arthur Cayley](https://en.wikipedia.org/wiki/Arthur_Cayley \"Arthur Cayley\")\n* [Anders Celsius](https://en.wikipedia.org/wiki/Anders_Celsius \"Anders Celsius\")\n* [Jean Chacornac](https://en.wikipedia.org/wiki/Jean_Chacornac \"Jean Chacornac\")\n* [James Challis](https://en.wikipedia.org/wiki/James_Challis \"James Challis\")\n* [Sergei Chaplygin](https://en.wikipedia.org/wiki/Sergei_Chaplygin \"Sergei Chaplygin\")\n* [Kalpana Chawla](https://en.wikipedia.org/wiki/Kalpana_Chawla \"Kalpana Chawla\")\n* [Pafnuty Chebyshev](https://en.wikipedia.org/wiki/Pafnuty_Chebyshev \"Pafnuty Chebyshev\")\n* [Nikolai Chernyshev](https://en.wikipedia.org/wiki/Nikolai_Chernyshev \"Nikolai Chernyshev\")\n* [Temple Chevallier](https://en.wikipedia.org/wiki/Temple_Chevallier \"Temple Chevallier\")\n* [Franceso degli Stabili Cichus](https://en.wikipedia.org/wiki/Franceso_Degli_S",
+  "https://craterregistry.com/lunar-nomenclature-database": " The Full Moon Atlas 858-929); Arab astronomer, astrologer and mathematician; considered to be the greatest astronomer of the medieval Islamic world, instrumental in the development of science and astronomy in the west. | 1905-06-28 | | Albategnius D | -11.36 | 7.14 | 8.35 | Abū ʿAbd Allāh Muḥammad ibn Jābir ibn Sinān al-Raqqī al-Ḥarrānī aṣ-Ṣābiʾ al-Battānī, known as al-Battānī; Latinized as Albategnius (c. 858-929); ",
+  "https://en.wikipedia.org/wiki/Laue_(crater)": " Laue (crater) Laue is a lunar impact crater that lies across the south-southwestern rim and interior floor of the huge walled plain named Lorentz. ... This crater is named after German physicist Max von Laue (1879–1960), who received the Nobel Prize in Physics in 1914 \"for his discovery of the diffraction of X-rays by crystals.\" [4] Prior to formal naming by the International Astronomical Union in 1970, [1] Lau Laue (crater) This crater is named after German physicist Max von Laue (1879–1960), who received the Nobel Prize in Physics in 1914 \"for his discovery of the diffraction of X-rays by crystals.\" [4] Prior to formal naming by the International Astronomical Union in 1970, [1] Laue was called Crater 181. [5]",
+  "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132": " Lunar craters named after science high fliers - ABC listen But that does leave a lot of distinguished, deceased people, and there are thousands of them now commemorated on bodies in the Solar System. In fact just recently 19 more had lunar craters named after them. Most of these new ones are Nobel Prize winners. There are chemists like Carl Bosch, Fritz Haber and Victor Grignard. There are medical researchers like Theodor Kocher, who studied the thyroid,  [Skip to listen navigation, settings and search](#mastheadAnchor)\n\n## Explore the ABC\n\n[ABC listen](/listen)\n\n* [Home](/listen)\n* [Radio](/listen/radio)\n* [Podcasts](/listen/podcasts)\n* [News](/listen/news)\n* [Sport](/listen/sport)\n* [Kids listen](/kidslisten)\n* [Audiobooks](/listen/audiobooks)\n* [ABC listen app](/listen/listenapp)\n\n\n\n![ABC Science Show logo: A stylised black bird with yellow beak amidst colourful, textured planets and green star-like shapes.](https://live-production.wcms.abc-cdn.net.au/a9bfe6ad8b283391297dd347dd60de8f?impolicy=wcms_crop_resize&cropH=3000&cropW=3000&xPos=0&yPos=0&width=862&height=862)\n\n# Program: Lunar craters named after science high fliers\n\n[Program:The Science Show](/listen/programs/scienceshow/)\n\nSpace to play or pause, M to mute, left and right arrows to seek, up and down arrows for volume.\n\nBrought to you by\n\n[![ABC Radio National](https://live-production.wcms.abc-cdn.net.au/556166359443f9aaa26ce7b905c4a29f?impolicy=wcms_crop_resize&cropH=500&cropW=500&xPos=0&yPos=0&width=862&height=862)\n\nABC Radio National](https://www.abc.net.au/listen/radionational/)\n\nPresented by\n\n[![A smiling older man with short white hair wears a beige quarter-zip top.](https://live-production.wcms.abc-cdn.net.au/a47f2fc993081609a3f7353c9f0c4b16?impolicy=wcms_crop_resize&cropH=542&cropW=542&xPos=420&yPos=70&width=862&height=862)\n\nRobyn Williams](https://www.abc.net.au/listen/radionational/robyn-williams/2913842)\n\nJonathan Nally reports on the latest batch of lunar craters named after great scientists. Howard Florey, who developed penicillin as a medicine is among them. But his nationality was credited as British and not Australian. Jonathan Nally had that rectified. Florey is amongst other Australians immortalised on the lunar surface.\n\n## Credits\n\n* [Robyn Williams, Presenter](https://www.abc.net.au/listen/radionational/robyn-williams/2913842)\n* [David Fisher, Producer](https://www.abc.net.au/listen/radionational/david-fisher/2913846)\n\n![ABC Science Show logo: A stylised black bird with yellow beak amidst colourful, textured planets and green star-like shapes.](https://live-production.wcms.abc-cdn.net.au/a9bfe6ad8b283391297dd347dd60de8f?impolicy=wcms_crop_resize&cropH=3000&cropW=3000&xPos=0&yPos=0&width=862&height=862)\n\n[Program:More from The Science Show](/listen/programs/scienceshow/)\n\nSpace\n\n## \n\n**Jonathan Nally:** In science there are lots of ways in which your life's work can be recognised. There are prizes and awards galore, important positions to be held, theories to be founded, species can be named after you, and impressive bricks and mortar facilities can be named in your honour. But for the high-achiever who has everything, it's a must to be immortalised in the sky. For instance, you can get a crater or a mountain on another planet named after you.\n\nBut when I say that you can do it, I really mean that someone else can propose your name. You can't do it because you have to have been dead for at least three years, or if you are a political figure you have to have been dead for over 200 years. And sorry, military and religious figures are out. And you must have been 'a person of high and enduring international standing'. Well, that rules me out.\n\nBut that does leave a lot of distinguished, deceased people, and there are thousands of them now commemorated on bodies in the Solar System. In fact just recently 19 more had lunar craters named after them. Most of these new ones are Nobel Prize winners. There are chemists like Carl Bosch, Fritz Haber and Victor Grignard. There are medical researchers like Theodor Kocher, who studied the thyroid, and Bernardo Houssay, the Argentinean who worked on pituitary hormones. Astronomers and even a 15th century Polish cartographer are in there too.\n\nBut the one that really caught my eye was none other than our very own Howard Walter Florey. Florey, of course, is famous for turning an obscure substance called penicillin into a new medicine during World War Two. In recognition of his work, he was knighted in 1944, jointly awarded the Nobel Prize in 1945, and promoted to Baron in 1965. Post-war he became provost of Queen's College, Oxford, and later Chancellor of the ANU. The Howard Florey Institute in Melbourne is named in his honour, and his face was on the $50 note for many years. Prime Minister Menzies called him the 'most important man ever born in Australia'.\n\nSo why was his nationality given as British, not Australian? This was just not right. Back in Florey's day of course most Australians also considered themselves to be British. That's no longer the case, of course, but even so, while he might have been a citizen of the British Empire, his nationality definitely was Australian.\n\nSomething had to be done, so I fired off an email to the US Geological Survey, the body that maintains the master list of Solar System names. I told them that there would be trouble from down this way unless Florey's proper nationality was instated. Well, I received a nice reply pointing out that the official source documents they use list Florey as being British, apparently based on where he did the work that led to his Nobel Prize. But they did at least agree to amend the listing to 'Australian-born British pathologist'.\n\nSo, that's a partial victory at least. If you want to take it any further, you're welcome to contact me and I can put you in touch with the Maintainers of the Master List of Mixed-up Moon Monikers. Florey of course was the man who turned penicillin into a mass-produced medicine during World War Two, leading to a Noble Prize in 1945.\n\nWell, Florey isn't the only Aussie on the Moon. According to the US Geological Survey's master list of Solar System names, there are four other Aussies immortalised on the lunar surface, or maybe five, or is it six, or even seven. The four definites are 19th and 20th century astronomers John Tebbutt, Joe Pawsey, Colin Gum and Arthur Hogg, all of whom now have craters named after them.\n\nThe fifth belongs to Antarctic explorer Douglas Mawson, who has a 132-kilometre-long ridge named after him. Although he was born in Britain, Mawson lived in Australia from the age of two.\n\nThe sixth is Sir Thomas Brisbane. Born in England, he joined the army in 1789 and served under the Duke of Wellington before leaving for Australia in 1821 to become Governor of New South Wales. He was also an astronomer and he made important contributions to the study of the southern skies. So he's sort of an honorary Aussie.\n\nAnd as for the seventh...well, the list shows a crater named after Sir William Henry Bragg, a pioneer of X-ray studies and inventor of the X-ray spectrometer. Although he spent a lot of his working life in Australia and therefore can also be considered an honorary Aussie, he was actually British by birth too. So I wonder if they actually mean his son, Sir William Lawrence Bragg, who was born in Adelaide.\n\nAt the age of five, Bill junior fell off his bike and his famous dad used the then-new X-ray technique to examine his son's broken arm; its first surgical use in this country. Bragg junior followed his father into science, and together they hold the distinction of being the only father and son team to win the Nobel Prize, in 1915 for their X-ray studies of crystal structure. Bragg junior was only 25, and is still the youngest Nobel laureate.\n\nSo, whose name adorns that crater, the old Bill or the young Bill? The world needs to know. So another email was sent to the US Geological Survey, and hopefully we'll soon know if that lunar depression is actually named for the father, the son, or is the hole of both.\n\n**Robyn Williams:** I think it's the son, Lawrence Bragg. Anyway, the Bragg Initiative bringing science to the Australian public starts in Adelaide in October this year.\n\n### Appears In\n\n[### Saturday 07 March 2009\n\nDuration: 54 minutes 39 seconds](/listen/programs/scienceshow/3133926)\n\n### \n\n[1of 6\n\n### Inflation model for the universe\n\nDuration: 8 minutes 59 seconds](/listen/programs/scienceshow/inflation-model-for-the-universe/3138014)\n\n[2of 6\n\n### Expanding universe leaves us all alone\n\nDuration: 4 minutes 34 seconds](/listen/programs/scienceshow/expanding-universe-leaves-us-all-alone/3143124)\n\n[3of 6\n\nPlaying\n\n### Lunar craters named after science high fliers\n\nDuration: 5 minutes 58 seconds](/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132)\n\n[4of 6\n\n### Attacking HIV\n\nDuration: 11 minutes 8 seconds](/listen/programs/scienceshow/attacking-hiv/3143138)\n\n[5of 6\n\n### Extreme pressures used to study elemental properties\n\nDuration: 8 minutes 38 seconds](/listen/programs/scienceshow/extreme-pressures-used-to-study-elemental/3133938)\n\n[6of 6\n\n### Decoding the Heavens - the antikythera ancient computer\n\nDuration: 14 minutes 15 seconds](/listen/programs/scienceshow/decoding-the-heavens---the-antikythera-ancient/3143156)\n\nLoading\n\n## Discover more podcasts\n\nDownload the ABC listen app to hear more of your favourite podcasts\n\n![](https://live-production.wcms.abc-cdn.net.au/3ebd5f3fe601c72323db5d8ea19f84ae?impolicy=wcms_crop_resize&cropH=454&cropW=454&xPos=0&yPos=0&width=862&height=862)\n\n[Back to top](#content)",
+  "https://en.wikipedia.org/wiki/en:Bohr_(crater)": " Bohr (crater) Bohr is a lunar impact crater that is located along the western lunar limb, in the area that is affected by librations. [3] It is attached to the southwestern rim of the larger, eroded Vasco da Gama formation, and to the southeast of the degraded crater Einstein. ... This crater is named after Danish physicist Niels Bohr (1885-1962), [7] the 1922 Nobel laurette in Physics. [8] The name was introdu",
+  "https://en.wikipedia.org/wiki/Cockcroft_(crater)": " Cockcroft (crater) This crater is named after English nuclear physicist John D. Cockcroft (1897–1967), the 1951 Nobel laureate in physics. [6] Its designation was formally adopted by the International Astronomical Union in 1970. [1]",
+  "https://en.wikipedia.org/wiki/Marconi_(crater)": " Marconi (crater) Marconi is a lunar impact crater that is located on the Moon's far side. [1] It lies to the northwest of the large walled plain named Gagarin, and to the southwest of the prominent crater Chaplygin. To the west-northwest of Marconi is the slightly larger Dellinger. ... The crater was named after Italian physicist, inventor, and Nobel laureate Guglielmo Marconi by the IAU in 1970. [2] The crater wa",
+  "https://www.lpi.usra.edu/features/101221/crater": " Lunar Crater Named After LPI Scientist Paul Spudis of the Lunar and Planetary Institute now has a place on the Moon named in his honor. Spudis crater is located near the Moon’s south pole and is 13 kilometers in diameter.\n\nThe International Astronomical Union Working Group for Planetary System Nomenclature recently approved two crater names — Spudis and Marvin. Ursula Marvin (1921–2018) was a planetary geologist at the Smithsonian Astrophysical Ob",
+  "https://blog.hmns.org/2019/05/who-picked-all-those-crater-names": " Mapping The Moon: Who Picked All Those Crater Names? | BEYONDbones Issac Newton). Johann Mädler and Wilhelm Beer added over 130 names in 1836 (including Benjamin Franklin). All these names, along with the rule that newly discovered craters be named after famous scientists, became official when the International Astronomical Union (IAU) published its list in 1935. [...] Thus, when scientists finally saw the polar regions and the far side of the Moon, they continue",
+  "https://www.facebook.com/groups/909318691354892/posts/1410363437917079": " NASA Space Facts | The International Astronomical Union maintains the official naming authority for planetary surface features across the Solar System, and for the Moon ... | Facebook The International Astronomical Union maintains the official naming authority for planetary surface features across the Solar System, and for the Moon specifically it has established the tradition that the majority of named craters honor scientists, mathematicians, and philosophers who contributed to human knowledge. The lunar surface has therefore become a permanent celestial memorial to intellect",
+  "https://metode.org/issues/article-revistes/a-name-for-each-crater.html": " A Name for each Crater - Revista Mètode in the list around thirty names of Spanish scientists like Jorge Juan, Josep Comas i Solà, Josep Joaquim Landerer or Paluzie himself. However, none of them was accepted.  The success of the Soviet space probe Lunik 3, which took photographs of the far side of the Moon in 1960, made it necessary to find names for the new-found geogrphical features. Thus, craters in and around Mare Moscoviense were ",
+  "https://mathshistory.st-andrews.ac.uk/Honours/LunarFeatures0": " Lunar features - MacTutor History of Mathematics About 350 mathematicians in our archive have lunar features (mostly craters) named after them.   \n You can see an account of  how these features were named and links to files of whom they were called after.   \n   \n You can see a Wikipedia article on the feature by clicking on the (W) next to a name.   \n You can see a Lunar and Planetary Institute picture of the feature by clicking on the (L) next ",
+  "https://www.learntostargaze.com/blog/women-with-impact-viewable-lunar-features-named-after-women": " Women With Impact: Lunar Craters Named After Women — Learn To STARGAZE It goes without saying that the number of women with lunar craters named after them doesn’t reflect the number of women deserving of that honour. Instead, it highlights the fact that throughout history women’s contributions and accomplishments have gone uncredited or been stolen. This is evident in the story of Nicole-Reine Lepaute and many others.\n\nFor the complete list of lunar craters named aft",
+  "https://web.mit.edu/tripathi/www/lunar_women.html": " Lunar craters named after women 31. Hildegard von Bingen (1098-1179)  \n 32. Dorothy Vaughan (1910-2008)  \n   \n  \n Last retrieved from the International Astronomical Union (IAU) Working Group for Planetary System Nomenclature (WGPSN) 03/2020. [...] 8. Maria Mitchell (1818-1889)  \n 9. Agnes Mary Clerke (1842-1907)  \n 10. Sofia Vasilyevna Kovalevskaya (1850-1891)  \n 11. Annie Scott Dill Russell Maunder (1868-1947)  \n 12. Williamina",
+  "https://wenamethestars.inkleby.com/world/moon/f/AA": " Moon - We Name The Stars Named after Robert Koch - German doctor; Nobel laureate (1843-1910). ... Named after Emil Theodor Kocher - Swiss surgeon, Nobel Prize winner 1909 (1841-1917).   \n  \n  \n\n#### Misyatsy Ay Maand Chandra Kgwedi Yueqao Metztli\n\n#### Mesyats Gealach iNyanga Selene Maan\n\n#### Månen Mesec Luna\n\n## [The Moon](/world/moon)\n\n---\n\n### Features associated with: **Crater**\n\nFeature Name\n\nNamed after [Ernst Karl Abbe](https://en.wikipedia.org/wiki/Ernst_Abbe) - German optician, physicist, astronomer (1840-1905).\n\nCrater\n\nNamed after [Charles Greeley Abbot](https://en.wikipedia.org/wiki/Charles_Greeley_Abbot) - American astrophysicist (1872-1973).\n\nCrater\n\nNamed after [Niels Henrik Abel](https://en.wikipedia.org/wiki/Niels_Henrik_Abel) - Norwegian mathematician (1802-1829).\n\nCrater\n\nNamed after Abraham ben Meir Ibn Ezra Abenezra - Spanish mathematician, astronomer (1092-1164/1167).\n\nCrater\n\nNamed after [Antonio Abetti](https://en.wikipedia.org/wiki/Antonio_Abetti) - Italian astronomer (1846-1928) and [Giorgio Abetti](https://en.wikipedia.org/wiki/Giorgio_Abetti) - Italian astronomer (1882-1982).\n\nCrater\n\n[Abul Wáfa](/feature/22)\n\nNamed after Abū al-Wafā al-Būzajāni Wáfa - Persian mathematician, astronomer (940-998).\n\nCrater\n\nNamed after Ismail Ibn Abū al-Fidā Abulfeda - Syrian geographer (1273-1331).\n\nCrater\n\nNamed after [Cristobal Acosta](https://en.wikipedia.org/wiki/Crist%C3%B3v%C3%A3o_da_Costa_(botanist)) - Portuguese doctor, natural historian (1515-1580).\n\nCrater\n\nNamed after [John Couch Adams](https://en.wikipedia.org/wiki/John_Couch_Adams) - British astronomer (1819-1892) and Charles Hitchcock Adams - American astronomer (1868-1951) and [Walter Sydney Adams](https://en.wikipedia.org/wiki/Walter_Sydney_Adams) - American astronomer (1876-1956).\n\nCrater\n\nNamed after Franz Maria Ulrich Theodor Hoch Aepinus - German-Russian astronomer (1724-1802).\n\nCrater\n\nNamed after Agatharchides of Cnidos - Greek geographer (c. 116 B.C.).\n\nCrater\n\nNamed after Agrippa - Greek astronomer (unkn-fl. A.D. 92).\n\nCrater\n\nNamed after [George Biddell Airy](https://en.wikipedia.org/wiki/George_Biddell_Airy) - British astronomer (1801-1892).\n\nCrater\n\nNamed after [Robert Grant Aitken](https://en.wikipedia.org/wiki/Robert_Grant_Aitken) - American astronomer (1864-1951).\n\nCrater\n\nGreek female name.\n\nCrater\n\nNamed after Abū Ubayd Abdallāh Ibn abd al-Azīz Ibn Muhammad Al-Bakri - Spanish-Arab geographer (1010-1094).\n\nCrater\n\nNamed after Abū ar-Rayhān Muhammad ibn Ahmad al-Birūnī Al-Biruni - Persian astronomer, mathematician, geographer (973-1048).\n\nCrater\n\nNamed after [Abū Ja'far Muhammad Ibn Mūsā Al-Khwarizmi](https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi) - Iraqi mathematician (unkn-after 847).\n\nCrater\n\nNamed after [Abū `Ali al-Hasan Ibn `Ali al-Marrakushi Al-Marrakushi](https://en.wikipedia.org/wiki/Ibn_al-Banna%27_al-Marrakushi) - Moroccan astronomer, mathematician (fl. c. A.D. 1281/1282).\n\nCrater\n\nIrish male name.\n\nCrater\n\nNamed after Muhammed Ben Geber Al-Battānī Albategnius - Arab astronomer, mathematician (c. 858-929).\n\nCrater\n\nMale name of German origin (Lunokhod-1 landing site feature).\n\nCrater\n\nNamed after [Harold Lee Alden](https://en.wikipedia.org/wiki/Harold_Alden) - American astronomer (1890-1964).\n\nCrater\n\nNamed after [Kurt Alder](https://en.wikipedia.org/wiki/Kurt_Alder) - German organic chemist; Nobel laureate (1902-1958).\n\nCrater\n\nNamed after [Edwin Eugene, Jr. (\"Buzz\") Aldrin](https://en.wikipedia.org/wiki/Buzz_Aldrin) - American astronaut (1930-Live).\n\nCrater\n\nNamed after Nikolaj Pavlovich Alekhin - Soviet rocket designer, engineer (1913-1964).\n\nCrater\n\nNamed after [Alexander the Great, of Macedon](https://en.wikipedia.org/wiki/Hellenization) - Greek geographer (356-323 B.C.).\n\nCrater\n\nNamed after Al-Fargani, Abu'l-'Abbās Ahmad Ibn Muhammad Ibn Kathīr Alfraganus - Persian astronomer (unkn-c. 840).\n\nCrater\n\nNamed after [Abū Ali Al-Hasan Ibn Al Haitham Alhazen](https://en.wikipedia.org/wiki/Alhazen) - Iraqi mathematician (987-1038).\n\nCrater\n\nNamed after [D'Ailly, Pierre Aliacensis](https://en.wikipedia.org/wiki/Pierre_d%27Ailly) - French geographer (1350-1420).\n\nCrater\n\nNamed after [Abdalla Al Mamun Almanon](https://en.wikipedia.org/wiki/Al-Ma%27mun) - Persian astronomer (786-833).\n\nCrater\n\nHawaiian female first name.\n\nCrater\n\nNamed after Al-Bitrūjī Al-Ishbīlī, Abū Ishāq Alpetragius - Spanish astronomer (unkn-c. 1100).\n\nCrater\n\nNamed after Alfonso X (El Sabio) Alphonsus - Spanish astronomer (1221-1284).\n\nCrater\n\nNamed after [Dinsmore Alter](https://en.wikipedia.org/wiki/Dinsmore_Alter) - American astronomer, meteorologist (1888-1968).\n\nCrater\n\nNamed after Fiorino (or Florentino) Ameghino - Argentine paleontologist and anthropologist (1854-1911).\n\nCrater\n\nNamed after [Giovanni Battista Amici](https://en.wikipedia.org/wiki/Giovanni_Battista_Amici) - Italian astronomer, optician (1786-1863).\n\nCrater\n\nNamed after Ammonius - Greek philosopher (unkn.-c. A.D. 517-526).\n\nCrater\n\nNamed after [Guillaume Amontons](https://en.wikipedia.org/wiki/Guillaume_Amontons) - French physicist (1663-1705).\n\nCrater\n\nNamed after [Roald Engelbregt Gravning Amundsen](https://en.wikipedia.org/wiki/Roald_Amundsen) - Norwegian explorer (1872-1928).\n\nCrater\n\nNamed after [Anaxagoras](https://en.wikipedia.org/wiki/Anaxagoras) - Greek astronomer (500-428 B.C.).\n\nCrater\n\nNamed after [Anaximander](https://en.wikipedia.org/wiki/Anaximander) - Greek astronomer (c. 611-547 B.C.).\n\nCrater\n\nNamed after Anaximenes - Greek astronomer (585-528 B.C.).\n\nCrater\n\nNamed after [William Alison Anders](https://en.wikipedia.org/wiki/William_Anders) - American astronaut (1933-Live).\n\nCrater\n\nNamed after [John August Anderson](https://en.wikipedia.org/wiki/John_August_Anderson) - American astronomer (1876-1959).\n\nCrater\n\nNamed after [Leif Erland Andersson](https://en.wikipedia.org/wiki/Leif_Erland_Andersson) - American astronomer (1943-1979).\n\nCrater\n\nNamed after Aleksandr Aleksandrovich Andronov - Soviet physicist (1901-1952).\n\nCrater\n\nNamed after [Karel Anděl](https://en.wikipedia.org/wiki/Karel_And%C4%9Bl) - Czechoslovakian astronomer (1884-1948).\n\nCrater\n\nAfrican male name.\n\nCrater\n\nNamed after [Anders Jonas Angström](https://en.wikipedia.org/wiki/Anders_Jonas_%C3%85ngstr%C3%B6m) - Swedish physicist (1814-1874).\n\nCrater\n\nHebrew female name.\n\nCrater\n\nGerman female name.\n\nCrater\n\nNamed after [St. Ansgar Ansgarius](https://en.wikipedia.org/wiki/Ansgar) - German theologian (801-864).\n\nCrater\n\nNamed after [Eugène Michael Antoniadi](https://en.wikipedia.org/wiki/E._M._Antoniadi) - Turkish-born French astronomer (1870-1944).\n\nCrater\n\nNamed after Dimitrii Nikolaevich Anuchin - Russian geographer (1843-1923).\n\nCrater\n\nNamed after [Jean-Baptiste Bourguignon Anville](https://en.wikipedia.org/wiki/Jean_Baptiste_Bourguignon_d%27Anville) - French cartographer (1697-1782).\n\nCrater\n\nNamed after [Bienewitz, Peter Apianus](https://en.wikipedia.org/wiki/Petrus_Apianus) - German mathematician, astronomer (1495-1552).\n\nCrater\n\nNamed to honor Apollo missions.\n\nCrater\n\nNamed after [Apollonius of Perga](https://en.wikipedia.org/wiki/Apollonius_of_Perga) - Greek mathematician (c. 262-190 B.C.).\n\nCrater\n\nNamed after [Sir Edward Victor Appleton](https://en.wikipedia.org/wiki/Edward_Victor_Appleton) - British physicist; Nobel laureate (1892-1965).\n\nCrater\n\nNamed after [Dominique Francois Jean Arago](https://en.wikipedia.org/wiki/Fran%C3%A7ois_Arago) - French astronomer (1786-1853).\n\nCrater\n\nNamed after [Aratus of Soli](https://en.wikipedia.org/wiki/Aratus) - Greek astronomer (c. 310-240/239 B.C.).\n\nCrater\n\nNamed after [Archimedes](https://en.wikipedia.org/wiki/Archimedes) - Greek physicist, mathematician (c. 287-212 B.C.).\n\nCrater\n\nNamed after [Archytas](https://en.wikipedia.org/wiki/Archytas) - Greek mathematician (428-347 B.C. ?).\n\nCrater\n\nNamed after [Friedrich Wilhelm August Argelander](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Argelander) - German astronomer (1799-1875).\n\nCrater\n\nNamed after Philip III of Macedonia Ariadaeus - chronologer (c. 358-317 B.C.).\n\nCrater\n\nNamed after Aristarchus - Greek astronomer (310-230 B.C. ?).\n\nCrater\n\nNamed after [Aristillus](https://en.wikipedia.org/wiki/Aristillus_(crater)) - Greek astronomer (fl. c. 280 B.C.).\n\nCrater\n\nNamed after [Aristoteles](https://en.wikipedia.org/wiki/Aristoteles_(crater)) - Greek astronomer, philosopher (383-322 B.C.).\n\nCrater\n\nFranciszek; Polish astronomer (1789-1848). (Spelling changed from Armínski.)\n\nCrater\n\nNamed after [Neil Alden Armstrong](https://en.wikipedia.org/wiki/Neil_Armstrong) - American astronaut (1930-2012).\n\nCrater\n\nNamed after [Christoph Arnold](https://en.wikipedia.org/wiki/Christoph_Arnold) - German astronomer (1650-1695).\n\nCrater\n\nNamed after [Svante August Arrhenius](https://en.wikipedia.org/wiki/Svante_Arrhenius) - Swedish chemist; Nobel laureate (1859-1927).\n\nCrater\n\nNamed after [Nikolaj N. Artamonov](https://en.wikipedia.org/wiki/Nikolay_Artamonov) - Soviet rocket scientist (1906-1965).\n\nCrater\n\nNamed after Vladimir Andreevich Artem'ev - Soviet rocket scientist (1885-1962).\n\nCrater\n\nGreek female first name.\n\nCrater\n\nNamed after [Lev Andreevich Artsimovich](https://en.wikipedia.org/wiki/Lev_Artsimovich) - Soviet physicist (1909-1973).\n\nCrater\n\nNamed after [Aryabhata I](https://en.wikipedia.org/wiki/Aryabhata) - Indian astronomer, mathematician (476-c.550).\n\nCrater\n\nNamed after [Al-Zarqālī Arzachel](https://en.wikipedia.org/wiki/Ab%C5%AB_Ish%C4%81q_Ibr%C4%81h%C4%ABm_al-Zarq%C4%81l%C4%AB) - Spanish-Arabic astronomer (died 1100).\n\nCrater\n\nNamed after [Goryu Asada](https://en.wikipedia.org/wiki/Asada_Goryu) - Japanese astronomer (1734-1799).\n\nCrater\n\nNamed after [Giuseppe Maria Asclepi](https://en.wikipedia.org/wiki/Giuseppe_Asclepi) - Italian astronomer (1706-1776).\n\nCrater\n\nNamed after [Joseph Ashbrook](https://en.wikipedia.org/wiki/Joseph_Ashbrook) - American astronomer (1918-1980).\n\nCrater\n\nNamed after [Francis William Aston](https://en.wikipedia.org/wiki/Francis_William_Aston) - British chemist, physicist; Nobel laureate (1877-1945).\n\nCrater\n\nMythological Greek Titan.\n\nCrater\n\nNamed after [George Atwood](https://en.wikipedia.org/wiki/George_Atwood) - British mathematician, physicist (1746-1807).\n\nCrater\n\nNamed after [Autolycus of Pitane](https://en.wikipedia.org/wiki/Autolycus_of_Pitane) - Greek astronomer (fl. c. 310 B.C.).\n\nCrater\n\nNamed after [Georg Friedrich Julius Arthur Auwers](https://en.wikipedia.org/wiki/Arthur_Auwers) - German astronomer (1838-1915).\n\nCrater\n\nNamed after [Adrien Auzout](https://en.wikipedia.org/wiki/Adrien_Auzout) - French astronomer, physicist (1622-1691).\n\nCrater\n\nNamed after [Oswald Theodore Avery](https://en.wikipedia.org/wiki/Oswald_Avery) - Canadian doctor (1877-1955).\n\nCrater\n\nNamed after Abu Ali Al-Hussein Ibn Abdallah Avicenna - Persian doctor (980-1037).\n\nCrater\n\nNamed after Amedeo (Conte Di Quarengna) Avogadro - Italian physicist (1776-1856).\n\nCrater\n\nNamed after Al-Sufi, Abderrahman Azophi - Persian astronomer (903-986).\n\nCrater\n\nNamed after [Wilhelm Heinrich Walter Baade](https://en.wikipedia.org/wiki/Walter_Baade) - American astronomer (1893-1960).\n\nCrater\n\nNamed after Georgii Nikolaevich Babakin - Soviet space scientist (1914-1971).\n\nCrater\n\nNamed after [Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage) - British mathematician (1792-1871).\n\nCrater\n\nNamed after [Harold Delos Babcock](https://en.wikipedia.org/wiki/Harold_D._Babcock) - American astronomer, physicist (1882-1968).\n\nCrater\n\nNamed after [Ernst Emil Alexander Back](https://en.wikipedia.org/wiki/Ernst_Emil_Alexander_Back) - German physicist (1881-1959).\n\nCrater\n\nNamed after [Jöns Oskar Backlund](https://en.wikipedia.org/wiki/Oskar_Backlund) - Russian astronomer (1846-1916).\n\nCrater\n\nNamed after [Bacon, Roger](https://en.wikipedia.org/wiki/Roger_Bacon) - British natural philosopher, optician (c. 1214-c. 1294).\n\nCrater\n\nNamed after [(Édouard) Benjamin Baillaud](https://en.wikipedia.org/wiki/Benjamin_Baillaud) - French astronomer (1848-1934).\n\nCrater\n\nNamed after [Jean Sylvain Bailly](https://en.wikipedia.org/wiki/Jean_Sylvain_Bailly) - French astronomer (1736-1793).\n\nCrater\n\nNamed after [Francis Baily](https://en.wikipedia.org/wiki/Francis_Baily) - British astronomer (1774-1844).\n\nCrater\n\nNamed after Aleksey Aleksandrovich Balandin - Soviet chemist (1898-1967).\n\nCrater\n\nNamed after [Vasco Nuñez de Balboa](https://en.wikipedia.org/wiki/Vasco_N%C3%BA%C3%B1ez_de_Balboa) - Spanish explorer (1475-1519).\n\nCrater\n\nNamed after [Fernand Baldet](https://en.wikipedia.org/wiki/Fernand_Baldet) - French astronomer (1885-1964).\n\nCrater\n\nNamed after William Ball - British astronomer (unkn-1690).\n\nCrater\n\nNamed after [Johann Jakob Balmer](https://en.wikipedia.org/wiki/Johann_Jakob_Balmer) - Swiss mathematician, physician (1825-1898).\n\nCrater\n\nNamed after [Tadeusz Banachiewicz](https://en.wikipedia.org/wiki/Tadeusz_Banachiewicz) - Polish astronomer, mathematician (1882-1954).\n\nCrater\n\nNamed after [Wilder Dwight Bancroft](https://en.wikipedia.org/wiki/Wilder_Dwight_Bancroft) - American chemist (1867-1953).\n\nCrater\n\nNamed after [Sir Frederick Grant Banting](https://en.wikipedia.org/wiki/Frederick_Banting) - Canadian doctor; Nobel laureate (1891-1941).\n\nCrater\n\nNamed after [Daniel Barbier](https://en.wikipedia.org/wiki/Daniel_Barbier) - French astronomer (1907-1965).\n\nCrater\n\nNamed after [Charles Glover Barkla](https://en.wikipedia.org/wiki/Charles_Glover_Barkla) - British physicist; Nobel laureate (1877-1944).\n\nCrater\n\nNamed after [Edward Emerson Barnard](https://en.wikipedia.org/wiki/Edward_Emerson_Barnard) - American astronomer (1857-1923).\n\nCrater\n\nNamed after [Francesco Barocius](https://en.wikipedia.org/wiki/Francesco_Barozzi) - Italian mathematician (1537-1604).\n\nCrater\n\nNamed after [Daniel Moreau Barringer](https://en.wikipedia.org/wiki/Daniel_Moreau_Barringer) - American engineer, geologist (1860-1929).\n\nCrater\n\nNamed after [Isaac Barrow](https://en.wikipedia.org/wiki/Isaac_Barrow) - British mathematician (1630-1677).\n\nCrater\n\nNamed after [Julius Bartels](https://en.wikipedia.org/wiki/Julius_Bartels) - German geophysicist (1899-1964).\n\nCrater\n\nAfrican male name.\n\nCrater\n\nNamed after [Johann Bayer](https://en.wikipedia.org/wiki/Johann_Bayer) - German astronomer (1572-1625).\n\nCrater\n\nNamed after [Carlyle Smith Beals](https://en.wikipedia.org/wiki/Carlyle_Smith_Beals) - Canadian astronomer (1899-1979).\n\nCrater\n\nNamed after Jean-Baptiste-Armand-Louis-Léonce Élie de Beaumont - French geologist (1798-1874).\n\nCrater\n\nNamed after [Antoine-Henri Becquerel](https://en.wikipedia.org/wiki/Henri_Becquerel) - French physicist; Nobel laureate (1852-1908).\n\nCrater\n\nNamed after [Wilhelm Beer](https://en.wikipedia.org/wiki/Wilhelm_Beer) - German astronomer (1797-1850).\n\nCrater\n\nNamed after [Martin Behaim](https://en.wikipedia.org/wiki/Martin_Behaim) - German navigator, cartographer (1459-1507).\n\nCrater\n\nNamed after [Martinus Willem Beijerinck](https://en.wikipedia.org/wiki/Martinus_Beijerinck) - Dutch botanist (1851-1931).\n\nCrater\n\nNamed after [Nikolai Nikolaevich Beketov](https://en.wikipedia.org/wiki/Nikolay_Beketov) - Russian chemist (1827-1911).\n\nCrater\n\nNamed after [Igor V. Bel'kovich](https://en.wikipedia.org/wiki/Bel%27kovich_(crater)) - Soviet astronomer (1904-1949).\n\nCrater\n\nNamed after [Alexander Graham Bell](https://en.wikipedia.org/wiki/Alexander_Graham_Bell) - Scottish-American inventor (1847-1922).\n\nCrater\n\n[Bellinsgauzen (Bellingshausen)](/feature/674)\n\nNamed after Faddei Faddeevich (Bellingshausen) - Russian explorer (1778-1852).\n\nCrater\n\nNamed after [Joseph Rene Bellot](https://en.wikipedia.org/wiki/Joseph_Ren%C3%A9_Bellot) - French explorer (1826-1853).\n\nCrater\n\nNamed after Aristarch Apollonovich Belopol'skiy - Russian astronomer (1854-1934).\n\nCrater\n\nNamed after [Pavel Ivanovich Belyaev](https://en.wikipedia.org/wiki/Pavel_Belyayev) - Soviet cosmonaut (1925-1970).\n\nCrater\n\nNamed after [Francis Gano Benedict](https://en.wikipedia.org/wiki/Francis_Gano_Benedict) - American chemist, physiologist (1870-1957).\n\nCrater\n\nNamed after [Torbern Olof Bergman](https://en.wikipedia.org/wiki/Torbern_Bergman) - Swedish chemist, mineralogist, astronomer (1735-1784).\n\nCrater\n\nNamed after [Carl Östen Emanuel Bergstrand](https://en.wikipedia.org/wiki/%C3%96sten_Bergstrand) - Swedish astronomer (1873-1948).\n\nCrater\n\nNamed after [Lloyd Viel Berkner](https://en.wikipedia.org/wiki/Lloyd_Berkner) - American geophysicist (1905-1967).\n\nCrater\n\nNamed after [Hendrik Petrus Berlage](https://en.wikipedia.org/wiki/Hendrik_Petrus_Berlage) - Dutch geophysicist, meteorologist (1896-1968).\n\nCrater\n\nJacques; Swiss mathematician (1654-1705); Jean; Swiss mathematician (1667-1748). (Spelling changed from Bernouilli.)\n\nCrater\n\nNamed after [Berosus the Chaldean](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon,_A%E2%80%93B) - Babylonian astronomer (unkn-c. 250 B.C.).\n\nCrater\n\nNamed after [Jöns Jacob Berzelius](https://en.wikipedia.org/wiki/J%C3%B6ns_Jacob_Berzelius) - Swedish chemist (1779-1848).\n\nCrater\n\nNamed after [John Bessarion](https://en.wikipedia.org/wiki/Basilios_Bessarion) - Greek scholar (1403-1472).\n\nCrater\n\nNamed after [Friedrich Wilhelm Bessel](https://en.wikipedia.org/wiki/Friedrich_Bessel) - German astronomer (1784-1846).\n\nCrater\n\nNamed after [Mario Bettinus](https://en.wikipedia.org/wiki/Mario_Bettinus) - Italian mathematician, astronomer (1582-1657).\n\nCrater\n\nNamed after [Antonin Bečvář](https://en.wikipedia.org/wiki/Anton%C3%ADn_Be%C4%8Dv%C3%A1%C5%99) - Czechoslovakian astronomer (1901-1965).\n\nCrater\n\nNamed after [Homi Jehangir Bhabha](https://en.wikipedia.org/wiki/Homi_J._Bhabha) - Indian physicist (1909-1966).\n\nCrater\n\n[Bi Sheng](/feature/14748)\n\nChinese inventor (c. 990-1051).\n\nCrater\n\nNamed after [Francesco Bianchini](https://en.wikipedia.org/wiki/Francesco_Bianchini) - Italian astronomer (1662-1729).\n\nCrater\n\nNamed after [Wilhelm von Biela](https://en.wikipedia.org/wiki/Wilhelm_von_Biela) - Austrian astronomer (1782-1856).\n\nCrater\n\nNamed after [Theodor Bilharz](https://en.wikipedia.org/wiki/Theodor_Bilharz) - German doctor, zoologist (1825-1862).\n\nCrater\n\nNamed after [Jacques de Billy](https://en.wikipedia.org/wiki/Jacques_de_Billy) - French mathematician (1602-1679).\n\nCrater\n\nNamed after Hiram Bingham - American explorer (1875-1956).\n\nCrater\n\nNamed after [Jean-Baptiste Biot](https://en.wikipedia.org/wiki/Jean-Baptiste_Biot) - French astronomer (1774-1862).\n\nCrater\n\nNamed after [Olaf Kristian Birkeland](https://en.wikipedia.org/wiki/Kristian_Birkeland) - Norwegian physicist (1867-1917).\n\nCrater\n\nNamed after [George David Birkhoff](https://en.wikipedia.org/wiki/George_David_Birkhoff) - American mathematician (1884-1944).\n\nCrater\n\nNamed after [John Birmingham](https://en.wikipedia.org/wiki/John_Birmingham) - Irish astronomer (1816-1884).\n\nCrater\n\nNamed after [William R. Birt](https://en.wikipedia.org/wiki/Birt_(crater)) - British selenographer (1804-1881).\n\nCrater\n\nNamed after [Vilhelm Friman Koren Bjerknes](https://en.wikipedia.org/wiki/Vilhelm_Bjerknes) - Norwegian physicist (1862-1951).\n\nCrater\n\nNamed after [Joseph Black](https://en.wikipedia.org/wiki/Joseph_Black) - French chemist (1728-1799).\n\nCrater\n\nNamed after [Patrick Maynard Stuart Blackett](https://en.wikipedia.org/wiki/Patrick_Blackett) - British physicist; Nobel laureate (1897-1974).\n\nCrater\n\nNamed after [Mary Adela Blagg](https://en.wikipedia.org/wiki/Mary_Adela_Blagg) - British astronomer (1858-1944).\n\nCrater\n\nNamed after [Biancani, Giuseppe Blancanus](https://en.wikipedia.org/wiki/Giuseppe_Biancani) - Italian mathematician, astronomer (1566-1624).\n\nCrater\n\nNamed after [Jean-Pierre-François Blanchard](https://en.wikipedia.org/wiki/Jean-Pierre_Blanchard) - French aeronaut (1753-1809).\n\nCrater\n\nNamed after [Bianchini, Giovanni Blanchinus](https://en.wikipedia.org/wiki/Giovanni_Bianchini) - Italian astronomer (unkn-fl. 1458).\n\nCrater\n\nNamed after [Sergei Nikolaevich Blazhko](https://en.wikipedia.org/wiki/Sergey_Blazhko) - Soviet astronomer (1870-1956).\n\nCrater\n\nNamed after [Nathaniel Bliss](https://en.wikipedia.org/wiki/Nathaniel_Bliss) - English Astronomer Royal (1700-1764).\n\nCrater\n\nNamed after [Étienne Bob",
+  "https://cratercompany.com/lunar-nomenclature-database": " The Full Moon Atlas - The Crater Registry The Full Moon Atlas™ is a sortable and searchable compendium of all known and named significant craters, mountains, rilles, scarps, valleys and other lunagraphic and geographical features on the Moon, with detailed information on the origin of the feature’s name. The Full Moon Atlas - The Crater Registry The Full Moon Atlas™ is a sortable and searchable compendium of all known and named significant craters, mountains, rilles, scarps, valleys and other lunagraphic and geographical features on the Moon, with detailed information on the origin of the feature’s name.",
+  "https://lunasociety.org/lunar-crater-catalog-r-moon-craters": " Lunar Crater Catalog [R] – Moon Craters – Luna Society International Lunar Crater Catalog [R] Common Name Lat Long Diam Origin Rabbi Levi 34.7S 23.6E 81 Levi ben Gerson (1288-1344), French-born Jewish philosopher, mathematician and astronomer; invented Jacob&#… Lunar Crater Catalog [R] – Moon Craters – Luna Society International Lunar Crater Catalog [R] Common Name Lat Long Diam Origin Rabbi Levi 34.7S 23.6E 81 Levi ben Gerson (1288-1344), French-born Jewish philosopher, mathematician and astronomer; invented Jacob&#…",
+  "https://web.archive.org/web/20070714225535/http:/lunar.arc.nasa.gov/printerready/science/geography_items/carters/craters_g.html": " Moon Nomenclature - Craters Craters Back A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | WXYZ · George Philip; American astronomer (1826-1865) Moon Nomenclature - Craters Craters Back A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | WXYZ · George Philip; American astronomer (1826-1865)",
+  "https://mathshistory.st-andrews.ac.uk/Honours/LunarFeatures0/": " Lunar features named after mathematicians About 350 mathematicians in our archive have lunar features (mostly craters) named after them. You can see an account of how these features were named and links to files of whom they were called after. You can see a Wikipedia article on the feature by clicking on the (W) next to a name. Lunar features named after mathematicians Lunar features named after mathematicians",
+  "https://planetarynames.wr.usgs.gov/SearchResults?featureType=Crater%2C+craters&target=MOON": " Planetary Names: Search Results Go back and Refine your Search · All search result latitudes are planetocentric",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_L%E2%80%93N": " List of craters on the Moon: L–N - Wikipedia The list of approved names in the Gazetteer of Planetary Nomenclature maintained by the International Astronomical Union includes the diameter of the crater and the person the crater is named for. Where a crater formation has associated satellite craters, these are detailed on the main crater ... List of craters on the Moon: L–N - Wikipedia formation has associated satellite craters, these are detailed on the main crater description pages. List of craters on the Moon\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ Moissan | 4°46′N 137°27′E ﻿ / ﻿ 4.77°N 137.45°E | 22.45 | 1976 | Henri Moissan (1902–1955) | WGPSN\nMoltke | 0°35′S 24°10′E ﻿ / ﻿ 0.59°S 24.16°E | 6.15 | 1935 | Helmuth Karl Bernhard von Moltke (1800–1891) | WGPSN\nMonge  List of craters on the Moon: L–N - Wikipedia formation has associated satellite craters, these are detailed on the main crater description pages. List of craters on the Moon\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ Moissan | 4°46′N 137°27′E ﻿ / ﻿ 4.77°N 137.45°E | 22.45 | 1976 | Henri Moissan (1902–1955) | WGPSN\nMoltke | 0°35′S 24°10′E ﻿ / ﻿ 0.59°S 24.16°E | 6.15 | 1935 | Helmuth Karl Bernhard von Moltke (1800–1891) | WGPSN\nMonge ",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&Origin=Nobel%20laureate&output=CSV&pageSize=500": " Planetary Names * Nomenclature\n* Documentation\n* Images and GIS Data\n* Advanced Search\n* Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Moon\nFeature Type: Crater, craters\n\n...\n\n* 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; Ger",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater,%20craters&Target=16_Moon&search=Nobel": " Planetary Names * Nomenclature\n* Documentation\n* Images and GIS Data\n* Advanced Search\n* Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Moon\nFeature Type: Crater, craters\n\n...\n\n* 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; Ger",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater,+craters&Origin=Nobel": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Moon\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\n...\n\n|  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | A Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Origin=Nobel+Prize+winner+in+Chemistry&pageSize=500": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Moon\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\n...\n\n|  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | A Planetary Names * 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; German organic chemist; Nobel laureate (1902-1958). |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Target=16_Moon&search=Nobel": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Moon\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\n...\n\n|  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | A",
+  "https://en.wikipedia.org/wiki/List_of_lunar_craters_named_for_space_explorers": " List of lunar craters named for space explorers - Wikipedia Fourteen craters on the Moon have been named after astronauts and cosmonauts who have died as part of a space mission. Most craters are on the far side of the Moon. Four craters were named after the Apollo 1 astronauts and a Soviet cosmonaut of the Soyuz 1 mission, all four of whom died in 1967: [ 1 ]\nGus Grissom\nEd White\nRoger B. Chaffee\nVladimir Komarov Subsequently, three craters were named aft",
+  "http://www.stampio.org/search/label/Sweden": " Philately and Stamp Collecting: Sweden  In 1889, Becquerel became a member of the Académie des Sciences. In 1900, Becquerel won the Rumford Medal for his discovery of the radioactivity of uranium and he was made an Officer of the Legion of Honour. The Berlin-Brandenburg Academy of Sciences and Humanities awarded him the Helmholtz Medal in 1901. In 1903, Henri shared a Nobel Prize in Physics with Pierre Curie and Marie Curie for the dis",
+  "https://en.wikipedia.org/wiki/Jewish_culture": " Jewish culture - Wikipedia   During Medieval era astronomy was a primary field among Jewish scholars and was widely studied and practiced. 44  Prominent astronomers included Abraham Zacuto who published in 1478 his Hebrew book  Ha-hibbur ha-gadol  45  where he wrote about the Solar System , charting the positions of the Sun, Moon and five planets. 45  His work served Portugal's exploration journeys and was used by Vasco da ",
+  "https://tug.org/utah/bibnet/authors/d/dirac-p-a-m.html": " BibTeX bibliography dirac-p-a-m.bib   %%% -*-BibTeX-*- %%% ==================================================================== %%% BibTeX-file{ %%% author = \\\"Nelson H. F. Beebe\\\", %%% version = \\\"1.198\\\", %%% date = \\\"22 November 2022\\\", %%% time = \\\"07:32:21 MDT\\\", %%% filename = \\\"dirac-p-a-m.bib\\\", %%% address = \\\"University of Utah %%% Department of Mathematics, 110 LCB %%% 155 S 1400 E RM 233 %%% Salt Lake City, UT 84112-0090",
+  "http://ftp.math.utah.edu/pub/bibnet/authors/d/dirac-p-a-m.html": " BibTeX bibliography dirac-p-a-m.bib   %%% -*-BibTeX-*- %%% ==================================================================== %%% BibTeX-file{ %%% author = \\\"Nelson H. F. Beebe\\\", %%% version = \\\"1.212\\\", %%% date = \\\"28 March 2025\\\", %%% time = \\\"07:22:46 MDT\\\", %%% filename = \\\"dirac-p-a-m.bib\\\", %%% address = \\\"University of Utah %%% Department of Mathematics, 110 LCB %%% 155 S 1400 E RM 233 %%% Salt Lake City, UT 84112-0090 %%",
+  "https://mathisfunforum.com/viewtopic.php?id=22637&p=47": " crème de la crème (Page 47) / Dark Discussions at Cafe Infinity / Math Is Fun Forum   Selected as part of NASAs third group of 14 astronauts in 1963, Collins flew in space twice. His first spaceflight was on Gemini 10 in 1966, in which he and Command Pilot John Young performed orbital rendezvous with two spacecraft and undertook two extravehicular activities (EVAs, also known as spacewalks). On the 1969 Apollo 11 mission, he became one of 24 people to fly to the Moon, which he or",
+  "https://netlib.org/bibnet/authors/f/fermi-enrico.html": " BibTeX bibliography fermi-enrico.bib \\ Critical pile (CP-1) \\\\\\\\ The day the atomic age was born \\\\\\\\ The Manhattan project: a three-legged stool \\\\\\\\ Signor Fermi becomes Mister Farmer \\\\\\\\ G{\\\\\\\"o}tterd{\\\\\\\"a}mmerung \\\\\\\\ The hill \\\\\\\\ ``No acceptable alternative'' \\\\\\\\ Aftershock \\\\\\\\ Goodbye, Mr. Farmer \\\\\\\\ Physicist with a capital `F' \\\\\\\\ The Fermi method \\\\\\\\ The super \\\\\\\\ Circling back \\\\\\\\ Summer of '54 \\\\\\\\ Farewell to th",
+  "https://vdoc.pub/documents/encyclopedia-of-world-scientists-facts-on-file-science-library-35afk19e3qng": " Encyclopedia Of World Scientists (facts On File Science Library) [PDF] [35afk19e3qng] rvations. In 1656 he published Specimen observationum Bononiensium, in which he recorded information gathered with the new meridian. In 1659 he proposed a planetary system that was consistent with the hypotheses of the Danish astronomer tycho brahe. In 1661 he developed a way to predict successive phases of solar eclipses by using a method based on the work of johannes kepler. And in 1668 he publi",
+  "https://vdoc.pub/documents/encyclopedia-of-world-scientists-2v-17ui8hnb8p80": " Encyclopedia Of World Scientists 2v [PDF] [17ui8hnb8p80] rvations. In 1656 he published Specimen observationum Bononiensium, in which he recorded information gathered with the new meridian. In 1659 he proposed a planetary system that was consistent with the hypotheses of the Danish astronomer tycho brahe. In 1661 he developed a way to predict successive phases of solar eclipses by using a method based on the work of johannes kepler. And in 1668 he publi",
+  "https://kuongeo.com/moon/names/from/england": "  # Places on the Moon named after England: 11 features | KUON GEO\n\nKUON GEO\n\n11 named features. The International Astronomical Union records why each name was chosen, and those reasons are printed below exactly as they were approved.\n\n## FEATURES · 11\n\n| NAME | TYPE | SIZE | WHY THAT NAME |\n| ---- | ---- | ---- | ------------- |\n| Appleton | crater | 64.6 km | Sir Edward Victor; British physicist; ",
+  "https://www.astronomy.com/science/the-women-immortalized-on-the-moon/": "  The mountain named after Marilyn Lovell made her one of a handful of women remembered on the Moon\\.\n\nThe Apollo program transformed our understanding of the Moon\\. It helped unlock our satellite’s complex history, and proved that the Moon formed when a Mars-sized object slammed into Earth in the solar system’s earliest days\\.\n\nApollo’s legacy extends to the naming of several lunar features\\. Crate",
+  "https://earth-and-space-news.blogspot.com/2012/10/davisson-crater-honors-american.html": "  # Davisson Crater Honors American Physicist Clinton Joseph Davisson\n\nSummary: The lunar far side’s Davisson Crater honors American physicist Clinton Joseph Davisson, who was awarded the Nobel Prize for Physics in 1937.\n\n|   |\n| - |\n|  |\n| Details of Lunar Astronautical Charts (LAC) 120 shows Davisson Crater overlapping Leibnitz Crater in the lunar far side’s southeastern quadrant; courtesy NASA (N  # Davisson Crater Honors American Physicist Clinton Joseph Davisson\n\nSummary: The lunar far side’s Davisson Crater honors American physicist Clinton Joseph Davisson, who was awarded the Nobel Prize for Physics in 1937.\n\n|   |\n| - |\n|  |\n| Details of Lunar Astronautical Charts (LAC) 120 shows Davisson Crater overlapping Leibnitz Crater in the lunar far side’s southeastern quadrant; courtesy NASA (N",
+  "https://earth-and-space-news.blogspot.com/2012/03/bragg-crater-honors-british-physicist.html": "  # Bragg Crater Honors British Physicist Sir William Henry Bragg\n\nSummary: The lunar far side’s Bragg Crater honors British physicist Sir William Henry Bragg, uniquely awarded the 1915 Nobel Physics Prize with his younger son.\n\n|   |\n| - |\n|  |\n| Detail of Lunar Astronautical Charts (LAC) 36 shows the lunar far side’s Bragg Crater system of parental Bragg (center), Bragg H (center right), Bragg M (  # Bragg Crater Honors British Physicist Sir William Henry Bragg\n\nSummary: The lunar far side’s Bragg Crater honors British physicist Sir William Henry Bragg, uniquely awarded the 1915 Nobel Physics Prize with his younger son.\n\n|   |\n| - |\n|  |\n| Detail of Lunar Astronautical Charts (LAC) 36 shows the lunar far side’s Bragg Crater system of parental Bragg (center), Bragg H (center right), Bragg M (",
+  "https://kuongeo.com/moon/names/from/austria": "  # Places on the Moon named after Austria: 35 features | KUON GEO\n\n| NAME | TYPE | SIZE | WHY THAT NAME |\n| ---- | ---- | ---- | ------------- |\n| Schrödinger | crater | 316.4 km | Schrödinger, Erwin; Austrian physicist; Nobel laureate (1887-1961). |\n| Vallis Schrödinger | valley | 301.7 km | Named from nearby crater. |\n| Rimae Triesnecker | rille | 200 km | Named from nearby crater. |\n| Mach | cra",
+  "https://www.kroneckerwallis.com/women-scientists-on-the-moon-lunar-craters-honoring-female-pioneers/": "  # Women Scientists on the Moon: Lunar Craters Honoring Female Pioneers - Kronecker Wallis\n\n**Worldwide shipping from Barcelona\\.** Thanks for supporting our small business\\! ❤️  \nDue to exceptional order volume, dispatch may take a little longer these days\\. We appreciate your patience\\!\n\nLook up at the full moon on a clear night, and you’re gazing at a celestial monument to scientific achievement Women Scientists on the Moon: Lunar Craters Honoring Female Pioneers ... 31 lunar craters honor women scientists including Hypatia, Caroline Herschel, and Marie Curie. Discover their stories and contributions.  # Women Scientists on the Moon: Lunar Craters Honoring Female Pioneers - Kronecker Wallis\n\n**Worldwide shipping from Barcelona\\.** Thanks for supporting our small business\\! ❤️  \nDue to exceptional order volume, dispatch may take a little longer these days\\. We appreciate your patience\\!\n\nLook up at the full moon on a clear night, and you’re gazing at a celestial monument to scientific achievement Women Scientists on the Moon: Lunar Craters Honoring Female Pioneers ... 31 lunar craters honor women scientists including Hypatia, Caroline Herschel, and Marie Curie. Discover their stories and contributions. ![Kronecker Wallis](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20172%2035'%3E%3C/svg%3E)\n![Kronecker Wallis](https://www.kroneckerwallis.com/wp-content/uploads/2016/12/kronecker-wallis.png)\n![Kronecker Wallis](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20172%2035'%3E%3C/svg%3E)\n![Kronecker Wallis](https://www.kroneckerwallis.com/wp-content/uploads/2016/12/kronecker-wallis.png)\n\n[Kronecker Wallis](https://www.kroneckerwallis.com/)\n\nIndependent science publisher\n\n![Kronecker Wallis](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20172%2035'%3E%3C/svg%3E)\n![Kronecker Wallis](https://www.kroneckerwallis.com/wp-content/uploads/2016/12/kronecker-wallis.png)\n![Kronecker Wallis](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20172%2035'%3E%3C/svg%3E)\n![Kronecker Wallis](https://www.kroneckerwallis.com/wp-content/uploads/2016/12/kronecker-wallis.png)\n\n# Women Scientists on the Moon: Lunar Craters Honoring Female Pioneers\n\nLook up at the full moon on a clear night, and you’re gazing at a celestial monument to scientific achievement. The lunar surface bears the names of humanity’s greatest thinkers, immortalized in the craters formed by ancient impacts. Yet among the 1,586 named features on the Moon, only 31 honor women. These **women scientists on the moon** represent less than 2% of all named lunar features, a stark reminder of how recently women gained recognition in science.\n\nEach **lunar crater named after women** tells a story of breakthrough discoveries, persistent determination, and barriers overcome. From Hypatia of ancient Alexandria to modern astronauts, these pioneers transformed mathematics, astronomy, physics, and space exploration. Their names now shine permanently on Earth’s nearest celestial neighbor, visible reminders that scientific genius knows no gender.\n\nThis Women’s History Month, we explore the remarkable women whose contributions earned them this astronomical honor. Their craters dot both the familiar near side and mysterious far side of the Moon, each one a testament to discoveries that expanded human knowledge and inspired future generations of scientists.\n\n## A Celestial Hall of Fame With Few Women\n\n### How Lunar Features Get Their Names\n\nThe International Astronomical Union (IAU) has governed the naming of celestial features since 1919. For lunar craters, the tradition began centuries earlier when astronomers like Giovanni Riccioli started assigning names to visible features. The convention established that **lunar craters honor deceased scientists, scholars, explorers, and astronauts** who made significant contributions to their fields.\n\nThe process isn’t automatic. Proposals must demonstrate the individual’s lasting impact on science. The IAU’s Working Group for Planetary System Nomenclature reviews submissions, considering factors like the significance of contributions, international representation, and whether similar names might cause confusion. Once approved, these names become permanent, surviving longer than any earthly monument.\n\n### The Stark Gender Gap\n\nOf approximately 1,586 named lunar craters, only 31 commemorate women. This 2% representation reflects historical realities: for most of recorded history, women were systematically excluded from universities, scientific societies, and professional research positions. Many brilliant **female astronomers** and scientists worked without recognition, their discoveries attributed to male colleagues or simply forgotten.\n\nThe distribution across the Moon tells another story. The near side, visible from Earth and mapped earliest, contains 14 craters honoring women. The far side, invisible from Earth until photographed by spacecraft in 1959, features 17. This slightly higher representation on the far side reflects more recent naming efforts as attitudes gradually shifted toward recognizing women’s contributions.\n\n### Recent Progress and Ongoing Efforts\n\nMost women-honoring craters received their names relatively recently. While male scientists like Copernicus, Kepler, and Newton have had lunar craters since the 1600s-1700s, many women’s names weren’t added until the 20th century. As awareness grew of women’s historical contributions and contemporary achievements, the IAU began approving more proposals recognizing female scientists.\n\nToday, organizations and individuals continue proposing names of deserving women scientists for unnamed lunar features. Each approval represents not just historical recognition but inspiration for young women considering scientific careers, showing that their contributions will be remembered and celebrated.\n\n## Meet the Women on the Moon\n\n### Ancient Scholars and Early Pioneers\n\n#### Hypatia (c. 350-415 CE)\n\nThe **Hypatia crater**, located on the Moon’s near side, honors one of history’s first documented female mathematicians and astronomers. Teaching in Alexandria, Egypt, Hypatia wrote commentaries on classical mathematical texts and built astronomical instruments. Her murder by a mob in 415 CE symbolized the destruction of Alexandria’s intellectual golden age. The crater bearing her name, approximately 41 kilometers in diameter, ensures this pioneering scholar’s legacy endures. Our [hand-drawn Hypatia poster](https://www.kroneckerwallis.com/product/hypatia-poster/ \"Hypatia Poster\") celebrates her famous quote: “Reserve your right to think, for even to think wrongly is better than not to think at all.”\n\n#### Caroline Herschel (1750-1848)\n\nCrater Herschel honors the astronomer who discovered eight comets and compiled comprehensive catalogs of celestial objects. Working alongside her brother William, Caroline became a pioneering astronomer in her own right, earning recognition from Britain’s Royal Astronomical Society. The 13-kilometer crater on the far side of the Moon commemorates her meticulous observations that advanced 18th-century astronomy.\n\n### Nobel Laureates and Physics Pioneers\n\n#### Marie Curie (1867-1934)\n\nThe Sklodowska crater (Marie Curie’s maiden name) on the far side honors the only person to win Nobel Prizes in two different sciences. Her groundbreaking research on radioactivity, documented in her [doctoral thesis “Recherches sur les substances radioactives”](https://www.kroneckerwallis.com/product/marie-curie-thesis/ \"Marie Curie's Thesis\"), established foundations for nuclear physics. The 127-kilometer crater befits her towering contributions to science.\n\n#### Lise Meitner (1878-1968)\n\nCrater Meitner commemorates the physicist who discovered nuclear fission. Despite her critical role in this breakthrough, her male colleague Otto Hahn received the Nobel Prize alone, one of science’s most notorious oversights. The 87-kilometer crater on the far side ensures history remembers her essential contributions to atomic physics.\n\n### Mathematicians Who Changed the Field\n\n#### Emmy Noether (1882-1935)\n\nThe Noether crater honors the mathematician Einstein called “the most significant creative mathematical genius” since women’s higher education began. Her theorem connecting symmetries and conservation laws became fundamental to modern physics. The 67-kilometer crater on the far side represents her revolutionary impact on abstract algebra and theoretical physics.\n\n#### Sofia Kovalevskaya (1850-1891)\n\nCrater Kovalevskaya recognizes the first woman to obtain a doctorate in mathematics and the first female professor in Northern Europe. Her work on differential equations and mechanics advanced mathematical analysis. The 115-kilometer far side crater commemorates her persistence in pursuing mathematics despite pervasive discrimination.\n\n### Astronomers and Space Pioneers\n\n#### Valentina Tereshkova (1937-present)\n\nAlthough still living, Tereshkova has a crater proposed in her honor for being the first woman in space (1963). Her Vostok 6 mission made her a global icon, proving women could withstand spaceflight’s demands. While IAU typically honors only deceased individuals, her historic achievement may warrant exception.\n\n#### Williamina Fleming (1857-1911)\n\nCrater Fleming honors the astronomer who classified thousands of stars and discovered numerous nebulae while working at Harvard Observatory. Starting as a maid and becoming a renowned astronomer, her story exemplifies how talent overcomes barriers. The 106-kilometer crater acknowledges her stellar classification system still used today.\n\n## Why Lunar Recognition Matters Today\n\nThe small number of **women on the moon** isn’t just historical curiosity; it reflects ongoing challenges in achieving gender equity in STEM fields. While formal barriers have largely fallen, women remain underrepresented in physics, mathematics, and engineering. Visible recognition matters because it:\n\nOrganizations now actively work to identify deserving women scientists for unnamed lunar features. Recent efforts focus on lesser-known pioneers whose contributions were overlooked or attributed to male colleagues. Each new crater name approved represents progress toward equitable recognition.\n\nThe stark numerical disparity also sparks important conversations. Why are there so few women? Not because women lacked ability, but because they faced institutional barriers that made scientific careers nearly impossible. Understanding this context transforms the 31 craters from mere names into monuments to persistence against systematic discrimination.\n\nFor educators, the **women scientists moon craters** provide tangible teaching tools. Students can locate these craters through telescopes or lunar maps, connecting abstract history lessons to visible celestial features. Each crater becomes a starting point for exploring that scientist’s achievements and the obstacles she overcame.\n\n## Celebrating Women Scientists Through Lunar Cartography\n\nOur [Women on the Moon poster set](https://www.kroneckerwallis.com/product/women-on-the-moon-posters/ \"Women on the Moon Posters\") beautifully maps all 31 lunar features honoring women scientists. These two A2-sized prints show both the near side (14 women pioneers including Hypatia and Caroline Herschel) and far side (17 luminaries such as Marie Curie, Emmy Noether, and astronauts from Space Shuttle missions). Each crater is labeled with the scientist’s name and lifespan, making these posters both decorative art and educational resources.\n\nPerfect for classrooms, offices, or home studies, these maps inspire conversations about women’s contributions to science while serving as functional lunar reference guides. The posters document not just the craters but the remarkable women whose discoveries in mathematics, astronomy, physics, and space exploration earned them this celestial honor.\n\nComplement these maps with our [Hypatia poster](https://www.kroneckerwallis.com/product/hypatia-poster/ \"Hypatia Poster\") or Marie Curie’s [original doctoral thesis](https://www.kroneckerwallis.com/product/marie-curie-thesis/ \"Marie Curie's Thesis\") to explore specific pioneers’ contributions in greater depth, creating a comprehensive celebration of women in science.\n\n## Looking Up, Moving Forward\n\nEvery time you look at the Moon, you’re seeing a permanent record of scientific achievement. Among those countless craters, 31 bear names of women who refused to accept that intellectual pursuits belonged only to men. From ancient Hypatia to modern astronauts, these pioneers proved that scientific genius transcends gender barriers.\n\nThe small percentage reminds us how recently women gained access to scientific education and professional recognition. But each crater also represents hope: as we add more women’s names to lunar features, we document growing acknowledgment that science advances fastest when all talented minds contribute freely.\n\nThese women reached for the stars. Now their names shine among them forever.\n\n## Post navigation\n\n## You might also like\n\n### [Why Newton Rewrote the Principia Three Times](https://www.kroneckerwallis.com/why-newton-rewrote-the-principia-three-times/)\n\n### [The Lost Portrait of Robert Hooke: Did Newton Destroy It?](https://www.kroneckerwallis.com/lost-portrait-of-robert-hooke/)\n\n### [The Carrington Event of 1859: The Solar Storm That Set Telegraph Offices on Fire](https://www.kroneckerwallis.com/the-carrington-event-of-1859/)\n\n![Payment methods](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20127%2020'%3E%3C/svg%3E)\n![Payment methods](https://www.kroneckerwallis.com/wp-content/uploads/2022/07/payment-methods-kw.png)\n\nUsername\n\nPassword\n\nRemember me\n\nSign in\n\n[Lost your password?](https://www.kroneckerwallis.com/my-account/lost-password/)\n\n![No products in the cart.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20394%20394'%3E%3C/svg%3E)![No products in the cart.](https://www.kroneckerwallis.com/wp-content/themes/konte/images/empty-bag.svg)\nNo products in the cart.\n\n![No products in the cart.](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20394%20394'%3E%3C/svg%3E)\n![No products in the cart.](https://www.kroneckerwallis.com/wp-content/themes/konte/images/empty-bag.svg)\n![Kronecker Wallis](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20172%2035'%3E%3C/svg%3E)\n![Kronecker Wallis](https://www.kroneckerwallis.com/wp-content/uploads/2016/12/kronecker-wallis.png)\n![Kronecker Wallis](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20172%2035'%3E%3C/svg%3E)\n![Kronecker Wallis](https://www.kroneckerwallis.com/wp-content/uploads/2016/12/kronecker-wallis.png)\n![English](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E)\n![English](https://www.kroneckerwallis.com/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.svg)",
+  "https://www.thespacecollective.com/us/apollo-17-flown-map-plates": "  # Apollo 17 Lunar Orbit Flown Contingency Map Plates\n\nSOLD\n\nLunar orbit flown lunar contingency map plates carried to the moon aboard the Command Module \"America\" during the Apollo 17 mission. Originally from the collection of Apollo 17 Commander Gene Cernan. Each map plate measures approximately 12.5\" x 8\".\n\nOut of stock\n\nArchive Id AP17-LOF-CMP\n\n## DESCRIPTION\n\nApollo 17 contingency map plates f",
+  "https://earth-and-space-news.blogspot.com/2012/04/richardson-crater-honors-british.html": "  # Richardson Crater Honors British Physicist Sir Owen Willans Richardson\n\nSummary: The lunar far side’s Richardson Crater honors British physicist Sir Owen Willans Richardson, 1928 Nobel Prize awardee for thermionic emission research.\n\n|   |\n| - |\n|  |\n| Details of Lunar Astronautical Charts (LAC) 29 (above) and 46 (below) show the Richardson Crater system in the lunar far side’s northwestern quad  # Richardson Crater Honors British Physicist Sir Owen Willans Richardson\n\nSummary: The lunar far side’s Richardson Crater honors British physicist Sir Owen Willans Richardson, 1928 Nobel Prize awardee for thermionic emission research.\n\n|   |\n| - |\n|  |\n| Details of Lunar Astronautical Charts (LAC) 29 (above) and 46 (below) show the Richardson Crater system in the lunar far side’s northwestern quad",
+  "https://grokipedia.com/page/nobel_crater": " Nobel (crater) Nobel is an impact crater on the far side of the Moon, positioned along the northern margin of the extensive ejecta blanket associated with the Mare Orientale impact basin at coordinates 15°00′N 101°18′W and with a diameter of 48 km. Named in honor of Alfred Bernhard Nobel (1833–1896), ... Nobel (crater) Nobel is an impact crater on the far side of the Moon, positioned along the northern margin of the extensive ejecta blanket associated with the Mare Orientale impact basin at coordinates 15°00′N 101°18′W and with a diameter of 48 km. Named in honor of Alfred Bernhard Nobel (1833–1896), the Swedish chemist, engineer, and philanthropist renowned for inventing dynamite and establishing the Nobel Priz Nobel (crater) Nobel is an impact crater on the far side of the Moon, positioned along the northern margin of the extensive ejecta blanket associated with the Mare Orientale impact basin at coordinates 15°00′N 101°18′W and with a diameter of 48 km. Named in honor of Alfred Bernhard Nobel (1833–1896), ...",
+  "https://www.lpi.usra.edu/features/haskinCrater/": " IAU Formally Adopts Name for Haskin Crater Haskin continued his lunar research until his death. Haskin’s work on the Moon included many important discoveries, with the recognition of the Procellarum KREEP terrain as one of his final contributions. The IAU officially gave Haskin’s name to a farside crater on January 22, 2009, along with 18 other scientists, most Nobel Prize winners...",
+  "https://www.fourmilab.ch/earthview/lunarform/cratall.html": " Lunar Craters Adapted from the International Astronomical Union Gazetteer of Planetary Nomenclature · The following table lists all named lunar craters. Click on the crater name to view the Moon centred on that crater. Longitude in red indicates a far-side object Lunar Craters The following table lists all named lunar craters. Click on the crater name to view the Moon centred on that crater.",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon": " List of craters on the Moon - Wikipedia This is a list of named lunar craters, which are a small proportion of the overall crater population. Most of these features are impact craters; only some pertain to volcanism on the Moon. The crater nomenclature is governed by the International Astronomical Union, and this listing only includes ...",
+  "https://blog.hmns.org/2019/05/who-picked-all-those-crater-names/": " Mapping The Moon: Who Picked All Those Crater Names? | BEYONDbones Our replica Moon has been on display for about a month now. As I helped create the information panels labeling craters and maria on the Moon, I found myself wondering, \"Why does this particular crater have that name?\" \"Who picked the names anyway?\" As it turns out, the names of features on ...",
+  "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r": " Full Moon Atlas ⚪ Lunar Crater Catalog [R] – Luna Society International | Common Name | Lat | Long | Diam | Origin | | --- | --- | --- | --- | --- | | Rabbi Levi | 34.7S | 23.6E | 81 | Levi ben Gerson (1288-1344), French-born Jewish philosopher, mathematician and astronomer; invented Jacob’s Staff, an instrument to measure the angular distance between celestial objects. | | Racah | 13.8S | 179.8W | 63 | Giulio ~ (1909-1965), Italian-Israeli physicist. | | Racine | 8.3 Full Moon Atlas ⚪ Lunar Crater Catalog [R] – Luna Society International Chandrasekhra Venkata ~ (1888-1970), Indian physicist; in 1930, he became the first Asian to receive a Nobel Prize in science (physics). ... Sir William ~ (1852-1916), Scottish chemist; awarded Nobel Prize in chemistry (1904). Full Moon Atlas ⚪ Lunar Crater Catalog [R] Craters on Earth’s Moon beginning with the letter R. Return to The Full Moon Atlas and Crater Catalog Common Name Lat Long Diam Origin Rabbi Levi 34.7S 23.6E 81 Levi ben Gerson (1288-1344), F… ![Luna Society International](https://lunasociety.org/wp-content/uploads/2016/08/Lunar-Rover-Panorama-G.jpg)\n\n## Luna Society International\n\n### Official Website Of The Moon\n\n# Full Moon Atlas ⚪ Lunar Crater Catalog [R]\n\nCraters on Earth’s Moon beginning with the letter R.\n\n[Return to The Full Moon Atlas and Crater Catalog](https://lunasociety.org/full-moon-atlas)\n\n| Common Name | Lat | Long | Diam | Origin |\n| --- | --- | --- | --- | --- |\n\nCommon Name\n\nLat\n\nLong\n\nDiam\n\nOrigin\n\nRabbi Levi\n\n34.7S\n\n23.6E\n\n81\n\nLevi ben Gerson (1288-1344), French-born Jewish philosopher, mathematician and astronomer; invented Jacob’s Staff, an instrument to measure the angular distance between celestial objects.\n\nRacah\n\n13.8S\n\n179.8W\n\n63\n\nGiulio ~ (1909-1965), Italian-Israeli physicist.\n\nRacine\n\n8.3S\n\n99.0E\n\n30\n\nJean-Baptiste ~ (1639-1699), French classical playwright.\n\nRaimond\n\n14.6N\n\n159.3W\n\n70\n\nJean Jacques ~, Jr. (1903-1961), Dutch astronomer; first director of the Zeiss Planetarium in The Hague; published annual issues of the popular series ‘Sterrengids’ (1938-1961).\n\nRajput\n\n29.1\n\n150.6\n\n12\n\nSushant Singh ~ (1986-2020), Indian astrophysicist, philanthropist, entrepreneur, actor.\n\nRaman\n\n27.0N\n\n55.1W\n\n10\n\nChandrasekhra Venkata ~ (1888-1970), Indian physicist; in 1930, he became the first Asian to receive a Nobel Prize in science (physics).\n\nRamsay\n\n40.2S\n\n144.5E\n\n81\n\nSir William ~ (1852-1916), Scottish chemist; awarded Nobel Prize in chemistry (1904).\n\nRamsden\n\n32.9S\n\n31.8W\n\n24\n\nJesse ~ (1735-1800), British inventor; perfected early sextants and barometers; devised the first satisfactory screw-cutting lathes at dawn of the Industrial Revolution.\n\nRankine\n\n3.9S\n\n71.5E\n\n8\n\nWilliam John Macquorn ~ (1820-1872), Scottish inventor, civil engineer, poet and molecular physicist.\n\nRaspletin\n\n22.5S\n\n151.8E\n\n48\n\nAleksandr Andreyevich ~ (1908-1967), Soviet radio and electronics engineer.\n\nRavi\n\n12.5S\n\n1.9W\n\n2.5\n\nIndian male name.\n\nRayet\n\n44.7N\n\n114.5E\n\n27\n\nGeorge A. P. (1839-1906), French astronomer.\n\nRayleigh\n\n29.3N\n\n89.6E\n\n114\n\nJohn William Strutt, Lord Rayleigh (1842-1919), British physicist; his theory of scattering (1871) was the first correct explanation of why the sky is blue; discovered the inert gas argon, for which he was awarded the Nobel Prize in 1904.\n\nRazumov\n\n39.1N\n\n114.3W\n\n70\n\nVladimir V. ~ (1890-1967), Soviet rocket builder.\n\nRecht\n\n9.8N\n\n124.0E\n\n20\n\nAlbert W. ~ (1892-1962), American astronomer and mathematician; director of Denver University’s Chamberlin Observatory (1928-1958).\n\nRegiomontanus\n\n28.3S\n\n1.0W\n\n108\n\nJohann Müller of Königsberg, or ~ (1436-1476), German astronomer and mathematician; first recorded observations of a comet later identified as Halley’s.\n\nRégnault\n\n54.1N\n\n88.0W\n\n46\n\nHenri Victor ~ (1810-1878), French chemist and physicist; two laws governing the specific heat of gasses are named after him.\n\nReichenbach\n\n30.3S\n\n48.0E\n\n71\n\nGeorg von ~ (1772-1826), German optician.\n\nReimarus\n\n47.7S\n\n60.3E\n\n48\n\nNicolai Baer of Reymers, or ~ (c. 1550-c.1600), German mathematician.\n\nReiner\n\n7.0N\n\n54.9W\n\n29\n\nVincentio Reinieri (?-1634?), Italian astronomer and mathematician.\n\nReinhold\n\n3.3N\n\n22.8W\n\n42\n\nErasmus ~ (1511-1553), German astronomer and mathematician.\n\nRepsold\n\n51.3N\n\n78.6W\n\n109\n\nJohann Georg ~ (1770-1830), German inventor and innovator of astronomical and geodesic instruments.\n\nResnik\n\n38.8S\n\n150.1W\n\n20\n\nJudith Arlene ~ (1949-1986), American biomedical and systems engineer, astronaut; member of the *Challenger* crew.\n\nRespighi\n\n2.8N\n\n71.9E\n\n18\n\nLorenzo ~ (1824-1890), Italian astronomer; discovered methods to determine the diameter of the sun and the zenith distances of stars; cataloged the absolute declinations of 2534 boreal stars.\n\nReumur\n\n2.4S\n\n0.7E\n\n52\n\nRene Antoine Ferchault de ~ (1683-1757), French physicist.\n\nRhaeticus  \n*or* Rheticus\n\n0.0N\n\n4.9E\n\n45\n\nGeorg Joachim von Lauchen of Rhaetia, or ~ (1514-1574), Hungarian mystic, astronomer and mathematician.\n\nRheita\n\n37.1S\n\n47.2E\n\n70\n\nAnton Maria Schyrlaeus of Rhaetia, or ~  \n(1597-1660), Bohemian-Czechoslovakian academic, astronomer  \nand optician; first devised an eyepiece for the telescope  \nwhich reverted the image.\n\nRiccioli\n\n3.3S\n\n74.6W\n\n139\n\nGiovanni Battista ~ (1598-1671), Italian  \nastronomer, educator and Jesuit priest; his famous work*Almagestum  \nnovum* introduced the system of naming craters and  \nmountains on the Moon after famous astronomers.\n\nRiccius\n\n36.9S\n\n26.5E\n\n71\n\nMatteo Ricci, or ~, or Li Matou (1552-1610),  \nItalian mathematician, explorer, artist and geographer; a  \nJesuit priest, Riccius traveled to China, where he became  \nknown as Li Matou and was renowned for his mathematical  \nskills, extraordinary memory and knowledge of astronomy.\n\nRicco\n\n75.6N\n\n176.3E\n\n65\n\nAnnibale ~ (1844-1911), Italian astronomer.\n\nRichards\n\n7.7N\n\n140.1E\n\n16\n\nTheodore William ~ (1868-1928), American  \nchemist; awarded Nobel Prize in chemistry (1914). He  \naccurately redetermined the atomic weights of over thirty  \nelements; also performed research that helped establish the  \natomic weight of isotopes in the modern concept of the atom.\n\nRichardson\n\n31.1N\n\n100.5E\n\n141\n\nSir Owen Willans ~ (1879-1959), British  \nquantum physicist; awarded the 1928 Nobel Prize in physics  \n\"for his work on the thermionic phenomenon and  \nespecially for the discovery of the law named after  \nhim.\"\n\nRiedel\n\n48.9S\n\n139.6W\n\n0\n\nKlaus ~ (1907-1944), German rocketry scientist; a pioneer of liquid oxygen-fuelled rockets;  \n***Also*** Walther ~ (1902-1968), German rocketry scientist; research director and chief designer at Germany’s rocket center in Peenemunde, he worked on the U.S. space program following World War II.\n\nRiemann\n\n38.9N\n\n86.8E\n\n163\n\nGeorg Friedrich Bernhard ~ (1826-1866), German mathematician; protegé of Gauss (q.v.).\n\nRitchey\n\n11.1S\n\n8.5E\n\n24\n\nGeorge Willis ~ (1864-1945), American  \nastronomer and optician; co-inventor of the Ritchey-Chrétien  \nreflecting telescope. Builder of the telescopes at Yerkes,  \nMt. Wilson and U.S. Naval observatories. Director of the  \nastrophotographic laboratory at Paris Observatory  \n(1924–30).\n\nRittenhouse\n\n74.5S\n\n106.5E\n\n26\n\nDavid ~  (1732-1796), American  \ninventor, astronomer and mathematician; his contributions  \ninclude the use of measured grating intervals and  \n\"spider threads\" on the focus of the telescope.  \nHelped survey the Mason-Dixon Line. First director of the  \nU.S. Mint. A member of the convention that framed  \nPennsylvania’s constitution. Succeeded Benjamin Franklin as  \npresident of the American Philosophical Society.\n\nRitter\n\n2.0N\n\n19.2E\n\n29\n\nKarl ~ (1779-1859), German geographer; a  \nfounder of the science of modern human geography;  \n***Also*** August ~ (fl. 1890), German  \nastrophysicist.\n\nRitz\n\n15.1S\n\n92.2E\n\n51\n\nWalter ~ (1878-1909), Swiss physicist;  \ndevised the combination principle, which stated that the  \nfrequencies of spectral lines could be expressed as  \ndifferences between a relatively small number of  \n\"terms.\"\n\nRobert\n\n19.0N\n\n27.4E\n\n1\n\nEnglish male name.\n\nRoberts\n\n71.1N\n\n174.5W\n\n89\n\nAlexander W. ~ (1857-1938), Scottish-South  \nAfrican astronomer; noted variable star observer;  \n***Also*** Isaac (1829-1904), British amateur  \nastronomer; a pioneer of astrophotography, the first volume  \nof his*Photographs of Stars, Star Clusters and Nebulae*  \nwas published in 1893.\n\nRobertson\n\n21.8N\n\n105.2W\n\n88\n\nHoward Percy ~ (1903-1961), American  \nphysicist and mathematician; proved Poynting’s theory that  \nradiation from the Sun causes smaller particles in orbit  \nabout the Sun to spiral close and eventually plunge in,  \nknown as thePoynting-Robertson effect.\n\nRobinson\n\n59.0N\n\n45.9W\n\n24\n\nJohn Thomas Romney ~ (1792-1882), Irish  \nastronomer, natural philosopher, physicist and  \nmeteorologist; resident astronomer of the Armagh Observatory  \n(Dublin) from 1823 until his death, he is best known as  \ninventor of the cup-anemometer for registering wind  \nvelocity.\n\nRocca\n\n12.7S\n\n72.8W\n\n89\n\nGiovanni Antonio ~ (1607-1656), Italian  \nmathematician and educator.\n\nRocco\n\n28.9N\n\n45.0W\n\n4\n\nItalian male name.\n\nRoche\n\n42.3S\n\n136.5E\n\n160\n\nEdouard A. ~ (1820-1883), French astronomer  \nand physicist; first to explain the principle governing the  \ndistance a body held together by self-gravity can come to a  \nplanet without being pulled apart by the planet’s tidal  \n(gravity) force, now commonly known as the Roche Limit.\n\nRomeo\n\n7.5N\n\n122.6E\n\n8\n\nItalian male name.\n\nRömer\n\n25.4N\n\n36.4E\n\n39\n\nOle ~ (1644-1710), Danish astronomer; made  \nthe first deduction of the speed of light in 1676 based upon  \nhis observations of the eclipses of Io, Jupiter’s first  \nmoon.\n\nRöntgen\n\n33.0N\n\n91.4W\n\n126\n\nWilhelm Conrad ~ (1845-1923), German  \nphysicist; chiefly associated with the discovery of the  \nso-called Röntgen rays or, as he called them, X-rays.  \nAwarded the 1901 Nobel Prize in physics in recognition of  \nhis achievement.\n\nRosa\n\n20.3N\n\n32.3W\n\n1\n\nSpanish female name.\n\nRosenberger\n\n55.4S\n\n43.1E\n\n95\n\nOtto August ~ (1800-1890), German astronomer  \nand mathematician.\n\nRoss\n\n11.7N\n\n21.7E\n\n24\n\nAdmiral Sir James Clark ~, R.N. (1800-1862),  \nBritish explorer; discovered the North Magnetic Pole in  \n1831, made three voyages to Antarctica in an attempt to  \nreach the South Magnetic Pole;  \n***Also*** Frank E. ~ (1874-1966), American  \nastronomer and optician; introduced the wide-angle lens as  \nan important photographic tool in astronomy, best known for  \nwork at Yerkes Observatory (Chicago).\n\nRosse\n\n17.9S\n\n35.0E\n\n11\n\nLord William Parsons, the third Earl of  \nRosse (1800-1867), Irish astronomer; constructed the largest  \ntelescopes of his time, a 36-inch reflector in 1839 and a  \n72-inch in 1845.\n\nRosseland\n\n41.0S\n\n131.0E\n\n75\n\nSvein ~ (1894-1985), Norwegian  \nastrophysicist; developer of the so-called \"Oslo  \nAnalyzer,\" the foremost large computational resource  \navailable to theoretical physicists of its time.\n\nRost\n\n56.4S\n\n33.7W\n\n48\n\nJohan Leonhard ~ (1688-1727), German  \nastronomer and author.\n\nRothmann\n\n30.8S\n\n27.7E\n\n42\n\nChristopher ~ (?-1600), German astronomer; a  \nCopernican, his works later influenced Sir Isaac Newton.\n\nRowland\n\n57.4N\n\n162.5W\n\n171\n\nHenry Augustus ~ (1848-1901), American  \nphysicist and inventor; determined the absolute value of the  \nOhm, the ratio of electrical units, the mechanical  \nequivalent of heat, and the variation of the specific heat  \nof water with temperature. Rowland’s greatest contribution  \nto science was the construction of diffraction gratings,  \nwhich he sold at cost to a generation of physicists.\n\nRozhdestvenskiy  \n*or* Rozhdestvenskii\n\n85.2N\n\n155.4W\n\n177\n\nDmitrii Sergeevich ~ (1876-1940), Soviet  \nphysicist and academic.\n\nRumford\n\n28.8S\n\n169.8W\n\n61\n\nSir Benjamin Thompson, Count Rumford  \n(1753-1814), American-born British inventor, physicist and  \nspy; regarded as the father of thermodynamics. A turncoat  \nduring the American Revolution, he made numerous practical  \ninnovations, including central heating (the \"Rumford  \nStove\"), the smokeless chimney, the drip coffee pot,  \nthe kitchen oven, thermal underwear and the pressure cooker.  \nRumford was also responsible for bringing James Watt’s steam  \nengine into widespread use, reorganized the Bavarian army,  \nand endowed the American Academy of Arts and Sciences.\n\nRunge\n\n2.5S\n\n86.7E\n\n38\n\nCarl David Tolmé ~ (1856-1927), German  \nmathematician.\n\nRussell\n\n26.5N\n\n75.4W\n\n103\n\nHenry Norris ~ (1877-1957), American  \nastronomer; longtime director of the Princeton Observatory;  \n***Also*** John ~ (1745-1806), British portrait  \nartist, selenographer and mathematician; considered the  \nfinest painter in crayons England ever produced, his work  \nhangs in the Royal Academy and the Louvre.\n\nRuth\n\n28.7N\n\n45.1W\n\n3\n\nHebrew female name.\n\nRutherford\n\n10.7N\n\n137.0E\n\n13\n\nSir Ernest ~ (1871-1937), New Zealand-born  \nBritish physicist; awarded the 1908 Nobel Prize in chemistry  \nfor his research into the disintegration of elements and the  \nchemistry of radioactive substances.\n\nRutherfurd\n\n60.9S\n\n12.1W\n\n48\n\nLewis Morris ~ (1816-1892), American lawyer,  \nastronomer and physicist; experimented in celestial  \nphotography, especially in spectral analysis, in which he  \nwas a pioneer. Rutherfurd invented several instruments for  \nhis work, including a micrometer for measuring positions on  \nphotographs, an apparatus for ruling diffraction gratings,  \nand a telescope specially fitted for astronomical  \nphotography.\n\nRydberg\n\n46.5S\n\n96.3W\n\n49\n\nJohan Robert (Janne) ~ (1854-1919), Swedish  \nphysicist and mathematician.\n\nRynin\n\n47.0N\n\n103.5W\n\n75\n\nNikolai Alexeyevich ~ (1877-1942), Soviet rocketry scientist; a pioneer in aeronautics, aviation and cosmonautics.\n\n[Return to The Full Moon Atlas and Crater Catalog](https://lunasociety.org/full-moon-atlas)\n\n### Share this:\n\n### Like this:\n\n![Luna Society Moonball Logo](https://i0.wp.com/lunasociety.org/wp-content/uploads/2025/11/Luna-Society-Moonball-Logo-Transparent.png?w=678&ssl=1)\n\nCopyright © 1999-2026 Luna Society International.  \nAll rights reserved under international treaty.\n\n###### Trending\n\nCopyright © 2026 | WordPress Theme by [MH Themes](https://mhthemes.com/themes/mh-magazine/?utm_source=customer&utm_medium=link&utm_campaign=MH+Magazine+Lite)",
+  "https://web.archive.org/web/20080916141628/http:/lunar.arc.nasa.gov/science/atlas/text/cratertex_s.html": " Lunar Crater Statistics | Latin Name | Lat | Long | Diam | Origin | | --- | --- | --- | --- | --- | | Sabatier | 13.2N | 79.0E | 10 | Paul; French chemist; Nobel laureate (1854-1941). | | Sabine | 1.4N | 20.1E | 30 | \"Sir Edward; Irish physicist, astronomer(1788-1883).\" | | Sacrobosco | 23.7S | 16.7E | 98 | \"John of Holywood, Johannes Sacrobuschus; British astronomer, ma\" | | Saenger | 4.3N | 102.4E | 75 | Eugen; German ",
+  "https://the-moon.us/wiki/195_names_of_scientists": " 195 names of scientists - The Moon *WIEN, Wilhelm Carl Werner Otto Fritz Franz Wien, 1864-1928, German physicist (Nobel, 1911). Note: Wien was one of the names on the Russian lunar farside maps of the Sternberg institute. Wien is also the official name of one of the craters on planet Mars. 192. *WILLSTÄTTER, Richard Martin Willstatter, 1872-1942, German chemist (Nobel, 1915) 193. WINCHELL, Newton Horace Winchell, 1839-1914, America # 195 names of scientists\n\n# 195 names of scientists\n\nAn addition to the page **[IAU Transactions XVIB](/wiki/IAU_Transactions_XVIB \"IAU Transactions XVIB\")** -- TRANSACTIONS OF THE IAU: VOLUME XVIB - PROCEEDINGS OF THE 16TH GENERAL ASSEMBLY (Grenoble 1976)  \n   \n This experimental page is an exploration and investigation of 195 biographies of scientists, of which the names are part of a bank for future use on the moon (a possible addition to the existing alphabetic list of official lunar nomenclature).  \n   \n The goal is to detect and to add all the Wikipedia pages (biographies) of each scientist/explorer/inventor mentioned in the alphabetic list.  \n Research: Danny Caes  \n   \n   \n -- Nobel prize winners are starred.  \n (blue-colored names are connected to recently (officially) named lunar formations, the Wikipedia-biographies of these scientists are included in the corresponding Moon-Wiki pages)  \n   \n **A**  \n 1. **AIKEN**, [Howard Hathaway Aiken, 1900-1973, American mathematician, pioneer in computing](http://en.wikipedia.org/wiki/Howard_H._Aiken) (not to be confused with [Aitken](/wiki/Aitken \"Aitken\"))  \n 2. **ALBERT**, [Abraham Adrian Albert, 1905-1972, American mathematician](http://en.wikipedia.org/wiki/Abraham_Adrian_Albert)  \n 3. **ALBERTUS MAGNUS**, [Saint Albertus Magnus, c.1200-1280, German natural scientist](http://en.wikipedia.org/wiki/Albertus_Magnus)  \n 4. \\*[ALDER](/index.php?title=ALDER&action=edit&redlink=1 \"ALDER (page does not exist)\"), Kurt Alder, 1902-1958, German chemist (Nobel, 1950)  \n 5. **ALDEROTTI**, [Taddeo Alderotti, 1223-c.1295, Italian physician](http://it.wikipedia.org/wiki/Taddeo_Alderotti)  \n 6. **ALDINI**, [Giovanni Aldini, 1762-1834, Italian physicist](http://en.wikipedia.org/wiki/Giovanni_Aldini)  \n 7. [ANUCHIN](/index.php?title=ANUCHIN&action=edit&redlink=1 \"ANUCHIN (page does not exist)\"), Dmitrii N. Anuchin, 1843-1923, Russian geographer, anthropologist  \n **B**  \n 8. **BACCELLI**, [Guido Baccelli, 1832-1916, Italian physician](http://it.wikipedia.org/wiki/Guido_Baccelli)  \n 9. **BACHMANN**, [Augustus Quirinus Rivinus/ August Bachmann. 1652-1723, German botanist](http://en.wikipedia.org/wiki/Augustus_Quirinus_Rivinus)  \n 10. **BAER**, [Karl Ernst von Baer/ Karl Maksimovich Baer, 1792-1876, Estonian embryologist, biologist](http://en.wikipedia.org/wiki/Karl_Ernst_von_Baer)  \n 11. **BAILEY**, [Liberty Hyde Bailey, Jr., 1858-1954, American botanist](http://en.wikipedia.org/wiki/Liberty_Hyde_Bailey) (not to be confused with [Bailly](/wiki/Bailly \"Bailly\"), [Baily](/wiki/Baily \"Baily\"), and [Brayley](/wiki/Brayley \"Brayley\"))  \n 12. **BAIRD**, [Spencer Fullerton Baird, 1823-1887, American zoologist](http://en.wikipedia.org/wiki/Spencer_Fullerton_Baird) (not to be confused with [John Logie Baird](http://en.wikipedia.org/wiki/John_Logie_Baird); the father of television).  \n 13. **BALBIANI**, [Edouard-Gerard Balbiani, 1823-1899, French biologist](http://en.wikipedia.org/wiki/Edouard-G%C3%A9rard_Balbiani)  \n 14. **BANKS**, [Sir Joseph Banks, 1st Baronet, 1743-1820, English botanist](http://en.wikipedia.org/wiki/Joseph_Banks)  \n 15. **BANTI**, [Guido Banti](http://www.whonamedit.com/doctor.cfm/498.html), 1852-1925, Italian pathologist (see: [Banti's Syndrome](http://en.wikipedia.org/wiki/Banti's_syndrome))  \n 16. **\\*BÁRÁNY**, [Robert Barany, 1876-1936, Austrian physician](http://en.wikipedia.org/wiki/Robert_B%C3%A1r%C3%A1ny) (Nobel, 1914)  \n 17. \\*[BARKLA](/index.php?title=BARKLA&action=edit&redlink=1 \"BARKLA (page does not exist)\"), Charles G. Barkla, 1877-1944, British physicist (Nobel, 1917)  \n 18. **BARTOLOTTI**, [Gian Giacomo Bartolotti](http://jhmas.oxfordjournals.org/content/X/2/248.extract), c.1470-d. after 1530, Italian physician (no Wikipedia page found)  \n 19. **BARTON**, [Benjamin Smith Barton, 1766-1815, American botanist, zoologist](http://en.wikipedia.org/wiki/Benjamin_Smith_Barton)  \n 20. **BASSI**, [Agostino M. Bassi, aka de Lodi, 1773-1856, Italian natural scientist](http://en.wikipedia.org/wiki/Agostino_Bassi)  \n 21. **BATES**, [Henry Walter Bates, 1825-1892, English natural scientist](http://en.wikipedia.org/wiki/Henry_Walter_Bates)  \n 22. **BECCARI**, [Nello Beccari](http://www.encyclopedia.com/doc/1G2-2830900322.html), 1883-1957, Italian anatomist (no Wikipedia page found)  \n 23. **BELLINI**, [Lorenzo Bellini, 1643-1704, Italian physiologist](http://en.wikipedia.org/wiki/Lorenzo_Bellini)  \n 24. **BELON**, [Pierre Belon, 1517-1564, French zoologist, botanist](http://en.wikipedia.org/wiki/Pierre_Belon)  \n 25. **BENEDETTI**, [Alessandro Benedetti, c.1450-1512, Italian anatomist](http://it.wikipedia.org/wiki/Alessandro_Benedetti)  \n 26. **BENEDICKS**, Carl Axel Fredrik Benedicks, 1875-1958, Swedish metallographer (not to be confused with [Benedict](/wiki/Benedict \"Benedict\"))  \n <https://en.wikipedia.org/wiki/Carl_Benedicks>  \n   \n   \n 27. **\\*BERGIUS**, [Friedrich Karl Rudolf Bergius, 1884-1949, German chemist](http://en.wikipedia.org/wiki/Friedrich_Bergius) (Nobel, 1931) (not to be confused with [Byrgius](/wiki/Byrgius \"Byrgius\"))  \n 28. **BERKELEY**, [George Berkeley, aka Bishop Berkeley, 1685-1753, British scientific philosopher](http://en.wikipedia.org/wiki/George_Berkeley)  \n 29. **BERNARD**, [Claude Bernard, 1813-1878, French physiologist](http://en.wikipedia.org/wiki/Claude_Bernard) (not to be confused with [Barnard](/wiki/Barnard \"Barnard\"))  \n 30. **BEZOUT**, [Étienne Bezout, 1739-1783, French mathematician](http://en.wikipedia.org/wiki/%C3%89tienne_B%C3%A9zout). Note: **Bezout** was one of the names on the Russian farside lunar maps of the Sternberg institute.  \n 31. \\*[BLACKETT](/index.php?title=BLACKETT&action=edit&redlink=1 \"BLACKETT (page does not exist)\"), Patrick Maynard S. Blackett, 1897-1974, English physicist (Nobel, 1948)  \n 32. **BOAS**, [Franz Boas, 1858-1942, German-American anthropologist](http://en.wikipedia.org/wiki/Franz_Boas)  \n 33. **BOHLER**, [Lorenz Bohler, 1885-1973, Austrian surgeon](http://en.wikipedia.org/wiki/Lorenz_B%C3%B6hler)  \n 34. **BONNET**, [Charles Bonnet, 1720-1793, Swiss natural scientist, biologist](http://en.wikipedia.org/wiki/Charles_Bonnet)  \n 35. **BORDET**, [Jules Jean Baptiste Vincent Bordet, 1870-1961, Belgian bacteriologist, physiologist](http://en.wikipedia.org/wiki/Jules_Bordet)  \n 36. \\*[BORN](/index.php?title=BORN&action=edit&redlink=1 \"BORN (page does not exist)\"), Max Born, 1882-1970, German physicist (Nobel, 1954)  \n 37. [BOS](/wiki/Van_den_Bos \"Van den Bos\"), Willem Hendrik van den Bos, 1896-1974, Dutch astronomer  \n 38. \\*[BOSCH](/index.php?title=BOSCH&action=edit&redlink=1 \"BOSCH (page does not exist)\"), Carl Bosch, 1874-1940, German chemist (Nobel, 1931)  \n 39. **\\*BOTHE**, [Walther Wilhelm Georg Bothe, 1891-1957, German physicist](http://en.wikipedia.org/wiki/Walther_Bothe) (Nobel, 1954)  \n 40. **BOULE**, [Marcellin Boule, 1861-1942, French geologist/ palaeontologist](http://en.wikipedia.org/wiki/Marcellin_Boule)  \n 41. **BOVERI**, [Theodor Heinrich Boveri, 1862-1915, German zoologist, biologist](http://en.wikipedia.org/wiki/Theodor_Boveri)  \n 42. **BOWER**, [Frederick Orpen Bower, 1855-1948, English botanist](http://en.wikipedia.org/wiki/Frederick_Orpen_Bower)  \n 43. **BRAHMAGUPTA**, [Brahmagupta, 598-d. after 665, Indian astronomer](http://en.wikipedia.org/wiki/Brahmagupta)  \n 44. **BRANDT**, [Georg Brandt, 1694-1768, Swedish chemist, mineralogist](http://en.wikipedia.org/wiki/Georg_Brandt)  \n 45. **\\*BRAUN**, [Karl Ferdinand Braun, 1850-1918, German physicist](http://en.wikipedia.org/wiki/Karl_Ferdinand_Braun) (Nobel, 1909) (not to be confused with [von Braun](/wiki/Von_Braun \"Von Braun\"))  \n 46. **BROCA**, [Pierre Paul Broca, 1824-1880, French physician, anthropologist](http://en.wikipedia.org/wiki/Paul_Broca)  \n 47. **BRODE**, [Wallace Reed Brode, 1900-1974, American chemist](http://en.wikipedia.org/wiki/Wallace_R._Brode)  \n 48. **BROOM**, [Robert Broom, 1866-1951, Scottish/ South African paleontologist](http://en.wikipedia.org/wiki/Robert_Broom)  \n 49. **\\*BUCHNER**, [Eduard Buchner, 1860-1917, German chemist](http://en.wikipedia.org/wiki/Eduard_Buchner) (Nobel, 1907) (not to be confused with BUCHER of [Dorsum Bucher](/wiki/Dorsum_Bucher \"Dorsum Bucher\")).  \n 50. **BUCKINGHAM**, [Edgar Buckingham, 1867-1940, American physicist](http://en.wikipedia.org/wiki/Edgar_Buckingham)  \n 51. **BUONANNI**, [Filippo Buonanni, or Bonanni, 1638-1725, Italian natural scientist](http://en.wikipedia.org/wiki/Filippo_Bonanni)  \n **C**  \n 52. **CAILLETET**, [Louis Paul Cailletet, 1832-1913, French physicist](http://en.wikipedia.org/wiki/Louis_Paul_Cailletet)  \n 53. **CANDOLLE**, [Augustin-Pyramus de Candolle, 1778-1841, Swiss botanist](http://en.wikipedia.org/wiki/Augustin_Pyramus_de_Candolle)  \n 54. \\*[CARREL](/index.php?title=CARREL&action=edit&redlink=1 \"CARREL (page does not exist)\"), Alexis 1873-1944 French surgeon, physiologist (Nobel, 1912)  \n 55. **CASTILLON**, [Johann Castillon, aka Giovanni Francesco Mauro Melchiorre Salvemini di Castiglione, 1704-1791, Italian mathematician](http://en.wikipedia.org/wiki/Giovanni_Salvemini)  \n 56. \\*[CHADWICK](/index.php?title=CHADWICK&action=edit&redlink=1 \"CHADWICK (page does not exist)\"), James 1891-1974 British physicist (Nobel, 1935)  \n 57. **CHERRIE**, [George Kruck Cherrie, 1865-1948, American naturalist](http://en.wikipedia.org/wiki/George_Kruck_Cherrie)  \n 58. **CHEVREUL**, [Michel Eugène Chevreul, 1786-1889, French chemist](http://en.wikipedia.org/wiki/Michel_Eug%C3%A8ne_Chevreul)  \n 59. **CLAPEYRON**, [Benoit-Pierre-Émile Clapeyron, 1799-1864, French physicist](http://en.wikipedia.org/wiki/Beno%C3%AEt_Paul_%C3%89mile_Clapeyron)  \n 60. **COCKERELL**, [Theodore Dru Alison Cockerell, 1866-1948, English zoologist](http://en.wikipedia.org/wiki/Theodore_Dru_Alison_Cockerell)  \n 61. \\*[CORI](/index.php?title=CORI&action=edit&redlink=1 \"CORI (page does not exist)\"), Gerty Theresa R. 1896-1957 Czechoslovakian/American biochemist (Nobel, 1947)  \n 62. **CORRENS**, [Carl Erich Correns, 1864-1933, German botanist](http://en.wikipedia.org/wiki/Carl_Correns)  \n 63. **CUÉNOT**, [Lucien Cuénot, 1866-1951, French zoologist](http://en.wikipedia.org/wiki/Lucien_Cu%C3%A9not)  \n **D**  \n 64. **\\*DALÉN**, [Nils Gustaf Dalén, 1869-1937, Swedish engineer, inventor of the AGA cooker](http://en.wikipedia.org/wiki/Gustaf_Dal%C3%A9n) (Nobel, 1912)  \n 65. **DE BARY**, [Heinrich Anton de Bary, 1831-1888, German botanist](http://en.wikipedia.org/wiki/Heinrich_Anton_de_Bary)  \n 66. **DE L'HOPITAL**, [Guilliaume Francois Antoine, Marquis de l'Hopital, 1661-1704, French mathematician](http://en.wikipedia.org/wiki/Guillaume_de_l'H%C3%B4pital). Note: **de l'Hopital** was one of the names on the Russian farside lunar maps of the Sternberg institute.  \n 67. **\\*DIELS**, [Otto Paul Hermann Diels, 1876-1954, German chemist](http://en.wikipedia.org/wiki/Otto_Diels) (Nobel, 1950)  \n 68. **DIETRICH**, [Koncordie Amalie Nelle Dietrich, 1821-1891, German botanist](http://en.wikipedia.org/wiki/Amalie_Dietrich)  \n 69. **\\*DOMAGK**, [Gerhard Johannes Paul Domagk, 1895-1964, German chemist, pathologist](http://en.wikipedia.org/wiki/Gerhard_Domagk) (Nobel, 1939)  \n 70. **DULONG**, [Pierre Louis Dulong, 1785-1838, French physicist, chemist](http://en.wikipedia.org/wiki/Pierre_Louis_Dulong)  \n **E**  \n 71. **EAST**, [Edward Murray East, 1879-1938, American biologist](http://en.wikipedia.org/wiki/Edward_Murray_East)  \n 72. **EDDY**, Nathan Browne Eddy, 1890-1973, American pharmacologist (no Wikipedia page found)  \n 73. **EKEBERG**, [Anders Gustaf Ekeberg, 1767-1813, Swedish chemist](http://en.wikipedia.org/wiki/Anders_Gustaf_Ekeberg)  \n 74. **EMICH**, [Friedrich Peter Emich, 1860-1940, Austrian chemist](http://en.wikipedia.org/wiki/Friedrich_Emich)  \n 75. **ENGLER**, [Heinrich Gustav Adolf Engler, 1844-1930, German botanist](http://en.wikipedia.org/wiki/Adolf_Engler)  \n 76. **ERASISTRATUS** [Erasistratus, b.c. B.C. 304, Greek anatomist](http://en.wikipedia.org/wiki/Erasistratus)  \n 77. \\*[ERLANGER](/index.php?title=ERLANGER&action=edit&redlink=1 \"ERLANGER (page does not exist)\"), Joseph 1874-1965 American physiologist (Nobel, 1944)  \n **F**  \n 78. **FAGON**, [Guy-Crescent Fagon, 1638-1718, French botanist](http://en.wikipedia.org/wiki/Guy-Crescent_Fagon)  \n 79. **FARLOW**, [William Gilson Farlow, 1844-1919, American botanist](http://en.wikipedia.org/wiki/William_Gilson_Farlow)  \n 80. \\*[FIBIGER](/index.php?title=FIBIGER&action=edit&redlink=1 \"FIBIGER (page does not exist)\"), Johannes A.G. 1867-1928 Danish pathologist (Nobel,1926)  \n 81. \\*[FINSEN](/index.php?title=FINSEN&action=edit&redlink=1 \"FINSEN (page does not exist)\"), Niels Ryberg 1860-1904 Danish physician (Nobel, 1903)  \n 82. \\*[FLOREY](/index.php?title=FLOREY&action=edit&redlink=1 \"FLOREY (page does not exist)\"), Howard Walter 1898-1968 British pathologist (Nobel, 1945)  \n 83. **FLÜCKIGER**, Otto Fluckiger, 1881-1942, Swiss geographer (no Wikipedia page found)  \n 84. **FLUDD**, [Robert Fludd, aka Robertus de Fluctibus, 1574-1637, English chemist, physician](http://en.wikipedia.org/wiki/Robert_Fludd)  \n 85. **FORBES**, [James David Forbes, 1809-1868, Scottish physicist](http://en.wikipedia.org/wiki/James_David_Forbes)  \n 86. **FUCHSEL**, Georg Christian Fuchsel, 1722-1773, German stratigrapher (no Wikipedia page found)  \n **G**  \n 87. **GALTON**, [Sir Francis Galton, 1822-1911, English anthropologist](http://en.wikipedia.org/wiki/Francis_Galton)  \n 88. **\\*GASSER**, [Herbert Spencer Gasser, 1888-1963, American physiologist](http://en.wikipedia.org/wiki/Herbert_Spencer_Gasser) (Nobel, 1944)  \n 89. **GEGENBAUR**, [Karl Gegenbaur, 1826-1903, German anatomist, zoologist](http://en.wikipedia.org/wiki/Karl_Gegenbaur)  \n 90. **GIBBON**, [John Heysham Gibbon Jr., 1903-1973, American physician](http://en.wikipedia.org/wiki/John_Heysham_Gibbon)  \n 91. [GORE](/index.php?title=GORE&action=edit&redlink=1 \"GORE (page does not exist)\"), John Ellard 1845-1910 Irish astronomer  \n 92. **GRASHCHENKOV**, Nikolai I. Grashchenkov, 1901-1965, Soviet neurologist (no Wikipedia page found)  \n 93. **GRAY**, [Asa Gray, 1810-1888, American botanist](http://en.wikipedia.org/wiki/Asa_Gray)  \n 94. **GREW**, [Nehemiah Grew, 1641-1712, English physician, botanist](http://en.wikipedia.org/wiki/Nehemiah_Grew)  \n 95. \\*[GRIGNARD](/index.php?title=GRIGNARD&action=edit&redlink=1 \"GRIGNARD (page does not exist)\"), Victor 1871-1935 French chemist (Nobel, 1912)  \n 96. **GROOTEN**, Christian c.Grooten, 1530-c.1603, German cartographer (no Wikipedia page found)  \n 97. \\*[GUILLAUME](/index.php?title=GUILLAUME&action=edit&redlink=1 \"GUILLAUME (page does not exist)\"), Charles Édouard 1861-1938 Swiss physicist (Nobel, 1920)  \n **H**  \n 98. \\*[HABER](/index.php?title=HABER&action=edit&redlink=1 \"HABER (page does not exist)\"), Fritz 1868-1934 German/Swiss chemist (Nobel, 1918)  \n 99. **HAECKEL**, [Ernst Heinrich Philipp August Haekel, 1834-1919, German zoologist, biologist](http://en.wikipedia.org/wiki/Ernst_Haeckel)  \n 100. **HALES**, [Stephen Hales, 1677-1761, English physiologist, botanist](http://en.wikipedia.org/wiki/Stephen_Hales)  \n 101. **HARRISON**, [Ross Granville Harrison, 1870-1959, American biologist](http://en.wikipedia.org/wiki/Ross_Granville_Harrison) (perhaps it's also interesting to include [John Harrison, 1693-1776, self-educated English carpenter and clockmaker](http://en.wikipedia.org/wiki/John_Harrison))  \n 102. \\*[HAWORTH](/index.php?title=HAWORTH&action=edit&redlink=1 \"HAWORTH (page does not exist)\"), Walter Norman 1883-1950 English chemist (Nobel, 1937)  \n 103. **\\*HENCH**, [Philip Showalter Hench, 1896-1965, American physician](http://en.wikipedia.org/wiki/Philip_Showalter_Hench) (Nobe1,1950)  \n 104. \\*[HEVESY](/index.php?title=HEVESY&action=edit&redlink=1 \"HEVESY (page does not exist)\"), George 1885-1966 Hungarian chemist (Nobel, 1943)  \n 105. \\*[HEYROVSKY](/index.php?title=HEYROVSKY&action=edit&redlink=1 \"HEYROVSKY (page does not exist)\"), Jaroslav 1890-1967 Czechoslovakian chemist (Nobel, 1959)  \n 106. \\*[HINSHELWOOD](/index.php?title=HINSHELWOOD&action=edit&redlink=1 \"HINSHELWOOD (page does not exist)\"), Cyril 1897-1967 English chemist (Nobel, 1956)  \n 107. **HOFMEISTER**, [Whilhelm Friedrich Benedikt Hofmeister, 1824-1877, German botanist](http://en.wikipedia.org/wiki/Wilhelm_Hofmeister) (not to be confused with [Hoffmeister](/wiki/Hoffmeister \"Hoffmeister\")).  \n 108. **HOOKER**, [Joseph Dalton Hooker, 1817-1911, English botanist](http://en.wikipedia.org/wiki/Joseph_Dalton_Hooker)  \n 109. \\*[HOUSSAY](/index.php?title=HOUSSAY&action=edit&redlink=1 \"HOUSSAY (page does not exist)\"), Bernardo Alberto 1887-1971 Argentinian physiologist (Nobel, 1947)  \n 110. **HUTCHINSON**, [John Hutchinson, 1884-1972, English botanist](http://en.wikipedia.org/wiki/John_Hutchinson_(botanist))  \n **I**  \n 111. [IBN BAJJA](/index.php?title=IBN_BAJJA&action=edit&redlink=1 \"IBN BAJJA (page does not exist)\") 1106-1138 Spanish-Arab astronomer  \n 112. **IBN BUTLAN** [Ibn Butlan, c.1000-1068, Arabian physician](http://en.wikipedia.org/wiki/Ibn_Butlan)  \n **J**  \n (none)  \n **K**  \n 113. \\*[KARRER](/index.php?title=KARRER&action=edit&redlink=1 \"KARRER (page does not exist)\"), Paul 1889-1971 Russian-Swiss chemist (Nobel, 1937)  \n 114. **\\*KENDALL**, [Edward Calvin Kendall, 1886-1972, American biochemist](http://en.wikipedia.org/wiki/Edward_Calvin_Kendall) (Nobel, 1950)  \n 115. **KERR**, [John Kerr, 1824-1907, Scottish physicist](http://en.wikipedia.org/wiki/John_Kerr_(physicist))  \n 116. \\*[KOCHER](/index.php?title=KOCHER&action=edit&redlink=1 \"KOCHER (page does not exist)\"), Emil Theodor 1841-1917 Swiss surgeon (Nobel, 1909)  \n 117. **KOHLRAUSCH**, [Friedrich Wilhelm Georg Kohlrausch, 1840-1910, German physicist, chemist](http://en.wikipedia.org/wiki/Friedrich_Kohlrausch). Note: **Kohlrausch** was one of the names on the Russian lunar farside maps of the Sternberg institute.  \n 118. **\\*KOSSEL**, [Ludwig Karl Martin Leonhard Albrecht Kossel, 1853-1927, German chemist](http://en.wikipedia.org/wiki/Albrecht_Kossel) (Nobel, 1910).  \n 119. \\*[KUHN](/index.php?title=KUHN&action=edit&redlink=1 \"KUHN (page does not exist)\"), Richard 1900-1967 Austrian chemist (Nobel, 1938)  \n **L**  \n 120. \\*[LAVERAN](/index.php?title=LAVERAN&action=edit&redlink=1 \"LAVERAN (page does not exist)\"), Charles Louis Alphonse 1845-1922 French physician (Nobel, 1907)  \n 121. **LEFSCHETZ**, [Solomon Lefschetz, 1884-1972, Russian-American mathematician](http://en.wikipedia.org/wiki/Solomon_Lefschetz)  \n 122. **LEHRMAN**, Daniel Sanford Lehrman, 1919-1972, American psychologist (no Wikipedia page found) (not to be confused with [Lehmann](/wiki/Lehmann \"Lehmann\"))  \n 123. \\*[LENARD](/index.php?title=LENARD&action=edit&redlink=1 \"LENARD (page does not exist)\"), Philip Edward Anton 1862-1947 German physicist (Nobel, 1905)  \n 124. **LEUCKART**, [Karl Georg Friedrich Rudolf Leuckart, 1822-1898, German zoologist](http://en.wikipedia.org/wiki/Rudolf_Leuckart)  \n 125. \\*[LIPPMAN](/index.php?title=LIPPMANN&action=edit&redlink=1 \"LIPPMANN (page does not exist)\"), Gabriel 1845-1921 French physicist (Nobel, 1908)  \n 126. **LISSAJOUS**, [Jules Antoine Lissajous, 1822-1880, French physicist](http://en.wikipedia.org/wiki/Jules_Antoine_Lissajous)  \n **M**  \n 127. **MACLEOD**, [John James Richard Macleod, 1876-1935, Scottish physiologist](http://en.wikipedia.org/wiki/John_James_Richard_Macleod)  \n 128. **MALPIGHI**, [Marcello Malpighi, 1628-1694, Italian biologist, physician](http://en.wikipedia.org/wiki/Marcello_Malpighi)  \n 129. **MALUS**, [Étienne-Louis Malus, 1775-1812, French physicist](http://en.wikipedia.org/wiki/%C3%89tienne-Louis_Malus)  \n 130. **MATHIAS**, Émile-Ovide-Joseph Mathias, 1861-1942, French physicist (no Wikipedia page found)  \n 131. **MAXIM**, [Hiram Percy Maxim, 1869-1936, American inventor](http://en.wikipedia.org/wiki/Hiram_Percy_Maxim)  \n 132. **\\*MEYERHOF**, [Otto Fritz Meyerhof, 1884-1951, German physician](http://nl.wik",
+  "https://en.wikipedia.org/wiki/Debye_(crater)": " Debye (crater) Debye is a degraded lunar impact crater that is located in the ... The crater was named after Dutch physicist Peter Debye (1884–1966), who in 1936 became a Nobel laureate in chemistry. [6] This designation was formally adopted by the IAU in 1970. [1]",
+  "https://aidb.si/d/lunar-craters": " Named craters on the Moon — free dataset · AIDb Every crater on the Moon with an IAU-approved name, with diameter, centre coordinates, the year the name was approved and who or what it honours. One row per crater. ... | Name | Diameter | Latitude | Longitude | Name approved | Named after | Origin country / culture | | --- | --- | --- | --- | --- | --- | --- | | Hertzsprung | 536.4 | 1.37 | -128.66 | 1970 | Ejnar; Danish astronomer (1873-1967). ",
+  "https://en.wikipedia.org/wiki/Fischer_(crater)": " Fischer (crater) Fischer is a lunar impact crater that lies in the northeastern part of the interior floor of Mendeleev, a huge walled plain. This feature is located on the far side of the Moon relative to the Earth, and can only be viewed from a spacecraft. [3] ... The crater is named after two German Nobel Prize in Chemistry laureates: chemist Emil Fischer (1852–1919) and organic chemist Hans Fischer (1881–1945) [Jump to content](#bodyContent)\n\n[![](/static/images/icons/enwiki-25.svg)  ![Wikipedia](/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg) ![The Free Encyclopedia](/static/images/mobile/copyright/wikipedia-tagline-en-25.svg)](/wiki/Main_Page)\n\n[Search](/wiki/Special:Search \"Search Wikipedia [f]\")\n\n## Contents\n\n* [(Top)](#)\n* [1 References](#References)\n  + [1.1 Sources](#Sources)\n\n# Fischer (crater)\n\n* [Català](https://ca.wikipedia.org/wiki/Fischer_(cr%C3%A0ter) \"Fischer (cràter) – Catalan\")\n* [Нохчийн](https://ce.wikipedia.org/wiki/%D0%A4%D0%B8%D1%88%D0%B5%D1%80_(%D0%B1%D0%B5%D1%82%D1%82%D0%B0%D0%BD_%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D1%80) \"Фишер (беттан кратер) – Chechen\")\n* [Dansk](https://da.wikipedia.org/wiki/Fischer_(m%C3%A5nekrater) \"Fischer (månekrater) – Danish\")\n* [Español](https://es.wikipedia.org/wiki/Fischer_(cr%C3%A1ter) \"Fischer (cráter) – Spanish\")\n* [فارسی](https://fa.wikipedia.org/wiki/%D9%81%DB%8C%D8%B4%D8%B1_(%D8%AF%D9%87%D8%A7%D9%86%D9%87) \"فیشر (دهانه) – Persian\")\n* [Italiano](https://it.wikipedia.org/wiki/Cratere_Fischer \"Cratere Fischer – Italian\")\n* [ქართული](https://ka.wikipedia.org/wiki/%E1%83%A4%E1%83%98%E1%83%A8%E1%83%94%E1%83%A0%E1%83%98_(%E1%83%9B%E1%83%97%E1%83%95%E1%83%90%E1%83%A0%E1%83%98%E1%83%A1_%E1%83%99%E1%83%A0%E1%83%90%E1%83%A2%E1%83%94%E1%83%A0%E1%83%98) \"ფიშერი (მთვარის კრატერი) – Georgian\")\n* [Русский](https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D1%88%D0%B5%D1%80_(%D0%BB%D1%83%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D1%80) \"Фишер (лунный кратер) – Russian\")\n* [Татарча / tatarça](https://tt.wikipedia.org/wiki/%D0%A4%D0%B8%D1%88%D0%B5%D1%80_(%D0%B0%D0%B9_%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D1%80%D1%8B) \"Фишер (ай кратеры) – Tatar\")\n* [中文](https://zh.wikipedia.org/wiki/%E8%B4%B9%E6%AD%87%E5%B0%94%E9%99%A8%E7%9F%B3%E5%9D%91 \"费歇尔陨石坑 – Chinese\")\n\n[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q1085558#sitelinks-wikipedia \"Edit interlanguage links\")\n\n* [Article](/wiki/Fischer_(crater) \"View the content page [c]\")\n* [Talk](/wiki/Talk:Fischer_(crater) \"Discuss improvements to the content page [t]\")\n\n* [Read](/wiki/Fischer_(crater))\n* [Edit](/w/index.php?title=Fischer_(crater)&action=edit \"Edit the source code of this page [e]\")\n* [View history](/w/index.php?title=Fischer_(crater)&action=history \"Past revisions of this page [h]\")\n* [Save](# \"Add this page to your saved items\")\n\n\n\nTools\n\nActions\n\n* [Read](/wiki/Fischer_(crater))\n* [Edit](/w/index.php?title=Fischer_(crater)&action=edit \"Edit the source code of this page [e]\")\n* [View history](/w/index.php?title=Fischer_(crater)&action=history \"Past revisions of this page [h]\")\n* [Save](# \"Add this page to your saved items\")\n\nGeneral\n\n* [What links here](/wiki/Special:WhatLinksHere/Fischer_(crater) \"List of all English Wikipedia pages containing links to this page [j]\")\n* [Related changes](/wiki/Special:RecentChangesLinked/Fischer_(crater) \"Recent changes in pages linked from this page [k]\")\n* [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard \"Upload files [u]\")\n* [Permanent link](/w/index.php?title=Fischer_(crater)&oldid=1381791022 \"Permanent link to this revision of this page\")\n* [Page information](/w/index.php?title=Fischer_(crater)&action=info \"More information about this page\")\n* [Cite this page](/w/index.php?title=Special:CiteThisPage&page=Fischer_%28crater%29&id=1381791022&wpFormIdentifier=titleform \"Information on how to cite this page\")\n* [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFischer_%28crater%29)\n* [Switch to legacy parser](/w/index.php?title=Fischer_(crater)&useparsoid=0)\n\nPrint/export\n\n* [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=Fischer_%28crater%29&action=show-download-screen \"Download this page as a PDF file\")\n* [Printable version](javascript:print(); \"Printable version of this page [p]\")\n\nIn other projects\n\n* [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Fischer_(crater))\n* [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q1085558 \"Structured data on this page hosted by Wikidata [g]\")\n\nAppearance\n\n[Coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system \"Geographic coordinate system\"): [8°00′N 142°24′E﻿ / ﻿8.0°N 142.4°E﻿ / 8.0; 142.4](https://geohack.toolforge.org/geohack.php?pagename=Fischer_(crater)&params=8.0_N_142.4_E_globe:moon_type:landmark)\n\nFrom Wikipedia, the free encyclopedia\n\nCrater on the Moon\n\nFeature on the moon\n\nFischer\n\n| [Apollo 16](https://en.wikipedia.org/wiki/Apollo_16 \"Apollo 16\") image |\n| [Coordinates](https://en.wikipedia.org/wiki/Selenographic_coordinates \"Selenographic coordinates\") | [8°00′N 142°24′E﻿ / ﻿8.0°N 142.4°E﻿ / 8.0; 142.4](https://geohack.toolforge.org/geohack.php?pagename=Fischer_(crater)&params=8.0_N_142.4_E_globe:moon_type:landmark)[[Geographic coordinate system|Coordinates]]: {{#parsoid\\u0000fragment:5}}[https://geohack.toolforge.org/geohack.php?pagename=Fischer\\_(crater)¶ms=8.0\\_N\\_142.4\\_E\\_globe:moon\\_type:landmark 8°00′N 142°24′E﻿ / ﻿8.0°N 142.4°E﻿ / 8.0; 142.4][[Category:Pages using gadget WikiMiniAtlas]]\"}}\" id=\"mwBA\" about=\"#mwt6\" typeof=\"mw:Extension/indicator\"> |\n| [Diameter](https://en.wikipedia.org/wiki/Diameter \"Diameter\") | 30.48 km (18.94 mi)[[1]](#cite_note-GPN-1) |\n| [Depth](https://en.wikipedia.org/wiki/Crater_depth \"Crater depth\") | 2.43 km (1.51 mi)[[2]](#cite_note-Croft_1978-2) |\n| [Colongitude](https://en.wikipedia.org/wiki/Selenographic_coordinates \"Selenographic coordinates\") | 218° at sunrise |\n| [Eponym](https://en.wikipedia.org/wiki/Eponym \"Eponym\") | [Hermann Emil Fischer](https://en.wikipedia.org/wiki/Hermann_Emil_Fischer \"Hermann Emil Fischer\") [Hans Fischer](https://en.wikipedia.org/wiki/Hans_Fischer \"Hans Fischer\") |\n\n[![](//thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Fischer_crater_as10-31-4665.jpg/250px-Fischer_crater_as10-31-4665.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Fischer_crater_as10-31-4665.jpg)\n\n[Apollo 10](https://en.wikipedia.org/wiki/Apollo_10 \"Apollo 10\") image\n\n [![](//thumb.wikimedia.org/wikipedia/commons/thumb/1/15/AS16-M-0874.jpg/250px-AS16-M-0874.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:AS16-M-0874.jpg)\n\n[Apollo 16](https://en.wikipedia.org/wiki/Apollo_16 \"Apollo 16\") image of interior of Mendeleev. Fischer is above center, and [Richards](https://en.wikipedia.org/wiki/Richards_(lunar_crater) \"Richards (lunar crater)\") is in upper left. [Harden](https://en.wikipedia.org/wiki/Harden_(crater) \"Harden (crater)\") is in lower right. [Benedict](https://en.wikipedia.org/wiki/Benedict_(crater) \"Benedict (crater)\") is along bottom edge.\n\n**Fischer** is a [lunar](https://en.wikipedia.org/wiki/Lunar_craters \"Lunar craters\") [impact crater](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") that lies in the northeastern part of the interior floor of [Mendeleev](https://en.wikipedia.org/wiki/Mendeleev_(crater) \"Mendeleev (crater)\"), a huge [walled plain](https://en.wikipedia.org/wiki/Walled_plain \"Walled plain\"). This feature is located on the [far side](https://en.wikipedia.org/wiki/Far_side_(Moon) \"Far side (Moon)\") of the [Moon](https://en.wikipedia.org/wiki/Moon \"Moon\") relative to the [Earth](https://en.wikipedia.org/wiki/Earth \"Earth\"), and can only be viewed from a [spacecraft](https://en.wikipedia.org/wiki/Spacecraft \"Spacecraft\").[[3]](#cite_note-Byrne_2008-3)\n\nThis crater has a slender, circular rim and an interior that has the same [albedo](https://en.wikipedia.org/wiki/Albedo \"Albedo\") as the surrounding surface. There is a smaller impact crater within the interior, adjacent to the northwestern inner wall. The rim and the floor of Fischer are pitted by several tiny craterlets.[[4]](#cite_note-Bussey_Spudis_2004-4)\n\nThe crater is named after two German [Nobel Prize in Chemistry](https://en.wikipedia.org/wiki/Nobel_Prize_in_Chemistry \"Nobel Prize in Chemistry\") laureates: chemist [Emil Fischer](https://en.wikipedia.org/wiki/Emil_Fischer \"Emil Fischer\") (1852–1919) and organic chemist [Hans Fischer](https://en.wikipedia.org/wiki/Hans_Fischer \"Hans Fischer\") (1881–1945).[[5]](#cite_note-Cocks_1995-5) Its designation was formally adopted by the [International Astronomical Union](https://en.wikipedia.org/wiki/International_Astronomical_Union \"International Astronomical Union\") in 1976.[[1]](#cite_note-GPN-1)\n\n## References\n\n[[edit](/w/index.php?title=Fischer_(crater)&action=edit&section=1 \"Edit section: References\")]\n\n1. [1](#cite_ref-GPN_1-0) [2](#cite_ref-GPN_1-1) [\"Fischer\"](https://planetarynames.wr.usgs.gov/Feature/1966). *Gazetteer of Planetary Nomenclature*. USGS Astrogeology Research Program. Retrieved 2026-10-24.\n2. [↑](#cite_ref-Croft_1978_2-0) Croft, S. K. (1978). *Lunar crater volumes: Interpretation by models of impact cratering and upper crustal structure*. Lunar and Planetary Science Conference, 9th, Houston, Tex., March 13-17, 1978, Proceedings (A79-39253 16-91). Vol. 3. New York: Pergamon Press, Inc. p. 3711–3733. [Bibcode](https://en.wikipedia.org/wiki/Bibcode_(identifier) \"Bibcode (identifier)\"):[1978LPSC....9.3711C](https://scixplorer.org/abs/1978LPSC....9.3711C).\n3. [↑](#cite_ref-Byrne_2008_3-0) Byrne, Charles J. (2008). [*The Far Side of the Moon*](https://books.google.com/books?id=Wm7fspWpJBAC). Springer. pp. 25, 27–28. [ISBN](https://en.wikipedia.org/wiki/ISBN_(identifier) \"ISBN (identifier)\") [978-1-4899-8806-5](https://en.wikipedia.org/wiki/Special:BookSources/978-1-4899-8806-5 \"Special:BookSources/978-1-4899-8806-5\").\n4. [↑](#cite_ref-Bussey_Spudis_2004_4-0) [Bussey, B.](https://en.wikipedia.org/wiki/Ben_Bussey \"Ben Bussey\"); [Spudis, P.](https://en.wikipedia.org/wiki/Paul_Spudis \"Paul Spudis\") (2004). *The Clementine Atlas of the Moon*. New York: [Cambridge University Press](https://en.wikipedia.org/wiki/Cambridge_University_Press \"Cambridge University Press\"). p. 66. [ISBN](https://en.wikipedia.org/wiki/ISBN_(identifier) \"ISBN (identifier)\") [978-0-521-81528-4](https://en.wikipedia.org/wiki/Special:BookSources/978-0-521-81528-4 \"Special:BookSources/978-0-521-81528-4\").\n5. [↑](#cite_ref-Cocks_1995_5-0) Cocks, Elijah E.; Cocks, Josiah C. (1995). [*Who's Who on the Moon: A Biographical Dictionary of Lunar Nomenclature*](https://archive.org/details/isbn_9780936389271). Tudor Publishers. p. 136. [ISBN](https://en.wikipedia.org/wiki/ISBN_(identifier) \"ISBN (identifier)\") [978-0-936389-27-1](https://en.wikipedia.org/wiki/Special:BookSources/978-0-936389-27-1 \"Special:BookSources/978-0-936389-27-1\").\n\n### Sources\n\n[[edit](/w/index.php?title=Fischer_(crater)&action=edit&section=2 \"Edit section: Sources\")]\n\n* [Rükl, Antonín](https://en.wikipedia.org/wiki/Antonín_Rükl \"Antonín Rükl\") (1990). *Atlas of the Moon*. [Kalmbach Books](https://en.wikipedia.org/wiki/Kalmbach_Books \"Kalmbach Books\"). [ISBN](https://en.wikipedia.org/wiki/ISBN_(identifier) \"ISBN (identifier)\") [978-0-913135-17-4](https://en.wikipedia.org/wiki/Special:BookSources/978-0-913135-17-4 \"Special:BookSources/978-0-913135-17-4\").\n* Wlasuk, Peter T. (2000). *Observing the Moon*. Springer. [ISBN](https://en.wikipedia.org/wiki/ISBN_(identifier) \"ISBN (identifier)\") [978-1-85233-193-1](https://en.wikipedia.org/wiki/Special:BookSources/978-1-85233-193-1 \"Special:BookSources/978-1-85233-193-1\").\n\n| * [v](https://en.wikipedia.org/wiki/Template:The_Moon \"Template:The Moon\") * [t](https://en.wikipedia.org/wiki/Template_talk:The_Moon \"Template talk:The Moon\") * [e](https://en.wikipedia.org/wiki/Special:EditPage/Template:The_Moon \"Special:EditPage/Template:The Moon\")  [Moon](https://en.wikipedia.org/wiki/Moon \"Moon\") |\n| --- |\n| [Outline](https://en.wikipedia.org/wiki/Outline_of_the_Moon \"Outline of the Moon\") |\n| Physical properties | * [Internal structure](https://en.wikipedia.org/wiki/Internal_structure_of_the_Moon \"Internal structure of the Moon\") * [Topography](https://en.wikipedia.org/wiki/Selenography \"Selenography\") * [Atmosphere](https://en.wikipedia.org/wiki/Atmosphere_of_the_Moon \"Atmosphere of the Moon\") * [Gravity field](https://en.wikipedia.org/wiki/Gravitation_of_the_Moon \"Gravitation of the Moon\")   + [Hill sphere](https://en.wikipedia.org/wiki/Hill_sphere \"Hill sphere\") * [Magnetic field](https://en.wikipedia.org/wiki/Magnetic_field_of_the_Moon \"Magnetic field of the Moon\") * [Sodium tail](https://en.wikipedia.org/wiki/Sodium_tail_of_the_Moon \"Sodium tail of the Moon\") * [Moonlight](https://en.wikipedia.org/wiki/Moonlight \"Moonlight\")   + [Earthlight](https://en.wikipedia.org/wiki/Earthlight \"Earthlight\") |\n| [Orbit](https://en.wikipedia.org/wiki/Orbit_of_the_Moon \"Orbit of the Moon\") | * [Orbital elements](https://en.wikipedia.org/wiki/Orbital_elements \"Orbital elements\")   + [Distance](https://en.wikipedia.org/wiki/Lunar_distance \"Lunar distance\")     - [Perigee and apogee](https://en.wikipedia.org/wiki/Apsis \"Apsis\")   + [Libration](https://en.wikipedia.org/wiki/Libration \"Libration\")   + [Nodes](https://en.wikipedia.org/wiki/Lunar_node \"Lunar node\")     - [Nodal period](https://en.wikipedia.org/wiki/Nodal_period \"Nodal period\")   + [Precession](https://en.wikipedia.org/wiki/Lunar_precession \"Lunar precession\") * [Syzygy](https://en.wikipedia.org/wiki/Syzygy_(astronomy) \"Syzygy (astronomy)\")   + [New moon](https://en.wikipedia.org/wiki/New_moon \"New moon\")   + [Full moon](https://en.wikipedia.org/wiki/Full_moon \"Full moon\")   + [Eclipses](https://en.wikipedia.org/wiki/Eclipse \"Eclipse\")     - [Lunar eclipse](https://en.wikipedia.org/wiki/Lunar_eclipse \"Lunar eclipse\")       * [Total penumbral lunar eclipse](https://en.wikipedia.org/wiki/Total_penumbral_lunar_eclipse \"Total penumbral lunar eclipse\")       * [Tetrad](https://en.wikipedia.org/wiki/Tetrad_(astronomy) \"Tetrad (astronomy)\")     - [Solar eclipse](https://en.wikipedia.org/wiki/Solar_eclipse \"Solar eclipse\")     - [Solar eclipses on the Moon](https://en.wikipedia.org/wiki/Solar_eclipses_on_the_Moon \"Solar eclipses on the Moon\")     - [Eclipse cycle](https://en.wikipedia.org/wiki/Eclipse_cycle \"Eclipse cycle\")   + [Supermoon](https://en.wikipedia.org/wiki/Supermoon \"Supermoon\") * [Tide](https://en.wikipedia.org/wiki/Tide \"Tide\")   + [Tidal force](https://en.wikipedia.org/wiki/Tidal_force \"Tidal force\")   + [Tidal locking](https://en.wikipedia.org/wiki/Tidal_locking \"Tidal locking\")   + [Tidal acceleration](https://en.wikipedia.org/wiki/Tidal_acceleration \"Tidal acceleration\")   + [Tidal range](https://en.wikipedia.org/wiki/Tidal_range \"Tidal range\") * [Kordylewski clouds](https://en.wikipedia.org/wiki/Kordylewski_cloud \"Kordylewski cloud\") * [Lunar station](https://en.wikipedia.org/wiki/Lunar_station \"Lunar station\") |\n| Surface and [features](https://en.wikipedia.org/wiki/List_of_lunar_features \"List of lunar features\") | * [Selenography](https://en.wikipedia.org/wiki/Selenography \"Selenography\") * [Terminator](https://en.wikipedia.org/wiki/Terminator_(solar) \"Terminator (solar)\") * [Limb](https://en.wikipedia.org/wiki/Lunar_limb \"Lunar limb\") * Hemispheres   + [Near side](https://en.wikipedia.org/wiki/Near_side_of_the_Moon \"Near side of the Moon\")   + [Far side](https://en.wikipedia.org/wiki/Far_side_of_the_Moon \"Far side of the Moon\") * Poles   + [North pole](https://en.wikipedia.org/wiki/Lunar_north_pole \"Lunar north pole\")   + [South pole](https://en.wikipedia.org/wiki/Lunar_south_pole \"Lunar south pole\")     - [Face](https://en.wikipedia.org/wiki/Face_on_Moon_South_Pole \"Face on Moon South Pole\") * [Maria](https://en.wikipedia.org/wiki/Lunar_mare \"Lunar mare\")   + [List](https://en.wikipedia.org/wiki/List_of_maria_on_the_Moon \"List of maria on the Moon\") * [Mountains](https://en.wikipedia.org/wiki/List_of_mountains_on_the_Moon \"List of mountains on the Moon\")   + [Peak of eternal light](https://en.wikipedia.org/wiki/Peak_of_eternal_light \"Peak of eternal light\") * [Valleys](https://en.wikipedia.org/wiki/List_of_valleys_on_the_Moon \"List of valleys on the Moon\") * [Volcanic features](https://en.wikipedia.org/wiki/Volcanism_on_the_Moon#Features \"Volcanism on the Moon\")   + [Domes](https://en.wikipedia.org/wiki/Lunar_dome \"Lunar dome\")   + [Calderas](https://en.wikipedia.org/wiki/Caldera#The_Moon \"Caldera\")   + [Lava tubes](https://en.wikipedia.org/wiki/Lunar_lava_tube \"Lunar lava tube\") * [Craters](https://en.wikipedia.org/wiki/Lunar_craters \"Lunar craters\")   + [List](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon \"List of craters on the Moon\")     - [A–B](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A–B \"List of craters on the Moon: A–B\")     - [C–F](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_C–F \"List of craters on the Moon: C–F\")     - [G–K](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_G–K \"List of craters on the Moon: G–K\")     - [L–N](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_L–N \"List of craters on the Moon: L–N\")     - [O–Q](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_O–Q \"List of craters on the Moon: O–Q\")     - [R–S](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_R–S \"List of craters on the Moon: R–S\")     - [T–Z](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_T–Z \"List of craters on the Moon: T–Z\")   + [Ray systems](https://en.wikipedia.org/wiki/Ray_system#Lunar_rays \"Ray system\")   + [Permanently shadowed craters](https://en.wikipedia.org/wiki/Permanently_shadowed_crater \"Permanently shadowed crater\")   + [South Pole–Aitken basin](https://en.wikipedia.org/wiki/South_Pole–Aitken_basin \"South Pole–Aitken basin\") * [Regolith](https://en.wikipedia.org/wiki/Lunar_regolith \"Lunar regolith\")   + [swirls](https://en.wikipedia.org/wiki/Lunar_swirls \"Lunar swirls\") * [Rilles](https://en.wikipedia.org/wiki/Rille \"Rille\") * [Wrinkle ridges](https://en.wikipedia.org/wiki/Wrinkle_ridge \"Wrinkle ridge\") * [Rocks](https://en.wikipedia.org/wiki/Moon_rock \"Moon rock\")   + [Lunar basalt 70017](https://en.wikipedia.org/wiki/Lunar_basalt_70017 \"Lunar basalt 70017\")   + [Changesite-(Y)](https://en.wikipedia.org/wiki/Changesite-(Y) \"Changesite-(Y)\") * [Water](https://en.wikipedia.org/wiki/Lunar_water \"Lunar water\") * [Space weathering](https://en.wikipedia.org/wiki/Space_weathering \"Space weathering\")   + [Micrometeorite](https://en.wikipedia.org/wiki/Micrometeorite \"Micrometeorite\")   + [Sputtering](https://en.wikipedia.org/wiki/Sputtering \"Sputtering\") * [Quakes](https://en.wikipedia.org/wiki/Quake_(natural_phenomenon)#Moonquake \"Quake (natural phenomenon)\") * [Transient lunar phenomenon](https://en.wikipedia.org/wiki/Transient_lunar_phenomenon \"Transient lunar phenomenon\") * [Selenographic coordinate system](https://en.wikipedia.org/wiki/Selenographic_coordinate_system \"Selenographic coordinate system\") |\n| Science | * [Observation](https://en.wikipedia.org/wiki/Lunar_observation \"Lunar observation\") * [Libration](https://en.wikipedia.org/wiki/Libration#Lunar_libration \"Libration\") * [Lunar theory](https://en.wikipedia.org/wiki/Lunar_theory \"Lunar theory\") * [Origin](https://en.wikipedia.org/wiki/Origin_of_the_Moon \"Origin of the Moon\")   + [Giant-impact hypothesis](https://en.wikipedia.org/wiki/Giant-impact_hypothesis \"Giant-impact hypothesis\")     - [Theia](https://en.wikipedia.org/wiki/Theia_(hypothetical_planet) \"Theia (hypothetical planet)\")     - [Lunar magma ocean](https://en.wikipedia.org/wiki/Lunar_magma_ocean \"Lunar magma ocean\") * [Geology](https://en.wikipedia.org/wiki/Geology_of_the_Moon \"Geology of the Moon\")   + [Timescale](https://en.wikipedia.org/wiki/Lunar_geologic_timescale \"Lunar geologic timescale\")     - [Late Heavy Bombardment](https://en.wikipedia.org/wiki/Late_Heavy_Bombardment \"Late Heavy Bombardment\")   + [Lunar meteorites](https://en.wikipedia.org/wiki/Lunar_meteorite \"Lunar meteorite\")   + [KREEP](https://en.wikipedia.org/wiki/KREEP \"KREEP\")   + [Volcanism](https://en.wikipedia.org/wiki/Volcanism_on_the_Moon \"Volcanism o",
+  "https://en.wikipedia.org/wiki/Becquerel_(lunar_crater)": " Becquerel (lunar crater) This crater is named after French physicist A. Henri Becquerel (1852–1908), [5] a 1903 Nobel laureate in Physics. Its designation was formally adopted by the International Astronomical Union in 1970. [1]",
+  "https://www.caltech.edu/about/legacy/awards-and-honors/nobel-laureates": " Nobel Laureates ## Chemistry\n\n   † Edwin M. McMillan (BS '28, MS '29), 1951\n   † Linus Pauling (PhD '25), 1954\n   † William N. Lipscomb (PhD '46), 1976\n   † Rudolph A. Marcus, 1992\n   † Ahmed H. Zewail, 1999\n   † Robert H. Grubbs, 2005\n   † Martin Karplus (PhD '54), 2013\n   Eric Betzig (BS '83), 2014\n    Frances Arnold, 2018\n   Richard Robson (Postdoc '62-'64), 2025\n\n## Economics\n\n   Robert C. Merton (MS '67), 19",
+  "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics": " List of Nobel laureates in Physics - Wikipedia Only five women have won the prize: Marie Curie (1903), Maria Goeppert-Mayer (1963), Donna Strickland (2018), Andrea Ghez (2020), and Anne L'Huillier (2023).( Before L'Huillier, each woman only ever received a quarter share of the prize, although Marie Curie did receive an unshared Nobel prize in chemistry in 1911. In 2023, L'Huillier received a one-third share. [...] | Laureates |  by occupation ",
+  "https://www.sciencepub.net/nature/0403/13-0186-mahongbao-ns.pdf": " Nobel Prizes List from 1901 553. Physics, Abdus Salam 500. Physics, Martin Ryle 554. Physics, Steven Weinberg 501. 1975 - Chemistry, John Cornforth 555. 1980 - Chemistry, Paul Berg 502. Chemistry, Vladimir Prelog 556. Chemistry, Walter Gilbert 503. Economics, Leonid Vitaliyevich Kantorovich 557. Chemistry, Frederick Sanger 504. Economics, Tjalling C. Koopmans 558. Economics, Lawrence R. Klein 505. Literature, Eugenio Montale",
+  "https://www.uchicago.edu/who-we-are/global-impact/accolades/nobel-laureates": " Nobel Prizes | University of Chicago ### Chemistry\n\n John M. Jumper\\, 2024\n Moungi Bawendi\\, 2023\n John Goodenough\\, 2019\n Ada E. Yonath, 2009\n Irwin Rose\\, 2004\n Richard E. Smalley, 1996\n Paul Crutzen, 1995\n F. Sherwood Rowland\\, 1995\n Yuan T. Lee, 1986\n Henry Taube, 1983\n Herbert C. Brown\\, 1979\n Ilya Prigogine, 1977\n William H. Stein, 1972\n Gerhard Herzberg, 1971\n Robert S. Mulliken\\, 1966\n Karl Ziegler, 1963\n Willard Frank Libby,",
+  "https://www.mpg.de/nobel-prize": " Nobel Laureates | Max-Planck-Gesellschaft ## 1936 - Nobel Prize in Chemistry\n\n## Peter J. W. Debye\n\nKaiser Wilhelm Institute for Physics, Berlin (Today: Max Planck Institute for Physics, Munich)  \n(1884–1966) [...] ## 1988 - Nobel Prize in Chemistry\n\n## Prof. Dr. Robert Huber\n\nMax Planck Institute of Biochemistry, Martinsried\n\n(\\1937)\n\n## Prof. Dr. Hartmut Michel\n\nMax Planck Institute of Biophysics, Frankfurt am Main\n\n(\\1948)\n\n## Johann D",
+  "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-chemistry": " All Nobel Prizes in Chemistry - NobelPrize.org Skip to content \n\n# Nobel Prize\n\n# All Nobel Prizes in Chemistry\n\nThe Nobel Prize in Chemistry has been awarded 118 times to 202 Nobel Prize laureates between 1901 and 2026. Frederick Sanger and Barry Sharpless have both been awarded the Nobel Prize in Chemistry twice. This means that a total of 200 individuals have received the Nobel Prize in Chemistry. Click on the links to get more information.",
+  "https://www.lanl.gov/about/awards-achievements/nobel-prize": " Nobel Prize | Los Alamos National Laboratory The people listed below have received Nobel Prizes in Physics, unless otherwise noted with the following asterisks.\n\n\\Nobel Prize in Chemistry\n\n\\\\Nobel Peace Prize\n\nVisit the Nobel Prize website for more information.\n\n#### 2005\n\nRoy Glauber\n\nAwarded for his contribution to the quantum theory of optical coherence.\n\n#### 1995\n\nJoseph Rotblat\\\\\n\nAwarded for their efforts to diminish the part played b",
+  "https://science.osti.gov/About/Honors-and-Awards/DOE-Nobel-Laureates": " DOE Nobel Laureates | U.S. DOE Office of Science (SC) | 1962 | Physiology or Medicine | James Dewey Watson  Nobel Lecture | Cavendish Laboratory;  California Institute of Technology |\n| 1961 | Physics | Robert Hofstadter  Nobel Lecture | Princeton University;  Stanford University |\n| 1961 | Chemistry | Melvin Calvin  Nobel Lecture |  Lawrence Berkeley National Laboratory |\n| 1960 | Physics | Donald Arthur Glaser  Nobel Lecture | University of Michiga",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters": " Nomenclature Search Results An official website of the United States government · Here’s how you know Nomenclature Search Results An official website of the United States government · Here’s how you know",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel&pageSize=500": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Target=16_Moon&search=Nobel&pageSize=5000": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&pageSize=500&search=Nobel%20laureate": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B": " List of craters on the Moon: A–B - Wikipedia at a particular time or during a particular period) *[t]: Discuss this template *[v]: View this template [ 1 ] Where a crater formation has associated satellite craters, these are detailed on the main crater description pages. List of craters on the Moon\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ References\n[ edit ]\n↑ \"Moon craters\" . Gazetteer of Planetary Nomenclature . International As",
+  "https://spaceflighthistory.blogspot.com/2015/12/harold-urey-and-moon-1961.html": "  # Harold Urey and the Moon (1961)\n\n|   |\n| - |\n|  |\n| Nobel Laureate and Moon fan Harold Urey. Image credit: NASA. |\n\nHarold Clayton Urey as born in the small town of Walkerton, Indiana, on 29 April 1893. He taught school in Indiana and Montana, then earned Bachelor's degrees in biology and chemistry from the University of Montana. After a stint at a chemical plant in Philadelphia, he earned a PhD",
+  "https://wired.com/2012/06/harold-ureys-lunar-landing-sites-1961": "  Harold Clayton Urey was born in the small town of Walkerton, Indiana, on 29 April 1893\\. He taught school in Indiana and Montana, then earned bachelor's degrees in biology and chemistry from the University of Montana\\. After a stint at a chemical plant in Philadelphia, he earned a PhD in chemistry at the University of California at Berkeley in 1923\\. Following a fellowship in theoretical physics a",
+  "https://earth-and-space-news.blogspot.com/2013/03/einstein-crater-honors-german-american.html": "  # Einstein Crater Honors German American Physicist Albert Einstein\n\nSummary: Einstein Crater honors German American physicist Albert Einstein, whose 1921 Nobel Prize in Physics recognized his photoelectric effect discovery.\n\n|   |\n| - |\n|  |\n| Detail of mosaic of two images, obtained in 1967 by Lunar 4 mission, shows Einstein Crater, with Einstein A (interior floor center), portion of intruding ne",
+  "https://earth-and-space-news.blogspot.com/2012/07/chadwick-crater-honors-british.html": "  # Chadwick Crater Honors British Physicist Sir James Chadwick\n\nSummary: Chadwick Crater honors British physicist Sir James Chadwick, whose 1935 Nobel Prize in Physics recognized his discovery of the neutron in 1932.\n\n|   |\n| - |\n|  |\n| Detail of Lunar Astronautical Chart (LAC) 28 shows Chadwick Crater as a far side crater, with nearest named neighbors De Roy Crater and Mendel Crater's satellite J ",
+  "https://en.wikipedia.org/wiki/Arrhenius_(lunar_crater)": " Arrhenius (lunar crater) - Wikipedia This crater was named after Swedish chemist Svante Arrhenius (1859–1927), the 1903 Nobel laureate in chemistry. Its designation was formally adopted by the IAU in 1970. By convention these features are identified on lunar maps by placing the letter on the side of the crater midpoint that ...",
+  "https://the-moon.us/wiki/Nobel": " Nobel - The Moon LPOD Photo Gallery Lunar Orbiter Images The sunlit rims of Nobel and its adjacent small craters (at the local sunset terminator) are noticeable near the central parts of Lunar Orbiter V photographs 5013-h2, 5014-h2, 5015-h2, 5016-h2, 5017-h2, 5018-h2, 5019-h2, and 5020-h2.",
+  "https://en.wikipedia.org/wiki/Nobel_(crater)": " Nobel (crater) - Wikipedia By convention these features are ... of the crater midpoint that is closest to Nobel. Andersson, L. E.; Whitaker, E. A. (1982). NASA Catalogue of Lunar Nomenclature. NASA RP-1097. Blue, Jennifer (July 25, 2007). \"Gazetteer of Planetary Nomenclature\". USGS. Retrieved 2007-08-05. Bussey, B.; Spudis, P. (2004). The Clementine Atlas of the Moon..."
+ },
+ "seconds": 35.7,
+ "tokens": {
+  "prompt_tokens": 113075,
+  "completion_tokens": 1661
+ },
+ "model": "openai-codex-personal/gpt-6.1-terra-fast:high",
+ "turns": 5,
+ "round": 0,
+ "role": "noise",
+ "referee": {
+  "score": 0.2897,
+  "correct": 31,
+  "wrong": 0,
+  "total": 107,
+  "duplicates": 0,
+  "unsupported": 0,
+  "x_only": 0,
+  "y_only": 0,
+  "missed": [
+   "Abdus Salam",
+   "Adolf von Baeyer",
+   "Albert A. Michelson",
+   "Alexis Carrel",
+   "Allvar Gullstrand",
+   "Alphonse Laveran",
+   "Arne Tiselius",
+   "Arthur H. Compton",
+   "Arthur Harden",
+   "Artturi Virtanen",
+   "August Krogh",
+   "C.T.R. Wilson",
+   "Camillo Golgi",
+   "Charles Edouard Guillaume",
+   "Christiaan Eijkman",
+   "Corneille Heymans",
+   "Emil von Behring",
+   "Enrico Fermi",
+   "Ernest Lawrence",
+   "Ernest Rutherford",
+   "Frederick Soddy",
+   "Fridtjof Nansen",
+   "Frits Zernike",
+   "Frédéric Joliot",
+   "Gabriel Lippmann",
+   "Georg von Békésy",
+   "George de Hevesy",
+   "Gerty Cori",
+   "Harold C. Urey",
+   "Heike Kamerlingh Onnes",
+   "Hendrik A. Lorentz",
+   "Henri Moissan",
+   "Igor Y. Tamm",
+   "Ilya Mechnikov",
+   "Irving Langmuir",
+   "Ivan Pavlov",
+   "J.J. Thomson",
+   "Jacobus H. van 't Hoff",
+   "James Franck",
+   "Jaroslav Heyrovsky",
+   "Johannes Diderik van der Waals",
+   "Johannes Fibiger",
+   "Joseph Erlanger",
+   "Karl Landsteiner",
+   "Lev Landau",
+   "Lord Rayleigh",
+   "Marie Curie",
+   "Max Born",
+   "Max Planck",
+   "Max Theiler",
+   "Niels Ryberg Finsen",
+   "Norman Haworth",
+   "Otto Hahn",
+   "Otto Wallach",
+   "Patrick M.S. Blackett",
+   "Paul Ehrlich",
+   "Paul Karrer",
+   "Percy W. Bridgman",
+   "Pierre Curie",
+   "Pieter Zeeman",
+   "Richard Kuhn",
+   "Richard Zsigmondy",
+   "Rita Levi-Montalcini",
+   "Robert A. Millikan",
+   "Sir Alexander Fleming",
+   "Sir Charles Sherrington",
+   "Sir Cyril Hinshelwood",
+   "Sir Henry Dale",
+   "The Svedberg",
+   "Theodore W. Richards",
+   "Victor F. Hess",
+   "Walther Nernst",
+   "Wilhelm Conrad Röntgen",
+   "Wilhelm Ostwald",
+   "Willem Einthoven",
+   "Wolfgang Pauli"
+  ],
+  "rows": [
+   {
+    "name": "Kurt Alder",
+    "url": "https://wenamethestars.inkleby.com/world/moon/f/AA",
+    "providers": [
+     "brave",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-60"
+   },
+   {
+    "name": "Edward Victor Appleton",
+    "url": "https://wenamethestars.inkleby.com/world/moon/f/AA",
+    "providers": [
+     "brave",
+     "fetch:tavily"
+    ],
+    "reason": "Edward Victor Appleton is the same person as the already-listed Edward V. Appleton, the 1947 Nobel laureate in Physics commemorated by the IAU-approved lunar crater Appleton.",
+    "status": "correct",
+    "qid": "nobel_moon-21"
+   },
+   {
+    "name": "Svante Arrhenius",
+    "url": "https://wenamethestars.inkleby.com/world/moon/f/AA",
+    "providers": [
+     "brave",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-95"
+   },
+   {
+    "name": "Francis William Aston",
+    "url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "parallel",
+     "tavily",
+     "you"
+    ],
+    "reason": "Francis William Aston is the full name of the already-listed Francis W. Aston, the 1922 Nobel chemistry laureate commemorated by the IAU-approved lunar crater Aston.",
+    "status": "correct",
+    "qid": "nobel_moon-28"
+   },
+   {
+    "name": "Frederick Banting",
+    "url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "parallel",
+     "tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-29"
+   },
+   {
+    "name": "Charles Glover Barkla",
+    "url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "parallel",
+     "tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-17"
+   },
+   {
+    "name": "Henri Becquerel",
+    "url": "https://en.wikipedia.org/wiki/Becquerel_(lunar_crater)",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-44"
+   },
+   {
+    "name": "Niels Bohr",
+    "url": "https://en.wikipedia.org/wiki/en:Bohr_(crater)",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-68"
+   },
+   {
+    "name": "Carl Bosch",
+    "url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-15"
+   },
+   {
+    "name": "William Henry Bragg",
+    "url": "https://earth-and-space-news.blogspot.com/2012/03/bragg-crater-honors-british-physicist.html",
+    "providers": [
+     "seltz"
+    ],
+    "reason": "William Henry Bragg is the already-listed William Bragg, the 1915 Nobel Physics laureate. The evidence identifies him as the namesake of lunar crater Bragg, approved by the IAU in 1970.",
+    "status": "correct",
+    "qid": "nobel_moon-105"
+   },
+   {
+    "name": "Santiago Ramón y Cajal",
+    "url": "https://en.wikipedia.org/wiki/List_of_people_with_craters_of_the_Moon_named_after_them",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "parallel",
+     "tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-87"
+   },
+   {
+    "name": "James Chadwick",
+    "url": "https://earth-and-space-news.blogspot.com/2012/07/chadwick-crater-honors-british.html",
+    "providers": [
+     "seltz"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-52"
+   },
+   {
+    "name": "John Cockcroft",
+    "url": "https://en.wikipedia.org/wiki/Cockcroft_(crater)",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-57"
+   },
+   {
+    "name": "Clinton Davisson",
+    "url": "https://earth-and-space-news.blogspot.com/2012/10/davisson-crater-honors-american.html",
+    "providers": [
+     "seltz"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-19"
+   },
+   {
+    "name": "Peter Debye",
+    "url": "https://en.wikipedia.org/wiki/Debye_(crater)",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-79"
+   },
+   {
+    "name": "Albert Einstein",
+    "url": "https://earth-and-space-news.blogspot.com/2013/03/einstein-crater-honors-german-american.html",
+    "providers": [
+     "seltz"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-3"
+   },
+   {
+    "name": "Emil Fischer",
+    "url": "https://en.wikipedia.org/wiki/Fischer_(crater)",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-22"
+   },
+   {
+    "name": "Hans Fischer",
+    "url": "https://en.wikipedia.org/wiki/Fischer_(crater)",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-40"
+   },
+   {
+    "name": "Howard Florey",
+    "url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "reason": "Howard Florey is the already-known Sir Howard Florey. The evidence identifies him as a 1945 Nobel laureate and the namesake of the IAU-approved lunar crater Florey (2009).",
+    "status": "correct",
+    "qid": "nobel_moon-93"
+   },
+   {
+    "name": "Victor Grignard",
+    "url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-100"
+   },
+   {
+    "name": "Fritz Haber",
+    "url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-33"
+   },
+   {
+    "name": "Bernardo Houssay",
+    "url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-12"
+   },
+   {
+    "name": "Robert Koch",
+    "url": "https://wenamethestars.inkleby.com/world/moon/f/AA",
+    "providers": [
+     "brave",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-86"
+   },
+   {
+    "name": "Theodor Kocher",
+    "url": "https://www.abc.net.au/listen/programs/scienceshow/lunar-craters-named-after-science-high-fliers/3143132",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-97"
+   },
+   {
+    "name": "Max von Laue",
+    "url": "https://en.wikipedia.org/wiki/Laue_(crater)",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-67"
+   },
+   {
+    "name": "Guglielmo Marconi",
+    "url": "https://en.wikipedia.org/wiki/Marconi_(crater)",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-39"
+   },
+   {
+    "name": "C. V. Raman",
+    "url": "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "reason": "C. V. Raman is the already-listed Sir Chandrasekhara Venkata Raman. The evidence confirms his 1930 Nobel Prize in Physics but does not document an IAU-approved lunar feature named after him.",
+    "status": "correct",
+    "qid": "nobel_moon-89"
+   },
+   {
+    "name": "William Ramsay",
+    "url": "https://lunasociety.org/full-moon-atlas/moon-crater-catalog-r",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "reason": "William Ramsay is the already-known Sir William Ramsay, Nobel laureate in Chemistry (1904). The evidence identifies him as the namesake of the IAU-approved lunar crater Ramsay (1970).",
+    "status": "correct",
+    "qid": "nobel_moon-94"
+   },
+   {
+    "name": "Owen Willans Richardson",
+    "url": "https://earth-and-space-news.blogspot.com/2012/04/richardson-crater-honors-british.html",
+    "providers": [
+     "seltz"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-73"
+   },
+   {
+    "name": "Paul Sabatier",
+    "url": "https://web.archive.org/web/20080916141628/http:/lunar.arc.nasa.gov/science/atlas/text/cratertex_s.html",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-77"
+   },
+   {
+    "name": "Erwin Schrödinger",
+    "url": "https://kuongeo.com/moon/names/from/austria",
+    "providers": [
+     "seltz"
+    ],
+    "status": "correct",
+    "qid": "nobel_moon-27"
+   }
+  ]
+ }
+}

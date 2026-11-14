@@ -1,0 +1,35 @@
+---
+id: "2b72b995-17d9-499c-ace1-eee7db3526e8"
+name: "Method v006"
+micro_summary: "Interruptible cohort sampling: retain adaptive dual frontiers and the cheap verification cascade, but replace long speculative candidate batches with small feedback-driven samples. Unlike census-first"
+status: "resolved"
+kind: "Idea"
+see_also: []
+---
+**Kind:** Idea
+
+Parent: v002
+
+```json
+{
+ "id": "v006",
+ "parent": "v002",
+ "round": 3,
+ "rationale": "Interruptible cohort sampling: retain adaptive dual frontiers and the cheap verification cascade, but replace long speculative candidate batches with small feedback-driven samples. Unlike census-first, source-bundle allocation, or a final evidence audit, this changes when verification commitments are made. Parallel's observed 163.8 correct/dollar versus Exa's 60.7 supports cheap sampling, not a causal accuracy claim. The successful train trace spent 0.018 on one eighteen-name batch; sampling could redirect that spend earlier when a cohort is unproductive. This remains an untested improvement hypothesis.",
+ "instructions": "Define both predicates precisely, including entity unit, eligible subtypes, exclusions and effective dates. Start sequentially with one X search, one Y search and one conjunction search. Maintain deduplicated dual frontiers and a ledger of canonical identities, aliases, evidence for each predicate, unresolved facts and estimated next-action cost. Group pending candidates into meaningful cohorts by their discovery source or eligibility subtype; do not invent arbitrary cohorts when none are useful. Separate evidence-backed near-intersections from speculative candidates that satisfy only one predicate. Resolve near-intersections first. For a speculative cohort, check at most three diverse candidates before committing more spend, and limit each dispatch to 10% of the initial budget; a single necessary check may exceed that cap if affordable. Inspect returned evidence before dispatching another sample. If a sample yields no verified addition or materially improved evidence, park that cohort and test another partition or the reverse frontier. No-hit candidates remain unresolved, not rejected. Revisit a parked cohort when new evidence, an alias or a demonstrably different source gives a better resolution path; a failed sample never proves the cohort empty. Expand productive cohorts in similarly small rounds, comparing verified additions and evidence progress per actual spend against discovery alternatives. Retain one neglected-cohort or reverse-frontier probe after two productive rounds so early samples do not permanently starve rare subtypes. After two discovery queries add no plausible identities, change source, subtype or frontier rather than paraphrasing the conjunction. Reuse established facts and never repeat settled checks. Keep at least 35% of initial budget for verification and evidence resolution, and stop discovery earlier if the promising pending queue requires it. End with identity, scope and date checks; submit only individually supported intersections and do not infer completeness from sampling or search saturation.",
+ "routing": {
+  "auto_routing": false,
+  "providers": [
+   "parallel"
+  ],
+  "tier": "default",
+  "num_results": 8,
+  "verify_providers": [
+   "parallel"
+  ]
+ },
+ "routing_rules": "Use Parallel alone, default tier, 8 results for discovery and 4 for exact-name checks and first-pass check_candidates. Request identity-matched evidence for both tests while directing retrieval to the missing fact. Estimate dispatch cost per candidate and provider, not per tool invocation; fewer results are not presumed cheaper. Escalate only individual promising unresolved cases to Exa alone with 4 results after a cheap check or targeted fetch fails; never escalate a whole cohort because one member is ambiguous. Following baseline sampling and genuine Parallel stagnation, allow one Exa discovery probe on the weaker frontier if the resolution reserve remains intact; retain Exa discovery only for useful incremental evidence or identities. No broad auto-routing or routine concurrent variants. Domain filters belong on targeted evidence checks, with relaxation when necessary, not the entire discovery frontier. Use publication-date filters only when publication date defines eligibility; check effective dates in source content.",
+ "fetch_policy": "Cache facts and URLs. Fetch when source content can resolve a material identity or predicate uncertainty, or a discovered list supplies several plausible candidates. Prefer authoritative pages and shared evidence that reduces pending-check cost, without turning source bundles into the mandatory discovery unit. Do not fetch every result. After a blocked or uninformative page, try one targeted alternate source rather than a fetch chain.",
+ "status": "candidate"
+}
+```

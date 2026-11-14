@@ -1,0 +1,24 @@
+{"t": 1794697729.89, "event": "plan", "unmatched": 11, "reused": 0, "to_check": 11}
+{"t": 1794697729.89, "event": "start", "name": "Jane Addams \u2014 Addams crater"}
+{"t": 1794697729.89, "event": "start", "name": "Maria Goeppert-Mayer \u2014 Goeppert-Mayer crater"}
+{"t": 1794697729.89, "event": "start", "name": "Ir\u00e8ne Joliot-Curie \u2014 Joliot-Curie crater"}
+{"t": 1794697729.89, "event": "start", "name": "Emily Greene Balch \u2014 Balch crater"}
+{"t": 1794697729.89, "event": "start", "name": "Gerty Cori \u2014 Cori crater"}
+{"t": 1794697729.89, "event": "start", "name": "Grazia Deledda \u2014 Deledda crater"}
+{"t": 1794697729.89, "event": "start", "name": "Sigrid Undset \u2014 Undset crater"}
+{"t": 1794697729.89, "event": "start", "name": "Nelly Sachs \u2014 Sachs Patera"}
+{"t": 1794697729.89, "event": "start", "name": "Selma Lagerl\u00f6f \u2014 Lagerl\u00f6f crater"}
+{"t": 1794697729.89, "event": "start", "name": "Pearl S. Buck \u2014 Buck crater"}
+{"t": 1794697735.19, "event": "end", "name": "Ir\u00e8ne Joliot-Curie \u2014 Joliot-Curie crater", "status": "same", "reason": "Ir\u00e8ne Joliot-Curie is already listed. The evidence confirms her 1935 Nobel Prize in Chemistry and the IAU-adopted Joliot-Curie crater on Venus.", "seconds": 5.3}
+{"t": 1794697735.19, "event": "start", "name": "Bertha von Suttner \u2014 von Suttner crater"}
+{"t": 1794697735.58, "event": "end", "name": "Maria Goeppert-Mayer \u2014 Goeppert-Mayer crater", "status": "same", "reason": "Maria Goeppert-Mayer is the already-known Maria Goeppert Mayer. The planetary nomenclature evidence identifies her as a Nobel laureate and lists Venus\u2019s Goeppert-Mayer crater as approved in 1991.", "seconds": 5.7}
+{"t": 1794697736.02, "event": "end", "name": "Grazia Deledda \u2014 Deledda crater", "status": "same", "reason": "Grazia Deledda, the 1926 Nobel laureate in Literature, is already listed. The IAU evidence identifies Venus\u2019s approved Deledda crater as named for her.", "seconds": 6.1}
+{"t": 1794697736.14, "event": "end", "name": "Pearl S. Buck \u2014 Buck crater", "status": "same", "reason": "Pearl S. Buck is the already-known Pearl Buck, the 1938 Nobel laureate in Literature. The IAU Planetary Names evidence lists Venus\u2019s Buck crater as approved in 1991 and named for her.", "seconds": 6.2}
+{"t": 1794697736.54, "event": "end", "name": "Gerty Cori \u2014 Cori crater", "status": "same", "reason": "Gerty Cori is already listed. NobelPrize.org confirms her 1947 Nobel Prize, and the supplied evidence identifies Venus\u2019s Cori crater as named after her and adopted by the IAU in 1991.", "seconds": 6.6}
+{"t": 1794697738.79, "event": "end", "name": "Emily Greene Balch \u2014 Balch crater", "status": "same", "reason": "Emily Greene Balch is already listed. She was a Nobel Peace Prize laureate, and the supplied evidence identifies Balch as an IAU-listed crater on Venus named for her.", "seconds": 8.9}
+{"t": 1794697738.79, "event": "end", "name": "Jane Addams \u2014 Addams crater", "status": "same", "reason": "Jane Addams, a 1931 Nobel Peace Prize laureate, is already listed. The evidence identifies Venus\u2019s Addams crater as named for her and adopted by the IAU in 1994.", "seconds": 8.9}
+{"t": 1794697741.09, "event": "end", "name": "Sigrid Undset \u2014 Undset crater", "status": "same", "reason": "Sigrid Undset, the 1928 Nobel laureate in Literature, is already listed. The Venus crater list identifies Undset crater as named for her; she must not be counted again.", "seconds": 11.2}
+{"t": 1794697741.31, "event": "end", "name": "Selma Lagerl\u00f6f \u2014 Lagerl\u00f6f crater", "status": "same", "reason": "Selma Lagerl\u00f6f is already listed. NobelPrize.org confirms her 1909 Literature Nobel, but the supplied evidence does not establish an IAU-approved Venus feature named after her.", "seconds": 11.4}
+{"t": 1794697741.52, "event": "end", "name": "Nelly Sachs \u2014 Sachs Patera", "status": "same", "reason": "Nelly Sachs, the 1966 Nobel laureate in Literature, is already listed. The IAU Gazetteer confirms Sachs Patera on Venus is named for her and was approved in 1991.", "seconds": 11.6}
+{"t": 1794697746.23, "event": "end", "name": "Bertha von Suttner \u2014 von Suttner crater", "status": "same", "reason": "The claimed laureate is already listed. NobelPrize.org confirms her 1905 Peace Prize, and the Venus feature list includes von Suttner crater. The supplied excerpts do not independently establish IAU approval status as of November 2026.", "seconds": 11.0}
+{"t": 1794697746.23, "event": "done"}

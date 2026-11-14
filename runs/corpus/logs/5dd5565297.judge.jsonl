@@ -1,0 +1,12 @@
+{"t": 1794697266.04, "event": "plan", "unmatched": 5, "reused": 0, "to_check": 5}
+{"t": 1794697266.04, "event": "start", "name": "Rachel Carson \u2014 Carson crater"}
+{"t": 1794697266.04, "event": "start", "name": "Margaret Mead \u2014 Mead crater"}
+{"t": 1794697266.04, "event": "start", "name": "Helen Keller \u2014 Keller Patera"}
+{"t": 1794697266.04, "event": "start", "name": "Georgia O\u2019Keeffe \u2014 O\u2019Keeffe crater"}
+{"t": 1794697266.04, "event": "start", "name": "Martha Graham \u2014 Graham Patera"}
+{"t": 1794697274.72, "event": "end", "name": "Margaret Mead \u2014 Mead crater", "status": "same", "reason": "Margaret Mead is already listed. The evidence supports her posthumous Presidential Medal of Freedom award in 1979 and the IAU-approved Venus crater Mead, named for her in 1991.", "seconds": 8.7}
+{"t": 1794697278.56, "event": "end", "name": "Martha Graham \u2014 Graham Patera", "status": "same", "reason": "Martha Graham is already listed. The supplied evidence confirms her 1976 Presidential Medal of Freedom but does not establish an IAU-approved Venus feature named Graham Patera.", "seconds": 12.5}
+{"t": 1794697279.42, "event": "end", "name": "Georgia O\u2019Keeffe \u2014 O\u2019Keeffe crater", "status": "wrong", "reason": "Georgia O\u2019Keeffe received the Presidential Medal of Freedom, but O\u2019Keeffe crater is on Mercury, not Venus. The supplied evidence does not establish an IAU-approved Venus feature named after her.", "seconds": 13.4}
+{"t": 1794697280.89, "event": "end", "name": "Rachel Carson \u2014 Carson crater", "status": "same", "reason": "Rachel Carson is already listed. The supplied evidence confirms her posthumous Presidential Medal of Freedom but does not establish an IAU-approved Venus feature named after her.", "seconds": 14.8}
+{"t": 1794697284.79, "event": "end", "name": "Helen Keller \u2014 Keller Patera", "status": "same", "reason": "Helen Keller is already listed. The supplied excerpts do not explicitly establish her medal award or an IAU-approved Venus feature named Keller Patera; these flags indicate insufficient evidence, not disproof.", "seconds": 18.8}
+{"t": 1794697284.79, "event": "done"}

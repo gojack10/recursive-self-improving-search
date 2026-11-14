@@ -1,0 +1,25 @@
+{
+ "id": "v001",
+ "parent": "v000",
+ "round": 1,
+ "rationale": "Census-first strategy converts cheap single-provider searches into broad candidate coverage and uses higher-yield Exa only for unresolved verification. It targets the observed recall loss without relaxing precision.",
+ "instructions": "Parse the hunt into X and Y, recording exclusions, qualifying subtypes, dates, entity unit, and treatment of group membership. With at most one initial search per side, choose the side with the smallest reliably enumerable authoritative population, not necessarily the fewest search hits. Locate its registry, directory, category table, or downloadable list. Build a deduplicated candidate ledger with canonical identity, anchor evidence, other-condition status, and supporting URLs. Inspect all relevant list sections and pagination; do not restrict candidates to familiar names or likely occupations without an explicit eligibility reason. Use check_candidates in manageable batches to test the other condition under the hunt's exact rules; supply anchor evidence and require identity-matched supporting evidence. Unknown is not false: retry high-value unresolved cases selectively. Reserve at least 40% of initial budget for verification and final gap checks. Stop expanding when the remaining budget is needed for the pending queue. Submit every supported intersection item once, retaining evidence for both conditions and explaining incompleteness if any.",
+ "routing": {
+  "auto_routing": false,
+  "providers": [
+   "parallel"
+  ],
+  "tier": "default",
+  "num_results": 8,
+  "verify_providers": [
+   "parallel"
+  ]
+ },
+ "routing_rules": "Use Parallel alone for discovery and first-pass check_candidates. Escalate unresolved or ambiguous checks to Exa alone; also try Exa for source discovery if two distinct Parallel searches fail to locate a usable census. No routine multi-provider fan-out or speculative also batches. Price each call against the remaining budget, including each variant and fetch. Use 8 results for discovery and 4 for exact-identity checks. Restrict to known authoritative domains when verifying, but remove restrictions if they obscure relevant evidence. Leave publication filters unset unless publication date itself is a hunt requirement; establish historical eligibility from source content. Avoid other providers initially: their observed attributed yield does not justify routine spend, while Ceramic's low price alone is not evidence of usefulness.",
+ "fetch_policy": "Fetch when summaries cannot expose the candidate roster or establish an eligibility fact. Prefer one complete table/export over many individual pages; confirm export completeness and pagination. Fetch individual evidence pages only for material unresolved facts, identity, or effective dates. Reuse already fetched sources and avoid guessed URLs or indiscriminate biography batches.",
+ "status": "discarded",
+ "node": "ffd3d422-822c-46eb-b0fc-c466cc67cdd1",
+ "created": "2026-11-14T15:00:14",
+ "select_score": 0.4723,
+ "title": "Census-first search"
+}

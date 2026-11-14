@@ -1,0 +1,66 @@
+{"t": 1794697026.06, "event": "plan", "unmatched": 32, "reused": 0, "to_check": 32}
+{"t": 1794697026.06, "event": "start", "name": "Wilhelm Conrad R\u00f6ntgen \u2014 R\u00f6ntgen"}
+{"t": 1794697026.06, "event": "start", "name": "Henri Becquerel \u2014 Becquerel"}
+{"t": 1794697026.07, "event": "start", "name": "Philipp Lenard \u2014 Lenard"}
+{"t": 1794697026.07, "event": "start", "name": "Pieter Zeeman \u2014 Zeeman"}
+{"t": 1794697026.07, "event": "start", "name": "Pierre Curie \u2014 Curie"}
+{"t": 1794697026.07, "event": "start", "name": "J. J. Thomson \u2014 Thomson"}
+{"t": 1794697026.07, "event": "start", "name": "John William Strutt, Lord Rayleigh \u2014 Rayleigh"}
+{"t": 1794697026.07, "event": "start", "name": "Marie Sk\u0142odowska Curie \u2014 Sklodowska"}
+{"t": 1794697026.07, "event": "start", "name": "Albert A. Michelson \u2014 Michelson"}
+{"t": 1794697026.07, "event": "start", "name": "Hendrik Antoon Lorentz \u2014 Lorentz"}
+{"t": 1794697031.34, "event": "end", "name": "John William Strutt, Lord Rayleigh \u2014 Rayleigh", "status": "same", "reason": "John William Strutt, Lord Rayleigh is the already-listed Lord Rayleigh. He won the 1904 Nobel Prize in Physics, and the IAU-approved lunar crater Rayleigh is named after him.", "seconds": 5.3}
+{"t": 1794697031.34, "event": "start", "name": "Gabriel Lippmann \u2014 Lippmann"}
+{"t": 1794697031.58, "event": "end", "name": "Marie Sk\u0142odowska Curie \u2014 Sklodowska", "status": "same", "reason": "Marie Sk\u0142odowska Curie is the already-listed Marie Curie, the 1903 Physics Nobel laureate honored by the lunar crater Sklodowska. Count her only once.", "seconds": 5.5}
+{"t": 1794697031.58, "event": "start", "name": "Guglielmo Marconi \u2014 Marconi"}
+{"t": 1794697031.67, "event": "end", "name": "Henri Becquerel \u2014 Becquerel", "status": "same", "reason": "Henri Becquerel is already listed. The evidence identifies him as a 1903 Nobel Prize in Physics laureate and the namesake of the lunar crater Becquerel.", "seconds": 5.6}
+{"t": 1794697031.67, "event": "start", "name": "Max von Laue \u2014 Laue"}
+{"t": 1794697032.12, "event": "end", "name": "Hendrik Antoon Lorentz \u2014 Lorentz", "status": "same", "reason": "Hendrik Antoon Lorentz is the already-listed Hendrik A. Lorentz, the 1902 Physics Nobel laureate commemorated by the IAU-approved lunar crater Lorentz.", "seconds": 6.1}
+{"t": 1794697032.12, "event": "start", "name": "William Henry Bragg \u2014 Bragg"}
+{"t": 1794697034.09, "event": "end", "name": "Philipp Lenard \u2014 Lenard", "status": "wrong", "reason": "Lenard won the 1905 Nobel Prize in Physics, but the IAU withdrew the lunar crater name Lenard in 2020. It therefore does not qualify as an approved name in force for the requested cutoff.", "seconds": 8.0}
+{"t": 1794697034.09, "event": "start", "name": "Charles Glover Barkla \u2014 Barkla"}
+{"t": 1794697035.16, "event": "end", "name": "J. J. Thomson \u2014 Thomson", "status": "same", "reason": "J. J. Thomson is the already-known J.J. Thomson. The supplied Nobel evidence confirms his 1906 Physics prize, but does not establish an IAU-approved lunar feature named after him.", "seconds": 9.1}
+{"t": 1794697035.16, "event": "start", "name": "Max Planck \u2014 Planck"}
+{"t": 1794697035.66, "event": "end", "name": "Wilhelm Conrad R\u00f6ntgen \u2014 R\u00f6ntgen", "status": "same", "reason": "The claimed laureate is already listed. NobelPrize.org confirms his 1901 Physics Nobel Prize, but the supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 9.6}
+{"t": 1794697035.66, "event": "start", "name": "Johannes Stark \u2014 Stark"}
+{"t": 1794697036.06, "event": "end", "name": "Pierre Curie \u2014 Curie", "status": "same", "reason": "Pierre Curie is already listed. The supplied NobelPrize.org evidence confirms his 1903 Physics Nobel, but does not establish an IAU-approved lunar feature named after him.", "seconds": 10.0}
+{"t": 1794697036.06, "event": "start", "name": "Albert Einstein \u2014 Einstein"}
+{"t": 1794697036.93, "event": "end", "name": "Pieter Zeeman \u2014 Zeeman", "status": "same", "reason": "Pieter Zeeman is already listed. NobelPrize.org confirms his 1902 Physics Nobel; the supplied crater evidence does not explicitly establish IAU approval or its namesake.", "seconds": 10.9}
+{"t": 1794697036.93, "event": "start", "name": "Niels Bohr \u2014 Bohr"}
+{"t": 1794697038.31, "event": "end", "name": "Albert A. Michelson \u2014 Michelson", "status": "same", "reason": "The claimed laureate is already listed as Albert A. Michelson. The supplied evidence confirms his 1907 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.", "seconds": 12.2}
+{"t": 1794697038.31, "event": "start", "name": "James Franck \u2014 Franck"}
+{"t": 1794697041.16, "event": "end", "name": "Guglielmo Marconi \u2014 Marconi", "status": "same", "reason": "The claimed laureate is already listed as Guglielmo Marconi. The supplied evidence consists of unrelated professional profiles and establishes neither a Nobel Prize in Physics nor an IAU-approved lunar namesake.", "seconds": 9.6}
+{"t": 1794697041.16, "event": "start", "name": "Arthur Holly Compton \u2014 Compton"}
+{"t": 1794697041.61, "event": "end", "name": "Gabriel Lippmann \u2014 Lippmann", "status": "same", "reason": "Gabriel Lippmann is already listed. The supplied evidence confirms his 1908 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.", "seconds": 10.3}
+{"t": 1794697041.61, "event": "start", "name": "Owen Willans Richardson \u2014 Richardson"}
+{"t": 1794697042.32, "event": "end", "name": "Charles Glover Barkla \u2014 Barkla", "status": "same", "reason": "Charles Glover Barkla is already listed. NobelPrize.org confirms his 1917 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 8.2}
+{"t": 1794697042.32, "event": "start", "name": "Erwin Schr\u00f6dinger \u2014 Schr\u00f6dinger"}
+{"t": 1794697043.38, "event": "end", "name": "Max Planck \u2014 Planck", "status": "same", "reason": "Max Planck is already listed. He received the 1918 Nobel Prize in Physics, and the IAU-approved lunar crater Planck is named after him.", "seconds": 8.2}
+{"t": 1794697043.38, "event": "start", "name": "Victor Francis Hess \u2014 Hess"}
+{"t": 1794697043.49, "event": "end", "name": "Max von Laue \u2014 Laue", "status": "same", "reason": "Max von Laue is already listed. The supplied evidence confirms his 1914 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named Laue.", "seconds": 11.8}
+{"t": 1794697043.49, "event": "start", "name": "James Chadwick \u2014 Chadwick"}
+{"t": 1794697043.93, "event": "end", "name": "William Henry Bragg \u2014 Bragg", "status": "same", "reason": "William Henry Bragg is the already-listed William Bragg, the 1915 Physics laureate commemorated by the IAU-approved lunar crater Bragg; he is not an additional person.", "seconds": 11.8}
+{"t": 1794697043.93, "event": "start", "name": "Clinton Joseph Davisson \u2014 Davisson"}
+{"t": 1794697044.92, "event": "end", "name": "Niels Bohr \u2014 Bohr", "status": "same", "reason": "Niels Bohr is already listed. The supplied evidence supports his Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.", "seconds": 8.0}
+{"t": 1794697044.92, "event": "start", "name": "Enrico Fermi \u2014 Fermi"}
+{"t": 1794697046.19, "event": "end", "name": "Albert Einstein \u2014 Einstein", "status": "same", "reason": "Albert Einstein is already listed. The supplied evidence confirms his 1921 Nobel Prize in Physics but does not establish the IAU-approved lunar feature Einstein.", "seconds": 10.1}
+{"t": 1794697046.19, "event": "start", "name": "Edward Victor Appleton \u2014 Appleton"}
+{"t": 1794697047.8, "event": "end", "name": "Erwin Schr\u00f6dinger \u2014 Schr\u00f6dinger", "status": "same", "reason": "Already listed as Erwin Schr\u00f6dinger. NobelPrize.org confirms his 1933 Physics Nobel, and the lunar evidence identifies the IAU-named crater Schr\u00f6dinger as honoring him.", "seconds": 5.5}
+{"t": 1794697047.8, "event": "start", "name": "Patrick Blackett \u2014 Blackett"}
+{"t": 1794697048.13, "event": "end", "name": "James Franck \u2014 Franck", "status": "same", "reason": "James Franck is already listed. NobelPrize.org confirms his 1925 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 9.8}
+{"t": 1794697048.13, "event": "start", "name": "John Cockcroft \u2014 Cockcroft"}
+{"t": 1794697049.24, "event": "end", "name": "Owen Willans Richardson \u2014 Richardson", "status": "same", "reason": "The claimed laureate is already listed. NobelPrize.org confirms his 1928 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 7.6}
+{"t": 1794697049.24, "event": "start", "name": "Max Born \u2014 Born"}
+{"t": 1794697049.32, "event": "end", "name": "Clinton Joseph Davisson \u2014 Davisson", "status": "same", "reason": "Clinton Joseph Davisson is the already-known Clinton Davisson, the 1937 Physics Nobel laureate honored by the IAU-approved lunar crater Davisson.", "seconds": 5.4}
+{"t": 1794697049.32, "event": "start", "name": "Lev Landau \u2014 Landau"}
+{"t": 1794697049.86, "event": "end", "name": "Johannes Stark \u2014 Stark", "status": "wrong", "reason": "The evidence establishes Johannes Stark as a Nobel Prize in Physics laureate, but does not establish an IAU-approved lunar feature named after him in force as of November 2026.", "seconds": 14.2}
+{"t": 1794697052.03, "event": "end", "name": "Enrico Fermi \u2014 Fermi", "status": "same", "reason": "Enrico Fermi is already listed. The evidence identifies him as the 1938 Nobel Prize in Physics laureate and namesake of the lunar crater Fermi, approved by the IAU in 1964.", "seconds": 7.1}
+{"t": 1794697052.38, "event": "end", "name": "Edward Victor Appleton \u2014 Appleton", "status": "same", "reason": "Edward Victor Appleton is the already-known Edward V. Appleton. Evidence identifies him as the 1947 Physics Nobel laureate and namesake of the lunar crater Appleton, approved in 1970.", "seconds": 6.2}
+{"t": 1794697052.43, "event": "end", "name": "Arthur Holly Compton \u2014 Compton", "status": "same", "reason": "NobelPrize.org identifies Arthur H. Compton as Arthur Holly Compton, Physics laureate in 1927. He is already listed. The supplied evidence does not establish the IAU-approved lunar feature.", "seconds": 11.3}
+{"t": 1794697052.78, "event": "end", "name": "James Chadwick \u2014 Chadwick", "status": "same", "reason": "James Chadwick is already listed. The evidence confirms his 1935 Nobel Prize in Physics but does not explicitly establish an IAU-approved lunar feature named after him.", "seconds": 9.3}
+{"t": 1794697054.05, "event": "end", "name": "John Cockcroft \u2014 Cockcroft", "status": "same", "reason": "John Cockcroft is already listed. The evidence identifies him as a 1951 Nobel Prize in Physics laureate and the namesake of the lunar crater Cockcroft, named in 1970.", "seconds": 5.9}
+{"t": 1794697056.02, "event": "end", "name": "Victor Francis Hess \u2014 Hess", "status": "same", "reason": "Victor Francis Hess is the already-known Victor F. Hess. The evidence confirms his 1936 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.", "seconds": 12.6}
+{"t": 1794697060.19, "event": "end", "name": "Patrick Blackett \u2014 Blackett", "status": "same", "reason": "Patrick Blackett is Patrick Maynard Stuart Blackett, already listed as Patrick M.S. Blackett. He won the 1948 Nobel Prize in Physics and is the namesake of the lunar crater Blackett; he does not count separately.", "seconds": 12.4}
+{"t": 1794697060.53, "event": "end", "name": "Lev Landau \u2014 Landau", "status": "same", "reason": "Lev Landau is already listed. NobelPrize.org confirms his 1962 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 11.2}
+{"t": 1794697061.01, "event": "end", "name": "Max Born \u2014 Born", "status": "same", "reason": "Max Born is already listed. He won the 1954 Nobel Prize in Physics, and the IAU-approved lunar crater Born is named after him; it is not a satellite crater.", "seconds": 11.8}
+{"t": 1794697061.01, "event": "done"}

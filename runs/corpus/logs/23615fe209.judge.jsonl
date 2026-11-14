@@ -1,0 +1,22 @@
+{"t": 1794698409.21, "event": "plan", "unmatched": 13, "reused": 6, "to_check": 7}
+{"t": 1794698409.21, "event": "end", "name": "John William Strutt, Lord Rayleigh", "status": "same", "reason": "John William Strutt, Lord Rayleigh is the already-listed Lord Rayleigh. Evidence identifies him as the 1904 Physics Nobel laureate and the namesake of the IAU-approved lunar crater Rayleigh.", "reused": true}
+{"t": 1794698409.21, "event": "end", "name": "William Henry Bragg", "status": "same", "reason": "William Henry Bragg is the already-known William Bragg, not a different laureate. The supplied evidence confirms his Physics Nobel Prize but does not document an IAU-approved lunar feature named after him.", "reused": true}
+{"t": 1794698409.21, "event": "end", "name": "Arthur Holly Compton", "status": "same", "reason": "Arthur Holly Compton is Arthur H. Compton, already listed. He won the 1927 Nobel Prize in Physics and is a co-namesake of the lunar crater Compton.", "reused": true}
+{"t": 1794698409.21, "event": "end", "name": "C. V. Raman", "status": "same", "reason": "C. V. Raman is the already-listed Sir Chandrasekhara Venkata Raman. NobelPrize.org confirms his 1930 Physics Nobel; the supplied evidence does not establish an IAU-approved lunar feature named after him.", "reused": true}
+{"t": 1794698409.21, "event": "end", "name": "Edward Victor Appleton", "status": "same", "reason": "Edward Victor Appleton is the already-listed Edward V. Appleton, the 1947 Physics Nobel laureate honored by the IAU-approved lunar crater Appleton.", "reused": true}
+{"t": 1794698409.21, "event": "end", "name": "Patrick Blackett", "status": "same", "reason": "Patrick Blackett is the already-listed Patrick M.S. Blackett, a Nobel Physics laureate. The supplied evidence does not establish an IAU-approved lunar feature named after him.", "reused": true}
+{"t": 1794698409.21, "event": "start", "name": "Hendrik Antoon Lorentz"}
+{"t": 1794698409.21, "event": "start", "name": "Percy Williams Bridgman"}
+{"t": 1794698409.21, "event": "start", "name": "Ernest Orlando Lawrence"}
+{"t": 1794698409.21, "event": "start", "name": "Victor Franz Hess"}
+{"t": 1794698409.21, "event": "start", "name": "Robert Andrews Millikan"}
+{"t": 1794698409.21, "event": "start", "name": "John Douglas Cockcroft"}
+{"t": 1794698409.21, "event": "start", "name": "Clinton Joseph Davisson"}
+{"t": 1794698414.46, "event": "end", "name": "Hendrik Antoon Lorentz", "status": "same", "reason": "Hendrik Antoon Lorentz is the full name of the already-listed Hendrik A. Lorentz, the 1902 Physics Nobel laureate commemorated by the IAU-approved lunar crater Lorentz.", "seconds": 5.2}
+{"t": 1794698415.15, "event": "end", "name": "John Douglas Cockcroft", "status": "same", "reason": "John Douglas Cockcroft is the already-listed John Cockcroft. Evidence confirms his 1951 Nobel Prize in Physics and the IAU-approved lunar crater Cockcroft, adopted in 1970.", "seconds": 5.9}
+{"t": 1794698415.2, "event": "end", "name": "Robert Andrews Millikan", "status": "same", "reason": "Robert Andrews Millikan is Robert A. Millikan, already listed. The evidence identifies his 1923 Nobel Prize in Physics and the IAU-approved lunar crater Millikan named in his honor.", "seconds": 6.0}
+{"t": 1794698416.78, "event": "end", "name": "Percy Williams Bridgman", "status": "same", "reason": "Percy Williams Bridgman is the already-known Percy W. Bridgman. The evidence confirms his 1946 Nobel Prize in Physics but does not document an IAU-approved lunar feature named after him.", "seconds": 7.6}
+{"t": 1794698418.06, "event": "end", "name": "Clinton Joseph Davisson", "status": "same", "reason": "Clinton Joseph Davisson is the same person as Clinton Davisson, the 1937 Physics Nobel laureate already listed. The lunar crater Davisson appears in the IAU names evidence.", "seconds": 8.8}
+{"t": 1794698419.36, "event": "end", "name": "Ernest Orlando Lawrence", "status": "same", "reason": "NobelPrize.org identifies Ernest Lawrence as Ernest Orlando Lawrence, the 1939 Physics laureate. He is already listed. The supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 10.1}
+{"t": 1794698420.39, "event": "end", "name": "Victor Franz Hess", "status": "same", "reason": "Victor Franz Hess is the full name of the already-listed Victor F. Hess. NobelPrize.org confirms his 1936 Physics Nobel, and the lunar naming evidence lists Hess.", "seconds": 11.2}
+{"t": 1794698420.39, "event": "done"}

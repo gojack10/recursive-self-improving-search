@@ -1,0 +1,4 @@
+{"t": 1794696845.28, "event": "plan", "unmatched": 1, "reused": 0, "to_check": 1}
+{"t": 1794696845.28, "event": "start", "name": "Edward Victor Appleton"}
+{"t": 1794696853.98, "event": "end", "name": "Edward Victor Appleton", "status": "same", "reason": "Edward Victor Appleton is the already-listed Edward V. Appleton, the 1947 Physics Nobel laureate honored by the IAU-approved lunar crater Appleton.", "seconds": 8.7}
+{"t": 1794696853.98, "event": "done"}

@@ -1,0 +1,4 @@
+{"t": 1794698770.26, "event": "plan", "unmatched": 1, "reused": 0, "to_check": 1}
+{"t": 1794698770.26, "event": "start", "name": "Pablo Neruda"}
+{"t": 1794698777.5, "event": "end", "name": "Pablo Neruda", "status": "wrong", "reason": "Pablo Neruda won the 1971 Nobel Prize in Literature, but Mercury\u2019s Neruda crater was reassigned in 2022 to honor Jan Neruda. The current IAU record therefore does not support counting Pablo Neruda under names in force as of November 2026.", "seconds": 7.2}
+{"t": 1794698777.5, "event": "done"}

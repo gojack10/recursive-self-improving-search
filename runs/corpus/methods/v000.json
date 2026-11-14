@@ -1,0 +1,17 @@
+{
+ "id": "v000",
+ "parent": null,
+ "rationale": "Seed method: a plain search agent with Telem auto-routing and no learned tactics.",
+ "instructions": "Search the web for items that answer the hunt. Run searches, read results, and submit every item you find with a URL that supports it.",
+ "routing": {
+  "auto_routing": true,
+  "providers": null,
+  "tier": "default",
+  "num_results": 8
+ },
+ "routing_rules": "Use the default route for every search.",
+ "fetch_policy": "Fetch a page only when the search summaries are not enough.",
+ "node": "a648dde9-35ff-463c-9e20-5e8fd8642ff6",
+ "status": "superseded",
+ "created": "2026-11-14T14:53:53"
+}

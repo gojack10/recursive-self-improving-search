@@ -1,0 +1,4 @@
+{"t": 1794697961.75, "event": "plan", "unmatched": 1, "reused": 0, "to_check": 1}
+{"t": 1794697961.75, "event": "start", "name": "Muddy Waters"}
+{"t": 1794697974.85, "event": "end", "name": "Muddy Waters", "status": "wrong", "reason": "The supplied evidence neither documents Muddy Waters\u2019s Rock Hall induction nor identifies an IAU-approved Mercury surface feature named after him. The Muddy Waters snippet concerns an unrelated farming professional.", "seconds": 13.1}
+{"t": 1794697974.85, "event": "done"}

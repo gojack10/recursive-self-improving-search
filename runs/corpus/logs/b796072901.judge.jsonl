@@ -1,0 +1,11 @@
+{"t": 1794697814.25, "event": "plan", "unmatched": 6, "reused": 3, "to_check": 3}
+{"t": 1794697814.25, "event": "end", "name": "Edward Victor Appleton", "status": "same", "reason": "Edward Victor Appleton is the already-listed Edward V. Appleton, the 1947 Physics Nobel laureate honored by the IAU-approved lunar crater Appleton.", "reused": true}
+{"t": 1794697814.25, "event": "end", "name": "William Henry Bragg", "status": "same", "reason": "William Henry Bragg is the already-known William Bragg, not a different laureate. The supplied evidence confirms his Physics Nobel Prize but does not document an IAU-approved lunar feature named after him.", "reused": true}
+{"t": 1794697814.25, "event": "end", "name": "Arthur Holly Compton", "status": "same", "reason": "Arthur Holly Compton is Arthur H. Compton, already listed. He won the 1927 Nobel Prize in Physics and is a co-namesake of the lunar crater Compton.", "reused": true}
+{"t": 1794697814.25, "event": "start", "name": "John William Strutt, Lord Rayleigh"}
+{"t": 1794697814.25, "event": "start", "name": "Charles Thomson Rees Wilson"}
+{"t": 1794697814.25, "event": "start", "name": "Joseph John Thomson"}
+{"t": 1794697820.52, "event": "end", "name": "Joseph John Thomson", "status": "same", "reason": "Joseph John Thomson is J.J. Thomson, already listed. NobelPrize.org confirms his full name and 1906 Physics prize; the lunar naming evidence lists Thomson.", "seconds": 6.3}
+{"t": 1794697820.53, "event": "end", "name": "John William Strutt, Lord Rayleigh", "status": "same", "reason": "John William Strutt, Lord Rayleigh is the already-listed Lord Rayleigh. Evidence identifies him as the 1904 Physics Nobel laureate and the namesake of the IAU-approved lunar crater Rayleigh.", "seconds": 6.3}
+{"t": 1794697827.08, "event": "end", "name": "Charles Thomson Rees Wilson", "status": "same", "reason": "Charles Thomson Rees Wilson is the full name of the already-listed C.T.R. Wilson. NobelPrize.org confirms his 1927 Physics Nobel; the supplied evidence does not establish an IAU-approved lunar feature.", "seconds": 12.8}
+{"t": 1794697827.08, "event": "done"}

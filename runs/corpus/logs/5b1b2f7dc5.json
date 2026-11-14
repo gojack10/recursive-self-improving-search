@@ -1,0 +1,771 @@
+{
+ "attempt_id": "5b1b2f7dc5",
+ "method": "v000",
+ "hunt": "grammy_mercury",
+ "kind": "list",
+ "x": "How many Grammy Award winners have an IAU-approved surface feature on Mercury named after them? Count competitive Grammys, Lifetime Achievement Awards and Trustees Awards, including awards given to a group the person belonged to; Grammy Hall of Fame entries for recordings do not count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+ "y": "",
+ "pool": "test",
+ "finds": [
+  {
+   "name": "Maya Angelou",
+   "evidence_url": "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury"
+  },
+  {
+   "name": "Enrico Caruso",
+   "evidence_url": "https://interlude.hk/composers-on-other-planets-mercury/"
+  },
+  {
+   "name": "Aaron Copland",
+   "evidence_url": "https://www.grammy.com/artists/aaron-copland/1536/"
+  },
+  {
+   "name": "Duke Ellington",
+   "evidence_url": "https://www.grammy.com/awards/lifetime-achievement-awards/"
+  },
+  {
+   "name": "Antônio Carlos Jobim",
+   "evidence_url": "https://www.grammy.com/awards/lifetime-achievement-awards/"
+  },
+  {
+   "name": "Alicia de Larrocha",
+   "evidence_url": "https://interlude.hk/composers-on-other-planets-mercury/"
+  },
+  {
+   "name": "John Lennon",
+   "evidence_url": "https://www.nasa.gov/image-article/beatles-legend-john-lennon-among-those-honored-with-mercury-craters/"
+  },
+  {
+   "name": "Freddie Mercury",
+   "evidence_url": "https://en.wikipedia.org/wiki/Freddie_Mercury"
+  },
+  {
+   "name": "Thelonious Monk",
+   "evidence_url": "https://www.grammy.com/awards/lifetime-achievement-awards/"
+  },
+  {
+   "name": "Igor Stravinsky",
+   "evidence_url": "https://www.grammy.com/artists/igor-stravinsky/6686/"
+  }
+ ],
+ "notes": "Matched Mercury crater names against the Recording Academy's awards lists. Exhaustive verification was not possible; the date November 2026 cannot be independently confirmed from the available results.",
+ "telem_calls": [
+  {
+   "kind": "search",
+   "query": [
+    "Mercury craters named after Grammy award winning musicians Lennon Bowie Mercury composers"
+   ],
+   "requested": null,
+   "auto_routing": true,
+   "routing": [
+    {
+     "topic": "general",
+     "score": -0.012954473495483398,
+     "providers": [
+      "exa",
+      "tavily",
+      "brave",
+      "parallel",
+      "ceramic",
+      "seltz",
+      "you"
+     ]
+    }
+   ],
+   "used": [
+    "exa",
+    "tavily",
+    "brave",
+    "parallel",
+    "ceramic",
+    "seltz",
+    "you"
+   ],
+   "n": 56,
+   "dropped_referee": 0,
+   "cost": 0.02805,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury",
+    "https://interlude.hk/composers-on-other-planets-mercury/"
+   ],
+   "ok": 2,
+   "cost": 0.002
+  },
+  {
+   "kind": "search",
+   "query": [
+    "site:grammy.com \"lifetime achievement\" \"Copland\" \"Stravinsky\" \"Caruso\" \"Monk\""
+   ],
+   "requested": null,
+   "auto_routing": true,
+   "routing": [
+    {
+     "topic": "general",
+     "score": -0.005533874034881592,
+     "providers": [
+      "exa",
+      "tavily",
+      "brave",
+      "parallel",
+      "ceramic",
+      "seltz",
+      "you"
+     ]
+    }
+   ],
+   "used": [
+    "exa",
+    "tavily",
+    "brave",
+    "parallel",
+    "ceramic",
+    "seltz",
+    "you"
+   ],
+   "n": 40,
+   "dropped_referee": 0,
+   "cost": 0.02805,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://www.grammy.com/awards/lifetime-achievement-awards/",
+    "https://www.grammy.com/awards/trustees-award/",
+    "https://www.grammy.com/artists/alicia-de-larrocha/"
+   ],
+   "ok": 1,
+   "cost": 0.003
+  }
+ ],
+ "telem_spent": 0.0611,
+ "telem_session": "c59a8af7-71a0-4f2d-ae54-1221ac85029a",
+ "trace": [
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "Mercury craters named after Grammy award winning musicians Lennon Bowie Mercury composers"
+   },
+   "summary": {
+    "providers_used": [
+     "exa",
+     "tavily",
+     "brave",
+     "parallel",
+     "ceramic",
+     "seltz",
+     "you"
+    ],
+    "cost": 0.02805,
+    "budget_left": 0.0519
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury",
+     "https://interlude.hk/composers-on-other-planets-mercury/"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.0499
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "site:grammy.com \"lifetime achievement\" \"Copland\" \"Stravinsky\" \"Caruso\" \"Monk\"",
+    "also": [
+     "site:grammy.com \"trustees award\" \"Joplin\" \"Ives\" \"Gershwin\"",
+     "\"Mercury\" \"crater\" \"Grammy\" \"Angelou\" \"Ellington\"",
+     "site:grammy.com \"Alicia de Larrocha\" \"Jobim\" Grammy awards"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "exa",
+     "tavily",
+     "brave",
+     "parallel",
+     "ceramic",
+     "seltz",
+     "you"
+    ],
+    "cost": 0.02805,
+    "budget_left": 0.0219
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://www.grammy.com/awards/lifetime-achievement-awards/",
+     "https://www.grammy.com/awards/trustees-award/",
+     "https://www.grammy.com/artists/alicia-de-larrocha/"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.0189
+   }
+  },
+  {
+   "tool": "check_candidates",
+   "args": {
+    "candidates": [
+     "Maya Angelou",
+     "Alicia de Larrocha",
+     "Enrico Caruso",
+     "Aaron Copland",
+     "Duke Ellington",
+     "Antonio Carlos Jobim",
+     "John Lennon",
+     "Freddie Mercury",
+     "Thelonious Monk",
+     "Igor Stravinsky",
+     "Sidney Bechet",
+     "Scott Joplin",
+     "Sergei Rachmaninoff",
+     "John Philip Sousa",
+     "Charles Ives",
+     "George Gershwin"
+    ],
+    "condition": "Grammy award winner lifetime trustees recording academy",
+    "per_candidate": 1
+   },
+   "summary": {
+    "budget_left": null
+   }
+  },
+  {
+   "tool": "submit",
+   "args": {
+    "finds": [
+     {
+      "name": "Maya Angelou",
+      "evidence_url": "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury"
+     },
+     {
+      "name": "Enrico Caruso",
+      "evidence_url": "https://interlude.hk/composers-on-other-planets-mercury/"
+     },
+     {
+      "name": "Aaron Copland",
+      "evidence_url": "https://www.grammy.com/artists/aaron-copland/1536/"
+     },
+     {
+      "name": "Duke Ellington",
+      "evidence_url": "https://www.grammy.com/awards/lifetime-achievement-awards/"
+     },
+     {
+      "name": "Antônio Carlos Jobim",
+      "evidence_url": "https://www.grammy.com/awards/lifetime-achievement-awards/"
+     },
+     {
+      "name": "Alicia de Larrocha",
+      "evidence_url": "https://interlude.hk/composers-on-other-planets-mercury/"
+     },
+     {
+      "name": "John Lennon",
+      "evidence_url": "https://www.nasa.gov/image-article/beatles-legend-john-lennon-among-those-honored-with-mercury-craters/"
+     },
+     {
+      "name": "Freddie Mercury",
+      "evidence_url": "https://en.wikipedia.org/wiki/Freddie_Mercury"
+     },
+     {
+      "name": "Thelonious Monk",
+      "evidence_url": "https://www.grammy.com/awards/lifetime-achievement-awards/"
+     },
+     {
+      "name": "Igor Stravinsky",
+      "evidence_url": "https://www.grammy.com/artists/igor-stravinsky/6686/"
+     }
+    ],
+    "notes": "Matched Mercury crater names against the Recording Academy's awards lists. Exhaustive verification was not possible; the date November 2026 cannot be independently confirmed from the available results."
+   },
+   "summary": {
+    "ok": true
+   }
+  }
+ ],
+ "url_providers": {
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury": [
+   "brave",
+   "exa",
+   "fetch:tavily",
+   "you"
+  ],
+  "https://www.nasa.gov/image-article/beatles-legend-john-lennon-among-those-honored-with-mercury-craters/": [
+   "brave",
+   "exa",
+   "parallel",
+   "you"
+  ],
+  "https://interlude.hk/composers-on-other-planets-mercury/": [
+   "brave",
+   "exa",
+   "fetch:tavily",
+   "you"
+  ],
+  "https://en.wikipedia.org/wiki/Lennon_(crater)": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Joplin_(crater)": [
+   "exa"
+  ],
+  "https://news.artnet.com/art-world/art-bites-mercury-craters-2452719": [
+   "exa"
+  ],
+  "https://www.musictimes.com/articles/35384/20150412/beatles-michael-jackson-phil-spector-more-musicians-space-objects-named-after-them.htm": [
+   "exa"
+  ],
+  "https://www.cabinetmagazine.org/issues/27/bigert.php": [
+   "exa"
+  ],
+  "https://www.huffpost.com/entry/craters-mercury-famous-artists-john-lennon_n_4474331": [
+   "brave",
+   "tavily",
+   "you"
+  ],
+  "https://spacenews.com/beatles-legend-among-those-honored-with-mercury-craters": [
+   "tavily"
+  ],
+  "https://en.wikipedia.org/wiki/Freddie_Mercury": [
+   "ceramic",
+   "tavily"
+  ],
+  "https://en.wikipedia.org/wiki/John_Lennon": [
+   "ceramic",
+   "tavily"
+  ],
+  "https://www.bbc.co.uk/music/articles/bd76e141-7f21-4eba-86e9-61a06225a23a": [
+   "tavily"
+  ],
+  "https://en.wikipedia.org/wiki/Mercury_Prize": [
+   "tavily"
+  ],
+  "https://www.facebook.com/greg.tumanan.jr.2025/posts/john-lennon-my-names-not-john-beatle-its-john-lennonjohnlennon-thebeatles-music-/1100711276082798": [
+   "tavily"
+  ],
+  "https://linkedin.com/in/mercury-yu-391294143": [
+   "tavily"
+  ],
+  "https://web.archive.org/web/20140114090808/http:/www.space.com/24034-mercury-crater-name-john-lennon.html": [
+   "brave",
+   "you"
+  ],
+  "https://www.nbcnews.com/sciencemain/john-lennon-9-others-honored-mercury-craters-2d11779434": [
+   "brave",
+   "you"
+  ],
+  "https://www.nbcnews.com/science/john-lennon-9-others-honored-mercury-craters-2D11779434": [
+   "brave",
+   "you"
+  ],
+  "https://www.space.com/24034-mercury-crater-name-john-lennon.html": [
+   "brave"
+  ],
+  "https://science.nasa.gov/photojournal/ten-newly-named-impact-craters-on-mercury": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury?action=raw": [
+   "parallel"
+  ],
+  "https://science.nasa.gov/photojournal/locations-of-mercurys-newly-named-craters": [
+   "parallel"
+  ],
+  "https://www.nasa.gov/image-article/five-new-crater-names-mercury": [
+   "parallel"
+  ],
+  "https://www.cbsnews.com/news/mercury-crater-named-after-john-lennon/": [
+   "parallel"
+  ],
+  "https://exploredeepspace.com/2013/mercury-impact-craters-named/": [
+   "parallel"
+  ],
+  "https://iauarchive.eso.org/news/pressreleases/detail/iau1506": [
+   "parallel"
+  ],
+  "https://wikimili.com/en/John_Lennon": [
+   "ceramic"
+  ],
+  "https://fiction.wikisort.org/actor/en/Actor/John_Lennon": [
+   "ceramic"
+  ],
+  "https://alchetron.com/John-Lennon": [
+   "ceramic"
+  ],
+  "https://feeds.transistor.fm/red-velvet-media": [
+   "ceramic"
+  ],
+  "https://huggingface.co/datasets/MemGPT/qa_data/viewer/default/train?p=2": [
+   "ceramic"
+  ],
+  "https://vdoc.pub/documents/st-james-encyclopedia-of-popular-culture-t4dsik7tnqo0": [
+   "ceramic"
+  ],
+  "https://www.networkworld.com/article/744676/what-do-john-lennon-bach-beethoven-salvador-dali-and-truman-capote-have-in-common.html": [
+   "seltz"
+  ],
+  "https://www.bobthealien.co.uk/mercury/craters": [
+   "seltz",
+   "you"
+  ],
+  "https://nbcnews.com/sciencemain/john-lennon-9-others-honored-mercury-craters-2D11779434": [
+   "seltz"
+  ],
+  "https://spacenews.com/beatles-legend-among-those-honored-with-mercury-craters/": [
+   "seltz"
+  ],
+  "https://viemagazine.com/article/memorializing-music-greats/": [
+   "seltz"
+  ],
+  "https://www.universetoday.com/articles/the-hobbit-author-gets-a-crater-on-mercury": [
+   "seltz"
+  ],
+  "https://philosophyofscienceportal.blogspot.com/2013/03/craters-on-mercury-named-after-famous.html": [
+   "seltz"
+  ],
+  "https://portuguese-american-journal.com/nasa-crater-named-after-maria-helena-vieira-da-silva-mercury-sun/": [
+   "seltz"
+  ],
+  "https://www.grammy.com/awards/lifetime-achievement-awards/": [
+   "exa",
+   "fetch:tavily",
+   "you"
+  ],
+  "https://www.grammy.com/news/2023-grammys-special-merit-awards-recipients-lifetime-achievement-technical-trustees-honorees/": [
+   "exa"
+  ],
+  "https://www.grammy.com/artists/aaron-copland/1536/": [
+   "exa"
+  ],
+  "https://qa.grammy.com/awards/lifetime-achievement-awards": [
+   "exa"
+  ],
+  "https://www.grammy.com/artists/igor-stravinsky/6686/": [
+   "exa"
+  ],
+  "https://www.grammy.com/news/top-moments-from-the-2014-special-merit-awards-ceremony/": [
+   "exa"
+  ],
+  "https://www.grammy.com/news/glenn-gould-charlie-haden-lightnin-hopkins-carole-king-patti-page-ravi-shankar-and/": [
+   "exa"
+  ],
+  "https://www.grammy.com/news/the-grammys-rich-kennedy-center-honors-history/": [
+   "exa"
+  ],
+  "https://www.grammy.com/awards/lifetime-achievement-awards": [
+   "tavily"
+  ],
+  "https://grammy.com/awards/lifetime-achievement-awards": [
+   "parallel",
+   "tavily"
+  ],
+  "https://www.grammy.com/news/lifetime-achievement-award-juilliard-string-quartet": [
+   "tavily"
+  ],
+  "https://grammy.com/news/lifetime-achievement-award-juilliard-string-quartet": [
+   "tavily"
+  ],
+  "https://www.grammy.com/news/lifetime-achievement-award-the-kingston-trio": [
+   "tavily"
+  ],
+  "https://grammy.com/news/lifetime-achievement-award-the-kingston-trio": [
+   "tavily"
+  ],
+  "https://www.grammy.com/news/lifetime-achievement-award-roy-haynes": [
+   "tavily"
+  ],
+  "https://grammy.com/news/lifetime-achievement-award-roy-haynes": [
+   "tavily"
+  ],
+  "https://live.grammy.com/awards/lifetime-achievement-awards": [
+   "parallel"
+  ],
+  "https://www.grammy.com/artists/aaron-copland/1536": [
+   "parallel"
+  ],
+  "https://www.grammy.com/artists/igor-stravinsky/6686": [
+   "parallel"
+  ],
+  "https://www.grammy.com/awards/categories/best-contemporary-classical-composition/1961": [
+   "parallel"
+  ],
+  "https://www.grammy.com/awards/categories/best-engineered-album-classical/1997": [
+   "parallel"
+  ],
+  "https://cms.grammy.com/awards/categories/album-of-the-year-classical/1967": [
+   "parallel"
+  ],
+  "https://www.grammy.com/awards/categories/best-classical-engineered-recording": [
+   "parallel"
+  ],
+  "https://www.grammy.com/awards/categories/best-classical-engineered-recording/1997/": [
+   "seltz"
+  ],
+  "https://www.grammy.com/awards/categories/best-classical-engineered-recording/": [
+   "seltz"
+  ],
+  "https://www.grammy.com/news/video-a-tribute-to-the-doors/": [
+   "seltz"
+  ],
+  "https://www.grammy.com/artists/pierre-boulez/792/": [
+   "seltz"
+  ],
+  "https://www.grammy.com/news/legends-honored-at-special-merit-awards/": [
+   "seltz"
+  ],
+  "https://www.grammy.com/news/special-merit-awards-2026/": [
+   "seltz"
+  ],
+  "https://www.grammy.com/news/julie-andrews-roy-haynes-juilliard-string-quartet-kingston-trio-dolly-parton-ramones/": [
+   "seltz",
+   "you"
+  ],
+  "https://www.grammy.com/news/allman-brothers-band-glen-campbell-antonio-carlos-jobim-george-jones-memphis-horns/": [
+   "seltz"
+  ],
+  "https://live.grammy.com/awards/lifetime-achievement-awards/": [
+   "you"
+  ],
+  "https://iq.grammy.com/awards/lifetime-achievement-awards": [
+   "you"
+  ],
+  "https://www.grammy.com/awards/categories/best-recording-package/1966/": [
+   "you"
+  ],
+  "https://www.grammy.com/news/a-special-affair/": [
+   "you"
+  ],
+  "https://www.grammy.com/artists/leonard-slatkin/15391/": [
+   "you"
+  ],
+  "https://www.grammy.com/awards/categories/best-engineered-recording-classical/1975/": [
+   "you"
+  ]
+ },
+ "url_text": {
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury": " List of craters on Mercury This is a list of named craters on Mercury, the innermost planet of the Solar System (for other features, see list of geological features on Mercury). [2] Most Mercurian craters are named after famous writers, artists and composers. According to the rules by IAU's Working Group for Planetary System Nomenclature, all new craters must be named after an artist that was famous for more than fifty year List of craters on Mercury - Wikipedia This is a list of named craters on Mercury, the innermost planet of the Solar System (for other features, see list of geological features on Mercury). Most Mercurian craters are named after famous writers, artists and composers. According to the rules by IAU's Working Group for Planetary System ... List of craters on Mercury - Wikipedia This is a list of named craters on Mercury, the innermost planet of the Solar System (for other features, see list of geological features on Mercury). Most Mercurian craters are named after famous writers, artists and composers. According to the rules by IAU's Working Group for Planetary System ... [Jump to content](#bodyContent)\n\n[![](/static/images/icons/enwiki-25.svg)  ![Wikipedia](/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg) ![The Free Encyclopedia](/static/images/mobile/copyright/wikipedia-tagline-en-25.svg)](/wiki/Main_Page)\n\n[Search](/wiki/Special:Search \"Search Wikipedia [f]\")\n\n# List of craters on Mercury\n\n* [Català](https://ca.wikipedia.org/wiki/Llista_de_cr%C3%A0ters_de_Mercuri \"Llista de cràters de Mercuri – Catalan\")\n* [Deutsch](https://de.wikipedia.org/wiki/Liste_der_Merkurkrater \"Liste der Merkurkrater – German\")\n* [Español](https://es.wikipedia.org/wiki/Anexo:Cr%C3%A1teres_de_Mercurio \"Anexo:Cráteres de Mercurio – Spanish\")\n* [Français](https://fr.wikipedia.org/wiki/Liste_des_crat%C3%A8res_de_Mercure \"Liste des cratères de Mercure – French\")\n* [Italiano](https://it.wikipedia.org/wiki/Crateri_di_Mercurio \"Crateri di Mercurio – Italian\")\n* [Қазақша](https://kk.wikipedia.org/wiki/%D0%9C%D0%B5%D1%80%D0%BA%D1%83%D1%80%D0%B8%D0%B9_%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D1%80%D0%BB%D0%B5%D1%80%D1%96%D0%BD%D1%96%D2%A3_%D1%82%D1%96%D0%B7%D1%96%D0%BC%D1%96 \"Меркурий кратерлерінің тізімі – Kazakh\")\n* [മലയാളം](https://ml.wikipedia.org/wiki/%E0%B4%AC%E0%B5%81%E0%B4%A7%E0%B4%A8%E0%B4%BF%E0%B4%B2%E0%B5%86_%E0%B4%97%E0%B5%BC%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%BE \"ബുധനിലെ ഗർത്തങ്ങൾ – Malayalam\")\n* [Nederlands](https://nl.wikipedia.org/wiki/Lijst_van_kraters_op_Mercurius \"Lijst van kraters op Mercurius – Dutch\")\n* [Português](https://pt.wikipedia.org/wiki/Lista_de_crateras_em_Merc%C3%BArio \"Lista de crateras em Mercúrio – Portuguese\")\n* [Romnă](https://ro.wikipedia.org/wiki/Lista_craterelor_de_pe_Mercur \"Lista craterelor de pe Mercur – Romanian\")\n* [Русский](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D1%80%D0%BE%D0%B2_%D0%9C%D0%B5%D1%80%D0%BA%D1%83%D1%80%D0%B8%D1%8F \"Список кратеров Меркурия – Russian\")\n* [Svenska](https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_geologiska_strukturer_p%C3%A5_Merkurius#Kratrar \"Lista över geologiska strukturer på Merkurius – Swedish\")\n\n[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q1846349#sitelinks-wikipedia \"Edit interlanguage links\")\n\n* [Article](/wiki/List_of_craters_on_Mercury \"View the content page [c]\")\n* [Talk](/wiki/Talk:List_of_craters_on_Mercury \"Discuss improvements to the content page [t]\")\n\n* [Read](/wiki/List_of_craters_on_Mercury)\n* [Edit](/w/index.php?title=List_of_craters_on_Mercury&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_craters_on_Mercury&action=history \"Past revisions of this page [h]\")\n\n\n\nTools\n\nActions\n\n* [Read](/wiki/List_of_craters_on_Mercury)\n* [Edit](/w/index.php?title=List_of_craters_on_Mercury&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_craters_on_Mercury&action=history \"Past revisions of this page [h]\")\n\nGeneral\n\n* [What links here](/wiki/Special:WhatLinksHere/List_of_craters_on_Mercury \"List of all English Wikipedia pages containing links to this page [j]\")\n* [Related changes](/wiki/Special:RecentChangesLinked/List_of_craters_on_Mercury \"Recent changes in pages linked from this page [k]\")\n* [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard \"Upload files [u]\")\n* [Permanent link](/w/index.php?title=List_of_craters_on_Mercury&oldid=1374828928 \"Permanent link to this revision of this page\")\n* [Page information](/w/index.php?title=List_of_craters_on_Mercury&action=info \"More information about this page\")\n* [Cite this page](/w/index.php?title=Special:CiteThisPage&page=List_of_craters_on_Mercury&id=1374828928&wpFormIdentifier=titleform \"Information on how to cite this page\")\n* [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_craters_on_Mercury)\n* [Switch to legacy parser](/w/index.php?title=List_of_craters_on_Mercury&useparsoid=0)\n\nPrint/export\n\n* [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=List_of_craters_on_Mercury&action=show-download-screen \"Download this page as a PDF file\")\n* [Printable version](/w/index.php?title=List_of_craters_on_Mercury&printable=yes \"Printable version of this page [p]\")\n\nIn other projects\n\n* [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Impact_craters_on_Mercury)\n* [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q1846349 \"Structured data on this page hosted by Wikidata [g]\")\n\nAppearance\n\nFrom Wikipedia, the free encyclopedia\n\nThis article should list *only* official names approved by the [International Astronomical Union](https://en.wikipedia.org/wiki/International_Astronomical_Union \"International Astronomical Union\") (IAU).[[1]](#cite_note-IAU-USGS-1)\n\n* Mercurian: 414 craters (7.9%)\n* Lunar: 1,624 craters (31.1%)\n* Martian: 1,092 craters (20.9%)\n* Venusian: 900 craters (17.2%)\n* Others: 1,198 craters (22.9%)\n\nDistribution of named [craters](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") in the [Solar System](https://en.wikipedia.org/wiki/Solar_System \"Solar System\") as of 2017[[update]](https://en.wikipedia.org/w/index.php?title=List_of_craters_on_Mercury&action=edit)[[2]](#cite_note-Gazetteer-Mercury-Craterlist-2)[[3]](#cite_note-Gazetteer-Moon-Craterlist-3)[[4]](#cite_note-Gazetteer-Mars-Craterlist-4)[[5]](#cite_note-Gazetteer-Venus-Craterlist-5)[[a]](#cite_note-WGPSN-Dropped-6)\n\nThis is a list of named [craters](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") on [Mercury](https://en.wikipedia.org/wiki/Mercury_(planet) \"Mercury (planet)\"), the [innermost planet](https://en.wikipedia.org/wiki/Inner_planets \"Inner planets\") of the [Solar System](https://en.wikipedia.org/wiki/Solar_System \"Solar System\") *(for other features, see [list of geological features on Mercury](https://en.wikipedia.org/wiki/List_of_geological_features_on_Mercury \"List of geological features on Mercury\"))*.[[2]](#cite_note-Gazetteer-Mercury-Craterlist-2) Most Mercurian craters [are named after](https://en.wikipedia.org/wiki/Planetary_nomenclature \"Planetary nomenclature\") famous writers, artists and composers. According to the rules by IAU's [Working Group for Planetary System Nomenclature](https://en.wikipedia.org/wiki/Working_Group_for_Planetary_System_Nomenclature \"Working Group for Planetary System Nomenclature\"), all new craters must be named after an artist that was famous for more than fifty years, and dead for more than three years, before the date they are named.[[6]](#cite_note-Ritzel-7) Craters larger than 250 km in diameter are referred to as \"basins\" *(also see [§ Terminology](#Terminology))*.[[7]](#cite_note-8)[[8]](#cite_note-Gazetteer-Categories-9)\n\nAs of 2025[[update]](https://en.wikipedia.org/w/index.php?title=List_of_craters_on_Mercury&action=edit), there are 444 named Mercurian craters,[[2]](#cite_note-Gazetteer-Mercury-Craterlist-2) a small fraction of the total number of named Solar System craters, most of which are [lunar](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon \"List of craters on the Moon\"), [Martian](https://en.wikipedia.org/wiki/List_of_craters_on_Mars \"List of craters on Mars\") and [Venerian](https://en.wikipedia.org/wiki/List_of_craters_on_Venus \"List of craters on Venus\") craters.[[3]](#cite_note-Gazetteer-Moon-Craterlist-3)[[4]](#cite_note-Gazetteer-Mars-Craterlist-4)[[5]](#cite_note-Gazetteer-Venus-Craterlist-5)[[a]](#cite_note-WGPSN-Dropped-6)\n\nOther, non-planetary bodies with numerous named craters include [Callisto](https://en.wikipedia.org/wiki/Callisto_(moon) \"Callisto (moon)\") ([141](https://en.wikipedia.org/wiki/List_of_craters_on_Callisto \"List of craters on Callisto\")), [Ganymede](https://en.wikipedia.org/wiki/Ganymede_(moon) \"Ganymede (moon)\") ([131](https://en.wikipedia.org/wiki/List_of_craters_on_Ganymede \"List of craters on Ganymede\")), [Rhea](https://en.wikipedia.org/wiki/Rhea_(moon) \"Rhea (moon)\") (128), [Vesta](https://en.wikipedia.org/wiki/4_Vesta \"4 Vesta\") (90), [Ceres](https://en.wikipedia.org/wiki/Ceres_(dwarf_planet) \"Ceres (dwarf planet)\") (90), [Dione](https://en.wikipedia.org/wiki/Dione_(moon) \"Dione (moon)\") (73), [Iapetus](https://en.wikipedia.org/wiki/Iapetus_(moon) \"Iapetus (moon)\") (58), [Enceladus](https://en.wikipedia.org/wiki/Enceladus_(moon) \"Enceladus (moon)\") (53), [Tethys](https://en.wikipedia.org/wiki/Tethys_(moon) \"Tethys (moon)\") (50) and [Europa](https://en.wikipedia.org/wiki/Europa_(moon) \"Europa (moon)\") ([41](https://en.wikipedia.org/wiki/List_of_craters_on_Europa \"List of craters on Europa\")). For a full list, *see [List of craters in the Solar System](https://en.wikipedia.org/wiki/List_of_craters_in_the_Solar_System \"List of craters in the Solar System\")*.\n\nContents:\n\n* [Top](#top)\n* [0–9](#0–9)\n* [A](#A)\n* [B](#B)\n* [C](#C)\n* [D](#D)\n* [E](#E)\n* [F](#F)\n* [G](#G)\n* [H](#H)\n* [I](#I)\n* [J](#J)\n* [K](#K)\n* [L](#L)\n* [M](#M)\n* [N](#N)\n* [O](#O)\n* [P](#P)\n* [Q](#Q)\n* [R](#R)\n* [S](#S)\n* [T](#T)\n* [U](#U)\n* [V](#V)\n* [W](#W)\n* [X](#X)\n* [Y](#Y)\n* [Z](#Z)\n\n|  |\n| --- |\n| This list is [incomplete](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lists#Incomplete_lists \"Wikipedia:WikiProject Lists\"); you can help by [adding missing items](https://en.wikipedia.org/w/index.php?title=List_of_craters_on_Mercury&action=edit). *(August 2019)* |\n\n[![](//thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/NAMED_MERCURIAN_CRATERS.svg/960px-NAMED_MERCURIAN_CRATERS.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:NAMED_MERCURIAN_CRATERS.svg)\n\nMap of named mercury craters as of 2022[[update]](https://en.wikipedia.org/w/index.php?title=List_of_craters_on_Mercury&action=edit)\n\n## A\n\n[[edit](/w/index.php?title=List_of_craters_on_Mercury&action=edit&section=1 \"Edit section: A\")]\n\n| [Crater](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") | Coordinates | [Diameter](https://en.wikipedia.org/wiki/Diameter \"Diameter\") (km) | Approval Year | [Eponym](https://en.wikipedia.org/wiki/Eponym \"Eponym\") | Ref |\n| --- | --- | --- | --- | --- | --- |\n| [Abedin](https://en.wikipedia.org/wiki/Abedin_(crater) \"Abedin (crater)\") | [61°44′N 10°40′W﻿ / ﻿61.73°N 10.66°W﻿ / 61.73; -10.66﻿ (Abedin)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=61.73_N_10.66_W_globe:mercury_type:landmark&title=Abedin) | 116.23 | 2009 | [Zainul Abedin](https://en.wikipedia.org/wiki/Zainul_Abedin \"Zainul Abedin\"), Bangladeshi painter | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/14574) |\n| [Abu Nuwas](https://en.wikipedia.org/wiki/Abu_Nuwas_(crater) \"Abu Nuwas (crater)\") | [17°38′N 21°11′W﻿ / ﻿17.63°N 21.19°W﻿ / 17.63; -21.19﻿ (Abu Nuwas)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=17.63_N_21.19_W_globe:mercury_type:landmark&title=Abu+Nuwas) | 117 | 1976 | [Abu Nuwas](https://en.wikipedia.org/wiki/Abu_Nuwas \"Abu Nuwas\"), [Arabic](https://en.wikipedia.org/wiki/Arabic_language \"Arabic language\") poet | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/21) |\n| [Africanus Horton](https://en.wikipedia.org/wiki/Africanus_Horton_(crater) \"Africanus Horton (crater)\") | [50°58′S 41°11′W﻿ / ﻿50.96°S 41.19°W﻿ / -50.96; -41.19﻿ (Africanus Horton)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=50.96_S_41.19_W_globe:mercury_type:landmark&title=Africanus+Horton) | 140 | 1976 | [Africanus Horton](https://en.wikipedia.org/wiki/Africanus_Horton \"Africanus Horton\"), Sierra Leonean writer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/76) |\n| [Ahmad Baba](https://en.wikipedia.org/wiki/Ahmad_Baba_(crater) \"Ahmad Baba (crater)\") | [58°20′N 128°21′W﻿ / ﻿58.33°N 128.35°W﻿ / 58.33; -128.35﻿ (Ahmad Baba)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=58.33_N_128.35_W_globe:mercury_type:landmark&title=Ahmad+Baba) | 126 | 1979 | [Ahmad Baba al Massufi](https://en.wikipedia.org/wiki/Ahmad_Baba_al_Massufi \"Ahmad Baba al Massufi\"), West African writer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/99) |\n| [Ailey](https://en.wikipedia.org/wiki/Ailey_(crater) \"Ailey (crater)\") | [45°35′N 177°55′E﻿ / ﻿45.58°N 177.92°E﻿ / 45.58; 177.92﻿ (Ailey)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=45.58_N_177.92_E_globe:mercury_type:landmark&title=Ailey) | 23 | 2012 | [Alvin Ailey](https://en.wikipedia.org/wiki/Alvin_Ailey \"Alvin Ailey\"), American choreographer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/14953) |\n| [Aksakov](https://en.wikipedia.org/wiki/Aksakov_(crater) \"Aksakov (crater)\") | [34°43′N 78°44′W﻿ / ﻿34.71°N 78.74°W﻿ / 34.71; -78.74﻿ (Aksakov)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=34.71_N_78.74_W_globe:mercury_type:landmark&title=Aksakov) | 174 | 2012 | [Sergey Aksakov](https://en.wikipedia.org/wiki/Sergey_Aksakov \"Sergey Aksakov\"), Russian author | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/14954) |\n| [Akutagawa](https://en.wikipedia.org/wiki/Akutagawa_(crater) \"Akutagawa (crater)\") | [48°15′N 141°05′W﻿ / ﻿48.25°N 141.09°W﻿ / 48.25; -141.09﻿ (Akutagawa)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=48.25_N_141.09_W_globe:mercury_type:landmark&title=Akutagawa) | 106 | 2015 | [Ryūnosuke Akutagawa](https://en.wikipedia.org/wiki/Ryūnosuke_Akutagawa \"Ryūnosuke Akutagawa\"), Japanese writer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/15386) |\n| [Al-Akhtal](https://en.wikipedia.org/wiki/Al-Akhtal_(crater) \"Al-Akhtal (crater)\") | [59°23′N 99°43′W﻿ / ﻿59.38°N 99.71°W﻿ / 59.38; -99.71﻿ (Al-Akhtal)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=59.38_N_99.71_W_globe:mercury_type:landmark&title=Al-Akhtal) | 94.29 | 1985 | [Akhtal](https://en.wikipedia.org/wiki/Akhtal \"Akhtal\"), Arab poet | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/144) |\n| [Alencar](https://en.wikipedia.org/wiki/Alencar_(crater) \"Alencar (crater)\") | [63°38′S 103°47′W﻿ / ﻿63.64°S 103.78°W﻿ / -63.64; -103.78﻿ (Alencar)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=63.64_S_103.78_W_globe:mercury_type:landmark&title=Alencar) | 106 | 1979 | [José de Alencar](https://en.wikipedia.org/wiki/José_de_Alencar \"José de Alencar\"), Brazilian novelist | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/176) |\n| [Al-Hamadhani](https://en.wikipedia.org/wiki/Al-Hamadhani_(crater) \"Al-Hamadhani (crater)\") | [39°11′N 91°46′W﻿ / ﻿39.19°N 91.76°W﻿ / 39.19; -91.76﻿ (Al-Hamadhani)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=39.19_N_91.76_W_globe:mercury_type:landmark&title=Al-Hamadhani) | 164 | 1979 | [Badi' az-Zaman al-Hamadhani](https://en.wikipedia.org/wiki/Badi'_az-Zaman_al-Hamadhani \"Badi' az-Zaman al-Hamadhani\"), Arab writer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/147) |\n| [Al-Jāhiz](https://en.wikipedia.org/wiki/Al-Jāhiz_(crater) \"Al-Jāhiz (crater)\") | [1°22′N 21°46′W﻿ / ﻿1.36°N 21.76°W﻿ / 1.36; -21.76﻿ (Al-Jāhiz)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=1.36_N_21.76_W_globe:mercury_type:landmark&title=Al-J%C4%81hiz) | 83 | 1976 | [Al-Jahiz](https://en.wikipedia.org/wiki/Al-Jahiz \"Al-Jahiz\"), Arab author | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/148) |\n| [Alver](https://en.wikipedia.org/wiki/Alver_(crater) \"Alver (crater)\") | [66°58′S 77°15′E﻿ / ﻿66.97°S 77.25°E﻿ / -66.97; 77.25﻿ (Alver)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=66.97_S_77.25_E_globe:mercury_type:landmark&title=Alver) | 151 | 2013 | [Betti Alver](https://en.wikipedia.org/wiki/Betti_Alver \"Betti Alver\"), Estonian poet | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/15097) |\n| [Amaral](https://en.wikipedia.org/wiki/Amaral_(crater) \"Amaral (crater)\") | [26°29′S 117°49′E﻿ / ﻿26.49°S 117.82°E﻿ / -26.49; 117.82﻿ (Amaral)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=26.49_S_117.82_E_globe:mercury_type:landmark&title=Amaral) | 105 | 2008 | [Tarsila do Amaral](https://en.wikipedia.org/wiki/Tarsila_do_Amaral \"Tarsila do Amaral\"), Brazilian artist | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/14506) |\n| [Amru Al-Qays](https://en.wikipedia.org/wiki/Amru_Al-Qays_(crater) \"Amru Al-Qays (crater)\") | [12°26′N 176°07′W﻿ / ﻿12.43°N 176.11°W﻿ / 12.43; -176.11﻿ (Amru Al-Qays)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=12.43_N_176.11_W_globe:mercury_type:landmark&title=Amru+Al-Qays) | 47 | 1976 | [Imru Al-Qays Ibn Hujr](https://en.wikipedia.org/wiki/Imru_Al-Qays_Ibn_Hujr \"Imru Al-Qays Ibn Hujr\"), Arabic poet | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/244) |\n| [Andal](https://en.wikipedia.org/wiki/Andal_(crater) \"Andal (crater)\") | [47°31′S 37°43′W﻿ / ﻿47.52°S 37.71°W﻿ / -47.52; -37.71﻿ (Andal)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=47.52_S_37.71_W_globe:mercury_type:landmark&title=Andal) | 109 | 1976 | [Aandaal](https://en.wikipedia.org/wiki/Aandaal \"Aandaal\"), [Tamil](https://en.wikipedia.org/wiki/Tamil_people \"Tamil people\") writer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/257) |\n| [Aneirin](https://en.wikipedia.org/wiki/Aneirin_(crater) \"Aneirin (crater)\") | [27°28′S 2°41′W﻿ / ﻿27.47°S 2.68°W﻿ / -27.47; -2.68﻿ (Aneirin)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=27.47_S_2.68_W_globe:mercury_type:landmark&title=Aneirin) | 467 | 2014 | [Aneirin](https://en.wikipedia.org/wiki/Aneirin \"Aneirin\"), Welsh poet (6th century) | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/15244) |\n| [Angelou](https://en.wikipedia.org/wiki/Angelou_(crater) \"Angelou (crater)\") | [80°19′N 66°43′W﻿ / ﻿80.32°N 66.71°W﻿ / 80.32; -66.71﻿ (Angelou)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=80.32_N_66.71_W_globe:mercury_type:landmark&title=Angelou) | 18 | 2019 | [Maya Angelou](https://en.wikipedia.org/wiki/Maya_Angelou \"Maya Angelou\"), American author and poet | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/15854) |\n| [Anguissola](https://en.wikipedia.org/wiki/Anguissola_(crater) \"Anguissola (crater)\") | [80°41′N 217°21′W﻿ / ﻿80.69°N 217.35°W﻿ / 80.69; -217.35﻿ (Anguissola)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=80.69_N_217.35_W_globe:mercury_type:landmark&title=Anguissola) | 35 | 2017 | [Sofonisba Anguissola](https://en.wikipedia.org/wiki/Sofonisba_Anguissola \"Sofonisba Anguissola\"), Italian painter | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/15621) |\n| [Anyte](https://en.wikipedia.org/wiki/Anyte_(crater) \"Anyte (crater)\") | [79°30′N 210°40′W﻿ / ﻿79.5°N 210.67°W﻿ / 79.5; -210.67﻿ (Anyte)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=79.5_N_210.67_W_globe:mercury_type:landmark&title=Anyte) | 20 | 2017 | [Anyte of Tegea](https://en.wikipedia.org/wiki/Anyte_of_Tegea \"Anyte of Tegea\"), Greek poet | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/15622) |\n| [Apollodorus](https://en.wikipedia.org/wiki/Apollodorus_(crater) \"Apollodorus (crater)\") | [30°32′N 163°17′E﻿ / ﻿30.54°N 163.28°E﻿ / 30.54; 163.28﻿ (Apollodorus)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&params=30.54_N_163.28_E_globe:mercury_type:landmark&title=Apollodorus) | 41 | 2008 | [Apollodorus of Damascus](https://en.wikipedia.org/wiki/Apollodorus_of_Damascus \"Apollodorus of Damascus\"), [Ancient Greek](https://en.wikipedia.org/wiki/Ancient_Greek \"Ancient Greek\") architect | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/14397) |\n| [Aristoxenus](https://en.wikipedia.org/wiki/Aristoxenus_(crater) \"Aristoxenus (crater)\") | [83°56′N 17°28′W﻿ / ﻿83.93°N 17.46°W﻿ / 83.93; -17.46﻿ (Aristoxenus)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Mercury&param",
+  "https://www.nasa.gov/image-article/beatles-legend-john-lennon-among-those-honored-with-mercury-craters/": " Beatles Legend John Lennon Among Those Honored with Mercury Craters - NASA Lennon is one of ten newly named craters on the planet. Mercury’s Lennon crater, named for Beatle John Lennon, as seen from NASA’s MESSENGER spacecraft. Image Credit: NASA/Johns Hopkins Applied Physics Lab/Carnegie Institution It’s unlikely that Mercury’s surface is populated with tangerine trees and marmalade skies, but the famous British musician who coined that phrase now has a physical presenc Beatles Legend John Lennon Among Those Honored with Mercury Craters - NASA In keeping with the established naming theme for craters on Mercury, all of the newly designated features are named after “deceased artists, musicians, painters, and authors who have made outstanding or fundamental contributions to their field and have been recognized as art historically significant figures for more than 50 years.” Beatles Legend John Lennon Among Those Honored with Mercury Craters - NASA Profile image for NASA\nNASA\nDec 19, 2013\nImage Article\n* \n* \n* \n* \nMercury's Lennon Crater Lennon is one of ten newly named craters on the planet.\nMercury’s Lennon crater, named for Beatle John Lennon, as seen from NASA’s MESSENGER spacecraft.\nImage Credit: NASA/Johns Hopkins Applied Physics Lab/Carnegie Institution\n\n...\n\nThe International Astronomical Union (IAU) has named an impact crater on the Beatles Legend John Lennon Among Those Honored with Mercury Craters ... Lennon is one of ten newly named craters on the planet.",
+  "https://interlude.hk/composers-on-other-planets-mercury/": " Composers on Other Planets – Mercury The planet Mercury has just under 400 craters. The wonderful part is that most of them are named for famous people in the arts: writers, artists and composers. The rule for inclusion is that “all new craters must be named after an artist that was famous for more than fifty years, and dead for more than three years, before the date they are named.” Haydn: Symphony No. 43 in E-Flat Major, Hob.I:43,  Composers on Other Planets – Mercury In looking over the list, we find some 50 craters named after composers, conductors, and musicians. Gluck and Debussy rub shoulders with John Lennon and Machaut. They come from countries all over the world, from India to Italy, Austria to America, ... Composers on Other Planets – Mercury Here is a list of 50 craters named after composers, conductors, and musicians. They come from countries worldwide, from India to Italy, Austria to America, and China to Brazil. [#](https://interlude.hk/)\n\n[Composers](https://interlude.hk/category/all-composers/)[Anecdotes](https://interlude.hk/category/all-composers/anecdotes-in-essence/)\n\n|  |\n| --- |\n| Composers on Other Planets – Mercury |\n\nby  [Maureen Buja](https://interlude.hk/about/contributors/about-maureen-buja)    April 30th, 2020\n\nBy [Maureen Buja](https://interlude.hk/about/contributors/about-maureen-buja/ \"View all posts by Maureen Buja\")[0 Comments](https://interlude.hk/composers-on-other-planets-mercury/#respond)\n\n![](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20190%20190%22%3E%3C/svg%3E)\n\nMercury\n\nThe planet Mercury has just under 400 craters. The wonderful part is that most of them are named for famous people in the arts: writers, artists and composers. The rule for inclusion is that “all new craters must be named after an artist that was famous for more than fifty years, and dead for more than three years, before the date they are named.”\n\n*Haydn: Symphony No. 43 in E-Flat Major, Hob.I:43, “Mercury” – IV. Allegro (Orchestra of the Age of Enlightenment; Frans Brüggen, cond.)*\n\nIn looking over the list, we find some 50 craters named after composers, conductors, and musicians. [Gluck](https://interlude.hk/skipping-town-christoph-willibald-gluck/) and [Debussy](https://interlude.hk/claude-achille-debussy/) rub shoulders with John Lennon and Machaut. They come from countries all over the world, from India to Italy, Austria to America, and China to Brazil. They are predominantly male, but [Alicia de Larrocha](https://interlude.hk/great-women-artists-shaped-music-v-alicia-de-larrocha/) (Spain) does sweep in as does Cai Wenji (China) and Umm Kulthum (Egypt).\n\n*Strauss I: Merkurs Flugel, Walzer (Wings of Mercury, Waltz), Op. 83 (Slovak Sinfonietta, Žilina; Christian Pollack, cond.)*\n\n|  |\n| --- |\n| The List: |\n| Johann Sebastian Bach | Duke Ellington | Kinko Kurosawa | Maurice Ravel |\n| Béla Bartók | Mikhail Glinka | Alicia de Larrocha | Alessandro Scarlatti |\n| Sidney Bechet | Christoph Willibald Gluck | John Lennon | Domenico Scarlatti |\n| Ludwig van Beethoven | Percy Grainger | Franz Liszt | Arnold Schoenberg |\n| Hector Berlioz | Edvard Grieg | Guillaume de Machaut | Franz Schubert |\n| Johannes Brahms | George Frideric Handel | Gustav Mahler | Jean Sibelius |\n| Cai Wenji | Joseph Haydn | Thelonious Monk | Bedřich Smetana |\n| Turlough Carolan | Gustav Holst | Claudio Monteverdi | John Philip Sousa |\n| Enrico Caruso | Charles Ives | Wolfgang Amadeus Mozart | Igor Stravinsky |\n| Frédéric Chopin | Leoš Janáček | Modest Mussorgsky | Tansen |\n| Aaron Copland | Antônio Carlos Jobim | Sergei Prokofiev | Pyotr Ilyich Tchaikovsky |\n| The Couperin family | Scott Joplin | Giacomo Puccini | Tyāgarāja |\n| Claude Debussy | Josquin des Prez | Henry Purcell | Heitor Villa-Lobos |\n| John Dowland | Krzysztof Komeda | Sergei Rachmaninoff | Kosaku Yamada |\n| Antonín Dvořák | Umm Kulthum | Jean-Philippe Rameau |\n\n*Holst: The Planets: III. Mercury, The Winged Messenger (Royal Scottish National Orchestra; David Lloyd-Jones, cond.)*\n\nWhen you look at the map of Mercury recently developed by the US Geological Survey, we can find out where our composers are.\n\nSometimes the juxtapositions of names seem a bit random and other times, done with a clever sense of humour: Berlioz next to Carolan (top left), Purcell next to the painter van Dijck/Dyck (center top), and right in the middle of the planet is Mozart. Debussy is by Joplin (bottom left) and above Lennon, is Holst.\n\n[![](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E)](/cdn-cgi/l/email-protection#556a2620373f30362168163a38253a26302726753a3b751a213d3027750539343b30212675b7d5c6751830273620272c733438256e373a312c68163a38253a26302726753a3b751a213d3027750539343b30212675b7d5c6751830273620272c6f753d212125266f7a7a3c3b213027392031307b3d3e7a6a25686c65676164 \"Share this Entry via Email\")   ![](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E)   [![](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Finterlude.hk%2F%3Fp%3D90241 \"Share this Entry on Facebook\")   [![](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E)](https://twitter.com/intent/tweet?text=Composers%20on%20Other%20Planets%20%E2%80%93%20Mercury%3A%20https%3A%2F%2Finterlude.hk%2F%3Fp%3D90241 \"Tweet this Entry on Twitter\")   [![](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E)](https://www.linkedin.com/feed/?shareActive=true&text=Composers%20on%20Other%20Planets%20%E2%80%93%20Mercury&shareUrl=https%3A%2F%2Finterlude.hk%2F%3Fp%3D90241 \"Share this Entry on LinkedIn\")   [![](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E)](https://www.threads.net/intent/post?text=Composers%20on%20Other%20Planets%20%E2%80%93%20Mercury&url=https%3A%2F%2Finterlude.hk%2F%3Fp%3D90241 \"Share this Entry on Threads\")\n\n# More Anecdotes\n\n* [Music of Swedish Royalty  \n   House of Bernadotte](https://interlude.hk/music-of-swedish-royalty-house-of-bernadotte/)   Kings, queens and a “Singer Prince” who composed\n* [![Paul Büttner: The Greatest Modern Symphonist You’ve Never Heard](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E \"Paul Büttner: The Greatest Modern Symphonist You’ve Never Heard\")](https://interlude.hk/paul-buttner-the-greatest-modern-symphonist-youve-never-heard/)    [Paul Büttner: The Greatest Modern Symphonist You’ve Never Heard](https://interlude.hk/paul-buttner-the-greatest-modern-symphonist-youve-never-heard/)   Ranked with Brahms—then erased by the Nazis\n* [![Naji Hakim’s Enduring Grace From Beirut to La Trinité](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E \"Naji Hakim’s Enduring Grace From Beirut to La Trinité\")](https://interlude.hk/naji-hakim-enduring-grace-from-beirut-to-la-trinite/)    [Naji Hakim’s Enduring Grace From Beirut to La Trinité](https://interlude.hk/naji-hakim-enduring-grace-from-beirut-to-la-trinite/)   From wartime Beirut to Messiaen's organ loft\n* [Bach Babies in Music   \n   Regina Susanna Bach (1742-1809)](https://interlude.hk/bach-babies-in-music-regina-susanna-bach-1742-1809/)   Learn about Bach's youngest surviving child\n\n### Leave a Comment [Cancel Comment](/composers-on-other-planets-mercury/#respond)\n\nNewsletter Subscription\n\nContact Us\n\nBy continuing to browse this site, you are agreeing to the [use of cookies](https://interlude.hk/privacy-policy).",
+  "https://en.wikipedia.org/wiki/Lennon_(crater)": " Lennon (crater) Lennon is a crater on Mercury. Its name was adopted by the International Astronomical Union (IAU) in 2013. Lennon is named for the English singer and songwriter John Lennon (of The Beatles). [1] Lennon lies on the south rim of the ancient Lennon-Picasso Basin. To the east of Lennon is Bulsara, which is named after Freddie Mercury of Queen. Together with crater Joplin, Lennon and Bulsara form a lin",
+  "https://en.wikipedia.org/wiki/Joplin_(crater)": " Joplin (crater) Joplin is a crater on Mercury. Its name was adopted by the International Astronomical Union (IAU) in 2012, after the American composer Scott Joplin. [1] ... Joplin is located about half-way between the prominent crater Debussy and the crater Lennon. It is south of the crater Travers. Together with crater Bulsara (named after Freddie Mercury), Lennon and Joplin form a line of nearly equally spaced ",
+  "https://news.artnet.com/art-world/art-bites-mercury-craters-2452719": " Art Bites: Breugel, Brahms, and Brontë Are All Names of Mercury’s Craters The craters’ eponyms include actors, architects, choreographers, painters, philosophers, playwrights, poets, and writers. Among the writers are Zola (after the French novelist Émile Zola, friend and defender of Édouard Manet), Tolkien (after J. R. R. Tolkien, author of Lord of the Rings), and Angelou (after Maya Angelou, poet, memoirist, and civil rights activist). Composers who have lent their na",
+  "https://www.musictimes.com/articles/35384/20150412/beatles-michael-jackson-phil-spector-more-musicians-space-objects-named-after-them.htm": " The Beatles, Michael Jackson and More Musicians with Space Objects Named After Them The Beatles received an interesting honor on this date 25 years ago, as each member— John Lennon, Paul McCartney, George Harrison and Ringo Starr—received the honor of having four newly discovered asteroids named after them. It's not a rare honor—as Mental Floss explains, there are literally hundreds of asteroids and \"minor planets\" in our galaxy, and although they don't necessarily need to be nam",
+  "https://www.cabinetmagazine.org/issues/27/bigert.php": " CABINET / Inventory / Artist’s Impact The year of Mariner 10’s launch was also the year in which the International Astronomical Union (IAU) set up the Working Group for Planetary System Nomenclature (WGPSN). Subgroups working under the auspices of the WGPSN were each assigned the task of naming features on a specific planetary body in the solar system. If approved by the WGPSN, these names were then passed on to the IAU and adopted at",
+  "https://www.huffpost.com/entry/craters-mercury-famous-artists-john-lennon_n_4474331": " Mercury Craters Named After John Lennon, Nine Other Famous Artists (PHOTOS) | HuffPost Impact lennon crater  \nThe Lennon crater, recently named to honor English musician/singer/songwriter John Lennon (1940-1980).\n\nlennon crater\n\nIn dedication of the new Lennon crater, the MESSENGER mission released this cringeworthy tribute:\n\nImagine some ejecta\n\nIt isn't hard to do\n\nTerraced walls and impact melt\n\nSecondary craters too\n\nImagine central peaks\n\nRising above the floor... [...] All new crater Mercury Craters Named After John Lennon, Nine Other Famous Artists (PHOTOS) | HuffPost Impact The Lennon crater, recently named to honor English musician/singer/songwriter John Lennon (1940-1980). Mercury Craters Named After John Lennon, Nine Other Famous Artists ... LOOK: Crater On Mercury Named After Beatles Legend",
+  "https://spacenews.com/beatles-legend-among-those-honored-with-mercury-craters": " Beatles Legend Among Those Honored with Mercury Craters - SpaceNews The International Astronomical Union (IAU) — the arbiter of planetary and satellite nomenclature since its inception in 1919 — recently approved a proposal from the MESSENGER Science Team to assign names to 10 impact craters on Mercury. In keeping with the established naming theme for craters on Mercury, all of the newly designated features are named after “deceased artists, musicians, painters, a",
+  "https://en.wikipedia.org/wiki/Freddie_Mercury": " Freddie Mercury - Wikipedia and dozens of handwritten song lyrics. In April 2022, a life-size statue of Mercury was unveiled in South Korea's resort island of Jeju. In May 2024, the crater Bulsara \"Bulsara (crater)\") on the planet Mercury \"Mercury (planet)\") was named after his birth name. [...] \", from the 1982 album Hot Space, to Lennon. Mercury did occasionally express his concerns about the state of the world in his lyri Freddie Mercury   As a member of Queen, Mercury was posthumously inducted into the Rock and Roll Hall of Fame in 2001, the Songwriters Hall of Fame in 2003, and the UK Music Hall of Fame in 2004. In 1990, he and the other Queen members received the Brit Award for Outstanding Contribution to British Music. One year after his death, Mercury received the same award individually. In 2005, Queen were awarded an Ivor N",
+  "https://en.wikipedia.org/wiki/John_Lennon": " John Lennon - Wikipedia 360. ↑ \"Mercury Crater Named After John Lennon\". Space.com. 20 December 2013. Archived from the original on 14 January 2014. Retrieved 13 January 2014.\n361. ↑ \"She has one job: Guard John Lennon's glasses\". CNN. Archived from the original on 10 January 2022. Retrieved 12 April 2023. [...] The Lennon–McCartney songwriting partnership is regarded as one of the most influential and successful of the  John Lennon - Wikipedia   As a performer, writer or co-writer, Lennon had 25 number-one singles in the  Billboard Hot 100 chart.  Double Fantasy , his second-best-selling non-Beatles album, won the 1981 Grammy Award for Album of the Year . 5  That year, he won the Brit Award for Outstanding Contribution to Music . In 2002, Lennon was voted eighth in a BBC history poll of the  100 Greatest Britons  .  Rolling Stone  ranke",
+  "https://www.bbc.co.uk/music/articles/bd76e141-7f21-4eba-86e9-61a06225a23a": " Asteroid Freddiemercury and 12 other peculiar things named after pop stars - BBC Music Here are 12 examples of unexpected things in the known (and unknown) world that have taken the names of famous musicians.\n\nBBC News - Freddie Mercury: Asteroid named after late Queen star\n\n## 1. Fossils [...] page when a young chick came into being at the beginning of the year, and the most popular choices were Bowie and Elvis, who share the same 8 January birthday. Bowie won out, and the name too",
+  "https://en.wikipedia.org/wiki/Mercury_Prize": " Mercury Prize - Wikipedia 67. ↑ \"Mercury Prize 2016: David Bowie gets posthumous nomination\". BBC News. 4 August 2016. Archived from the original on 21 February 2017. Retrieved 5 August 2016.\n68. ↑ Mark Brown (14 September 2017). \"Mercury prize 2017 is won by Sampha's Process\". The Guardian. Archived from the original on 21 September 2017. Retrieved 14 September 2017. [...] | 2013 (22nd) | James Blake \"James Blake (musicia",
+  "https://www.facebook.com/greg.tumanan.jr.2025/posts/john-lennon-my-names-not-john-beatle-its-john-lennonjohnlennon-thebeatles-music-/1100711276082798": " JOHN LENNON: \"My name's not JOHN BEATLE; it's JOHN LENNON.\"\n\n#johnlennon #thebeatles #music #fblifestyle #celebrities | Greg Tumanan Jr. \"Watts in a Tank\" • B-side: \"Bite Back\" (1981 Netherlands re-release b/w \"My Kind of Woman\") #diesel #music #fblifestyle #celebrities [...] - DIESEL • Songwriters: Mark Boon, Rob Vunderink • Producer: Pim Koopman • Recorded: 1979 • Studio: DMC Studio (Baarn) • Released: 1980, 1981 (Netherlands), 1981 (international) • Labels :Polydor (Netherlands), Regency (US/Canada) • Billboard Top 40 Chart Chro",
+  "https://linkedin.com/in/mercury-yu-391294143": " Mercury # Mercury",
+  "https://web.archive.org/web/20140114090808/http:/www.space.com/24034-mercury-crater-name-john-lennon.html": " Mercury Crater Named After John Lennon | Space.com Lennon, for John Lennon (1940-1980), the English musician of Beatles fame. Mercury Crater Named After John Lennon | Space.com Beatles legend John Lennon, \"Breakfast at Tiffany's\" author Truman Capote and sculptor Alexander Calder are among the 10 artists and writers now immortalized on Mercury with impact craters bearing their names.",
+  "https://www.nbcnews.com/sciencemain/john-lennon-9-others-honored-mercury-craters-2d11779434": " John Lennon, 9 others honored with Mercury craters The IAU, which is in charge of planetary and satellite nomenclature, named the craters in honor of \"deceased artists, musicians, painters, and authors who have made outstanding or fundamental contributions to their field and have been recognized as art historically significant figures for more than 50 years.\" In addition to Lennon, the newly named craters are: Barney, for Natalie Clifford Barney ( John Lennon, 9 others honored with Mercury craters There are no new alerts at this time · Imagine that. John Lennon is getting a tribute on Mercury",
+  "https://www.nbcnews.com/science/john-lennon-9-others-honored-mercury-craters-2D11779434": " John Lennon, 9 others honored with Mercury craters The IAU, which is in charge of planetary and satellite nomenclature, named the craters in honor of \"deceased artists, musicians, painters, and authors who have made outstanding or fundamental contributions to their field and have been recognized as art historically significant figures for more than 50 years.\" In addition to Lennon, the newly named craters are: Barney, for Natalie Clifford Barney ( John Lennon, 9 others honored with Mercury craters Imagine that. John Lennon is getting a tribute on Mercury · The late Beatles legend is among 10 famous people who are having craters on the planet closest to the sun named after them by the International Astronomical Union",
+  "https://www.space.com/24034-mercury-crater-name-john-lennon.html": " Mercury Crater Named After John Lennon | Space This Mercury impact crater was named after John Lennon.",
+  "https://science.nasa.gov/photojournal/ten-newly-named-impact-craters-on-mercury": " Ten Newly Named Impact Craters on Mercury - NASA Science On March 3, 2010, the International Astronomical Union (IAU) approved names for 10 impact craters on Mercury. The newly named craters are labeled here on a portion of a global mosaic of Mercury's surface (see PIA12397 ) and include:\n* Bek, for Bek, Egyptian sculptor (active c. 1340 B.C.).\n* Copland, for Aaron Copland, American composer (concert and film music) and pianist (1900-1990).\n* Debussy, f",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury?action=raw": " https://en.wikipedia.org/wiki/List_of_craters_on_Mercury?action=raw Most Mercurian craters [[Planetary nomenclature|are named after]] famous writers, artists and composers. According to the rules by IAU's [[Working Group for Planetary System Nomenclature]], all new craters must be named after an artist that was famous for more than fifty years, and dead for more than three years, before the date they are named.\n\n...\n\n* -id=\"Lennon\"\n* [[Lennon (crater) | Lennon]] |",
+  "https://science.nasa.gov/photojournal/locations-of-mercurys-newly-named-craters": " Locations of Mercury's Newly Named Craters - NASA Science The International Astronomical Union recently approved names for 16 impact craters on Mercury. Several of the craters are from areas seen for the first time at close range by MESSENGER during its second Mercury flyby. The locations of these newly named craters are shown on this MESSENGER mosaic of Mercury. To learn more, read the full news story . The new crater names are:\n* Abedin, for Zainul Abe",
+  "https://www.nasa.gov/image-article/five-new-crater-names-mercury": " Five New Crater Names for Mercury - NASA NASA Logo\nSearch\n\nSuggested Searches\n\n* Artemis\n* ISS\n* Roman\n* Webb\n* Quesst\n* Moon Base\n* View All Topics A-Z\n2 min read\n\nFive New Crater Names for Mercury\n\nProfile image for NASA\nNASA\nApr 29, 2015\n\n...\n\nIn total, 3,600 contest entries were received and a semi-final list of 17 names were submitted to the International Astronomical Union (IAU) for consideration. The IAU selected the final five cr",
+  "https://www.cbsnews.com/news/mercury-crater-named-after-john-lennon/": " \n    Mercury crater named after John Lennon - CBS News Beatles legend John Lennon, \"Breakfast at Tiffany's\" author Truman Capote and sculptor Alexander Calder are among the 10 artists and writers now immortalized on Mercury with impact craters bearing their names.\nThe International Astronomical Union (IAU), the global authority for all planetary and satellite nomenclature, approved the new monikers this week. The names were proposed by the science tea",
+  "https://exploredeepspace.com/2013/mercury-impact-craters-named/": " Mercury Impact Craters Named - Explore Deep Space Crater Lennon is one of ten impact craters on the planet Mercury that have been assigned names thanks to the science team operating NASA’s MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) spacecraft.\n\n...\n\nAll of the newly designated features are named after deceased artists, musicians, painters, and authors who have made outstanding or fundamental contributions to their f",
+  "https://iauarchive.eso.org/news/pressreleases/detail/iau1506": " Mercury Crater-naming Contest Winners Announced | Press Releases | IAU The MESSENGER Education and Public Outreach (EPO) Team has announced the winners from its competition to name five impact craters on Mercury after artists. Winners were selected by the IAU from 3600 submitted names.\nThe MESSENGER Education and Public Outreach (EPO) Team, coordinated through the Carnegie Institution for Science , has announced the winners from its competition to name five impact cr",
+  "https://wikimili.com/en/John_Lennon": " John Lennon - WikiMili, The Best Wikipedia Reader   As a performer, writer or co-writer, Lennon had 25 number-one singles in the  Billboard Hot 100 chart.  Double Fantasy , his second-best-selling non-Beatles album, won the 1981 Grammy Award for Album of the Year . [ 4 ]  That year, he won the Brit Award for Outstanding Contribution to Music . In 2002, Lennon was voted eighth in a BBC history poll of the  100 Greatest Britons  .  Rolling Stone  r",
+  "https://fiction.wikisort.org/actor/en/Actor/John_Lennon": " John Lennon - Actor - fiction.wikisort.org   Between 1968 and 1972, Lennon and Ono collaborated on many works, including a trilogy of avant-garde albums, several more films, his solo debut  John Lennon/Plastic Ono Band  , and the international top 10 singles \\\" Give Peace a Chance \\\", \\\" Instant Karma! \\\", \\\" Imagine \\\" and \\\" Happy Xmas (War Is Over) \\\".\n\n  As a performer, writer or co-writer, Lennon had 25 number-one singles in the  Bill",
+  "https://alchetron.com/John-Lennon": " John Lennon - Alchetron, The Free Social Encyclopedia   As his career progressed, he played a variety of electric guitars, predominantly the Rickenbacker 325 , Epiphone Casino and Gibson J-160E , and, from the start of his solo career, the Gibson Les Paul Junior .  Double Fantasy producer Jack Douglas claimed that since his Beatle days Lennon habitually tuned his D-string slightly flat, so his Aunt Mimi could tell which guitar was his on recordings.\n",
+  "https://feeds.transistor.fm/red-velvet-media": " Red Velvet Media ®  Red Velvet Media ®\n\n  1  1  577  577  Elizabeth Spano ; The Piano Rebel!  full  http://www.blogtalkradio.com/redvelvetmedia/2020/08/14/elizabeth-spano-the-piano-rebel https://share.transistor.fm/s/93c33797        Fri, 14 Aug 2020 14:00:00 -0700   Holly Stephey Red Velvet Media   2214  The paradigm of classical piano state: \\\"For a pianist to become successful, one has to stay within the boundarie",
+  "https://huggingface.co/datasets/MemGPT/qa_data/viewer/default/train?p=2": " MemGPT/qa_data · Datasets at Hugging Face tattoos that cover the entirety of the back. Others have smaller tattoos at significant locations, such as the shoulder blade or the bottom\\\\\\\",\\   \\\\\\\"hasanswer\\\\\\\": false,\\   \\\\\\\"isgold\\\\\\\": false,\\   \\\\\\\"id\\\\\\\": \\\\\\\"6756455\\\\\\\",\\   \\\\\\\"score\\\\\\\": \\\\\\\"0.98548007\\\\\\\",\\   \\\\\\\"original_retrieval_index\\\\\\\": 12\\   },\\   {\\   \\\\\\\"title\\\\\\\": \\\\\\\"Torsö (crater)\\\\\\\",\\   \\\\\\\"text\\\\\\\": \\\\\\\"Torsö (crater) ",
+  "https://vdoc.pub/documents/st-james-encyclopedia-of-popular-culture-t4dsik7tnqo0": " St. James Encyclopedia Of Popular Culture [PDF] [t4dsik7tnqo0] bigger than Elvis.’’ After many attempts to get a recording contract, they secured an audition with producer George Martin in July, 1962. Martin, who liked their performance and was charmed by their humor and group chemistry, offered the Beatles a contract, but requested that they abandon Pete Best for studio work, whom he found musically unsuitable to the group chemistry. The Beatles gladly conse",
+  "https://www.networkworld.com/article/744676/what-do-john-lennon-bach-beethoven-salvador-dali-and-truman-capote-have-in-common.html": "  If those craters could talk, they would have one heck of a hot party on Mercury\\. The International Astronomical Union \\(IAU\\) — the arbiter of planetary and satellite nomenclature since its inception in 1919 — recently approved 10 new names for impact craters on the planet Mercury\\.\n\nThe new named craters include singer/songwriter John Lennon and author Truman Capote who join existing named crate",
+  "https://www.bobthealien.co.uk/mercury/craters": "  # Bob the Alien's Tour of the Solar System\n\n## Mercury's Craters\n\nBefore 1974, nobody really knew what Mercury looked like. It was known to be small and shaped like a ball (hey, that rhymes!), but that’s about it. Things changed though when Mariner 10 became the first space craft to visit Mercury in 1974. It flew past the planet three times, taking as many photographs as it possibly could each tim Mercury's Craters - Bob the Alien's Tour of the Solar System Before 1974, nobody really knew what Mercury looked like. It was known to be small and shaped like a ball (hey, that rhymes!), but that’s about it. Things changed though when Mariner 10 became the first space craft to visit Mercury in 1974. It flew past the planet three times, taking as many ...",
+  "https://nbcnews.com/sciencemain/john-lennon-9-others-honored-mercury-craters-2D11779434": "  Imagine that\\. John Lennon is getting a tribute on Mercury\\.\n\nThe late Beatles legend is among 10 famous people who are having craters on the planet closest to the sun named after them by the International Astronomical Union\\.\n\nThe IAU, which is in charge of planetary and satellite nomenclature, named the craters in honor of \\\"deceased artists, musicians, painters, and authors who have made outsta",
+  "https://spacenews.com/beatles-legend-among-those-honored-with-mercury-craters/": "  # Beatles Legend Among Those Honored with Mercury Craters\n\nThe International Astronomical Union \\(IAU\\) — the arbiter of planetary and satellite nomenclature since its inception in 1919 — recently approved a proposal from the MESSENGER Science Team to assign names to 10 impact craters on Mercury\\. In keeping with the established naming theme for craters on Mercury, all of the newly designated feat",
+  "https://viemagazine.com/article/memorializing-music-greats/": "  # Memorializing Music Greats - VIE Magazine\n\n### By Jordan Staggs\n\nIt’s a tragedy when a great talent leaves this earth, whether it’s before his or her time or after a life well lived. There is no denying there are some performers who just have a certain something that others never seem to master. They change lives through their careers, and when they depart—often all too soon—the world gathers to",
+  "https://www.universetoday.com/articles/the-hobbit-author-gets-a-crater-on-mercury": "  Here's a little something to please fans of space, art and fantasy alike \\(and those who enjoy all three\\): on August 6 the International Astronomical Union approved names for 9 craters on Mercury, one of which is named for J\\.R\\.R\\. Tolkien, revered author of\n\nThe Hobbit\n\nand\n\nThe Lord of the Rings\n\n\\(among other seminal fantasy works\\.\\)\n\nThe crater Tolkien is approximately 30 miles \\(48 km\\) in",
+  "https://philosophyofscienceportal.blogspot.com/2013/03/craters-on-mercury-named-after-famous.html": "  # Craters on Mercury named \"after famous deceased artists, musicians, or authors or other contributors to the humanities\"\n\n**\"Newly Named Craters on Mercury\"**\n\n**by**\n\n**Keith Cowing**\n\n**March 27th, 2013**\n\n**spaceREF**\n\n**The International Astronomical Union (IAU) - the arbiter of planetary and satellite nomenclature since its inception in 1919 - recently approved a proposal from the MESSENGER ",
+  "https://portuguese-american-journal.com/nasa-crater-named-after-maria-helena-vieira-da-silva-mercury-sun/": "  Posted on 23 December 2013\\.\n\nPortuguese expressionist painter, Maria Helena Vieira da Silva, is among 10 famous people who had a crater on planet Mercury named after them by the International Astronomical Union \\(IAU\\), the global authority for all planetary and satellite nomenclature\\.\n\nBeatles’ legend John Lennon, American author Truman Capote, German author Erich Maria Remarque, and French com",
+  "https://www.grammy.com/awards/lifetime-achievement-awards/": " Lifetime Achievement Award – Grammy # Lifetime Achievement Award This Special Merit, The Lifetime Achievement Award, is presented by vote of the Recording Academy's National Trustees to performers* who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. (*Through 1972, recipients included non-performers) ... | Roy Acuff Awarded: 1987 | Allman Brothers Band, The Aw Lifetime Achievement Award - Grammy This Special Merit, The Lifetime Achievement Award, is presented by vote of the Recording Academy’s National Trustees to performers* who, during their lifetimes, have made creative contributions of… ![Grammy](https://ra-grammy-media.ncp.consulting/uploads/2026/05/Gramophone_black-4-122x150.avif)\n\n# Lifetime Achievement Award\n\nThis Special Merit, The Lifetime Achievement Award, is presented by vote of the Recording Academy's National Trustees to performers\\* who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. (\\*Through 1972, recipients included non-performers)\n\n### **Past Recipients**\n\n|  |  |  |\n| --- | --- | --- |\n| **Roy Acuff**  Awarded: 1987 | **Allman Brothers Band, The**  Awarded: 2012 | **Laurie Anderson**  Awarded: 2024 |\n| **Marian Anderson**  Awarded: 1991 | **Julie Andrews**  Awarded: 2011 | **Louis Armstrong**  Awarded: 1972 |\n| **Eddy Arnold**  Awarded: 2005 | **Fred Astaire**  Awarded: 1989 | **Chet Atkins**  Awarded: 1993 |\n| **Gene Autry**  Awarded: 2009 | **Burt Bacharach**  Awarded: 2008 | **Joan Baez**  Awarded: 2007 |\n| **The Band**  Awarded: 2008 | **Count Basie**  Awarded: 2002 | **Beach Boys**  Awarded: 2001 |\n| **The Beatles**  Awarded: 2014 | **Bee Gees**  Awarded: 2015 | **Harry Belafonte**  Awarded: 2000 |\n| **Tony Bennett**  Awarded: 2001 | **Irving Berlin**  Awarded: 1968 | **Leonard Bernstein**  Awarded: 1985 |\n| **Chuck Berry**  Awarded: 1984 | **Black Sabbath**  Awarded: 2019 | **Hal Blaine**  Awarded: 2018 |\n| **Art Blakey**  Awarded: 2005 | **Bobby \"Blue\" Bland**  Awarded: 1997 | **Blind Boys Of Alabama**  Awarded: 2009 |\n| **Booker T. & The MG's**  Awarded: 2007 | **Pierre Boulez**  Awarded: 2015 | **David Bowie**  Awarded: 2006 |\n| **James Brown**  Awarded: 1992 | **Ruth Brown**  Awarded: 2016 | **Dave Brubeck**  Awarded: 1996 |\n| **Shirley Caesar**  Awarded: 2017 | **Maria Callas**  Awarded: 2007 | **Cab Calloway**  Awarded: 2008 |\n| **Glen Campbell**  Awarded: 2012 | **Carter Family**  Awarded: 2005 | **Benny Carter**  Awarded: 1987 |\n| **Enrico Caruso**  Awarded: 1987 | **Pablo Casals**  Awarded: 1989 | **Johnny Cash**  Awarded: 1999 |\n| **Chicago**  Awarded: 2020 | **Ray Charles**  Awarded: 1987 | **The Clark Sisters**  Awarded: 2024 |\n| **Clifton Chenier**  Awarded: 2014 | **Van Cliburn**  Awarded: 2004 | **Patsy Cline**  Awarded: 1995 |\n| **George Clinton & Parliament - Funkadelic**  Awarded: 2019 | **Rosemary Clooney**  Awarded: 2002 | **Leonard Cohen**  Awarded: 2010 |\n| **Nat \"King\" Cole**  Awarded: 1990 | **Ornette Coleman**  Awarded: 2007 | **John Coltrane**  Awarded: 1992 |\n| **Perry Como**  Awarded: 2002 | **Sam Cooke**  Awarded: 1999 | **Cream**  Awarded: 2006 |\n| **Bing Crosby**  Awarded: 1963 | **Celia Cruz**  Awarded: 2016 | **Bobby Darin**  Awarded: 2010 |\n| **Miles Davis**  Awarded: 1990 | **Sammy Davis Jr.**  Awarded: 2001 | **Doris Day**  Awarded: 2008 |\n| **Neil Diamond**  Awarded: 2018 | **Bo Diddley**  Awarded: 1998 | **Fats Domino**  Awarded: 1987 |\n| **Bob Dylan**  Awarded: 1991 | **Earth, Wind & Fire**  Awarded: 2016 | **Billy Eckstine**  Awarded: 2019 |\n| **David \"Honeyboy\" Edwards**  Awarded: 2010 | **Duke Ellington**  Awarded: 1966 | **Bill Evans**  Awarded: 1994 |\n| **Everly Brothers**  Awarded: 1997 | **Ella Fitzgerald**  Awarded: 1967 | **Roberta Flack**  Awarded: 2020 |\n| **Four Tops**  Awarded: 2009 | **Aretha Franklin**  Awarded: 1994 | **Funk Brothers, The**  Awarded: 2004 |\n| **Judy Garland**  Awarded: 1997 | **Marvin Gaye**  Awarded: 1996 | **Dizzy Gillespie**  Awarded: 1989 |\n| **Benny Goodman**  Awarded: 1986 | **Glenn Gould**  Awarded: 2013 | **Morton Gould**  Awarded: 2005 |\n| **Grandmaster Flash & The Furious Five**  Awarded: 2021 | **Stephane Grappelli**  Awarded: 1997 | **Grateful Dead**  Awarded: 2007 |\n| **Al Green**  Awarded: 2002 | **Woody Guthrie**  Awarded: 2000 | **Buddy Guy**  Awarded: 2015 |\n| **Charlie Haden**  Awarded: 2013 | **Merle Haggard**  Awarded: 2006 | **Lionel Hampton**  Awarded: 2021 |\n| **Herbie Hancock**  Awarded: 2016 | **Emmylou Harris**  Awarded: 2018 | **George Harrison**  Awarded: 2015 |\n| **Donny Hathaway**  Awarded: 2019 | **Isaac Hayes**  Awarded: 2020 | **Roy Haynes**  Awarded: 2011 |\n| **Ann & Nancy Wilson of Heart**  Awarded: 2023 | **Jascha Heifetz**  Awarded: 1989 | **Jimi Hendrix**  Awarded: 1992 |\n| **Woody Herman**  Awarded: 1987 | **Billie Holiday**  Awarded: 1987 | **Buddy Holly**  Awarded: 1997 |\n| **John Lee Hooker**  Awarded: 2000 | **Lightnin' Hopkins**  Awarded: 2013 | **Lena Horne**  Awarded: 1989 |\n| **Marilyn Horne**  Awarded: 2021 | **Vladimir Horowitz**  Awarded: 1990 | **Iggy Pop**  Awarded: 2020 |\n| **Julio Iglesias**  Awarded: 2019 | **The Isley Brothers**  Awarded: 2014 | **Mahalia Jackson**  Awarded: 1972 |\n| **Michael Jackson**  Awarded: 2010 | **Ahmad Jamal**  Awarded: 2017 | **Etta James**  Awarded: 2003 |\n| **Jefferson Airplane**  Awarded: 2016 | **Jelly Roll Morton**  Awarded: 2005 | **Ella Jenkins**  Awarded: 2004 |\n| **Flaco Jiménez**  Awarded: 2015 | **Antonio Carlos Jobim**  Awarded: 2012 | **Robert Johnson**  Awarded: 2006 |\n| **George Jones**  Awarded: 2012 | **Hank Jones**  Awarded: 2009 | **Janis Joplin**  Awarded: 2005 |\n| **Louis Jordan**  Awarded: 2018 | **Juilliard String Quartet**  Awarded: 2011 | **B.B. King**  Awarded: 1987 |\n| **Carole King**  Awarded: 2013 | **Kingston Trio**  Awarded: 2011 | **Gladys Knight**  Awarded: 2024 |\n| **Kraftwerk**  Awarded: 2014 | **Kris Kristofferson**  Awarded: 2014 | **Led Zeppelin**  Awarded: 2005 |\n| **Brenda Lee**  Awarded: 2009 | **Peggy Lee**  Awarded: 1995 | **John Lennon**  Awarded: 1991 |\n| **Jerry Lee Lewis**  Awarded: 2005 | **Little Richard**  Awarded: 1993 | **The Louvin Brothers**  Awarded: 2015 |\n| **Loretta Lynn**  Awarded: 2010 | **Henry Mancini**  Awarded: 1995 | **Armando Manzanero**  Awarded: 2014 |\n| **Bob Marley**  Awarded: 2001 | **Dean Martin**  Awarded: 2009 | **Johnny Mathis**  Awarded: 2003 |\n| **Curtis Mayfield**  Awarded: 1995 | **Paul McCartney**  Awarded: 1990 | **Bobby McFerrin**  Awarded: 2023 |\n| **Memphis Horns, The**  Awarded: 2012 | **The Meters**  Awarded: 2018 | **Glenn Miller**  Awarded: 2003 |\n| **Mitch Miller**  Awarded: 2000 | **Mills Brothers**  Awarded: 1998 | **Charles Mingus**  Awarded: 1997 |\n| **Joni Mitchell**  Awarded: 2002 | **Thelonious Monk**  Awarded: 1993 | **Bill Monroe**  Awarded: 1993 |\n| **Sam & Dave**  Awarded: 2019 | **Willie Nelson**  Awarded: 2000 | **Nirvana**  Awarded: 2023 |\n| **Jessye Norman**  Awarded: 2006 | **N.W.A.**  Awarded: 2024 | **Roy Orbison**  Awarded: 1998 |\n| **Patti Page**  Awarded: 2013 | **Charlie Parker**  Awarded: 1984 | **Dolly Parton**  Awarded: 2011 |\n| **Tom Paxton**  Awarded: 2009 | **Pinetop Perkins**  Awarded: 2005 | **Itzhak Perlman**  Awarded: 2008 |\n| **Oscar Peterson**  Awarded: 1997 | **Maud Powell**  Awarded: 2014 | **Elvis Presley**  Awarded: 1971 |\n| **André Previn**  Awarded: 2010 | **Leontyne Price**  Awarded: 1989 | **Charley Pride**  Awarded: 2017 |\n| **John Prine**  Awarded: 2020 | **Richard Pryor**  Awarded: 2006 | **Public Enemy**  Awarded: 2020 |\n| **Tito Puente**  Awarded: 2003 | **Queen**  Awarded: 2018 | **Ma Rainey**  Awarded: 2023 |\n| **Bonnie Raitt**  Awarded: 2021 | **Ramones**  Awarded: 2011 | **Otis Redding**  Awarded: 1999 |\n| **Max Roach**  Awarded: 2008 | **Paul Robeson**  Awarded: 1998 | **Smokey Robinson**  Awarded: 1999 |\n| **Jimmie Rodgers**  Awarded: 2017 | **Nile Rodgers**  Awarded: 2023 | **Rolling Stones**  Awarded: 1986 |\n| **Sonny Rollins**  Awarded: 2004 | **Linda Ronstadt**  Awarded: 2016 | **Diana Ross**  Awarded: 2012 |\n| **Artur Rubinstein**  Awarded: 1994 | **Run DMC**  Awarded: 2016 | **Salt-n-Pepa**  Awarded: 2021 |\n| **Gil Scott-Heron**  Awarded: 2012 | **Earl Scruggs**  Awarded: 2008 | **Pete Seeger**  Awarded: 1993 |\n| **Andrés Segovia**  Awarded: 1986 | **Selena**  Awarded: 2021 | **Ravi Shankar**  Awarded: 2013 |\n| **Artie Shaw**  Awarded: 2004 | **George Beverly Shea**  Awarded: 2011 | **Wayne Shorter**  Awarded: 2015 |\n| **Simon And Garfunkel**  Awarded: 2003 | **Nina Simone**  Awarded: 2017 | **Frank Sinatra**  Awarded: 1965 |\n| **Slick Rick “The Ruler”**  Awarded: 2023 | **Bessie Smith**  Awarded: 1989 | **Georg Solti**  Awarded: 1996 |\n| **Staple Singers**  Awarded: 2005 | **Isaac Stern**  Awarded: 1987 | **Sly Stone**  Awarded: 2017 |\n| **Igor Stravinsky**  Awarded: 1987 | **Barbra Streisand**  Awarded: 1995 | **Donna Summer**  Awarded: 2024 |\n| **The Supremes**  Awarded: 2023 | **Talking Heads**  Awarded: 2021 | **Art Tatum**  Awarded: 1989 | **The Temptations**  Awarded: 2013 |\n| **Clark Terry**  Awarded: 2010 | **Sister Rosetta Tharpe**  Awarded: 2020 | **Doors, The**  Awarded: 2007 |\n| **Mel Tormé**  Awarded: 1999 | **Arturo Toscanini**  Awarded: 1987 | **Tina Turner**  Awarded: 2018 |\n| **Sarah Vaughan**  Awarded: 1989 | **Velvet Underground**  Awarded: 2017 | **Fats Waller**  Awarded: 1993 |\n| **Dionne Warwick**  Awarded: 2019 | **Muddy Waters**  Awarded: 1992 | **Doc Watson**  Awarded: 2004 |\n| **Weavers, The**  Awarded: 2006 | **Kitty Wells**  Awarded: 1991 | **The Who**  Awarded: 2001 |\n| **Hank Williams**  Awarded: 1987 | **Bob Wills**  Awarded: 2007 | **Stevie Wonder**  Awarded: 1996 |\n| **Tammy Wynnette**  Awarded: 2024 | **Frank Zappa**  Awarded: 1997 |\n\n## Sign Up For The Gramophone\n\nSocials\n\n![](https://ra-grammy-media.ncp.consulting/uploads/2026/04/logo-recording-academy.avif)\n\n© 2026 Grammy. All rights reserved.\n\nYour Privacy Choices",
+  "https://www.grammy.com/news/2023-grammys-special-merit-awards-recipients-lifetime-achievement-technical-trustees-honorees/": " The Recording Academy Announces 2023 Special Merit Awards Honorees: Nirvana, Nile Rodgers, The Supremes, Ann Wilson And Nancy Wilson Of Heart, Slick Rick “The Ruler” & Many More | Grammy Lifetime Achievement Award Honorees: This Special Merit Award is presented by vote of the Recording Academy's National Trustees to performers^ who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording; ^through 1972, recipients included non-performers.",
+  "https://www.grammy.com/artists/aaron-copland/1536/": " Aaron Copland Grammy Awards and Nominations, Song & Bio Aaron Copland Grammy Awards and Nominations, Song & Bio # Aaron Copland Wins 1 Nominations 7 Category Classical 17th Annual Grammy Awards Best Chamber Music Performance - Nominee Copland: Appalachian Spring. Aaron Copland 10th Annual Grammy Awards Best Classical Choral Performance (Other Than Opera) - Nominee Copland: In The Beginning, Lark, Las Agachadas (Album). Aaron Copland, conductor 9th Annu",
+  "https://qa.grammy.com/awards/lifetime-achievement-awards": " Lifetime Achievement Award | GRAMMY.com # Lifetime Achievement Award This Special Merit, The Lifetime Achievement Award, is presented by vote of the Recording Academy's National Trustees to performers* who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. (*Through 1972, recipients included non-performers) ### Past Recipients | Roy Acuff Awarded: 1987 | Allman Broth",
+  "https://www.grammy.com/artists/igor-stravinsky/6686/": " Igor Stravinsky Grammy Awards and Nominations, Song & Bio # Igor Stravinsky Wins 5 Nominations 11 Category Classical 25th Annual Grammy Awards Best Classical Album - Nominee Stravinsky: The Recorded Legacy (Album). Robert Craft, Igor Stravinsky, Vera Zorina Lieberson 10th Annual Grammy Awards Best Classical Performance - Orchestra - Winner Stravinsky: Firebird And Petrouchka Suites. Igor Stravinsky, conductor 7th Annual Grammy Awards Best Choral Performa",
+  "https://www.grammy.com/news/top-moments-from-the-2014-special-merit-awards-ceremony/": " Top Moments From The 2014 Special Merit Awards Ceremony | Grammy Starr received a rousing standing ovation accepting on behalf of the Beatles: \"It's a Lifetime Achievement Award but I happen to think we've got a lot more life left in us.\" Earlier on the red carpet, Starr remarked that he preferred to think of it as a",
+  "https://www.grammy.com/news/glenn-gould-charlie-haden-lightnin-hopkins-carole-king-patti-page-ravi-shankar-and/": " GLENN GOULD, CHARLIE HADEN, LIGHTNIN’ HOPKINS, CAROLE KING, PATTI PAGE, RAVI SHANKAR AND THE TEMPTATIONS HONORED WITH THE RECORDING ACADEMY® LIFETIME ACHIEVEMENT AWARD | Grammy The Recording Academy® (www.grammy.com) announced its Special Merit Awards recipients today, and this year's honorees are: Glenn Gould, Charlie Haden, Lightnin' Hopkins, Carole King, Patti Page, Ravi Shankar and the Temptations as Lifetime Achievement Award recipients; Marilyn & Alan Bergman, Leonard & Phil Chess and Alan Livingston as Trustees Award honorees; and Ikutaro Kakehashi & Dave Smith an",
+  "https://www.grammy.com/news/the-grammys-rich-kennedy-center-honors-history/": " The GRAMMYs’ Rich Kennedy Center Honors History | Grammy Nearly 60 recipients of Kennedy Center Honors (57 to be exact) have received one or more honorary Recording Academy Special Merit Awards — the Lifetime Achievement Award, Trustees Award or GRAMMY Legend Award. As such, they have received the highest form of recognition for career achievement from both The Recording Academy and the Kennedy Center Honors. Here they are, arranged by genre — with the ",
+  "https://www.grammy.com/awards/lifetime-achievement-awards": " Lifetime Achievement Award - Grammy | Slick Rick “The Ruler”  Awarded: 2023 | Bessie Smith  Awarded: 1989 | Georg Solti  Awarded: 1996 |\n| Staple Singers  Awarded: 2005 | Isaac Stern  Awarded: 1987 | Sly Stone  Awarded: 2017 |\n| Igor Stravinsky  Awarded: 1987 | Barbra Streisand  Awarded: 1995 | Donna Summer  Awarded: 2024 |\n| The Supremes  Awarded: 2023 | Talking Heads  Awarded: 2021 | Art Tatum  Awarded: 1989 | The Temptations  Awa",
+  "https://grammy.com/awards/lifetime-achievement-awards": " Lifetime Achievement Award - Grammy | Slick Rick “The Ruler”  Awarded: 2023 | Bessie Smith  Awarded: 1989 | Georg Solti  Awarded: 1996 |\n| Staple Singers  Awarded: 2005 | Isaac Stern  Awarded: 1987 | Sly Stone  Awarded: 2017 |\n| Igor Stravinsky  Awarded: 1987 | Barbra Streisand  Awarded: 1995 | Donna Summer  Awarded: 2024 |\n| The Supremes  Awarded: 2023 | Talking Heads  Awarded: 2021 | Art Tatum  Awarded: 1989 | The Temptations  Awa Lifetime Achievement Award | GRAMMY.com & The MG's Awarded: 2007 | Pierre Boulez Awarded: 2015 | David Bowie Awarded: 2006\n* James Brown Awarded: 1992 | Ruth Brown Awarded: 2016 | Dave Brubeck Awarded: 1996\n* Shirley Caesar Awarded: 2017 | Maria Callas Awarded: 2007 | Cab Calloway Awarded: 2008\n* Glen Campbell Awarded: 2012 | Carter Family Awarded: 2005 | Benny Carter Awarded: 1987\n* Enrico Caruso Awarded: 1987 | Pablo Casals Awarded: 1",
+  "https://www.grammy.com/news/lifetime-achievement-award-juilliard-string-quartet": " Lifetime Achievement Award: Juilliard String Quartet | Grammy The Lifetime Achievement Award, established in 1962, is presented by vote of The Recording Academy's National Trustees to performers who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. To view a complete list of Lifetime Achievement Award recipients, click here. [...] In addition to the GRAMMY Awards, The Recording Academy p",
+  "https://grammy.com/news/lifetime-achievement-award-juilliard-string-quartet": " Lifetime Achievement Award: Juilliard String Quartet | Grammy The Lifetime Achievement Award, established in 1962, is presented by vote of The Recording Academy's National Trustees to performers who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. To view a complete list of Lifetime Achievement Award recipients, click here. [...] In addition to the GRAMMY Awards, The Recording Academy p",
+  "https://www.grammy.com/news/lifetime-achievement-award-the-kingston-trio": " Lifetime Achievement Award: The Kingston Trio | Grammy The Lifetime Achievement Award, established in 1962, is presented by vote of The Recording Academy's National Trustees to performers who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. To view a complete list of Lifetime Achievement Award recipients, click here. [...] In addition to the GRAMMY Awards, The Recording Academy p",
+  "https://grammy.com/news/lifetime-achievement-award-the-kingston-trio": " Lifetime Achievement Award: The Kingston Trio | Grammy The Lifetime Achievement Award, established in 1962, is presented by vote of The Recording Academy's National Trustees to performers who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. To view a complete list of Lifetime Achievement Award recipients, click here. [...] In addition to the GRAMMY Awards, The Recording Academy p",
+  "https://www.grammy.com/news/lifetime-achievement-award-roy-haynes": " Lifetime Achievement Award: Roy Haynes | Grammy The Lifetime Achievement Award, established in 1962, is presented by vote of The Recording Academy's National Trustees to performers who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. To view a complete list of Lifetime Achievement Award recipients, click here. [...] In addition to the GRAMMY Awards, The Recording Academy p",
+  "https://grammy.com/news/lifetime-achievement-award-roy-haynes": " Lifetime Achievement Award: Roy Haynes | Grammy The Lifetime Achievement Award, established in 1962, is presented by vote of The Recording Academy's National Trustees to performers who, during their lifetimes, have made creative contributions of outstanding artistic significance to the field of recording. To view a complete list of Lifetime Achievement Award recipients, click here. [...] In addition to the GRAMMY Awards, The Recording Academy p",
+  "https://live.grammy.com/awards/lifetime-achievement-awards": " Lifetime Achievement Award | GRAMMY.com * Awarded: 1997 | Blind Boys Of Alabama\n* Awarded: 2009\n* Booker T. & The MG's\n* Awarded: 2007 | Pierre Boulez\n* Awarded: 2015 | David Bowie\n* Awarded: 2006\n* James Brown\n* Awarded: 1992 | Ruth Brown\n* Awarded: 2016 | Dave Brubeck\n* Awarded: 1996\n* Shirley Caesar\n* Awarded: 2017 | Maria Callas\n* Awarded: 2007 | Cab Calloway\n* Awarded: 2008\n* Glen Campbell\n* Awarded: 2012 | Carter Family\n* Awarded:",
+  "https://www.grammy.com/artists/aaron-copland/1536": " Aaron Copland Grammy Awards and Nominations, Song & Bio Artist\n\nAaron Copland\n\nWins\n1\nNominations\n7\nCategory\nClassical\n17th Annual Grammy Awards\nBest Chamber Music Performance - Nominee\nCopland: Appalachian Spring. Aaron Copland\n10th Annual Grammy Awards\nBest Classical Choral Performance (Other Than Opera) - Nominee\nCopland: In The Beginning, Lark, Las Agachadas (Album). Aaron Copland, conductor\n9th Annual Grammy Awards\nAlbum Of The Year Classical - No",
+  "https://www.grammy.com/artists/igor-stravinsky/6686": " Igor Stravinsky Grammy Awards and Nominations, Song & Bio Artist\n\nIgor Stravinsky\n\nWins\n5\nNominations\n11\nCategory\nClassical\n25th Annual Grammy Awards\nBest Classical Album - Nominee\nStravinsky: The Recorded Legacy (Album). Robert Craft, Igor Stravinsky, Vera Zorina Lieberson\n10th Annual Grammy Awards\nBest Classical Performance - Orchestra - Winner\nStravinsky: Firebird And Petrouchka Suites. Igor Stravinsky, conductor\n\n...\n\nBest Classical Performance - Cho",
+  "https://www.grammy.com/awards/categories/best-contemporary-classical-composition/1961": " Best Contemporary Classical Composition 1961 Winners & Nominees * 1994\n* 1962\n* 1961\nScroll right\n3rd Annual Grammy Awards • 1961\nHonoring recordings released between August 31, 1959 – November 29, 1960\n\nAaron Copland, conductor won the 1961 Grammy Award for Best Contemporary Classical Composition with \"Copland: Orchestral Suite From Tender Land Suite\"\n\nWinners & Nominees 1961\n\nWinner\nNominees\n* Copland: Orchestral Suite From Tender Land Suite\nAaron Copland\n\nC",
+  "https://www.grammy.com/awards/categories/best-engineered-album-classical/1997": " Best Engineered Album, Classical 1997 Winners & Nominees Leonard Slatkin, conductor won the 1997 Grammy Award for Best Engineered Album, Classical with \" Copland: Dance Symphony; Short Symphony; Organ Symphony \"\n\nWinners & Nominees 1997\n\nWinner\nNominees\n* Copland: Dance Symphony; Short Symphony; Organ Symphony\nWilliam Hoekstra , Lawrence L. Rock\n\nCredits\n\nWilliam Hoekstra & Lawrence Rock, engineers (Leonard Slatkin, conductor)\n\n...\n\n* Bartók: The Three ",
+  "https://cms.grammy.com/awards/categories/album-of-the-year-classical/1967": " Album Of The Year Classical 1967 Winners & Nominees 9th Annual Grammy Awards • 1967\nHonoring recordings released between November 2, 1965 – November 1, 1966\n\nMorton Gould, conductor won the 1967 Grammy Award for Album Of The Year Classical with \"Ives: Symphony No. 1 In D Minor\"\n\nWinners & Nominees 1967\n\nWinner\nNominees\n* Ives: Symphony No. 1 In D Minor\nMorton Gould , Howard Scott\n\nCredits\n\nMorton Gould, artist; Howard Scott, producer\n* John McClure",
+  "https://www.grammy.com/awards/categories/best-classical-engineered-recording": " Best Classical Engineered Recording Grammy Award Winners & Nominees Best Classical Engineered Recording\n\nBest Classical Engineered Recording\n\nScroll left\n* 1997\n* 1996\n* 1995\n* 1992\nScroll right\n39th Annual Grammy Awards • 1997\nHonoring recordings released between September 30, 1995 – September 29, 1996\n\nLeonard Slatkin, conductor won the 1997 Grammy Award for Best Classical Engineered Recording with \"Copland: Dance Symphony; Short Symphony; Organ Symphony\"\n\nWinne",
+  "https://www.grammy.com/awards/categories/best-classical-engineered-recording/1997/": "  # Best Classical Engineered Recording 1997 Winners & Nominees\n\n- 1997\n- 1996\n- 1995\n- 1992\n\n39th Annual Grammy Awards • **1997**\n\nHonoring recordings released between October 1, 1995 – September 30, 1996\n\n## Leonard Slatkin, conductor won the 1997 Grammy Award for Best Classical Engineered Recording with \\\"Copland: Dance Symphony; Short Symphony; Organ Symphony\\\"\n\n## Winners & Nominees 1997\n\nWinne",
+  "https://www.grammy.com/awards/categories/best-classical-engineered-recording/": "  # Best Classical Engineered Recording Grammy Award Winners & Nominees\n\n- 1997\n- 1996\n- 1995\n- 1992\n\n39th Annual Grammy Awards • **1997**\n\nHonoring recordings released between October 1, 1995 – September 30, 1996\n\n## Leonard Slatkin, conductor won the 1997 Grammy Award for Best Classical Engineered Recording with \\\"Copland: Dance Symphony; Short Symphony; Organ Symphony\\\"\n\n## Winners & Nominees 199",
+  "https://www.grammy.com/news/video-a-tribute-to-the-doors/": "  # A Tribute To The Doors \\| Grammy\n\nThe Doors\n\nPhoto: Chris Walter/WireImage\\.com\n\nRenowned music journalist Ben Fong-Torres testifies to the legendary Southern California group's legacy\n\n*\\(In 2007 the Doors— drummer John Densmore, guitarist Robby Krieger, keyboardist Ray Manzarek, and vocalist Jim Morrison — were honored with The Recording Academy's **Lifetime Achievement Award**\\. The following",
+  "https://www.grammy.com/artists/pierre-boulez/792/": "  Artist\n\nWins\n\n26\n\nNominations\n\n67\n\nCategory\n\n53rd Annual Grammy Awards\n\nBest Orchestral Performance - Nominee\n\nStravinsky: Pulcinella; Symphony In Three Movements; Four Études\\. Pierre Boulez\n\n52nd Annual Grammy Awards\n\nBest Classical Performance-Instrumental Soloist\\(s\\) \\(with orchestra\\) - Nominee\n\n48th Annual Grammy Awards\n\nBest Chamber Music/Small Ensemble Performance - Winner\n\nBoulez: Le Mar",
+  "https://www.grammy.com/news/legends-honored-at-special-merit-awards/": "  # Legends Honored At Special Merit Awards \\| Grammy\n\nDavid Bowie, Cream, Jessye Norman, Richard Pryor among those celebrated\n\n*GRAMMY\\.com*  \nChuck Crisfulli\n\nMoments of reflection, tears of joy, roars of laughter, and a steady supply of standing ovations were all part of the festivities Tuesday night at the GRAMMYs Special Merit Awards Ceremony, held this year at the Wilshire Ebell Theatre\\. The ",
+  "https://www.grammy.com/news/special-merit-awards-2026/": "  # RECORDING ACADEMY® TO CELEBRATE MUSIC LEGENDS AT 2026 SPECIAL MERIT AWARDS CEREMONY DURING GRAMMY® WEEK \\| Grammy\n\nTHE CEREMONY RETURNS TO THE WILSHIRE EBELL THEATRE ON SATURDAY, JAN\\. 31, 2026\n\n**THE CEREMONY RETURNS TO THE WILSHIRE EBELL THEATRE ON SATURDAY, JAN\\. 31, 2026**\n\n**SANTA MONICA, CALIF\\. \\(DEC\\. 19, 2025\\) —** The Recording Academy®'s Special Merit Awards Ceremony celebrating the 2",
+  "https://www.grammy.com/news/julie-andrews-roy-haynes-juilliard-string-quartet-kingston-trio-dolly-parton-ramones/": "  # JULIE ANDREWS, ROY HAYNES, JUILLIARD STRING QUARTET, THE KINGSTON TRIO, DOLLY PARTON, RAMONES, AND GEORGE BEVERLY SHEA HONORED WITH THE RECORDING ACADEMY® LIFETIME ACHIEVEMENT AWARD \\| Grammy\n\nSANTA MONICA, Calif\\. \\(Dec\\. 22, 2010\\) —The Recording Academy® \\(www\\.grammy\\.com\\) announced its Special Merit Awards recipients today, and this year's group includes: Julie Andrews, Roy Haynes, Juillia JULIE ANDREWS, ROY HAYNES, JUILLIARD STRING QUARTET, THE KINGSTON ... SANTA MONICA, Calif. (Dec. 22, 2010) —The Recording Academy® (www.grammy.com) announced its Special Merit Awards recipients today, and this year’s group includes: Julie Andrews, Roy Haynes…",
+  "https://www.grammy.com/news/allman-brothers-band-glen-campbell-antonio-carlos-jobim-george-jones-memphis-horns/": "  # ALLMAN BROTHERS BAND, GLEN CAMPBELL, ANTONIO CARLOS JOBIM, GEORGE JONES, THE MEMPHIS HORNS, DIANA ROSS, AND GIL SCOTT-HERON HONORED WITH THE RECORDING ACADEMY® LIFETIME ACHIEVEMENT AWARD \\| Grammy\n\nSANTA MONICA, Calif\\. \\(Dec\\. 21, 2011\\) —The Recording Academy® \\(www\\.grammy\\.com\\) announced its Special Merit Awards recipients today, and this year's selections are: Allman Brothers Band, Glen Ca",
+  "https://live.grammy.com/awards/lifetime-achievement-awards/": " Lifetime Achievement Award - Grammy This Special Merit, The Lifetime Achievement Award, is presented by vote of the Recording Academy’s National Trustees to performers* who, during their lifetimes, have made creative contributions of…",
+  "https://iq.grammy.com/awards/lifetime-achievement-awards": " Lifetime Achievement Award | GRAMMY.com The Lifetime Achievement Award is presented to performers and artists who have made outstanding contributions to the recording industry. Find award recipients at GRAMMY.com.",
+  "https://www.grammy.com/awards/categories/best-recording-package/1966/": " Best Recording Package 1966 Winners & Nominees The Grammy Award for Best Recording Package is an art director’s award, recognizing excellence in the field of art and packaging for albums or singles.",
+  "https://www.grammy.com/news/a-special-affair/": " A Special Affair | Grammy By Paul Grein The Recording Academy’s Special Merit Awards Ceremony was especially heartfelt this year, a reflection on the mortality of several of the honorees.",
+  "https://www.grammy.com/artists/leonard-slatkin/15391/": " Leonard Slatkin Grammy Awards and Nominations, Song & Bio 63rd Annual Grammy Awards · Best Choral Performance - Nominee",
+  "https://www.grammy.com/awards/categories/best-engineered-recording-classical/1975/": " Best Engineered Recording, Classical 1975 Winners & Nominees 17th Annual Grammy Awards • 1975 · Honoring recordings released between October 15, 1973 – October 14, 1974"
+ },
+ "seconds": 51.4,
+ "tokens": {
+  "prompt_tokens": 122500,
+  "completion_tokens": 857
+ },
+ "model": "openai-codex-personal/gpt-6.1-terra-fast:high",
+ "turns": 6,
+ "round": 0,
+ "role": "noise",
+ "referee": {
+  "score": 0.6538,
+  "correct": 9,
+  "wrong": 1,
+  "total": 13,
+  "duplicates": 0,
+  "unsupported": 0,
+  "x_only": 1,
+  "y_only": 0,
+  "missed": [
+   "Chuck Berry",
+   "Ma Rainey",
+   "Miriam Makeba",
+   "Walt Disney"
+  ],
+  "rows": [
+   {
+    "name": "Maya Angelou",
+    "url": "https://en.wikipedia.org/wiki/List_of_craters_on_Mercury",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-9"
+   },
+   {
+    "name": "Enrico Caruso",
+    "url": "https://interlude.hk/composers-on-other-planets-mercury/",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-4"
+   },
+   {
+    "name": "Aaron Copland",
+    "url": "https://www.grammy.com/artists/aaron-copland/1536/",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-0"
+   },
+   {
+    "name": "Duke Ellington",
+    "url": "https://www.grammy.com/awards/lifetime-achievement-awards/",
+    "providers": [
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-3"
+   },
+   {
+    "name": "Antônio Carlos Jobim",
+    "url": "https://www.grammy.com/awards/lifetime-achievement-awards/",
+    "providers": [
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-1"
+   },
+   {
+    "name": "Alicia de Larrocha",
+    "url": "https://interlude.hk/composers-on-other-planets-mercury/",
+    "providers": [
+     "brave",
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "reason": "The evidence confirms Alicia de Larrocha won four competitive Grammy Awards, but does not establish an IAU-approved surface feature on Mercury named after her.",
+    "status": "wrong",
+    "half": "x_only"
+   },
+   {
+    "name": "John Lennon",
+    "url": "https://www.nasa.gov/image-article/beatles-legend-john-lennon-among-those-honored-with-mercury-craters/",
+    "providers": [
+     "brave",
+     "exa",
+     "parallel",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-7"
+   },
+   {
+    "name": "Freddie Mercury",
+    "url": "https://en.wikipedia.org/wiki/Freddie_Mercury",
+    "providers": [
+     "ceramic",
+     "tavily"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-5"
+   },
+   {
+    "name": "Thelonious Monk",
+    "url": "https://www.grammy.com/awards/lifetime-achievement-awards/",
+    "providers": [
+     "exa",
+     "fetch:tavily",
+     "you"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-11"
+   },
+   {
+    "name": "Igor Stravinsky",
+    "url": "https://www.grammy.com/artists/igor-stravinsky/6686/",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "grammy_mercury-6"
+   }
+  ]
+ }
+}

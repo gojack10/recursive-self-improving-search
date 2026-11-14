@@ -1,0 +1,14 @@
+{"t": 1794696869.7, "event": "plan", "unmatched": 6, "reused": 0, "to_check": 6}
+{"t": 1794696869.7, "event": "start", "name": "Edward Victor Appleton"}
+{"t": 1794696869.7, "event": "start", "name": "C. V. Raman"}
+{"t": 1794696869.7, "event": "start", "name": "William Henry Bragg"}
+{"t": 1794696869.7, "event": "start", "name": "Howard Florey"}
+{"t": 1794696869.7, "event": "start", "name": "William Ramsay"}
+{"t": 1794696869.7, "event": "start", "name": "Francis William Aston"}
+{"t": 1794696875.4, "event": "end", "name": "William Ramsay", "status": "same", "reason": "William Ramsay is the already-known Sir William Ramsay, Nobel laureate in Chemistry (1904). The evidence identifies him as the namesake of the IAU-approved lunar crater Ramsay (1970).", "seconds": 5.7}
+{"t": 1794696875.5, "event": "end", "name": "William Henry Bragg", "status": "same", "reason": "William Henry Bragg is the already-listed William Bragg, the 1915 Nobel Physics laureate. The evidence identifies him as the namesake of lunar crater Bragg, approved by the IAU in 1970.", "seconds": 5.8}
+{"t": 1794696877.27, "event": "end", "name": "Edward Victor Appleton", "status": "same", "reason": "Edward Victor Appleton is the same person as the already-listed Edward V. Appleton, the 1947 Nobel laureate in Physics commemorated by the IAU-approved lunar crater Appleton.", "seconds": 7.6}
+{"t": 1794696878.4, "event": "end", "name": "Howard Florey", "status": "same", "reason": "Howard Florey is the already-known Sir Howard Florey. The evidence identifies him as a 1945 Nobel laureate and the namesake of the IAU-approved lunar crater Florey (2009).", "seconds": 8.7}
+{"t": 1794696880.1, "event": "end", "name": "Francis William Aston", "status": "same", "reason": "Francis William Aston is the full name of the already-listed Francis W. Aston, the 1922 Nobel chemistry laureate commemorated by the IAU-approved lunar crater Aston.", "seconds": 10.4}
+{"t": 1794696880.49, "event": "end", "name": "C. V. Raman", "status": "same", "reason": "C. V. Raman is the already-listed Sir Chandrasekhara Venkata Raman. The evidence confirms his 1930 Nobel Prize in Physics but does not document an IAU-approved lunar feature named after him.", "seconds": 10.8}
+{"t": 1794696880.49, "event": "done"}

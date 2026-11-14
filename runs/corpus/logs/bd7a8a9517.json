@@ -1,0 +1,1398 @@
+{
+ "attempt_id": "bd7a8a9517",
+ "method": "v002",
+ "hunt": "nobel_physics_moon",
+ "kind": "list",
+ "x": "How many Nobel Prize in Physics laureates have an IAU-approved surface feature on the Moon named after them? Satellite craters (e.g. \"Bohr A\") do not count separately. Count each person once. Use IAU names in force as of November 2026. List each laureate.",
+ "y": "",
+ "pool": "test",
+ "finds": [
+  {
+   "name": "Edward Victor Appleton",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel"
+  },
+  {
+   "name": "Charles Glover Barkla",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/606"
+  },
+  {
+   "name": "Henri Becquerel",
+   "evidence_url": "https://www.moonalmanack.com/atlas/becquerel/"
+  },
+  {
+   "name": "Patrick Blackett",
+   "evidence_url": "https://moonopps.com/compendium/feat_blackett"
+  },
+  {
+   "name": "Niels Bohr",
+   "evidence_url": "https://en.wikipedia.org/wiki/Bohr_(crater)"
+  },
+  {
+   "name": "William Henry Bragg",
+   "evidence_url": "https://en.wikipedia.org/wiki/Bragg_(crater)"
+  },
+  {
+   "name": "Arthur Holly Compton",
+   "evidence_url": "https://moonopps.com/compendium/feat_compton"
+  },
+  {
+   "name": "Pierre Curie",
+   "evidence_url": "https://moonopps.com/compendium/feat_curie"
+  },
+  {
+   "name": "Marie Skłodowska Curie",
+   "evidence_url": "https://en.wikipedia.org/wiki/Sklodowska_(lunar_crater)"
+  },
+  {
+   "name": "Clinton Davisson",
+   "evidence_url": "https://en.wikipedia.org/wiki/Davisson_%28crater%29"
+  },
+  {
+   "name": "Albert Einstein",
+   "evidence_url": "https://moonopps.com/compendium/feat_einstein"
+  },
+  {
+   "name": "Enrico Fermi",
+   "evidence_url": "https://moonopps.com/compendium/feat_fermi"
+  },
+  {
+   "name": "Heike Kamerlingh Onnes",
+   "evidence_url": "https://moonopps.com/compendium/feat_kamerlingh_onnes"
+  },
+  {
+   "name": "Lev Landau",
+   "evidence_url": "https://economictimes.indiatimes.com/magazines/panache/google-celebrates-physicist-lev-davidovich-landau-who-has-a-crater-on-the-moon-named-after-him-with-doodle/articleshow/67633949.cms"
+  },
+  {
+   "name": "Max von Laue",
+   "evidence_url": "https://en.wikipedia.org/wiki/Laue_(crater)"
+  },
+  {
+   "name": "Philipp Lenard",
+   "evidence_url": "https://wenamethestars.inkleby.com/feature/14503"
+  },
+  {
+   "name": "Gabriel Lippmann",
+   "evidence_url": "https://en.wikipedia.org/wiki/Lippmann_(crater)"
+  },
+  {
+   "name": "Hendrik Lorentz",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/3472"
+  },
+  {
+   "name": "Robert Millikan",
+   "evidence_url": "https://en.wikipedia.org/wiki/Millikan_(crater)"
+  },
+  {
+   "name": "Wolfgang Pauli",
+   "evidence_url": "https://moonopps.com/compendium/feat_pauli"
+  },
+  {
+   "name": "Max Planck",
+   "evidence_url": "https://moonopps.com/compendium/feat_planck"
+  },
+  {
+   "name": "C. V. Raman",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/4935"
+  },
+  {
+   "name": "Owen Willans Richardson",
+   "evidence_url": "https://en.wikipedia.org/wiki/Richardson_(lunar_crater)"
+  },
+  {
+   "name": "Wilhelm Röntgen",
+   "evidence_url": "https://kuongeo.com/moon/names/rontgen"
+  },
+  {
+   "name": "Erwin Schrödinger",
+   "evidence_url": "https://moonopps.com/compendium/feat_schrodinger"
+  },
+  {
+   "name": "Johannes Stark",
+   "evidence_url": "https://wenamethestars.inkleby.com/feature/5683"
+  },
+  {
+   "name": "J. J. Thomson",
+   "evidence_url": "https://moonopps.com/compendium/feat_thomson"
+  },
+  {
+   "name": "Pieter Zeeman",
+   "evidence_url": "https://kuongeo.com/moon/names/zeeman"
+  }
+ ],
+ "notes": "Identified 28 documented intersections, but search budget ran out before an exhaustive verification of other laureates. Future November 2026 status cannot be established from these records alone.",
+ "telem_calls": [
+  {
+   "kind": "search",
+   "query": [
+    "IAU lunar craters named Nobel physics prize winners laureates moon"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "list all physics Nobel laureates lunar craters named physicists moon nobel prize"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"Nobel\" \"physics\" \"lunar craters\" laureates list"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel"
+   ],
+   "ok": 1,
+   "cost": 0.001
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"craters\" \"nobel\" \"physics\" moon laureates Bohr Planck Einstein"
+   ],
+   "requested": [
+    "exa"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "exa"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.007,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "site:moonopps.com/compendium/ \"physicist; Nobel laureate\" \"Crater\" Moon",
+    "\"moon\" \"crater\" \"nobel laureate\" physicist named",
+    "lunar craters \"nobel laureates\" physics list eponym"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 24,
+   "dropped_referee": 0,
+   "cost": 0.003,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "site:moonopps.com/compendium/ \"physicist; Nobel laureate\" crater -fermi -bohr -einstein -planck -blackett -bragg -kamerlingh",
+    "site:moonopps.com/compendium/ \"physicist; Nobel laureate\" crater -fermi -bohr -einstein -planck -appleton -landau -barkla",
+    "site:planetarynames.wr.usgs.gov \"physicist\" \"Nobel laureate\" \"Moon\" crater",
+    "moon crater nobel physics laureate list \"Hess\" \"Laue\""
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 32,
+   "dropped_referee": 0,
+   "cost": 0.004,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"crater\" \"nobel prize in physics\" \"lunar\" physicist",
+    "\"lunar crater\" \"nobel prize in physics\" named after laureate",
+    "\"moon crater\" \"Nobel Prize in Physics\"  \"crater\" physicist",
+    "\"lunar crater\" \"physics\" \"Nobel\" physicist eponym 1970",
+    "\"lunar crater\" \"nobel\" \"physics\" physicist named approved"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 40,
+   "dropped_referee": 0,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Henri Becquerel Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym",
+    "Marie Skłodowska Curie Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym",
+    "J. J. Thomson Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym",
+    "Erwin Schrödinger Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym",
+    "Paul Dirac Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym"
+   ],
+   "requested": [
+    "exa"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "exa",
+    "exa",
+    "exa",
+    "exa",
+    "exa"
+   ],
+   "n": 10,
+   "dropped_referee": 0,
+   "cost": 0.035,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Werner Heisenberg Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym",
+    "Wolfgang Pauli Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym",
+    "Robert Millikan Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym"
+   ],
+   "requested": [
+    "exa"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "exa",
+    "exa",
+    "exa"
+   ],
+   "n": 6,
+   "dropped_referee": 0,
+   "cost": 0.021,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"moon\" \"crater\" \"nobel\" \"physics\" \"Röntgen\" \"Zeeman\""
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  }
+ ],
+ "telem_spent": 0.08,
+ "telem_session": "5fd590a2-87c5-411e-a996-d5fd3353d6a3",
+ "trace": [
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "IAU lunar craters named Nobel physics prize winners laureates moon",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.079
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "list all physics Nobel laureates lunar craters named physicists moon nobel prize",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.078
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"Nobel\" \"physics\" \"lunar craters\" laureates list",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.077
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.076
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"craters\" \"nobel\" \"physics\" moon laureates Bohr Planck Einstein",
+    "providers": [
+     "exa"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "exa"
+    ],
+    "cost": 0.007,
+    "budget_left": 0.069
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "site:moonopps.com/compendium/ \"physicist; Nobel laureate\" \"Crater\" Moon",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8,
+    "also": [
+     "\"moon\" \"crater\" \"nobel laureate\" physicist named",
+     "lunar craters \"nobel laureates\" physics list eponym"
+    ]
+   },
+   "summary": {
+    "providers_used": [
+     "parallel",
+     "parallel",
+     "parallel"
+    ],
+    "cost": 0.003,
+    "budget_left": 0.066
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "site:moonopps.com/compendium/ \"physicist; Nobel laureate\" crater -fermi -bohr -einstein -planck -blackett -bragg -kamerlingh",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8,
+    "also": [
+     "site:moonopps.com/compendium/ \"physicist; Nobel laureate\" crater -fermi -bohr -einstein -planck -appleton -landau -barkla",
+     "site:planetarynames.wr.usgs.gov \"physicist\" \"Nobel laureate\" \"Moon\" crater",
+     "moon crater nobel physics laureate list \"Hess\" \"Laue\""
+    ]
+   },
+   "summary": {
+    "providers_used": [
+     "parallel",
+     "parallel",
+     "parallel",
+     "parallel"
+    ],
+    "cost": 0.004,
+    "budget_left": 0.062
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"crater\" \"nobel prize in physics\" \"lunar\" physicist",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8,
+    "also": [
+     "\"lunar crater\" \"nobel prize in physics\" named after laureate",
+     "\"moon crater\" \"Nobel Prize in Physics\"  \"crater\" physicist",
+     "\"lunar crater\" \"physics\" \"Nobel\" physicist eponym 1970",
+     "\"lunar crater\" \"nobel\" \"physics\" physicist named approved"
+    ]
+   },
+   "summary": {
+    "providers_used": [
+     "parallel",
+     "parallel",
+     "parallel",
+     "parallel",
+     "parallel"
+    ],
+    "cost": 0.005,
+    "budget_left": 0.057
+   }
+  },
+  {
+   "tool": "check_candidates",
+   "args": {
+    "candidates": [
+     "Henri Becquerel",
+     "Marie Skłodowska Curie",
+     "J. J. Thomson",
+     "Erwin Schrödinger",
+     "Paul Dirac",
+     "Werner Heisenberg",
+     "Wolfgang Pauli",
+     "Robert Millikan",
+     "Albert Michelson",
+     "James Chadwick",
+     "Wilhelm Röntgen",
+     "Pieter Zeeman",
+     "Subrahmanyan Chandrasekhar",
+     "Charles Glover Barkla",
+     "Clinton Davisson",
+     "Owen Richardson",
+     "Gabriel Lippmann",
+     "Johannes Stark",
+     "Philipp Lenard"
+    ],
+    "condition": "Nobel Prize in Physics laureate IAU approved lunar surface feature crater named in honor of exact person eponym",
+    "providers": [
+     "exa"
+    ],
+    "per_candidate": 2
+   },
+   "summary": {
+    "budget_left": 0.001
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"moon\" \"crater\" \"nobel\" \"physics\" \"Röntgen\" \"Zeeman\"",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.0
+   }
+  },
+  {
+   "tool": "submit",
+   "args": {
+    "finds": [
+     {
+      "name": "Edward Victor Appleton",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel"
+     },
+     {
+      "name": "Charles Glover Barkla",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/606"
+     },
+     {
+      "name": "Henri Becquerel",
+      "evidence_url": "https://www.moonalmanack.com/atlas/becquerel/"
+     },
+     {
+      "name": "Patrick Blackett",
+      "evidence_url": "https://moonopps.com/compendium/feat_blackett"
+     },
+     {
+      "name": "Niels Bohr",
+      "evidence_url": "https://en.wikipedia.org/wiki/Bohr_(crater)"
+     },
+     {
+      "name": "William Henry Bragg",
+      "evidence_url": "https://en.wikipedia.org/wiki/Bragg_(crater)"
+     },
+     {
+      "name": "Arthur Holly Compton",
+      "evidence_url": "https://moonopps.com/compendium/feat_compton"
+     },
+     {
+      "name": "Pierre Curie",
+      "evidence_url": "https://moonopps.com/compendium/feat_curie"
+     },
+     {
+      "name": "Marie Skłodowska Curie",
+      "evidence_url": "https://en.wikipedia.org/wiki/Sklodowska_(lunar_crater)"
+     },
+     {
+      "name": "Clinton Davisson",
+      "evidence_url": "https://en.wikipedia.org/wiki/Davisson_%28crater%29"
+     },
+     {
+      "name": "Albert Einstein",
+      "evidence_url": "https://moonopps.com/compendium/feat_einstein"
+     },
+     {
+      "name": "Enrico Fermi",
+      "evidence_url": "https://moonopps.com/compendium/feat_fermi"
+     },
+     {
+      "name": "Heike Kamerlingh Onnes",
+      "evidence_url": "https://moonopps.com/compendium/feat_kamerlingh_onnes"
+     },
+     {
+      "name": "Lev Landau",
+      "evidence_url": "https://economictimes.indiatimes.com/magazines/panache/google-celebrates-physicist-lev-davidovich-landau-who-has-a-crater-on-the-moon-named-after-him-with-doodle/articleshow/67633949.cms"
+     },
+     {
+      "name": "Max von Laue",
+      "evidence_url": "https://en.wikipedia.org/wiki/Laue_(crater)"
+     },
+     {
+      "name": "Philipp Lenard",
+      "evidence_url": "https://wenamethestars.inkleby.com/feature/14503"
+     },
+     {
+      "name": "Gabriel Lippmann",
+      "evidence_url": "https://en.wikipedia.org/wiki/Lippmann_(crater)"
+     },
+     {
+      "name": "Hendrik Lorentz",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/3472"
+     },
+     {
+      "name": "Robert Millikan",
+      "evidence_url": "https://en.wikipedia.org/wiki/Millikan_(crater)"
+     },
+     {
+      "name": "Wolfgang Pauli",
+      "evidence_url": "https://moonopps.com/compendium/feat_pauli"
+     },
+     {
+      "name": "Max Planck",
+      "evidence_url": "https://moonopps.com/compendium/feat_planck"
+     },
+     {
+      "name": "C. V. Raman",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/4935"
+     },
+     {
+      "name": "Owen Willans Richardson",
+      "evidence_url": "https://en.wikipedia.org/wiki/Richardson_(lunar_crater)"
+     },
+     {
+      "name": "Wilhelm Röntgen",
+      "evidence_url": "https://kuongeo.com/moon/names/rontgen"
+     },
+     {
+      "name": "Erwin Schrödinger",
+      "evidence_url": "https://moonopps.com/compendium/feat_schrodinger"
+     },
+     {
+      "name": "Johannes Stark",
+      "evidence_url": "https://wenamethestars.inkleby.com/feature/5683"
+     },
+     {
+      "name": "J. J. Thomson",
+      "evidence_url": "https://moonopps.com/compendium/feat_thomson"
+     },
+     {
+      "name": "Pieter Zeeman",
+      "evidence_url": "https://kuongeo.com/moon/names/zeeman"
+     }
+    ],
+    "notes": "Identified 28 documented intersections, but search budget ran out before an exhaustive verification of other laureates. Future November 2026 status cannot be established from these records alone."
+   },
+   "summary": {
+    "ok": true
+   }
+  }
+ ],
+ "url_providers": {
+  "https://planetarynames.wr.usgs.gov/SearchResults?feature_name=Planck&Feature+Type=9_Crater%2C+craters&Target=16_Moon": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Name=Einstein": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&FeatureType=Crater&search=Nobel%20laureate&pageSize=500": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater,%20craters&Feature%20Name=Rutherford": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater,+craters&Origin=Nobel": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Bosch_(crater)": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Nobel_(crater)": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Rutherford_(lunar_crater)": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Origin=Nobel+Prize+winner+in+Chemistry&pageSize=500": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel": [
+   "fetch:exa",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Name=Rutherford&Feature+Type=9_Crater%2C+craters&pageSize=100": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater,%20craters&pageSize=500&origin=Nobel": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_L%E2%80%93N": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_O%E2%80%93Q": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&search=Nobel": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&search=Nobel&displayAll=true&output=csv&pageSize=500": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B?x=1": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_L%E2%80%93N?x=2": [
+   "parallel"
+  ],
+  "https://aidb.si/d/lunar-craters.html": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Bohr_(crater)": [
+   "exa",
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_planck": [
+   "exa"
+  ],
+  "https://lunasociety.org/full-moon-atlas/lunar-crater-catalog-b": [
+   "exa"
+  ],
+  "https://moonopps.com/compendium/feat_bohr": [
+   "exa"
+  ],
+  "https://moonopps.com/compendium/feat_einstein": [
+   "exa",
+   "parallel"
+  ],
+  "https://www.detailedpedia.com/wiki-List_of_people_with_craters_of_the_Moon_named_after_them": [
+   "exa"
+  ],
+  "https://starchild.gsfc.nasa.gov/docs/StarChild/whos_who_level2/einstein.html": [
+   "exa"
+  ],
+  "https://moonopps.com/compendium/feat_fermi": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_kamerlingh_onnes": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_carrel": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_aston": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_bragg": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_compton": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_blackett": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Bragg_(crater)": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/5239": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/4935": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/606": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1278": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/4749": [
+   "parallel"
+  ],
+  "https://economictimes.indiatimes.com/magazines/panache/google-celebrates-physicist-lev-davidovich-landau-who-has-a-crater-on-the-moon-named-after-him-with-doodle/articleshow/67633949.cms": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&txtOrigin=Nobel": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater%2C%20craters&Target=16_Moon&search=Nobel&format=tsv&pageSize=2000": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&pageSize=500&search=Nobel%20laureate": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Origin=Nobel+Prize+winner+in+Chemistry&Target=16_Moon&pageSize=500": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Name=Rutherford": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_G%E2%80%93K": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B?variant=1": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_heymans": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_curie": [
+   "parallel"
+  ],
+  "https://moonopps.com/compendium/feat_erlanger": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1745": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/3472": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/5592": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/4749?ControlNetwork=UNKNOWN": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater&Target=16_Moon&search=Zeeman": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&search=Hess": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Name=Hess&Feature%20Type=9_Crater&Target=16_Moon": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater,%20craters&Origin=Nobel": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Target=16_Moon&search=Nobel": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater&Feature%20Name=Heisenberg": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Laue_(crater)": [
+   "parallel"
+  ],
+  "https://api.nobelprize.org/v1/laureate.json": [
+   "parallel"
+  ],
+  "https://earth-and-space-news.blogspot.com/2012/03/bragg-crater-honors-british-physicist.html": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Davisson_%28crater%29": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Richardson_(lunar_crater)": [
+   "parallel"
+  ],
+  "https://wenamethestars.inkleby.com/feature/14503": [
+   "parallel"
+  ],
+  "https://wipi.ai.kr/en/Laue%20(crater)": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Lippmann_(crater)": [
+   "parallel"
+  ],
+  "https://wenamethestars.inkleby.com/feature/10932": [
+   "parallel"
+  ],
+  "https://the-moon.us/wiki/Becquerel": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/w/index.php?title=Bragg_(crater)&action=raw": [
+   "parallel"
+  ],
+  "https://ntrs.nasa.gov/api/citations/19700028251/downloads/19700028251.pdf?attachment=true": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Fermi_(crater)": [
+   "parallel"
+  ],
+  "https://clever-geek.imtqy.com/articles/4293048/index.html": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Arrhenius_(lunar_crater)": [
+   "parallel"
+  ],
+  "https://wenamethestars.inkleby.com/feature/5683": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater&fname=Fischer": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater,%20craters&Target=16_Moon&fname=Einstein": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Becquerel_(lunar_crater)": [
+   "exa"
+  ],
+  "https://www.moonalmanack.com/atlas/becquerel/": [
+   "exa"
+  ],
+  "https://web.archive.org/web/20200521144045/https:/planetarynames.wr.usgs.gov/Feature/5592": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Sklodowska_(lunar_crater)": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Thomson_(crater)": [
+   "exa"
+  ],
+  "https://moonopps.com/compendium/feat_thomson": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Schr%C3%B6dinger_(crater)": [
+   "exa"
+  ],
+  "https://moonopps.com/compendium/feat_schrodinger": [
+   "exa"
+  ],
+  "https://www.nobelprize.org/prizes/physics/1933/dirac/facts/": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Paul_Dirac": [
+   "exa"
+  ],
+  "https://grokipedia.opelly.me/articles/heisenberg-crater": [
+   "exa"
+  ],
+  "https://www.nobelprize.org/prizes/physics/1932/heisenberg/biographical/": [
+   "exa"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/4613": [
+   "exa"
+  ],
+  "https://moonopps.com/compendium/feat_pauli": [
+   "exa"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/3900": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Millikan_(crater)": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/R%C3%B6ntgen_(crater)": [
+   "parallel"
+  ],
+  "https://web.archive.org/web/20171027025628/https://planetarynames.wr.usgs.gov/Feature/6711": [
+   "parallel"
+  ],
+  "https://wenamethestars.inkleby.com/feature/6711": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/6711": [
+   "parallel"
+  ],
+  "https://web.archive.org/web/20190523021527/https://planetarynames.wr.usgs.gov/Feature/6711": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Charles_Barkla": [
+   "parallel"
+  ],
+  "https://kuongeo.com/moon/names/zeeman": [
+   "parallel"
+  ],
+  "https://kuongeo.com/moon/names/rontgen": [
+   "parallel"
+  ]
+ },
+ "url_text": {
+  "https://planetarynames.wr.usgs.gov/SearchResults?feature_name=Planck&Feature+Type=9_Crater%2C+craters&Target=16_Moon": " Planetary Names The IAU-approved name for this feature is Lyell A. | Oct 18, 2010\n\n...\n\n|  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\ncraters | AA | LAC-135 | Approved | 1970 | [89] | Svante August; Swedish chemist;",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Name=Einstein": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&FeatureType=Crater&search=Nobel%20laureate&pageSize=500": " Planetary Names * 10 | Abbot | Abbot | Moon | 10.40 | 5.56 | 54.74 | 5.73 | 5.38 | 54.92 | 54.57 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-62 | Approved | 1973 | - | Charles Greeley; American astrophysicist (1872-1973). |  | Oct 18, 2010\n* 6774 | [Abduh] | Abduh | Moon | 0.00 | 14.70 | 39.00 | 14.70 | 14.70 | 39.00 | 39.00 | Planetographic, +East, -180 - 180 | Afr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater,%20craters&Feature%20Name=Rutherford": " Planetary Names Africa | Egypt | Crater, craters | AA | LAC-61 | Not Approved | - | - | Mohammed; Egyptian writer (1849-1905). | This name was never approved by the IAU. The IAU-approved name for this feature is Lyell A. | Oct 18, 2010\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | ",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater,+craters&Origin=Nobel": " Planetary Names Africa | Egypt | Crater, craters | AA | LAC-61 | Not Approved | - | - | Mohammed; Egyptian writer (1849-1905). | This name was never approved by the IAU. The IAU-approved name for this feature is Lyell A. | Oct 18, 2010\n* 12 | Abel | Abel | Moon | 137.35 | -34.63 | 85.78 | -32.54 | -36.77 | 88.21 | 83.43 | Planetographic, +East, -180 - 180 | Europe | Norway | Crater, craters | AA | LAC-116 | Appro Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965).\n\n...\n\n|  | Oct 18, 2010\n* 458 | Atlas | Atlas | Moon | 88.12 | 46.74 | 44.38 | 48.13 | 45.35 | 46.45 | 42.32 | Planetographic, Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965).\n\n...\n\n* 440 | Aston | Aston | Moon | 44.48 | 32.77 | -87.68 | 33.50 | 32.03 | -86.81 | -88.56 | Planetographic, +East, -180 - ",
+  "https://en.wikipedia.org/wiki/Bosch_(crater)": " Bosch (crater) - Wikipedia Eponym | Carl Bosch Bosch is a small lunar impact crater near the North Pole of the Moon . [ 1 ] It is located just to the northeast of the Rozhdestvenskiy crater. This crater was previously unnamed until it was given a name by the IAU along with 18 other craters on January 22, 2009. [ 2 ] It was named after German chemist and Nobel Prize winner Carl Bosch (c. 1874 – c. 1940). Jump to content Main Bosch (crater) - Wikipedia From Wikipedia, the free encyclopedia\n*  | \n* Coordinates | 86°49′N 133°36′E ﻿ / ﻿ 86.82°N 133.6°E\n* Diameter | 18.6 km\n* Depth | Unknown\n* Colongitude | 190° at sunrise\n* Eponym | Carl Bosch\nBosch is a small lunar impact crater near the North Pole of the Moon . [ 1 ] It is located just to the northeast of the Rozhdestvenskiy crater.\nThis crater was previously unnamed until it was given a name by ",
+  "https://en.wikipedia.org/wiki/Nobel_(crater)": " Nobel (crater) - Wikipedia Nobel (crater) - Wikipedia\nSatellite craters By convention these features are identified on lunar maps by placing the letter on the side of the crater midpoint that is closest to Nobel. Nobel (crater) - Wikipedia\nNobel is a crater that lies on the far side of the Moon. [1] It is located in the northern edge of the vast skirt of ejecta surrounding the Mare Orientale impact basin.\nNobel (crater) - W Nobel (crater) - Wikipedia ## \n\nNobel (crater) - Wikipedia\nNobel while at the lunar terminator Nobel is a crater that lies on the far side of the Moon. [1] It is located in the northern edge of the vast skirt of ejecta surrounding the Mare Orientale impact basin.\n\n...\n\nNobel is a crater that lies on the far side of the Moon. [1] It is located in the northern edge of the vast skirt of ejecta surrounding the Mare Orientale im",
+  "https://en.wikipedia.org/wiki/Rutherford_(lunar_crater)": " Rutherford (lunar crater) - Wikipedia Donate\nCreate account\nLog in Personal tools\nDonate\nCreate account\nLog in\nContents\n(Top)\n1 References Toggle References subsection\n1.1 Sources\n2 External links Toggle the table of contents\nRutherford (lunar crater)\n10 languages LTO-66A3 Rutherford — L&PI topographic map Retrieved from \" https://en.wikipedia.org/w/index.php?title=Rutherford_(lunar_crater)&oldid=1366387866 \" Categories :\nLQ15 quadran Rutherford (lunar crater) - Wikipedia * Coordinates | 10°42′N 137°00′E ﻿ / ﻿ 10.7°N 137.0°E\n* Diameter | 13 km\n* Colongitude | 223° at sunrise\n* Formation | Copernican [ 1 ]\n* Eponym | Ernest Rutherford\nRutherford is a small lunar impact crater that lies on the Moon 's far side . It was named after New Zealand-British physicist and Nobel laureate Ernest Rutherford . [ 2 ] It is located just to the north-northwest of Mendeleev , a huge",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Origin=Nobel+Prize+winner+in+Chemistry&pageSize=500": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965).\n\n...\n\n* 440 | Aston | Aston | Moon | 44.48 | 32.77 | -87.68 | 33.50 | 32.03 | -86.81 | -88.56 | Planetographic, +East, -180 - ",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n\n...\n\n* 606 | Barkla | Barkla | Moon | 40.90 | -10.67 | 67.22 | -9.99 | -11.34 | 67.90 | 66.53 | Planetograp Planetary Names\n\n### Nomenclature Search Results\n\nTarget: Moon \n\nFeature Type: Crater \n\n#### Add/Remove Columns \n\n| Feature ID | Feature Name | Clean Feature Name | Target | Diameter |\n| --- | --- | --- | --- | --- |\n| Center Lat/Lon | Lat/Lon Boundaries | Coordinate System | Continent | Ethnicity |\n| Feature Type | Feature Type Code | Quad | Approval Status | Approval Date |\n| Reference | Origin | Additional Info | Last Updated | |\n\n| Feature ID | Feature Name | Clean Feature Name | Target | Diameter | Center Latitude | Center Longitude | Northernmost Latitude | Southernmost Latitude | Easternmost Longitude | Westernmost Longitude | Coordinate System | Continent | Ethnicity | Feature Type | Feature Type Code | Quad | Approval Status | Approval Date | Reference | Origin | Additional Info | Last Updated |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 9340 | 8 Homeward | 8 Homeward | Moon | 12.52 | -12.02 | 97.09 | -11.82 | -12.23 | 97.30 | 96.88 | Planetographic, +East, -180 - 180 | North America | United States | Crater, craters | AA | LAC-82 | Approved | Oct 05, 2018 | [483] | Crater visible in the iconic “Earthrise” colour photograph, taken aboard Apollo 8 by W. A. Anders on December 24, 1968, symbolizes the safe return to Earth of Apollo 8. The crater was previously designated Ganskiy (Hansky) M. | The crater was previously designated Ganskiy (Hansky) M. | Feb 05, 2019 |\n| 9 | Abbe | Abbe | Moon | 63.98 | -57.58 | 174.77 | -56.52 | -58.63 | 176.74 | 172.81 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1970 | [68] | Ernst Karl; German optician, physicist, astronomer (1840-1905). | | Oct 18, 2010 |\n| 10 | Abbot | Abbot | Moon | 10.40 | 5.56 | 54.74 | 5.73 | 5.38 | 54.92 | 54.57 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-62 | Approved | 1973 | - | Charles Greeley; American astrophysicist (1872-1973). | | Oct 18, 2010 |\n| 6774 | [Abduh] | Abduh | Moon | 0.00 | 14.70 | 39.00 | 14.70 | 14.70 | 39.00 | 39.00 | Planetographic, +East, -180 - 180 | Africa | Egypt | Crater, craters | AA | LAC-61 | Not Approved | - | - | Mohammed; Egyptian writer (1849-1905). | This name was never approved by the IAU. The IAU-approved name for this feature is Lyell A. | Oct 18, 2010 |\n| 12 | Abel | Abel | Moon | 137.35 | -34.63 | 85.78 | -32.54 | -36.77 | 88.21 | 83.43 | Planetographic, +East, -180 - 180 | Europe | Norway | Crater, craters | AA | LAC-116 | Approved | 1964 | [89] | Niels Henrik; Norwegian mathematician (1802-1829). | | Oct 18, 2010 |\n| 14 | Abenezra | Abenezra | Moon | 43.19 | -20.99 | 11.89 | -20.28 | -21.71 | 12.65 | 11.13 | Planetographic, +East, -180 - 180 | Europe | Spain | Crater, craters | AA | LAC-96 | Approved | 1935 | [89] | Abraham ben Meir Ibn Ezra; Spanish mathematician, astronomer (1092-1164/1167). | | Oct 18, 2010 |\n| 16 | Abetti | Abetti | Moon | 1.60 | 20.11 | 27.82 | 20.14 | 20.09 | 27.84 | 27.79 | Planetographic, +East, -180 - 180 | Europe | Italy | Crater, craters | AA | LAC-42 | Approved | 1976 | [68] | Antonio; Italian astronomer (1846-1928); Giorgio; Italian astronomer (1882-1982). | | Oct 18, 2010 |\n| 23 | Abulfeda | Abulfeda | Moon | 62.23 | -13.87 | 13.91 | -12.84 | -14.89 | 14.97 | 12.85 | Planetographic, +East, -180 - 180 | Asia | Syria | Crater, craters | AA | LAC-78 | Approved | 1935 | [59] | Ismail Ibn Abū al-Fidā; Syrian geographer (1273-1331). | | Oct 18, 2010 |\n| 22 | Abul Wáfa | Abul Wafa | Moon | 54.18 | 0.96 | 116.63 | 1.86 | 0.07 | 117.52 | 115.74 | Planetographic, +East, -180 - 180 | Asia | Persian | Crater, craters | AA | LAC-65 | Approved | 1970 | [75] | Abū al-Wafā al-Būzajāni; Persian mathematician, astronomer (940-998). | | Oct 18, 2010 |\n| 40 | Acosta | Acosta | Moon | 13.06 | -5.65 | 60.14 | -5.43 | -5.86 | 60.36 | 59.92 | Planetographic, +East, -180 - 180 | Europe | Portugal | Crater, craters | AA | LAC-80 | Approved | 1976 | - | Cristobal; Portuguese doctor, natural historian (1515-1580). | | Oct 18, 2010 |\n| 47 | Adams | Adams | Moon | 63.27 | -31.89 | 68.39 | -30.85 | -32.93 | 69.62 | 67.16 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-98 | Approved | 1970 | [89] | John Couch; British astronomer (1819-1892); Charles Hitchcock; American astronomer (1868-1951); Walter Sydney; American astronomer (1876-1956). | | Oct 18, 2010 |\n| 14523 | Aepinus | Aepinus | Moon | 16.74 | 87.96 | -109.69 | 88.23 | 87.68 | -101.91 | -117.46 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-1 | Approved | Jan 22, 2009 | [68] | Franz Maria Ulrich Theodor Hoch; German-Russian astronomer (1724-1802). | | Oct 18, 2010 |\n| 82 | Agatharchides | Agatharchides | Moon | 51.98 | -19.85 | -31.11 | -19.00 | -20.71 | -30.20 | -32.03 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-93 | Approved | 1935 | [182] | Agatharchides of Cnidos; Greek geographer (c. 116 B.C.). | | Oct 18, 2010 |\n| 92 | Agrippa | Agrippa | Moon | 43.75 | 4.10 | 10.47 | 4.82 | 3.38 | 11.20 | 9.75 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-60 | Approved | 1935 | [66] | Greek astronomer (unkn-fl. A.D. 92). | | Oct 18, 2010 |\n| 113 | Airy | Airy | Moon | 38.90 | -18.14 | 5.61 | -17.50 | -18.78 | 6.29 | 4.94 | Planetographic, +East, -180 - 180 | Europe | Great Britain | Crater, craters | AA | LAC-95 | Approved | 1935 | [66] | George Biddell; British astronomer (1801-1892). | | Oct 18, 2010 |\n| 119 | Aitken | Aitken | Moon | 129.69 | -16.44 | 172.96 | -14.30 | -18.58 | 175.19 | 170.73 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-104 | Approved | 1970 | [59] | Robert Grant; American astronomer (1864-1951). | | Oct 18, 2010 |\n| 133 | Akis | Akis | Moon | 2.28 | 20.01 | -31.76 | 20.05 | 19.97 | -31.72 | -31.80 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-39 | Approved | 1976 | - | Greek female name. | | Oct 18, 2010 |\n| 156 | Alan | Alan | Moon | 1.44 | -10.93 | -6.17 | -10.91 | -10.96 | -6.15 | -6.20 | Planetographic, +East, -180 - 180 | Europe | Ireland | Crater, craters | AA | LAC-77 | Approved | 1976 | - | Irish male name. | | Oct 18, 2010 |\n| 145 | Al-Bakri | Al Bakri | Moon | 12.21 | 14.34 | 20.25 | 14.54 | 14.13 | 20.45 | 20.04 | Planetographic, +East, -180 - 180 | Europe | Spain | Crater, craters | AA | LAC-60 | Approved | 1976 | [89] | Abū Ubayd Abdallāh Ibn abd al-Azīz Ibn Muhammad; Spanish-Arab geographer (1010-1094). | | Oct 18, 2010 |\n| 162 | Albategnius | Albategnius | Moon | 130.84 | -11.24 | 4.01 | -9.09 | -13.41 | 6.20 | 1.80 | Planetographic, +East, -180 - 180 | Asia | Iraq | Crater, craters | AA | LAC-77 | Approved | 1935 | [75] | Muhammed Ben Geber Al-Battānī; Arab astronomer, mathematician (c. 858-929). | | Oct 18, 2010 |\n| 15003 | Albert | Albert | Moon | 0.10 | 38.32 | -35.01 | 38.32 | 38.32 | -35.01 | -35.01 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-24 | Approved | Jun 14, 2012 | [276] | Male name of German origin (Lunokhod-1 landing site feature). | None | Mar 14, 2018 |\n| 146 | Al-Biruni | Al Biruni | Moon | 80.41 | 18.07 | 92.62 | 19.40 | 16.75 | 94.01 | 91.22 | Planetographic, +East, -180 - 180 | Asia | Persian | Crater, craters | AA | LAC-46 | Approved | 1970 | [75] | Abū ar-Rayhān Muhammad ibn Ahmad al-Birūnī; Persian astronomer, mathematician, geographer (973-1048). | | Oct 18, 2010 |\n| 170 | Alden | Alden | Moon | 111.44 | -23.51 | 111.11 | -21.67 | -25.35 | 113.12 | 109.11 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-101 | Approved | 1970 | - | Harold Lee; American astronomer (1890-1964). | | Oct 18, 2010 |\n| 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; German organic chemist; Nobel laureate (1902-1958). | | Oct 18, 2010 |\n| 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr. (\"Buzz\"); American astronaut (1930-Live). | | Oct 18, 2010 |\n| 174 | Alekhin | Alekhin | Moon | 74.82 | -67.94 | -131.85 | -66.71 | -69.18 | -128.57 | -135.14 | Planetographic, +East, -180 - 180 | Europe | Soviet | Crater, craters | AA | LAC-142 | Approved | 1970 | - | Nikolaj Pavlovich; Soviet rocket designer, engineer (1913-1964). | | Oct 18, 2010 |\n| 177 | Alexander | Alexander | Moon | 94.80 | 40.25 | 13.69 | 41.51 | 38.99 | 15.74 | 11.65 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-26 | Approved | 1935 | [66] | Alexander the Great, of Macedon; Greek geographer (356-323 B.C.). | | Oct 18, 2010 |\n| 181 | Alfraganus | Alfraganus | Moon | 20.52 | -5.42 | 18.97 | -5.08 | -5.76 | 19.31 | 18.63 | Planetographic, +East, -180 - 180 | Asia | Persian | Crater, craters | AA | LAC-78 | Approved | 1935 | [89] | Al-Fargani, Abu'l-'Abbās Ahmad Ibn Muhammad Ibn Kathīr; Persian astronomer (unkn-c. 840). | | Oct 18, 2010 |\n| 183 | Alhazen | Alhazen | Moon | 34.65 | 15.91 | 71.83 | 16.49 | 15.34 | 72.42 | 71.23 | Planetographic, +East, -180 - 180 | Asia | Iraq | Crater, craters | AA | LAC-63 | Approved | 1935 | [66] | Abū Ali Al-Hasan Ibn Al Haitham; Iraqi mathematician (987-1038). | | Oct 18, 2010 |\n| 185 | Aliacensis | Aliacensis | Moon | 79.65 | -30.60 | 5.13 | -29.28 | -31.91 | 6.66 | 3.60 | Planetographic, +East, -180 - 180 | Europe | France | Crater, craters | AA | LAC-95 | Approved | 1935 | [66] | D'Ailly, Pierre; French geographer (1350-1420). | | Oct 18, 2010 |\n| 149 | Al-Khwarizmi | Al Khwarizmi | Moon | 56.25 | 7.02 | 107.01 | 7.95 | 6.09 | 107.94 | 106.07 | Planetographic, +East, -180 - 180 | Asia | Iraq | Crater, craters | AA | LAC-64 | Approved | 1973 | - | Abū Ja'far Muhammad Ibn Mūsā; Iraqi mathematician (unkn-after 847). | | Oct 18, 2010 |\n| 196 | Almanon | Almanon | Moon | 47.76 | -16.85 | 15.14 | -16.06 | -17.63 | 15.96 | 14.31 | Planetographic, +East, -180 - 180 | Asia | Persian | Crater, craters | AA | LAC-96 | Approved | 1935 | [66] | Abdalla Al Mamun; Persian astronomer (786-833). | | Oct 18, 2010 |\n| 150 | Al-Marrakushi | Al Marrakushi | Moon | 8.57 | -10.45 | 55.77 | -10.31 | -10.59 | 55.91 | 55.63 | Planetographic, +East, -180 - 180 | Africa | Morocco | Crater, craters | AA | LAC-80 | Approved | 1976 | [175] | Abū `Ali al-Hasan Ibn `Ali al-Marrakushi; Moroccan astronomer, mathematician (fl. c. A.D. 1281/1282). | | Oct 18, 2010 |\n| 199 | Aloha | Aloha | Moon | 2.55 | 29.79 | -53.88 | 29.83 | 29.75 | -53.83 | -53.93 | Planetographic, +East, -180 - 180 | Oceania | Hawaii | Crater, craters | AA | LAC-38 | Approved | 1976 | - | Hawaiian female first name. | None | Oct 18, 2010 |\n| 202 | Alpetragius | Alpetragius | Moon | 40.02 | -16.05 | -4.51 | -15.39 | -16.71 | -3.82 | -5.20 | Planetographic, +East, -180 - 180 | Africa | Morocco | Crater, craters | AA | LAC-95 | Approved | 1935 | [89] | Al-Bitrūjī Al-Ishbīlī, Abū Ishāq; Spanish astronomer (unkn-c. 1100). | | Oct 18, 2010 |\n| 206 | Alphonsus | Alphonsus | Moon | 110.54 | -13.39 | -2.85 | -11.57 | -15.21 | -0.97 | -4.72 | Planetographic, +East, -180 - 180 | Europe | Spain | Crater, craters | AA | LAC-77 | Approved | 1935 | [89] | Alfonso X (El Sabio); Spanish astronomer (1221-1284). | | Oct 18, 2010 |\n| 208 | Alter | Alter | Moon | 64.73 | 18.74 | -107.80 | 19.81 | 17.67 | -106.67 | -108.92 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-54 | Approved | 1970 | - | Dinsmore; American astronomer, meteorologist (1888-1968). | | Oct 18, 2010 |\n| 223 | Ameghino | Ameghino | Moon | 9.20 | 3.30 | 57.04 | 3.45 | 3.15 | 57.19 | 56.89 | Planetographic, +East, -180 - 180 | South and Central America | Argentina | Crater, craters | AA | LAC-62 | Approved | 1976 | [68] | Fiorino (or Florentino); Argentine paleontologist and anthropologist (1854-1911). | | Oct 18, 2010 |\n| 232 | Amici | Amici | Moon | 52.03 | -10.06 | -172.23 | -9.21 | -10.93 | -171.35 | -173.09 | Planetographic, +East, -180 - 180 | Europe | Italy | Crater, craters | AA | LAC-86 | Approved | 1970 | [75] | Giovanni Battista; Italian astronomer, optician (1786-1863). | | Oct 18, 2010 |\n| 236 | Ammonius | Ammonius | Moon | 8.55 | -8.52 | -0.83 | -8.38 | -8.66 | -0.68 | -0.97 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-77 | Approved | 1976 | [89] | Greek philosopher (unkn.-c. A.D. 517-526). | | Oct 18, 2010 |\n| 240 | Amontons | Amontons | Moon | 2.47 | -5.34 | 46.78 | -5.30 | -5.38 | 46.82 | 46.74 | Planetographic, +East, -180 - 180 | Europe | France | Crater, craters | AA | LAC-79 | Approved | 1976 | - | Guillaume; French physicist (1663-1705). | | Oct 18, 2010 |\n| 247 | Amundsen | Amundsen | Moon | 103.39 | -84.44 | 83.07 | -82.85 | -86.26 | 104.12 | 67.60 | Planetographic, +East, -180 - 180 | Europe | Norway | Crater, craters | AA | LAC-144 | Approved | 1964 | [68] | Roald Engelbregt Gravning; Norwegian explorer (1872-1928). | | Oct 18, 2010 |\n| 252 | Anaxagoras | Anaxagoras | Moon | 51.90 | 73.48 | -10.17 | 74.34 | 72.63 | -7.15 | -13.19 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-3 | Approved | 1935 | [66] | Greek astronomer (500-428 B.C.). | | Oct 18, 2010 |\n| 254 | Anaximander | Anaximander | Moon | 68.71 | 66.97 | -51.44 | 68.10 | 65.83 | -48.54 | -54.34 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-2 | Approved | 1935 | [66] | Greek astronomer (c. 611-547 B.C.). | | Oct 18, 2010 |\n| 255 | Anaximenes | Anaximenes | Moon | 81.12 | 72.49 | -44.98 | 73.82 | 71.15 | -40.54 | -49.42 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-2 | Approved | 1935 | [66] | Greek astronomer (585-528 B.C.). | | Oct 18, 2010 |\n| 267 | Anděl | Andel | Moon | 32.93 | -10.41 | 12.38 | -9.87 | -10.96 | 12.94 | 11.83 | Planetographic, +East, -180 - 180 | Europe | Czechoslovakia | Crater, craters | AA | LAC-78 | Approved | 1935 | [66] | Karel; Czechoslovakian astronomer (1884-1948). | | Oct 18, 2010 |\n| 259 | Anders | Anders | Moon | 41.33 | -41.31 | -143.30 | -40.63 | -42.00 | -142.39 | -144.21 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-121 | Approved | 1970 | [139] | William Alison; American astronaut (1933-Live). | | Oct 18, 2010 |\n| 11867 | Anders' Earthrise | Anders Earthrise | Moon | 40.15 | -11.73 | 100.47 | -11.07 | -12.39 | 101.14 | 99.79 | Planetographic, +East, -180 - 180 | North America | United States | Crater, craters | AA | LAC-82 | Approved | Oct 05, 2018 | [482] | Crater visible in the foreground of the iconic “Earthrise” colour photograph, taken aboard Apollo 8 by W. A. Anders on December 24, 1968, showing the Earth and part of the Moon’s surface. The crater was previously designated Pasteur T. | The crater was previously designated Pasteur T. Labeled Voltaire on some LTO charts. | Feb 05, 2019 |\n| 260 | Anderson | Anderson | Moon | 105.33 | 15.50 | 170.79 | 17.24 | 13.76 | 172.60 | 168.99 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-68 | Approved | 1970 | - | John August; American astronomer (1876-1959). | | Oct 18, 2010 |\n| 261 | Andersson | Andersson | Moon | 13.42 | -49.95 | -95.46 | -49.73 | -50.17 | -95.12 | -95.81 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-135 | Approved | 1985 | - | Leif Erland; American astronomer (1943-1979). | | Oct 18, 2010 |\n| 265 | Andronov | Andronov | Moon | 16.57 | -22.68 | 146.11 | -22.41 | -22.95 | 146.40 | 145.81 | Planetographic, +East, -180 - 180 | Europe | Soviet | Crater, craters | AA | LAC-102 | Approved | 1976 | - | Aleksandr Aleksandrovich; Soviet physicist (1901-1952). | | Oct 18, 2010 |\n| 269 | Ango | Ango | Moon | 0.87 | 20.48 | -32.34 | 20.49 | 20.46 | -32.32 | -32.35 | Planetographic, +East, -180 - 180 | - | | Crater, craters | AA | LAC-39 | Approved | 1976 | - | African male name. | | Oct 18, 2010 |\n| 272 | Angström | Angstrom | Moon | 9.55 | 29.90 | -41.67 | 30.05 | 29.74 | -41.49 | -41.85 | Planetographic, +East, -180 - 180 | Europe | Sweden | Crater, craters | AA | LAC-39 | Approved | 1935 | [66] | Anders Jonas; Swedish physicist (1814-1874). | | Oct 18, 2010 |\n| 280 | Ann | Ann | Moon | 2.12 | 25.11 | -0.05 | 25.13 | 25.09 | -0.02 | -0.09 | Planetographic, +East, -180 - 180 | Asia | Hebrew | Crater, craters | AA | LAC-41 | Approved | 1976 | - | Hebrew female name. | | Oct 18, 2010 |\n| 283 | Annegrit | Annegrit | Moon | 1.29 | 29.43 | -25.64 | 29.45 | 29.41 | -25.61 | -25.66 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-40 | Approved | 1976 | - | German female name. | | Oct 18, 2010 |\n| 289 | Ansgarius | Ansgarius | Moon | 91.42 | -12.92 | 79.72 | -11.42 | -14.43 | 81.27 | 78.18 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-81 | Approved | 1935 | [66] | St. Ansgar; German theologian (801-864). | | Oct 18, 2010 |\n| 296 | Antoniadi | Antoniadi | Moon | 137.92 | -69.30 | -173.06 | -67.03 | -71.58 | -166.63 | -179.48 | Planetographic, +East, -180 - 180 | Europe | France | Crater, craters | AA | LAC-141 | Approved | 1970 | [202] | Eugène Michael; Turkish-born French astronomer (1870-1944). | | Oct 18, 2010 |\n| 304 | Anuchin | Anuchin | Moon | 62.14 | -48.85 | 101.66 | -47.84 | -49.87 | 103.19 | 100.12 | Planetographic, +East, -180 - 180 | Europe | Russia | Crater, craters | AA | LAC-130 | Approved | 1979 | [89] | Dimitrii Nikolaevich; Russian geographer (1843-1923). | | Oct 18, 2010 |\n| 307 | Anville | Anville | Moon | 10.26 | 1.84 | 49.51 | 2.01 | 1.67 | 49.68 | 49.34 | Planetographic, +East, -180 - 180 | Europe | France | Crater, craters | AA | LAC-61 | Approved | 1976 | - | Jean-Baptiste Bourguignon; French cartographer (1697-1782). | | Oct 18, 2010 |\n| 320 | Apianus | Apianus | Moon | 63.44 | -26.96 | 7.87 | -25.92 | -28.01 | 9.04 | 6.69 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-95 | Approved | 1935 | [66] | Bienewitz, Peter; German mathematician, astronomer (1495-1552). | | Oct 18, 2010 |\n| 326 | Apollo | Apollo | Moon | 524.23 | -35.69 | -151.48 | -28.12 | -44.19 | -140.58 | -162.07 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-121 | Approved | 1970 | - | Named to honor Apollo missions. | | Oct 18, 2010 |\n| 328 | Apollonius | Apollonius | Moon | 50.66 | 4.51 | 60.96 | 5.34 | 3.67 | 61.80 | 60.13 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-62 | Approved | 1935 | [182] | Apollonius of Perga; Greek mathematician (c. 262-190 B.C.). | | Oct 18, 2010 |\n| 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). | | Oct 18, 2010 |\n| 337 | Arago | Arago | Moon | 25.51 | 6.15 | 21.43 | 6.57 | 5.73 | 21.85 | 21.00 | Planetographic, +East, -180 - 180 | Europe | France | Crater, craters | AA | LAC-60 | Approved | 1935 | [66] | Dominique Francois Jean; French astronomer (1786-1853). | | Oct 18, 2010 |\n| 344 | Aratus | Aratus | Moon | 10.23 | 23.58 | 4.51 | 23.75 | 23.41 | 4.69 | 4.32 | Planetographic, +East, -180 - 180 | Europe | Greek | Crater, craters | AA | LAC-41 | Approved | 1935 | [89] | Aratus of Soli; Greek astronomer (c. 310-240/239 B.C.). | | Oct 18, 2010 |\n| 350 | Archimedes | Archimedes | Moon | 81.04 | 29.72 | -3.99 | 31.05 | 28.38 | -2.45 | -5.53 | Planetographic, +East, -180 - 18",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Name=Rutherford&Feature+Type=9_Crater%2C+craters&pageSize=100": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater,%20craters&pageSize=500&origin=Nobel": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n* 337 | Arago | Arago | Moon | 25.51 | 6.15 | 21.43 | 6.57 | 5.73 | 21.85 | 21.00 | Planetographic, +East, - Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_L%E2%80%93N": " List of craters on the Moon: L–N - Wikipedia formation has associated satellite craters, these are detailed on the main crater description pages. List of craters on the Moon\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ Moissan | 4°46′N 137°27′E ﻿ / ﻿ 4.77°N 137.45°E | 22.45 | 1976 | Henri Moissan (1902–1955) | WGPSN\nMoltke | 0°35′S 24°10′E ﻿ / ﻿ 0.59°S 24.16°E | 6.15 | 1935 | Helmuth Karl Bernhard von Moltke (1800–1891) | WGPSN\nMonge  List of craters on the Moon: L–N - Wikipedia Català\nFrançais\nBahasa Indonesia\nItaliano\nNorsk bokmål\nOccitan\nРусский\nSvenska\nУкраїнська\n中文 Edit links\nArticle\nTalk English\nRead\nEdit\nView history\nSave Tools Tools move to sidebar hide Actions\nRead\nEdit\nView history\nSave General\nWhat links here\nRelated changes\nUpload file\nPermanent link\nPage information\nCite this page\nGet shortened URL\nSwitch to legacy parser Print/export\nDownload as PDF\nPrintabl List of craters on the Moon: L–N - Wikipedia organization.\nSearch Search List of craters on the Moon: L–N\n10 languages Add topic Lyapunov | 26°26′N 89°22′E ﻿ / ﻿ 26.43°N 89.36°E | 67.58 | 1964 | Aleksandr Mikhailovich Lyapunov (1857–1918) | WGPSN\nLyell | 13°38′N 40°34′E ﻿ / ﻿ 13.63°N 40.56°E | 31.17 | 1935 | Sir Charles Lyell (1797–1875) | WGPSN\nLyman | 64°58′S 162°28′E ﻿ / ﻿ 64.96°S 162.47°E | 83.25 | 1970 | Theodore Lyman (1874–1954) | WGP",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_O%E2%80%93Q": " List of craters on the Moon: O–Q - Wikipedia Download as PDF\nPrintable version In other projects\nWikidata item Appearance move to sidebar hide From Wikipedia, the free encyclopedia Main article: List of craters on the Moon The list of approved names in the Gazetteer of Planetary Nomenclature maintained by the International Astronomical Union includes the diameter of the crater and the person the crater is named for. Moon map. List of craters",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B": " List of craters on the Moon: A–B - Wikipedia at a particular time or during a particular period) *[t]: Discuss this template *[v]: View this template [ 1 ] Where a crater formation has associated satellite craters, these are detailed on the main crater description pages. List of craters on the Moon\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ References\n[ edit ]\n↑ \"Moon craters\" . Gazetteer of Planetary Nomenclature . International As",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&search=Nobel": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&search=Nobel&displayAll=true&output=csv&pageSize=500": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B?x=1": " List of craters on the Moon: A–B - Wikipedia Airy | 18°08′S 5°37′E ﻿ / ﻿ 18.14°S 5.61°E | 38.9 | 1935 | George Biddell Airy (1801–1892) | WGPSN\nAitken | 16°26′S 172°58′E ﻿ / ﻿ 16.44°S 172.96°E | 129.69 | 1970 | Robert Aitken (1864–1951) | WGPSN\nAkis | 20°01′N 31°46′W ﻿ / ﻿ 20.01°N 31.76°W | 2.28 | 1976 | ( Greek female name) | WGPSN\nAlan | 10°56′S 6°10′W ﻿ / ﻿ 10.93°S 6.17°W | 1.44 | 1976 | ( Celtic male name ) | WGPSN\nAl-Bakri | 14°20′N 20°",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_L%E2%80%93N?x=2": " List of craters on the Moon: L–N - Wikipedia Moissan | 4°46′N 137°27′E ﻿ / ﻿ 4.77°N 137.45°E | 22.45 | 1976 | Henri Moissan (1902–1955) | WGPSN\nMoltke | 0°35′S 24°10′E ﻿ / ﻿ 0.59°S 24.16°E | 6.15 | 1935 | Helmuth Karl Bernhard von Moltke (1800–1891) | WGPSN\nMonge | 19°14′S 47°32′E ﻿ / ﻿ 19.24°S 47.54°E | 36.6 | 1935 | Gaspard Monge (1746–1818) | WGPSN\nMonira | 12°32′S 1°44′W ﻿ / ﻿ 12.54°S 1.73°W | 1.07 | 1976 | ( Arabic female name) | WGPSN\n",
+  "https://aidb.si/d/lunar-craters.html": " Named craters on the Moon — AIDb | Gazetteer ID | Name | Diameter (km) | Latitude (°) | Longitude (°) | Name approved | Named after | Origin country / culture | Origin continent | Map quadrangle | Gazetteer page | | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | | 2482 | Hertzsprung | 536.371 | 1.3651 | -128.6561 | 1970 | Ejnar; Danish astronomer (1873-1967). | Denmark | Europe | Michelson | https://planetaryna",
+  "https://en.wikipedia.org/wiki/Bohr_(crater)": " Bohr (crater) Bohr is a lunar impact crater that is located along the western lunar limb, in the area that is affected by librations. [3] It is attached to the southwestern rim of the larger, eroded Vasco da Gama formation, and to the southeast of the degraded crater Einstein. ... This crater is named after Danish physicist Niels Bohr (1885-1962), [7] the 1922 Nobel laurette in Physics. [8] The name was introdu Bohr (crater) - Wikipedia To the southwest of Bohr is Vallis Bohr , a valley trending in a north–south direction. [ 5 ] This long cleft is associated with the formation of the Mare Orientale farther to the south. [ 6 ] This crater is named after Danish physicist Niels Bohr (1885-1962), [ 7 ] the 1922 Nobel laurette in Physics . [ 8 ] The name was introduced into lunar nomenclature by David W. G. Arthur and Ewen Whitaker wi Bohr (crater) - Wikipedia [ 2 ] The rim of Bohr is worn and eroded, and a pair of small, bowl-shaped craters lies across the western inner wall. The rim to the northeast has been shored up by the adjacent Vasco da Gama, but the remainder forms an irregular ring of rugged ground. To the southwest of Bohr is Vallis Bohr , a valley trending in a north–south direction. [ 5 ] This long cleft is associated with the formation of  Bohr (crater) - Wikipedia The rim to the northeast has been shored up by the adjacent Vasco da Gama, but the remainder forms an irregular ring of rugged ground. To the southwest of Bohr is Vallis Bohr , a valley trending in a north–south direction. [ 5 ] This long cleft is associated with the formation of the Mare Orientale farther to the south. [ 6 ]\nThis crater is named after Danish physicist Niels Bohr (1885-1962), [ 7  Bohr (crater) - Wikipedia The rim to the northeast has been shored up by the adjacent Vasco da Gama, but the remainder forms an irregular ring of rugged ground. To the southwest of Bohr is Vallis Bohr , a valley trending in a north–south direction. [ 5 ] This long cleft is associated with the formation of the Mare Orientale farther to the south. [ 6 ]\nThis crater is named after Danish physicist Niels Bohr (1885-1962), [ 7  Bohr (crater) - Wikipedia * Diameter | 70.07 km (43.54 mi) [ 1 ]\n* Depth | Unknown\n* Colongitude | 87° at sunrise\n* Formation | Nectarian [ 2 ]\n* Eponym | Niels Bohr\n LRO mosaic\nBohr is a lunar impact crater that is located along the western lunar limb, in the area that is affected by librations .\n\n...\n\n[ 2 ] The rim of Bohr is worn and eroded, and a pair of small, bowl-shaped craters lies across the western inner wall.\n\n. Bohr (crater) - Wikipedia [ 2 ] The rim of Bohr is worn and eroded, and a pair of small, bowl-shaped craters lies across the western inner wall. The rim to the northeast has been shored up by the adjacent Vasco da Gama, but the remainder forms an irregular ring of rugged ground. To the southwest of Bohr is Vallis Bohr , a valley trending in a north–south direction. [ 5 ] This long cleft is associated with the formation of ",
+  "https://moonopps.com/compendium/feat_planck": " Planck — Archive # Planck Crater (319.5 km) — Max Karl Ernst; German physicist; Nobel laureate (1858-1947). Coordinates ... Feature type code AA Diameter km 319.45856 Etymology Max Karl Ernst; German physicist; Nobel laureate (1858-1947).",
+  "https://lunasociety.org/full-moon-atlas/lunar-crater-catalog-b": " Full Moon Atlas ⚪ Lunar Crater Catalog [B] – Luna Society International | | Baudelaire | 23.2S | 123.1E | 15 | Pierre Charles ~ ( 1821-1867), French poet; noted as \"the father of modern criticism.\" | | Bawa | 25.3S | 102.6E | 1 | African male name. | | Bayer | 51.6S | 35.0W | 47 | Johann ~ (1572-1625), German astronomer; devised the system of identifying all stars visible to the naked eye by assigning each visible star in a constellation one of the 24 Greek letters. |",
+  "https://moonopps.com/compendium/feat_bohr": " Bohr — Archive # Bohr Crater (70.1 km) — Niels Henrik David; Danish physicist; Nobel laureate (1885-1962). Coordinates 12.7063, -86.5241 (positive-east) ... , craters Feature type code AA Diameter km 70.070694 Etymology Niels Henrik David; Danish physicist;",
+  "https://moonopps.com/compendium/feat_einstein": " Einstein — Archive # Einstein Crater (181.5 km) — Albert; German-American physicist; Nobel laureate (1879-1955). Coordinates 16.603, -88.6545 (positive-east) ... Iau approval status Adopted by IAU Iau approval year 1964 Einstein — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nEinstein\n\nCrater (181.5 km) — Albert; German-American physicist; Nobel laureate (1879-1955).\nCoordinates 16.603, -88.6545 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 181.4734\nEtymology Albert; German-American physicist; Nobel laureate (1879-1955).\nIau approval status Adopted by IAU\nIau approval year 19 Einstein — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nEinstein\n\nCrater (181.5 km) — Albert; German-American physicist; Nobel laureate (1879-1955).\nCoordinates 16.603, -88.6545 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 181.4734\nEtymology Albert; German-American physicist; Nobel laureate (1879-1955).\nIau approval status Adopted by IAU\nIau approval year 19 Einstein — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nEinstein\n\nCrater (181.5 km) — Albert; German-American physicist; Nobel laureate (1879-1955).\nCoordinates 16.603, -88.6545 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 181.4734\nEtymology Albert; German-American physicist; Nobel laureate (1879-1955).\nIau approval status Adopted by IAU\nIau approval year 19",
+  "https://www.detailedpedia.com/wiki-List_of_people_with_craters_of_the_Moon_named_after_them": " List of people with craters of the Moon named after them | Detailed Pedia - Johann Elert Bode - Niels Bohr - Priscilla Fairfield Bok - János Bolyai - George Phillips Bond - ... - Thomas Gwyn Elger - Mervyn A. Ellison - Johann Franz ... - Epigenes - Eratosthenes - Joseph Erlanger - Luis Enrique Erro",
+  "https://starchild.gsfc.nasa.gov/docs/StarChild/whos_who_level2/einstein.html": " Albert Einstein In 1905 Einstein wrote a paper on what is now known as the special theory of relativity. This paper contained two hypotheses. The first stated that the laws of physics had to have the same form in any frame of reference. The second hypothesis stated that the speed of light was a constant. Later that year Einstein also showed how mass and energy were equivalent. Following an impressive few years of",
+  "https://moonopps.com/compendium/feat_fermi": " Fermi — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nFermi\n\nCrater (241.4 km) — Enrico; Italian-American physicist; Nobel laureate (1901-1954).\nCoordinates -19.6097, 123.2414 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 241.40665\nEtymology Enrico; Italian-American physicist; Nobel laureate (1901-1954).\nIau approval status Adopted by IAU\nIau approval year  Fermi — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nFermi\n\nCrater (241.4 km) — Enrico; Italian-American physicist; Nobel laureate (1901-1954).\nCoordinates -19.6097, 123.2414 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 241.40665\nEtymology Enrico; Italian-American physicist; Nobel laureate (1901-1954).\nIau approval status Adopted by IAU\nIau approval year  Fermi — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nFermi\n\nCrater (241.4 km) — Enrico; Italian-American physicist; Nobel laureate (1901-1954).\nCoordinates -19.6097, 123.2414 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 241.40665\nEtymology Enrico; Italian-American physicist; Nobel laureate (1901-1954).\nIau approval status Adopted by IAU\nIau approval year ",
+  "https://moonopps.com/compendium/feat_kamerlingh_onnes": " Kamerlingh Onnes — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nKamerlingh Onnes\n\nCrater (70.0 km) — Heike Kamerlingh Onnes; Dutch physicist; Nobel laureate (1853-1926).\nCoordinates 14.7186, -116.2863 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 70.030487\nEtymology Heike Kamerlingh Onnes; Dutch physicist; Nobel laureate (1853-1926).\nIau approval status Adopted by IA Kamerlingh Onnes — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nKamerlingh Onnes\n\nCrater (70.0 km) — Heike Kamerlingh Onnes; Dutch physicist; Nobel laureate (1853-1926).\nCoordinates 14.7186, -116.2863 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 70.030487\nEtymology Heike Kamerlingh Onnes; Dutch physicist; Nobel laureate (1853-1926).\nIau approval status Adopted by IA Kamerlingh Onnes — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nKamerlingh Onnes\n\nCrater (70.0 km) — Heike Kamerlingh Onnes; Dutch physicist; Nobel laureate (1853-1926).\nCoordinates 14.7186, -116.2863 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 70.030487\nEtymology Heike Kamerlingh Onnes; Dutch physicist; Nobel laureate (1853-1926).\nIau approval status Adopted by IA",
+  "https://moonopps.com/compendium/feat_carrel": " Carrel — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nCarrel\n\nCrater (15.6 km) — Alexis; French doctor, physiologist; Nobel laureate (1873-1944).\nCoordinates 10.6655, 26.6796 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 15.587642\nEtymology Alexis; French doctor, physiologist; Nobel laureate (1873-1944).\nIau approval status Adopted by IAU\nIau approval year ",
+  "https://moonopps.com/compendium/feat_aston": " Aston — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nAston\n\nCrater (44.5 km) — Francis William; British chemist, physicist; Nobel laureate (1877-1945).\nCoordinates 32.7658, -87.6848 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 44.479195\nEtymology Francis William; British chemist, physicist; Nobel laureate (1877-1945).\nIau approval status Adopted by IAU\nIa Aston — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nAston\n\nCrater (44.5 km) — Francis William; British chemist, physicist; Nobel laureate (1877-1945).\nCoordinates 32.7658, -87.6848 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 44.479195\nEtymology Francis William; British chemist, physicist; Nobel laureate (1877-1945).\nIau approval status Adopted by IAU\nIa Aston — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nAston\n\nCrater (44.5 km) — Francis William; British chemist, physicist; Nobel laureate (1877-1945).\nCoordinates 32.7658, -87.6848 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 44.479195\nEtymology Francis William; British chemist, physicist; Nobel laureate (1877-1945).\nIau approval status Adopted by IAU\nIa",
+  "https://moonopps.com/compendium/feat_bragg": " Bragg — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nBragg\n\nCrater (77.2 km) — Sir William Henry; Australian physicist; Nobel laureate (1862-1942).\nCoordinates 42.3266, -103.4381 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 77.206116\nEtymology Sir William Henry; Australian physicist; Nobel laureate (1862-1942).\nIau approval status Adopted by IAU\nIau appro Bragg — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nBragg\n\nCrater (77.2 km) — Sir William Henry; Australian physicist; Nobel laureate (1862-1942).\nCoordinates 42.3266, -103.4381 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 77.206116\nEtymology Sir William Henry; Australian physicist; Nobel laureate (1862-1942).\nIau approval status Adopted by IAU\nIau appro Bragg — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nBragg\n\nCrater (77.2 km) — Sir William Henry; Australian physicist; Nobel laureate (1862-1942).\nCoordinates 42.3266, -103.4381 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 77.206116\nEtymology Sir William Henry; Australian physicist; Nobel laureate (1862-1942).\nIau approval status Adopted by IAU\nIau appro",
+  "https://moonopps.com/compendium/feat_compton": " Compton — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nCompton\n\nCrater (164.6 km) — Arthur Holly; American physicist, Nobel laureate (1892-1962); Karl Taylor; American physicist (1887-1954).\nCoordinates 55.8622, 104.0548 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 164.62753\nEtymology Arthur Holly; American physicist, Nobel laureate (1892-1962); Karl Taylor Compton — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nCompton\n\nCrater (164.6 km) — Arthur Holly; American physicist, Nobel laureate (1892-1962); Karl Taylor; American physicist (1887-1954).\nCoordinates 55.8622, 104.0548 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 164.62753\nEtymology Arthur Holly; American physicist, Nobel laureate (1892-1962); Karl Taylor Compton — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nCompton\n\nCrater (164.6 km) — Arthur Holly; American physicist, Nobel laureate (1892-1962); Karl Taylor; American physicist (1887-1954).\nCoordinates 55.8622, 104.0548 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 164.62753\nEtymology Arthur Holly; American physicist, Nobel laureate (1892-1962); Karl Taylor",
+  "https://moonopps.com/compendium/feat_blackett": " Blackett — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nBlackett\n\nCrater (145.3 km) — Patrick Maynard Stuart; British physicist; Nobel laureate (1897-1974).\nCoordinates -37.5493, -115.8357 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 145.30502\nEtymology Patrick Maynard Stuart; British physicist; Nobel laureate (1897-1974).\nIau approval status Adopted by IAU\n Blackett — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nBlackett\n\nCrater (145.3 km) — Patrick Maynard Stuart; British physicist; Nobel laureate (1897-1974).\nCoordinates -37.5493, -115.8357 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 145.30502\nEtymology Patrick Maynard Stuart; British physicist; Nobel laureate (1897-1974).\nIau approval status Adopted by IAU\n",
+  "https://en.wikipedia.org/wiki/Bragg_(crater)": " Bragg (crater) - Wikipedia The most notable of these is Bragg H, which lies across the east-southeastern rim. [ 3 ] :   36  \nThis crater is located to the north-northwest of a walled plain called Lorentz .\n\n...\n\n[ 4 ] The region about this crater is very rugged and marked by many smaller impacts.\nThis crater is named after English-Australian physicist William H. Bragg (1862–1942), [ 5 ] a 1915 Nobel laureate in physics for  Bragg (crater) - Wikipedia The most notable of these is Bragg H, which lies across the east-southeastern rim. [ 3 ] :   36  \nThis crater is located to the north-northwest of a walled plain called Lorentz .\n\n...\n\n[ 4 ] The region about this crater is very rugged and marked by many smaller impacts.\nThis crater is named after English-Australian physicist William H. Bragg (1862–1942), [ 5 ] a 1915 Nobel laureate in physics for  Bragg (crater) - Wikipedia The most notable of these is Bragg H, which lies across the east-southeastern rim. [ 3 ] :   36  \nThis crater is located to the north-northwest of a walled plain called Lorentz .\n\n...\n\n[ 4 ] The region about this crater is very rugged and marked by many smaller impacts.\nThis crater is named after English-Australian physicist William H. Bragg (1862–1942), [ 5 ] a 1915 Nobel laureate in physics for  Bragg (crater) - Wikipedia Nearby craters of note include Rynin to the north, Stefan to the northwest, Lacchini to the west, and Avicenna to the southeast. [ 4 ] The region about this crater is very rugged and marked by many smaller impacts.\nThis crater is named after English-Australian physicist William H. Bragg (1862–1942), [ 5 ] a 1915 Nobel laureate in physics for his important work on X-ray crystallography . [ 6 ] Prio",
+  "https://planetarynames.wr.usgs.gov/Feature/5239": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Rutherford\n* Clean Name | Rutherford\n* Feature ID | 5239\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | 10.81 °\n* Southmost Latitude | 10.31 °\n* Eastmost Longitude | 137.29 °\n* Westmost Longitude | 136.89 °\n* Diameter | Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Rutherford\n* Clean Name | Rutherford\n* Feature ID | 5239\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | 10.81 °\n* Southmost Latitude | 10.31 °\n* Eastmost Longitude | 137.29 °\n* Westmost Longitude | 136.89 °\n* Diameter |",
+  "https://planetarynames.wr.usgs.gov/Feature/4935": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Raman\n* Clean Name | Raman\n* Feature ID | 4935\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | 27.12 °\n* Southmost Latitude | 26.80 °\n* Eastmost Longitude | -55.01 °\n* Westmost Longitude | -55.30 °\n* Diameter | 10.17 km\n",
+  "https://planetarynames.wr.usgs.gov/Feature/606": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Barkla\n* Clean Name | Barkla\n* Feature ID | 606\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | -9.99 °\n* Southmost Latitude | -11.34 °\n* Eastmost Longitude | 67.90 °\n* Westmost Longitude | 66.53 °\n* Diameter | 40.90 km\n",
+  "https://planetarynames.wr.usgs.gov/Feature/1278": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Compton\n* Clean Name | Compton\n* Feature ID | 1278\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | 58.62 °\n* Southmost Latitude | 53.19 °\n* Eastmost Longitude | 109.07 °\n* Westmost Longitude | 99.38 °\n* Diameter | 164.63",
+  "https://planetarynames.wr.usgs.gov/Feature/4749": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Planck\n* Clean Name | Planck\n* Feature ID | 4749\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | -51.95 °\n* Southmost Latitude | -62.49 °\n* Eastmost Longitude | 145.17 °\n* Westmost Longitude | 125.58 °\n* Diameter | 319.4 Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Planck\n* Clean Name | Planck\n* Feature ID | 4749\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | -51.95 °\n* Southmost Latitude | -62.49 °\n* Eastmost Longitude | 145.17 °\n* Westmost Longitude | 125.58 °\n* Diameter | 319.4",
+  "https://economictimes.indiatimes.com/magazines/panache/google-celebrates-physicist-lev-davidovich-landau-who-has-a-crater-on-the-moon-named-after-him-with-doodle/articleshow/67633949.cms": " Lev Landau: Google celebrates physicist Lev Davidovich Landau, who has a crater on the moon named after him, with doodle The Economic Times daily newspaper is available online now.\n\nRead Today's Paper\n\nGoogle celebrates physicist Lev Davidovich Landau, who has a crater on the moon named after him, with doodle\n\nSECTIONS\nGoogle celebrates physicist Lev Davidovich Landau, who has a crater on the moon named after him, with doodle\nET Online Last Updated: Jan 22, 2019, 03:01:00 PM IST\nRate Story\nGoogle Logo\nWhatsapp Follo Lev Landau: Google celebrates physicist Lev Davidovich Landau, who has a crater on the moon named after him, with doodle Google celebrates physicist Lev Davidovich Landau, who has a crater on the moon named after him, with doodle\n\n...\n\nPrint\nComment\nSynopsis\nThe doodle marked the 111th birth anniversary of the Nobel laureate.\nLev Davidovich Landau: Google has a doodle for the physicist\n\nRelated\n\n...\n\nGoogle marked Soviet theoretical physicist Lev Davidovich Landau 's 111th birth anniversary with a doodle . Born in B Lev Landau: Google celebrates physicist Lev Davidovich Landau, who has a crater on the moon named after him, with doodle Google celebrates physicist Lev Davidovich Landau, who has a crater on the moon named after him, with doodle\nET Online Last Updated: Jan 22, 2019, 03:01:00 PM IST\nRate Story\nGoogle Logo\nWhatsapp Follow Channel Follow us\nShare\n    \nFont Size\nAbc Small\nAbc Medium\nAbc Large\nSave\n\n...\n\nGoogle marked Soviet theoretical physicist Lev Davidovich Landau 's 111th birth anniversary with a doodle . Born in B",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&txtOrigin=Nobel": " Planetary Names * 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; German organic chemist; Nobel laureate (1902-1958). |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965).\n\n...\n\nAmerican | Crater, craters | AA | LAC-64 | Approved | 1970 | [68] | Harold Delos; American astronomer, physicist (1882-1",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater%2C%20craters&Target=16_Moon&search=Nobel&format=tsv&pageSize=2000": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n* 337 | Arago | Arago | Moon | 25.51 | 6.15 | 21.43 | 6.57 | 5.73 | 21.85 | 21.00 | Planetographic, +East, -",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&pageSize=500&search=Nobel%20laureate": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n* 337 | Arago | Arago | Moon | 25.51 | 6.15 | 21.43 | 6.57 | 5.73 | 21.85 | 21.00 | Planetographic, +East, -",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Origin=Nobel+Prize+winner+in+Chemistry&Target=16_Moon&pageSize=500": " Planetary Names * 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; German organic chemist; Nobel laureate (1902-1958). |  | Oct 18, 2010\n\n...\n\n* 236 | Ammonius | Ammonius | Moon | 8.55 | -8.52 | -0.83 | -8.38 | -8.66 | -0.68 | -0.97 | Planetographic, +Eas",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater%2C+craters&Name=Rutherford": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965).\n\n...\n\n|  | Oct 18, 2010\n* 458 | Atlas | Atlas | Moon | 88.12 | 46.74 | 44.38 | 48.13 | 45.35 | 46.45 | 42.32 | Planetographic, Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n* 337 | Arago | Arago | Moon | 25.51 | 6.15 | 21.43 | 6.57 | 5.73 | 21.85 | 21.00 | Planetographic, +East, -",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_G%E2%80%93K": " List of craters on the Moon: G–K - Wikipedia The list of approved names in the Gazetteer of Planetary Nomenclature maintained by the International Astronomical Union includes the diameter of the crater and the person the crater is named for. [ 1 ] Where a crater formation has associated satellite craters, these are detailed on the main crater description pages. List of craters on the Moon\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon:_A%E2%80%93B?variant=1": " List of craters on the Moon: A–B - Wikipedia Airy | 18°08′S 5°37′E ﻿ / ﻿ 18.14°S 5.61°E | 38.9 | 1935 | George Biddell Airy (1801–1892) | WGPSN\nAitken | 16°26′S 172°58′E ﻿ / ﻿ 16.44°S 172.96°E | 129.69 | 1970 | Robert Aitken (1864–1951) | WGPSN\nAkis | 20°01′N 31°46′W ﻿ / ﻿ 20.01°N 31.76°W | 2.28 | 1976 | ( Greek female name) | WGPSN\nAlan | 10°56′S 6°10′W ﻿ / ﻿ 10.93°S 6.17°W | 1.44 | 1976 | ( Celtic male name ) | WGPSN\nAl-Bakri | 14°20′N 20°",
+  "https://moonopps.com/compendium/feat_heymans": " Heymans — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nHeymans\n\nCrater (46.4 km) — Corneille-Jean-François; Belgian physiologist; Nobel laureate (1892-1968).\nCoordinates 74.7553, -144.9393 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 46.449867\nEtymology Corneille-Jean-François; Belgian physiologist; Nobel laureate (1892-1968).\nIau approval status Adopted by",
+  "https://moonopps.com/compendium/feat_curie": " Curie — Archive Globe · Lunar Archive\n■ Measured / Computed\n\nCurie\n\nCrater (138.9 km) — Pierre; French physicist, chemist; Nobel laureate (1859-1906).\nCoordinates -23.0455, 92.2793 (positive-east)\nDescriptor Crater\nFeature type Crater, craters\nFeature type code AA\nDiameter km 138.869\nEtymology Pierre; French physicist, chemist; Nobel laureate (1859-1906).\nIau approval status Adopted by IAU\nIau approval year 1970\n",
+  "https://moonopps.com/compendium/feat_erlanger": " Erlanger — Archive Measured / Computed\nErlanger\nCrater (10.9 km) — Joseph; American physiologist, Nobel Prize winner 1944 (1874-1965). Coordinates 86.9883, 28.6166 (positive-east) Descriptor Crater Feature type Crater, craters Feature type code AA Diameter km 10.937445 Etymology Joseph; American physiologist, Nobel Prize winner 1944 (1874-1965). Iau approval status Adopted by IAU Iau approval year 2009 Iau reference",
+  "https://planetarynames.wr.usgs.gov/Feature/1745": " Einstein - Gazetteer of Planetary Nomenclature Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Einstein\n* Clean Name | Einstein\n* Feature ID | 1745\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | 19.60 °\n* Southmost Latitude | 13.61 °\n* Eastmost Longitude | -85.54 °\n* Westmost Longitude | -91.77 °\n* Diameter | 181",
+  "https://planetarynames.wr.usgs.gov/Feature/3472": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Lorentz\n* Clean Name | Lorentz\n* Feature ID | 3472\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | 40.62 °\n* Southmost Latitude | 28.56 °\n* Eastmost Longitude | -89.86 °\n* Westmost Longitude | -104.58 °\n* Diameter | 378.",
+  "https://planetarynames.wr.usgs.gov/Feature/5592": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Sklodowska\n* Clean Name | Sklodowska\n* Feature ID | 5592\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | -15.96 °\n* Southmost Latitude | -20.11 °\n* Eastmost Longitude | 98.33 °\n* Westmost Longitude | 93.97 °\n* Diameter |",
+  "https://planetarynames.wr.usgs.gov/Feature/4749?ControlNetwork=UNKNOWN": " Planetary Names Info\nFeature Name | Planck\nClean Name | Planck\nFeature ID | 4749\nTarget | Moon\nFeature Type | Crater, craters\nLocation Status and Origin\nApproval Status | Adopted by IAU\nApproval Date | 1970\nContinent | Europe\nEthnicity | Germany\nOrigin | Max Karl Ernst; German physicist; Nobel laureate (1858-1947).\nReference | -\nUpdated | Oct 18, 2010 12:00 PM\nSatellite Feature(s) | Planck A Planck B Planck C Pla",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater&Target=16_Moon&search=Zeeman": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n\n...\n\n* 606 | Barkla | Barkla | Moon | 40.90 | -10.67 | 67.22 | -9.99 | -11.34 | 67.90 | 66.53 | Planetograp",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater%2C%20craters&search=Hess": " Planetary Names |  | Oct 18, 2010\n* 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; German organic chemist; Nobel laureate (1902-1958). |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic,",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Name=Hess&Feature%20Type=9_Crater&Target=16_Moon": " Planetary Names * 171 | Alder | Alder | Moon | 82.12 | -48.63 | -177.88 | -47.31 | -49.94 | -175.85 | -179.92 | Planetographic, +East, -180 - 180 | Europe | Germany | Crater, craters | AA | LAC-132 | Approved | 1979 | - | Kurt; German organic chemist; Nobel laureate (1902-1958). |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater,%20craters&Origin=Nobel": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Target=16_Moon&search=Nobel": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater&Feature%20Name=Heisenberg": " Planetary Names |  | Oct 18, 2010\n* 172 | Aldrin | Aldrin | Moon | 2.80 | 1.41 | 22.09 | 1.45 | 1.36 | 22.14 | 22.04 | Planetographic, +East, -180 - 180 | North America | American | Crater, craters | AA | LAC-60 | Approved | 1970 | [59] | Edwin Eugene, Jr.\n\n...\n\n* 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Cr",
+  "https://en.wikipedia.org/wiki/Laue_(crater)": " Laue (crater) - Wikipedia This crater is named after German physicist Max von Laue (1879–1960), who received the Nobel Prize in Physics in 1914 \"for his discovery of the diffraction of X-rays by crystals.\" [ 4 ] Prior to formal naming by the International Astronomical Union in 1970, [ 1 ] Laue was called Crater 181 . [ 5 ] Eponym | Max von Laue Lunar Orbiter 4 image Oblique view facing south Laue is a lunar impact crater t Laue (crater) - Wikipedia A cup-shaped crater lies along the east-southeastern inner wall. The interior wall is generally less wide along the northern side than elsewhere, which may have been the result of the terrain in which the impact was formed.\n\n...\n\nThe remainder of the floor is relatively level, but is marked by a number of small craters.\nThis crater is named after German physicist Max von Laue (1879–1960), who rece Laue (crater) - Wikipedia * Eponym | Max von Laue\n Lunar Orbiter 4 image  Oblique view facing south\nLaue is a lunar impact crater that lies across the south-southwestern rim and interior floor of the huge walled plain named Lorentz . This feature is located on the Moon 's far side , just beyond the west-northwestern limb. Under conditions of favorable libration and illumination from the Sun , this area can be seen at a ver Laue (crater) - Wikipedia A cup-shaped crater lies along the east-southeastern inner wall. The interior wall is generally less wide along the northern side than elsewhere, which may have been the result of the terrain in which the impact was formed.\n\n...\n\nThe remainder of the floor is relatively level, but is marked by a number of small craters.\nThis crater is named after German physicist Max von Laue (1879–1960), who rece Laue (crater) - Wikipedia * Eponym | Max von Laue\n Lunar Orbiter 4 image  Oblique view facing south\nLaue is a lunar impact crater that lies across the south-southwestern rim and interior floor of the huge walled plain named Lorentz . This feature is located on the Moon 's far side , just beyond the west-northwestern limb. Under conditions of favorable libration and illumination from the Sun , this area can be seen at a ver Laue (crater) - Wikipedia * Clementine image | \n* Coordinates | 28°17′N 97°03′W ﻿ / ﻿ 28.29°N 97.05°W\n* Diameter | 89.17 km (55.41 mi) [ 1 ]\n* Depth | Unknown\n* Colongitude | 98° at sunrise\n* Formation | Imbrian [ 2 ]\n* Eponym | Max von Laue\n Lunar Orbiter 4 image  Oblique view facing south\nLaue is a lunar impact crater that lies across the south-southwestern rim and interior floor of the huge walled plain named Lorentz . ",
+  "https://api.nobelprize.org/v1/laureate.json": " Nobel Prize 668\",\"firstname\":\"Nadine\",\"surname\":\"Gordimer\",\"born\":\"1923-11-20\",\"died\":\"2014-07-13\",\"bornCountry\":\"South Africa\",\"bornCountryCode\":\"ZA\",\"bornCity\":\"Springs\",\"diedCountry\":\"South Africa\",\"diedCountryCode\":\"ZA\",\"diedCity\":\"Johannesburg\",\"gender\":\"female\",\"prizes\":[{\"year\":\"1991\",\"category\":\"literature\",\"share\":\"1\",\"motivation\":\"\"who through her magnificent epic writing has - in the words of Alfre",
+  "https://earth-and-space-news.blogspot.com/2012/03/bragg-crater-honors-british-physicist.html": " Earth and Space News: Bragg Crater Honors British Physicist Sir William Henry Bragg Wednesday, March 14, 2012\n\nBragg Crater Honors British Physicist Sir William Henry Bragg\n\nSummary: The lunar far side’s Bragg Crater honors British physicist Sir William Henry Bragg, uniquely awarded the 1915 Nobel Physics Prize with his younger son.\n* \n* Detail of Lunar Astronautical Charts (LAC) 36 shows the lunar far side’s Bragg Crater system of parental Bragg (center), Bragg H (center\n\n...\n\nT Earth and Space News: Bragg Crater Honors British Physicist Sir William Henry Bragg Wednesday, March 14, 2012\n\nBragg Crater Honors British Physicist Sir William Henry Bragg\n\nSummary: The lunar far side’s Bragg Crater honors British physicist Sir William Henry Bragg, uniquely awarded the 1915 Nobel Physics Prize with his younger son.\n* \n* Detail of Lunar Astronautical Charts (LAC) 36 shows the lunar far side’s Bragg Crater system of parental Bragg (center), Bragg H (center\n\n...\n\nT",
+  "https://en.wikipedia.org/wiki/Davisson_%28crater%29": " Davisson (crater) - Wikipedia * LRO image | \n* Coordinates | 37°30′S 174°36′W ﻿ / ﻿ 37.5°S 174.6°W\n* Diameter | 92.46 km (57.45 mi) [ 1 ]\n* Depth | Unknown\n* Colongitude | 177° at sunrise\n* Formation | Nectarian [ 2 ]\n* Eponym | Clinton J. Davisson\n Oblique Lunar Orbiter 5 image\nDavisson is a lunar impact crater that is located on the far side of the Moon from the Earth .\n\n...\n\n[ 7 ]\nThis crater is named after Clinton Joseph D",
+  "https://en.wikipedia.org/wiki/Richardson_(lunar_crater)": " Richardson (lunar crater) - Wikipedia The crater is named after Owen Willans Richardson (1879–1959), a British physicist who was awarded the Nobel Prize in Physics in 1928 for his pioneering work on thermionic emission.\nRichardson (lunar crater) - Wikipedia\nNaming Prior to formal naming in 1979 by the International Astronomical Union (IAU), [3] this crater was known as Crater 114.\n\n...\n\n[4] The crater is named after Owen Willans Richa Richardson (lunar crater) - Wikipedia Richardson (lunar crater) - Wikipedia\nThe crater is named after Owen Willans Richardson (1879–1959), a British physicist who was awarded the Nobel Prize in Physics in 1928 for his pioneering work on thermionic emission.\n\n...\n\nThe crater is named after Owen Willans Richardson (1879–1959), a British physicist who was awarded the Nobel Prize in Physics in 1928 for his pioneering work on thermionic em",
+  "https://wenamethestars.inkleby.com/feature/14503": " Lenard - wenamethestars.inkleby.com We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nLenard ( Moon )\n\nNamed after Philipp Edward Anton Lenard - German physicist, 1905 Nobel Prize winner for physics (1862-1947).\n\nLenard is a lunar impact crater located on the lunar far side near the northern pole. The crater forms some of the wall of the crater Hermite , and is located North of the craters Lovelace and Froelich . ( wikipedia entry ) Lenard - wenamethestars.inkleby.com We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nLenard ( Moon )\n\nNamed after Philipp Edward Anton Lenard - German physicist, 1905 Nobel Prize winner for physics (1862-1947).\n\nLenard is a lunar impact crater located on the lunar far side near the northern pole. The crater forms some of the wall of the crater Hermite , and is located North of the craters Lovelace and Froelich . ( wikipedia entry )",
+  "https://wipi.ai.kr/en/Laue%20(crater)": " Laue (crater) - WIPIVERSE WIPIVERSE\nKorean English\nSearch encyclopedia Search\n\nLaue (crater)\n\nUpdated 2025-04-03 Copy link\nLaue is a lunar impact crater that lies on the far side of the Moon. It is located to the west-southwest of the larger crater Campbell, and northeast of the prominent crater D'Alembert.\nThis crater is a relatively well-formed feature with a sharp-edged rim that has suffered only minor wear. The inner w",
+  "https://en.wikipedia.org/wiki/Lippmann_(crater)": " Lippmann (crater) - Wikipedia * Eponym | Gabriel Lippmann\n Oblique Lunar Orbiter 5 image, facing west\nLippmann is a large lunar impact crater in the southern part of the far side of the Moon and so cannot be viewed directly from the Earth . Just to the northeast is the walled plain designated Mendel , only slightly smaller than Lippmann. To the south-southeast lies the crater Petzval .\nLippmann is named after Gabriel Lippmann ",
+  "https://wenamethestars.inkleby.com/feature/10932": " Lorentz U - We Name The Stars We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nLorentz U ( Moon )\n\nSatellite Feature of Lorentz\n\nNamed after Hendrik Antoon Lorentz - Dutch physicist; Nobel laureate (1853-1928).\n\nLorentz is a huge lunar crater that lies just beyond the northwest limb , in a region that is brought into sight of the Earth during favorable librations. This formation is nearly as large as the [Mare Nectaris](https",
+  "https://the-moon.us/wiki/Becquerel": " Becquerel - The Moon Maps\n\n( LAC zone 30B3) USGS Digital Atlas PDF\n\nDescription\n\nBecquerel by its worn-down appearance is a very old crater. It's rough-looking floor includes several small craters of various sizes (largest ~ 10 km across), while most of its inner rim has formed into two or three level platforms. Several chains of craters surround the region in which the crater lies, the most notable would be Catena Ku",
+  "https://en.wikipedia.org/w/index.php?title=Bragg_(crater)&action=raw": " https://en.wikipedia.org/w/index.php?title=Bragg_(crater)&action=raw The region about this crater is very rugged and marked by many smaller impacts.\nThis crater is named after English-Australian physicist [[William Henry Bragg|William H. Bragg]] (1862–1942), a 1915 [[List of Nobel laureates in Physics|Nobel laureate in physics]] for his important work on [[X-ray crystallography]]. Prior to its designation being formally adopted by the [[International Astronomical U",
+  "https://ntrs.nasa.gov/api/citations/19700028251/downloads/19700028251.pdf?attachment=true": " HARVARD COLLEGE OBSERVATORY Cambridge, Massachusetts 02138 by the 1AU to craters on the far-side. thousand copies of this booklet have been printed znd shipped to Brighton, England, for use by astronomers at the August 1970 meeting of\n\n...\n\nLUNAR NOMENCLATURE\n\nReport of the Working Group of\n\nIAU Commission 17, The Moon\n\nProposed names for craters on the Moon's far side,\n\nwith identifying biographical data\n\npresented at\n\nThe 14th General Assembly of the IA",
+  "https://en.wikipedia.org/wiki/Fermi_(crater)": " Fermi (crater) - Wikipedia * Colongitude | 240° at sunrise\n* Formation | Pre-Nectarian [ 3 ] [ 4 ]\n* Eponym | Enrico Fermi\n Apollo 17 mapping camera image of the interior  Oblique Apollo 17 image, facing east\nFermi is a large lunar impact crater of the category named a walled plain. It lies on the far side of the Moon and can not be viewed from the Earth .\n\n...\n\nThe interior floor of Fermi has been modified by the creation ",
+  "https://clever-geek.imtqy.com/articles/4293048/index.html": " Arrhenius (Moon Crater) 📜 ⬆️ ⬇️\n\nArrhenius (Moon Crater)\n\nThe Arrhenius Crater ( Latin Arrhenius ), not to be confused with the Arrhenius Crater on Mars , is an impact crater located at the southwestern limb on the far side of the Moon . The name is given in honor of the outstanding Swedish physicist-chemist and astrophysicist , Nobel laureate in chemistry (1903), Svante August Arrhenius (1859-1927) and approved by the I",
+  "https://en.wikipedia.org/wiki/Arrhenius_(lunar_crater)": " Arrhenius (lunar crater) - Wikipedia * Diameter | 40.93 km (25.43 mi) [ 1 ]\n* Depth | Unknown\n* Colongitude | 269° at sunrise\n* Eponym | Svante Arrhenius\nArrhenius is a lunar impact crater that is located just on the far side of the Moon , near the southwest limb.\n\n...\n\nThere is a notch in the rim to the north-northwest, and an outward bulge along the southeast face. A small craterlet lies across the southwestern rim. The inner floor",
+  "https://wenamethestars.inkleby.com/feature/5683": " Stark We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nStark ( Moon )\n\nNamed after Johannes Stark - German physicist; Nobel laureate (1874-1957).\n\nStark is a lunar crater on the far side. It lies to the southeast of the prominent crater Tsiolkovskiy , and north of Subbotin . This is a heavily eroded crater with a jumbled outer rim and uneven interior. The pair of slightly smaller satellite craters [Sta Stark We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nStark ( Moon )\n\nNamed after Johannes Stark - German physicist; Nobel laureate (1874-1957).\n\nStark is a lunar crater on the far side. It lies to the southeast of the prominent crater Tsiolkovskiy , and north of Subbotin . This is a heavily eroded crater with a jumbled outer rim and uneven interior. The pair of slightly smaller satellite craters [Sta",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature%20Type=9_Crater&fname=Fischer": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n* 337 | Arago | Arago | Moon | 25.51 | 6.15 | 21.43 | 6.57 | 5.73 | 21.85 | 21.00 | Planetographic, +East, -",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater,%20craters&Target=16_Moon&fname=Einstein": " Planetary Names * 330 | Appleton | Appleton | Moon | 64.59 | 37.05 | 158.17 | 38.11 | 35.98 | 159.50 | 156.83 | Planetographic, +East, -180 - 180 | Europe | England | Crater, craters | AA | LAC-32 | Approved | 1970 | [75] | Sir Edward Victor; British physicist; Nobel laureate (1892-1965). |  | Oct 18, 2010\n* 337 | Arago | Arago | Moon | 25.51 | 6.15 | 21.43 | 6.57 | 5.73 | 21.85 | 21.00 | Planetographic, +East, -",
+  "https://en.wikipedia.org/wiki/Becquerel_(lunar_crater)": " Becquerel (lunar crater) Becquerel | LRO mosaic | | | --- | --- | | Coordinates | 40°42′N 129°42′E﻿ / ﻿ 40.7°N 129.7°E | | Diameter | 65 km [1] | | Depth | Unknown | | Colongitude | 232° at sunrise | | Eponym | A. Henri Becquerel | ... Becquerel is a lunar impact crater that lies in the northern hemisphere on the far side of the Moon. [2] This is an ancient and heavily worn formation that is now little more than an irregu",
+  "https://www.moonalmanack.com/atlas/becquerel/": " Becquerel — the Moon Becquerel — the Moon # Becquerel Type : Crater, craters Position : 40.8°N, 129.5°E Diameter : 62.9 km Quadrant : Millikan (LAC-30) Named for : Antoine-Henri; French physicist; Nobel laureate (1852-1908). IAU approval : 1970 Coordinates and diameter from the IAU Working Group for Planetary System Nomenclature / USGS Astrogeology gazetteer (public domain). The approval date is the IAU decision date,",
+  "https://web.archive.org/web/20200521144045/https:/planetarynames.wr.usgs.gov/Feature/5592": " Planetary Names: Crater, craters: Sklodowska on Moon Planetary Names: Crater, craters: Sklodowska on Moon Plutonian System Pluto Charon Ceres ## Sklodowska | Feature Name | Sklodowska | | --- | --- | | Clean Name | Sklodowska | | Feature ID | 5592 | | Target | Moon | | Feature Type | Crater, craters | | Coordinate System | Planetographic, +East, -180 - 180 | | Control Network | ULCN 2005 UNKNOWN LOLA 2011 | | Northernmost Latitude | -16.02 ° | | Sou",
+  "https://en.wikipedia.org/wiki/Sklodowska_(lunar_crater)": " Sklodowska (lunar crater) Sklodowska (lunar crater) Sklodowska | LRO image | | | --- | --- | | Coordinates | 18°12′S 95°30′E﻿ / ﻿ 18.2°S 95.5°E | | Diameter | 127 km | | Depth | 4.5 [1] | | Colongitude | 266° at sunrise | | Eponym | Maria S. Curie | Sklodowska (Skłodowska) is a large lunar impact crater that is located on the far side of the Moon. [2] It lies just past the southeastern limb, and can sometimes be viewed fro",
+  "https://en.wikipedia.org/wiki/Thomson_(crater)": " Thomson (crater) Thomson (crater) Thomson | Mare Ingenii, dominated by the crater Thomson | | | --- | --- | | Coordinates | 32°42′S 166°12′E﻿ / ﻿ 32.7°S 166.2°E | | Diameter | 117 km | | Depth | Unknown | | Colongitude | 195° at sunrise | | Eponym | J. J. Thomson | Oblique view of Thomson from Apollo 15 Thomson is a lunar impact crater that is located within the Mare Ingenii on the far side of the Moon. [1] Just t",
+  "https://moonopps.com/compendium/feat_thomson": " Thomson — Archive ■ Measured / Computed # Thomson Crater (117.3 km) — Sir Joseph John; British physicist; Nobel laureate (1856-1940). Coordinates -32.3183, 166.0417 (positive-east) Descriptor Crater Feature type Crater, craters Feature type code AA Diameter km 117.25293 Etymology Sir Joseph John; British physicist; Nobel laureate (1856-1940). Iau approval status Adopted by IAU Iau approval year 1970 Iau reference h",
+  "https://en.wikipedia.org/wiki/Schr%C3%B6dinger_(crater)": " Schrödinger (crater) Schrödinger | Schrödinger from Lunar Reconnaissance Orbiter. Note the incomplete inner ring. | | | --- | --- | | Coordinates | 75°00′S 132°24′E﻿ / ﻿ 75.0°S 132.4°E | | Diameter | 312 km | | Depth | 4.80 km (2.98 mi) [1] | | Colongitude | 245° at sunrise | | Formation | Early Imbrian [2] | | Eponym | Erwin Schrödinger | ... Schrödinger is a large lunar impact crater of the form traditionally called",
+  "https://moonopps.com/compendium/feat_schrodinger": " Schrödinger — Archive ■ Measured / Computed # Schrödinger Crater (316.4 km) — Schrödinger, Erwin; Austrian physicist; Nobel laureate (1887-1961). Coordinates -74.7326, 132.9252 (positive-east) Descriptor Crater Feature type Crater, craters Feature type code AA Diameter km 316.38785 Etymology Schrödinger, Erwin; Austrian physicist; Nobel laureate (1887-1961). Iau approval status Adopted by IAU Iau approval year 1970 Iau",
+  "https://www.nobelprize.org/prizes/physics/1933/dirac/facts/": " Paul A.M. Dirac – Facts Paul A.M. Dirac – Facts - NobelPrize.org # Paul A.M. Dirac Photo from the Nobel Foundation archive. Paul Adrien Maurice Dirac Nobel Prize in Physics 1933 Born: 8 August 1902, Bristol, United Kingdom Died: 20 October 1984, Tallahassee, FL, USA Affiliation at the time of the award: University of Cambridge, Cambridge, United Kingdom Prize motivation: “for the discovery of new productive forms of atom",
+  "https://en.wikipedia.org/wiki/Paul_Dirac": " Paul Dirac | Paul Dirac OM FRS | | | --- | --- | | Dirac in 1933 | | | Born | Paul Adrien Maurice Dirac 8 August 1902 Bristol, England | | Died | 20 October 1984 (aged 82) Tallahassee, Florida, U.S. | | Citizenship | United Kingdom Switzerland (until 1919) | | Education | University of Bristol (BSc, 1921; BA, 1923) St John's College, Cambridge (PhD, 1926) | | Known for | Dirac equation Dirac large numbers hy",
+  "https://grokipedia.opelly.me/articles/heisenberg-crater": " Heisenberg Crater — The Infinite Wiki Heisenberg Crater is a prominent impact feature located on the far side of the Moon, named in honor of the German physicist Werner Heisenberg, a foundational figure in quantum mechanics. With a diameter of approximately 110 kilometers, it lies within the lunar highlands near the western edge of the Mendeleev Basin, a large impact structure. The crater is characterized by its well-preserved terrace",
+  "https://www.nobelprize.org/prizes/physics/1932/heisenberg/biographical/": " Werner Heisenberg – Biographical # Werner Heisenberg W erner Heisenberg was born on 5th December, 1901, at Würzburg. He was the son of Dr. August Heisenberg and his wife Annie Wecklein. His father later became Professor of the Middle and Modern Greek languages in the University of Munich. It was probably due to his influence that Heisenberg remarked, when the Japanese physicist Yukawa discovered the particle now known as the meso",
+  "https://planetarynames.wr.usgs.gov/Feature/4613": " Planetary Names Planetary Names ### Basic Info | Feature Name | Pauli | | --- | --- | | Clean Name | Pauli | | Feature ID | 4613 | | Target | Moon | | Feature Type | Crater, craters | ### Location | Coordinate System | Planetographic, +East, -180 - 180 | | --- | --- | | Northmost Latitude | -43.19 ° | | Southmost Latitude | -46.33 ° | | Eastmost Longitude | 139.56 ° | | Westmost Longitude | 135.14 ° | | Diameter ",
+  "https://moonopps.com/compendium/feat_pauli": " Pauli — Archive Pauli — Archive ■ Measured / Computed # Pauli Crater (95.3 km) — Wolfgang; Austrian-American physicist; Nobel laureate (1900-1958). Coordinates -44.7588, 137.3501 (positive-east) Descriptor Crater Feature type Crater, craters Feature type code AA Diameter km 95.275902 Etymology Wolfgang; Austrian-American physicist; Nobel laureate (1900-1958). Iau approval status Adopted by IAU Iau approval year 1",
+  "https://planetarynames.wr.usgs.gov/Feature/3900": " Planetary Names ### Basic Info | Feature Name | Millikan | | --- | --- | | Clean Name | Millikan | | Feature ID | 3900 | | Target | Moon | | Feature Type | Crater, craters | ... | Coordinate System | Planetographic, +East, -180 - 180 | | --- | --- | | Northmost Latitude | 48.31 ° | | Southmost Latitude | 45.21 ° | | Eastmost Longitude | 123.78 ° | | Westmost Longitude | 119.25 ° | | Diameter | 93.97 km | | Center",
+  "https://en.wikipedia.org/wiki/Millikan_(crater)": " Millikan (crater) Millikan | Clementine mosaic | | | --- | --- | | Coordinates | 46°46′N 121°31′E﻿ / ﻿ 46.76°N 121.52°E | | Diameter | 93.97 km (58.39 mi) | | Depth | Unknown | | Colongitude | 240° at sunrise | | Eponym | Robert A. Millikan | ... Millikan is a lunar impact crater in the northern hemisphere of the Moon's far side. [1] It is located to the north of the crater H. G. Wells, and to the southwest of von ",
+  "https://en.wikipedia.org/wiki/R%C3%B6ntgen_(crater)": " Röntgen (crater) - Wikipedia * Eponym | Wilhelm C. Röntgen\n Lunar Orbiter 4 image  Another Lunar Orbiter 4 image, facing south\nRöntgen is a relatively large lunar impact crater that lies along the northwestern limb of the Moon . Its northwestern outer rim is partly overlain by the crater Nernst . Both Nernst and Röntgen overlie the eastern rim of the much larger Lorentz , a walled plain .\n\n...\n\nThere is a relatively fresh, cu",
+  "https://web.archive.org/web/20171027025628/https://planetarynames.wr.usgs.gov/Feature/6711": " Planetary Names: Crater, craters: Zeeman on Moon  International Astronomical Union (IAU) Working Group for Planetary System Nomenclature (WGPSN)\nsearch\nPlanetary Names: Crater, craters: Zeeman on Moon\n\nZeeman\n\n* Feature Name | Zeeman\n* Clean Name | Zeeman\n* Feature ID | 6711\n* Target | Moon\n* Feature Type | Crater, craters\n* Coordinate System | Planetographic, +East, -180 - 180\n* Control Network | LOLA 2011 ULCN 2005 UNKNOWN\n* Northernmost Latitu",
+  "https://wenamethestars.inkleby.com/feature/6711": " Zeeman - We Name The Stars We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nZeeman ( Moon )\n\nNamed after Pieter Zeeman - Dutch physicist; Nobel laureate (1865-1943).\n\nZeeman is a lunar impact crater located on the far side near its south pole. It is not directly visible from the Earth. To the northwest lies the crater Numerov . South east of the rim is the crater Ashbrook . ( wikipedia entry )\n\nA crater is a circular depre",
+  "https://planetarynames.wr.usgs.gov/Feature/6711": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Zeeman\n* Clean Name | Zeeman\n* Feature ID | 6711\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\n* Control Network\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | -71.99 °\n* Southmost Latitude | -78.14 °\n* Eastmost Longitude | -123.00 °\n* Westmost Longitude | -147.12 °\n* Diameter | 186",
+  "https://web.archive.org/web/20190523021527/https://planetarynames.wr.usgs.gov/Feature/6711": " Planetary Names: Crater, craters: Zeeman on Moon  Planetary Names: Crater, craters: Zeeman on Moon\n\nZeeman\n\n* Feature Name | Zeeman\n* Clean Name | Zeeman\n* Feature ID | 6711\n* Target | Moon\n* Feature Type | Crater, craters\n* Coordinate System | Planetographic, +East, -180 - 180\n* Control Network | LOLA 2011 ULCN 2005 UNKNOWN\n* Northernmost Latitude | -71.99 °\n* Southernmost Latitude | -78.14 °\n* Easternmost Longitude | -123 °\n* Westernmost Longit",
+  "https://en.wikipedia.org/wiki/Charles_Barkla": " Charles Barkla - Wikipedia Charles Glover Barkla (7 June 1877 – 23 October 1944) was a British physicist who received the Nobel Prize in Physics in 1917 for his discovery of characteristic X-rays . [ 2 ]\n\nBiography\n\n[ edit ]\n\n...\n\n* Year | Organisation | Award | Citation | Ref.\n* 1917 | Royal Swedish Academy of Sciences | Nobel Prize in Physics | \"For his discovery of the characteristic Röntgen radiation of the elements.\" |",
+  "https://kuongeo.com/moon/names/zeeman": " Zeeman on the Moon: 186.6 km crater, and why it has that name | KUON GEO KUON GEO\n\nZeeman\n\nCrater, craters · 186.6 km across · -75.07°, -135.06° · the Moon クレーター・差し渡し約186.6km\n\nWHY THAT NAME · なぜその名前か\n\nPieter; Dutch physicist; Nobel laureate (1865-1943).\nSource of the name: The Netherlands (Dutch) (Europe) · Approved by the IAU 1970 · Other features named after The Netherlands (Dutch)\n\nSEE IT · 地図で見る\n\nElevation here was measured by laser from orbit (LOLA). Nothing is es",
+  "https://kuongeo.com/moon/names/rontgen": " Röntgen on the Moon: 128.4 km crater, and why it has that name | KUON GEO KUON GEO\n\nRöntgen\n\nCrater, craters · 128.4 km across · 32.88°, -91.42° · the Moon クレーター・差し渡し約128.4km\n\nWHY THAT NAME · なぜその名前か\n\nWilhelm Conrad; German physicist; Nobel laureate (1845-1923).\nSource of the name: Germany (Europe) · Approved by the IAU 1964 · Other features named after Germany\n\nSEE IT · 地図で見る\n\nElevation here was measured by laser from orbit (LOLA). Nothing is estimated or generated.\nOp"
+ },
+ "seconds": 65.2,
+ "tokens": {
+  "prompt_tokens": 225656,
+  "completion_tokens": 2185
+ },
+ "model": "openai-codex-personal/gpt-6.1-terra-fast:high",
+ "turns": 11,
+ "round": 1,
+ "role": "test",
+ "referee": {
+  "score": 0.5952,
+  "correct": 26,
+  "wrong": 2,
+  "total": 42,
+  "duplicates": 0,
+  "unsupported": 0,
+  "x_only": 2,
+  "y_only": 0,
+  "missed": [
+   "Abdus Salam",
+   "Albert A. Michelson",
+   "C.T.R. Wilson",
+   "Charles Edouard Guillaume",
+   "Ernest Lawrence",
+   "Frits Zernike",
+   "Guglielmo Marconi",
+   "Igor Y. Tamm",
+   "James Chadwick",
+   "James Franck",
+   "Johannes Diderik van der Waals",
+   "John Cockcroft",
+   "Lord Rayleigh",
+   "Max Born",
+   "Percy W. Bridgman",
+   "Victor F. Hess"
+  ],
+  "rows": [
+   {
+    "name": "Edward Victor Appleton",
+    "url": "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Moon&Feature+Type=9_Crater&Origin=Nobel",
+    "providers": [
+     "fetch:exa",
+     "parallel"
+    ],
+    "reason": "Edward Victor Appleton is the already-listed Edward V. Appleton, the 1947 Physics Nobel laureate honored by the IAU-approved lunar crater Appleton.",
+    "status": "correct",
+    "qid": "nobel_physics_moon-8"
+   },
+   {
+    "name": "Charles Glover Barkla",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/606",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-6"
+   },
+   {
+    "name": "Henri Becquerel",
+    "url": "https://www.moonalmanack.com/atlas/becquerel/",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-17"
+   },
+   {
+    "name": "Patrick Blackett",
+    "url": "https://moonopps.com/compendium/feat_blackett",
+    "providers": [
+     "parallel"
+    ],
+    "reason": "Patrick Blackett is the already-listed Patrick M.S. Blackett, a Nobel Physics laureate. The supplied evidence does not establish an IAU-approved lunar feature named after him.",
+    "status": "correct",
+    "qid": "nobel_physics_moon-32"
+   },
+   {
+    "name": "Niels Bohr",
+    "url": "https://en.wikipedia.org/wiki/Bohr_(crater)",
+    "providers": [
+     "exa",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-30"
+   },
+   {
+    "name": "William Henry Bragg",
+    "url": "https://en.wikipedia.org/wiki/Bragg_(crater)",
+    "providers": [
+     "parallel"
+    ],
+    "reason": "William Henry Bragg is the already-known William Bragg, not a different laureate. The supplied evidence confirms his Physics Nobel Prize but does not document an IAU-approved lunar feature named after him.",
+    "status": "correct",
+    "qid": "nobel_physics_moon-40"
+   },
+   {
+    "name": "Arthur Holly Compton",
+    "url": "https://moonopps.com/compendium/feat_compton",
+    "providers": [
+     "parallel"
+    ],
+    "reason": "Arthur Holly Compton is Arthur H. Compton, already listed. He won the 1927 Nobel Prize in Physics and is a co-namesake of the lunar crater Compton.",
+    "status": "correct",
+    "qid": "nobel_physics_moon-3"
+   },
+   {
+    "name": "Pierre Curie",
+    "url": "https://moonopps.com/compendium/feat_curie",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-34"
+   },
+   {
+    "name": "Marie Skłodowska Curie",
+    "url": "https://en.wikipedia.org/wiki/Sklodowska_(lunar_crater)",
+    "providers": [
+     "exa"
+    ],
+    "reason": "Marie Skłodowska Curie is the already-listed Marie Curie, the 1903 Physics Nobel laureate honored by the lunar crater Sklodowska. Count her only once.",
+    "status": "correct",
+    "qid": "nobel_physics_moon-26"
+   },
+   {
+    "name": "Clinton Davisson",
+    "url": "https://en.wikipedia.org/wiki/Davisson_%28crater%29",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-7"
+   },
+   {
+    "name": "Albert Einstein",
+    "url": "https://moonopps.com/compendium/feat_einstein",
+    "providers": [
+     "exa",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-2"
+   },
+   {
+    "name": "Enrico Fermi",
+    "url": "https://moonopps.com/compendium/feat_fermi",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-9"
+   },
+   {
+    "name": "Heike Kamerlingh Onnes",
+    "url": "https://moonopps.com/compendium/feat_kamerlingh_onnes",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-15"
+   },
+   {
+    "name": "Lev Landau",
+    "url": "https://economictimes.indiatimes.com/magazines/panache/google-celebrates-physicist-lev-davidovich-landau-who-has-a-crater-on-the-moon-named-after-him-with-doodle/articleshow/67633949.cms",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-24"
+   },
+   {
+    "name": "Max von Laue",
+    "url": "https://en.wikipedia.org/wiki/Laue_(crater)",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-29"
+   },
+   {
+    "name": "Philipp Lenard",
+    "url": "https://wenamethestars.inkleby.com/feature/14503",
+    "providers": [
+     "parallel"
+    ],
+    "reason": "Philipp Lenard won the 1905 Nobel Prize in Physics, but the IAU revoked the lunar crater name Lenard in 2020. Its historical approval in 2008 does not establish an IAU-approved name in force as of November 2026.",
+    "status": "wrong",
+    "half": "x_only"
+   },
+   {
+    "name": "Gabriel Lippmann",
+    "url": "https://en.wikipedia.org/wiki/Lippmann_(crater)",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-13"
+   },
+   {
+    "name": "Hendrik Lorentz",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/3472",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-16"
+   },
+   {
+    "name": "Robert Millikan",
+    "url": "https://en.wikipedia.org/wiki/Millikan_(crater)",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-36"
+   },
+   {
+    "name": "Wolfgang Pauli",
+    "url": "https://moonopps.com/compendium/feat_pauli",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-41"
+   },
+   {
+    "name": "Max Planck",
+    "url": "https://moonopps.com/compendium/feat_planck",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-28"
+   },
+   {
+    "name": "C. V. Raman",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/4935",
+    "providers": [
+     "parallel"
+    ],
+    "reason": "C. V. Raman is the already-listed Sir Chandrasekhara Venkata Raman. NobelPrize.org confirms his 1930 Physics Nobel; the supplied evidence does not establish an IAU-approved lunar feature named after him.",
+    "status": "correct",
+    "qid": "nobel_physics_moon-37"
+   },
+   {
+    "name": "Owen Willans Richardson",
+    "url": "https://en.wikipedia.org/wiki/Richardson_(lunar_crater)",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-31"
+   },
+   {
+    "name": "Wilhelm Röntgen",
+    "url": "https://kuongeo.com/moon/names/rontgen",
+    "providers": [
+     "parallel"
+    ],
+    "reason": "Wilhelm Röntgen is the already-listed Wilhelm Conrad Röntgen. The evidence confirms his 1901 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.",
+    "status": "correct",
+    "qid": "nobel_physics_moon-39"
+   },
+   {
+    "name": "Erwin Schrödinger",
+    "url": "https://moonopps.com/compendium/feat_schrodinger",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-11"
+   },
+   {
+    "name": "Johannes Stark",
+    "url": "https://wenamethestars.inkleby.com/feature/5683",
+    "providers": [
+     "parallel"
+    ],
+    "reason": "Johannes Stark won the 1919 Nobel Prize in Physics, but the IAU revoked the lunar crater name Stark in 2020. Its historical naming does not establish an IAU-approved name in force for the requested cutoff.",
+    "status": "wrong",
+    "half": "x_only"
+   },
+   {
+    "name": "J. J. Thomson",
+    "url": "https://moonopps.com/compendium/feat_thomson",
+    "providers": [
+     "exa"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-19"
+   },
+   {
+    "name": "Pieter Zeeman",
+    "url": "https://kuongeo.com/moon/names/zeeman",
+    "providers": [
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_physics_moon-35"
+   }
+  ]
+ }
+}

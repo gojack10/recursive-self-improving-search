@@ -1,0 +1,5 @@
+{"t": 1794698785.67, "event": "plan", "unmatched": 2, "reused": 1, "to_check": 1}
+{"t": 1794698785.67, "event": "end", "name": "Pablo Neruda", "status": "wrong", "reason": "Pablo Neruda won the 1971 Nobel Prize in Literature, but Mercury\u2019s Neruda crater was reassigned in 2022 to honor Jan Neruda. The current IAU record therefore does not support counting Pablo Neruda under names in force as of November 2026.", "reused": true}
+{"t": 1794698785.67, "event": "start", "name": "Samuel Beckett"}
+{"t": 1794698793.1, "event": "end", "name": "Samuel Beckett", "status": "wrong", "reason": "The evidence confirms Samuel Beckett won the 1969 Nobel Prize in Literature, but does not establish an IAU-approved surface feature on Mercury named after him in force as of November 2026.", "seconds": 7.4}
+{"t": 1794698793.1, "event": "done"}

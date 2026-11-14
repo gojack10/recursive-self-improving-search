@@ -1,0 +1,35 @@
+---
+id: "cc0ca3f3-3e07-40c0-bf09-24974de3b7b3"
+name: "Method v007"
+micro_summary: "Scope-preserving residual search: retain v003's inexpensive verification cascade, but make query-induced exclusions visible and use a bounded residual-coverage pass before stopping. Unlike a census an"
+status: "resolved"
+kind: "Idea"
+see_also: []
+---
+**Kind:** Idea
+
+Parent: v003
+
+```json
+{
+ "id": "v007",
+ "parent": "v003",
+ "round": 4,
+ "rationale": "Scope-preserving residual search: retain v003's inexpensive verification cascade, but make query-induced exclusions visible and use a bounded residual-coverage pass before stopping. Unlike a census anchor, source-bundle allocation, or cohort sampling, this targets silent narrowing of eligible subtypes and premature saturation. Parallel's observed 135 correct finds per dollar versus Exa's 56.8 supports retaining cheap probes, not assuming equivalent accuracy. The inspected incomplete attempt motivates the hypothesis but does not establish that it will recover its missing item.",
+ "instructions": "Define X and Y exactly, including entity unit, exclusions, effective dates, eligible subtypes and group-membership rules. Start sequentially with one X-only search, one Y-only search and one conjunction search, using the user's broad predicate wording rather than a familiar subtype. Maintain deduplicated X/Y frontiers and an identity/evidence ledger. Also maintain a compact scope ledger: for each discovery query record added restrictions not required by the hunt (subtype, occupation, geography, era, source or familiar-name terms). A successful restricted query does not establish coverage of its parent category. Derive a few meaningful sibling partitions from source taxonomies or the eligibility definition; do not invent an exhaustive cross-product or enumerate a whole census by default. Run short discovery/check rounds, prioritizing expected verified additions per total resolution cost. Each round's neglected-subtype or reverse-frontier probe must address a specific untested scope-ledger cell or remove a recorded accidental restriction; merely paraphrasing a prior conjunction does not qualify. Check source-backed candidates on Parallel for only unresolved predicates, supplying identity and existing evidence. Use small affordable batches, price every candidate, and do not recheck established facts. No result means unresolved, not false; reject only on contradiction or an exhaustive applicable source. Escalate promising ambiguous or conflicting cases individually to Exa. After two discovery searches add no plausible identities, prohibit synonymous conjunction searches and perform a residual-scope pass: identify the most consequential restriction accumulated so far, try a sibling subtype or unrestricted parent on the opposite frontier, then resolve resulting candidates before further discovery. Reserve at least 35% of initial funds for evidence and stop discovery whenever pending checks require the remaining funds. Before submitting with spare funds, perform up to three affordable residual probes covering distinct untested restrictions or source partitions, retaining enough funds to verify their likely candidates. Stop this pass after two probes add neither candidates nor useful evidence; do not spend merely to exhaust the budget. Finish with identity, predicate, subtype and effective-date audits; submit supported intersections only and never infer completeness from saturation.",
+ "routing": {
+  "auto_routing": false,
+  "providers": [
+   "parallel"
+  ],
+  "tier": "default",
+  "num_results": 8,
+  "verify_providers": [
+   "parallel"
+  ]
+ },
+ "routing_rules": "Parallel alone, default tier, 8 results for baseline and residual discovery, 4 for exact missing-fact checks. No routine also variants or broad auto-routing. Price candidate batches as the sum of queries and provider charges; fewer results are not presumed cheaper. Exa alone with 4 results for selected unresolved identities where ambiguity, conflicting evidence or inaccessibility warrants the higher cost. At most one initial Exa discovery probe after Parallel stagnation, continued only if it contributes useful new identities or evidence. Try a genuinely different scope partition on Parallel before buying provider diversity for a repetitive query. Authoritative-domain filters are for targeted evidence, not general frontier coverage; relax failed filters. Use publication-date filters only when publication date itself determines eligibility, and verify effective dates in content.",
+ "fetch_policy": "Reuse cached source facts. Fetch authoritative pages that can settle missing identity or predicates, and useful multi-candidate lists, rather than every result. When a list is used for scope coverage, inspect its stated subtype, date range and pagination/section links; an excerpt or one section is not an exhausted category. Follow only sections tied to a promising uncovered partition, without committing to bulk census extraction. After a blocked or uninformative page, make one targeted alternate-source attempt rather than a fetch chain.",
+ "status": "candidate"
+}
+```

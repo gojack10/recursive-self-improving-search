@@ -1,0 +1,4 @@
+{"t": 1794699823.48, "event": "plan", "unmatched": 1, "reused": 0, "to_check": 1}
+{"t": 1794699823.48, "event": "start", "name": "Muddy Waters \u2014 Waters crater"}
+{"t": 1794699831.29, "event": "end", "name": "Muddy Waters \u2014 Waters crater", "status": "verified_gap", "reason": "Muddy Waters was inducted into the Rock & Roll Hall of Fame in 1987. The IAU planetary nomenclature entry identifies Waters as a crater on Mercury, and the crater list identifies its namesake as Muddy Waters (approved in 2012). He is distinct from all already-known items.", "seconds": 7.8}
+{"t": 1794699831.29, "event": "done"}
