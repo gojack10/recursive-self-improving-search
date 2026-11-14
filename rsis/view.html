@@ -11,17 +11,28 @@
   --display:ABCAreal,system-ui,sans-serif;--mono:ABCArealMono,"JetBrains Mono",ui-monospace,Menlo,monospace;
 }
 *{box-sizing:border-box}
-body{margin:0;padding:20px 24px 40px;background:var(--bg);color:var(--fg);font:13px/1.6 var(--mono);-webkit-font-smoothing:antialiased;
-  background-image:linear-gradient(to right,rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.018) 1px,transparent 1px);background-size:64px 64px}
-h1{margin:0;color:#fff;font:500 24px/32px var(--display);letter-spacing:-.03em}
-h2{margin:0 0 12px;color:var(--muted);font:400 11px/16px var(--mono);letter-spacing:.14em;text-transform:uppercase}
-.top{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:14px}
+html,body{height:100%}
+body{margin:0;padding:10px 12px;background:var(--bg);color:var(--fg);font:12px/1.5 var(--mono);-webkit-font-smoothing:antialiased;
+  display:grid;grid-template-rows:auto auto 1fr;gap:8px;overflow:hidden}
+h1{margin:0;color:#fff;font:500 18px/24px var(--display);letter-spacing:-.03em}
+h2{margin:0 0 6px;color:var(--muted);font:400 10px/14px var(--mono);letter-spacing:.14em;text-transform:uppercase;flex:none}
+.top{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
 .stat{color:var(--muted)}
 .stat b{color:#fff;font-weight:500}
-#error{color:var(--urgent);margin-bottom:10px}
-.panel{border:1px solid var(--edge);background:var(--panel);padding:16px;margin-bottom:14px;box-shadow:inset 0 1px 0 #ffffff0a,0 8px 24px #0004}
+#error{color:var(--urgent)}
+select{background:var(--panel);color:#fff;border:1px solid var(--edge);font:inherit;padding:1px 4px;border-radius:0}
+#tabs{display:flex;gap:4px;overflow-x:auto;white-space:nowrap}
+.tab{flex:none;border:1px solid var(--edge);background:var(--panel);color:var(--muted);padding:2px 10px;cursor:pointer;font:inherit;border-radius:0}
+.tab.on{background:#fff;color:#000;border-color:#fff}
+.tab .live{color:var(--in_progress)}
+.tab.on .live{color:#000}
+#about{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}
+#about b{color:#fff;font-weight:500}
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;min-height:0}
+.panel{border:1px solid var(--edge);background:var(--panel);padding:10px 12px;min-height:0;min-width:0;display:flex;flex-direction:column;overflow:hidden}
+.fill{flex:1;min-height:0;overflow:auto}
 
-.blk rect{fill:#0c0c0c;stroke:#6f6f6f;stroke-width:1.2;transition:fill .35s,stroke .35s}
+.blk rect{fill:#0c0c0c;stroke:#6f6f6f;stroke-width:1.2;transition:fill .25s,stroke .25s}
 .blk text{fill:#d8d8d8;font-size:12px;text-anchor:middle;dominant-baseline:central}
 .blk.entry rect{stroke:#d8d8d8;stroke-width:2.4}
 .blk.active rect{fill:#fff;stroke:#fff;filter:drop-shadow(0 0 10px rgba(255,255,255,.55))}
@@ -34,76 +45,86 @@ h2{margin:0 0 12px;color:var(--muted);font:400 11px/16px var(--mono);letter-spac
 .edge text{fill:#8c8c8c;font-size:10px;text-anchor:middle}
 .edge.hot path{stroke:#fff;stroke-width:2.4}
 .edge.hot text{fill:#fff}
-#machine{max-width:1040px}
 .region{fill:#585858;font-size:10px;letter-spacing:.14em}
-table{border-collapse:collapse;margin:10px 0 0}
-td,th{padding:3px 18px 3px 0;text-align:left;font-weight:400}
-th{color:var(--dim);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-td.s{color:#fff}
-.quiet{color:var(--dim)}
+svg.chart{display:block;width:100%;height:100%;flex:1;min-height:0}
 
-.cols{display:grid;grid-template-columns:minmax(320px,2fr) 3fr;gap:14px;align-items:start}
-@media(max-width:1000px){.cols{grid-template-columns:1fr}}
+#agents{flex:1;min-height:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-auto-rows:minmax(0,1fr);gap:8px}
+.agent{border:1px solid var(--line);min-height:0;min-width:0;display:flex;flex-direction:column;background:#080808}
+.agent.idle{opacity:.55}
+.agent .head{flex:none;padding:5px 8px;border-bottom:1px solid var(--line);white-space:nowrap;overflow:hidden}
+.agent .head div{overflow:hidden;text-overflow:ellipsis}
+.agent .role{color:#fff;letter-spacing:.12em;text-transform:uppercase}
+.agent .chip{float:right;padding:0 6px;color:#000;background:var(--in_progress)}
+.agent .chip.scoring,.agent .chip.judging{background:#b8853d}.agent .chip.done{background:var(--resolved)}.agent .chip.stalled{background:var(--urgent)}
+.agent .sub{color:var(--muted)}
+.agent .log{flex:1;min-height:0;overflow:auto;padding:4px 8px;font-size:11px;line-height:1.45;word-break:break-word}
+.log .turn{color:var(--dim);border-top:1px solid var(--line);margin-top:3px}
+.log .think{color:var(--muted);font-style:italic}
+.log .say{color:var(--fg)}
+.log .call{color:#fff}
+.log .result{color:var(--resolved)}
+.log .hit{color:var(--dim);padding-left:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log .error{color:var(--urgent)}
+.log .judge{color:#b8853d;border-top:1px solid var(--line);margin-top:3px}
+.log .verdict{color:#c9a56a}
+.log .live{color:var(--in_progress)}
+.log .live::after{content:"▍";animation:pulse 1s steps(2) infinite}
+.quiet,.empty{color:var(--dim)}
+
 .tree ul{list-style:none;margin:0;padding:0}
 .tree ul ul{margin-left:13px}
 .tree ul ul>li{position:relative;padding-left:22px}
 .tree ul ul>li::before{content:'';position:absolute;left:0;top:0;height:14px;width:16px;border-left:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a}
 .tree ul ul>li::after{content:'';position:absolute;left:0;top:0;bottom:0;border-left:1px solid #3a3a3a}
 .tree ul ul>li:last-child::after{display:none}
-.tree .node{display:flex;gap:8px;align-items:center;padding:4px 0}
+.tree .node{display:flex;gap:8px;align-items:center;padding:2px 0}
 .pip{flex:none;width:28px;height:20px;fill:none;stroke:currentColor;stroke-width:1.2}
 .tree .kind{flex:none;color:var(--dim);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.tree .label{color:#c8c8c8;font:500 15px/22px var(--display)}
+.tree .label{color:#c8c8c8;font:500 14px/20px var(--display)}
 .tree .score{color:var(--muted)}
 .tree .discarded>.node .label{color:var(--dim)}
 .tree .new>.node{animation:grow .8s ease-out}
 .tree .new>.node .label{color:#fff}
 @keyframes grow{from{opacity:0;transform:translateY(-10px)}}
-.empty{color:var(--dim)}
-svg.chart{display:block;width:100%;height:auto}
 .pulse{animation:pulse 1s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.25}}
-.cap{margin-top:8px;color:var(--dim);font-size:11px}
-#feed div{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#feed .when{color:var(--dim);margin-right:10px}
 </style>
 </head>
 <body>
 
 <div class="top">
   <h1>rsis live view</h1>
-  <span class="stat">run <b id="run">…</b></span>
-  <span class="stat">state <b id="phase">…</b></span>
+  <span class="stat">run <select id="run"></select></span>
+  <span class="stat">loop <b id="phase">…</b></span>
   <span class="stat">current method <b id="current">…</b></span>
   <span class="stat">best test <b id="best">…</b></span>
   <span class="stat">searches <b id="done">…</b></span>
   <span class="stat">Telem <b id="spend">…</b></span>
-</div>
-<div id="error"></div>
-
-<div class="panel">
-  <h2>Active state</h2>
-  <svg class="chart" id="machine" viewBox="0 0 990 244"></svg>
-  <div class="cap">Top row: where the loop is. Bottom row: what each running search is doing. White is the active state; the dot travels along the arrow when the state changes.</div>
-  <div id="running"></div>
+  <span id="error"></span>
 </div>
 
-<div class="cols">
+<div>
+  <div id="tabs"></div>
+  <div id="about"></div>
+</div>
+
+<div class="grid">
+  <div class="panel">
+    <h2 title="Loop row: read from the files the run has written. Agent rows: each token replays the transitions in that agent's Pi event stream, in order.">Active state</h2>
+    <svg class="chart" id="machine" viewBox="0 0 990 462"></svg>
+  </div>
   <div class="panel tree">
     <h2>Run tree</h2>
-    <div id="tree"></div>
+    <div class="fill" id="tree"></div>
   </div>
   <div class="panel">
-    <h2>Method iterations</h2>
-    <svg class="chart" id="chart" viewBox="0 0 900 420"></svg>
-    <div class="cap">Line: each iteration's winner re-run on the fixed held-out test tasks. Dots left of a column: that iteration's candidates at their
-      score on its two unseen select tasks; the tick is the current method on the same two tasks. Green was adopted, grey was discarded, blue is still being trialled.</div>
+    <h2>Agents</h2>
+    <div id="agents"></div>
   </div>
-</div>
-
-<div class="panel">
-  <h2>Latest</h2>
-  <div id="feed"></div>
+  <div class="panel">
+    <h2 title="Line: each iteration's winner re-run on the fixed held-out test tasks. Dots left of a column: that iteration's candidates at their score on its two select tasks; the tick is the current method on the same two tasks. The two are different task sets.">Method iterations</h2>
+    <svg class="chart" id="chart" viewBox="0 0 900 420"></svg>
+  </div>
 </div>
 
 <script>
@@ -112,71 +133,85 @@ const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<
 const num = (v, d = 2) => (v == null ? "–" : Number(v).toFixed(d));
 const FRAME = "M5 2H2v12h3m10-12h3v12h-3";
 const GLYPH = { in_progress: "M6 9c2-5 6 4 8-2", resolved: "M6 8l3 3 5-7", discarded: "m-8-9 6 6m0-6-6 6", not_examined: "" };
-const pinned = new URLSearchParams(location.search).get("run") || "";
+const view = new URLSearchParams(location.search);   // run: a chosen run, else follow the latest; task: one question, else the whole run
+const choose = (key, value) => {
+  value ? view.set(key, value) : view.delete(key);
+  if (key === "run") view.delete("task");
+  history.replaceState(null, "", "?" + view);
+  poll().catch(() => {});
+};
 let seen = null;
 
-// The state machine. Blocks are states, arrows are transitions; x, y is a block's centre.
+// The state machine. Blocks are states, arrows are transitions; [x, y, label, width]. A null label is a junction dot.
 const W = 96, H = 32;
 const STATES = {
-  start: [62, 64, "start"], calibrate: [206, 64, "calibrate"], train: [350, 64, "train"], improve: [494, 64, "improve"],
-  select: [638, 64, "select"], test: [782, 64, "test"], tally: [926, 64, "tally"], trial: [206, 124, "trial"],
-  begin: [350, 168, ""], tool: [206, 218, "tool call"], deciding: [350, 218, "deciding"],
-  submit: [494, 218, "submit"], referee: [638, 218, "referee"], scored: [782, 218, "scored"],
+  start: [62, 58, "start"], calibrate: [206, 58, "calibrate"], train: [350, 58, "train"], improve: [494, 58, "improve"],
+  select: [638, 58, "select"], test: [782, 58, "test"], tally: [926, 58, "tally"], trial: [206, 112, "trial"],
+  begin: [36, 259, null], thinking: [150, 259, "thinking"], writing: [310, 259, "writing call"],
+  web_search: [500, 196, "web_search", 140], fetch_pages: [500, 238, "fetch_pages", 140],
+  check_candidates: [500, 280, "check_candidates", 140], history: [500, 322, "history", 140],
+  result: [650, 259, null], submit: [500, 404, "submit / propose", 140], scoring: [676, 404, "key match"], judging: [810, 404, "judge"], done: [936, 404, "done", 76],
 };
-// [from, to, label, shape]: shape "arc" bends over the row, a number shifts a two-way pair apart.
+// [from, to, label, shape]: a number shifts a two-way pair apart; an object gives the curve and where its label sits.
 const EDGES = [
   ["start", "calibrate", ""], ["start", "trial", ""], ["calibrate", "train", ""],
   ["train", "improve", "scored"], ["improve", "select", "methods"], ["select", "test", "winner"],
-  ["test", "tally", "scored"], ["tally", "train", "next iteration", "arc"],
-  ["begin", "deciding", ""], ["deciding", "tool", "", 5], ["tool", "deciding", "", 5],
-  ["deciding", "submit", ""], ["submit", "referee", "finds"], ["referee", "scored", "score"],
+  ["test", "tally", "scored"], ["tally", "train", "next iteration", { d: "M926 42C926 8 350 8 350 42", at: [638, 12] }],
+  ["begin", "thinking", ""], ["thinking", "writing", ""],
+  ["writing", "web_search", ""], ["writing", "fetch_pages", ""], ["writing", "check_candidates", ""], ["writing", "history", ""],
+  ["web_search", "result", ""], ["fetch_pages", "result", ""], ["check_candidates", "result", ""], ["history", "result", ""],
+  ["result", "thinking", "result, next turn", { d: "M650 253C650 130 150 130 150 243", at: [400, 152] }],
+  ["writing", "submit", ""], ["submit", "scoring", "finds"], ["scoring", "judging", ""], ["judging", "done", "score"],
+  ["scoring", "done", "all in answer key", { d: "M676 388C676 356 936 356 936 388", at: [806, 358] }],
+  ["submit", "done", "proposal (improver)", { d: "M500 420C500 456 936 456 936 420", at: [718, 458] }],
 ];
-const TOOLS = { query: "web_search", fetch: "fetch_pages", check: "check_candidates" };
-const block = (state) => (state in TOOLS ? "tool" : state);   // the three tool states share one block
+const LOOP = new Set(["start", "calibrate", "train", "improve", "select", "test", "tally", "trial"]);
 const NS = "http://www.w3.org/2000/svg";
-const tokens = new Map();        // "loop" and one per running search: { at, dot, chain }
+const tokens = new Map();        // "loop" and one per agent: { at, dot, chain, played, waiting }
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let built = false;
 
-function border(c, toward) {     // where the line from a block's centre toward a point leaves the block
-  const dx = toward[0] - c[0], dy = toward[1] - c[1];
-  const t = Math.min(dx ? W / 2 / Math.abs(dx) : Infinity, dy ? H / 2 / Math.abs(dy) : Infinity);
-  return [c[0] + dx * t, c[1] + dy * t];
+function border(id, toward) {    // where the line from a state's centre toward a point leaves its block
+  const [x, y, label, w] = STATES[id], hw = label == null ? 6 : (w || W) / 2, hh = label == null ? 6 : H / 2;
+  const dx = toward[0] - x, dy = toward[1] - y;
+  const t = Math.min(dx ? hw / Math.abs(dx) : Infinity, dy ? hh / Math.abs(dy) : Infinity);
+  return [x + dx * t, y + dy * t];
 }
 
 function build() {
   let out = `<defs>` + [["tip", "#6f6f6f"], ["tipHot", "#fff"]].map(([id, c]) => `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="${c}"/></marker>`).join("") + `</defs>` +
-    `<text class="region" x="14" y="18">LOOP</text><text class="region" id="region-search" x="14" y="172">SEARCH</text>`;
+    `<text class="region" x="14" y="18">LOOP</text><text class="region" id="region-agents" x="14" y="176">AGENTS</text>` +
+    `<text class="region" id="judge-total" x="810" y="436" text-anchor="middle"></text>`;
   for (const [from, to, label, shape] of EDGES) {
     const a = STATES[from], b = STATES[to];
     let d, lx, ly;
-    if (shape === "arc") {
-      d = `M${a[0]} ${a[1] - H / 2} C${a[0]} 14 ${b[0]} 14 ${b[0]} ${b[1] - H / 2}`;
-      lx = (a[0] + b[0]) / 2; ly = 18;
+    if (shape && shape.d) {
+      d = shape.d; [lx, ly] = shape.at;
     } else {
       const len = Math.hypot(b[0] - a[0], b[1] - a[1]), off = shape || 0;
       const nx = (-(b[1] - a[1]) / len) * off, ny = ((b[0] - a[0]) / len) * off;       // sideways shift for two-way pairs
-      const p = border([a[0] + nx, a[1] + ny], [b[0] + nx, b[1] + ny]), q = border([b[0] + nx, b[1] + ny], [a[0] + nx, a[1] + ny]);
-      d = `M${p[0]} ${p[1]}L${q[0]} ${q[1]}`;
+      const p = border(from, [b[0], b[1]]), q = border(to, [a[0], a[1]]);
+      d = `M${p[0] + nx} ${p[1] + ny}L${q[0] + nx} ${q[1] + ny}`;
       lx = (p[0] + q[0]) / 2 + nx; ly = (p[1] + q[1]) / 2 + ny - 6;
     }
     out += `<g class="edge" id="e-${from}-${to}"><path d="${d}" marker-end="url(#tip)"/>` + (label ? `<text x="${lx}" y="${ly}">${label}</text>` : "") + `</g>`;
   }
-  for (const [id, [x, y, label]] of Object.entries(STATES)) {
-    if (id === "begin") { out += `<circle cx="${x}" cy="${y}" r="5" fill="#d8d8d8"/>`; continue; }
-    out += `<g class="blk ${id === "start" ? "entry" : ""}" id="b-${id}"><rect x="${x - W / 2}" y="${y - H / 2}" width="${W}" height="${H}"/><text class="name" x="${x}" y="${y}">${label}</text>` +
-      `<rect class="badge" x="${x + W / 2 - 9}" y="${y - H / 2 - 9}" width="18" height="18"/><text class="count" x="${x + W / 2}" y="${y - H / 2}"></text></g>`;
+  for (const [id, [x, y, label, w = W]] of Object.entries(STATES)) {
+    if (label == null) { out += `<circle cx="${x}" cy="${y}" r="5" fill="#d8d8d8"/>`; continue; }
+    out += `<g class="blk ${id === "start" ? "entry" : ""}" id="b-${id}"><rect x="${x - w / 2}" y="${y - H / 2}" width="${w}" height="${H}"/><text class="name" x="${x}" y="${y}">${label}</text>` +
+      `<rect class="badge" x="${x + w / 2 - 9}" y="${y - H / 2 - 9}" width="18" height="18"/><text class="count" x="${x + w / 2}" y="${y - H / 2}"></text></g>`;
   }
   $("machine").innerHTML = out + `<g id="dots"></g>`;
   built = true;
 }
 
-// Shortest chain of arrows between two states, so a jump the poll missed still moves along the drawn path.
+// The loop state is read from files, so a change the poll missed is walked along the drawn arrows.
 function route(from, to) {
   const queue = [[from]], done = new Set([from]);
   while (queue.length) {
     const path = queue.shift(), at = path[path.length - 1];
     if (at === to) return path;
-    for (const [f, t] of EDGES) if (f === at && !done.has(t)) { done.add(t); queue.push([...path, t]); }
+    for (const [f, t] of EDGES) if (f === at && LOOP.has(t) && !done.has(t)) { done.add(t); queue.push([...path, t]); }
   }
   return null;
 }
@@ -194,9 +229,9 @@ function paint() {               // blocks are lit by the tokens resting on them
   }
 }
 
-function hop(tk, from, to) {     // slide the token's dot along one arrow
+function hop(tk, from, to, ms) { // slide the token's dot along one arrow
   return new Promise((done) => {
-    const edge = $(`e-${from}-${to}`), path = edge.querySelector("path"), len = path.getTotalLength(), t0 = performance.now(), ms = 700;
+    const edge = $(`e-${from}-${to}`), path = edge.querySelector("path"), len = path.getTotalLength(), t0 = performance.now();
     edge.classList.add("hot"); path.setAttribute("marker-end", "url(#tipHot)");
     tk.at = null; tk.dot.style.display = ""; paint();
     const step = (now) => {
@@ -210,48 +245,94 @@ function hop(tk, from, to) {     // slide the token's dot along one arrow
   });
 }
 
-function move(key, to, from) {   // queue a move; each token finishes one move before starting the next
+function token(key, at) {
   let tk = tokens.get(key);
   if (!tk) {
     const dot = document.createElementNS(NS, "circle");
     dot.setAttribute("r", 6); dot.setAttribute("class", "dot"); dot.style.display = "none";
     $("dots").appendChild(dot);
-    tokens.set(key, (tk = { at: from ?? null, target: from ?? null, dot, chain: Promise.resolve() }));
+    tokens.set(key, (tk = { at, target: at, dot, chain: Promise.resolve(), played: 0, waiting: 0 }));
   }
-  if (tk.target === to) return tk;
-  const start = tk.target; tk.target = to;
-  tk.chain = tk.chain.then(async () => {
-    const origin = start || (key === "loop" ? "start" : null);   // a loop that was idle sets off from start
-    const path = origin && to && STATES[to] ? route(origin, to) : null;
-    if (!path) { tk.at = STATES[to] ? to : null; paint(); return; }
-    for (let i = 1; i < path.length; i++) await hop(tk, path[i - 1], path[i]);
-  });
   return tk;
+}
+
+function step(tk, to) {          // queue one transition; a token that falls behind its agent moves faster
+  tk.waiting++;
+  tk.chain = tk.chain.then(async () => {
+    const from = tk.at;
+    if (from !== to) {
+      if (from && $(`e-${from}-${to}`)) await hop(tk, from, to, tk.waiting > 3 ? 160 : 420);
+      else { tk.at = STATES[to] ? to : null; paint(); await sleep(120); }
+    }
+    tk.waiting--;
+  });
 }
 
 function machine(s) {
   const first = !built;
   if (first) build();
-  const phase = (s.phase || "").split(" ")[0];
-  move("loop", STATES[phase] ? phase : null, first ? (STATES[phase] ? phase : null) : undefined);
-  const live = new Set(s.running.map((r) => r.id));
-  for (const r of s.running) move(r.id, block(r.state), tokens.has(r.id) ? undefined : first ? block(r.state) : "begin");
+  const phase = (s.phase || "").split(" ")[0], at = STATES[phase] ? phase : null;
+  const loop = token("loop", first ? at : null);
+  if (loop.target !== at) {
+    const path = loop.target && at ? route(loop.target, at) : null;
+    loop.target = at;
+    for (const to of path ? path.slice(1) : [at]) step(loop, to);
+  }
+  const live = new Set();
+  for (const a of s.agents) {
+    if (!a.recent) continue;
+    live.add(a.id);
+    let tk = tokens.get(a.id);
+    if (!tk) {                   // seen mid-run or already finished: place it where it is, then follow from there
+      const catchUp = first || !a.running;
+      tk = token(a.id, catchUp ? a.path[a.path.length - 1] || null : "begin");
+      tk.played = catchUp ? a.path.length : 0;
+    }
+    while (tk.played < a.path.length) step(tk, a.path[tk.played++]);
+  }
   for (const [key, tk] of tokens) {
     if (key === "loop" || live.has(key) || tk.leaving) continue;
-    tk.leaving = true;           // the search finished: walk it to scored, hold, then drop it
-    move(key, "scored");
-    tk.chain = tk.chain.then(() => new Promise((r) => setTimeout(r, 2500))).then(() => { tk.dot.remove(); tokens.delete(key); paint(); });
+    tk.leaving = true;
+    tk.chain = tk.chain.then(() => { tk.dot.remove(); tokens.delete(key); paint(); });
   }
   paint();
-  const tools = [...new Set(s.running.map((r) => TOOLS[r.state]).filter(Boolean))].join(", ");
-  $("b-tool").querySelector(".name").textContent = tools || "tool call";
-  $("region-search").textContent = "SEARCH" + (s.running.length ? ` · ${s.running.length} running` : "");
+  const running = s.agents.filter((a) => a.running).length;
+  $("region-agents").textContent = "AGENTS" + (running ? ` · ${running} running` : "");
+  const judging = s.agents.filter((a) => a.state === "judging" && a.judge);
+  $("judge-total").textContent = judging.length ? `${judging.reduce((n, a) => n + a.judge.checked, 0)}/${judging.reduce((n, a) => n + a.judge.to_check, 0)} checked` : "";
+}
 
-  $("running").innerHTML = s.running.length
-    ? `<table><tr><th>search</th><th>state</th><th>method</th><th>task</th><th>steps</th><th>budget left</th><th>running</th></tr>` +
-      s.running.map((r) => `<tr><td>${esc(r.id)}</td><td class="s">${esc(r.state)}</td><td>${esc(r.method)}</td><td>${esc(r.task)}</td><td>${r.steps}</td>` +
-        `<td>${r.left == null ? "–" : "$" + num(r.left, 3)}</td><td>${Math.round(Date.now() / 1000 - r.started)}s</td></tr>`).join("") + `</table>`
-    : `<div class="quiet">No search is writing live state right now. Searches run through the chat API only appear once they are scored.</div>`;
+const MARK = { turn: "", think: "~ ", say: "> ", call: "→ ", result: "← ", hit: "· ", error: "! ", judge: "⚖ ", verdict: "⚖ " };
+
+function agents(s) {
+  const box = $("agents"), ids = new Set(s.agents.map((a) => a.id));
+  for (const el of [...box.children]) if (!ids.has(el.dataset.id)) el.remove();
+  if (!s.agents.length) { box.innerHTML = `<div class="quiet" data-id="">No Pi agent has written a log in this run yet.</div>`; return; }
+  for (const a of s.agents) {
+    let el = box.querySelector(`[data-id="${a.id}"]`);
+    if (!el) {
+      el = document.createElement("div"); el.className = "agent"; el.dataset.id = a.id;
+      el.innerHTML = `<div class="head"></div><div class="log"></div>`;
+      box.appendChild(el);
+    }
+    el.classList.toggle("idle", !a.running);
+    const chip = a.state === "judging" ? `judging ${a.judge.checked}/${a.judge.to_check} · ${Math.round(a.scoring_s)}s` : a.state === "scoring" ? `key match ${Math.round(a.scoring_s)}s` : a.state === "done" && a.score ? `scored ${num(a.score.score)}` : a.state;
+    const facts = [`${a.turns} turns`, `${Math.round(a.agent_s)}s agent`];
+    if (a.scoring_s != null && a.state === "done") facts.push(`${Math.round(a.scoring_s)}s scoring`);
+    if (a.judge) facts.push(`judge ${a.judge.checked}/${a.judge.to_check} checked, ${a.judge.reused} reused`);
+    if (a.left != null) facts.push(`$${num(a.left, 3)} left of $${num(a.budget, 2)}`);
+    if (a.score) facts.push(`${a.score.correct} correct, ${a.score.wrong} wrong of ${a.score.total}`);
+    el.querySelector(".head").innerHTML =
+      `<div><span class="chip ${esc(a.state)}">${esc(chip)}</span><span class="role">${esc(a.role)}</span> ${esc(a.method || "")} <span class="sub">${esc(a.model || "model not reported yet")}</span></div>` +
+      `<div class="sub" title="${esc(a.task)}">${esc(a.task)}</div><div class="sub">${esc(facts.join(" · "))}</div>`;
+    if (el.dataset.v !== a.v) {
+      const log = el.querySelector(".log"), stick = log.scrollHeight - log.scrollTop - log.clientHeight < 40;
+      log.innerHTML = a.lines.map(([k, text]) => `<div class="${k}">${MARK[k] ?? ""}${esc(text)}</div>`).join("") +
+        (a.live ? `<div class="live">${esc(a.live.slice(-400))}</div>` : "");
+      if (stick) log.scrollTop = log.scrollHeight;
+      el.dataset.v = a.v;
+    }
+  }
 }
 
 function tree(s) {
@@ -317,25 +398,37 @@ function chart(s) {
 }
 
 function render(s) {
-  if (!s.name) { $("run").textContent = "no runs yet"; return; }
+  if (!s.name) { $("run").innerHTML = "<option>no runs yet</option>"; return; }
   const st = s.state || {};
-  $("run").textContent = s.name;
+  const runs = `<option value="">latest (${esc(s.runs[0])})</option>` + s.runs.map((r) => `<option>${esc(r)}</option>`).join("");
+  if ($("run").dataset.runs !== runs) { $("run").innerHTML = $("run").dataset.runs = runs; }
+  $("run").value = view.get("run") || "";
+  const tab = (name, label) => `<button class="tab ${(s.task || "") === name ? "on" : ""}" data-task="${esc(name)}">${label}</button>`;
+  const tabs = tab("", "whole run") + s.tasks.map((t) => {
+    const best = Math.max(-1, ...t.searches.map((x) => x.score));
+    return tab(t.name, esc(t.name) + (t.running ? ` <span class="live">● ${t.running}</span>` : "") + (best >= 0 ? ` ${num(best)}` : ""));
+  }).join("");
+  if ($("tabs").dataset.tabs !== tabs) { $("tabs").innerHTML = $("tabs").dataset.tabs = tabs; }   // unchanged tabs stay put, so a click lands
+  const t = s.tasks.find((x) => x.name === s.task);
+  $("about").innerHTML = t ? `<span title="${esc(t.question)}"><b>${esc(t.question)}</b></span>` : "";
+  $("about").innerHTML += t ? " · " + (t.searches.map((x) => `${esc(x.method)} ${esc(x.role)}${x.round ? " r" + x.round : ""} <b>${num(x.score)}</b> (${x.correct} correct, ${x.wrong} wrong of ${x.total})`).join(" · ") || "no scored search yet") : "";
   $("phase").textContent = s.phase + (s.iteration ? `, iteration ${s.iteration}` : "");
   $("current").textContent = st.current || "–";
   $("best").textContent = num(st.best_test);
   $("done").textContent = s.searches_done + (s.failed ? `, ${s.failed} failed` : "");
   $("spend").textContent = "$" + num(s.spend, 3);
   $("error").textContent = s.last_error ? `last failure: ${s.last_error}` : "";
-  machine(s); tree(s); chart(s);
-  $("feed").innerHTML = s.feed.map((f) => `<div><span class="when">${f.t ? new Date(f.t * 1000).toLocaleTimeString() : ""}</span>${esc(f.text)}</div>`).join("");
+  machine(s); agents(s); tree(s); chart(s);
 }
 
 async function poll() {
-  const r = await fetch("/api/run?name=" + encodeURIComponent(pinned));
+  const r = await fetch(`/api/run?name=${encodeURIComponent(view.get("run") || "")}&task=${encodeURIComponent(view.get("task") || "")}`);
   render(await r.json());
 }
+$("run").onchange = (e) => choose("run", e.target.value);
+$("tabs").onclick = (e) => { const b = e.target.closest(".tab"); if (b) choose("task", b.dataset.task); };
 poll();
-setInterval(() => poll().catch(() => {}), 1000);
+setInterval(() => poll().catch(() => {}), 500);
 </script>
 </body>
 </html>

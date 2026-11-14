@@ -14,7 +14,7 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, model=None, work_dir=None):
     system, prompt = prompts(m, hunt, budget)
     work = Path(work_dir) if work_dir else Path(os.environ.get('RSIS_RUN_DIR', ROOT / 'runs' / 'pi-trial')) / 'logs'
     state, meta = pi.agent(model or pi.model('searcher'), system, prompt,
-        {'id': aid, 'method': m, 'question': hunt['question'], 'budget': budget, 'spent': 0.0,
+        {'id': aid, 'method': m, 'hunt': hunt['name'], 'question': hunt['question'], 'budget': budget, 'spent': 0.0,
          'session_id': None, 'calls': [], 'url_providers': {}, 'trace': [], 'finds': [], 'notes': ''}, 'searcher', work)
     return {'attempt_id': aid, 'method': m['id'], 'hunt': hunt['name'], 'kind': hunt['kind'],
             'x': hunt['x'], 'y': hunt['y'], 'pool': hunt['pool'], 'finds': state['finds'], 'notes': state['notes'],
