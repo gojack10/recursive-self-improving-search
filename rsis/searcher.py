@@ -106,7 +106,7 @@ def prompts(m, hunt, budget):
               f"You have ${budget:.2f} of Telem search budget. Every tool result reports what is left. "
               "When the budget runs out or you are done, call submit. Only submit items you have evidence for. "
               "Each find must cite a URL retrieved during this search whose text names the item; otherwise it scores as wrong.")
-    return system, f"{hunt['question']}\n\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}"
+    return system, hunt['question'] + (f"\n\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}" if hunt['y'] else "")
 
 
 def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):

@@ -1,0 +1,196 @@
+[
+ {
+  "name": "nobel_moon",
+  "question": "How many Nobel Prize laureates have an IAU-approved surface feature on the Moon named after them? Count each person once, even if several features carry their name. Satellite craters (e.g. \"Bohr A\") do not count separately. Use IAU names in force as of November 2026. List each laureate.",
+  "answers": [
+   "Abdus Salam",
+   "Adolf von Baeyer",
+   "Albert A. Michelson",
+   "Albert Einstein",
+   "Alexis Carrel",
+   "Allvar Gullstrand",
+   "Alphonse Laveran",
+   "Arne Tiselius",
+   "Arthur H. Compton",
+   "Arthur Harden",
+   "Artturi Virtanen",
+   "August Krogh",
+   "Bernardo Houssay",
+   "C.T.R. Wilson",
+   "Camillo Golgi",
+   "Carl Bosch",
+   "Charles Edouard Guillaume",
+   "Charles Glover Barkla",
+   "Charles Sherrington",
+   "Christiaan Eijkman",
+   "Clinton Davisson",
+   "Corneille Heymans",
+   "Edward V. Appleton",
+   "Emil Fischer",
+   "Emil von Behring",
+   "Enrico Fermi",
+   "Ernest Lawrence",
+   "Ernest Rutherford",
+   "Erwin Schrödinger",
+   "Francis W. Aston",
+   "Frederick G. Banting",
+   "Frederick Soddy",
+   "Fridtjof Nansen",
+   "Frits Zernike",
+   "Fritz Haber",
+   "Frédéric Joliot",
+   "Gabriel Lippmann",
+   "Georg von Békésy",
+   "George de Hevesy",
+   "Gerty Cori",
+   "Guglielmo Marconi",
+   "Hans Fischer",
+   "Harold C. Urey",
+   "Heike Kamerlingh Onnes",
+   "Hendrik A. Lorentz",
+   "Henri Becquerel",
+   "Henri Moissan",
+   "Igor Tamm",
+   "Ilya Mechnikov",
+   "Irving Langmuir",
+   "Ivan Pavlov",
+   "J.J. Thomson",
+   "Jacobus van 't Hoff",
+   "James Chadwick",
+   "James Franck",
+   "Jaroslav Heyrovsky",
+   "Johannes Diderik van der Waals",
+   "Johannes Fibiger",
+   "John Cockcroft",
+   "Joseph Erlanger",
+   "Karl Landsteiner",
+   "Kurt Alder",
+   "Lev Landau",
+   "Lord Rayleigh",
+   "Marie Curie",
+   "Max Born",
+   "Max Planck",
+   "Max Theiler",
+   "Max von Laue",
+   "Niels Bohr",
+   "Niels Ryberg Finsen",
+   "Norman Haworth",
+   "Otto Hahn",
+   "Otto Wallach",
+   "Owen Willans Richardson",
+   "Patrick Blackett",
+   "Paul Ehrlich",
+   "Paul Karrer",
+   "Paul Sabatier",
+   "Percy W. Bridgman",
+   "Peter Debye",
+   "Pierre Curie",
+   "Pieter Zeeman",
+   "Richard Kuhn",
+   "Richard Zsigmondy",
+   "Rita Levi-Montalcini",
+   "Robert A. Millikan",
+   "Robert Koch",
+   "Santiago Ramón y Cajal",
+   "Alexander Fleming",
+   "C.V. Raman",
+   "Cyril Hinshelwood",
+   "Henry Dale",
+   "Howard Florey",
+   "William Ramsay",
+   "Svante Arrhenius",
+   "The Svedberg",
+   "Theodor Kocher",
+   "Theodore W. Richards",
+   "Victor F. Hess",
+   "Victor Grignard",
+   "Walther Nernst",
+   "Wilhelm Röntgen",
+   "Wilhelm Ostwald",
+   "Willem Einthoven",
+   "William Henry Bragg",
+   "Wolfgang Pauli"
+  ]
+ },
+ {
+  "name": "oscar_mercury",
+  "question": "How many Academy Award winners have an IAU-approved surface feature on Mercury named after them? Count Oscars actually received by the person, not nominations; Best Foreign Language Film awards go to the country and do not count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Aaron Copland",
+   {
+    "name": "Dr. Seuss",
+    "aliases": [
+     "Theodor Geisel",
+     "Theodor Seuss Geisel",
+     "Seuss"
+    ]
+   },
+   "John Lennon",
+   "Walt Disney"
+  ]
+ },
+ {
+  "name": "grammy_venus",
+  "question": "How many Grammy Award winners have an IAU-approved surface feature on Venus named after them? Count competitive Grammys, Lifetime Achievement Awards and Trustees Awards, including awards given to a group the person belonged to; Grammy Hall of Fame entries for recordings do not count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Billie Holiday",
+   "Judy Garland",
+   "Maria Callas",
+   {
+    "name": "Maybelle Carter",
+    "aliases": [
+     "Mother Maybelle Carter"
+    ]
+   },
+   "Patsy Cline"
+  ]
+ },
+ {
+  "name": "olympic_venus",
+  "question": "How many Olympic medalists have an IAU-approved surface feature on Venus named after them? Any Olympic Games and any medal count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Sonja Henie"
+  ]
+ },
+ {
+  "name": "rock_hall_venus",
+  "question": "How many Rock and Roll Hall of Fame inductees have an IAU-approved surface feature on Venus named after them? Inductions as part of a group count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Billie Holiday"
+  ]
+ },
+ {
+  "name": "rock_hall_mercury",
+  "question": "How many Rock and Roll Hall of Fame inductees have an IAU-approved surface feature on Mercury named after them? Inductions as part of a group count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Chuck Berry",
+   {
+    "name": "Freddie Mercury",
+    "aliases": [
+     "Farrokh Bulsara",
+     "Bulsara"
+    ]
+   },
+   "John Lennon",
+   "Ma Rainey"
+  ]
+ },
+ {
+  "name": "kennedy_venus",
+  "question": "How many Kennedy Center Honors recipients have an IAU-approved surface feature on Venus named after them? Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Alexandra Danilova",
+   "Martha Graham"
+  ]
+ },
+ {
+  "name": "kennedy_mercury",
+  "question": "How many Kennedy Center Honors recipients have an IAU-approved surface feature on Mercury named after them? Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Aaron Copland",
+   "Alvin Ailey",
+   "Chuck Berry",
+   "George Balanchine"
+  ]
+ }
+]

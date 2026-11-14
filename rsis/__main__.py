@@ -36,6 +36,8 @@ tr = sub.add_parser("trial")
 tr.add_argument("methods", nargs="+", help="method JSON files, e.g. methods/v000.json methods/anchor_verify.json")
 tr.add_argument("--hunts", nargs="*")
 tr.add_argument("--repeats", type=int, default=1)
+tr.add_argument("--pool", default="test", help="run every task of this pool when --hunts is not given; open is the file questions")
+tr.add_argument("--name", default="trials", help="run directory under runs/")
 cp = sub.add_parser("compare")
 cp.add_argument("--method", help="method JSON; default is the current method of --run, else methods/anchor_verify.json")
 cp.add_argument("--run", default="main")
@@ -59,7 +61,7 @@ if a.cmd == "build-hunts":
 elif a.cmd == "smoke":
     smoke()
 elif a.cmd == "trial":
-    loop.trial(a.methods, a.hunts, a.repeats)
+    loop.trial(a.methods, a.hunts, a.repeats, name=a.name, pool=a.pool)
 elif a.cmd == "compare":
     loop.compare(a.method, a.run, a.hunts, a.n, repeats=a.repeats)
 elif a.cmd == "calibrate":

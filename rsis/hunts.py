@@ -143,7 +143,29 @@ FRAMES = {
 }
 
 
+QUESTIONS = ROOT / "data" / "questions.json"
+
+
+def questions():
+    """Questions supplied as a file: a JSON list of {"question", and optionally "name", "pool", "answers"}.
+    An answer is a name or {"name", "aliases"}. A question with no answers has no key, so the judge rules on
+    every find. Pool is train, select or test to put the question in the loop; without one it only runs by name."""
+    if not QUESTIONS.exists():
+        return {}
+    out = {}
+    for i, q in enumerate(json.loads(QUESTIONS.read_text(encoding="utf-8")), 1):
+        name = q.get("name") or f"q{i:02d}"
+        answers = [{"name": a} if isinstance(a, str) else a for a in q.get("answers") or []]
+        out[name] = {"name": name, "question": q["question"], "criterion": q["question"], "x": q["question"], "y": "",
+                     "kind": "list", "pool": q.get("pool", "open"),
+                     "truth": [{"qid": f"{name}-{j}", "label": a["name"], "aliases": a.get("aliases", [])}
+                               for j, a in enumerate(answers)]}
+    return out
+
+
 def load(name):
+    if name not in HUNTS:
+        return questions()[name]
     h = {**json.loads((DATA / f"{name}.json").read_text(encoding="utf-8")), **HUNTS[name], "name": name}
     # Hand-added alternative names (data/aliases.json) for answers whose Wikidata label nobody would search for.
     overrides = json.loads((ROOT / "data" / "aliases.json").read_text(encoding="utf-8"))
@@ -171,4 +193,4 @@ def load(name):
 
 
 def pool(p):
-    return [n for n, h in HUNTS.items() if h["pool"] == p]
+    return [n for n, h in {**HUNTS, **questions()}.items() if h["pool"] == p]
