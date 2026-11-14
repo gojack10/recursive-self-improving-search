@@ -73,7 +73,7 @@ Needs Python 3.10+ and nothing else (standard library only).
    ```
    python -m rsis run --name main --rounds 6 --max-spend 20
    ```
-6. Run the recursion test on the adopted generations, for example:
+6. Compare against the frontier model: `python -m rsis compare --run main`. Then run the recursion test on the adopted generations, for example:
    ```
    python -m rsis recursion-test --name main --gens v000 v003 v006
    ```
@@ -86,6 +86,28 @@ To test a search tactic by hand, write a method JSON and run it head to head aga
 python -m rsis trial methods/v000.json methods/anchor_verify.json --hunts turing_uk abel --repeats 2
 ```
 It prints score, correct, wrong, x_only, y_only and Telem spend for each method. Attempts go to `runs/trials/`.
+
+## Beating a frontier model
+
+`python -m rsis compare` puts our system against a frontier model on the held-out test hunts, all scored by the same referee:
+
+| contestant | what it is |
+|---|---|
+| `frontier-closed-book` | `FRONTIER_MODEL` (e.g. Opus or GPT Astra) answering from memory, no search |
+| `frontier+harness` | the frontier model driving the plain `v000` harness through Telem |
+| `ours-method` | the cheap searcher with the best evolved method (or `methods/anchor_verify.json` if no run exists) |
+| `ours-ensemble` | three cheap searchers with that method, each through a different lens (anchor on X, anchor on Y, recall then verify). Finds that two searchers agree on are kept; the rest go through batched Telem verification and a judge before submission |
+
+Why the ensemble should win on accuracy:
+- **Recall:** different anchors and memory recall find different items, and the union covers more of the answer set than one pass.
+- **Precision:** every find needs agreement or a verified search result, so half-matches and recalled-but-wrong items get dropped. A closed-book frontier answer has no such check.
+- **Cost:** cheap verify routes keep it affordable, at about $0.30 of Telem per hunt.
+
+This is a design argument, not a measured result; the table comes from the first real run. The ensemble spends about four times the Telem budget of a single attempt, and the comparison table shows spend next to score so that isn't hidden.
+
+```
+python -m rsis compare --run main -n 3
+```
 
 ## Budget
 

@@ -40,6 +40,9 @@ def write(name):
     py = H.provider_yield(d)
     attempts = H.rows(d, "attempts.jsonl")
     rt = H.rows(d, "recursion_test.jsonl")
+    cmp = H.rows(run_dir("compare"), "compare.jsonl")
+    cmp_rows = "".join(f"<tr><td>{c['contestant']}</td><td>{c['score']:.3f}</td><td>{c['correct']}</td><td>{c['wrong']}</td>"
+                       f"<td>{c['x_only']}</td><td>{c['y_only']}</td><td>${c['spend']:.3f}</td></tr>" for c in (cmp[-1]["summary"] if cmp else []))
     spend = sum(r["spent"] for r in attempts)
     yield_rows = "".join(f"<tr><td>{p}</td><td>{v['searches']}</td><td>${v['spend']:.3f}</td><td>{v['results']}</td>"
                          f"<td>{v['correct_finds']}</td><td>{v['wrong_finds']}</td><td>{v['correct_per_dollar']}</td></tr>"
@@ -68,6 +71,8 @@ tr.discarded td{{color:var(--mut)}}
 <div><b>{s['noise']}</b>noise band</div><div><b>${spend:.2f}</b>Telem spend (searchers)</div><div><b>{len(attempts)}</b>attempts</div></div>
 <h2>Held-out test score of each round's winner</h2>{line_chart(s['test_points'], s.get('baseline_test'))}
 <h2>Recursion test: same improvement job, improver searching with generation N's method</h2>{bars(rt[-1]['results'] if rt else [])}
+<h2>Against a frontier model (same hunts, same referee)</h2>
+<table><tr><th>contestant</th><th>score</th><th>correct</th><th>wrong</th><th>x only</th><th>y only</th><th>Telem spend</th></tr>{cmp_rows or "<tr><td>Run python -m rsis compare</td></tr>"}</table>
 <h2>Telem provider yield</h2><table><tr><th>provider</th><th>searches</th><th>spend</th><th>results</th><th>correct finds</th><th>wrong finds</th><th>correct per $</th></tr>{yield_rows}</table>
 <h2>Method lineage</h2><table><tr><th>id</th><th>parent</th><th>status</th><th>select</th><th>routing</th><th>rationale</th></tr>{lineage}</table>
 </body></html>"""

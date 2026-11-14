@@ -23,7 +23,7 @@ def smoke():
     print(f"telem smoke spend ${t.spent:.4f}, session {t.session_id}")
     r = tavily.search("Ada Yonath Nobel Prize in Chemistry", max_results=2)
     print("tavily:", r.get("answer", "")[:100], "credits", tavily.credits_used)
-    for role in ("searcher", "improver", "judge"):
+    for role in ("searcher", "improver", "judge", "frontier"):
         c = Chat(role)
         print(role, c.cfg["model"], "->", (c.complete([{"role": "user", "content": "Reply with the word ok."}]).get("content") or "")[:40])
 
@@ -36,6 +36,11 @@ tr = sub.add_parser("trial")
 tr.add_argument("methods", nargs="+", help="method JSON files, e.g. methods/v000.json methods/anchor_verify.json")
 tr.add_argument("--hunts", nargs="*")
 tr.add_argument("--repeats", type=int, default=1)
+cp = sub.add_parser("compare")
+cp.add_argument("--method", help="method JSON; default is the current method of --run, else methods/anchor_verify.json")
+cp.add_argument("--run", default="main")
+cp.add_argument("--hunts", nargs="*")
+cp.add_argument("-n", type=int, default=3, help="searchers in the ensemble")
 for c in ("calibrate", "round", "run", "recursion-test", "report"):
     s = sub.add_parser(c)
     s.add_argument("--name", default="main")
@@ -54,6 +59,8 @@ elif a.cmd == "smoke":
     smoke()
 elif a.cmd == "trial":
     loop.trial(a.methods, a.hunts, a.repeats)
+elif a.cmd == "compare":
+    loop.compare(a.method, a.run, a.hunts, a.n)
 elif a.cmd == "calibrate":
     loop.calibrate(a.name)
 elif a.cmd == "round":
