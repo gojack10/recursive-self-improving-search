@@ -75,3 +75,13 @@ Jack asked that the next agent assess the open questions and unfinished items. B
 ## Source
 
 Claude Code session `a5499697-1483-4ea4-b150-ec7263fe5161`, November 14, 2026, retained at [artifacts/chats/claude-searchhack-pi-harness.jsonl](artifacts/chats/claude-searchhack-pi-harness.jsonl). Repository state was read with Git and the GitHub API during the session.
+
+## November 14 development — branch delivered
+
+Jack confirmed Terra high for searchers and Astra medium for the improver, then specified Terra-fast and authorized the local Codex Personal hotpatch. The assistant refreshed the installed Pi catalog, enabled Terra in the account registry, and set the Codex compatibility flag for max output tokens. The Pi startup model listing showed ordinary Terra and Terra-fast. SearchHack's local settings select Terra-fast high, Astra medium and the existing Sol low gap judge. No live request established that Terra-fast was accepted or served at priority.
+
+Jack then asked to push the SearchHack branch and document stock Pi login so teammates could use their own Codex accounts. The assistant pushed [pi-searcher at 5f5be36](https://github.com/gojack10/recursive-self-improving-search/commit/5f5be36), including the teammate fixes through 53730e9, Pi searcher and improver dispatch, evidence text and candidate verification, Telem-backed Tavily checks, and the live viewer. The README covers stock Pi with openai-codex and the separate local Codex Personal route. The CLI started. The earlier list of missing integration work above is historical.
+
+**Next:** [Run the First Complete SearchHack Iteration](../fee4d2ea-c29d-45fc-8498-2002830f8f8f/node.md). Jack said he would run models on his machine. There is still no completed iteration or measured improvement.
+
+Evidence: November 14 Codex session 01a1dbcf-50f5-7863-8922-e412ff6886fa, including the model listing, CLI startup and successful Git push.
