@@ -135,3 +135,26 @@ python -m rsis compare --run main -n 3
 ## Budget
 
 The Telem spend cap is $0.08 per attempt (`ATTEMPT_BUDGET`), so a cheaper route buys more searches. A round at k=2 runs 12 attempts plus one improver session: at most about $1.06 of Telem and up to 144 Tavily credits. Calibration (12 attempts), six rounds and a three-generation recursion test (12 attempts) come to at most about $8.30 of Telem, well inside the $50 credit. Telem costs are estimated from the published per-provider prices; the console has the exact figures.
+
+## Proposed pilot questions
+
+These nine questions are a proposed pilot for the demo. The executable benchmark uses the train, select, and test pools in [rsis/hunts.py](rsis/hunts.py).
+
+For each question, return the total, list each qualifying record once, and cite evidence for every record. The difficulty labels describe the expected search work. Both methods use the same model, Telem configuration, and query and page-fetch limits.
+
+- **Development (4 questions).** The learning loop can review these runs and their scores to diagnose misses and revise the search method.
+- **Held-out evaluation (5 questions).** Keep these questions and their results out of the learning loop. Once the learned method is frozen, run both the starting method and the learned method on the same five questions. Keep the verified answer keys in the evaluator and score verified matches, misses, and false positives.
+
+| Difficulty | Split | Question |
+| --- | --- | --- |
+| Easy | Development | How many crewed missions flew in NASA's Gemini program? List the mission designations. |
+| Easy | Held out | How many men's FIFA World Cup editions from 1930 through 2022 were won by a host nation? In a co-hosted edition, either host qualifies. |
+| Easy | Development | How many individual people had received the Nobel Prize in Chemistry twice by the end of 2024? |
+| Medium | Held out | How many men's FIFA World Cup finals through 2022 were decided by a penalty shootout? |
+| Medium | Development | How many distinct films won both the Cannes Palme d'Or and the Academy Award for Best Picture through the 2025 Oscar ceremony? Count only Cannes awards named Palme d'Or. |
+| Medium | Development | How many separate Apollo missions landed astronauts on the Moon? List the mission numbers. |
+| Hard | Held out | How many astronauts flew on a crewed Gemini mission and later traveled to the Moon on an Apollo mission? Include lunar flybys, orbits, and landings. Count each person once. |
+| Hard | Held out | How many drivers had won both the Formula 1 World Drivers' Championship and the Indianapolis 500 by December 31, 2024? Count each driver once. |
+| Hard | Held out | How many men's FIFA World Cup finals from 1930 through 2022 went to extra time? Include finals that subsequently went to penalties. Count only editions with a final match. |
+
+If a held-out question is used to tune the method during a pilot or demo rehearsal, move it into development and replace it with a fresh evaluation question.
