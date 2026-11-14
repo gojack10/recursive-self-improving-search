@@ -21,19 +21,26 @@ h2{margin:0 0 12px;color:var(--muted);font:400 11px/16px var(--mono);letter-spac
 #error{color:var(--urgent);margin-bottom:10px}
 .panel{border:1px solid var(--edge);background:var(--panel);padding:16px;margin-bottom:14px;box-shadow:inset 0 1px 0 #ffffff0a,0 8px 24px #0004}
 
-.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-.row .name{width:70px;color:var(--dim);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.st{position:relative;min-width:84px;padding:7px 12px;border:1px solid var(--edge);color:var(--muted);text-align:center;transition:all .2s}
-.st.active{color:#000;background:#fff;border-color:#fff;box-shadow:0 0 24px rgba(255,255,255,.35)}
-.st .n{position:absolute;top:-9px;right:-9px;min-width:18px;height:18px;padding:0 4px;background:var(--in_progress);color:#000;font-size:11px;line-height:18px}
-.group{display:flex;align-items:center;gap:6px;padding:6px;border:1px dashed var(--line)}
-.arrow{color:var(--dim)}
-.gap{width:20px}
-table{border-collapse:collapse;margin:6px 0 0 78px}
+.blk rect{fill:#0c0c0c;stroke:#6f6f6f;stroke-width:1.2;transition:fill .35s,stroke .35s}
+.blk text{fill:#d8d8d8;font-size:12px;text-anchor:middle;dominant-baseline:central}
+.blk.entry rect{stroke:#d8d8d8;stroke-width:2.4}
+.blk.active rect{fill:#fff;stroke:#fff;filter:drop-shadow(0 0 10px rgba(255,255,255,.55))}
+.blk.active text{fill:#000}
+.blk .badge{fill:var(--in_progress);stroke:none;filter:none;display:none}
+.blk.many .badge{display:block}
+.dot{fill:#fff;filter:drop-shadow(0 0 6px #fff)}
+.blk .count{fill:#000;font-size:11px}
+.edge path{fill:none;stroke:#6f6f6f;stroke-width:1.2;transition:stroke .2s}
+.edge text{fill:#8c8c8c;font-size:10px;text-anchor:middle}
+.edge.hot path{stroke:#fff;stroke-width:2.4}
+.edge.hot text{fill:#fff}
+#machine{max-width:1040px}
+.region{fill:#585858;font-size:10px;letter-spacing:.14em}
+table{border-collapse:collapse;margin:10px 0 0}
 td,th{padding:3px 18px 3px 0;text-align:left;font-weight:400}
 th{color:var(--dim);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 td.s{color:#fff}
-.quiet{color:var(--dim);margin-left:78px}
+.quiet{color:var(--dim)}
 
 .cols{display:grid;grid-template-columns:minmax(320px,2fr) 3fr;gap:14px;align-items:start}
 @media(max-width:1000px){.cols{grid-template-columns:1fr}}
@@ -76,30 +83,8 @@ svg.chart{display:block;width:100%;height:auto}
 
 <div class="panel">
   <h2>Active state</h2>
-  <div class="row" id="loop">
-    <span class="name">loop</span>
-    <span class="st" data-s="calibrate">Calibrate</span><span class="arrow">→</span>
-    <span class="group">
-      <span class="st" data-s="train">Train</span><span class="arrow">→</span>
-      <span class="st" data-s="improve">Improve</span><span class="arrow">→</span>
-      <span class="st" data-s="select">Select</span><span class="arrow">→</span>
-      <span class="st" data-s="test">Test</span><span class="arrow">→</span>
-      <span class="st" data-s="tally">Tally</span><span class="arrow">↺</span>
-    </span>
-    <span class="gap"></span>
-    <span class="st" data-s="trial">Trial</span>
-  </div>
-  <div class="row" id="search">
-    <span class="name">search</span>
-    <span class="st" data-s="deciding">Deciding</span><span class="arrow">⇄</span>
-    <span class="group">
-      <span class="st" data-s="query">Query</span>
-      <span class="st" data-s="fetch">Fetch</span>
-      <span class="st" data-s="check">Check</span>
-    </span><span class="arrow">→</span>
-    <span class="st" data-s="submit">Submit</span><span class="arrow">→</span>
-    <span class="st" data-s="referee">Referee</span>
-  </div>
+  <svg class="chart" id="machine" viewBox="0 0 990 244"></svg>
+  <div class="cap">Top row: where the loop is. Bottom row: what each running search is doing. White is the active state; the dot travels along the arrow when the state changes.</div>
   <div id="running"></div>
 </div>
 
@@ -130,17 +115,138 @@ const GLYPH = { in_progress: "M6 9c2-5 6 4 8-2", resolved: "M6 8l3 3 5-7", disca
 const pinned = new URLSearchParams(location.search).get("run") || "";
 let seen = null;
 
-function machine(s) {
-  const phase = (s.phase || "").split(" ")[0];
-  document.querySelectorAll("#loop .st").forEach((el) => el.classList.toggle("active", el.dataset.s === phase));
+// The state machine. Blocks are states, arrows are transitions; x, y is a block's centre.
+const W = 96, H = 32;
+const STATES = {
+  start: [62, 64, "start"], calibrate: [206, 64, "calibrate"], train: [350, 64, "train"], improve: [494, 64, "improve"],
+  select: [638, 64, "select"], test: [782, 64, "test"], tally: [926, 64, "tally"], trial: [206, 124, "trial"],
+  begin: [350, 168, ""], tool: [206, 218, "tool call"], deciding: [350, 218, "deciding"],
+  submit: [494, 218, "submit"], referee: [638, 218, "referee"], scored: [782, 218, "scored"],
+};
+// [from, to, label, shape]: shape "arc" bends over the row, a number shifts a two-way pair apart.
+const EDGES = [
+  ["start", "calibrate", ""], ["start", "trial", ""], ["calibrate", "train", ""],
+  ["train", "improve", "scored"], ["improve", "select", "methods"], ["select", "test", "winner"],
+  ["test", "tally", "scored"], ["tally", "train", "next iteration", "arc"],
+  ["begin", "deciding", ""], ["deciding", "tool", "", 5], ["tool", "deciding", "", 5],
+  ["deciding", "submit", ""], ["submit", "referee", "finds"], ["referee", "scored", "score"],
+];
+const TOOLS = { query: "web_search", fetch: "fetch_pages", check: "check_candidates" };
+const block = (state) => (state in TOOLS ? "tool" : state);   // the three tool states share one block
+const NS = "http://www.w3.org/2000/svg";
+const tokens = new Map();        // "loop" and one per running search: { at, dot, chain }
+let built = false;
+
+function border(c, toward) {     // where the line from a block's centre toward a point leaves the block
+  const dx = toward[0] - c[0], dy = toward[1] - c[1];
+  const t = Math.min(dx ? W / 2 / Math.abs(dx) : Infinity, dy ? H / 2 / Math.abs(dy) : Infinity);
+  return [c[0] + dx * t, c[1] + dy * t];
+}
+
+function build() {
+  let out = `<defs>` + [["tip", "#6f6f6f"], ["tipHot", "#fff"]].map(([id, c]) => `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="${c}"/></marker>`).join("") + `</defs>` +
+    `<text class="region" x="14" y="18">LOOP</text><text class="region" id="region-search" x="14" y="172">SEARCH</text>`;
+  for (const [from, to, label, shape] of EDGES) {
+    const a = STATES[from], b = STATES[to];
+    let d, lx, ly;
+    if (shape === "arc") {
+      d = `M${a[0]} ${a[1] - H / 2} C${a[0]} 14 ${b[0]} 14 ${b[0]} ${b[1] - H / 2}`;
+      lx = (a[0] + b[0]) / 2; ly = 18;
+    } else {
+      const len = Math.hypot(b[0] - a[0], b[1] - a[1]), off = shape || 0;
+      const nx = (-(b[1] - a[1]) / len) * off, ny = ((b[0] - a[0]) / len) * off;       // sideways shift for two-way pairs
+      const p = border([a[0] + nx, a[1] + ny], [b[0] + nx, b[1] + ny]), q = border([b[0] + nx, b[1] + ny], [a[0] + nx, a[1] + ny]);
+      d = `M${p[0]} ${p[1]}L${q[0]} ${q[1]}`;
+      lx = (p[0] + q[0]) / 2 + nx; ly = (p[1] + q[1]) / 2 + ny - 6;
+    }
+    out += `<g class="edge" id="e-${from}-${to}"><path d="${d}" marker-end="url(#tip)"/>` + (label ? `<text x="${lx}" y="${ly}">${label}</text>` : "") + `</g>`;
+  }
+  for (const [id, [x, y, label]] of Object.entries(STATES)) {
+    if (id === "begin") { out += `<circle cx="${x}" cy="${y}" r="5" fill="#d8d8d8"/>`; continue; }
+    out += `<g class="blk ${id === "start" ? "entry" : ""}" id="b-${id}"><rect x="${x - W / 2}" y="${y - H / 2}" width="${W}" height="${H}"/><text class="name" x="${x}" y="${y}">${label}</text>` +
+      `<rect class="badge" x="${x + W / 2 - 9}" y="${y - H / 2 - 9}" width="18" height="18"/><text class="count" x="${x + W / 2}" y="${y - H / 2}"></text></g>`;
+  }
+  $("machine").innerHTML = out + `<g id="dots"></g>`;
+  built = true;
+}
+
+// Shortest chain of arrows between two states, so a jump the poll missed still moves along the drawn path.
+function route(from, to) {
+  const queue = [[from]], done = new Set([from]);
+  while (queue.length) {
+    const path = queue.shift(), at = path[path.length - 1];
+    if (at === to) return path;
+    for (const [f, t] of EDGES) if (f === at && !done.has(t)) { done.add(t); queue.push([...path, t]); }
+  }
+  return null;
+}
+
+function paint() {               // blocks are lit by the tokens resting on them
   const counts = {};
-  for (const r of s.running) counts[r.state] = (counts[r.state] || 0) + 1;
-  document.querySelectorAll("#search .st").forEach((el) => {
-    const n = counts[el.dataset.s] || 0;
-    el.classList.toggle("active", n > 0);
-    el.querySelector(".n")?.remove();
-    if (n > 1) el.insertAdjacentHTML("beforeend", `<span class="n">${n}</span>`);
+  for (const [key, tk] of tokens) if (tk.at) (counts[tk.at] ||= { n: 0, loop: false }), key === "loop" ? (counts[tk.at].loop = true) : counts[tk.at].n++;
+  for (const id of Object.keys(STATES)) {
+    const el = $("b-" + id);
+    if (!el) continue;
+    const c = counts[id];
+    el.classList.toggle("active", !!c);
+    el.classList.toggle("many", !!c && c.n > 1);
+    el.querySelector(".count").textContent = c && c.n > 1 ? c.n : "";
+  }
+}
+
+function hop(tk, from, to) {     // slide the token's dot along one arrow
+  return new Promise((done) => {
+    const edge = $(`e-${from}-${to}`), path = edge.querySelector("path"), len = path.getTotalLength(), t0 = performance.now(), ms = 700;
+    edge.classList.add("hot"); path.setAttribute("marker-end", "url(#tipHot)");
+    tk.at = null; tk.dot.style.display = ""; paint();
+    const step = (now) => {
+      const k = Math.min(1, (now - t0) / ms), e = k < 0.5 ? 2 * k * k : 1 - 2 * (1 - k) * (1 - k), pt = path.getPointAtLength(len * e);
+      tk.dot.setAttribute("cx", pt.x); tk.dot.setAttribute("cy", pt.y);
+      if (k < 1) return requestAnimationFrame(step);
+      edge.classList.remove("hot"); path.setAttribute("marker-end", "url(#tip)");
+      tk.dot.style.display = "none"; tk.at = to; paint(); done();
+    };
+    requestAnimationFrame(step);
   });
+}
+
+function move(key, to, from) {   // queue a move; each token finishes one move before starting the next
+  let tk = tokens.get(key);
+  if (!tk) {
+    const dot = document.createElementNS(NS, "circle");
+    dot.setAttribute("r", 6); dot.setAttribute("class", "dot"); dot.style.display = "none";
+    $("dots").appendChild(dot);
+    tokens.set(key, (tk = { at: from ?? null, target: from ?? null, dot, chain: Promise.resolve() }));
+  }
+  if (tk.target === to) return tk;
+  const start = tk.target; tk.target = to;
+  tk.chain = tk.chain.then(async () => {
+    const origin = start || (key === "loop" ? "start" : null);   // a loop that was idle sets off from start
+    const path = origin && to && STATES[to] ? route(origin, to) : null;
+    if (!path) { tk.at = STATES[to] ? to : null; paint(); return; }
+    for (let i = 1; i < path.length; i++) await hop(tk, path[i - 1], path[i]);
+  });
+  return tk;
+}
+
+function machine(s) {
+  const first = !built;
+  if (first) build();
+  const phase = (s.phase || "").split(" ")[0];
+  move("loop", STATES[phase] ? phase : null, first ? (STATES[phase] ? phase : null) : undefined);
+  const live = new Set(s.running.map((r) => r.id));
+  for (const r of s.running) move(r.id, block(r.state), tokens.has(r.id) ? undefined : first ? block(r.state) : "begin");
+  for (const [key, tk] of tokens) {
+    if (key === "loop" || live.has(key) || tk.leaving) continue;
+    tk.leaving = true;           // the search finished: walk it to scored, hold, then drop it
+    move(key, "scored");
+    tk.chain = tk.chain.then(() => new Promise((r) => setTimeout(r, 2500))).then(() => { tk.dot.remove(); tokens.delete(key); paint(); });
+  }
+  paint();
+  const tools = [...new Set(s.running.map((r) => TOOLS[r.state]).filter(Boolean))].join(", ");
+  $("b-tool").querySelector(".name").textContent = tools || "tool call";
+  $("region-search").textContent = "SEARCH" + (s.running.length ? ` · ${s.running.length} running` : "");
+
   $("running").innerHTML = s.running.length
     ? `<table><tr><th>search</th><th>state</th><th>method</th><th>task</th><th>steps</th><th>budget left</th><th>running</th></tr>` +
       s.running.map((r) => `<tr><td>${esc(r.id)}</td><td class="s">${esc(r.state)}</td><td>${esc(r.method)}</td><td>${esc(r.task)}</td><td>${r.steps}</td>` +
