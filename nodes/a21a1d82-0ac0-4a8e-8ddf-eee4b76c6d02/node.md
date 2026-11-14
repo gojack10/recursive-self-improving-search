@@ -82,6 +82,12 @@ Jack confirmed Terra high for searchers and Astra medium for the improver, then 
 
 Jack then asked to push the SearchHack branch and document stock Pi login so teammates could use their own Codex accounts. The assistant pushed [pi-searcher at 5f5be36](https://github.com/gojack10/recursive-self-improving-search/commit/5f5be36), including the teammate fixes through 53730e9, Pi searcher and improver dispatch, evidence text and candidate verification, Telem-backed Tavily checks, and the live viewer. The README covers stock Pi with openai-codex and the separate local Codex Personal route. The CLI started. The earlier list of missing integration work above is historical.
 
-**Next:** [Run the First Complete SearchHack Iteration](../fee4d2ea-c29d-45fc-8498-2002830f8f8f/node.md). Jack said he would run models on his machine. There is still no completed iteration or measured improvement.
+**Continuation at branch delivery:** [Run the First Complete SearchHack Iteration](../fee4d2ea-c29d-45fc-8498-2002830f8f8f/node.md). At that point Jack said he would run models on his machine, and no completed iteration or measured improvement had been recorded.
 
 Evidence: November 14 Codex session 01a1dbcf-50f5-7863-8922-e412ff6886fa, including the model listing, CLI startup and successful Git push.
+
+## November 14 development — first iteration completed
+
+The first-iteration child now records the authorized `pi-first` run and reconciliation commit `eab1366`. Ten scored searches and one candidate proposal completed in 351 seconds. Original `v000` and proposed `v001` tied at perfect selection scores; `v000` stayed and scored 0.8357 on held-out tasks. No improvement is established. The merge and viewer-animation commit remain local in this session; runtime files and `runs/` were not pushed by this agent.
+
+The next independent harness work is [Reduce SearchHack Iteration Time](../4f4ad38a-2e27-420b-8fa1-0d72b19ce3e5/node.md); the visual branch owns actual-activity visibility and Pi event display. Coordinate shared runner/logging edits. Task-difficulty and answer-key work belongs to the task-selection branch. No new worker has been launched by this save. Source: the first-iteration child's retained conversation and run artifacts.
