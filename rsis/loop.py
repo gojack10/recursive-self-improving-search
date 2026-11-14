@@ -161,6 +161,10 @@ def calibrate(name, runs=3):
 def merge_routing(base, new):
     new = new if isinstance(new, dict) else {}
     r = {**base, **new}
+    for k in ("providers", "verify_providers"):
+        if r.get(k) is not None:
+            v = [r[k]] if isinstance(r[k], str) else r[k] if isinstance(r[k], list) else []
+            r[k] = [p for p in v if isinstance(p, str)] or None
     if new.get("providers") and "auto_routing" not in new:
         r["auto_routing"] = False
     return r

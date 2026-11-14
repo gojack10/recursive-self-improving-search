@@ -21,7 +21,7 @@ def fit(out):
     text = json.dumps(out, ensure_ascii=False)
     rows = out.get("results")
     while len(text) > MAX_RESULT_CHARS and rows:
-        rows.sort(key=lambda r: r.get("rank") or 0)
+        rows.sort(key=lambda r: r.get("rank") if isinstance(r.get("rank"), (int, float)) else 99)
         del rows[max(1, len(rows) * 3 // 4) if len(rows) > 4 else len(rows) - 1:]
         text = json.dumps(out, ensure_ascii=False)
     checks = out.get("checks")
