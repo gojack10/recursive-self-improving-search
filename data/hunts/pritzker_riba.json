@@ -1,0 +1,259 @@
+{
+ "name": "pritzker_riba",
+ "x": "won the Pritzker Architecture Prize",
+ "y": "won the RIBA Royal Gold Medal",
+ "kind": "people",
+ "pool": "select",
+ "question": "Find every architect who has won both the Pritzker Architecture Prize and the RIBA Royal Gold Medal.",
+ "criterion": "architect who won both the Pritzker Architecture Prize and the RIBA Royal Gold Medal",
+ "where": "?a rdfs:label \"Pritzker Architecture Prize\"@en. ?b rdfs:label \"Royal Gold Medal\"@en. ?x p:P166/ps:P166 ?a; p:P166/ps:P166 ?b.",
+ "truth": [
+  {
+   "qid": "Q47780",
+   "label": "Zaha Hadid",
+   "aliases": [
+    "Dame Zaha Hadid",
+    "Dame Zaha Mohammad Hadid",
+    "Zaha Hadid CBE",
+    "Zaha M. Hadid",
+    "Zaha Mohammad Hadid",
+    "Zaha Hadid CBE",
+    "Zaha Mohammad Hadid"
+   ]
+  },
+  {
+   "qid": "Q46868",
+   "label": "I. M. Pei",
+   "aliases": [
+    "I.M. Pei",
+    "Bei Yu Ming",
+    "Bèi Yù Míng",
+    "Ieoh Ming Pei",
+    "IM Pei",
+    "Yü-Ming Pei",
+    "Yuming Bei"
+   ]
+  },
+  {
+   "qid": "Q64412",
+   "label": "Frei Otto",
+   "aliases": [
+    "Otto, Frei",
+    "Frei Paul Otto",
+    "Otto, Frei Paul"
+   ]
+  },
+  {
+   "qid": "Q104898",
+   "label": "Norman Foster",
+   "aliases": [
+    "Norman Robert Foster",
+    "Norman Robert Foster, Baron Foster of Thames Bank",
+    "Sir Norman Foster",
+    "Norman Robert Foster",
+    "Baron Foster of Thames Bank Norman Foster",
+    "Lord Foster of Thames Bank",
+    "Nōman Fosutā",
+    "Norman Foster, Baron Foster of Thames Bank"
+   ]
+  },
+  {
+   "qid": "Q123179",
+   "label": "Peter Zumthor",
+   "aliases": [
+    "Pītā Zunto"
+   ]
+  },
+  {
+   "qid": "Q134165",
+   "label": "Oscar Niemeyer",
+   "aliases": [
+    "Filho, Oscar Niemeyer Soares",
+    "Oscar Niemeyer Soares",
+    "Oscar Niemeyer Soares Filho",
+    "Oscard Niemeyer",
+    "Oskar Nimeĭer",
+    "Ribeiro de Almeida Soares",
+    "Oscar Ribeiro de Almeida Niemeyer Soares Filho"
+   ]
+  },
+  {
+   "qid": "Q151794",
+   "label": "Kenzō Tange",
+   "aliases": [
+    "Kenzo Tange",
+    "Kenzou Tange"
+   ]
+  },
+  {
+   "qid": "Q159612",
+   "label": "Richard Meier",
+   "aliases": [
+    "Richard Alan Meier"
+   ]
+  },
+  {
+   "qid": "Q159619",
+   "label": "James Stirling",
+   "aliases": [
+    "Sir James Stirling",
+    "Sir James Frazer Stirling",
+    "James Frazer Stirling"
+   ]
+  },
+  {
+   "qid": "Q180374",
+   "label": "Frank Gehry",
+   "aliases": [
+    "Frank O. Gehry",
+    "Ephraim Owen Goldberg",
+    "Frank Goldberg",
+    "Frank Owen Gehry",
+    "Frank Owen Goldberg",
+    "Frank Owen Goldberg",
+    "Ephraim Owen Goldberg"
+   ]
+  },
+  {
+   "qid": "Q180398",
+   "label": "Jørn Utzon",
+   "aliases": [
+    "Joern Utzon",
+    "Jørn Oberg Utzon",
+    "Jorn Utzon"
+   ]
+  },
+  {
+   "qid": "Q190148",
+   "label": "Renzo Piano",
+   "aliases": [
+    "R. Piano"
+   ]
+  },
+  {
+   "qid": "Q311692",
+   "label": "Rafael Moneo",
+   "aliases": [
+    "Jose Rafael Mineo",
+    "José Rafael Mineo",
+    "Jose Rafael Moneo",
+    "José Rafael Moneo",
+    "Jose Rafael Moneo Valles",
+    "José Rafael Moneo Vallés",
+    "Jose Rafael Moneo Velles",
+    "José Rafael Moneo Vellés",
+    "José Rdkdafael Moneo Valles",
+    "Rafael Moneo Valles",
+    "Rafael Moneo Vallés"
+   ]
+  },
+  {
+   "qid": "Q312855",
+   "label": "Paulo Mendes da Rocha",
+   "aliases": [
+    "Paolo Mendes da Rocha",
+    "Paulo Archias Mendes da Rocha",
+    "Paulo Mendes de Rocha"
+   ]
+  },
+  {
+   "qid": "Q317135",
+   "label": "Arata Isozaki",
+   "aliases": [
+    "ISO",
+    "Isozaki Arata"
+   ]
+  },
+  {
+   "qid": "Q333585",
+   "label": "Toyo Ito",
+   "aliases": [
+    "Ito Toyo"
+   ]
+  },
+  {
+   "qid": "Q380449",
+   "label": "Balkrishna Doshi",
+   "aliases": [
+    "B. V. Doshi",
+    "Balkrishna V. Doshi",
+    "Balkrishna Vithaldas Doshi"
+   ]
+  },
+  {
+   "qid": "Q707020",
+   "label": "David Chipperfield",
+   "aliases": [
+    "David Chiperfield",
+    "Sir David Alan Chipperfield",
+    "David Alan Chipperfield"
+   ]
+  },
+  {
+   "qid": "Q208220",
+   "label": "Tadao Ando",
+   "aliases": [
+    "Tadao Andō",
+    "Andō Tadao"
+   ]
+  },
+  {
+   "qid": "Q232364",
+   "label": "Rem Koolhaas",
+   "aliases": [
+    "Remment Koolhaas",
+    "Remment Lucas Koolhaas"
+   ]
+  },
+  {
+   "qid": "Q214317",
+   "label": "Jean Nouvel",
+   "aliases": []
+  },
+  {
+   "qid": "Q16151248",
+   "label": "Yvonne Farrell",
+   "aliases": []
+  },
+  {
+   "qid": "Q21132821",
+   "label": "Shelley McNamara",
+   "aliases": []
+  },
+  {
+   "qid": "Q237412",
+   "label": "Richard Rogers",
+   "aliases": [
+    "Richard George Rogers of Riverside",
+    "Richard George Rogers, Baron Rogers of Riverside",
+    "The Lord Rogers of Riverside",
+    "Richard George Rogers"
+   ]
+  },
+  {
+   "qid": "Q251365",
+   "label": "Álvaro Siza Vieira",
+   "aliases": [
+    "Alvaro Joaquim de Melo Siza Vieira",
+    "Alvaro Joaquim Melo Siza Vieira",
+    "Alvaro Siza",
+    "Álvaro Siza",
+    "Alvaro Siza Vieira",
+    "Álvaro Joaquim de Melo Siza Vieira"
+   ]
+  },
+  {
+   "qid": "Q308776",
+   "label": "Herzog & de Meuron",
+   "aliases": [
+    "H&deM",
+    "HdM",
+    "Herzog & de Meuron Architekten, BSA/SIA/ETH",
+    "Herzog & de Meuron Basel Ltd.",
+    "Herzog & DeMeuron",
+    "Herzog and de Meuron"
+   ]
+  }
+ ],
+ "built": "2026-11-14"
+}

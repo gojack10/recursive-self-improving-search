@@ -1,0 +1,86 @@
+{
+ "name": "booker_films",
+ "x": "novel that won the Booker Prize",
+ "y": "adapted into a feature film",
+ "kind": "works",
+ "pool": "test",
+ "question": "Find every Booker Prize-winning novel that has been adapted into a feature film.",
+ "criterion": "Booker Prize-winning novel that has been adapted into a feature film",
+ "where": "?b rdfs:label \"Booker Prize\"@en. ?x p:P166/ps:P166 ?b. ?f wdt:P144 ?x; wdt:P31 wd:Q11424.",
+ "truth": [
+  {
+   "qid": "Q374204",
+   "label": "Life of Pi",
+   "aliases": []
+  },
+  {
+   "qid": "Q380831",
+   "label": "Last Orders",
+   "aliases": []
+  },
+  {
+   "qid": "Q673521",
+   "label": "Heat and Dust",
+   "aliases": []
+  },
+  {
+   "qid": "Q829934",
+   "label": "The Remains of the Day",
+   "aliases": []
+  },
+  {
+   "qid": "Q958560",
+   "label": "Disgrace",
+   "aliases": []
+  },
+  {
+   "qid": "Q1060522",
+   "label": "Oscar and Lucinda",
+   "aliases": []
+  },
+  {
+   "qid": "Q1292533",
+   "label": "The English Patient",
+   "aliases": []
+  },
+  {
+   "qid": "Q2301826",
+   "label": "The White Tiger",
+   "aliases": []
+  },
+  {
+   "qid": "Q3821351",
+   "label": "True History of the Kelly Gang",
+   "aliases": []
+  },
+  {
+   "qid": "Q428581",
+   "label": "Possession",
+   "aliases": [
+    "Possession: A Romance"
+   ]
+  },
+  {
+   "qid": "Q625764",
+   "label": "Midnight's Children",
+   "aliases": [
+    "''Midnight's Children''"
+   ]
+  },
+  {
+   "qid": "Q1331310",
+   "label": "The Sense of an Ending",
+   "aliases": [
+    "Sense of an Ending"
+   ]
+  },
+  {
+   "qid": "Q1975638",
+   "label": "Schindler's Ark",
+   "aliases": [
+    "Schindler's List"
+   ]
+  }
+ ],
+ "built": "2026-11-14"
+}

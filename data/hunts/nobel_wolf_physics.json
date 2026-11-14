@@ -1,0 +1,265 @@
+{
+ "name": "nobel_wolf_physics",
+ "x": "won the Nobel Prize in Physics",
+ "y": "won the Wolf Prize in Physics",
+ "kind": "people",
+ "pool": "test",
+ "question": "Find every physicist who has won both the Nobel Prize in Physics and the Wolf Prize in Physics.",
+ "criterion": "physicist who won both the Nobel Prize in Physics and the Wolf Prize in Physics",
+ "where": "?w rdfs:label \"Wolf Prize in Physics\"@en. ?x p:P166/ps:P166 wd:Q38104; p:P166/ps:P166 ?w.",
+ "truth": [
+  {
+   "qid": "Q78610",
+   "label": "Anton Zeilinger",
+   "aliases": [
+    "Zeilinger",
+    "A Zeilinger",
+    "A. Zeilinger",
+    "Zeilinger A",
+    "Zeilinger A."
+   ]
+  },
+  {
+   "qid": "Q57120",
+   "label": "Peter Grünberg",
+   "aliases": [
+    "Grünberg",
+    "Gruenberg",
+    "Grunberg",
+    "Peter Andreas Gruenberg",
+    "Peter Andreas Grunberg",
+    "Peter Andreas Grünberg",
+    "Peter Gruenberg",
+    "Peter Grunberg"
+   ]
+  },
+  {
+   "qid": "Q61045",
+   "label": "David J. Wineland",
+   "aliases": [
+    "David Jeffrey Wineland"
+   ]
+  },
+  {
+   "qid": "Q86970",
+   "label": "Ferenc Krausz",
+   "aliases": [
+    "F. Krausz",
+    "Krausz Ferenc",
+    "Krausz, Ferenc",
+    "F. Kraus",
+    "Frentz Kraus",
+    "Kraus, Frenç"
+   ]
+  },
+  {
+   "qid": "Q104668",
+   "label": "Vitaly Ginzburg",
+   "aliases": [
+    "Vitaly L. Ginzburg",
+    "Vitaly Lazarevich Ginzburg"
+   ]
+  },
+  {
+   "qid": "Q107416",
+   "label": "Martin Lewis Perl",
+   "aliases": [
+    "Martin Perl"
+   ]
+  },
+  {
+   "qid": "Q123975",
+   "label": "Michel Mayor",
+   "aliases": [
+    "M. G. E. Mayor",
+    "M. G. Mayor",
+    "M. Mayor",
+    "Michel G. E. Mayor",
+    "Michel Gustave E. Mayor",
+    "Michel Gustave Mayor",
+    "Michel Gustave Édouard Mayor"
+   ]
+  },
+  {
+   "qid": "Q124013",
+   "label": "Didier Queloz",
+   "aliases": [
+    "D P Queloz",
+    "D Queloz",
+    "D. P. Queloz",
+    "D. Queloz",
+    "Didier P Queloz",
+    "Didier P. Queloz",
+    "Queloz",
+    "Queloz D",
+    "Queloz D.",
+    "Queloz D. P.",
+    "Queloz DP",
+    "Didier Patrick Queloz"
+   ]
+  },
+  {
+   "qid": "Q151746",
+   "label": "François Englert",
+   "aliases": [
+    "Francois Englert"
+   ]
+  },
+  {
+   "qid": "Q184592",
+   "label": "Gerard 't Hooft",
+   "aliases": [
+    "Gerardus 't Hooft",
+    "Gerard",
+    "Gerardus",
+    "Hooft",
+    "G. Hooft",
+    "G.W. 't Hooft",
+    "Gerard ’t Hooft",
+    "Gerardus (Gerard) 't Hooft"
+   ]
+  },
+  {
+   "qid": "Q187224",
+   "label": "Pierre-Gilles de Gennes",
+   "aliases": [
+    "De Gennes, P.-G.",
+    "P. de Gennes",
+    "Pierre deGennes"
+   ]
+  },
+  {
+   "qid": "Q188120",
+   "label": "Yoichiro Nambu",
+   "aliases": [
+    "Nambu Yoichiro",
+    "Nambu Yōichirō",
+    "Nanbu Yoichiro",
+    "Yōichirō Nambu",
+    "Yōichirō Nanbu"
+   ]
+  },
+  {
+   "qid": "Q192112",
+   "label": "Peter Higgs",
+   "aliases": [
+    "Higgs P",
+    "P Higgs",
+    "Peter W. Higgs",
+    "Peter Ware Higgs"
+   ]
+  },
+  {
+   "qid": "Q192718",
+   "label": "Anthony Leggett",
+   "aliases": [
+    "Sir Anthony James Leggett",
+    "Sir Anthony Leggett",
+    "Anthony James Leggett",
+    "Sir Anthony James Leggett",
+    "Sir Anthony Leggett",
+    "Anthony J. Leggett"
+   ]
+  },
+  {
+   "qid": "Q192685",
+   "label": "Joseph Hooton Taylor Jr.",
+   "aliases": [
+    "Joseph H. Taylor",
+    "Joseph Hooton Taylor"
+   ]
+  },
+  {
+   "qid": "Q192695",
+   "label": "Leon M. Lederman",
+   "aliases": [
+    "Leon Lederman",
+    "Leon Max Lederman",
+    "Léon Lederman"
+   ]
+  },
+  {
+   "qid": "Q193503",
+   "label": "Kenneth Geddes Wilson",
+   "aliases": [
+    "Kenneth Geddes",
+    "Kenneth G. Wilson"
+   ]
+  },
+  {
+   "qid": "Q193803",
+   "label": "Roger Penrose",
+   "aliases": [
+    "R. Penrose",
+    "Sir Roger Penrose"
+   ]
+  },
+  {
+   "qid": "Q565544",
+   "label": "Anne L'Huillier",
+   "aliases": [
+    "L'Huillier",
+    "A L'Huillier",
+    "A. L'Huillier",
+    "Anne L’Huillier Wahlström",
+    "L'Huillier A",
+    "L'Huillier A."
+   ]
+  },
+  {
+   "qid": "Q726394",
+   "label": "David J. Thouless",
+   "aliases": [
+    "David James Thouless",
+    "David Thouless",
+    "Thouless, D.",
+    "Thouless, D. J."
+   ]
+  },
+  {
+   "qid": "Q1235614",
+   "label": "Giorgio Parisi",
+   "aliases": [
+    "Parisi",
+    "G Parisi",
+    "G. Parisi",
+    "Parisi G",
+    "Parisi G."
+   ]
+  },
+  {
+   "qid": "Q1365270",
+   "label": "John Clauser",
+   "aliases": [
+    "John F. Clauser",
+    "John Francis Clauser"
+   ]
+  },
+  {
+   "qid": "Q153219",
+   "label": "Albert Fert",
+   "aliases": []
+  },
+  {
+   "qid": "Q155773",
+   "label": "Masatoshi Koshiba",
+   "aliases": []
+  },
+  {
+   "qid": "Q175519",
+   "label": "Raymond Davis Jr.",
+   "aliases": []
+  },
+  {
+   "qid": "Q186481",
+   "label": "Riccardo Giacconi",
+   "aliases": []
+  },
+  {
+   "qid": "Q364997",
+   "label": "Alain Aspect",
+   "aliases": []
+  }
+ ],
+ "built": "2026-11-14"
+}

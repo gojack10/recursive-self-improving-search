@@ -1,0 +1,75 @@
+{
+ "name": "air_disasters_300",
+ "x": "aviation accident or incident",
+ "y": "at least 300 deaths",
+ "kind": "events",
+ "pool": "test",
+ "question": "Find every aviation accident or incident in which at least 300 people died.",
+ "criterion": "aviation accident or incident with at least 300 deaths",
+ "where": "?x wdt:P31/wdt:P279* wd:Q744913; wdt:P1120 ?n. FILTER(?n >= 300)",
+ "truth": [
+  {
+   "qid": "Q406588",
+   "label": "Air India Flight 182",
+   "aliases": [
+    "Flight 182"
+   ]
+  },
+  {
+   "qid": "Q462716",
+   "label": "Turkish Airlines Flight 981",
+   "aliases": [
+    "Ermenonville air disaster",
+    "THY981",
+    "TK981"
+   ]
+  },
+  {
+   "qid": "Q2440618",
+   "label": "Saudia Flight 163",
+   "aliases": [
+    "SAUDIA 163",
+    "SV163",
+    "SVA163"
+   ]
+  },
+  {
+   "qid": "Q118373",
+   "label": "Charkhi Dadri mid-air collision",
+   "aliases": [
+    "KAZAKH 1907",
+    "Kazakhstan Airlines Flight 1907",
+    "KZ1907",
+    "KZA1907",
+    "Saudi Arabian Airlines Flight 763",
+    "SAUDIA 763",
+    "Saudia Flight 763",
+    "SV763",
+    "SVA763"
+   ]
+  },
+  {
+   "qid": "Q223288",
+   "label": "Tenerife airport disaster",
+   "aliases": [
+    "Desastre de la isla Tenerife",
+    "Tenerife disaster"
+   ]
+  },
+  {
+   "qid": "Q18173",
+   "label": "Japan Air Lines Flight 123",
+   "aliases": [
+    "JAL123",
+    "JAPAN AIR 123",
+    "JL123"
+   ]
+  },
+  {
+   "qid": "Q105532431",
+   "label": "Pan Am N736PA",
+   "aliases": []
+  }
+ ],
+ "built": "2026-11-14"
+}
