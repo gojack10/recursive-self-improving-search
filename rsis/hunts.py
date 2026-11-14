@@ -144,7 +144,15 @@ FRAMES = {
 
 
 def load(name):
-    return {**json.loads((DATA / f"{name}.json").read_text(encoding="utf-8")), **HUNTS[name], "name": name}
+    h = {**json.loads((DATA / f"{name}.json").read_text(encoding="utf-8")), **HUNTS[name], "name": name}
+    # Hand-added alternative names (data/aliases.json) for answers whose Wikidata label nobody would search for.
+    overrides = json.loads((ROOT / "data" / "aliases.json").read_text(encoding="utf-8"))
+    drop = overrides["_drop"].get(name, {})
+    h["truth"] = [t for t in h["truth"] if t["label"] not in drop]
+    extra = overrides.get(name, {})
+    for t in h["truth"]:
+        t["aliases"] = t["aliases"] + [a for a in extra.get(t["label"], []) if a not in t["aliases"]]
+    return h
 
 
 def pool(p):

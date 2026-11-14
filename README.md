@@ -56,6 +56,10 @@ The referee's judge records whether a wrong find met only X or only Y (`x_only`,
 | events | air disasters with 300 or more deaths |
 
 **Open hunts** (`rsis/open_hunts.py`) push the same shapes into niche territory where no answer key exists, such as reported dogs that swallowed something at a beach and needed a vet, studies that contradict the "three-second goldfish memory" claim, or lightning strikes during a live football match. There is no recall score. Every find must cite a URL the attempt retrieved, then passes a Tavily check and a judge on both conditions, and the result is "how many verified". One stress test (a dog eating a pickle on a beach in its owner's arms) probably has zero real cases, so it measures whether the system invents answers. Open hunts are demo pieces and stay out of the loop's scores.
+
+The ensemble picks its three lenses by shape. For "X but not Y" it subtracts the Y list from the X list rather than anchoring on "not Y"; for sequences it anchors on the later, rarer step; for events it starts from lists sorted by the number or date. Every candidate is verified, including those two searchers agreed on, because two searchers can submit the same half-match. Agreed finds survive unless the checks show they fail a condition; single finds need positive evidence.
+
+Two hand-written methods are there to trial against the evolved ones: `methods/anchor_verify.json` (enumerate one side, verify the other per candidate) and `methods/two_list_join.json` (fetch both lists in full and join them). `data/aliases.json` adds alternative names for answers whose Wikidata label nobody would search for, and drops one duplicate (Pan Am N736PA is an aircraft in the Tenerife disaster, which is already in the set). It was written before any live run.
 ```
 python -m rsis.open_hunts methods/anchor_verify.json --hunts goldfish_memory_rebuttals dog_pickle_beach
 ```

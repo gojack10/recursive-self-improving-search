@@ -1,0 +1,28 @@
+{
+ "air_disasters_300": {
+  "Tenerife airport disaster": [
+   "Tenerife disaster",
+   "KLM Flight 4805 and Pan Am Flight 1736 collision",
+   "KLM Flight 4805",
+   "Pan Am Flight 1736"
+  ],
+  "Charkhi Dadri mid-air collision": [
+   "Saudi Arabian Airlines Flight 763",
+   "Kazakhstan Airlines Flight 1907"
+  ],
+  "Japan Air Lines Flight 123": [
+   "JAL 123",
+   "JAL Flight 123"
+  ]
+ },
+ "booker_films": {
+  "Schindler's Ark": [
+   "Schindler's List"
+  ]
+ },
+ "_drop": {
+  "air_disasters_300": {
+   "Pan Am N736PA": "an aircraft in the Tenerife disaster, not a separate event; Tenerife is already in the set"
+  }
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "id": "two_list_join",
+ "parent": "v000",
+ "rationale": "Hand-written alternative to anchor_verify: get both condition lists in full and join them, instead of verifying candidates one by one. Cheaper per candidate when both sides are published lists (awards, professions, works).",
+ "instructions": "Every hunt asks for items meeting condition X AND condition Y (or X but not Y).\n1. Find the most complete published list for X and for Y. Search for 'list of ...', '... winners', '... laureates', 'category: ...', using 'also' for variants in one batch, restricted to en.wikipedia.org first and then the open web.\n2. Fetch both lists and read them in full. Write down every name on each.\n3. Join: keep names on both lists (for 'but not Y', names on X and absent from Y). Match spelling variants and name forms carefully (initials, diacritics, titles).\n4. If one side is not a published list (for example 'adapted into a feature film', 'more than 300 deaths'), use the X list as the anchor and verify that side with check_candidates for every X item.\n5. Spend leftover budget on a second source for the smaller list, since a missing name there costs a find.\n6. Submit every joined item, citing the fetched list page that shows the condition it was hardest to establish.",
+ "routing": {
+  "auto_routing": false,
+  "providers": [
+   "brave",
+   "exa"
+  ],
+  "tier": "default",
+  "num_results": 8,
+  "verify_providers": [
+   "parallel"
+  ]
+ },
+ "routing_rules": "Use brave with include_domains [\"en.wikipedia.org\"] for list and category pages; exa for lists hosted elsewhere (award sites, databases). Use the cheap verify route for check_candidates.",
+ "fetch_policy": "Fetch every list you join; joining from search summaries misses names. Do not fetch individual item pages unless a name on one list is ambiguous."
+}

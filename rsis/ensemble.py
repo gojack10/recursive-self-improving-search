@@ -9,12 +9,35 @@ from .referee import norm
 from .searcher import attempt, check_candidates
 from .telem import Telem, url_key
 
-LENSES = [
-    "For this attempt, anchor on condition X: enumerate everything that meets X, then verify Y for each candidate.",
-    "For this attempt, anchor on condition Y: enumerate everything that meets Y, then verify X for each candidate.",
-    "For this attempt, first write down every item you can recall from memory that might meet both conditions, "
-    "then search for pages that list the intersection directly, and verify every recalled item before submitting.",
-]
+RECALL = ("For this attempt, first write down every item you can recall from memory that might qualify, then search "
+          "for pages that list the answer set directly, and verify every recalled item before submitting.")
+# Each question shape gets lenses that make sense for it: anchoring on "did NOT win Y" is not a list anyone publishes.
+LENSES = {
+    "intersection": [
+        "For this attempt, anchor on condition X: enumerate everything that meets X, then verify Y for each candidate.",
+        "For this attempt, anchor on condition Y: enumerate everything that meets Y, then verify X for each candidate.",
+        RECALL],
+    "triple": [
+        "For this attempt, find the narrowest published list that already combines two of the conditions, "
+        "then verify the remaining condition for each candidate.",
+        "For this attempt, anchor on condition Y, then verify condition X (all of its parts) for each candidate.",
+        RECALL],
+    "negation": [
+        "For this attempt, fetch the complete list for condition X and the complete list for the opposite of Y, "
+        "then submit the X items that are absent from the second list. Read both lists in full before subtracting.",
+        "For this attempt, enumerate X, then for each candidate look for an explicit statement that rules out Y "
+        "(for example an awards list it does not appear on). Drop candidates where you cannot rule Y out.",
+        RECALL],
+    "sequence": [
+        "For this attempt, anchor on the later step (Y), which is usually the rarer list, then verify the earlier step X.",
+        "For this attempt, anchor on the earlier step (X), then verify that each candidate later did Y.",
+        RECALL],
+    "events": [
+        "For this attempt, anchor on lists already sorted by the numeric or date condition ('deadliest ...', "
+        "'largest ...', '... by year'), then verify the figure on each event's own page.",
+        "For this attempt, enumerate events of type X from category and timeline pages, then verify Y for each.",
+        RECALL],
+}
 VERIFY_BUDGET = 0.06
 
 
@@ -22,8 +45,13 @@ def ensemble_budget(n, budget=ATTEMPT_BUDGET):
     return n * budget + VERIFY_BUDGET
 
 
-def lens(m, i):
-    return {**m, "id": f"{m['id']}+lens{i}", "instructions": m["instructions"] + "\n\n" + LENSES[i % len(LENSES)]}
+def frame(hunt):
+    return hunt.get("frame") or ("events" if hunt.get("kind") == "events" else "intersection")
+
+
+def lens(m, hunt, i):
+    ls = LENSES.get(frame(hunt), LENSES["intersection"])
+    return {**m, "id": f"{m['id']}+lens{i}", "instructions": m["instructions"] + "\n\n" + ls[i % len(ls)]}
 
 
 def merge(logs):
@@ -42,17 +70,21 @@ def merge(logs):
 
 
 def judge_checks(chat, hunt, checks):
-    keep = set()
+    """keep: results make it more likely than not that the candidate meets both conditions.
+    reject: results positively show it fails a condition. Silence is neither."""
+    keep, reject = set(), set()
     names = list(checks)
     for i in range(0, len(names), 12):
         part = {n: checks[n] for n in names[i:i + 12]}
         v = chat.json(
-            "You verify candidate answers from search results. Reply as JSON {\"keep\": [candidate strings]}. "
-            "Keep a candidate if its results make it more likely than not that it meets BOTH conditions. "
-            "Drop it if the results show it meets only one condition or say nothing about it.",
+            "You verify candidate answers from search results. Reply as JSON {\"keep\": [names], \"reject\": [names]}. "
+            "Put a candidate in keep if its results make it more likely than not that it meets BOTH conditions. "
+            "Put it in reject only if the results show it fails a condition (for example it meets only one). "
+            "Leave it out of both lists if the results say nothing useful.",
             f"Condition X: {hunt['x']}\nCondition Y: {hunt['y']}\nResults per candidate:\n{json.dumps(part)[:20000]}")
-        keep |= {k for k in v.get("keep", []) if isinstance(k, str)}
-    return keep
+        keep |= {norm(k) for k in v.get("keep", []) if isinstance(k, str)}
+        reject |= {norm(k) for k in v.get("reject", []) if isinstance(k, str)}
+    return keep, reject
 
 
 def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
@@ -60,31 +92,31 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
     more searchers agree on, and send the rest through batched Telem verification before submitting."""
     t0 = time.time()
     with ThreadPoolExecutor(n) as ex:
-        logs = list(ex.map(lambda i: attempt(lens(m, i), hunt, budget=budget, role=role), range(n)))
+        logs = list(ex.map(lambda i: attempt(lens(m, hunt, i), hunt, budget=budget, role=role), range(n)))
     items = merge(logs)
-    # Agreement needs at least one searcher-retrieved URL; anything else goes through verification.
     agreed = [it for it in items.values() if len(it["votes"]) >= 2 and it["urls"]]
     single = [it for it in items.values() if not (len(it["votes"]) >= 2 and it["urls"])]
+    # Verify singles first, then agreed finds while budget lasts: two searchers can share the same half-match.
     telem = Telem(VERIFY_BUDGET)
-    kept = []
-    if single:
-        by_norm = {norm(it["name"]): it for it in single}
-        checks = {}
-        for i in range(0, len(single), 25):
-            out = check_candidates(m, {"candidates": [it["name"] for it in single[i:i + 25]],
-                                       "condition": hunt["criterion"], "per_candidate": 3}, telem)
-            for q, results in out["checks"].items():
-                if q == "_error":
-                    continue
-                cand = q[:-len(hunt["criterion"])].strip() if q.endswith(hunt["criterion"]) else q
-                checks[cand] = results
-        for k in judge_checks(Chat(role), hunt, checks):
-            it = by_norm.get(norm(k[:-len(hunt["criterion"])] if k.endswith(hunt["criterion"]) else k))
-            if it:
-                urls = [r["url"] for r in checks.get(it["name"], [])]
-                if urls or it["urls"]:
-                    kept.append({**it, "evidence_url": urls[0] if urls else it["urls"][0]})
-    finds = [{"name": it["name"], "evidence_url": it.get("evidence_url") or it["urls"][0]} for it in agreed + kept]
+    queue = single + agreed
+    checks = {}
+    for i in range(0, len(queue), 25):
+        out = check_candidates(m, {"candidates": [it["name"] for it in queue[i:i + 25]],
+                                   "condition": hunt["criterion"], "per_candidate": 3}, telem)
+        if "_error" in out["checks"]:
+            break
+        for q, results in out["checks"].items():
+            checks[norm(q[:-len(hunt["criterion"])] if q.endswith(hunt["criterion"]) else q)] = results
+    keep, reject = judge_checks(Chat(role), hunt, {it["name"]: checks[norm(it["name"])] for it in queue
+                                                   if norm(it["name"]) in checks}) if checks else (set(), set())
+    finds = []
+    for it in queue:
+        k = norm(it["name"])
+        urls = [r["url"] for r in checks.get(k, [])] + it["urls"]
+        ok = k in keep if it in single else k not in reject
+        if ok and urls:
+            finds.append({"name": it["name"], "evidence_url": it["urls"][0] if it["urls"] else urls[0]})
+    kept = [f for f in finds if norm(f["name"]) not in {norm(a["name"]) for a in agreed}]
     url_providers = {}
     for log in logs:
         for u, ps in log["url_providers"].items():
