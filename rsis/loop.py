@@ -59,9 +59,17 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
         return {"method": log["method"], "hunt": hunt_name, "label": role, "score": 0.0, "failed": True,
                 "correct": 0, "wrong": 0, "x_only": 0, "y_only": 0, "spent": log["telem_spent"]}
     log["round"], log["role"] = rnd, role
-    log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
-                                   require_evidence=not log["method"].startswith("closed-book"),
-                                   url_text=log.get("url_text"))
+    try:
+        log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
+                                       require_evidence=not log["method"].startswith("closed-book"),
+                                       url_text=log.get("url_text"))
+    except Exception as e:
+        log["error"] = f"scoring failed: {str(e)[:400]}"
+        H.save_log(d, log)
+        H.append(d, "errors.jsonl", {"round": rnd, "role": role, "method": log["method"], "hunt": hunt_name,
+                                     "error": log["error"], "spent": log["telem_spent"]})
+        return {"method": log["method"], "hunt": hunt_name, "label": role, "score": 0.0, "failed": True,
+                "correct": 0, "wrong": 0, "x_only": 0, "y_only": 0, "spent": log["telem_spent"]}
     H.save_log(d, log)
     row = H.table_row(log, log["referee"])
     H.append(d, "attempts.jsonl", row)
@@ -96,7 +104,9 @@ def rotate(pool, rnd, n):
 
 
 def telem_total(d):
-    return round(sum(r["spent"] for r in H.rows(d, "attempts.jsonl")) + sum(r.get("spent", 0) for r in H.rows(d, "errors.jsonl")), 4)
+    return round(sum(r["spent"] for r in H.rows(d, "attempts.jsonl"))
+                 + sum(r.get("spent", 0) for r in H.rows(d, "errors.jsonl"))
+                 + sum(r.get("spent", 0) for r in H.rows(d, "improver_spend.jsonl")), 4)
 
 
 def ok_mean(rows):
@@ -163,7 +173,9 @@ def record_lessons(tree, props, probe, rnd=0):
 
 def safe_improve(d, tree, start, search_method, ids, k):
     try:
-        return improve(d, tree, start, search_method, ids, k=k)[0]
+        props, meta = improve(d, tree, start, search_method, ids, k=k)
+        H.append(d, "improver_spend.jsonl", {"method": start["id"], "spent": round(meta["telem_spent"], 4)})
+        return props
     except Exception as e:
         print(f"improver failed, round continues with no candidates: {str(e)[:200]}", flush=True)
         H.append(d, "errors.jsonl", {"role": "improver", "method": start["id"], "error": str(e)[:1000]})
@@ -295,6 +307,7 @@ def recursion_test(name, gens=None):
         try:
             props, meta = improve(d, tree, v0, M.load(d, g), first_ids, k=1, as_of_round=1, allowed_nodes=allowed,
                                   prompt_method=v0)
+            H.append(d, "improver_spend.jsonl", {"method": f"rt-{g}", "spent": round(meta["telem_spent"], 4)})
         except Exception as e:
             print(f"generation {g}: improver failed: {str(e)[:200]}", flush=True)
             continue

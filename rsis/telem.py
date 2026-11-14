@@ -38,12 +38,14 @@ class Telem:
         self.calls = []
         self.url_providers = {}
         self.url_text = {}
+        self.auto_cost = 0.015
         self.lock = threading.Lock()
 
     def _post(self, path, body):
         if self.session_id:
             body["session_id"] = self.session_id
-        r = post_json(BASE + path, body, {"Authorization": f"Bearer {self.key}"})
+        # One try: a timed-out search may already be billed, so the agent decides whether to repeat it.
+        r = post_json(BASE + path, body, {"Authorization": f"Bearer {self.key}"}, retries=1)
         self.session_id = r.get("session_id") or self.session_id
         return r
 
@@ -63,7 +65,7 @@ class Telem:
         if published_before:
             s["published_before"] = published_before
         queries = [query, *(also or [])][:5]
-        per_query = sum(SEARCH_PRICE.get(p, 0.005) for p in providers) if providers else 0.010
+        per_query = sum(SEARCH_PRICE.get(p, 0.005) for p in providers) if providers else self.auto_cost
         if tier in ("extended", "max"):
             per_query += sum(EXTENDED_SURCHARGE.get(p, 0) for p in (providers or []))
         affordable = int((self.budget - self.spent) // per_query) if per_query else len(queries)
@@ -97,6 +99,8 @@ class Telem:
                                 "summary": (res.get("summary") or res.get("excerpt") or "")[:400]})
         with self.lock:
             self.spent += cost
+            if auto_routing and not providers and queries:
+                self.auto_cost = max(self.auto_cost, cost / len(queries))
         self.calls.append({"kind": "search", "query": queries, "requested": providers, "auto_routing": auto_routing,
                            "routing": r.get("routing"), "used": used, "n": len(results), "dropped_referee": dropped,
                            "cost": round(cost, 5), "include_domains": include_domains})
