@@ -102,6 +102,9 @@ Use `pi --list-models 'openai-codex'` to see models your installed Pi exposes. I
 
 ### Run the pipeline
 
+For the live local viewer, run `python -m rsis.view` and open `http://127.0.0.1:8765`.
+It reads the run files; add `?run=<name>` to follow one run.
+
 1. Finish the local `.env` setup above. The existing API path also remains available: use plain model IDs and configure `LLM_BASE_URL` / `LLM_API_KEY` instead of `pi:` roles.
 2. Check every key and model with one cheap call each:
    ```

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>rsis live view</title>
+<style>
+/* Palette, status colours and status pips follow the SiftText landing page. */
+:root{
+  --bg:#060606;--panel:#0c0c0c;--line:#202020;--edge:#383838;--fg:#d8d8d8;--bright:#fff;--muted:#8c8c8c;--dim:#585858;
+  --in_progress:#5a8cc7;--resolved:#6b9b7a;--discarded:#4a4a4a;--not_examined:#8a8a8a;--urgent:#b85450;
+  --display:ABCAreal,system-ui,sans-serif;--mono:ABCArealMono,"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px 24px 40px;background:var(--bg);color:var(--fg);font:13px/1.6 var(--mono);-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(to right,rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.018) 1px,transparent 1px);background-size:64px 64px}
+h1{margin:0;color:#fff;font:500 24px/32px var(--display);letter-spacing:-.03em}
+h2{margin:0 0 12px;color:var(--muted);font:400 11px/16px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.top{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:14px}
+.stat{color:var(--muted)}
+.stat b{color:#fff;font-weight:500}
+#error{color:var(--urgent);margin-bottom:10px}
+.panel{border:1px solid var(--edge);background:var(--panel);padding:16px;margin-bottom:14px;box-shadow:inset 0 1px 0 #ffffff0a,0 8px 24px #0004}
+
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.row .name{width:70px;color:var(--dim);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.st{position:relative;min-width:84px;padding:7px 12px;border:1px solid var(--edge);color:var(--muted);text-align:center;transition:all .2s}
+.st.active{color:#000;background:#fff;border-color:#fff;box-shadow:0 0 24px rgba(255,255,255,.35)}
+.st .n{position:absolute;top:-9px;right:-9px;min-width:18px;height:18px;padding:0 4px;background:var(--in_progress);color:#000;font-size:11px;line-height:18px}
+.group{display:flex;align-items:center;gap:6px;padding:6px;border:1px dashed var(--line)}
+.arrow{color:var(--dim)}
+.gap{width:20px}
+table{border-collapse:collapse;margin:6px 0 0 78px}
+td,th{padding:3px 18px 3px 0;text-align:left;font-weight:400}
+th{color:var(--dim);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+td.s{color:#fff}
+.quiet{color:var(--dim);margin-left:78px}
+
+.cols{display:grid;grid-template-columns:minmax(320px,2fr) 3fr;gap:14px;align-items:start}
+@media(max-width:1000px){.cols{grid-template-columns:1fr}}
+.tree ul{list-style:none;margin:0;padding:0}
+.tree ul ul{margin-left:13px}
+.tree ul ul>li{position:relative;padding-left:22px}
+.tree ul ul>li::before{content:'';position:absolute;left:0;top:0;height:14px;width:16px;border-left:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a}
+.tree ul ul>li::after{content:'';position:absolute;left:0;top:0;bottom:0;border-left:1px solid #3a3a3a}
+.tree ul ul>li:last-child::after{display:none}
+.tree .node{display:flex;gap:8px;align-items:center;padding:4px 0}
+.pip{flex:none;width:28px;height:20px;fill:none;stroke:currentColor;stroke-width:1.2}
+.tree .kind{flex:none;color:var(--dim);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.tree .label{color:#c8c8c8;font:500 15px/22px var(--display)}
+.tree .score{color:var(--muted)}
+.tree .discarded>.node .label{color:var(--dim)}
+.tree .new>.node{animation:grow .8s ease-out}
+.tree .new>.node .label{color:#fff}
+@keyframes grow{from{opacity:0;transform:translateY(-10px)}}
+.empty{color:var(--dim)}
+svg.chart{display:block;width:100%;height:auto}
+.pulse{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.cap{margin-top:8px;color:var(--dim);font-size:11px}
+#feed div{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#feed .when{color:var(--dim);margin-right:10px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>rsis live view</h1>
+  <span class="stat">run <b id="run">…</b></span>
+  <span class="stat">state <b id="phase">…</b></span>
+  <span class="stat">current method <b id="current">…</b></span>
+  <span class="stat">best test <b id="best">…</b></span>
+  <span class="stat">searches <b id="done">…</b></span>
+  <span class="stat">Telem <b id="spend">…</b></span>
+</div>
+<div id="error"></div>
+
+<div class="panel">
+  <h2>Active state</h2>
+  <div class="row" id="loop">
+    <span class="name">loop</span>
+    <span class="st" data-s="calibrate">Calibrate</span><span class="arrow">→</span>
+    <span class="group">
+      <span class="st" data-s="train">Train</span><span class="arrow">→</span>
+      <span class="st" data-s="improve">Improve</span><span class="arrow">→</span>
+      <span class="st" data-s="select">Select</span><span class="arrow">→</span>
+      <span class="st" data-s="test">Test</span><span class="arrow">→</span>
+      <span class="st" data-s="tally">Tally</span><span class="arrow">↺</span>
+    </span>
+    <span class="gap"></span>
+    <span class="st" data-s="trial">Trial</span>
+  </div>
+  <div class="row" id="search">
+    <span class="name">search</span>
+    <span class="st" data-s="deciding">Deciding</span><span class="arrow">⇄</span>
+    <span class="group">
+      <span class="st" data-s="query">Query</span>
+      <span class="st" data-s="fetch">Fetch</span>
+      <span class="st" data-s="check">Check</span>
+    </span><span class="arrow">→</span>
+    <span class="st" data-s="submit">Submit</span><span class="arrow">→</span>
+    <span class="st" data-s="referee">Referee</span>
+  </div>
+  <div id="running"></div>
+</div>
+
+<div class="cols">
+  <div class="panel tree">
+    <h2>Run tree</h2>
+    <div id="tree"></div>
+  </div>
+  <div class="panel">
+    <h2>Method iterations</h2>
+    <svg class="chart" id="chart" viewBox="0 0 900 420"></svg>
+    <div class="cap">Line: each iteration's winner re-run on the fixed held-out test tasks. Dots left of a column: that iteration's candidates at their
+      score on its two unseen select tasks; the tick is the current method on the same two tasks. Green was adopted, grey was discarded, blue is still being trialled.</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Latest</h2>
+  <div id="feed"></div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const num = (v, d = 2) => (v == null ? "–" : Number(v).toFixed(d));
+const FRAME = "M5 2H2v12h3m10-12h3v12h-3";
+const GLYPH = { in_progress: "M6 9c2-5 6 4 8-2", resolved: "M6 8l3 3 5-7", discarded: "m-8-9 6 6m0-6-6 6", not_examined: "" };
+const pinned = new URLSearchParams(location.search).get("run") || "";
+let seen = null;
+
+function machine(s) {
+  const phase = (s.phase || "").split(" ")[0];
+  document.querySelectorAll("#loop .st").forEach((el) => el.classList.toggle("active", el.dataset.s === phase));
+  const counts = {};
+  for (const r of s.running) counts[r.state] = (counts[r.state] || 0) + 1;
+  document.querySelectorAll("#search .st").forEach((el) => {
+    const n = counts[el.dataset.s] || 0;
+    el.classList.toggle("active", n > 0);
+    el.querySelector(".n")?.remove();
+    if (n > 1) el.insertAdjacentHTML("beforeend", `<span class="n">${n}</span>`);
+  });
+  $("running").innerHTML = s.running.length
+    ? `<table><tr><th>search</th><th>state</th><th>method</th><th>task</th><th>steps</th><th>budget left</th><th>running</th></tr>` +
+      s.running.map((r) => `<tr><td>${esc(r.id)}</td><td class="s">${esc(r.state)}</td><td>${esc(r.method)}</td><td>${esc(r.task)}</td><td>${r.steps}</td>` +
+        `<td>${r.left == null ? "–" : "$" + num(r.left, 3)}</td><td>${Math.round(Date.now() / 1000 - r.started)}s</td></tr>`).join("") + `</table>`
+    : `<div class="quiet">No search is writing live state right now. Searches run through the chat API only appear once they are scored.</div>`;
+}
+
+function tree(s) {
+  if (!s.nodes.length) {
+    $("tree").innerHTML = `<div class="empty">No tree in this run yet. The loop writes it (python -m rsis round); a single trial search does not.</div>`;
+    return;
+  }
+  const by = new Map(s.nodes.map((n) => [n.id, { ...n, children: [] }])), roots = [];
+  for (const n of by.values()) (n.parent && by.has(n.parent) ? by.get(n.parent).children : roots).push(n);
+  const fresh = seen ? new Set(s.nodes.filter((n) => !seen.has(n.id)).map((n) => n.id)) : new Set();
+  seen = new Set(s.nodes.map((n) => n.id));
+  const li = (n) => {
+    const status = n.status in GLYPH ? n.status : "not_examined";
+    return `<li class="${status} ${fresh.has(n.id) ? "new" : ""}"><div class="node" title="${esc(n.summary)}">` +
+      `<svg class="pip" viewBox="0 0 20 16" style="color:var(--${status})"><title>${esc(n.status)}</title><path d="${FRAME}${GLYPH[status]}"/></svg>` +
+      `<span class="kind">${esc(n.kind)}</span><span class="label">${esc(n.name)}</span>` +
+      (n.select_score != null ? `<span class="score">select ${num(n.select_score)}</span>` : "") + `</div>` +
+      (n.children.length ? `<ul>${n.children.map(li).join("")}</ul>` : "") + `</li>`;
+  };
+  $("tree").innerHTML = `<ul>${roots.map(li).join("")}</ul>`;
+}
+
+function chart(s) {
+  const st = s.state || {}, points = st.test_points || [];
+  const L = 70, R = 860, T = 40, B = 360, y = (v) => B - (B - T) * Math.max(0, Math.min(1, v));
+  const cols = Math.max(4, points.length, s.iteration || 0, ...s.methods.map((m) => m.round || 0));
+  const step = (R - L) / cols, x = (i) => L + i * step;
+  let out = "";
+  for (const v of [0, 0.25, 0.5, 0.75, 1])
+    out += `<line x1="${L}" x2="${R}" y1="${y(v)}" y2="${y(v)}" stroke="${v === 1 ? "#6f6f6f" : "#202020"}" ${v === 1 ? 'stroke-dasharray="6 5"' : ""}/>` +
+      `<text x="${L - 12}" y="${y(v) + 4}" fill="#585858" font-size="12" text-anchor="end">${v}</text>`;
+  out += `<text x="${R}" y="${T - 10}" fill="#8c8c8c" font-size="12" text-anchor="end">1.0 = every answer found, nothing wrong</text>`;
+  for (let i = 0; i <= cols; i++) out += `<text x="${x(i)}" y="${B + 24}" fill="#585858" font-size="12" text-anchor="middle">${i === 0 ? "seed" : i}</text>`;
+  out += `<text x="${(L + R) / 2}" y="${B + 48}" fill="#585858" font-size="12" text-anchor="middle">iteration</text>`;
+  if (st.baseline_test != null) {
+    const n = st.noise || 0;
+    out += `<rect x="${L}" width="${R - L}" y="${y(st.baseline_test + n)}" height="${Math.max(1, y(st.baseline_test - n) - y(st.baseline_test + n))}" fill="#ffffff0a"/>` +
+      `<line x1="${L}" x2="${R}" y1="${y(st.baseline_test)}" y2="${y(st.baseline_test)}" stroke="#8c8c8c" stroke-dasharray="2 5"/>` +
+      `<text x="${R}" y="${y(st.baseline_test) - 6}" fill="#8c8c8c" font-size="12" text-anchor="end">v000 baseline ${num(st.baseline_test)} ± ${num(n)}</text>`;
+  }
+  // The winner's test re-run, one point per finished iteration, starting from the seed.
+  const main = [{ x: x(0), y: y(st.baseline_test ?? 0), id: "v000", known: st.baseline_test != null }];
+  for (const p of points) main.push({ x: x(p.round), y: y(p.test), id: p.method, known: true, adopted: p.adopted, test: p.test, breakout: p.breakout });
+  // Candidates branch from the winner of the iteration before.
+  for (const m of s.methods) {
+    if (!m.round || m.status === "recursion-test") continue;
+    const from = main[Math.min(m.round - 1, main.length - 1)], p = points.find((q) => q.round === m.round);
+    const score = p && p.select ? p.select[m.id] : m.select_score;
+    const cx = x(m.round) - step * 0.38, cy = score == null ? from.y : y(score);
+    const colour = m.status === "adopted" || m.status === "superseded" ? "var(--resolved)" : m.status === "discarded" ? "#5a5a5a" : "var(--in_progress)";
+    out += `<line x1="${from.x}" y1="${from.y}" x2="${cx}" y2="${cy}" stroke="${colour}" stroke-width="1"/>` +
+      `<circle cx="${cx}" cy="${cy}" r="4" fill="${m.status === "discarded" ? "#060606" : colour}" stroke="${colour}" class="${m.status === "candidate" ? "pulse" : ""}"><title>${esc(m.id)} ${esc(m.status)}${score == null ? "" : " select " + num(score)}</title></circle>` +
+      `<text x="${cx}" y="${cy - 9}" fill="${colour}" font-size="11" text-anchor="middle">${esc(m.id)}</text>`;
+    const cur = p && p.select ? p.select[m.parent] : null;
+    if (cur != null) out += `<line x1="${cx - 9}" x2="${cx + 9}" y1="${y(cur)}" y2="${y(cur)}" stroke="#8c8c8c"><title>${esc(m.parent)} select ${num(cur)}</title></line>`;
+  }
+  out += `<polyline points="${main.map((p) => `${p.x},${p.y}`).join(" ")}" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>`;
+  for (const p of main)
+    out += `<circle cx="${p.x}" cy="${p.y}" r="5.5" fill="${p.adopted || (p.id === "v000" && p.known) ? "#fff" : "#060606"}" stroke="#fff" stroke-width="1.5"/>` +
+      `<text x="${p.x + 9}" y="${p.y - 9}" fill="#fff" font-size="12">${esc(p.id)}${p.test != null ? " " + num(p.test) : p.known ? "" : " (not calibrated)"}${p.breakout ? " breakout" : ""}</text>`;
+  if (s.iteration) out += `<text x="${x(s.iteration)}" y="${T + 16}" fill="var(--in_progress)" font-size="12" text-anchor="middle" class="pulse">${esc(s.phase)}</text>`;
+  $("chart").innerHTML = out;
+}
+
+function render(s) {
+  if (!s.name) { $("run").textContent = "no runs yet"; return; }
+  const st = s.state || {};
+  $("run").textContent = s.name;
+  $("phase").textContent = s.phase + (s.iteration ? `, iteration ${s.iteration}` : "");
+  $("current").textContent = st.current || "–";
+  $("best").textContent = num(st.best_test);
+  $("done").textContent = s.searches_done + (s.failed ? `, ${s.failed} failed` : "");
+  $("spend").textContent = "$" + num(s.spend, 3);
+  $("error").textContent = s.last_error ? `last failure: ${s.last_error}` : "";
+  machine(s); tree(s); chart(s);
+  $("feed").innerHTML = s.feed.map((f) => `<div><span class="when">${f.t ? new Date(f.t * 1000).toLocaleTimeString() : ""}</span>${esc(f.text)}</div>`).join("");
+}
+
+async function poll() {
+  const r = await fetch("/api/run?name=" + encodeURIComponent(pinned));
+  render(await r.json());
+}
+poll();
+setInterval(() => poll().catch(() => {}), 1000);
+</script>
+</body>
+</html>
