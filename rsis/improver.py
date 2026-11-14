@@ -91,12 +91,13 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
             name = c["function"]["name"]
             args = parse_obj(c["function"].get("arguments"))
             trace.append({"tool": name, "args": args if name != "propose" else "..."})
-            if name == "propose" and args.get("candidates"):
+            if name == "propose" and isinstance(args.get("candidates"), list) and any(
+                    isinstance(c, dict) and c.get("instructions") for c in args["candidates"]):
                 return args, {"trace": trace, "web_searches": sum(t["tool"] == "web_search" for t in trace), "telem_spent": telem.spent, "telem_session": telem.session_id,
                               "tokens": chat.usage}
             try:
                 if name == "propose":
-                    out = {"error": "propose needs at least one candidate"}
+                    out = {"error": "propose needs candidates as a list of objects, each with instructions and routing"}
                 elif name == "search_history":
                     out = tree.search(args.get("query", ""), kinds=args.get("kinds"), allowed=allowed_nodes)
                 elif name == "read_node":

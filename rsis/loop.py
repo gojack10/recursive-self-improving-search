@@ -52,6 +52,12 @@ def init(name):
 def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
     hunt = HU.load(hunt_name)
     log = make(hunt) if make else attempt(m, hunt)
+    if log.get("error"):
+        print(f"  r{rnd} {role:9} {log['method']} {hunt_name:22} FAILED after ${log['telem_spent']:.3f}: {log['error'][:150]}", flush=True)
+        H.append(d, "errors.jsonl", {"round": rnd, "role": role, "method": log["method"], "hunt": hunt_name,
+                                     "error": log["error"], "spent": log["telem_spent"]})
+        return {"method": log["method"], "hunt": hunt_name, "label": role, "score": 0.0, "failed": True,
+                "correct": 0, "wrong": 0, "x_only": 0, "y_only": 0, "spent": log["telem_spent"]}
     log["round"], log["role"] = rnd, role
     log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
                                    require_evidence=not log["method"].startswith("closed-book"),
@@ -90,7 +96,13 @@ def rotate(pool, rnd, n):
 
 
 def telem_total(d):
-    return round(sum(r["spent"] for r in H.rows(d, "attempts.jsonl")), 4)
+    return round(sum(r["spent"] for r in H.rows(d, "attempts.jsonl")) + sum(r.get("spent", 0) for r in H.rows(d, "errors.jsonl")), 4)
+
+
+def ok_mean(rows):
+    """Mean over attempts that ran; a crash is not evidence about a method. None if nothing ran."""
+    good = [r["score"] for r in rows if not r.get("failed")]
+    return sum(good) / len(good) if good else None
 
 
 def calibrate(name, runs=3):
@@ -100,7 +112,9 @@ def calibrate(name, runs=3):
     m = M.load(d, s["current"])
     test = HU.pool("test")
     rows = batch(d, [(m, h, "noise") for _ in range(runs) for h in test], 0)
-    per_run = [mean([r["score"] for r in rows[i * len(test):(i + 1) * len(test)]]) for i in range(runs)]
+    per_run = [x for x in (ok_mean(rows[i * len(test):(i + 1) * len(test)]) for i in range(runs)) if x is not None]
+    if not per_run:
+        raise RuntimeError("every calibration run failed; see errors.jsonl")
     s["noise"] = round(max(per_run) - min(per_run), 4)
     s["best_test"] = round(mean(per_run), 4)
     s["baseline_test"] = s["best_test"]
@@ -124,6 +138,7 @@ def new_candidates(d, tree, props, parent, rnd):
         m = {"id": M.next_id(d), "parent": parent["id"], "round": rnd, "rationale": c.get("rationale", ""),
              "instructions": c["instructions"], "routing": merge_routing(parent["routing"], c.get("routing")),
              "routing_rules": c.get("routing_rules", ""), "fetch_policy": c.get("fetch_policy", ""), "status": "candidate"}
+        m["rationale"] = str(m["rationale"])
         m["node"] = tree.write("Idea", f"Method {m['id']}", m["rationale"][:200],
                                f"Parent: {parent['id']}\n\n```json\n{json.dumps(m, indent=1, ensure_ascii=False)}\n```",
                                parent=parent["node"])
@@ -142,8 +157,17 @@ def record_lessons(tree, props, probe, rnd=0):
     for f in props.get("failure_links", []):
         if isinstance(f, dict) and isinstance(f.get("node_id"), str) and f["node_id"].strip(".") \
                 and (tree.dir / f["node_id"] / "node.md").exists() and (tree.dir / f["node_id"]).exists():
-            tree.append(f["node_id"], f"- Round {rnd}: seen again in attempt {f.get('attempt_id')}: {f.get('why', '')}")
+            tree.append(f["node_id"], f"- Round {rnd}: seen again in attempt {f.get('attempt_id')}: {' '.join(str(f.get('why', '')).split())}")
     return bool(props.get("lessons"))
+
+
+def safe_improve(d, tree, start, search_method, ids, k):
+    try:
+        return improve(d, tree, start, search_method, ids, k=k)[0]
+    except Exception as e:
+        print(f"improver failed, round continues with no candidates: {str(e)[:200]}", flush=True)
+        H.append(d, "errors.jsonl", {"role": "improver", "method": start["id"], "error": str(e)[:1000]})
+        return {}
 
 
 def one_round(name, k=2, breakout=False):
@@ -167,7 +191,7 @@ def one_round(name, k=2, breakout=False):
     train_ids = {r["attempt_id"] for r in H.rows(d, "attempts.jsonl") if r["pool"] == "train"}
 
     if not breakout:
-        props, _ = improve(d, tree, cur, cur, train_ids, k=k)
+        props = safe_improve(d, tree, cur, cur, train_ids, k)
         cands = new_candidates(d, tree, props, cur, rnd)
         new_lessons = record_lessons(tree, props, probe, rnd)
     else:
@@ -177,15 +201,17 @@ def one_round(name, k=2, breakout=False):
         for _ in range(k):
             base = random.choice(olds)
             ids = set(random.sample(sorted(train_ids), max(1, len(train_ids) // 2))) if train_ids else set()
-            props, _ = improve(d, tree, base, base, ids, k=1)
+            props = safe_improve(d, tree, base, base, ids, 1)
             cands += new_candidates(d, tree, props, base, rnd)
             new_lessons |= record_lessons(tree, props, probe, rnd)
 
     sel = rotate(HU.pool("select"), rnd, 2)
     rows = batch(d, [(m, h, "select") for m in [cur, *cands] for h in sel], rnd)
-    by = {m["id"]: round(mean([r["score"] for r in rows if r["method"] == m["id"]]), 4) for m in [cur, *cands]}
+    raw = {m["id"]: ok_mean([r for r in rows if r["method"] == m["id"]]) for m in [cur, *cands]}
+    by = {k: round(v, 4) if v is not None else -1.0 for k, v in raw.items()}
     winner_id = max(by, key=by.get)
-    adopted = winner_id != cur["id"] and by[winner_id] > by[cur["id"]]
+    # No adoption unless the current method actually ran on the select hunts.
+    adopted = raw[cur["id"]] is not None and winner_id != cur["id"] and by[winner_id] > by[cur["id"]]
     for m in cands:
         m["select_score"] = by[m["id"]]
         if m["id"] == winner_id and adopted:
@@ -204,7 +230,10 @@ def one_round(name, k=2, breakout=False):
 
     # Guard against best-of-k luck: re-run the round's winner on unseen test hunts and plot the re-run.
     test_rows = batch(d, [(winner, h, "test") for h in HU.pool("test")], rnd)
-    test_score = mean([r["score"] for r in test_rows])
+    test_score = ok_mean(test_rows)
+    if test_score is None:
+        test_score = s["best_test"] or 0.0
+        print("every test re-run failed; plateau state left unchanged", flush=True)
     noise = s["noise"] or 0.0
     gained = s["best_test"] is None or test_score > s["best_test"] + noise
     if gained:
@@ -215,7 +244,7 @@ def one_round(name, k=2, breakout=False):
             s["breakouts_without_gain"] += 1
     s["current"], s["round"] = winner["id"], rnd
     point = {"round": rnd, "method": winner["id"], "test": round(test_score, 4), "adopted": adopted, "select": by,
-             "train": round(mean([r["score"] for r in train_rows]), 4), "breakout": breakout,
+             "train": round(ok_mean(train_rows) or 0.0, 4), "breakout": breakout,
              "new_lessons": new_lessons, "telem_total": telem_total(d), "tavily_credits": tavily.credits_used}
     s["test_points"].append(point)
     if rnd == 1:
@@ -294,7 +323,7 @@ def trial(method_paths, hunt_names=None, repeats=1, name="trials"):
     print(f"{'method':16} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
     for m in methods:
         rs = [r for r in rows if r["method"] == m["id"]]
-        print(f"{m['id']:16} {mean([r['score'] for r in rs]):6.3f} {sum(r['correct'] for r in rs):8} "
+        print(f"{m['id']:16} {ok_mean(rs) or 0.0:6.3f} {sum(r['correct'] for r in rs):8} "
               f"{sum(r['wrong'] for r in rs):6} {sum(r['x_only'] for r in rs):7} {sum(r['y_only'] for r in rs):7} "
               f"${sum(r['spent'] for r in rs):6.3f}  failed {sum(1 for r in rs if r.get('failed'))}")
     return rows
@@ -328,7 +357,7 @@ def compare(method_path=None, run_name="main", hunt_names=None, n=3, name="compa
     print(f"{'contestant':22} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
     for label, *_ in contestants:
         rs = [r for r in rows if r["label"] == label]
-        s = {"contestant": label, "score": round(mean([r["score"] for r in rs]), 4),
+        s = {"contestant": label, "score": round(ok_mean(rs) or 0.0, 4),
              "correct": sum(r["correct"] for r in rs), "wrong": sum(r["wrong"] for r in rs),
              "x_only": sum(r["x_only"] for r in rs), "y_only": sum(r["y_only"] for r in rs),
              "spend": round(sum(r["spent"] for r in rs), 4), "failed": sum(1 for r in rows if r["label"] == label and r.get("failed"))}

@@ -115,49 +115,53 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
     tools = [SEARCH_TOOL, FETCH_TOOL, CHECK_TOOL, SUBMIT_TOOL]
     trace, finds, notes = [], [], ""
     t0 = time.time()
-    for turn in range(MAX_TURNS):
-        last = turn >= MAX_TURNS - 2
-        msg = chat.complete(messages, tools=[SUBMIT_TOOL] if last else tools, force="submit" if last else None)
-        messages.append({**msg, "role": "assistant", "content": msg.get("content") or ""})
-        calls = msg.get("tool_calls") or []
-        if not calls:
-            messages.append({"role": "user", "content": "Call submit with your finds now."})
-            continue
-        done = False
-        for c in calls:
-            name = c["function"]["name"]
-            if done:
-                messages.append({"role": "tool", "tool_call_id": c["id"], "content": '{"error": "already submitted"}'})
+    error = None
+    try:
+        for turn in range(MAX_TURNS):
+            last = turn >= MAX_TURNS - 2
+            msg = chat.complete(messages, tools=[SUBMIT_TOOL] if last else tools, force="submit" if last else None)
+            messages.append({**msg, "role": "assistant", "content": msg.get("content") or ""})
+            calls = msg.get("tool_calls") or []
+            if not calls:
+                messages.append({"role": "user", "content": "Call submit with your finds now."})
                 continue
-            args = parse_obj(c["function"].get("arguments"))
-            try:
-                if name == "web_search":
-                    out = run_search(m, args.pop("query", "") or hunt["question"], args, telem)
-                elif name == "fetch_pages":
-                    urls = as_list(args.get("urls"))[:5]
-                    out = telem.fetch(urls, max_chars=MAX_RESULT_CHARS // max(1, len(urls)) - 500)
-                elif name == "check_candidates":
-                    out = check_candidates(m, args, telem)
-                elif name == "submit":
-                    raw = args.get("finds")
-                    good = [f for f in as_list(raw) if isinstance(f, dict)]
-                    final = turn == MAX_TURNS - 1
-                    if (not isinstance(raw, list) or (raw and not good)) and not final:
-                        out = {"error": "submit needs finds as a list of {name, evidence_url} objects; call submit again"}
+            done = False
+            for c in calls:
+                name = c["function"]["name"]
+                if done:
+                    messages.append({"role": "tool", "tool_call_id": c["id"], "content": '{"error": "already submitted"}'})
+                    continue
+                args = parse_obj(c["function"].get("arguments"))
+                try:
+                    if name == "web_search":
+                        out = run_search(m, args.pop("query", "") or hunt["question"], args, telem)
+                    elif name == "fetch_pages":
+                        urls = as_list(args.get("urls"))[:5]
+                        out = telem.fetch(urls, max_chars=MAX_RESULT_CHARS // max(1, len(urls)) - 500)
+                    elif name == "check_candidates":
+                        out = check_candidates(m, args, telem)
+                    elif name == "submit":
+                        raw = args.get("finds")
+                        good = [f for f in as_list(raw) if isinstance(f, dict)]
+                        final = turn == MAX_TURNS - 1
+                        if (not isinstance(raw, list) or (raw and not good)) and not final:
+                            out = {"error": "submit needs finds as a list of {name, evidence_url} objects; call submit again"}
+                        else:
+                            finds, notes, done = good, args.get("notes", ""), True
+                            out = {"ok": True}
                     else:
-                        finds, notes, done = good, args.get("notes", ""), True
-                        out = {"ok": True}
-                else:
-                    out = {"error": f"unknown tool {name}"}
-            except Exception as e:
-                out = {"error": str(e)[:500]}
-            trace.append({"tool": name, "args": args, "summary": {k: out[k] for k in out if k not in ("results", "pages", "checks")}})
-            messages.append({"role": "tool", "tool_call_id": c["id"], "content": fit(out)})
-        if done:
-            break
+                        out = {"error": f"unknown tool {name}"}
+                except Exception as e:
+                    out = {"error": str(e)[:500]}
+                trace.append({"tool": name, "args": args, "summary": {k: out[k] for k in out if k not in ("results", "pages", "checks")}})
+                messages.append({"role": "tool", "tool_call_id": c["id"], "content": fit(out)})
+            if done:
+                break
+    except Exception as e:
+        error = str(e)[:500]
     return {"attempt_id": uuid.uuid4().hex[:10], "method": m["id"], "hunt": hunt["name"], "kind": hunt["kind"],
             "x": hunt["x"], "y": hunt["y"],
             "pool": hunt["pool"], "finds": finds, "notes": notes, "telem_calls": telem.calls,
             "telem_spent": round(telem.spent, 4), "telem_session": telem.session_id, "trace": trace,
             "url_providers": {u: sorted(p) for u, p in telem.url_providers.items()}, "url_text": telem.url_text,
-            "seconds": round(time.time() - t0, 1), "tokens": chat.usage}
+            "seconds": round(time.time() - t0, 1), "tokens": chat.usage, "error": error}
