@@ -82,3 +82,9 @@ Three things observed that morning bear on the choice. The kickoff's judging sli
 The question stays open and now belongs to the next agent working with Jack. That assistant suggested asking an organizer how to obtain a corpus and what an arm looks like, since a usable Benchmarks run could serve as referee and comparison. That is a lead, not a selection. The preferences Jack stated in the sections above, including a scored task with a known answer, stand as he left them.
 
 Source: Pi session `01a1db5b-1827-7182-a648-9aafa0a72ac9`, November 14, 2026, retained under the probe node at `artifacts/chats/pi-searchhack-kickoff-telem-probe.jsonl`.
+
+## November 14 — criterion clarified after a completed comparison
+
+The executable teammate task pool was used in the [first complete iteration](../fee4d2ea-c29d-45fc-8498-2002830f8f8f/node.md). Its two selection questions produced perfect-score ties, so no successor method was adopted. Jack subsequently settled the workload criterion: the starting method should miss substantial answers at a fixed search budget, with later iterations discovering better ways to find them rather than merely spending more turns. The child [Task Difficulty Must Reward Better Methods at a Fixed Budget](../4cd4ec5a-137f-4d58-8d20-f9fd30f0b0b9/node.md) preserves the shift from tentative difficulty tiers and his explicit confirmation.
+
+[Find Fixed-Budget Search Tasks and Held-Out Answers](../0acb1796-9cdb-4916-b35f-45c44938c867/node.md) records the teammate message Jack reports sending and the still-undelivered questions, complete answer lists/counts and split. No new executable pool or verified held-out key has been selected in that discussion. The broader task/success-evidence question stays open; the completion of a run and the clarified selection criterion do not establish recursive improvement.

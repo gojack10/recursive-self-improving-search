@@ -28,3 +28,4 @@ def post_json(url, body, headers, timeout=120, retries=3):
                 time.sleep(2 ** i * 2)
                 continue
             raise
+    raise RuntimeError(f"{url}: retries exhausted")

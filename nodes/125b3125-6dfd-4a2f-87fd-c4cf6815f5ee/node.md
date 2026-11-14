@@ -37,5 +37,9 @@ The assistant initially exceeded the parallel-work boundary by replacing uncommi
 
 The child [Separate Run Trees From Search Traces](../46e25542-1842-409f-9e82-18df9310f863/node.md) records what the code actually exposes and the limits on the debugger's apparent motion.
 
+## November 14 — human observation of a complete iteration
+
+Jack watched the activated viewer during the completed `pi-first` iteration. His judgment was that the flashing train label was opaque: it did not explain what the system was doing, and should have said scoring when searches had already submitted and scoring was pending. He requested readable Pi output/turn blocks and finer actual-activity visibility, while explicitly keeping the discussion out of implementation and detailed design. This is feedback on the delivered passive viewer, not approval of the final visual design. [Expose SearchHack Activity and Pi Turns](../49b9b605-895f-4812-ad18-c874bbc354d8/node.md) owns the next work and existing JSON-stream affordance. The [completed iteration](../fee4d2ea-c29d-45fc-8498-2002830f8f8f/node.md) owns the run results and retained new conversation.
+
 ## Source and artifacts
 Pi session `01a1dba0-2171-7284-80b0-361440318b9c`, retained at [the conversation](artifacts/chats/pi-searchhack-visual-debugger.jsonl). `artifacts/repository` links the existing checkout at `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`; it is not a copied code archive. The transcript names the supplied image paths; their temporary clipboard files are not independently retained here.

@@ -175,6 +175,10 @@ def calibrate(name, runs=3):
 def merge_routing(base, new):
     new = new if isinstance(new, dict) else {}
     r = {**base, **new}
+    for k in ("providers", "verify_providers"):
+        if r.get(k) is not None:
+            v = [r[k]] if isinstance(r[k], str) else r[k] if isinstance(r[k], list) else []
+            r[k] = [p for p in v if isinstance(p, str)] or None
     if new.get("providers") and "auto_routing" not in new:
         r["auto_routing"] = False
     return r
@@ -231,6 +235,13 @@ def one_round(name, k=2, breakout=False):
         if m.get("status") == "adopted" and m["id"] != s["current"]:
             m["status"] = "discarded" if m.get("round", 0) >= rnd else "superseded"
             M.save(d, m)
+        elif m.get("status") == "candidate":
+            # Left over from a round that was killed before selection finished.
+            m["status"] = "discarded"
+            M.save(d, m)
+            if m.get("node"):
+                Tree(d).set_status(m["node"], "discarded")
+                Tree(d).append(m["node"], "Discarded: its round was interrupted before selection.")
     cur = M.load(d, s["current"])
     if cur.get("status") != "adopted":
         cur["status"] = "adopted"
