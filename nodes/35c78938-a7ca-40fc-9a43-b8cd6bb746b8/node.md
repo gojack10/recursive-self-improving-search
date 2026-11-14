@@ -1,0 +1,38 @@
+---
+id: "35c78938-a7ca-40fc-9a43-b8cd6bb746b8"
+name: "Build in the recursive-self-improving-search Repository"
+micro_summary: "Records the GitHub repository and local checkout that hold the SearchHack build, and the current gap between them."
+status: "in_progress"
+scope: "Carry the repository as the build workspace for the SearchHack loop; this work completes when the build outcome is recorded or the workspace is replaced."
+see_also: [{"target":"9ec1b5d1-69ee-4649-b30f-680e04c0fed9","reason":"Owns Jack's commitments for the November 14 build that this repository carries out."},{"target":"a7769974-3ff8-4e30-9fd4-975bf08ff6f2","reason":"Records the teammates and the proposed split; the repository is how teammates without Pi take part through GitHub and plain files."}]
+position: 13312
+---
+**Kind:** Agreed Work
+
+## Creation — November 14, 2026
+
+### Observed conditions
+
+In the current Pi session Jack reported that he had made the GitHub repository, that it was on this machine somewhere, and that it should be put into SiftText at some point. He then sent the address: https://github.com/gojack10/recursive-self-improving-search#reading-the-knowledge-tree
+
+The assistant located the local checkout with `fd` at `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`. At inspection time its Git state was:
+
+- HEAD `e7b8959a272c02b77cf3309435f8eabc09008331`, "docs: explain how to read the knowledge tree with standard tools".
+- Branch `main`, clean, with no remotes configured.
+- Non-node files only `LICENSE` and `README.md`; no `rsis` package in that checkout.
+
+GitHub's `main` was ahead of that checkout. The repository API listed `.env.example`, `data`, `methods`, `rsis` and `trees` at the root. Its recent commits included `780cf98e59308556657697180e0492a297ee51d1` "Add recursive self-improving search pipeline" and `684175518d8c3ecda55647ae24a8d5b9a181d8ed` "searchhack: sync accepted SiftText tree (deb3a89a59f0)".
+
+Before this save, `rg` over the SiftText home found no GitHub address or local path for the repository. The recent SearchHack commits `dc8faaaae` and `d5edf7615` recorded the kickoff rubric, the Telem probe, the Telem-settings proposal and the browser-harness start; they did not associate the repository.
+
+### Inference and response
+
+The GitHub repository is the build workspace for the SearchHack loop. It is also the participation route for teammates who do not have Pi: they can work through GitHub and plain Markdown, Python and JSON files on Windows.
+
+The local checkout is not current. It sits under a Codex work directory, has no remote configured, and lacks the pipeline commit that GitHub already has. Do not treat its files as the current build until it is connected to the remote and fetched. The GitHub address above is the durable reference; the local path is where this machine's copy was found.
+
+This node records the workspace and its state at inspection time. It does not record that the pipeline has run, that any hunt has been scored, or that search improved.
+
+## Source
+
+Current Pi session `01a1db79-c926-7284-80b0-36135ff23ffd`, November 14, 2026. Repository inspection used `fd`, `rg`, Git and the GitHub repository API on the same day.
