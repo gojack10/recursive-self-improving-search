@@ -57,12 +57,14 @@ def main():
         state = json.load(file)
         telem = Telem(state['budget'])
         telem.spent, telem.session_id = state['spent'], state['session_id']
+        telem.auto_cost = state.get('auto_cost', telem.auto_cost)
         telem.url_text = dict(state.get('url_text', {}))
         try:
             out = call(name, args, state, telem)
         except Exception as error:
             out = {'error': str(error)[:500]}
         state['spent'], state['session_id'] = telem.spent, telem.session_id
+        state['auto_cost'] = telem.auto_cost
         state['calls'] += telem.calls
         state['url_text'] = telem.url_text
         for url, providers in telem.url_providers.items():

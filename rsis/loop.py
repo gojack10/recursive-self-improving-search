@@ -60,9 +60,17 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
         return {"method": log["method"], "hunt": hunt_name, "label": role, "score": 0.0, "failed": True,
                 "correct": 0, "wrong": 0, "x_only": 0, "y_only": 0, "spent": log["telem_spent"]}
     log["round"], log["role"] = rnd, role
-    log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
-                                   require_evidence=not log["method"].startswith("closed-book"),
-                                   url_text=log.get("url_text"))
+    try:
+        log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
+                                       require_evidence=not log["method"].startswith("closed-book"),
+                                       url_text=log.get("url_text"))
+    except Exception as e:
+        log["error"] = f"scoring failed: {str(e)[:400]}"
+        H.save_log(d, log)
+        H.append(d, "errors.jsonl", {"round": rnd, "role": role, "method": log["method"], "hunt": hunt_name,
+                                     "error": log["error"], "spent": log["telem_spent"]})
+        return {"method": log["method"], "hunt": hunt_name, "label": role, "score": 0.0, "failed": True,
+                "correct": 0, "wrong": 0, "x_only": 0, "y_only": 0, "spent": log["telem_spent"]}
     H.save_log(d, log)
     row = H.table_row(log, log["referee"])
     H.append(d, "attempts.jsonl", row)
@@ -97,7 +105,22 @@ def rotate(pool, rnd, n):
 
 
 def telem_total(d):
-    return round(sum(r["spent"] for r in H.rows(d, "attempts.jsonl")) + sum(r.get("spent", 0) for r in H.rows(d, "errors.jsonl")), 4)
+    return round(sum(r["spent"] for r in H.rows(d, "attempts.jsonl"))
+                 + sum(r.get("spent", 0) for r in H.rows(d, "errors.jsonl"))
+                 + sum(r.get("spent", 0) for r in H.rows(d, "improver_spend.jsonl")), 4)
+
+
+def paired(rows, key):
+    """Restrict rows to hunts where every group (method, run) has a successful attempt."""
+    groups = {}
+    for r in rows:
+        groups.setdefault(key(r), set())
+        if not r.get("failed"):
+            groups[key(r)].add(r["hunt"])
+    # A group with no successful hunt (a crashed candidate) drops out instead of emptying the comparison.
+    live = [g for g in groups.values() if g]
+    common = set.intersection(*live) if live else set()
+    return [r for r in rows if r["hunt"] in common and not r.get("failed")]
 
 
 def ok_mean(rows):
@@ -113,7 +136,9 @@ def calibrate(name, runs=3):
     m = M.load(d, s["current"])
     test = HU.pool("test")
     rows = batch(d, [(m, h, "noise") for _ in range(runs) for h in test], 0)
-    per_run = [x for x in (ok_mean(rows[i * len(test):(i + 1) * len(test)]) for i in range(runs)) if x is not None]
+    # A calibration run with any failed hunt is dropped, so every run averages the same hunts.
+    per_run = [ok_mean(rows[i * len(test):(i + 1) * len(test)]) for i in range(runs)
+               if not any(r.get("failed") for r in rows[i * len(test):(i + 1) * len(test)])]
     if not per_run:
         raise RuntimeError("every calibration run failed; see errors.jsonl")
     s["noise"] = round(max(per_run) - min(per_run), 4)
@@ -164,7 +189,9 @@ def record_lessons(tree, props, probe, rnd=0):
 
 def safe_improve(d, tree, start, search_method, ids, k):
     try:
-        return improve(d, tree, start, search_method, ids, k=k)[0]
+        props, meta = improve(d, tree, start, search_method, ids, k=k)
+        H.append(d, "improver_spend.jsonl", {"method": start["id"], "spent": round(meta["telem_spent"], 4)})
+        return props
     except Exception as e:
         print(f"improver failed, round continues with no candidates: {str(e)[:200]}", flush=True)
         H.append(d, "errors.jsonl", {"role": "improver", "method": start["id"], "error": str(e)[:1000]})
@@ -208,7 +235,8 @@ def one_round(name, k=2, breakout=False):
 
     sel = rotate(HU.pool("select"), rnd, 2)
     rows = batch(d, [(m, h, "select") for m in [cur, *cands] for h in sel], rnd)
-    raw = {m["id"]: ok_mean([r for r in rows if r["method"] == m["id"]]) for m in [cur, *cands]}
+    fair = paired(rows, lambda r: r["method"])
+    raw = {m["id"]: ok_mean([r for r in fair if r["method"] == m["id"]]) for m in [cur, *cands]}
     by = {k: round(v, 4) if v is not None else -1.0 for k, v in raw.items()}
     winner_id = max(by, key=by.get)
     # No adoption unless the current method actually ran on the select hunts.
@@ -231,10 +259,17 @@ def one_round(name, k=2, breakout=False):
 
     # Guard against best-of-k luck: re-run the round's winner on unseen test hunts and plot the re-run.
     test_rows = batch(d, [(winner, h, "test") for h in HU.pool("test")], rnd)
+    if any(r.get("failed") for r in test_rows):
+        # A partial test set is not comparable to earlier points; record the round without a test point.
+        print("a test re-run failed; no test point this round, plateau state unchanged", flush=True)
+        s["current"], s["round"] = winner["id"], rnd
+        if rnd == 1:
+            s["tree_r1"] = [n["id"] for n in tree.nodes()]
+        tree.append(probe, f"Select scores: {json.dumps(by)}\nWinner: {winner['id']} (adopted={adopted})")
+        tree.set_status(probe, "resolved")
+        save_state(d, s)
+        return s
     test_score = ok_mean(test_rows)
-    if test_score is None:
-        test_score = s["best_test"] or 0.0
-        print("every test re-run failed; plateau state left unchanged", flush=True)
     noise = s["noise"] or 0.0
     gained = s["best_test"] is None or test_score > s["best_test"] + noise
     if gained:
@@ -296,6 +331,7 @@ def recursion_test(name, gens=None):
         try:
             props, meta = improve(d, tree, v0, M.load(d, g), first_ids, k=1, as_of_round=1, allowed_nodes=allowed,
                                   prompt_method=v0)
+            H.append(d, "improver_spend.jsonl", {"method": f"rt-{g}", "spent": round(meta["telem_spent"], 4)})
         except Exception as e:
             print(f"generation {g}: improver failed: {str(e)[:200]}", flush=True)
             continue
@@ -303,12 +339,15 @@ def recursion_test(name, gens=None):
         if c is None:
             print(f"generation {g}: improver proposed no usable candidate", flush=True)
             continue
-        succ = {"id": f"rt-{g}", "parent": "v000", "rationale": c.get("rationale", ""), "instructions": c["instructions"],
+        succ = {"id": f"rt-{g}", "parent": "v000", "rationale": str(c.get("rationale") or ""), "instructions": c["instructions"],
                 "routing": merge_routing(v0["routing"], c.get("routing")), "routing_rules": c.get("routing_rules", ""),
                 "fetch_policy": c.get("fetch_policy", ""), "status": "recursion-test", "node": None}
         M.save(d, succ)
         rows = batch(d, [(succ, h, "rtest") for h in test], 0)
-        out.append({"generation": g, "successor": succ["id"], "score": round(mean([r["score"] for r in rows]), 4),
+        if any(r.get("failed") for r in rows):
+            print(f"generation {g}: a test hunt failed; generation skipped", flush=True)
+            continue
+        out.append({"generation": g, "successor": succ["id"], "score": round(ok_mean(rows), 4),
                     "improver_web_searches": meta["web_searches"]})
         print(out[-1], flush=True)
     H.append(d, "recursion_test.jsonl", {"results": out, "hunts": test})
@@ -355,10 +394,11 @@ def compare(method_path=None, run_name="main", hunt_names=None, n=3, name="compa
     with ThreadPoolExecutor(WORKERS) as ex:
         rows = list(ex.map(lambda j: safe_run(d, j[1], j[2], 0, j[0], make=j[3]), jobs))
     summary = []
+    fair = paired(rows, lambda r: r["label"])
     print(f"{'contestant':22} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
     for label, *_ in contestants:
         rs = [r for r in rows if r["label"] == label]
-        s = {"contestant": label, "score": round(ok_mean(rs) or 0.0, 4),
+        s = {"contestant": label, "score": round(ok_mean([r for r in fair if r["label"] == label]) or 0.0, 4),
              "correct": sum(r["correct"] for r in rs), "wrong": sum(r["wrong"] for r in rs),
              "x_only": sum(r["x_only"] for r in rs), "y_only": sum(r["y_only"] for r in rs),
              "spend": round(sum(r["spent"] for r in rs), 4), "failed": sum(1 for r in rows if r["label"] == label and r.get("failed"))}

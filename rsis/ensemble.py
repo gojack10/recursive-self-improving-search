@@ -72,7 +72,11 @@ def merge(logs):
 def safe_attempt(m, hunt, budget, role):
     """One failed searcher should not discard the other searchers' paid work."""
     try:
-        return attempt(m, hunt, budget=budget, role=role)
+        log = attempt(m, hunt, budget=budget, role=role)
+        if log.get("error"):
+            print(f"  ensemble searcher {m['id']} failed: {log['error'][:200]}", flush=True)
+            return log
+        return log
     except Exception as e:
         print(f"  ensemble searcher {m['id']} failed: {str(e)[:200]}", flush=True)
         return None
@@ -109,9 +113,13 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
     more searchers agree on, and send the rest through batched Telem verification before submitting."""
     t0 = time.time()
     with ThreadPoolExecutor(n) as ex:
-        logs = [l for l in ex.map(lambda i: safe_attempt(lens(m, hunt, i), hunt, budget, role), range(n)) if l]
+        ran = [l for l in ex.map(lambda i: safe_attempt(lens(m, hunt, i), hunt, budget, role), range(n)) if l]
+    logs = [l for l in ran if not l.get("error")]
+    failed_spend = sum(l["telem_spent"] for l in ran if l.get("error"))
     if not logs:
-        raise RuntimeError("every ensemble searcher failed")
+        # Marked failed (with its spend) so loop.run_and_score excludes it instead of scoring a zero.
+        return {"method": f"{m['id']}+ensemble{n}", "hunt": hunt["name"], "error": "every ensemble searcher failed",
+                "telem_spent": round(failed_spend, 4)}
     items = merge(logs)
     agreed = [it for it in items.values() if len(it["votes"]) >= 2 and it["urls"]]
     single = [it for it in items.values() if not (len(it["votes"]) >= 2 and it["urls"])]
@@ -147,7 +155,8 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
             "kind": hunt["kind"], "pool": hunt["pool"], "x": hunt["x"], "y": hunt["y"], "finds": finds,
             "notes": f"{len(items)} unique candidates, {len(agreed)} agreed, {len(kept)}/{len(single)} singles verified",
             "telem_calls": [c for log in logs for c in log["telem_calls"]] + telem.calls,
-            "telem_spent": round(sum(l["telem_spent"] for l in logs) + telem.spent, 4),
+            "telem_spent": round(sum(l["telem_spent"] for l in logs) + failed_spend + telem.spent, 4),
+            "searchers_failed": n - len(logs),
             "telem_session": logs[0]["telem_session"], "trace": [],
             "url_providers": {u: sorted(p) for u, p in url_providers.items()},
             "url_text": merged_text([log["url_text"] for log in logs] + [telem.url_text]),

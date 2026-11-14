@@ -8,7 +8,7 @@ from .llm import Chat
 from .telem import url_key
 
 WRONG_PENALTY = 0.5
-MAX_GAP_CHECKS = 40
+MAX_GAP_CHECKS = 20
 
 
 def norm(s):
@@ -60,7 +60,11 @@ def mentions(text, name):
 
 def gap_check(name, hunt, judge):
     """Independent check, through Tavily rather than the searcher's Telem route, for a find Wikidata lacks."""
-    r = tavily.search(f"{name} {hunt['criterion']}", max_results=5, exclude_domains=REFEREE_DOMAINS)
+    try:
+        r = tavily.search(f"{name} {hunt['criterion']}", max_results=5, exclude_domains=REFEREE_DOMAINS)
+    except RuntimeError as e:
+        # Unchecked, so not credited: the same treatment as a find past MAX_GAP_CHECKS.
+        return "wrong", f"gap check unavailable: {str(e)[:120]}", None
     snippets = "\n".join(f"- {x['title']}: {x['content'][:300]}" for x in r.get("results", []))
     known = "; ".join(t["label"] for t in hunt["truth"])
     v = judge.json(
