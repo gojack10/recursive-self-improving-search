@@ -18,6 +18,14 @@ def norm(s):
 
 
 def match(name, truth):
+    for variant in (name, re.split(r" by | - | – |, |: | \(", name)[0]):
+        q = match_one(variant, truth)
+        if q:
+            return q
+    return None
+
+
+def match_one(name, truth):
     n = norm(name)
     if not n:
         return None
@@ -42,14 +50,17 @@ def gap_check(name, hunt, judge):
     known = "; ".join(t["label"] for t in hunt["truth"])
     v = judge.json(
         "You check one claimed answer against web evidence. Reply as JSON {\"verdict\": \"yes\"|\"no\"|\"same\", "
-        "\"meets_x\": bool, \"meets_y\": bool, \"reason\": str}. "
-        "Say same if the claimed item is another name for one of the already-known items. "
+        "\"same_as\": str|null, \"meets_x\": bool, \"meets_y\": bool, \"reason\": str}. "
+        "Say same, and copy the known item's name into same_as, if the claimed item is another name for one of the "
+        "already-known items. "
         "Say yes only if it is a different item and the evidence clearly shows it satisfies the criterion. "
         "meets_x and meets_y say which of the two conditions the evidence supports.",
         f"Criterion: {hunt['criterion']}\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}\n"
         f"Already-known items: {known}\nClaimed item: {name}\n"
         f"Tavily answer: {r.get('answer')}\nEvidence:\n{snippets}")
-    status = {"yes": "verified_gap", "same": "duplicate"}.get(v.get("verdict"), "wrong")
+    if v.get("verdict") == "same":
+        return "same", v.get("reason", ""), match_one(str(v.get("same_as") or ""), hunt["truth"])
+    status = "verified_gap" if v.get("verdict") == "yes" else "wrong"
     half = None
     if status == "wrong":
         half = "x_only" if v.get("meets_x") and not v.get("meets_y") else "y_only" if v.get("meets_y") and not v.get("meets_x") else "neither"
@@ -75,7 +86,15 @@ def score(finds, hunt, url_providers, check_gaps=True):
             seen.add(qid)
         elif check_gaps and gaps < MAX_GAP_CHECKS:
             gaps += 1
-            row["status"], row["reason"], row["half"] = gap_check(name, hunt, judge)
+            status, row["reason"], extra = gap_check(name, hunt, judge)
+            if status == "same":
+                # Another name for a known item: correct the first time it is found.
+                row["status"] = "duplicate" if extra is None or extra in seen else "correct"
+                if extra:
+                    row["qid"] = extra
+                    seen.add(extra)
+            else:
+                row["status"], row["half"] = status, extra
             seen.add(key)
         else:
             row["status"] = "wrong"
