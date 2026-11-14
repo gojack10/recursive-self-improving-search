@@ -1,6 +1,8 @@
 import json
 import os
 import random
+import threading
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 from . import history as H
@@ -18,6 +20,7 @@ WORKERS = 6
 def run_dir(name):
     d = ROOT / "runs" / name
     d.mkdir(parents=True, exist_ok=True)
+    os.environ["RSIS_RUN_DIR"] = str(d)
     return d
 
 
@@ -65,7 +68,7 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
     try:
         log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
                                        require_evidence=not log["method"].startswith("closed-book"),
-                                       url_text=log.get("url_text"))
+                                       url_text=log.get("url_text"), on_event=judge_events(d, log["attempt_id"]))
     except Exception as e:
         log["error"] = f"scoring failed: {str(e)[:400]}"
         H.save_log(d, log)
@@ -80,6 +83,17 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
           f"{row['correct']}/{row['total']} wrong={row['wrong']} ${row['spent']:.3f}", flush=True)
     row["label"] = role
     return row
+
+
+def judge_events(d, attempt_id):
+    """The judge's progress on one search, appended to logs/<attempt>.judge.jsonl for the live view."""
+    path, lock = d / "logs" / f"{attempt_id}.judge.jsonl", threading.Lock()
+
+    def emit(**event):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with lock, path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"t": round(time.time(), 2), **event}) + "\n")
+    return emit
 
 
 def method_caused(error):
@@ -158,6 +172,16 @@ def calibrate(name, runs=3):
     print(f"noise band {s['noise']}  baseline test {s['best_test']}")
 
 
+def baseline(name):
+    """Plain search on every question of the corpus that has no plain-search attempt in this run yet,
+    so each question can be compared against it."""
+    d = init(name)
+    done = {r["hunt"] for r in H.rows(d, "attempts.jsonl") if r["method"] == "v000"}
+    missing = [h for p in ("train", "select", "test") for h in HU.pool(p) if h not in done]
+    if missing:
+        batch(d, [(M.load(d, "v000"), h, "baseline") for h in missing], 0)
+
+
 def merge_routing(base, new):
     new = new if isinstance(new, dict) else {}
     r = {**base, **new}
@@ -175,7 +199,8 @@ def new_candidates(d, tree, props, parent, rnd):
     for c in props.get("candidates", []):
         if not isinstance(c, dict) or not c.get("instructions"):
             continue
-        m = {"id": M.next_id(d), "parent": parent["id"], "round": rnd, "rationale": c.get("rationale", ""),
+        m = {"id": M.next_id(d), "parent": parent["id"], "round": rnd, "title": str(c.get("title") or ""),
+             "rationale": c.get("rationale", ""),
              "instructions": c["instructions"], "routing": merge_routing(parent["routing"], c.get("routing")),
              "routing_rules": c.get("routing_rules", ""), "fetch_policy": c.get("fetch_policy", ""), "status": "candidate"}
         m["rationale"] = str(m["rationale"])
@@ -314,18 +339,19 @@ def one_round(name, k=2, breakout=False):
     return s
 
 
-def run(name, rounds, k=2, max_spend=30.0):
+def run(name, rounds, k=2, max_spend=30.0, keep_going=False):
     """Main loop with the plateau matrix: two flat rounds in a row trigger a breakout round;
-    two breakouts in a row without a counted gain stop the run as 'levelled off'."""
+    two breakouts in a row without a counted gain stop the run as 'levelled off', unless keep_going."""
     d = init(name)
     if state(d)["noise"] is None:
         calibrate(name)
+    baseline(name)
     for _ in range(rounds):
         s = state(d)
         if telem_total(d) > max_spend:
             print("spend cap reached")
             break
-        if s["breakouts_without_gain"] >= 2:
+        if s["breakouts_without_gain"] >= 2 and not keep_going:
             print("levelled off: two breakout rounds without a counted gain")
             break
         last = s["test_points"][-1] if s["test_points"] else None
@@ -376,11 +402,11 @@ def recursion_test(name, gens=None):
     return out
 
 
-def trial(method_paths, hunt_names=None, repeats=1, name="trials"):
+def trial(method_paths, hunt_names=None, repeats=1, name="trials", pool="test"):
     """Run hand-written methods head to head on the same hunts and budget. For testing tactics outside the loop."""
     d = run_dir(name)
     methods = [json.loads(open(p, encoding="utf-8").read()) for p in method_paths]
-    hunt_names = hunt_names or HU.pool("test")
+    hunt_names = hunt_names or HU.pool(pool)
     rows = batch(d, [(m, h, "trial") for m in methods for h in hunt_names for _ in range(repeats)], 0)
     print(f"{'method':16} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
     for m in methods:

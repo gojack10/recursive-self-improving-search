@@ -1,0 +1,87 @@
+{
+ "goal": "6072bc4d-87a7-47e0-a67e-ee6d6ef0c353",
+ "current": "v007",
+ "round": 4,
+ "best_test": 0.809,
+ "noise": 0.0,
+ "flat_rounds": 0,
+ "breakouts_without_gain": 0,
+ "test_points": [
+  {
+   "round": 1,
+   "method": "v002",
+   "test": 0.6939,
+   "adopted": true,
+   "select": {
+    "v000": 0.5834,
+    "v001": 0.4723,
+    "v002": 0.5972
+   },
+   "train": 0.575,
+   "breakout": false,
+   "new_lessons": true,
+   "telem_total": 2.1261,
+   "tavily_credits": 71
+  },
+  {
+   "round": 2,
+   "method": "v003",
+   "test": 0.7364,
+   "adopted": true,
+   "select": {
+    "v002": 0.7928,
+    "v003": 0.9118,
+    "v004": 0.6323
+   },
+   "train": 1.0,
+   "breakout": false,
+   "new_lessons": true,
+   "telem_total": 3.0871,
+   "tavily_credits": 88
+  },
+  {
+   "round": 3,
+   "method": "v006",
+   "test": 0.7659,
+   "adopted": true,
+   "select": {
+    "v003": 0.7778,
+    "v005": 0.7916,
+    "v006": 0.8334
+   },
+   "train": 0.9375,
+   "breakout": true,
+   "new_lessons": true,
+   "telem_total": 3.8891,
+   "tavily_credits": 99
+  },
+  {
+   "round": 4,
+   "method": "v007",
+   "test": 0.809,
+   "adopted": true,
+   "select": {
+    "v006": 0.8516,
+    "v007": 0.8971,
+    "v008": 0.3824
+   },
+   "train": 0.95,
+   "breakout": true,
+   "new_lessons": true,
+   "telem_total": 4.6121,
+   "tavily_credits": 107
+  }
+ ],
+ "baseline_test": 0.6274,
+ "tree_r1": [
+  "a648dde9-35ff-463c-9e20-5e8fd8642ff6",
+  "ffd3d422-822c-46eb-b0fc-c466cc67cdd1",
+  "6072bc4d-87a7-47e0-a67e-ee6d6ef0c353",
+  "5f361d64-71a6-45d3-adb2-5ca8a9992c22",
+  "226ed4da-e0ea-4997-a1d8-8cb3a6d69539",
+  "38f05b65-69e6-413a-a59d-a03e8fb0e731",
+  "7e842b69-e89a-46a4-bbf9-4de0138cc2ce",
+  "0b2994b7-4457-4869-931f-d85ee3dfef75"
+ ],
+ "measured_noise": 0.2605
+}

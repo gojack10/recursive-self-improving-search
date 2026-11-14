@@ -21,13 +21,14 @@ PROPOSE_TOOL = tool("propose", "Finish: record lessons, link repeated failures t
     "failure_links": {"type": "array", "items": {"type": "object", "properties": {
         "attempt_id": {"type": "string"}, "node_id": {"type": "string"}, "why": {"type": "string"}}}},
     "candidates": {"type": "array", "items": {"type": "object", "properties": {
+        "title": {"type": "string", "description": "Three to five plain words naming the method."},
         "rationale": {"type": "string"}, "instructions": {"type": "string"},
         "routing": {"type": "object", "properties": {
             "auto_routing": {"type": "boolean"}, "providers": {"type": "array", "items": {"type": "string"}},
             "tier": {"type": "string"}, "num_results": {"type": "integer"},
             "verify_providers": {"type": "array", "items": {"type": "string"}}}},
         "routing_rules": {"type": "string"}, "fetch_policy": {"type": "string"}},
-        "required": ["rationale", "instructions", "routing", "routing_rules", "fetch_policy"]}}},
+        "required": ["title", "rationale", "instructions", "routing", "routing_rules", "fetch_policy"]}}},
     ["lessons", "candidates"])
 
 SYSTEM = """You improve a web search method. Searchers follow the method on open hunts ("find every X"); a referee scores
@@ -73,6 +74,22 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
             as_of_round=None, allowed_nodes=None, prompt_method=None):
     """Write k candidates from `start`, searching with `search_method`. In normal rounds both are the current method;
     the recursion test holds `start` fixed and varies `search_method` across generations."""
+    from . import pi
+    model = pi.model(role)
+    if model:
+        import uuid
+        state, meta = pi.agent(model,
+            SYSTEM.format(k=k, method=M.render(prompt_method or search_method)),
+            context(run_dir, start, attempt_ids, extra, as_of_round),
+            {"id": uuid.uuid4().hex[:10], "actor": "improver", "method": search_method,
+             "question": "search tactics for exhaustive list finding", "budget": IMPROVER_BUDGET,
+             "spent": 0.0, "session_id": None, "calls": [], "url_providers": {}, "trace": [],
+             "run_dir": str(run_dir), "attempt_ids": list(attempt_ids), "as_of_round": as_of_round,
+             "allowed_nodes": list(allowed_nodes) if allowed_nodes is not None else None},
+            "improver", run_dir / "logs")
+        return state["proposal"], {**meta, "trace": state["trace"],
+            "web_searches": sum(t["tool"] == "web_search" for t in state["trace"]),
+            "telem_spent": state["spent"], "telem_session": state["session_id"]}
     chat = Chat(role)
     telem = Telem(IMPROVER_BUDGET)
     messages = [{"role": "system", "content": SYSTEM.format(k=k, method=M.render(prompt_method or search_method))},
@@ -126,4 +143,3 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
     except Exception as e:
         e.telem_spent = telem.spent
         raise
-

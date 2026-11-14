@@ -1,0 +1,5 @@
+{"t": 1794696996.12, "event": "plan", "unmatched": 2, "reused": 1, "to_check": 1}
+{"t": 1794696996.12, "event": "end", "name": "Alicia de Larrocha", "status": "wrong", "reason": "The evidence confirms Alicia de Larrocha won four competitive Grammy Awards, but does not establish an IAU-approved surface feature on Mercury named after her.", "reused": true}
+{"t": 1794696996.12, "event": "start", "name": "Muddy Waters"}
+{"t": 1794697009.28, "event": "end", "name": "Muddy Waters", "status": "wrong", "reason": "The supplied evidence establishes neither qualifying Grammy recognition for Muddy Waters nor an IAU-approved Mercury surface feature named after him. The profiles shown are unrelated namesakes.", "seconds": 13.2}
+{"t": 1794697009.28, "event": "done"}

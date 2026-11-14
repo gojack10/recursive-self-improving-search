@@ -1,0 +1,4 @@
+{"t": 1794699787.74, "event": "plan", "unmatched": 2, "reused": 2, "to_check": 0}
+{"t": 1794699787.74, "event": "end", "name": "Hermann Joseph Muller", "status": "same", "reason": "NobelPrize.org explicitly identifies Hermann J. Muller as Hermann Joseph Muller, the 1946 medicine laureate. He is already counted. The supplied evidence does not establish an IAU-approved Martian surface feature named after him.", "reused": true}
+{"t": 1794699787.74, "event": "end", "name": "John William Strutt, 3rd Baron Rayleigh", "status": "same", "reason": "John William Strutt, 3rd Baron Rayleigh, is Lord Rayleigh, already listed. The evidence identifies his 1904 Nobel Prize in Physics and the Martian crater Rayleigh named in his honour.", "reused": true}
+{"t": 1794699787.74, "event": "done"}

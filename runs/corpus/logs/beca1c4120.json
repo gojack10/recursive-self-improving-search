@@ -1,0 +1,1077 @@
+{
+ "attempt_id": "beca1c4120",
+ "method": "v003",
+ "hunt": "nobel_venus",
+ "kind": "list",
+ "x": "How many Nobel Prize laureates have an IAU-approved surface feature on Venus named after them? Count each person once. Use IAU names in force as of November 2026. List each laureate.",
+ "y": "",
+ "pool": "select",
+ "finds": [
+  {
+   "name": "Bertha von Suttner",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/6446"
+  },
+  {
+   "name": "Selma Lagerlöf",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/3232"
+  },
+  {
+   "name": "Grazia Deledda",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/1469"
+  },
+  {
+   "name": "Sigrid Undset",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/6224"
+  },
+  {
+   "name": "Jane Addams",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/50"
+  },
+  {
+   "name": "Irène Joliot-Curie",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/2840"
+  },
+  {
+   "name": "Pearl S. Buck",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/907"
+  },
+  {
+   "name": "Emily Greene Balch",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/572"
+  },
+  {
+   "name": "Gerty Cori",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/1309"
+  },
+  {
+   "name": "Maria Goeppert-Mayer",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/2203"
+  },
+  {
+   "name": "Nelly Sachs",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/5265"
+  }
+ ],
+ "notes": "Identified 11 people by cross-checking IAU-approved Venus feature origins against the Nobel laureate list, including the non-crater Sachs Patera. Excluded generic first names and superseded spellings; present-day gazetteer records cannot independently establish future changes as of November 2026.",
+ "telem_calls": [
+  {
+   "kind": "search",
+   "query": [
+    "Nobel laureates craters Venus named after Nobel prize winners planetary nomenclature"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "list women Nobel Prize winners literature peace chemistry physics deceased full list"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Venus craters \"Nobel\" laureate Venus named crater peace literature"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv",
+    "https://en.wikipedia.org/wiki/List_of_craters_on_Venus",
+    "http://aauw-ca.org/women-nobel-prize-laureates",
+    "https://planetarynames.wr.usgs.gov/Feature/2840",
+    "https://planetarynames.wr.usgs.gov/Feature/3232"
+   ],
+   "ok": 5,
+   "cost": 0.005
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Jane Addams IAU gazetteer Venus crater named after approved feature eponym",
+    "Emily Greene Balch IAU gazetteer Venus crater named after approved feature eponym",
+    "Selma Lagerlöf IAU gazetteer Venus crater named after approved feature eponym",
+    "Irène Joliot-Curie IAU gazetteer Venus crater named after approved feature eponym",
+    "Gerty Cori IAU gazetteer Venus crater named after approved feature eponym"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 18,
+   "dropped_referee": 2,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Maria Goeppert Mayer IAU gazetteer Venus crater named after approved feature eponym",
+    "Marie Curie IAU gazetteer Venus crater named after approved feature eponym",
+    "Bertha von Suttner IAU gazetteer Venus crater named after approved feature eponym",
+    "Grazia Deledda IAU gazetteer Venus crater named after approved feature eponym",
+    "Sigrid Undset IAU gazetteer Venus crater named after approved feature eponym"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 18,
+   "dropped_referee": 2,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Pearl S. Buck IAU gazetteer Venus crater named after approved feature eponym",
+    "Gabriela Mistral IAU gazetteer Venus crater named after approved feature eponym",
+    "Nelly Sachs IAU gazetteer Venus crater named after approved feature eponym",
+    "Mother Teresa IAU gazetteer Venus crater named after approved feature eponym",
+    "Barbara McClintock IAU gazetteer Venus crater named after approved feature eponym"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 20,
+   "dropped_referee": 0,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Rita Levi-Montalcini IAU gazetteer Venus crater named after approved feature eponym",
+    "Dorothy Hodgkin IAU gazetteer Venus crater named after approved feature eponym",
+    "Rosalyn Yalow IAU gazetteer Venus crater named after approved feature eponym",
+    "Gertrude Elion IAU gazetteer Venus crater named after approved feature eponym",
+    "Alva Myrdal IAU gazetteer Venus crater named after approved feature eponym"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 20,
+   "dropped_referee": 0,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Betty Williams IAU gazetteer Venus crater named after approved feature eponym",
+    "Mairead Corrigan IAU gazetteer Venus crater named after approved feature eponym",
+    "Wangari Maathai IAU gazetteer Venus crater named after approved feature eponym",
+    "Doris Lessing IAU gazetteer Venus crater named after approved feature eponym",
+    "Toni Morrison IAU gazetteer Venus crater named after approved feature eponym"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 20,
+   "dropped_referee": 0,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://planetarynames.wr.usgs.gov/Feature/2840",
+    "https://planetarynames.wr.usgs.gov/Feature/3232",
+    "https://planetarynames.wr.usgs.gov/Feature/5265",
+    "https://planetarynames.wr.usgs.gov/Feature/1309",
+    "https://planetarynames.wr.usgs.gov/Feature/2203"
+   ],
+   "ok": 5,
+   "cost": 0.005
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://planetarynames.wr.usgs.gov/Feature/50",
+    "https://planetarynames.wr.usgs.gov/Feature/572",
+    "https://planetarynames.wr.usgs.gov/Feature/6446",
+    "https://planetarynames.wr.usgs.gov/Feature/1469",
+    "https://planetarynames.wr.usgs.gov/Feature/907"
+   ],
+   "ok": 5,
+   "cost": 0.005
+  },
+  {
+   "kind": "search",
+   "query": [
+    "site:planetarynames.wr.usgs.gov/Feature \"Venus\" \"Nobel laureate\""
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Sigrid Undset Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Gabriela Mistral Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Marie Skłodowska Curie Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Nadine Gordimer Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Elinor Ostrom Venus planetary surface feature crater patera named for her IAU nomenclature"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 19,
+   "dropped_referee": 1,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Alice Munro Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Louise Glück Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Annie Ernaux Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Herta Müller Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Wisława Szymborska Venus planetary surface feature crater patera named for her IAU nomenclature"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel",
+    "parallel"
+   ],
+   "n": 20,
+   "dropped_referee": 0,
+   "cost": 0.005,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Mistral Patera Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "Undset Patera Venus planetary surface feature crater patera named for her IAU nomenclature"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel",
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.002,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://planetarynames.wr.usgs.gov/Feature/6224",
+    "https://planetarynames.wr.usgs.gov/Feature/Gabriela",
+    "http://aauw-ca.org/women-nobel-prize-laureates"
+   ],
+   "ok": 3,
+   "cost": 0.003
+  }
+ ],
+ "telem_spent": 0.059,
+ "telem_session": "ffeab6d5-8a92-4043-8419-a2089af03ccf",
+ "trace": [
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "Nobel laureates craters Venus named after Nobel prize winners planetary nomenclature",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.079
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "list women Nobel Prize winners literature peace chemistry physics deceased full list",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.078
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "Venus craters \"Nobel\" laureate Venus named crater peace literature",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.077
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv",
+     "https://en.wikipedia.org/wiki/List_of_craters_on_Venus",
+     "http://aauw-ca.org/women-nobel-prize-laureates",
+     "https://planetarynames.wr.usgs.gov/Feature/2840",
+     "https://planetarynames.wr.usgs.gov/Feature/3232"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.072
+   }
+  },
+  {
+   "tool": "check_candidates",
+   "args": {
+    "candidates": [
+     "Jane Addams",
+     "Emily Greene Balch",
+     "Selma Lagerlöf",
+     "Irène Joliot-Curie",
+     "Gerty Cori",
+     "Maria Goeppert Mayer",
+     "Marie Curie",
+     "Bertha von Suttner",
+     "Grazia Deledda",
+     "Sigrid Undset",
+     "Pearl S. Buck",
+     "Gabriela Mistral",
+     "Nelly Sachs",
+     "Mother Teresa",
+     "Barbara McClintock",
+     "Rita Levi-Montalcini",
+     "Dorothy Hodgkin",
+     "Rosalyn Yalow",
+     "Gertrude Elion",
+     "Alva Myrdal",
+     "Betty Williams",
+     "Mairead Corrigan",
+     "Wangari Maathai",
+     "Doris Lessing",
+     "Toni Morrison"
+    ],
+    "condition": "IAU gazetteer Venus crater named after approved feature eponym",
+    "providers": [
+     "parallel"
+    ],
+    "per_candidate": 4
+   },
+   "summary": {
+    "budget_left": 0.047
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://planetarynames.wr.usgs.gov/Feature/2840",
+     "https://planetarynames.wr.usgs.gov/Feature/3232",
+     "https://planetarynames.wr.usgs.gov/Feature/5265",
+     "https://planetarynames.wr.usgs.gov/Feature/1309",
+     "https://planetarynames.wr.usgs.gov/Feature/2203"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.042
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://planetarynames.wr.usgs.gov/Feature/50",
+     "https://planetarynames.wr.usgs.gov/Feature/572",
+     "https://planetarynames.wr.usgs.gov/Feature/6446",
+     "https://planetarynames.wr.usgs.gov/Feature/1469",
+     "https://planetarynames.wr.usgs.gov/Feature/907"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.037
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "site:planetarynames.wr.usgs.gov/Feature \"Venus\" \"Nobel laureate\"",
+    "providers": [
+     "parallel"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.036
+   }
+  },
+  {
+   "tool": "check_candidates",
+   "args": {
+    "candidates": [
+     "Sigrid Undset",
+     "Gabriela Mistral",
+     "Marie Skłodowska Curie",
+     "Nadine Gordimer",
+     "Elinor Ostrom",
+     "Alice Munro",
+     "Louise Glück",
+     "Annie Ernaux",
+     "Herta Müller",
+     "Wisława Szymborska",
+     "Mistral Patera",
+     "Undset Patera"
+    ],
+    "condition": "Venus planetary surface feature crater patera named for her IAU nomenclature",
+    "providers": [
+     "parallel"
+    ],
+    "per_candidate": 4
+   },
+   "summary": {
+    "budget_left": 0.024
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://planetarynames.wr.usgs.gov/Feature/6224",
+     "https://planetarynames.wr.usgs.gov/Feature/Gabriela",
+     "http://aauw-ca.org/women-nobel-prize-laureates"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.021
+   }
+  },
+  {
+   "tool": "submit",
+   "args": {
+    "finds": [
+     {
+      "name": "Bertha von Suttner",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/6446"
+     },
+     {
+      "name": "Selma Lagerlöf",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/3232"
+     },
+     {
+      "name": "Grazia Deledda",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/1469"
+     },
+     {
+      "name": "Sigrid Undset",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/6224"
+     },
+     {
+      "name": "Jane Addams",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/50"
+     },
+     {
+      "name": "Irène Joliot-Curie",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/2840"
+     },
+     {
+      "name": "Pearl S. Buck",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/907"
+     },
+     {
+      "name": "Emily Greene Balch",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/572"
+     },
+     {
+      "name": "Gerty Cori",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/1309"
+     },
+     {
+      "name": "Maria Goeppert-Mayer",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/2203"
+     },
+     {
+      "name": "Nelly Sachs",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/5265"
+     }
+    ],
+    "notes": "Identified 11 people by cross-checking IAU-approved Venus feature origins against the Nobel laureate list, including the non-crater Sachs Patera. Excluded generic first names and superseded spellings; present-day gazetteer records cannot independently establish future changes as of November 2026."
+   },
+   "summary": {
+    "ok": true
+   }
+  }
+ ],
+ "url_providers": {
+  "https://planetarynames.wr.usgs.gov/Feature/2840": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Venus": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://wenamethestars.inkleby.com/feature/572": [
+   "parallel"
+  ],
+  "https://pubs.usgs.gov/of/1994/0235/report.pdf": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/3232": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&origin=Nobel": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv": [
+   "fetch:exa",
+   "parallel"
+  ],
+  "https://digital.library.unt.edu/ark:/67531/metadc1115027/m2/1/high_res_d/report.pdf": [
+   "parallel"
+  ],
+  "http://aauw-ca.org/women-nobel-prize-laureates": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://historia.nationalgeographic.com.es/a/todas-mujeres-que-han-ganado-premio-nobel_13276": [
+   "parallel"
+  ],
+  "https://newsworthywomen.com/2024/12/14/women-winners-of-the-nobel-prize": [
+   "parallel"
+  ],
+  "https://www.dpma.de/english/our_office/publications/ingeniouswomen/nobelpreise2018dreifrauengewinnen/index.html": [
+   "parallel"
+  ],
+  "https://www.infoplease.com/awards/nobel/women-nobel-prize-winners": [
+   "parallel"
+  ],
+  "https://www.thoughtco.com/women-nobel-literature-prize-winners-3529859": [
+   "parallel"
+  ],
+  "https://www.nobelprize.org/women-who-changed-science/": [
+   "parallel"
+  ],
+  "http://en.wikipedia.org/wiki/List_of_female_Nobel_laureates": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/572": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1309": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/2203": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/6834": [
+   "parallel"
+  ],
+  "https://link.springer.com/article/10.1007/BF00142406": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/images/pia00269-venus-stereo-image-pair-of-crater-goeppert-mayer": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents/": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/50": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Addams_(crater)": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Balch_(crater)": [
+   "parallel"
+  ],
+  "https://www.usgs.gov/centers/astrogeology-science-center/science/venus-magellan-impact-crater-database": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Selma": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Lagerl%C3%B6f": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Joliot-Curie": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Irene": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Cori": [
+   "parallel"
+  ],
+  "https://humanitystats.com/worlds/venus/cori": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Goeppert-Mayer_(crater)": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/6446": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/713": [
+   "parallel"
+  ],
+  "https://www.lpi.usra.edu/resources/vc/vcinfo/?refnum=244": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Deledda": [
+   "parallel"
+  ],
+  "https://humanitystats.com/worlds/venus/deledda": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Sigrid": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/6224": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Sigrid_Undset": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/907": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://humanitystats.com/worlds/venus/buck": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Gabriela": [
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://a.osmarks.net/content/wikipedia_en_all_maxi_2020-08/A/List_of_craters_on_Venus": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Sachs%20Patera": [
+   "parallel"
+  ],
+  "https://www.iau.org/common/Uploaded%20files/iau-3year-report-name-list-2018-wgpsn.pdf": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/2183?target=MOON": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Rita": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/16320": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1584": [
+   "parallel"
+  ],
+  "https://pubs.usgs.gov/of/1996/0688/report.pdf": [
+   "parallel"
+  ],
+  "https://reference.org/facts/List_of_craters_on_Venus/UxEtG4nk": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Page/Approved": [
+   "parallel"
+  ],
+  "https://www.usgs.gov/tools/gazetteer-planetary-nomenclature": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/723": [
+   "parallel"
+  ],
+  "https://newikis.com/en/List_of_craters_on_Venus": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1582": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Gaze": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Morrison": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/5265": [
+   "fetch:tavily"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1469": [
+   "fetch:tavily"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/3641": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/5264": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/3808": [
+   "parallel"
+  ],
+  "https://www.lpi.usra.edu/meetings/lpsc1993/pdf/1611.pdf": [
+   "parallel"
+  ],
+  "https://www.fourmilab.ch/earthview/features/VENUS_nomenclature.html": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/Nadine": [
+   "parallel"
+  ],
+  "https://pubs.usgs.gov/of//1994/0235/report.pdf": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/6835": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1267": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/285": [
+   "parallel"
+  ],
+  "http://wenamethestars.inkleby.com/feature/522": [
+   "parallel"
+  ]
+ },
+ "url_text": {
+  "https://planetarynames.wr.usgs.gov/Feature/2840": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Joliot-Curie\n* Clean Name | Joliot Curie\n* Feature ID | 2840\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -1.60 °\n* Southmost Latitude | -1.60 °\n* Eastmost Longitude | 62.40 °\n* Westmost Longitude | 62.40 °\n* Diam Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Joliot-Curie\n* Clean Name | Joliot Curie\n* Feature ID | 2840\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -1.60 °\n* Southmost Latitude | -1.60 °\n* Eastmost Longitude | 62.40 °\n* Westmost Longitude | 62.40 °\n* Diam ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA **.gov** website belongs to an official government organization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA **lock** (  ) or **https://** means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.\n\n[![Home](/static/images/logo.png)](https://www.usgs.gov/ \"Home\")\n\n\n\n\n![](/static/images/nomen-logo.png)\n\n*Gazetteer of Planetary Nomenclature*\n\n![](/static/images/nomen-logo.png)\n\n*Gazetteer  \nof Planetary  \nNomenclature*\n\n* [Home](/)\n* [About](/Page/Introduction)\n* [Nomenclature](/Nomenclature)\n  + [Mercury](/Page/MERCURY/target)\n  + [Venus](/Page/VENUS/target)\n  + [The Moon](/Page/MOON/target)\n  + [Mars System](/Page/MARS/system)\n  + [Asteroids](/Page/ASTEROIDS/system)\n  + [Jupiter System](/Page/JUPITER/system)\n  + [Saturn System](/Page/SATURN/system)\n  + [Uranus System](/Page/URANUS/system)\n  + [Neptune System](/Page/NEPTUNE/system)\n  + [Pluto System](/Page/PLUTO/system)\n  + [Ring and Ring Gap Nomenclature](/Page/Rings)\n  + [Planet and Satellite Names, Discoverers, and Themes](/Page/Planets)\n* [Documentation](/Documentation)\n* [Images and GIS Data](/Page/Images)\n* [Advanced Search](/AdvancedSearch)\n* [Name Request Instructions](/FeatureNameRequest)\n* [News](/News?page=1)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Joliot-Curie |\n| Clean Name | Joliot Curie |\n| Feature ID | 2840 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n  \n UNKNOWN\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | -1.60 ° |\n| Southmost Latitude | -1.60 ° |\n| Eastmost Longitude | 62.40 ° |\n| Westmost Longitude | 62.40 ° |\n| Diameter | 91.10 km |\n| Center Latitude | -1.60 ° |\n| Center Longitude | 62.40 ° |\n| WKT String | POINT (62.4 -1.6) |\n| Quad | v34 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v34_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1991 |\n| Continent | Europe |\n| Ethnicity | France |\n| Origin | Irene; French physicist, Nobel laureate (1897-1956). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended only to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map. You may wish to select a different layer on the map to match the control network for the geometry you are viewing.*\n\n### PDF maps of Venus\n\n* [1:5 million-scale Magellan radar imagery](../Page/venus1to5m_Radar)\n* [1:10 million-scale color altimetry](../Page/venus1to10m_Altimetry) Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Joliot-Curie\n* Clean Name | Joliot Curie\n* Feature ID | 2840\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -1.60 °\n* Southmost Latitude | -1.60 °\n* Eastmost Longitude | 62.40 °\n* Westmost Longitude | 62.40 °\n* Diam ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA **.gov** website belongs to an official government organization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA **lock** (  ) or **https://** means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.\n\n[![Home](/static/images/logo.png)](https://www.usgs.gov/ \"Home\")\n\n\n\n\n![](/static/images/nomen-logo.png)\n\n*Gazetteer of Planetary Nomenclature*\n\n![](/static/images/nomen-logo.png)\n\n*Gazetteer  \nof Planetary  \nNomenclature*\n\n* [Home](/)\n* [About](/Page/Introduction)\n* [Nomenclature](/Nomenclature)\n  + [Mercury](/Page/MERCURY/target)\n  + [Venus](/Page/VENUS/target)\n  + [The Moon](/Page/MOON/target)\n  + [Mars System](/Page/MARS/system)\n  + [Asteroids](/Page/ASTEROIDS/system)\n  + [Jupiter System](/Page/JUPITER/system)\n  + [Saturn System](/Page/SATURN/system)\n  + [Uranus System](/Page/URANUS/system)\n  + [Neptune System](/Page/NEPTUNE/system)\n  + [Pluto System](/Page/PLUTO/system)\n  + [Ring and Ring Gap Nomenclature](/Page/Rings)\n  + [Planet and Satellite Names, Discoverers, and Themes](/Page/Planets)\n* [Documentation](/Documentation)\n* [Images and GIS Data](/Page/Images)\n* [Advanced Search](/AdvancedSearch)\n* [Name Request Instructions](/FeatureNameRequest)\n* [News](/News?page=1)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Joliot-Curie |\n| Clean Name | Joliot Curie |\n| Feature ID | 2840 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n  \n UNKNOWN\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | -1.60 ° |\n| Southmost Latitude | -1.60 ° |\n| Eastmost Longitude | 62.40 ° |\n| Westmost Longitude | 62.40 ° |\n| Diameter | 91.10 km |\n| Center Latitude | -1.60 ° |\n| Center Longitude | 62.40 ° |\n| WKT String | POINT (62.4 -1.6) |\n| Quad | v34 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v34_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1991 |\n| Continent | Europe |\n| Ethnicity | France |\n| Origin | Irene; French physicist, Nobel laureate (1897-1956). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended only to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map. You may wish to select a different layer on the map to match the control network for the geometry you are viewing.*\n\n### PDF maps of Venus\n\n* [1:5 million-scale Magellan radar imagery](../Page/venus1to5m_Radar)\n* [1:10 million-scale color altimetry](../Page/venus1to10m_Altimetry)",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Venus": " List of craters on Venus - Wikipedia From Wikipedia, the free encyclopedia\nThis article should list only official names approved by the International Astronomical Union (IAU). [ 1 ]\n* Lunar : 1,624 craters (31.2%)\n\n...\n\n[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ a ]\nThis is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous w [Jump to content](#bodyContent)\n\n[![](/static/images/icons/enwiki-25.svg)  ![Wikipedia](/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg) ![The Free Encyclopedia](/static/images/mobile/copyright/wikipedia-tagline-en-25.svg)](/wiki/Main_Page)\n\n[Search](/wiki/Special:Search \"Search Wikipedia [f]\")\n\n# List of craters on Venus\n\n* [Català](https://ca.wikipedia.org/wiki/Llista_de_cr%C3%A0ters_de_Venus \"Llista de cràters de Venus – Catalan\")\n* [Deutsch](https://de.wikipedia.org/wiki/Liste_der_Venuskrater \"Liste der Venuskrater – German\")\n* [Français](https://fr.wikipedia.org/wiki/Liste_des_crat%C3%A8res_de_V%C3%A9nus \"Liste des cratères de Vénus – French\")\n* [Galego](https://gl.wikipedia.org/wiki/Lista_dos_cr%C3%A1teres_de_Venus \"Lista dos cráteres de Venus – Galician\")\n* [Italiano](https://it.wikipedia.org/wiki/Crateri_di_Venere \"Crateri di Venere – Italian\")\n* [日本語](https://ja.wikipedia.org/wiki/%E9%87%91%E6%98%9F%E3%81%AE%E3%82%AF%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC%E4%B8%80%E8%A6%A7 \"金星のクレーター一覧 – Japanese\")\n* [Nederlands](https://nl.wikipedia.org/wiki/Lijst_van_kraters_op_Venus \"Lijst van kraters op Venus – Dutch\")\n* [Polski](https://pl.wikipedia.org/wiki/Lista_krater%C3%B3w_na_Wenus \"Lista kraterów na Wenus – Polish\")\n* [Romnă](https://ro.wikipedia.org/wiki/Lista_craterelor_de_pe_Venus \"Lista craterelor de pe Venus – Romanian\")\n* [Русский](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D1%80%D0%BE%D0%B2_%D0%92%D0%B5%D0%BD%D0%B5%D1%80%D1%8B \"Список кратеров Венеры – Russian\")\n* [Svenska](https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_kratrar_p%C3%A5_Venus \"Lista över kratrar på Venus – Swedish\")\n* [Türkçe](https://tr.wikipedia.org/wiki/Ven%C3%BCs%27teki_kraterler_listesi \"Venüs'teki kraterler listesi – Turkish\")\n* [中文](https://zh.wikipedia.org/wiki/%E9%87%91%E6%98%9F%E4%B8%8A%E7%9A%84%E6%92%9E%E5%87%BB%E5%9D%91%E5%88%97%E8%A1%A8 \"金星上的撞击坑列表 – Chinese\")\n\n[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q665010#sitelinks-wikipedia \"Edit interlanguage links\")\n\n* [Article](/wiki/List_of_craters_on_Venus \"View the content page [c]\")\n* [Talk](/wiki/Talk:List_of_craters_on_Venus \"Discuss improvements to the content page [t]\")\n\n* [Read](/wiki/List_of_craters_on_Venus)\n* [Edit](/w/index.php?title=List_of_craters_on_Venus&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_craters_on_Venus&action=history \"Past revisions of this page [h]\")\n\n\n\nTools\n\nActions\n\n* [Read](/wiki/List_of_craters_on_Venus)\n* [Edit](/w/index.php?title=List_of_craters_on_Venus&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_craters_on_Venus&action=history \"Past revisions of this page [h]\")\n\nGeneral\n\n* [What links here](/wiki/Special:WhatLinksHere/List_of_craters_on_Venus \"List of all English Wikipedia pages containing links to this page [j]\")\n* [Related changes](/wiki/Special:RecentChangesLinked/List_of_craters_on_Venus \"Recent changes in pages linked from this page [k]\")\n* [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard \"Upload files [u]\")\n* [Permanent link](/w/index.php?title=List_of_craters_on_Venus&oldid=1361105315 \"Permanent link to this revision of this page\")\n* [Page information](/w/index.php?title=List_of_craters_on_Venus&action=info \"More information about this page\")\n* [Cite this page](/w/index.php?title=Special:CiteThisPage&page=List_of_craters_on_Venus&id=1361105315&wpFormIdentifier=titleform \"Information on how to cite this page\")\n* [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_craters_on_Venus)\n* [Switch to legacy parser](/w/index.php?title=List_of_craters_on_Venus&useparsoid=0)\n\nPrint/export\n\n* [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=List_of_craters_on_Venus&action=show-download-screen \"Download this page as a PDF file\")\n* [Printable version](/w/index.php?title=List_of_craters_on_Venus&printable=yes \"Printable version of this page [p]\")\n\nIn other projects\n\n* [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Impact_craters_on_Venus)\n* [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q665010 \"Structured data on this page hosted by Wikidata [g]\")\n\nAppearance\n\nFrom Wikipedia, the free encyclopedia\n\nThis article should list *only* official names approved by the [International Astronomical Union](https://en.wikipedia.org/wiki/International_Astronomical_Union \"International Astronomical Union\") (IAU).[[1]](#cite_note-Gazetteer-Venus-Craterlist-1)\n\n* [Lunar](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon \"List of craters on the Moon\"): 1,624 craters (31.2%)\n* Venusian: 900 craters (17.3%)\n* [Mercurian](https://en.wikipedia.org/wiki/List_of_craters_on_Mercury \"List of craters on Mercury\"): 397 craters (7.6%)\n* [Martian](https://en.wikipedia.org/wiki/List_of_craters_on_Mars \"List of craters on Mars\"): 1,092 craters (21.0%)\n* Others: 1,198 craters (23.0%)\n\nDistribution of named [craters](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") in the [Solar System](https://en.wikipedia.org/wiki/Solar_System \"Solar System\") as of 2017.[[1]](#cite_note-Gazetteer-Venus-Craterlist-1)[[2]](#cite_note-Gazetteer-Mercury-Craterlist-2)[[3]](#cite_note-Gazetteer-Moon-Craterlist-3)[[4]](#cite_note-Gazetteer-Mars-Craterlist-4)[[a]](#cite_note-WGPSN-Dropped-5)\n\nThis is a list of [craters](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") on [Venus](https://en.wikipedia.org/wiki/Venus \"Venus\"), [named](https://en.wikipedia.org/wiki/Planetary_nomenclature \"Planetary nomenclature\") by the [International Astronomical Union](https://en.wikipedia.org/wiki/International_Astronomical_Union \"International Astronomical Union\")'s (IAU) [Working Group for Planetary System Nomenclature](https://en.wikipedia.org/wiki/Working_Group_for_Planetary_System_Nomenclature \"Working Group for Planetary System Nomenclature\"). All craters on Venus are named after famous women or female first names.[[1]](#cite_note-Gazetteer-Venus-Craterlist-1)[[5]](#cite_note-Gazetteer-Categories-6) *(For features on Venus other than craters see, [list of montes on Venus](https://en.wikipedia.org/wiki/List_of_montes_on_Venus \"List of montes on Venus\") and [List of coronae on Venus](https://en.wikipedia.org/wiki/List_of_coronae_on_Venus \"List of coronae on Venus\").[[6]](#cite_note-Gazetteer-Target-Venus-7))*\n\nAs of 2017, there are 900 named craters on Venus,[[1]](#cite_note-Gazetteer-Venus-Craterlist-1) fewer than the [lunar](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon \"List of craters on the Moon\") and [Martian](https://en.wikipedia.org/wiki/List_of_craters_on_Mars \"List of craters on Mars\") craters but more than [on Mercury](https://en.wikipedia.org/wiki/List_of_craters_on_Mercury \"List of craters on Mercury\").[[2]](#cite_note-Gazetteer-Mercury-Craterlist-2)[[3]](#cite_note-Gazetteer-Moon-Craterlist-3)[[4]](#cite_note-Gazetteer-Mars-Craterlist-4)[[a]](#cite_note-WGPSN-Dropped-5)\n\nOther, non-planetary bodies with numerous named craters include [Callisto](https://en.wikipedia.org/wiki/Callisto_(moon) \"Callisto (moon)\") ([141](https://en.wikipedia.org/wiki/List_of_craters_on_Callisto \"List of craters on Callisto\")), [Ganymede](https://en.wikipedia.org/wiki/Ganymede_(moon) \"Ganymede (moon)\") ([131](https://en.wikipedia.org/wiki/List_of_craters_on_Ganymede \"List of craters on Ganymede\")), [Rhea](https://en.wikipedia.org/wiki/Rhea_(moon) \"Rhea (moon)\") (128), [Vesta](https://en.wikipedia.org/wiki/4_Vesta \"4 Vesta\") (90), [Ceres](https://en.wikipedia.org/wiki/Ceres_(dwarf_planet) \"Ceres (dwarf planet)\") (90), [Dione](https://en.wikipedia.org/wiki/Dione_(moon) \"Dione (moon)\") (73), [Iapetus](https://en.wikipedia.org/wiki/Iapetus_(moon) \"Iapetus (moon)\") (58), [Enceladus](https://en.wikipedia.org/wiki/Enceladus_(moon) \"Enceladus (moon)\") (53), [Tethys](https://en.wikipedia.org/wiki/Tethys_(moon) \"Tethys (moon)\") (50) and [Europa](https://en.wikipedia.org/wiki/Europa_(moon) \"Europa (moon)\") ([41](https://en.wikipedia.org/wiki/List_of_craters_on_Europa \"List of craters on Europa\")). For a full list, *see [List of craters in the Solar System](https://en.wikipedia.org/wiki/List_of_craters_in_the_Solar_System \"List of craters in the Solar System\")*.\n\nCraters on Venus (alphabetically)\n\n* [A](#A)\n* [B](#B)\n* [C](#C)\n* [D](#D)\n* [E](#E)\n* [F](#F)\n* [G](#G)\n* [H](#H)\n* [I](#I)\n* [J](#J)\n* [K](#K)\n* [L](#L)\n* [M](#M)\n* [N](#N)\n* [O](#O)\n* [P](#P)\n* [Q](#Q)\n* [R](#R)\n* [S](#S)\n* [T](#T)\n* [U](#U)\n* [V](#V)\n* [W](#W)\n* [X](#X)\n* [Y](#Y)\n* [Z](#Z)\n\n* [Dropped and not approved names](#Dropped_and_not_approved_names)\n* [See also](#See_also)\n* [References](#References)\n* [Notes](#Notes)\n* [External links](#External_links)\n\n## A\n\n[[edit](/w/index.php?title=List_of_craters_on_Venus&action=edit&section=1 \"Edit section: A\")]\n\n| [Crater](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") | Coordinates | [Diameter](https://en.wikipedia.org/wiki/Diameter \"Diameter\") (km) | Approval Year | [Eponym](https://en.wikipedia.org/wiki/Eponym \"Eponym\") | Ref |\n| --- | --- | --- | --- | --- | --- |\n| Abigail | [52°12′S 111°12′E﻿ / ﻿52.2°S 111.2°E﻿ / -52.2; 111.2﻿ (Abigail)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=52.2_S_111.2_E_globe:venus_type:landmark&title=Abigail) | 18.4 | 1994 | [Hebrew](https://en.wikipedia.org/wiki/Hebrew_languages \"Hebrew languages\") [first name](https://en.wikipedia.org/wiki/Given_name \"Given name\") | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/17) |\n| Abika | [52°30′S 104°24′E﻿ / ﻿52.5°S 104.4°E﻿ / -52.5; 104.4﻿ (Abika)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=52.5_S_104.4_E_globe:venus_type:landmark&title=Abika) | 14.5 | 1994 | [Mari](https://en.wikipedia.org/wiki/Mari_language \"Mari language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/18) |\n| [Abington](https://en.wikipedia.org/wiki/Abington_(crater)?action=edit&redlink=1 \"Abington (crater) (page does not exist)\") | [47°48′S 82°18′W﻿ / ﻿47.8°S 82.3°W﻿ / -47.8; -82.3﻿ (Abington)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=47.8_S_82.3_W_globe:venus_type:landmark&title=Abington) | 21.7 | 1994 | [Frances Abington](https://en.wikipedia.org/wiki/Frances_Abington \"Frances Abington\"), British actress | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/19) |\n| [Abra](https://en.wikipedia.org/wiki/Abra_(crater)?action=edit&redlink=1 \"Abra (crater) (page does not exist)\") | [6°12′N 97°24′E﻿ / ﻿6.2°N 97.4°E﻿ / 6.2; 97.4﻿ (Abra)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=6.2_N_97.4_E_globe:venus_type:landmark&title=Abra) | 7.2 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/20) |\n| [Adaiah](https://en.wikipedia.org/wiki/Adaiah_(crater)?action=edit&redlink=1 \"Adaiah (crater) (page does not exist)\") | [47°18′S 106°36′W﻿ / ﻿47.3°S 106.6°W﻿ / -47.3; -106.6﻿ (Adaiah)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=47.3_S_106.6_W_globe:venus_type:landmark&title=Adaiah) | 18 | 1994 | Hebrew first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/43) |\n| [Adamson](https://en.wikipedia.org/wiki/Adamson_(crater)?action=edit&redlink=1 \"Adamson (crater) (page does not exist)\") | [14°48′S 29°36′E﻿ / ﻿14.8°S 29.6°E﻿ / -14.8; 29.6﻿ (Adamson)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=14.8_S_29.6_E_globe:venus_type:landmark&title=Adamson) | 27.2 | 1994 | [Joy Adamson](https://en.wikipedia.org/wiki/Joy_Adamson \"Joy Adamson\"), Austrian naturalist | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/48) |\n| [Addams](https://en.wikipedia.org/wiki/Addams_(crater) \"Addams (crater)\") | [56°12′S 98°54′E﻿ / ﻿56.2°S 98.9°E﻿ / -56.2; 98.9﻿ (Addams)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=56.2_S_98.9_E_globe:venus_type:landmark&title=Addams) | 87 | 1994 | [Jane Addams](https://en.wikipedia.org/wiki/Jane_Addams \"Jane Addams\"), American social reformer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/50) |\n| [Adivar](https://en.wikipedia.org/wiki/Adivar_(crater) \"Adivar (crater)\") | [8°54′N 76°12′E﻿ / ﻿8.9°N 76.2°E﻿ / 8.9; 76.2﻿ (Adivar)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=8.9_N_76.2_E_globe:venus_type:landmark&title=Adivar) | 30.3 | 1991 | [Halide Edib Adıvar](https://en.wikipedia.org/wiki/Halide_Edib_Adıvar \"Halide Edib Adıvar\"), Turkish author | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/52) |\n| [Adzoba](https://en.wikipedia.org/wiki/Adzoba_(crater)?action=edit&redlink=1 \"Adzoba (crater) (page does not exist)\") | [12°48′N 117°00′E﻿ / ﻿12.8°N 117°E﻿ / 12.8; 117﻿ (Adzoba)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=12.8_N_117_E_globe:venus_type:landmark&title=Adzoba) | 10 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/61) |\n| [Aethelflaed](https://en.wikipedia.org/wiki/Aethelflaed_(crater)?action=edit&redlink=1 \"Aethelflaed (crater) (page does not exist)\") | [18°12′S 163°24′W﻿ / ﻿18.2°S 163.4°W﻿ / -18.2; -163.4﻿ (Aethelflaed)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=18.2_S_163.4_W_globe:venus_type:landmark&title=Aethelflaed) | 20 | 1994 | [Ethelfleda](https://en.wikipedia.org/wiki/Ethelfleda \"Ethelfleda\"), [Mercian](https://en.wikipedia.org/wiki/Mercia \"Mercia\") queen | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/70) |\n| [Afiba](https://en.wikipedia.org/wiki/Afiba_(crater)?action=edit&redlink=1 \"Afiba (crater) (page does not exist)\") | [47°06′S 102°42′E﻿ / ﻿47.1°S 102.7°E﻿ / -47.1; 102.7﻿ (Afiba)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=47.1_S_102.7_E_globe:venus_type:landmark&title=Afiba) | 9.5 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/73) |\n| [Afiruwa](https://en.wikipedia.org/wiki/Afiruwa_(crater)?action=edit&redlink=1 \"Afiruwa (crater) (page does not exist)\") | [4°18′N 3°48′E﻿ / ﻿4.3°N 3.8°E﻿ / 4.3; 3.8﻿ (Afiruwa)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=4.3_N_3.8_E_globe:venus_type:landmark&title=Afiruwa) | 5.2 | 1997 | [Hausa](https://en.wikipedia.org/wiki/Hausa_language \"Hausa language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/74) |\n| [Aftenia](https://en.wikipedia.org/wiki/Aftenia_(crater)?action=edit&redlink=1 \"Aftenia (crater) (page does not exist)\") | [49°57′N 36°00′W﻿ / ﻿49.95°N 36°W﻿ / 49.95; -36﻿ (Aftenia)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=49.95_N_36_W_globe:venus_type:landmark&title=Aftenia) | 7 | 1997 | [Moldavian](https://en.wikipedia.org/wiki/Moldavian_language \"Moldavian language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/77) |\n| [Afua](https://en.wikipedia.org/wiki/Afua_(crater)?action=edit&redlink=1 \"Afua (crater) (page does not exist)\") | [15°30′N 124°00′E﻿ / ﻿15.5°N 124°E﻿ / 15.5; 124﻿ (Afua)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=15.5_N_124_E_globe:venus_type:landmark&title=Afua) | 10 | 1997 | [Akan](https://en.wikipedia.org/wiki/Akan_languages \"Akan languages\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/78) |\n| [Aglaonice](https://en.wikipedia.org/wiki/Aglaonice_(crater) \"Aglaonice (crater)\") | [26°24′S 20°06′W﻿ / ﻿26.4°S 20.1°W﻿ / -26.4; -20.1﻿ (Aglaonice)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=26.4_S_20.1_W_globe:venus_type:landmark&title=Aglaonice) | 63.7 | 1991 | [Aglaonice](https://en.wikipedia.org/wiki/Aglaonice \"Aglaonice\"), [Ancient Greek](https://en.wikipedia.org/wiki/Ancient_Greece \"Ancient Greece\") astronomer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/85) |\n| [Agnesi](https://en.wikipedia.org/wiki/Agnesi_(crater) \"Agnesi (crater)\") | [39°24′S 37°42′E﻿ / ﻿39.4°S 37.7°E﻿ / -39.4; 37.7﻿ (Agnesi)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=39.4_S_37.7_E_globe:venus_type:landmark&title=Agnesi) | 42.4 | 1991 | [Maria Agnesi](https://en.wikipedia.org/wiki/Maria_Gaetana_Agnesi \"Maria Gaetana Agnesi\"), Italian mathematician | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/87) |\n| [Agoe](https://en.wikipedia.org/wiki/Agoe_(crater)?action=edit&redlink=1 \"Agoe (crater) (page does not exist)\") | [13°06′N 4°18′E﻿ / ﻿13.1°N 4.3°E﻿ / 13.1; 4.3﻿ (Agoe)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=13.1_N_4.3_E_globe:venus_type:landmark&title=Agoe) | 6.3 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/89) |\n| [Agrippina](https://en.wikipedia.org/wiki/Agrippina_(crater)?action=edit&redlink=1 \"Agrippina (crater) (page does not exist)\") | [33°12′S 65°42′E﻿ / ﻿33.2°S 65.7°E﻿ / -33.2; 65.7﻿ (Agrippina)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=33.2_S_65.7_E_globe:venus_type:landmark&title=Agrippina) | 38.6 | 1991 | [Agrippina the Elder](https://en.wikipedia.org/wiki/Agrippina_the_Elder \"Agrippina the Elder\"), [Roman](https://en.wikipedia.org/wiki/Roman_Empire \"Roman Empire\") empress | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/93) |\n| [Ahava](https://en.wikipedia.org/wiki/Ahava_(crater)?action=edit&redlink=1 \"Ahava (crater) (page does not exist)\") | [53°36′N 172°42′W﻿ / ﻿53.6°N 172.7°W﻿ / 53.6; -172.7﻿ (Ahava)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=53.6_N_172.7_W_globe:venus_type:landmark&title=Ahava) | 10.4 | 1997 | Hebrew first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/97) |\n| [Aigul](https://en.wikipedia.org/wiki/Aigul_(crater)?action=edit&redlink=1 \"Aigul (crater) (page does not exist)\") | [38°12′N 79°36′W﻿ / ﻿38.2°N 79.6°W﻿ / 38.2; -79.6﻿ (Aigul)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=38.2_N_79.6_W_globe:venus_type:landmark&title=Aigul) | 6 | 1997 | [Kalmykia](https://en.wikipedia.org/wiki/Kalmyk_people \"Kalmyk people\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/108) |\n| [Ailar](https://en.wikipedia.org/wiki/Ailar_(crater)?action=edit&redlink=1 \"Ailar (crater) (page does not exist)\") | [15°48′S 68°24′E﻿ / ﻿15.8°S 68.4°E﻿ / -15.8; 68.4﻿ (Ailar)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=15.8_S_68.4_E_globe:venus_type:landmark&title=Ailar) | 8.2 | 1997 | Turkman first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/110) |\n| [Aimee](https://en.wikipedia.org/wiki/Aimee_(crater)?action=edit&redlink=1 \"Aimee (crater) (page does not exist)\") | [16°06′N 127°12′E﻿ / ﻿16.1°N 127.2°E﻿ / 16.1; 127.2﻿ (Aimee)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=16.1_N_127.2_E_globe:venus_type:landmark&title=Aimee) | 17 | 1994 | French first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/111) |\n| [Aisha](https://en.wikipedia.org/wiki/Aisha_(crater)?action=edit&redlink=1 \"Aisha (crater) (page does not exist)\") | [39°18′N 53°18′E﻿ / ﻿39.3°N 53.3°E﻿ / 39.3; 53.3﻿ (Aisha)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=39.3_N_53.3_E_globe:venus_type:landmark&title=Aisha) | 10.6 | 1997 | Arabic first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/116) |\n| [Aita](https://en.wikipedia.org/wiki/Aita_(crater)?action=edit&redlink=1 \"Aita (crater) (page does not exist)\") | [8°54′N 89°18′W﻿ / ﻿8.9°N 89.3°W﻿ / 8.9; -89.3﻿ (Aita)](https://geohack.toolforge.org/geohack.php?pagename=List_of",
+  "https://wenamethestars.inkleby.com/feature/572": " Balch - We Name The Stars We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nBalch ( Venus )\n\nNamed after Emily Balch - American economist, Nobel laureate (1867-1961).\n\nBalch is a crater on Venus at latitude 29.9, longitude 282.9 in [Devana Chasma](https://wenamethestars.inkleby.com/feature/1512#Devana Chasma.572) , Central Regio. This crater is one of the few examples of tectonically modified craters seen on Venus. ( wikip",
+  "https://pubs.usgs.gov/of/1994/0235/report.pdf": " GAZETTEER OF VENUSIAN NOMENCLATURE Planetary nomenclature, like terrestrial nomenclature, is used\n\nto uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated  GAZETTEER OF VENUSIAN NOMENCLATURE to uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated by the IAU through the\n\nWorking Group for Planetary System Nomen GAZETTEER OF VENUSIAN NOMENCLATURE to uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated by the IAU through the\n\nWorking Group for Planetary System Nomen GAZETTEER OF VENUSIAN NOMENCLATURE to uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated by the IAU through the\n\nWorking Group for Planetary System Nomen GAZETTEER OF VENUSIAN NOMENCLATURE Planetary nomenclature, like terrestrial nomenclature, is used\n\nto uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\n...\n\nfeminine; as Venus is the only ma GAZETTEER OF VENUSIAN NOMENCLATURE Planetary nomenclature, like terrestrial nomenclature, is used\n\nto uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\n...\n\nfeminine; as Venus is the only ma GAZETTEER OF VENUSIAN NOMENCLATURE to uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated by the IAU through the\n\nWorking Group for Planetary System Nomen GAZETTEER OF VENUSIAN NOMENCLATURE Planetary nomenclature, like terrestrial nomenclature, is used\n\nto uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\n...\n\nfeminine; as Venus is the only ma GAZETTEER OF VENUSIAN NOMENCLATURE to uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\n...\n\nfeminine; as Venus is the only major planet named for a female deity, the IAU chose to give all f GAZETTEER OF VENUSIAN NOMENCLATURE to uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated by the IAU through the\n\nWorking Group for Planetary System Nomen",
+  "https://planetarynames.wr.usgs.gov/Feature/3232": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Lagerlöf\n* Clean Name | Lagerlof\n* Feature ID | 3232\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 81.10 °\n* Southmost Latitude | 81.10 °\n* Eastmost Longitude | 286.90 °\n* Westmost Longitude | 283.60 °\n* Diameter | ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Lagerlöf |\n| Clean Name | Lagerlof |\n| Feature ID | 3232 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 81.10 ° |\n| Southmost Latitude | 81.10 ° |\n| Eastmost Longitude | 286.90 ° |\n| Westmost Longitude | 283.60 ° |\n| Diameter | 56.00 km |\n| Center Latitude | 81.20 ° |\n| Center Longitude | 285.20 ° |\n| WKT String | MULTIPOLYGON (((283.5999755859375 81.0999984741211, 283.5999755859375 81.10000610351562, 286.9000244140625 81.10000610351562, 286.9000244140625 81.0999984741211, 283.5999755859375 81.0999984741211))) |\n| Quad | v01 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v1_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1985 |\n| Continent | Europe |\n| Ethnicity | Sweden |\n| Origin | Selma; Swedish novelist (1858-1940). |\n| Reference | [46] - List of famous women provided by the National Organization for Women. |\n| Updated | Nov 17, 2008 3:50 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement. ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Lagerlöf |\n| Clean Name | Lagerlof |\n| Feature ID | 3232 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 81.10 ° |\n| Southmost Latitude | 81.10 ° |\n| Eastmost Longitude | 286.90 ° |\n| Westmost Longitude | 283.60 ° |\n| Diameter | 56.00 km |\n| Center Latitude | 81.20 ° |\n| Center Longitude | 285.20 ° |\n| WKT String | MULTIPOLYGON (((283.5999755859375 81.0999984741211, 283.5999755859375 81.10000610351562, 286.9000244140625 81.10000610351562, 286.9000244140625 81.0999984741211, 283.5999755859375 81.0999984741211))) |\n| Quad | v01 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v1_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1985 |\n| Continent | Europe |\n| Ethnicity | Sweden |\n| Origin | Selma; Swedish novelist (1858-1940). |\n| Reference | [46] - List of famous women provided by the National Organization for Women. |\n| Updated | Nov 17, 2008 3:50 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&origin=Nobel": " Planetary Names | Changed from Corday Patera. | Aug 27, 2014\n* 567 | Bakisat | Bakisat | Venus | 7.40 | 26.00 | 356.80 | 26.00 | 26.00 | 356.80 | 356.80 | Planetocentric, +East, 0 - 360 | Europe | Caucasus | Crater, craters | AA | v19 | Approved | 1997 | [107] | Chechen first name. |  | Dec 30, 2008\n* 572 | Balch | Balch | Venus | 40.00 | 29.90 | 282.90 | 29.90 | 29.90 | 282.90 | 282.90 | Planetocentric, +East, 0",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\n...\n\n* 572 | Balch | Balch | Venus | 40.00 | 29.90 | 282.90 | 29.90 | 29.90 | 282.90 | 282.90 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v17 | Approved | 1994 |  Planetary Names\n\n### Nomenclature Search Results\n\nTarget: Venus \n\nFeature Type: Crater, craters \n\n#### Add/Remove Columns \n\n| Feature ID | Feature Name | Clean Feature Name | Target | Diameter |\n| --- | --- | --- | --- | --- |\n| Center Lat/Lon | Lat/Lon Boundaries | Coordinate System | Continent | Ethnicity |\n| Feature Type | Feature Type Code | Quad | Approval Status | Approval Date |\n| Reference | Origin | Additional Info | Last Updated | |\n\n| Feature ID | Feature Name | Clean Feature Name | Target | Diameter | Center Latitude | Center Longitude | Northernmost Latitude | Southernmost Latitude | Easternmost Longitude | Westernmost Longitude | Coordinate System | Continent | Ethnicity | Feature Type | Feature Type Code | Quad | Approval Status | Approval Date | Reference | Origin | Additional Info | Last Updated |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 17 | Abigail | Abigail | Venus | 18.40 | -52.20 | 111.20 | -52.20 | -52.20 | 111.20 | 111.20 | Planetocentric, +East, 0 - 360 | Asia | Hebrew | Crater, craters | AA | v57 | Approved | 1994 | [82] | First name from Hebrew. | | Oct 01, 2006 |\n| 18 | Abika | Abika | Venus | 14.50 | -52.50 | 104.40 | -52.50 | -52.50 | 104.40 | 104.40 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v57 | Approved | 1994 | [107] | Mari first name. | | Dec 30, 2008 |\n| 19 | Abington | Abington | Venus | 21.70 | -47.80 | 277.70 | -47.80 | -47.80 | 277.70 | 277.70 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | v53 | Approved | 1994 | [99] | Frances; English actress (1737-1815). | | Oct 01, 2006 |\n| 20 | Abra | Abra | Venus | 7.20 | 6.20 | 97.40 | 6.20 | 6.20 | 97.40 | 97.40 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v23 | Approved | 1997 | [107] | Ewe first name. | | Oct 01, 2006 |\n| 43 | Adaiah | Adaiah | Venus | 18.00 | -47.30 | 253.40 | -47.30 | -47.30 | 253.40 | 253.40 | Planetocentric, +East, 0 - 360 | Asia | Hebrew | Crater, craters | AA | v52 | Approved | 1994 | [83] | Hebrew first name. | | Oct 01, 2006 |\n| 48 | Adamson | Adamson | Venus | 27.20 | -14.80 | 29.60 | -14.80 | -14.80 | 29.60 | 29.60 | Planetocentric, +East, 0 - 360 | Europe | Austria | Crater, craters | AA | v32 | Approved | 1994 | [99] | Joy; Austrian author, animal expert (1910-1980). | | Oct 01, 2006 |\n| 50 | Addams | Addams | Venus | 87.00 | -56.20 | 98.90 | -56.20 | -56.20 | 98.90 | 98.90 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v57 | Approved | 1994 | [99] | Jane; American social reformer (1860-1935). | | Oct 01, 2006 |\n| 52 | Adivar | Adivar | Venus | 30.30 | 8.90 | 76.20 | 8.90 | 8.90 | 76.20 | 76.20 | Planetocentric, +East, 0 - 360 | Asia | Turkey | Crater, craters | AA | v22 | Approved | 1991 | [99] | Halide; Turkish educator, author (1883-1964). | | Oct 01, 2006 |\n| 61 | Adzoba | Adzoba | Venus | 10.00 | 12.80 | 117.00 | 12.80 | 12.80 | 117.00 | 117.00 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v23 | Approved | 1997 | [107] | Ewe (Ghana) first name. | | Oct 01, 2006 |\n| 70 | Aethelflaed | Aethelflaed | Venus | 20.00 | -18.20 | 196.60 | -18.20 | -18.20 | 196.60 | 196.60 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | v38 | Approved | 1994 | [99] | English leader of the Mercians (c. 884-918). | | Oct 01, 2006 |\n| 73 | Afiba | Afiba | Venus | 9.50 | -47.10 | 102.70 | -47.10 | -47.10 | 102.70 | 102.70 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v47 | Approved | 1997 | [107] | Ewe first name. | | Oct 01, 2006 |\n| 74 | Afiruwa | Afiruwa | Venus | 5.20 | 4.30 | 3.80 | 4.30 | 4.30 | 3.80 | 3.80 | Planetocentric, +East, 0 - 360 | Africa | Nigeria | Crater, craters | AA | v20 | Approved | 1997 | [107] | Hausa first name. | | Oct 01, 2006 |\n| 77 | Aftenia | Aftenia | Venus | 7.00 | 49.95 | 324.00 | 49.95 | 49.95 | 324.00 | 324.00 | Planetocentric, +East, 0 - 360 | Europe | Moldova | Crater, craters | AA | v18 | Approved | 1997 | [107] | Moldavian first name. | | Apr 08, 2010 |\n| 78 | Afua | Afua | Venus | 10.00 | 15.50 | 124.00 | 15.50 | 15.50 | 124.00 | 124.00 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v24 | Approved | 1997 | [107] | Akan (Ghana) first name. | | Oct 01, 2006 |\n| 85 | Aglaonice | Aglaonice | Venus | 63.70 | -26.40 | 339.90 | -26.40 | -26.40 | 339.90 | 339.90 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | v55 | Approved | 1991 | [99] | Ancient Greek astronomer. | | Oct 01, 2006 |\n| 87 | Agnesi | Agnesi | Venus | 42.40 | -39.40 | 37.70 | -39.40 | -39.40 | 37.70 | 37.70 | Planetocentric, +East, 0 - 360 | Europe | Italy | Crater, craters | AA | v45 | Approved | 1991 | [100] | Maria; Italian mathematician (1718-1799). | | May 15, 2010 |\n| 89 | Agoe | Agoe | Venus | 6.30 | 13.10 | 4.30 | 13.10 | 13.10 | 4.30 | 4.30 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v20 | Approved | 1997 | [107] | Eve first name. | | Oct 01, 2006 |\n| 93 | Agrippina | Agrippina | Venus | 38.60 | -33.20 | 65.70 | -33.20 | -33.20 | 65.70 | 65.70 | Planetocentric, +East, 0 - 360 | Europe | Roman | Crater, craters | AA | v46 | Approved | 1991 | [99] | Roman empress (c. 13 B.C.-A.D. 33). | | Oct 01, 2006 |\n| 97 | Ahava | Ahava | Venus | 10.40 | 53.60 | 187.30 | 53.60 | 53.60 | 187.30 | 187.30 | Planetocentric, +East, 0 - 360 | Asia | Hebrew | Crater, craters | AA | v05 | Approved | 1997 | [109] | Hebrew first name. | | Oct 01, 2006 |\n| 108 | Aigul | Aigul | Venus | 6.00 | 38.20 | 280.40 | 38.20 | 38.20 | 280.40 | 280.40 | Planetocentric, +East, 0 - 360 | Europe | Kalmyk | Crater, craters | AA | v17 | Approved | 1997 | [107] | Kalmyk first name. | | Dec 30, 2008 |\n| 110 | Ailar | Ailar | Venus | 8.20 | -15.80 | 68.40 | -15.80 | -15.80 | 68.40 | 68.40 | Planetocentric, +East, 0 - 360 | Asia | Turkmenistan | Crater, craters | AA | v34 | Approved | 1997 | [107] | Turkman first name. | | Dec 30, 2008 |\n| 111 | Aimee | Aimee | Venus | 17.00 | 16.10 | 127.20 | 16.10 | 16.10 | 127.20 | 127.20 | Planetocentric, +East, 0 - 360 | Europe | France | Crater, craters | AA | v24 | Approved | 1994 | [82] | French first name. | | Oct 01, 2006 |\n| 116 | Aisha | Aisha | Venus | 10.60 | 39.30 | 53.30 | 39.30 | 39.30 | 53.30 | 53.30 | Planetocentric, +East, 0 - 360 | Asia | Kyrgyzstan | Crater, craters | AA | v09 | Approved | 1997 | [107] | Kyrgyz first name. | | Dec 30, 2008 |\n| 117 | Aita | Aita | Venus | 14.00 | 8.90 | 270.70 | 8.90 | 8.90 | 270.70 | 270.70 | Planetocentric, +East, 0 - 360 | Europe | Estonia | Crater, craters | AA | v29 | Approved | 1994 | [108] | Estonian first name. | None | Mar 26, 2014 |\n| 126 | Akeley | Akeley | Venus | 23.40 | 8.00 | 244.50 | 8.00 | 8.00 | 244.50 | 244.50 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v28 | Approved | 1994 | [99] | Delia; American explorer (1875-1970). | | Oct 01, 2006 |\n| 128 | Akhmatova | Akhmatova | Venus | 41.40 | 61.30 | 307.90 | 61.20 | 61.10 | 307.90 | 307.10 | Planetocentric, +East, 0 - 360 | Europe | Soviet | Crater, craters | AA | v07 | Approved | 1985 | [64] | Anna; Soviet poet (1889-1966). | | Dec 30, 2008 |\n| 132 | Akiko | Akiko | Venus | 17.40 | 30.60 | 187.30 | 30.60 | 30.60 | 187.30 | 187.30 | Planetocentric, +East, 0 - 360 | Asia | Japan | Crater, craters | AA | v14 | Approved | 1994 | [95] | Yosano; Japanese Tanka poetess (1878-1942). | | Oct 01, 2006 |\n| 137 | Akosua | Akosua | Venus | 6.20 | -58.60 | 18.10 | -58.60 | -58.60 | 18.10 | 18.10 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v56 | Approved | 1997 | [107] | Akan first name. | | Oct 01, 2006 |\n| 138 | Aksentyeva | Aksentyeva | Venus | 42.50 | -42.00 | 271.90 | -42.00 | -42.00 | 271.90 | 271.90 | Planetocentric, +East, 0 - 360 | Europe | Soviet | Crater, craters | AA | v53 | Approved | 1994 | [107] | Zinaida; Soviet geophysicist, astronomer (1900-1969). | | Dec 30, 2008 |\n| 141 | Akuba | Akuba | Venus | 5.50 | 9.60 | 23.00 | 9.60 | 9.60 | 23.00 | 23.00 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v20 | Approved | 1997 | [107] | Eve first name. | | Oct 01, 2006 |\n| 168 | Alcott | Alcott | Venus | 66.00 | -59.50 | 354.40 | -59.50 | -59.50 | 354.40 | 354.40 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v61 | Approved | 1991 | [75] | Louisa M.; American author (1832-1888). | | Oct 01, 2006 |\n| 186 | Alima | Alima | Venus | 10.30 | -46.00 | 229.20 | -46.00 | -46.00 | 229.20 | 229.20 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v51 | Approved | 1994 | [108] | Tatar first name. | None | Mar 26, 2014 |\n| 187 | Alimat | Alimat | Venus | 13.50 | -29.50 | 205.90 | -29.50 | -29.50 | 205.90 | 205.90 | Planetocentric, +East, 0 - 360 | Asia | Georgia | Crater, craters | AA | v50 | Approved | 1994 | [108] | Osset first name. | None | Mar 26, 2014 |\n| 14600 | Alina | Alina | Venus | 3.70 | 8.30 | 267.78 | 8.30 | 8.30 | 267.78 | 267.78 | Planetocentric, +East, 0 - 360 | Europe | France | Crater, craters | AA | v28 | Approved | Oct 25, 2009 | [109] | Short form of French first name Adeline/Adelaide. | | Oct 25, 2009 |\n| 188 | Alison | Alison | Venus | 14.40 | -4.00 | 165.60 | -4.00 | -4.00 | 165.60 | 165.60 | Planetocentric, +East, 0 - 360 | Europe | Ireland | Crater, craters | AA | v37 | Approved | 1994 | [82] | Irish first name. | | Oct 01, 2006 |\n| 194 | Alma | Alma | Venus | 16.80 | -2.40 | 228.80 | -2.40 | -2.40 | 228.80 | 228.80 | Planetocentric, +East, 0 - 360 | Asia | Kazakhstan | Crater, craters | AA | v39 | Approved | 1994 | [108] | Kazakh first name. | None | Mar 26, 2014 |\n| 197 | Almeida | Almeida | Venus | 15.50 | 46.60 | 123.30 | 46.60 | 46.60 | 123.30 | 123.30 | Planetocentric, +East, 0 - 360 | Europe | Portugal | Crater, craters | AA | v12 | Approved | 1985 | [83] | Portuguese first name. | | Oct 01, 2006 |\n| 207 | Altana | Altana | Venus | 6.00 | 1.40 | 69.90 | 1.40 | 1.40 | 69.90 | 69.90 | Planetocentric, +East, 0 - 360 | Europe | Kalmyk | Crater, craters | AA | v22 | Approved | 1997 | [107] | Kalmyk first name. | | Dec 30, 2008 |\n| 152 | Al-Taymuriyya | Al Taymuriyya | Venus | 19.00 | 32.90 | 336.10 | 32.90 | 32.90 | 336.10 | 336.10 | Planetocentric, +East, 0 - 360 | Africa | Egypt | Crater, craters | AA | v19 | Approved | 1991 | [99] | Ayesha; Egyptian author, feminist (1840-1902). | | Oct 01, 2006 |\n| 6775 | [Amalasthuna] | Amalasthuna | Venus | 15.40 | -11.50 | 342.40 | -11.50 | -11.50 | 342.40 | 342.40 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v43 | Dropped | 1991 | [99] | Ostrogoth queen (c. 498-535 A.D.). Changed to Amalasuntha. | | Dec 30, 2008 |\n| 212 | Amalasuntha | Amalasuntha | Venus | 15.40 | -11.50 | 342.40 | -11.50 | -11.50 | 342.40 | 342.40 | Planetocentric, +East, 0 - 360 | Europe | Italy | Crater, craters | AA | v43 | Approved | 1991 | [99] | Ostrogoth queen (c. 498-535 A.D.). Changed from Amalasthuna. | None | Aug 27, 2014 |\n| 213 | Amanda | Amanda | Venus | 12.50 | -29.20 | 94.50 | -29.20 | -29.20 | 94.50 | 94.50 | Planetocentric, +East, 0 - 360 | Europe | Latin | Crater, craters | AA | v47 | Approved | 1997 | [109] | Latin first name. Name changed from Lida. | | Oct 01, 2006 |\n| 217 | Amaya | Amaya | Venus | 34.50 | 11.30 | 89.40 | 11.30 | 11.30 | 89.40 | 89.40 | Planetocentric, +East, 0 - 360 | Europe | Spain | Crater, craters | AA | v22 | Approved | 1991 | [99] | Carmen; Spanish Gypsy dancer (1913-1963). | | Oct 01, 2006 |\n| 14601 | Amelia | Amelia | Venus | 3.30 | 8.57 | 280.45 | 8.57 | 8.57 | 280.45 | 280.45 | Planetocentric, +East, 0 - 360 | Europe | Latin | Crater, craters | AA | v29 | Approved | Oct 25, 2009 | [109] | First name from Latin. | | Oct 25, 2009 |\n| 224 | Amenardes | Amenardes | Venus | 27.90 | 15.00 | 54.30 | 15.00 | 15.00 | 54.30 | 54.30 | Planetocentric, +East, 0 - 360 | Africa | Egypt | Crater, craters | AA | v21 | Approved | 1991 | [99] | Egyptian princess (718-655 B.C.). | | Oct 01, 2006 |\n| 233 | Aminata | Aminata | Venus | 9.70 | 6.60 | 25.20 | 6.60 | 6.60 | 25.20 | 25.20 | Planetocentric, +East, 0 - 360 | Africa | Mali | Crater, craters | AA | v20 | Approved | 1997 | [107] | Mandingo first name. | | Oct 01, 2006 |\n| 253 | Anaxandra | Anaxandra | Venus | 20.40 | 44.20 | 162.30 | 44.20 | 44.20 | 162.30 | 162.30 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | v13 | Approved | 1994 | [99] | Greek artist (fl. c. 228 B.C.). | | Oct 01, 2006 |\n| 258 | Andami | Andami | Venus | 28.90 | -17.50 | 26.50 | -17.50 | -17.50 | 26.50 | 26.50 | Planetocentric, +East, 0 - 360 | Asia | Iran | Crater, craters | AA | v32 | Approved | 1991 | - | Iranian doctor. | | Oct 01, 2006 |\n| 263 | Andreianova | Andreianova | Venus | 66.10 | -3.00 | 68.80 | -3.00 | -3.00 | 68.80 | 68.80 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v34 | Approved | 1994 | [99] | Elena; Russian ballerina (c. 1821-c. 1855). | | Dec 30, 2008 |\n| 278 | Anicia | Anicia | Venus | 38.20 | -26.30 | 31.30 | -26.30 | -26.30 | 31.30 | 31.30 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | v45 | Approved | 1991 | [99] | Greek physician, poet (fl. c.300 B.C.). | | Oct 01, 2006 |\n| 15652 | Annabelle | Annabelle | Venus | 7.70 | -4.15 | 286.29 | -4.12 | -4.19 | 286.32 | 286.25 | Planetocentric, +East, 0 - 360 | Europe | Scotland | Crater, craters | AA | v41 | Approved | Aug 18, 2017 | [442] | Scottish first name of Latin origin. | None | Aug 23, 2017 |\n| 284 | Annia Faustina | Annia Faustina | Venus | 23.40 | 22.10 | 4.70 | 22.10 | 22.10 | 4.70 | 4.70 | Planetocentric, +East, 0 - 360 | Europe | Roman | Crater, craters | AA | v20 | Approved | 1991 | [99] | Roman empress, wife of Marcus Aurelius (125-175 A.D.). | | Oct 01, 2006 |\n| 299 | Antonina | Antonina | Venus | 13.80 | 28.10 | 106.80 | 28.10 | 28.10 | 106.80 | 106.80 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v11 | Approved | 1985 | [98] | Russian first name. | | Dec 30, 2008 |\n| 306 | Anush | Anush | Venus | 12.70 | 14.90 | 86.50 | 14.90 | 14.90 | 86.50 | 86.50 | Planetocentric, +East, 0 - 360 | Asia | Armenian | Crater, craters | AA | v22 | Approved | 1994 | [108] | Armenian first name. | None | Mar 26, 2014 |\n| 308 | Anya | Anya | Venus | 18.10 | 39.50 | 297.80 | 39.50 | 39.50 | 298.70 | 297.70 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v17 | Approved | 1985 | [98] | Russian first name. | | Dec 30, 2008 |\n| 374 | Ariadne | Ariadne | Venus | 23.60 | 43.90 | 360.00 | 43.90 | 43.70 | 359.80 | 0.20 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | - | Approved | 1985 | [43] | Greek first name. | Central peak in this crater defines zero degrees longitude. | Jan 04, 2008 |\n| 430 | Asmik | Asmik | Venus | 19.50 | 3.90 | 166.40 | 3.90 | 3.90 | 166.40 | 166.40 | Planetocentric, +East, 0 - 360 | Asia | Armenian | Crater, craters | AA | v25 | Approved | 1994 | [108] | Armenian first name. | None | Mar 26, 2014 |\n| 441 | Astrid | Astrid | Venus | 10.50 | -21.40 | 335.20 | -21.40 | -21.40 | 335.20 | 335.20 | Planetocentric, +East, 0 - 360 | Europe | Scandinavian | Crater, craters | AA | v43 | Approved | 1991 | [109] | Scandinavian first name. | | Oct 01, 2006 |\n| 470 | Audrey | Audrey | Venus | 15.20 | 23.80 | 348.10 | 23.80 | 23.80 | 348.10 | 348.10 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | v31 | Approved | 1994 | [82] | English first name. | | Oct 01, 2006 |\n| 472 | Aurelia | Aurelia | Venus | 31.10 | 20.30 | 331.80 | 20.30 | 20.30 | 331.80 | 331.80 | Planetocentric, +East, 0 - 360 | Europe | Roman | Crater, craters | AA | v31 | Approved | 1991 | [99] | Mother of Julius Caesar. | | Oct 01, 2006 |\n| 483 | Austen | Austen | Venus | 45.10 | -25.00 | 168.40 | -25.00 | -25.00 | 168.40 | 168.40 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | - | Approved | 1994 | [99] | Jane; English novelist (1775-1817). | | Oct 01, 2006 |\n| 502 | Avene | Avene | Venus | 10.00 | 40.40 | 149.40 | 40.40 | 40.40 | 149.40 | 149.40 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v12 | Approved | 1997 | [107] | Akan (Ghana) first name. | | Oct 01, 2006 |\n| 512 | Avviyar | Avviyar | Venus | 20.60 | -18.00 | 353.70 | -18.00 | -18.00 | 353.70 | 353.70 | Planetocentric, +East, 0 - 360 | Asia | India | Crater, craters | AA | v43 | Approved | 1991 | [84] | Tamil poet (c. 100 B.C.). | | Oct 01, 2006 |\n| 518 | Ayana | Ayana | Venus | 13.80 | -29.20 | 175.50 | -29.20 | -29.20 | 175.50 | 175.50 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v49 | Approved | 1994 | [108] | Altai first name. | None | Mar 26, 2014 |\n| 519 | Ayashe | Ayashe | Venus | 6.70 | 22.70 | 31.40 | 22.70 | 22.70 | 31.40 | 31.40 | Planetocentric, +East, 0 - 360 | Africa | Nigeria | Crater, craters | AA | v21 | Approved | 1997 | [107] | Hausa first name. | | Oct 01, 2006 |\n| 520 | Ayisatu | Ayisatu | Venus | 7.00 | 34.60 | 5.50 | 34.60 | 34.60 | 5.50 | 5.50 | Planetocentric, +East, 0 - 360 | Africa | Mali | Crater, craters | AA | v08 | Approved | 1997 | [107] | Fulbe first name. | | Oct 01, 2006 |\n| 538 | Bachira | Bachira | Venus | 7.30 | 26.50 | 10.00 | 26.50 | 26.50 | 10.00 | 10.00 | Planetocentric, +East, 0 - 360 | Africa | Algeria | Crater, craters | AA | v08 | Approved | 1997 | [107] | Algerian first name. | | Oct 01, 2006 |\n| 547 | Badarzewska | Badarzewska | Venus | 29.60 | -22.60 | 137.20 | -22.60 | -22.60 | 137.20 | 137.20 | Planetocentric, +East, 0 - 360 | Europe | Poland | Crater, craters | AA | v36 | Approved | 1991 | [99] | Thekla; Polish composer (1834-1861). | | Oct 01, 2006 |\n| 559 | Bahriyat | Bahriyat | Venus | 5.00 | 50.30 | 357.50 | 50.30 | 50.30 | 357.50 | 357.50 | Planetocentric, +East, 0 - 360 | Europe | Caucasus | Crater, craters | AA | v07 | Approved | 1997 | [107] | Kumyk (Daghestan) first name. | | Dec 30, 2008 |\n| 564 | Baker | Baker | Venus | 109.00 | 62.50 | 40.30 | 62.50 | 62.50 | 40.30 | 40.30 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v02 | Approved | 1994 | [99] | Josephine; American expatriate dancer, singer (1906-1975). | Changed from Corday Patera. | Aug 27, 2014 |\n| 567 | Bakisat | Bakisat | Venus | 7.40 | 26.00 | 356.80 | 26.00 | 26.00 | 356.80 | 356.80 | Planetocentric, +East, 0 - 360 | Europe | Caucasus | Crater, craters | AA | v19 | Approved | 1997 | [107] | Chechen first name. | | Dec 30, 2008 |\n| 572 | Balch | Balch | Venus | 40.00 | 29.90 | 282.90 | 29.90 | 29.90 | 282.90 | 282.90 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v17 | Approved | 1994 | [99] | Emily; American economist, Nobel laureate (1867-1961). | | Oct 01, 2006 |\n| 591 | Ban Zhao | Ban Zhao | Venus | 39.00 | 17.10 | 147.00 | 17.10 | 17.10 | 147.00 | 147.00 | Planetocentric, +East, 0 - 360 | Asia | China | Crater, craters | AA | v24 | Approved | 1991 | [102] | Chinese historian (c. A.D. 35-100). | | Oct 01, 2006 |\n| 602 | Baranamtarra | Baranamtarra | Venus | 25.50 | 17.90 | 267.80 | 17.90 | 17.90 | 267.80 | 267.80 | Planetocentric, +East, 0 - 360 | Asia | Assyro-Babylonian | Crater, craters | AA | v28 | Approved | 1994 | [99] | Mesopotamian queen (c. 2500 B.C.). | | Oct 01, 2006 |\n| 603 | Barauka | Barauka | Venus | 12.90 | 10.60 | 346.30 | 10.60 | 10.60 | 346.30 | 346.30 | Planetocentric, +East, 0 - 360 | Africa | Nigeria | Crater, craters | AA | v31 | Approved | 1997 | [107] | Hausa (Nigeria) first name. | | Oct 01, 2006 |\n| 614 | Barrera | Barrera | Venus | 27.00 | 16.60 | 109.40 | 16.60 | 16.60 | 109.40 | 109.40 | Planetocentric, +East, 0 - 360 | Europe | Spain | Crater, craters | AA | v23 | Approved | 1991 | [100] | Olivia; Spanish medical writer (b. 1562). | | Oct 01, 20",
+  "https://digital.library.unt.edu/ark:/67531/metadc1115027/m2/1/high_res_d/report.pdf": " [PDF] zetteer of Planetary - UNT Digital Library ft: feature type (see page 290). 92 GAZETTEER OF PLANETARY NOMENCLATURE 1994 Antoniadi, E. M., 1930, La planete Mars, pl. 2-5: Paris, Libraire Scientifique Herman et Cie., 239 p. Arthur, D.W.G., Agnieray, A.P., Horvath, R.A., Wood, C.A., and Chapman, C.R., 1963, The system of lunar craters, quadrant 1: Communications of the Lunar and Planetary Laboratory, v. 2, no. 30, p. 71-78, 4 unnumbered appen",
+  "http://aauw-ca.org/women-nobel-prize-laureates": " Women Nobel Prize Laureates - AAUW California The Nobel Prize and the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel have been awarded to women 68 times between 1901 and 2025.\n\n...\n\nThis means that 67 women in total have been awarded the Nobel Prize between 1901 and 2025.\nSource : NobelPrize.org\n* Year | Laureate | Country | Category | \n* 2025 | Mary E. Brunkow | United States | Physiology or Medicine | Shared prize\n*  ![AAUW California](https://www.aauw-ca.org/wp-content/uploads/2023/06/aauw-ca-600w-logo.png)\n![AAUW California](https://www.aauw-ca.org/wp-content/uploads/2023/06/aauw-ca-600w-logo.png)\n![Marie Curie](https://www.aauw-ca.org/wp-content/uploads/2019/09/Marie_Curie_Nobel-Chem.jpg)\n\n# Women Nobel Prize Laureates\n\nThe Nobel Prize and the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel have been awarded to women 68 times between 1901 and 2025. Only one woman, Marie Curie, has been honoured twice, with the Nobel Prize in Physics 1903 and the Nobel Prize in Chemistry 1911. This means that 67 women in total have been awarded the Nobel Prize between 1901 and 2025.\n\n*Source*: [NobelPrize.org](https://www.nobelprize.org/prizes/lists/nobel-prize-awarded-women/)\n\n| Year | Laureate | Country | Category |  |\n| --- | --- | --- | --- | --- |\n| 2025 | Mary E. Brunkow | United States | Physiology or Medicine | Shared prize |\n|  | Maria Corina Machado | Venezuela | Peace |  |\n| 2024 | Han Kang | South Korea | Literature |  |\n| 2023 | Claudia Goldin | United States | Economic Sciences |  |\n|  | Anne L'Huillier | Sweden | Physics | Shared prize |\n|  | Katalin Karikó | United States | Physiology or Medicine | Shared prize |\n|  | Narges Mohammadi | Iran | Peace |  |\n| 2022 | Carolyn Bertozzi | United States | Chemistry | Shared prize |\n|  | Annie Ernaux | France | Literature |  |\n| 2021 | Maria Ressa | Philippines | Peace | Shared prize |\n| 2020 | Andrea Ghez | United States | Physics | Shared prize |\n|  | Emmanuelle Charpentier | Germany | Chemistry | Shared prize |\n|  | Jennifer A. Doudna | United States | Chemistry | Shared prize |\n|  | Louise Glück | United States | Literature |  |\n| 2019 | Esther Duflo | United States | Economic Sciences | Shared prize |\n| 2018 | Olga Tokarczuk | Poland |  |  |\n|  | Donna Strickland | Canada | Physics | Shared Prize |\n|  | Frances Arnold | United States | Chemistry |  |\n|  | Nadia Murad | Iraq | Peace |  |\n| 2015 | Tu Youyou | China | Physiology or Medicine | Shared Prize |\n|  | Swetlana Alexandrowna | Belarus | Literature |  |\n| 2014 | May-Britt Moser | Norway | Physiology or Medicine | Shared Prize |\n|  | Malala Yousafzai | Pakistan | Peace |  |\n| 2013 | Alice Munro | Canada | Literature |  |\n| 2011 | Ellen Johnson Sirleaf | Liberia | Peace | Shared Prize |\n|  | Leymah Gbowee |  |  |  |\n|  | Tawakkul Karman | Yemen |  | Shared Prize |\n| 2009 | Elizabeth Blackburn | Australia & United States | Physiology or Medicine |  |\n|  | Carol W. Greider | United States |  |  |\n|  | Ada E. Yonath | Israel | Chemistry | Shared Prize |\n|  | Müller, Herta | Germany and Romania | Literature |  |\n|  | Elinor Ostrom | United States | Economics |  |\n| 2008 | Françoise Barré-Sinoussi | France | Physiology or Medicine | Shared Prize |\n| 2007 | Doris Lessing | United Kingdom | Literature |  |\n| 2004 | Wangari Maathai | Kenya | Peace |  |\n|  | LindaBuck | United States | Physiology or Medicine | Shared Prize |\n| 2003 | Shirin Ebadi | Iran | Peace |  |\n|  | Elfriede Jelinek | Austria | Literature |  |\n| 1997 | Jody Williams | United States | Peace | Shared Prize |\n| 1996 | Wislawa Szymborska | Poland | Literature |  |\n| 1995 | Christiane Nüsslein-Volhard | Germany | Physiology or Medicine | Shared Prize |\n| 1993 | Toni Morrison | United States | Literature |  |\n| 1992 | Rigoberta Menchú | Guatemala | Peace |  |\n| 1991 | Nadine Gordimer | South Africa | Literature |  |\n|  | Aung San Suu Kyi | Burma | Peace |  |\n| 1988 | Gertrude B. Elion | United States | Physiology or Medicine | Shared Prize |\n| 1986 | Rita Levi-Montalcini | Italy | Physiology or Medicine | Shared Prize |\n| 1983 | Barbara McClintock | United States | Physiology or Medicine |  |\n| 1982 | Alva Myrdal | Sweden | Peace | Shared Prize |\n| 1979 | Mother Teresa | India & Yugoslavia | Peace |  |\n| 1977 | Rosalyn Sussman Yalow | United States | Physiology or Medicine | Shared Prize |\n| 1976 | Betty Williams | United Kingdom | Peace |  |\n|  | Mairead Corrigan Gaza |  |  | Shared Prize |\n| 1966 | Nelly Sachs | Sweden and Germany | Literature | Shared Prize |\n| 1964 | Dorothy Crowfoot Hodgkin | United Kingdom | Chemistry |  |\n| 1963 | Maria Goeppert-Mayer | United States | Physics | Shared Prize |\n| 1947 | Gerty Theresa Cori | United States | Physiology or Medicine | Shared Prize |\n| 1946 | Emily Greene Balch | United States | Peace | Shared Prize |\n| 1945 | Gabriela Mistral | Chile | Literature |  |\n| 1938 | Pearl S. Buck | United States | Literature |  |\n| 1935 | Irène Joliot-Curie | France | Chemistry | Shared Prize |\n| 1931 | Jane Addams | United States | Peace | Shared Prize |\n| 1928 | Sigrid Undset | Norway | Literature |  |\n| 1926 | Grazia Deledda | Italy | Literature |  |\n| 1911 | Marie Sklodowska Curie | Poland & France | Chemistry |  |\n| 1909 | Selma Lagerlöf | Sweden | Literature |  |\n| 1905 | Bertha von Suttner | Austria–Hungary | Peace |  |\n| 1903 | Marie Sklodowska Curie | Poland & France | Physics | Shared Prize |\n\nAAUW California Office  \nPO BOX 160067  \nSacramento, CA 95816-0067\n\n© 2026 AAUW California all rights reserved.  \nConnect with the AAUW California Webteam at  \n[[email protected]](/cdn-cgi/l/email-protection#512634332534303c11303024267c32307f3e2336)\n\nEmail: [[email protected]](/cdn-cgi/l/email-protection)  \nPhone: 916-389-0220 ![AAUW California](https://www.aauw-ca.org/wp-content/uploads/2023/06/aauw-ca-600w-logo.png)\n![AAUW California](https://www.aauw-ca.org/wp-content/uploads/2023/06/aauw-ca-600w-logo.png)\n![Marie Curie](https://www.aauw-ca.org/wp-content/uploads/2019/09/Marie_Curie_Nobel-Chem.jpg)\n\n# Women Nobel Prize Laureates\n\nThe Nobel Prize and the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel have been awarded to women 68 times between 1901 and 2025. Only one woman, Marie Curie, has been honoured twice, with the Nobel Prize in Physics 1903 and the Nobel Prize in Chemistry 1911. This means that 67 women in total have been awarded the Nobel Prize between 1901 and 2025.\n\n*Source*: [NobelPrize.org](https://www.nobelprize.org/prizes/lists/nobel-prize-awarded-women/)\n\n| Year | Laureate | Country | Category |  |\n| --- | --- | --- | --- | --- |\n| 2025 | Mary E. Brunkow | United States | Physiology or Medicine | Shared prize |\n|  | Maria Corina Machado | Venezuela | Peace |  |\n| 2024 | Han Kang | South Korea | Literature |  |\n| 2023 | Claudia Goldin | United States | Economic Sciences |  |\n|  | Anne L'Huillier | Sweden | Physics | Shared prize |\n|  | Katalin Karikó | United States | Physiology or Medicine | Shared prize |\n|  | Narges Mohammadi | Iran | Peace |  |\n| 2022 | Carolyn Bertozzi | United States | Chemistry | Shared prize |\n|  | Annie Ernaux | France | Literature |  |\n| 2021 | Maria Ressa | Philippines | Peace | Shared prize |\n| 2020 | Andrea Ghez | United States | Physics | Shared prize |\n|  | Emmanuelle Charpentier | Germany | Chemistry | Shared prize |\n|  | Jennifer A. Doudna | United States | Chemistry | Shared prize |\n|  | Louise Glück | United States | Literature |  |\n| 2019 | Esther Duflo | United States | Economic Sciences | Shared prize |\n| 2018 | Olga Tokarczuk | Poland |  |  |\n|  | Donna Strickland | Canada | Physics | Shared Prize |\n|  | Frances Arnold | United States | Chemistry |  |\n|  | Nadia Murad | Iraq | Peace |  |\n| 2015 | Tu Youyou | China | Physiology or Medicine | Shared Prize |\n|  | Swetlana Alexandrowna | Belarus | Literature |  |\n| 2014 | May-Britt Moser | Norway | Physiology or Medicine | Shared Prize |\n|  | Malala Yousafzai | Pakistan | Peace |  |\n| 2013 | Alice Munro | Canada | Literature |  |\n| 2011 | Ellen Johnson Sirleaf | Liberia | Peace | Shared Prize |\n|  | Leymah Gbowee |  |  |  |\n|  | Tawakkul Karman | Yemen |  | Shared Prize |\n| 2009 | Elizabeth Blackburn | Australia & United States | Physiology or Medicine |  |\n|  | Carol W. Greider | United States |  |  |\n|  | Ada E. Yonath | Israel | Chemistry | Shared Prize |\n|  | Müller, Herta | Germany and Romania | Literature |  |\n|  | Elinor Ostrom | United States | Economics |  |\n| 2008 | Françoise Barré-Sinoussi | France | Physiology or Medicine | Shared Prize |\n| 2007 | Doris Lessing | United Kingdom | Literature |  |\n| 2004 | Wangari Maathai | Kenya | Peace |  |\n|  | LindaBuck | United States | Physiology or Medicine | Shared Prize |\n| 2003 | Shirin Ebadi | Iran | Peace |  |\n|  | Elfriede Jelinek | Austria | Literature |  |\n| 1997 | Jody Williams | United States | Peace | Shared Prize |\n| 1996 | Wislawa Szymborska | Poland | Literature |  |\n| 1995 | Christiane Nüsslein-Volhard | Germany | Physiology or Medicine | Shared Prize |\n| 1993 | Toni Morrison | United States | Literature |  |\n| 1992 | Rigoberta Menchú | Guatemala | Peace |  |\n| 1991 | Nadine Gordimer | South Africa | Literature |  |\n|  | Aung San Suu Kyi | Burma | Peace |  |\n| 1988 | Gertrude B. Elion | United States | Physiology or Medicine | Shared Prize |\n| 1986 | Rita Levi-Montalcini | Italy | Physiology or Medicine | Shared Prize |\n| 1983 | Barbara McClintock | United States | Physiology or Medicine |  |\n| 1982 | Alva Myrdal | Sweden | Peace | Shared Prize |\n| 1979 | Mother Teresa | India & Yugoslavia | Peace |  |\n| 1977 | Rosalyn Sussman Yalow | United States | Physiology or Medicine | Shared Prize |\n| 1976 | Betty Williams | United Kingdom | Peace |  |\n|  | Mairead Corrigan Gaza |  |  | Shared Prize |\n| 1966 | Nelly Sachs | Sweden and Germany | Literature | Shared Prize |\n| 1964 | Dorothy Crowfoot Hodgkin | United Kingdom | Chemistry |  |\n| 1963 | Maria Goeppert-Mayer | United States | Physics | Shared Prize |\n| 1947 | Gerty Theresa Cori | United States | Physiology or Medicine | Shared Prize |\n| 1946 | Emily Greene Balch | United States | Peace | Shared Prize |\n| 1945 | Gabriela Mistral | Chile | Literature |  |\n| 1938 | Pearl S. Buck | United States | Literature |  |\n| 1935 | Irène Joliot-Curie | France | Chemistry | Shared Prize |\n| 1931 | Jane Addams | United States | Peace | Shared Prize |\n| 1928 | Sigrid Undset | Norway | Literature |  |\n| 1926 | Grazia Deledda | Italy | Literature |  |\n| 1911 | Marie Sklodowska Curie | Poland & France | Chemistry |  |\n| 1909 | Selma Lagerlöf | Sweden | Literature |  |\n| 1905 | Bertha von Suttner | Austria–Hungary | Peace |  |\n| 1903 | Marie Sklodowska Curie | Poland & France | Physics | Shared Prize |\n\nAAUW California Office  \nPO BOX 160067  \nSacramento, CA 95816-0067\n\n© 2026 AAUW California all rights reserved.  \nConnect with the AAUW California Webteam at  \n[[email protected]](/cdn-cgi/l/email-protection#512634332534303c11303024267c32307f3e2336)\n\nEmail: [[email protected]](/cdn-cgi/l/email-protection)  \nPhone: 916-389-0220",
+  "https://historia.nationalgeographic.com.es/a/todas-mujeres-que-han-ganado-premio-nobel_13276": " \nTodas las mujeres que han ganado el premio Nobel Foto: Gtres\n31 ​/​ 61\n\nElfriede Jelinek\n\nElfriede Jelinek (Austria, 20 de octubre de 1946) obtuvo el premio Nobel de Literatura en 2004.\n\n...\n\nDoris Lessing (Irán, 22 de octubre de 1919 − Londres, 17 de noviembre de 2013) recibió el premio Nobel de Literatura en 2007.\n\n...\n\nElinor Ostrom (Estados Unidos, 7 de agosto de 1933 - 12 de junio de 2012) se convirtió en la ganadora del premio Nobel de Eco",
+  "https://newsworthywomen.com/2024/12/14/women-winners-of-the-nobel-prize": " Women Winners of the Nobel Prize – Newsworthy Women by Professor Henri Becquerel” The Nobel Prize in Chemistry, 1911: “for her discovery of radium and polonium” Source: NobelPrize.org 1905: Bertha von Suttner The Nobel Peace Prize: “for her audacity…\nAmanda L\nnewsworthy women\n\n1903 & 1911: Marie Skłodowska-Curie\n\nThe Nobel Prize in Physics, 1903: “in recognition of the extraordinary services they have rendered by their joint researches on the radia",
+  "https://www.dpma.de/english/our_office/publications/ingeniouswomen/nobelpreise2018dreifrauengewinnen/index.html": " DPMA | Nobel Prize 2018: 3 women awarded Illustration: Johan Jarnestad / The Royal Swedish Academy of Sciences\n\nThree women awarded - Prizes for Physics and Chemistry for female researchers\n\n...\n\nWhat is particularly remarkable about this year's award ceremony is that two women will be honoured in the natural sciences at the same time: Donna Strickland in physics, Frances Arnold in chemistry.\n\n...\n\nArnold is only the fifth woman to recei",
+  "https://www.infoplease.com/awards/nobel/women-nobel-prize-winners": " Women Nobel Prize Winners - InfoPlease Updated September 9, 2022 | Infoplease Staff Information\nMarie Curie was not only the first woman to win a Nobel Prize, in 1903, but she was also the only woman ever to win two Nobel Prizes. Below is a list of all women Nobel Prize winners.\n\nNobel Peace Prize Winners\n\nSee Nobel Prizes for Peace at Infoplease.com for the full list of winners.\n1905\nBertha von Suttner (Austria)\n1931\nJane Addams (U.S.",
+  "https://www.thoughtco.com/women-nobel-literature-prize-winners-3529859": " Women Nobel Literature Prize Winners - ThoughtCo Out of more than 100 Nobel Laureates awarded the Nobel Prize for Literature, fewer (by far) than half are women. They are from different cultures and wrote in quite different styles.\n\n...\n\nFind them in the next pages, along with a bit about their lives and, for many, links to more complete information. I've listed the earliest ones first.\n\n1909: Selma Lagerlöf\n\nGeneral Photographic Agency/Getty Im",
+  "https://www.nobelprize.org/women-who-changed-science/": " WOMEN WHO CHANGED SCIENCE - NobelPrize.org Explore their stories by clicking the images below.\n* \n\nAnne L’Huillier – Nobel Prize in Physics 2023\n\n...\n\nAndrea Ghez – Nobel Prize in Physics 2020\n\nWatching the lunar landings as a child marked the first small step on Andrea Ghez’s journey to surveying stars at the centre of our galaxy. Ghez’s focus, patience and ability to ignore people blocking her path to success resulted in one giant leap f",
+  "http://en.wikipedia.org/wiki/List_of_female_Nobel_laureates": " List of women Nobel laureates - Wikipedia * twenty women have won the Nobel Peace Prize (16.3% of 110 awarded); [ 4 ]\n* eighteen have won the Nobel Prize in Literature (15% of 120 awarded); [ 5 ]\n\n...\n\n* 14 | 2025 |  | Mary Brunkow | 1961 Portland, Oregon , United States | (aged 65) | \"for their discoveries concerning peripheral immune tolerance .\" [ 26 ] (shared with Fred Ramsdell and Shimon Sakaguchi )\n\nPhysics\n\n[ edit ]\nSee also: List ",
+  "https://planetarynames.wr.usgs.gov/Feature/572": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Balch\n* Clean Name | Balch\n* Feature ID | 572\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 29.90 °\n* Southmost Latitude | 29.90 °\n* Eastmost Longitude | 282.90 °\n* Westmost Longitude | 282.90 °\n* Diameter | 40.00  Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Balch\n* Clean Name | Balch\n* Feature ID | 572\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 29.90 °\n* Southmost Latitude | 29.90 °\n* Eastmost Longitude | 282.90 °\n* Westmost Longitude | 282.90 °\n* Diameter | 40.00  Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Balch\n* Clean Name | Balch\n* Feature ID | 572\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 29.90 °\n* Southmost Latitude | 29.90 °\n* Eastmost Longitude | 282.90 °\n* Westmost Longitude | 282.90 °\n* Diameter | 40.00  ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Balch |\n| Clean Name | Balch |\n| Feature ID | 572 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 29.90 ° |\n| Southmost Latitude | 29.90 ° |\n| Eastmost Longitude | 282.90 ° |\n| Westmost Longitude | 282.90 ° |\n| Diameter | 40.00 km |\n| Center Latitude | 29.90 ° |\n| Center Longitude | 282.90 ° |\n| WKT String | POINT (282.9 29.9) |\n| Quad | v17 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v17_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1994 |\n| Continent | North America |\n| Ethnicity | American |\n| Origin | Emily; American economist, Nobel laureate (1867-1961). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://planetarynames.wr.usgs.gov/Feature/1309": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Cori\n* Clean Name | Cori\n* Feature ID | 1309\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 25.40 °\n* Southmost Latitude | 25.40 °\n* Eastmost Longitude | 72.90 °\n* Westmost Longitude | 72.90 °\n* Diameter | 56.10 km\n ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Cori |\n| Clean Name | Cori |\n| Feature ID | 1309 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 25.40 ° |\n| Southmost Latitude | 25.40 ° |\n| Eastmost Longitude | 72.90 ° |\n| Westmost Longitude | 72.90 ° |\n| Diameter | 56.10 km |\n| Center Latitude | 25.40 ° |\n| Center Longitude | 72.90 ° |\n| WKT String | POINT (72.9 25.4) |\n| Quad | v10 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v10_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1991 |\n| Continent | Europe |\n| Ethnicity | Czechoslovakia |\n| Origin | Gerty; Czech biochemist, Nobel laureate (1896-1957). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement. Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Cori\n* Clean Name | Cori\n* Feature ID | 1309\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 25.40 °\n* Southmost Latitude | 25.40 °\n* Eastmost Longitude | 72.90 °\n* Westmost Longitude | 72.90 °\n* Diameter | 56.10 km\n",
+  "https://planetarynames.wr.usgs.gov/Feature/2203": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Goeppert-Mayer\n* Clean Name | Goeppert Mayer\n* Feature ID | 2203\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 59.70 °\n* Southmost Latitude | 59.70 °\n* Eastmost Longitude | 26.80 °\n* Westmost Longitude | 26.80 °\n*  Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Goeppert-Mayer\n* Clean Name | Goeppert Mayer\n* Feature ID | 2203\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 59.70 °\n* Southmost Latitude | 59.70 °\n* Eastmost Longitude | 26.80 °\n* Westmost Longitude | 26.80 °\n*  Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Goeppert-Mayer\n* Clean Name | Goeppert Mayer\n* Feature ID | 2203\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 59.70 °\n* Southmost Latitude | 59.70 °\n* Eastmost Longitude | 26.80 °\n* Westmost Longitude | 26.80 °\n*  ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Goeppert-Mayer |\n| Clean Name | Goeppert Mayer |\n| Feature ID | 2203 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 59.70 ° |\n| Southmost Latitude | 59.70 ° |\n| Eastmost Longitude | 26.80 ° |\n| Westmost Longitude | 26.80 ° |\n| Diameter | 33.50 km |\n| Center Latitude | 59.70 ° |\n| Center Longitude | 26.80 ° |\n| WKT String | POINT (26.8 59.7) |\n| Quad | v02 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v2_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1991 |\n| Continent | Europe |\n| Ethnicity | Poland |\n| Origin | Maria; Polish physicist, Nobel laureate (1907-1972). |\n| Reference | [100] - List provided by Women's Study Program, Brown University, Providence, R.I. |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://planetarynames.wr.usgs.gov/Feature/6834": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | [Goppert-Mayer]\n* Clean Name | Goppert Mayer\n* Feature ID | 6834\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 59.70 °\n* Southmost Latitude | 59.70 °\n* Eastmost Longitude | 26.80 °\n* Westmost Longitude | 26.80 °\n*  Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | [Goppert-Mayer]\n* Clean Name | Goppert Mayer\n* Feature ID | 6834\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 59.70 °\n* Southmost Latitude | 59.70 °\n* Eastmost Longitude | 26.80 °\n* Westmost Longitude | 26.80 °\n*  Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | [Goppert-Mayer]\n* Clean Name | Goppert Mayer\n* Feature ID | 6834\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 59.70 °\n* Southmost Latitude | 59.70 °\n* Eastmost Longitude | 26.80 °\n* Westmost Longitude | 26.80 °\n* ",
+  "https://link.springer.com/article/10.1007/BF00142406": " Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate",
+  "https://www.jpl.nasa.gov/images/pia00269-venus-stereo-image-pair-of-crater-goeppert-mayer": " Venus - Stereo Image Pair of Crater Goeppert-Mayer | NASA Jet Propulsion Laboratory (JPL) Jet Propulsion Laboratory https://www.jpl.nasa.gov/ March 14, 1996\nThis is a stereo image pair of crater Goeppert-Mayer obtained by NASA's Magellan radar mapping mission.\nDuring the third global cycle of Magellan's radar mapping mission, images were obtained at viewing angles that were slightly different than those used in the first two cycles. This strategy was designed to produce stereo image pa",
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents/": " Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Public Invited to Propose Names for Venus Craters and Volcanic Vents\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 6, 1991\n   \nScientists of the Magellan Project, in association with the U.S. Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging ra Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) The IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian features will not be considered until the following meeting in 1994. But names proposed this year, if accepted as provisional by the nomenclature committee, may be used on published maps and in articles, pending fina Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) The IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian features will not be considered until the following meeting in 1994. But names proposed this year, if accepted as provisional by the nomenclature committee, may be used on published maps and in articles, pending fina Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) The IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian features will not be considered until the following meeting in 1994. But names proposed this year, if accepted as provisional by the nomenclature committee, may be used on published maps and in articles, pending fina Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging radar.\n\n...\n\nThe IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian features w Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging radar.\n\n...\n\nThe IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian features w",
+  "https://planetarynames.wr.usgs.gov/Feature/50": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Addams\n* Clean Name | Addams\n* Feature ID | 50\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -56.20 °\n* Southmost Latitude | -56.20 °\n* Eastmost Longitude | 98.90 °\n* Westmost Longitude | 98.90 °\n* Diameter | 87.00 Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Addams\n* Clean Name | Addams\n* Feature ID | 50\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -56.20 °\n* Southmost Latitude | -56.20 °\n* Eastmost Longitude | 98.90 °\n* Westmost Longitude | 98.90 °\n* Diameter | 87.00 Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Addams\n* Clean Name | Addams\n* Feature ID | 50\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -56.20 °\n* Southmost Latitude | -56.20 °\n* Eastmost Longitude | 98.90 °\n* Westmost Longitude | 98.90 °\n* Diameter | 87.00 Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Addams\n* Clean Name | Addams\n* Feature ID | 50\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -56.20 °\n* Southmost Latitude | -56.20 °\n* Eastmost Longitude | 98.90 °\n* Westmost Longitude | 98.90 °\n* Diameter | 87.00 Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Addams\n* Clean Name | Addams\n* Feature ID | 50\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -56.20 °\n* Southmost Latitude | -56.20 °\n* Eastmost Longitude | 98.90 °\n* Westmost Longitude | 98.90 °\n* Diameter | 87.00 ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Addams |\n| Clean Name | Addams |\n| Feature ID | 50 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | -56.20 ° |\n| Southmost Latitude | -56.20 ° |\n| Eastmost Longitude | 98.90 ° |\n| Westmost Longitude | 98.90 ° |\n| Diameter | 87.00 km |\n| Center Latitude | -56.20 ° |\n| Center Longitude | 98.90 ° |\n| WKT String | POINT (98.9 -56.2) |\n| Quad | v57 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v57_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1994 |\n| Continent | North America |\n| Ethnicity | American |\n| Origin | Jane; American social reformer (1860-1935). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://en.wikipedia.org/wiki/Addams_(crater)": " Addams (crater) - Wikipedia * } Radar map of Addams crater from the Magellan probe | \n* Feature type | Impact crater\n* Location | Venus\n* Coordinates | 56°12′S 98°54′E ﻿ / ﻿ 56.2°S 98.9°E [ 1 ]\n* Diameter | 87 km\n* Eponym | Jane Addams\nAddams is an 87 km diameter impact crater on Venus , [ 1 ] located on the eastern flank of the Triglava Corona . [ 2 ] It was named after American social worker Jane Addams . [ 3 ] The bright ",
+  "https://en.wikipedia.org/wiki/Balch_(crater)": " Balch (crater) - Wikipedia Appearance\nCoordinates : 29°54′N 282°54′E ﻿ / ﻿ 29.9°N 282.9°E\nFrom Wikipedia, the free encyclopedia\n* } Magellan radar map of Balch | \n* Location | Venus\n* Coordinates | 29°54′N 282°54′E ﻿ / ﻿ 29.9°N 282.9°E\n* Diameter | 40 km\n* Eponym | Emily Balch\nBalch is a crater on Venus at latitude 29.9, longitude 282.9 in Devana Chasma, Central Beta Regio. It is 40 km in diameter and named after Emily Balc",
+  "https://www.usgs.gov/centers/astrogeology-science-center/science/venus-magellan-impact-crater-database": " Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete",
+  "https://planetarynames.wr.usgs.gov/Feature/Selma": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Selma\n* Clean Name | Selma\n* Feature ID | 5420\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 68.50 °\n* Southmost Latitude | 68.50 °\n* Eastmost Longitude | 155.90 °\n* Westmost Longitude | 155.90 °\n* Diameter | 11.40",
+  "https://planetarynames.wr.usgs.gov/Feature/Lagerl%C3%B6f": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Lagerlöf\n* Clean Name | Lagerlof\n* Feature ID | 3232\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 81.10 °\n* Southmost Latitude | 81.10 °\n* Eastmost Longitude | 286.90 °\n* Westmost Longitude | 283.60 °\n* Diameter |",
+  "https://planetarynames.wr.usgs.gov/Feature/Joliot-Curie": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Joliot-Curie\n* Clean Name | Joliot Curie\n* Feature ID | 2840\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -1.60 °\n* Southmost Latitude | -1.60 °\n* Eastmost Longitude | 62.40 °\n* Westmost Longitude | 62.40 °\n* Diam",
+  "https://planetarynames.wr.usgs.gov/Feature/Irene": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Irene\n* Clean Name | Irene\n* Feature ID | 2714\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 49.80 °\n* Southmost Latitude | 49.80 °\n* Eastmost Longitude | 134.00 °\n* Westmost Longitude | 134.00 °\n* Diameter | 13.60",
+  "https://planetarynames.wr.usgs.gov/Feature/Cori": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Cori\n* Clean Name | Cori\n* Feature ID | 1309\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 25.40 °\n* Southmost Latitude | 25.40 °\n* Eastmost Longitude | 72.90 °\n* Westmost Longitude | 72.90 °\n* Diameter | 56.10 km\n",
+  "https://humanitystats.com/worlds/venus/cori": " Cori, Venus — the 56.1 km crater | Humanity Stats Humanity Stats v1\nLive\nOnline\nHumans alive 8.324B\nEarth time 01:40:25 UTC\nMission Hub\nen\nVenus · Crater · 1086th largest named feature\n\nCori\n\nGerty; Czech biochemist, Nobel laureate (1896-1957).\nOn the surface\n56.1 km across\nAbout a marathon — and0.5% of Venus's own diameter.\nCoordinates\n25.4° N, 72.9° E\nNamed\n1991\nImagery —\nMagellan SAR\nAll of Venus → Every named place on Venus →\nWorlds › Venus ›",
+  "https://en.wikipedia.org/wiki/Goeppert-Mayer_(crater)": " Goeppert-Mayer (crater) - Wikipedia * Wikidata item\nAppearance\nCoordinates : 59°42′N 26°48′E ﻿ / ﻿ 59.7°N 26.8°E\nFrom Wikipedia, the free encyclopedia\n* } Stereo radar images by Magellan | \n* Location | Venus\n* Coordinates | 59°42′N 26°48′E ﻿ / ﻿ 59.7°N 26.8°E\n* Diameter | 33.5 km (20.8 mi)\n* Eponym | Maria Goeppert-Mayer [ 1 ]\nGoeppert-Mayer is a crater on the planet Venus . It was named in 1991 after German physicist and Nobel lau",
+  "https://planetarynames.wr.usgs.gov/Feature/6446": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | von Suttner\n* Clean Name | von Suttner\n* Feature ID | 6446\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -10.60 °\n* Southmost Latitude | -10.60 °\n* Eastmost Longitude | 234.90 °\n* Westmost Longitude | 234.90 °\n* Di ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | von Suttner |\n| Clean Name | von Suttner |\n| Feature ID | 6446 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | -10.60 ° |\n| Southmost Latitude | -10.60 ° |\n| Eastmost Longitude | 234.90 ° |\n| Westmost Longitude | 234.90 ° |\n| Diameter | 24.00 km |\n| Center Latitude | -10.60 ° |\n| Center Longitude | 234.90 ° |\n| WKT String | POINT (234.9 -10.6) |\n| Quad | v39 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v39_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1994 |\n| Continent | Europe |\n| Ethnicity | Austria |\n| Origin | Bertha; Austrian journalist, pacifist (1843-1914). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://planetarynames.wr.usgs.gov/Feature/713": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Berta\n* Clean Name | Berta\n* Feature ID | 713\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 62.00 °\n* Southmost Latitude | 62.00 °\n* Eastmost Longitude | 322.00 °\n* Westmost Longitude | 322.00 °\n* Diameter | 20.00 ",
+  "https://www.lpi.usra.edu/resources/vc/vcinfo/?refnum=244": " Venus Crater Database, $name - lpi.usra.edu von Suttner von Suttner\n\nFull Size Image (300x300 up to 1000x1000)\n\n* Name:   von Suttner\n* Diameter (km) :   25\n* Latitude :   -10.7°\n* Longitude :  235°\n* Confidence Level :  1\n* Elev surrounding terrain (km) :  6051.84\n* Crater density per 1x10^6 km^2 :  1.90986\n* DN inside crater :  110\n* DN outside crater :  102\n* DN difference :  8\n* Continuous ejecta radius (km) :  15.1\n* Flow length, dist ",
+  "https://planetarynames.wr.usgs.gov/Feature/Deledda": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Deledda\n* Clean Name | Deledda\n* Feature ID | 1469\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 76.00 °\n* Southmost Latitude | 76.00 °\n* Eastmost Longitude | 127.50 °\n* Westmost Longitude | 127.50 °\n* Diameter | 3",
+  "https://humanitystats.com/worlds/venus/deledda": " Deledda, Venus — the 32 km crater | Humanity Stats Humanity Stats v1\nLive\nOnline\nHumans alive 8.323B\nEarth time 16:48:14 UTC\nMission Hub\nen\nVenus · Crater · 1228th largest named feature\n\nDeledda\n\nGrazia; Italian novelist (1871-1936).\nOn the surface\n\n...\n\nthe Snegurochka Planitia quadrangle.It is the 1228th largest named feature on Venus and the 158th largest of its class there.\n\nWhere the name comes from\n\nGrazia; Italian novelist (1871-1936). The ",
+  "https://planetarynames.wr.usgs.gov/Feature/Sigrid": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Sigrid\n* Clean Name | Sigrid\n* Feature ID | 5527\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 63.60 °\n* Southmost Latitude | 63.60 °\n* Eastmost Longitude | 314.40 °\n* Westmost Longitude | 314.40 °\n* Diameter | 16. Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Sigrid\n* Clean Name | Sigrid\n* Feature ID | 5527\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 63.60 °\n* Southmost Latitude | 63.60 °\n* Eastmost Longitude | 314.40 °\n* Westmost Longitude | 314.40 °\n* Diameter | 16.",
+  "https://planetarynames.wr.usgs.gov/Feature/6224": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Undset\n* Clean Name | Undset\n* Feature ID | 6224\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 51.70 °\n* Southmost Latitude | 51.70 °\n* Eastmost Longitude | 60.80 °\n* Westmost Longitude | 60.80 °\n* Diameter | 20.00 Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Undset\n* Clean Name | Undset\n* Feature ID | 6224\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 51.70 °\n* Southmost Latitude | 51.70 °\n* Eastmost Longitude | 60.80 °\n* Westmost Longitude | 60.80 °\n* Diameter | 20.00 ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Undset |\n| Clean Name | Undset |\n| Feature ID | 6224 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 51.70 ° |\n| Southmost Latitude | 51.70 ° |\n| Eastmost Longitude | 60.80 ° |\n| Westmost Longitude | 60.80 ° |\n| Diameter | 20.00 km |\n| Center Latitude | 51.70 ° |\n| Center Longitude | 60.80 ° |\n| WKT String | POINT (60.8 51.7) |\n| Quad | v03 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v3_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1985 |\n| Continent | Europe |\n| Ethnicity | Norway |\n| Origin | Sigrid; Norwegian author (1882-1949). |\n| Reference | [46] - List of famous women provided by the National Organization for Women. |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://en.wikipedia.org/wiki/Sigrid_Undset": " Sigrid Undset - Wikipedia [ clarification needed ] [ citation needed ]\nUndset and Svarstad were married in 1912 and went to stay in London for six months. From London, they returned to Rome, where their first child was born in January 1913.\n\n...\n\nIn 2026, during his sermon at Seljumannamesse, bishop Fredrik Hansen of the Catholic Diocese of Oslo announced the initiation of the canonization process for Sigrid Undset. [ 19 ]",
+  "https://planetarynames.wr.usgs.gov/Feature/907": " Buck - Planetary Names - USGS Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Buck\n* Clean Name | Buck\n* Feature ID | 907\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -5.70 °\n* Southmost Latitude | -5.70 °\n* Eastmost Longitude | 349.60 °\n* Westmost Longitude | 349.60 °\n* Diameter | 21.80 km ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA **.gov** website belongs to an official government organization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA **lock** (  ) or **https://** means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.\n\n[![Home](/static/images/logo.png)](https://www.usgs.gov/ \"Home\")\n\n\n\n\n![](/static/images/nomen-logo.png)\n\n*Gazetteer of Planetary Nomenclature*\n\n![](/static/images/nomen-logo.png)\n\n*Gazetteer  \nof Planetary  \nNomenclature*\n\n* [Home](/)\n* [About](/Page/Introduction)\n* [Nomenclature](/Nomenclature)\n  + [Mercury](/Page/MERCURY/target)\n  + [Venus](/Page/VENUS/target)\n  + [The Moon](/Page/MOON/target)\n  + [Mars System](/Page/MARS/system)\n  + [Asteroids](/Page/ASTEROIDS/system)\n  + [Jupiter System](/Page/JUPITER/system)\n  + [Saturn System](/Page/SATURN/system)\n  + [Uranus System](/Page/URANUS/system)\n  + [Neptune System](/Page/NEPTUNE/system)\n  + [Pluto System](/Page/PLUTO/system)\n  + [Ring and Ring Gap Nomenclature](/Page/Rings)\n  + [Planet and Satellite Names, Discoverers, and Themes](/Page/Planets)\n* [Documentation](/Documentation)\n* [Images and GIS Data](/Page/Images)\n* [Advanced Search](/AdvancedSearch)\n* [Name Request Instructions](/FeatureNameRequest)\n* [News](/News?page=1)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Buck |\n| Clean Name | Buck |\n| Feature ID | 907 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n  \n UNKNOWN\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | -5.70 ° |\n| Southmost Latitude | -5.70 ° |\n| Eastmost Longitude | 349.60 ° |\n| Westmost Longitude | 349.60 ° |\n| Diameter | 21.80 km |\n| Center Latitude | -5.70 ° |\n| Center Longitude | 349.60 ° |\n| WKT String | POINT (349.6 -5.7) |\n| Quad | v43 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v43_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1991 |\n| Continent | North America |\n| Ethnicity | American |\n| Origin | Pearl S.; American writer (1892-1973). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended only to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map. You may wish to select a different layer on the map to match the control network for the geometry you are viewing.*\n\n### PDF maps of Venus\n\n* [1:5 million-scale Magellan radar imagery](../Page/venus1to5m_Radar)\n* [1:10 million-scale color altimetry](../Page/venus1to10m_Altimetry)",
+  "https://humanitystats.com/worlds/venus/buck": " Buck, Venus — the 21.8 km crater | Humanity Stats Humanity Stats v1\nLive\nOnline\nHumans alive 8.322B\nEarth time 06:14:03 UTC\nMission Hub\nen\nVenus · Crater · 1373rd largest named feature\n\nBuck\n\nPearl S.; American writer (1892-1973).\nOn the surface\n21.8 km across\nAbout the length of Manhattan — and0.2% of Venus's own diameter.\nCoordinates\n5.7° S, 10.4° W\nNamed\n1991\nImagery —\nMagellan SAR\nAll of Venus → Every named place on Venus →\n\n...\n\nCarson quadr",
+  "https://planetarynames.wr.usgs.gov/Feature/Gabriela": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Gabriela\n* Clean Name | Gabriela\n* Feature ID | 2050\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -17.80 °\n* Southmost Latitude | -17.80 °\n* Eastmost Longitude | 240.40 °\n* Westmost Longitude | 240.40 °\n* Diameter Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Gabriela\n* Clean Name | Gabriela\n* Feature ID | 2050\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -17.80 °\n* Southmost Latitude | -17.80 °\n* Eastmost Longitude | 240.40 °\n* Westmost Longitude | 240.40 °\n* Diameter ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Gabriela |\n| Clean Name | Gabriela |\n| Feature ID | 2050 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | -17.80 ° |\n| Southmost Latitude | -17.80 ° |\n| Eastmost Longitude | 240.40 ° |\n| Westmost Longitude | 240.40 ° |\n| Diameter | 17.50 km |\n| Center Latitude | -17.80 ° |\n| Center Longitude | 240.40 ° |\n| WKT String | POINT (240.4 -17.8) |\n| Quad | v40 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v40_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1994 |\n| Continent | Asia |\n| Ethnicity | Hebrew |\n| Origin | First name from Hebrew. |\n| Reference | [109] - Dictionary of First Names, by Alfred J. Kolatch: Putnam Publishing Group, New York, 1990. |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://a.osmarks.net/content/wikipedia_en_all_maxi_2020-08/A/List_of_craters_on_Venus": " List of craters on Venus - a.osmarks.net List of craters on Venus\n\nThis is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature. All craters on Venus are named after famous women or female first names. [1] [5] (For features on Venus other than craters see, list of montes on Venus and List of coronae on Venus . [6] )\nThis article should list only official names",
+  "https://planetarynames.wr.usgs.gov/Feature/Sachs%20Patera": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Sachs Patera\n* Clean Name | Sachs Patera\n* Feature ID | 5265\n* Target | Venus\n* Feature Type | Patera, paterae\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 49.30 °\n* Southmost Latitude | 48.90 °\n* Eastmost Longitude | 334.40 °\n* Westmost Longitude | 333.80 °\n* Di",
+  "https://www.iau.org/common/Uploaded%20files/iau-3year-report-name-list-2018-wgpsn.pdf": " [PDF] The following is a list of names of features that were approved ... 1\n\nThe following is a list of names of features that were approved between the 2015 Report to the IAU GA (features named after 07/15/2015) and the 2018 IAU GA (features named before 01/24/2018).\nMercury (31) Craters (20) Akutagawa Ryunosuke; Japanese writer (1892-1927).\nAnguissola Sofonisba; Italian painter (1532-1625)\nAnyte Anyte of Tegea, Greek poet (early 3rd centrury BC).\nBagryana Elisaveta; B",
+  "https://planetarynames.wr.usgs.gov/Feature/2183?target=MOON": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Glaspell\n* Clean Name | Glaspell\n* Feature ID | 2183\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -58.40 °\n* Southmost Latitude | -58.40 °\n* Eastmost Longitude | 269.60 °\n* Westmost Longitude | 269.60 °\n* Diameter Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Glaspell\n* Clean Name | Glaspell\n* Feature ID | 2183\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -58.40 °\n* Southmost Latitude | -58.40 °\n* Eastmost Longitude | 269.60 °\n* Westmost Longitude | 269.60 °\n* Diameter",
+  "https://planetarynames.wr.usgs.gov/Feature/Rita": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Rita\n* Clean Name | Rita\n* Feature ID | 5154\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 71.00 °\n* Southmost Latitude | 71.00 °\n* Eastmost Longitude | 334.80 °\n* Westmost Longitude | 334.80 °\n* Diameter | 8.30 km",
+  "https://planetarynames.wr.usgs.gov/Feature/16320": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Levi-Montalcini\n* Clean Name | Levi-Montalcini\n* Feature ID | 16320\n* Target | Moon\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network LOLA 2011\n* Coordinate System | Planetographic, +East, -180 - 180\n* Northmost Latitude | -40.70 °\n* Southmost Latitude | -40.89 °\n* Eastmost Longitude | -154.22 °\n\n...\n\n* Quad | LAC-121",
+  "https://planetarynames.wr.usgs.gov/Feature/1584": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Dorothy\n* Clean Name | Dorothy\n* Feature ID | 1584\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -35.40 °\n* Southmost Latitude | -35.40 °\n* Eastmost Longitude | 11.30 °\n* Westmost Longitude | 11.30 °\n* Diameter | 8",
+  "https://pubs.usgs.gov/of/1996/0688/report.pdf": " Data Base of Impact Craters on Venus Based On Analysis of Magellan Radar Images and Altimetry Data Venus Crater Database\n\nCatagories Included in the Database\n\nNames\n\nNumerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. It has been suggested to the IAU Committee on Planetary Nomenclature that they consider naming all Venus impact crate",
+  "https://reference.org/facts/List_of_craters_on_Venus/UxEtG4nk": " List of craters on Venus - Reference.org This is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous women or female first names. (For features on Venus other than craters see, list of montes on Venus and List of coronae on Venus .)\nAs of 2017, there are 900 named craters on Venus, fewer than the lunar and Martian List of craters on Venus - Reference.org This is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous women or female first names. (For features on Venus other than craters see, list of montes on Venus and List of coronae on Venus .)\nAs of 2017, there are 900 named craters on Venus, fewer than the lunar and Martian List of craters on Venus - Reference.org This is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous women or female first names. (For features on Venus other than craters see, list of montes on Venus and List of coronae on Venus .)\nAs of 2017, there are 900 named craters on Venus, fewer than the lunar and Martian",
+  "https://planetarynames.wr.usgs.gov/Page/Approved": " How Names are Approved - Planetary Names - USGS Gazetteer of Planetary Nomenclature\nMenu\n\nHow Names Are Approved\n\nPlanetary features are named only when members of the professional science community have a specific scientific need to name a planetary surface feature. Scientists (or students, with a letter of support from the advisor) preparing manuscripts for peer-reviewed journal articles or maps may request a planetary feature be named by fol",
+  "https://www.usgs.gov/tools/gazetteer-planetary-nomenclature": " Gazetteer of Planetary Nomenclature | U.S. Geological Survey This gazetteer contains detailed information about all names of topographic and albedo features on planets and satellites that the International Astronomical Union (IAU) has approved from 1919 to now.\n\n...\n\nNomenclature RSS News Feed\n\nHow to Request a Feature Name\n\nPlanetary features are named only when members of the professional science community have a specific scientific need to name a planeta Gazetteer of Planetary Nomenclature | U.S. Geological Survey This gazetteer contains detailed information about all names of topographic and albedo features on planets and satellites that the International Astronomical Union (IAU) has approved from 1919 to now.\n\n...\n\nNomenclature RSS News Feed\n\nHow to Request a Feature Name\n\nPlanetary features are named only when members of the professional science community have a specific scientific need to name a planeta",
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents": " Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Names sent to the Magellan Project offices at NASA's Jet Propulsion Laboratory will be compiled for the Working Group for Planetary System Nomenclature, a committee of the International Astronomical Union (IAU). The IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian feat Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) The IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian features will not be considered until the following meeting in 1994. But names proposed this year, if accepted as provisional by the nomenclature committee, may be used on published maps and in articles, pending fina Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) The IAU gives final approval to names for bodies in the solar system.\nBecause the IAU meets only every 3 years and its next meeting is in July, 1991, names newly proposed for Venusian features will not be considered until the following meeting in 1994. But names proposed this year, if accepted as provisional by the nomenclature committee, may be used on published maps and in articles, pending fina",
+  "https://planetarynames.wr.usgs.gov/Feature/723": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Bette\n* Clean Name | Bette\n* Feature ID | 723\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -24.60 °\n* Southmost Latitude | -24.60 °\n* Eastmost Longitude | 347.90 °\n* Westmost Longitude | 347.90 °\n* Diameter | 7.20",
+  "https://newikis.com/en/List_of_craters_on_Venus": " List of craters on Venus - newikis.com Newikis\n\nList of craters on Venus\n\nThis article should list only official names approved by the International Astronomical Union (IAU).\n* Lunar : 1,624 craters (31.2%)\n* Venusian: 900 craters (17.3%)\n\n...\n\nThis is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous women or",
+  "https://planetarynames.wr.usgs.gov/Feature/1582": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Doris\n* Clean Name | Doris\n* Feature ID | 1582\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 2.30 °\n* Southmost Latitude | 2.30 °\n* Eastmost Longitude | 90.00 °\n* Westmost Longitude | 90.00 °\n* Diameter | 14.50 km\n",
+  "https://planetarynames.wr.usgs.gov/Feature/Gaze": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Gaze\n* Clean Name | Gaze\n* Feature ID | 2125\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 17.90 °\n* Southmost Latitude | 17.90 °\n* Eastmost Longitude | 240.20 °\n* Westmost Longitude | 240.20 °\n* Diameter | 33.30 k",
+  "https://planetarynames.wr.usgs.gov/Feature/Morrison": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Morrison\n* Clean Name | Morrison\n* Feature ID | 16098\n* Target | Mercury\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network MESSENGER Team\n* Coordinate System | Planetographic, +West, 0 - 360\n* Northmost Latitude | 80.09 °\n* Southmost Latitude | 79.23 °\n* Eastmost Longitude | 125.10 °\n* Westmost Longitude | 129.76 °\n* ",
+  "https://planetarynames.wr.usgs.gov/Feature/5265": " ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Sachs Patera |\n| Clean Name | Sachs Patera |\n| Feature ID | 5265 |\n| Target | Venus |\n| Feature Type | Patera, paterae |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 49.30 ° |\n| Southmost Latitude | 48.90 ° |\n| Eastmost Longitude | 334.40 ° |\n| Westmost Longitude | 333.80 ° |\n| Diameter | 65.00 km |\n| Center Latitude | 49.10 ° |\n| Center Longitude | 334.20 ° |\n| WKT String | MULTIPOLYGON (((333.8 48.9, 334.4 48.9, 334.4 49.3, 333.8 49.3, 333.8 48.9))) |\n| Quad | v19 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v19_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1991 |\n| Continent | Europe |\n| Ethnicity | Sweden |\n| Origin | Nelly; German-born Swedish playwright, poet (1891-1970). |\n| Reference | [46] - List of famous women provided by the National Organization for Women. |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://planetarynames.wr.usgs.gov/Feature/1469": " ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Deledda |\n| Clean Name | Deledda |\n| Feature ID | 1469 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | 76.00 ° |\n| Southmost Latitude | 76.00 ° |\n| Eastmost Longitude | 127.50 ° |\n| Westmost Longitude | 127.50 ° |\n| Diameter | 32.00 km |\n| Center Latitude | 76.00 ° |\n| Center Longitude | 127.50 ° |\n| WKT String | POINT (127.5 76) |\n| Quad | v01 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v1_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1985 |\n| Continent | Europe |\n| Ethnicity | Italy |\n| Origin | Grazia; Italian novelist (1871-1936). |\n| Reference | [46] - List of famous women provided by the National Organization for Women. |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://planetarynames.wr.usgs.gov/Feature/3641": " Gazetteer of Planetary Nomenclature Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Manton\n* Clean Name | Manton\n* Feature ID | 3641\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 9.30 °\n* Southmost Latitude | 9.30 °\n* Eastmost Longitude | 26.90 °\n* Westmost Longitude | 26.90 °\n* Diameter | 20.50 k",
+  "https://planetarynames.wr.usgs.gov/Feature/5264": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Sacajawea Patera\n* Clean Name | Sacajawea Patera\n* Feature ID | 5264\n* Target | Venus\n* Feature Type | Patera, paterae\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 64.70 °\n* Southmost Latitude | 64.10 °\n* Eastmost Longitude | 338.00 °\n* Westmost Longitude | 332.5",
+  "https://planetarynames.wr.usgs.gov/Feature/3808": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Meitner\n* Clean Name | Meitner\n* Feature ID | 3808\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -55.60 °\n* Southmost Latitude | -55.60 °\n* Eastmost Longitude | 322.70 °\n* Westmost Longitude | 321.00 °\n* Diameter |",
+  "https://www.lpi.usra.edu/meetings/lpsc1993/pdf/1611.pdf": " NAMED VENUSIAN CRATERS; Joel Russell and Gerald G. Schaber, U.S. Geological N. Gemini Dr. Flagstaff, AZ 86001 Survey, 2255 Schaber [I] compiled a database of 841 craters on Venus, based on Magellan coverage of 89% of the planet's surface.\n\n...\n\nAbout 150 of the larger craters were previously identified by Pioneer Venus and Soviet Venera projects and subsequently forrnally named by the International Astronomical Union (IAU). A few of the features identified and nanled as impact craters on Pioneer and Venera images\nhave not bee NAMED VENUSIAN CRATERS; Joel Russell and Gerald G. Schaber, U.S. Geological N. Gemini Dr. Flagstaff, AZ 86001 Survey, 2255 Schaber [I] compiled a database of 841 craters on Venus, based on Magellan coverage of 89% of the planet's surface.\n\n...\n\nAbout 150 of the larger craters were previously identified by Pioneer Venus and Soviet Venera projects and subsequently forrnally named by the International Astronomical Union (IAU). A few of the features identified and nanled as impact craters on Pioneer and Venera images\nhave not bee NAMED VENUSIAN CRATERS; Joel Russell and Gerald G. Schaber, U.S. Geological N. Gemini Dr. Flagstaff, AZ 86001 Survey, 2255 Schaber [I] compiled a database of 841 craters on Venus, based on Magellan coverage of 89% of the planet's surface.\n\n...\n\nAbout 150 of the larger craters were previously identified by Pioneer Venus and Soviet Venera projects and subsequently forrnally named by the International Astronomical Union (IAU). A few of the features identified and nanled as impact craters on Pioneer and Venera images\nhave not bee",
+  "https://www.fourmilab.ch/earthview/features/VENUS_nomenclature.html": " Named Features on Venus Named Features on Venus\n\nFeature Types\n\n* Chasma\n* Collis\n* Corona\n* Crater\n* Dorsum\n* Farrum\n* Fluctus\n* Fossa\n* Labyrinthus\n* Linea\n* Mons\n* Patera\n* Planitia\n* Planum\n* Regio\n* Rupes\n* Terra\n* Tessera\n* Tholus\n* Unda\n* Vallis\n\nChasmata\n\n* Name | Lat. | Lon. | Diam.\n* Aikhylu Chasma | 32.00° N | 68.00° W | 300.0\n* Aranyani Chasma | 69.30° N | 74.40° E | 718.0\n\n...\n\n* Zisa Corona | 12.00° N | 139",
+  "https://planetarynames.wr.usgs.gov/Feature/Nadine": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Nadine\n* Clean Name | Nadine\n* Feature ID | 4104\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 7.80 °\n* Southmost Latitude | 7.80 °\n* Eastmost Longitude | 359.10 °\n* Westmost Longitude | 359.10 °\n* Diameter | 18.60",
+  "https://pubs.usgs.gov/of//1994/0235/report.pdf": " GAZETTEER OF VENUSIAN NOMENCLATURE Planetary nomenclature, like terrestrial nomenclature, is used\n\nto uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated  GAZETTEER OF VENUSIAN NOMENCLATURE Planetary nomenclature, like terrestrial nomenclature, is used\n\nto uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993.\n\nPlanetary nomenclature is adjudicated ",
+  "https://planetarynames.wr.usgs.gov/Feature/6835": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | [Graham]\n* Clean Name | Graham\n* Feature ID | 6835\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -6.00 °\n* Southmost Latitude | -6.00 °\n* Eastmost Longitude | 6.00 °\n* Westmost Longitude | 6.00 °\n* Diameter | 75.00",
+  "https://planetarynames.wr.usgs.gov/Feature/1267": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Colette Patera\n* Clean Name | Colette Patera\n* Feature ID | 1267\n* Target | Venus\n* Feature Type | Patera, paterae\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 66.20 °\n* Southmost Latitude | 66.20 °\n* Eastmost Longitude | 324.10 °\n\n...\n\n* Quad | v07 [ pdf ]\n\nStat Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Colette Patera\n* Clean Name | Colette Patera\n* Feature ID | 1267\n* Target | Venus\n* Feature Type | Patera, paterae\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 66.20 °\n* Southmost Latitude | 66.20 °\n* Eastmost Longitude | 324.10 °\n\n...\n\n* Quad | v07 [ pdf ]\n\nStat",
+  "https://planetarynames.wr.usgs.gov/Feature/285": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Anning Paterae\n* Clean Name | Anning Paterae\n* Feature ID | 285\n* Target | Venus\n* Feature Type | Patera, paterae\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 66.50 °\n* Southmost Latitude | 66.50 °\n* Eastmost Longitude | 57.80 °\n* Westmost Longitude | 57.80 °\n* D",
+  "http://wenamethestars.inkleby.com/feature/522": " Ayrton Patera We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nAyrton Patera ( Venus )\n\nNamed after Hertha M. Patera - English physicist (1854-1923).\n\nA patera is an irregular crater, or a complex one with scalloped edges. Usually the dish-shaped depression atop a volcano. On Venus they are named after famous women.\n\nImage Source . Marker locations are approximate and may not always appear to align with image "
+ },
+ "seconds": 51.0,
+ "tokens": {
+  "prompt_tokens": 292740,
+  "completion_tokens": 1467
+ },
+ "model": "openai-codex-personal/gpt-6.1-terra-fast:high",
+ "turns": 11,
+ "round": 2,
+ "role": "select",
+ "referee": {
+  "score": 1.0,
+  "correct": 11,
+  "wrong": 0,
+  "total": 11,
+  "duplicates": 0,
+  "unsupported": 0,
+  "x_only": 0,
+  "y_only": 0,
+  "missed": [],
+  "rows": [
+   {
+    "name": "Bertha von Suttner",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/6446",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-0"
+   },
+   {
+    "name": "Selma Lagerlöf",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/3232",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-9"
+   },
+   {
+    "name": "Grazia Deledda",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/1469",
+    "providers": [
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-3"
+   },
+   {
+    "name": "Sigrid Undset",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/6224",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-10"
+   },
+   {
+    "name": "Jane Addams",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/50",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-5"
+   },
+   {
+    "name": "Irène Joliot-Curie",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/2840",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-4"
+   },
+   {
+    "name": "Pearl S. Buck",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/907",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-8"
+   },
+   {
+    "name": "Emily Greene Balch",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/572",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-1"
+   },
+   {
+    "name": "Gerty Cori",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/1309",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-2"
+   },
+   {
+    "name": "Maria Goeppert-Mayer",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/2203",
+    "providers": [
+     "fetch:tavily",
+     "parallel"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-6"
+   },
+   {
+    "name": "Nelly Sachs",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/5265",
+    "providers": [
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "nobel_venus-7"
+   }
+  ]
+ }
+}

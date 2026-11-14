@@ -36,6 +36,8 @@ tr = sub.add_parser("trial")
 tr.add_argument("methods", nargs="+", help="method JSON files, e.g. methods/v000.json methods/anchor_verify.json")
 tr.add_argument("--hunts", nargs="*")
 tr.add_argument("--repeats", type=int, default=1)
+tr.add_argument("--pool", default="test", help="run every task of this pool when --hunts is not given; open is the file questions")
+tr.add_argument("--name", default="trials", help="run directory under runs/")
 cp = sub.add_parser("compare")
 cp.add_argument("--method", help="method JSON; default is the current method of --run, else methods/anchor_verify.json")
 cp.add_argument("--run", default="main")
@@ -48,6 +50,7 @@ for c in ("calibrate", "round", "run", "recursion-test", "report"):
     if c == "run":
         s.add_argument("--rounds", type=int, default=8)
         s.add_argument("--max-spend", type=float, default=30.0)
+        s.add_argument("--keep-going", action="store_true", help="do not stop when the run has levelled off")
     if c in ("run", "round"):
         s.add_argument("-k", type=int, default=2)
     if c == "recursion-test":
@@ -59,15 +62,16 @@ if a.cmd == "build-hunts":
 elif a.cmd == "smoke":
     smoke()
 elif a.cmd == "trial":
-    loop.trial(a.methods, a.hunts, a.repeats)
+    loop.trial(a.methods, a.hunts, a.repeats, name=a.name, pool=a.pool)
 elif a.cmd == "compare":
     loop.compare(a.method, a.run, a.hunts, a.n, repeats=a.repeats)
 elif a.cmd == "calibrate":
     loop.calibrate(a.name)
 elif a.cmd == "round":
+    loop.baseline(a.name)
     loop.one_round(a.name, k=a.k)
 elif a.cmd == "run":
-    loop.run(a.name, a.rounds, k=a.k, max_spend=a.max_spend)
+    loop.run(a.name, a.rounds, k=a.k, max_spend=a.max_spend, keep_going=a.keep_going)
 elif a.cmd == "recursion-test":
     print(json.dumps(loop.recursion_test(a.name, a.gens), indent=1))
 if a.cmd in ("calibrate", "round", "run", "recursion-test", "report"):

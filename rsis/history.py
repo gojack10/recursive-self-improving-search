@@ -1,5 +1,6 @@
 import json
 import threading
+import time
 import re
 from collections import defaultdict
 
@@ -11,7 +12,8 @@ _write_lock = threading.Lock()
 
 def append(run_dir, name, row):
     # Six worker threads append at once; unlocked writes interleave on Windows and corrupt the file.
-    line = json.dumps(row, ensure_ascii=False) + "\n"
+    # Every row carries the time it was written, so a saved run can be replayed in order and at pace.
+    line = json.dumps({"t": round(time.time(), 2), **row}, ensure_ascii=False) + "\n"
     with _write_lock, open(run_dir / name, "a", encoding="utf-8") as f:
         f.write(line)
 

@@ -1,11 +1,136 @@
-# Recursive Self-Improving Search
+# RSIS: Recursive Self-Improving Search
 
-SearchHack project exploring whether a search agent can use evidence from previous attempts to improve the way it searches.
+![RSIS: search that improves itself, built on Telem](docs/rsis-thumbnail.png)
+
+RSIS is a search agent that rewrites its own search method. It answers "find every X" questions, sees how it scored, writes down what it learned, proposes a new way to search, and keeps the new way only if it scores better. Built for SearchHack on [Telem](https://telem.ai).
+
+## See it in two minutes (no accounts, no API keys)
+
+A full recorded run is committed in `runs/corpus/`. The viewer only reads those files.
+
+```sh
+git clone https://github.com/gojack10/recursive-self-improving-search
+cd recursive-self-improving-search
+python3 -m rsis.view
+```
+
+Open <http://127.0.0.1:8765>. You need Python 3.10 or newer and nothing else. `uv run --no-project python -m rsis.view` works too.
+
+What is on the screen:
+
+| Part | What it shows |
+|---|---|
+| Question bar | The question being shown. Click a question to see only that one; "All unseen questions" is the average over the questions the method never practised on. |
+| Lights | How many agents are searching, whether new methods are being written, and how far the judge is through its checks. |
+| What is happening now | Left: the loop. Right: the steps one agent goes through; each dot is one running agent. |
+| Tree | Every method tried, with its number and a short name. Green tick: kept. Red cross: dropped. Entries marked "learned" are the lessons the next methods were written from. |
+| Score | Our method (green) against plain search (orange, dashed) at the same search budget. "Show answers" puts plain search's answer list beside ours. |
+
+## What the recorded run shows
+
+Plain search is method `v000`: an ordinary agent using Telem's default routing. Every later method was written by the system itself.
+
+| Round | Method in use | Score on the 5 unseen questions |
+|---|---|---|
+| start | plain search (`v000`) | 63% |
+| 1 | `v002` | 69% |
+| 2 | `v003` | 74% |
+| 3 | `v006` | 77% |
+| 4 | `v007` | 81% |
+
+Read this honestly:
+
+- **The score rose every round**, from 63% to 81%, at the same $0.08 search budget per question.
+- **It is not proven beyond noise.** Plain search run three times on the same five questions varied by 26 points, almost all from the two Moon questions. The gain is smaller than that spread.
+- **All 18 questions share one shape** (an award crossed with a planet). The run shows the method got better at this kind of question, not at search in general.
+- **The run was continued past round 4**, so the committed data may hold later rounds than this table. The viewer shows whatever is recorded.
+
+## How it works
+
+One search method is one JSON file: instructions for the searching agent plus a routing policy over Telem's search providers (which engines, how many results, when to read a page).
+
+Each round:
+
+1. **Search.** The method in use answers two practice questions.
+2. **Write new methods.** A method-writer agent reads the scores, the lessons so far and the failed searches, writes new lessons, and proposes two new methods. It does its own research with the method in use, so a better search method is also a better tool for writing the next one.
+3. **Pick the winner.** The method in use and both new methods answer the same two selection questions at the same budget. A new method is kept only if it beats the method in use.
+4. **Score unseen questions.** The winner answers five questions that are never used for practice or selection. That score is the line on the graph.
+
+Before round 1, plain search runs on every question, so each question has a baseline to compare against.
+
+**Scoring.** Each answer must cite a page the agent actually retrieved, and that page must mention the answer. Answers that match the answer key by name are marked correct. Every other answer goes to a judge model, which looks it up through a separate search route and rules it correct, wrong, or another name for a known answer. Verdicts are stored in `runs/judge_verdicts.sqlite` and reused, so each distinct answer is judged once.
+
+`score = (correct - 0.5 x wrong) / number of answers`
+
+The number of answers is the answer key plus anything the judge has verified that the key lacks. A question with no answer key is scored against the best verified list found so far.
+
+**Questions.** `data/questions.json` holds 18 questions: 9 for practice (`train`), 4 for selection (`select`) and 5 unseen (`test`). Add your own by adding an entry with a `question`, a `pool`, and an optional `answers` list.
+
+**When a run stops.** At the round limit, at the spend cap, or when it has levelled off (two "breakout" rounds in a row with no gain). `--keep-going` ignores the levelled-off stop.
+
+## Run it yourself (needs accounts)
+
+You need Python 3.10+, Node.js 22.19+, [Pi](https://www.npmjs.com/package/@earendil-works/pi-coding-agent) signed in to a ChatGPT account, and a Telem API key.
+
+```sh
+npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+pi                      # enter /login, choose OpenAI (ChatGPT Plus/Pro), sign in, then exit
+cp .env.example .env    # then put your Telem key in TELEM_API_KEY
+```
+
+`.env` is ignored by git. Never commit it.
+
+```sh
+python3 -m rsis smoke                                  # one cheap call per key and model
+python3 -m rsis run --name mine --rounds 4 --max-spend 10
+python3 -m rsis.view                                   # watch it live
+```
+
+Running the same `run` command again resumes the run: `--rounds` means that many more rounds. The round in progress when a run was interrupted starts over.
+
+| Command | What it does |
+|---|---|
+| `run --name N --rounds R` | Measure plain search, then run up to R rounds. |
+| `round --name N` | One round. |
+| `trial METHOD.json --hunts Q1 Q2` | Run one or more method files on chosen questions, outside the loop. |
+| `calibrate --name N` | Run the method in use three times on the unseen questions to measure run-to-run spread. |
+| `recursion-test --name N --gens v000 v003` | Give the method writer the same job using different generations' search methods. Not run in the recorded run. |
+| `compare --run N` | Our method against a frontier model answering from memory. Not run in the recorded run. |
+
+Models are set per role in `.env` (`SEARCHER_MODEL`, `IMPROVER_MODEL`, `JUDGE_MODEL`). The recorded run used GPT Terra for the searchers and GPT Astra for the method writer and the judge. The judge and the method writer are the same model family, so the judge is a separate evidence check, not an independent one.
+
+## What is recorded
+
+Everything the viewer shows comes from `runs/<name>/`:
+
+| File | Contents |
+|---|---|
+| `attempts.jsonl` | One row per scored search: question, method, score, counts, spend, time. |
+| `rounds.jsonl`, `state.json` | Each round's result and the run's current state. |
+| `methods/` | Every method the system wrote. |
+| `tree/`, `tree_events.jsonl` | Rounds, methods and lessons as a tree, and each change to it in order. |
+| `logs/<id>.pi.jsonl` | Every event of one agent, each with its arrival time. |
+| `logs/<id>.judge.jsonl` | The judge's verdict on each answer of one search. |
+| `logs/<id>.json` | The answers handed in, the pages retrieved and the scoring detail. |
+
+A replay player is not built yet. The recordings carry the timestamps it needs.
+
+## Known limits
+
+- The gain in the recorded run is inside the measured noise (see above).
+- Plain search has one run on most questions and three on the five unseen ones.
+- A stored judge verdict is reused even if it was wrong, until its row is deleted.
+- The older Wikidata question set (`data/hunts/`, `rsis/hunts.py`) is only used when `data/questions.json` is absent.
+- `rsis/open_hunts.py` and `rsis/ensemble.py` are earlier experiments and were not part of the recorded run.
+
+## Project notes
+
+The team's working notes are kept as a SiftText tree under `nodes/`.
 
 - [SearchHack project tree](nodes/5a004683-3bed-443c-98e9-d011b1e0f5c4/node.md)
 - [SiftText Knowledge Base](nodes/38a9fc79-8a84-494d-a962-2ec5134bc856/node.md), copied from [SiftText Core](https://github.com/gojack10/sifttext-core/commit/3975312b8f6ede794dd0eefed1c9d2ab77aee19a).
 
-## Reading the knowledge tree
+### Reading the knowledge tree
 
 Agents can work directly with the Markdown files in this repo using their usual file tools. SiftText, `rg`, and `fd` are optional.
 
@@ -20,141 +145,3 @@ find nodes -name node.md -type f -exec grep -inF 'recursive search' {} +
 ```
 
 To update an existing project node, edit its `node.md` and preserve its UUID and placement in the tree. Commit the edit through the team's GitHub workflow.
-
-## What the pipeline does
-
-The searcher that searches for how to search. A search method is a frozen JSON file: instructions for the searcher plus a routing policy over Telem's providers (which engines, auto-routing or pinned, tier, results per provider, domain and date filters, batch query variants, when to fetch). Each round:
-
-1. **Train.** The current method runs two train hunts. Every web call goes through Telem, one Telem session per attempt.
-2. **Improve.** The improver reads the score table, the Telem provider-yield table and the losing logs, writes lessons as nodes, and proposes candidate methods. It searches the history tree and the web *with the current method*, so a better method also makes a better improver.
-3. **Select.** The current method and each candidate run the same two unseen select hunts at the same Telem budget. The best one is adopted only if it beats the current method.
-4. **Test.** The round's winner re-runs on the four fixed held-out test hunts. That re-run is the curve we plot, which guards against a lucky best-of-k pick.
-
-The seed method `v000` is Telem's own auto-routing with a plain agent, so the curve shows how far a learned routing policy gets past Telem's default.
-
-**Hunts.** Twelve "find every X" hunts across people, works and structures (`rsis/hunts.py`). Each answer set is computed from Wikidata and cached in `data/hunts/`. Searchers never see it, and `wikidata.org` results are dropped in the Telem wrapper.
-
-**Referee.** Finds are matched to Wikidata labels and aliases. A find Wikidata lacks gets an independent check through Tavily (a separate route from the searcher's Telem calls) and a judge model outside the improver's model family. Score = (correct - 0.5 x wrong) / answer-set size. Duplicates don't count. Every find must cite a URL that the attempt actually retrieved through Telem (search result, verify check or fetched page). A find recited from memory counts as wrong, so the score measures search, not model knowledge. Only the closed-book contestant in `compare` is exempt. The `hadid` answer set includes Wikidata items such as individual stations named after places ("Alpenzoo", "Hungerburg"), so no contestant's ceiling there is 1.0. We disclose that and do not prune it.
-
-**X-and-Y hunts.** Every hunt is "items that meet condition X and condition Y" (Hugo *and* Nebula, astronaut *and* physician). Each hunt names its two conditions, and the searcher sees them. The fastest reliable way through such a hunt is anchor-and-verify:
-
-1. Pick the side that is easier to list completely (an award's winners, an architect's works) as the anchor.
-2. Enumerate it from list pages, using Telem batch query variants and a list-friendly route.
-3. Verify the other condition for every candidate with `check_candidates`. It sends one query per candidate in Telem batches of five over a cheap verify route (`routing.verify_providers`).
-4. Submit only the candidates that pass.
-
-The referee's judge records whether a wrong find met only X or only Y (`x_only`, `y_only`). The improver sees those counts, so "returned half-matches" is a failure it can learn from. Which side to anchor, and how to route each phase, belong to the method. That keeps them learnable rather than hard-coded: the seed `v000` doesn't use the tactic, and the hand-written `methods/anchor_verify.json` is a reference to trial against.
-
-**Question shapes.** Scored hunts cover several "times X and Y happened" shapes, so a better method has to be better across them (`FRAMES` in `rsis/hunts.py`):
-
-| shape | example hunt |
-|---|---|
-| intersection | novels that won both the Hugo and the Nebula |
-| triple | women who are both astronauts and physicians |
-| negation | Hugo winners that did *not* win the Nebula |
-| sequence | astronauts who later sat in a national legislature |
-| events | air disasters with 300 or more deaths |
-
-**Open hunts** (`rsis/open_hunts.py`) push the same shapes into niche territory where no answer key exists, such as reported dogs that swallowed something at a beach and needed a vet, studies that contradict the "three-second goldfish memory" claim, or lightning strikes during a live football match. There is no recall score. Every find must cite a URL the attempt retrieved, then passes a Tavily check and a judge on both conditions, and the result is "how many verified". One stress test (a dog eating a pickle on a beach in its owner's arms) probably has zero real cases, so it measures whether the system invents answers. Open hunts are demo pieces and stay out of the loop's scores.
-
-The ensemble picks its three lenses by shape. For "X but not Y" it subtracts the Y list from the X list rather than anchoring on "not Y"; for sequences it anchors on the later, rarer step; for events it starts from lists sorted by the number or date. Every candidate is verified, including those two searchers agreed on, because two searchers can submit the same half-match. Agreed finds survive unless the checks show they fail a condition; single finds need positive evidence.
-
-Two hand-written methods are there to trial against the evolved ones: `methods/anchor_verify.json` (enumerate one side, verify the other per candidate) and `methods/two_list_join.json` (fetch both lists in full and join them). `data/aliases.json` adds alternative names for answers whose Wikidata label nobody would search for, and drops one duplicate (Pan Am N736PA is an aircraft in the Tenerife disaster, which is already in the set). It was written before any live run.
-```
-python -m rsis.open_hunts methods/anchor_verify.json --hunts goldfish_memory_rebuttals dog_pickle_beach
-```
-
-**Plateau matrix.** If the winner's test re-run doesn't beat the best so far by more than the noise band for two rounds in a row, the next round is a breakout round: fresh improvers, each given a different slice of history and a different earlier version. Two breakouts in a row without a gain stops the run as "levelled off".
-
-**Recursion test.** Generations 0, 3, 6... each get the same improvement job: start from `v000`, with history (attempts, lineage, provider yield, tree nodes) frozen at the end of round 1, and the same budget. Only the method the improver searches with changes. The improver's prompt always shows `v000`, so it can't just copy generation N's text; generation N only drives its searches, and the number of searches it ran is recorded. The improver never sees test-pool scores. Rising successor scores mean the system got better at improving, not only at searching. Flat bars mean continual learning, and we report it that way.
-
-**Records.** Attempts are numeric rows in `runs/<name>/attempts.jsonl`. Method versions, lessons, rounds and adoptions are nodes in the SiftText `node.md` layout under `runs/<name>/tree/`, kept apart from the synced `nodes/` tree.
-
-## Running it, step by step
-
-Needs Python 3.10+ and nothing else (standard library only).
-
-1. Copy `.env.example` to `.env`. Fill in `TELEM_API_KEY`, `TAVILY_API_KEY` and an OpenAI-compatible endpoint (`LLM_BASE_URL`, `LLM_API_KEY`). Set the model IDs your endpoint uses for the searcher (Terra 6.1, high), the improver (GPT 6 Astra, medium) and the judge.
-2. Check every key and model with one cheap call each:
-   ```
-   python -m rsis smoke
-   ```
-   It also tries each Telem provider name. Remove from `SEARCH_PRICE` in `rsis/telem.py` any provider that returns an error.
-3. (Optional) Rebuild the answer sets from Wikidata. They are already committed.
-   ```
-   python -m rsis build-hunts
-   ```
-4. Measure the noise band. This runs `v000` three times on the four test hunts. An attempt that fails for infrastructure reasons (API errors, timeouts) is logged to `runs/main/errors.jsonl` and left out of averages, and comparisons use only hunts that every side completed. An attempt the method itself breaks (for example by overflowing the model's context) scores 0.
-   ```
-   python -m rsis calibrate --name main
-   ```
-5. Run the loop. It stops early at the spend cap or when it levels off.
-   ```
-   python -m rsis run --name main --rounds 6 --max-spend 20
-   ```
-6. Compare against the frontier model: `python -m rsis compare --run main`. Then run the recursion test on the adopted generations, for example:
-   ```
-   python -m rsis recursion-test --name main --gens v000 v003 v006
-   ```
-7. Open `runs/main/report.html`. It shows the test curve against the Telem auto-routing baseline, the recursion bars, Telem provider yield (correct finds per dollar for each provider) and the method lineage.
-
-`python -m rsis round --name main` runs a single round.
-
-To test a search tactic by hand, write a method JSON and run it head to head against others on the same hunts and budget:
-```
-python -m rsis trial methods/v000.json methods/anchor_verify.json --hunts turing_uk abel --repeats 2
-```
-It prints score, correct, wrong, x_only, y_only and Telem spend for each method. Attempts go to `runs/trials/`.
-
-## Beating a frontier model
-
-`python -m rsis compare` puts our system against a frontier model on the held-out test hunts, all scored by the same referee:
-
-| contestant | what it is |
-|---|---|
-| `frontier-closed-book` | `FRONTIER_MODEL` (e.g. Opus or GPT Astra) answering from memory, no search |
-| `frontier+our-method` | the frontier model running our best method in one attempt with the ensemble's whole Telem budget |
-| `ours-method` | the cheap searcher with the best evolved method (or `methods/anchor_verify.json` if no run exists) |
-| `ours-ensemble` | three cheap searchers with that method, each through a different lens (anchor on X, anchor on Y, recall then verify). Finds that two searchers agree on are kept; the rest go through batched Telem verification and a judge before submission |
-
-Why the ensemble should win on accuracy:
-- **Recall:** different anchors and memory recall find different items, and the union covers more of the answer set than one pass.
-- **Precision:** every find needs agreement or a verified search result, so half-matches and recalled-but-wrong items get dropped. A closed-book frontier answer has no such check.
-- **Cost:** cheap verify routes keep it affordable, at about $0.30 of Telem per hunt.
-
-This is a design argument, not a measured result; the table comes from the first real run. `frontier+our-method` gets the same Telem budget as the ensemble, so a win can't come from extra spend alone. Each contestant runs each hunt twice by default (`--repeats`). Finds the judge accepted as Wikidata gaps are printed for a hand check before any score is quoted.
-
-**Number for the slide:** the final method's held-out test score minus `v000`'s, each run three times under evidence-required scoring, shown against the noise band, with the closed-book score beside it.
-
-**Framing for Telem:** `v000` is Telem's default routing. The evolved method is expressed entirely in Telem knobs (providers, tier, batch queries, verify route), so it is a tuning layer on top of Telem's router rather than a replacement. Show the Telem console trajectories for `v000` and the winning method side by side; the session IDs are in `attempts.jsonl`.
-
-```
-python -m rsis compare --run main -n 3
-```
-
-## Budget
-
-The Telem spend cap is $0.08 per attempt (`ATTEMPT_BUDGET`), so a cheaper route buys more searches. A round at k=2 runs 12 attempts plus one improver session: at most about $1.06 of Telem and up to 144 Tavily credits. Calibration (12 attempts), six rounds and a three-generation recursion test (12 attempts) come to at most about $8.30 of Telem, well inside the $50 credit. Telem costs are estimated from the published per-provider prices; the console has the exact figures.
-
-## Proposed pilot questions
-
-These nine questions are a proposed pilot for the demo. The executable benchmark uses the train, select, and test pools in [rsis/hunts.py](rsis/hunts.py).
-
-For each question, return the total, list each qualifying record once, and cite evidence for every record. The difficulty labels describe the expected search work. Both methods use the same model, Telem configuration, and query and page-fetch limits.
-
-- **Development (4 questions).** The learning loop can review these runs and their scores to diagnose misses and revise the search method.
-- **Held-out evaluation (5 questions).** Keep these questions and their results out of the learning loop. Once the learned method is frozen, run both the starting method and the learned method on the same five questions. Keep the verified answer keys in the evaluator and score verified matches, misses, and false positives.
-
-| Difficulty | Split | Question |
-| --- | --- | --- |
-| Easy | Development | How many crewed missions flew in NASA's Gemini program? List the mission designations. |
-| Easy | Held out | How many men's FIFA World Cup editions from 1930 through 2022 were won by a host nation? In a co-hosted edition, either host qualifies. |
-| Easy | Development | How many individual people had received the Nobel Prize in Chemistry twice by the end of 2024? |
-| Medium | Held out | How many men's FIFA World Cup finals through 2022 were decided by a penalty shootout? |
-| Medium | Development | How many distinct films won both the Cannes Palme d'Or and the Academy Award for Best Picture through the 2025 Oscar ceremony? Count only Cannes awards named Palme d'Or. |
-| Medium | Development | How many separate Apollo missions landed astronauts on the Moon? List the mission numbers. |
-| Hard | Held out | How many astronauts flew on a crewed Gemini mission and later traveled to the Moon on an Apollo mission? Include lunar flybys, orbits, and landings. Count each person once. |
-| Hard | Held out | How many drivers had won both the Formula 1 World Drivers' Championship and the Indianapolis 500 by December 31, 2024? Count each driver once. |
-| Hard | Held out | How many men's FIFA World Cup finals from 1930 through 2022 went to extra time? Include finals that subsequently went to penalties. Count only editions with a final match. |
-
-If a held-out question is used to tune the method during a pilot or demo rehearsal, move it into development and replace it with a fresh evaluation question.

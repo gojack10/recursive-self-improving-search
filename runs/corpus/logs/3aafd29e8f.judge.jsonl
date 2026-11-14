@@ -1,0 +1,15 @@
+{"t": 1794697027.18, "event": "plan", "unmatched": 7, "reused": 1, "to_check": 6}
+{"t": 1794697027.18, "event": "end", "name": "Edward Victor Appleton", "status": "same", "reason": "Edward Victor Appleton is the already-listed Edward V. Appleton, the 1947 Physics Nobel laureate honored by the IAU-approved lunar crater Appleton.", "reused": true}
+{"t": 1794697049.86, "event": "start", "name": "Patrick Blackett"}
+{"t": 1794697052.03, "event": "start", "name": "William Henry Bragg"}
+{"t": 1794697052.38, "event": "start", "name": "Arthur Holly Compton"}
+{"t": 1794697052.43, "event": "start", "name": "Marie Sk\u0142odowska Curie"}
+{"t": 1794697052.78, "event": "start", "name": "C. V. Raman"}
+{"t": 1794697054.05, "event": "start", "name": "Wilhelm R\u00f6ntgen"}
+{"t": 1794697058.08, "event": "end", "name": "Marie Sk\u0142odowska Curie", "status": "same", "reason": "Marie Sk\u0142odowska Curie is the already-listed Marie Curie, the 1903 Physics Nobel laureate honored by the lunar crater Sklodowska. Count her only once.", "seconds": 5.6}
+{"t": 1794697058.41, "event": "end", "name": "Arthur Holly Compton", "status": "same", "reason": "Arthur Holly Compton is Arthur H. Compton, already listed. He won the 1927 Nobel Prize in Physics and is a co-namesake of the lunar crater Compton.", "seconds": 6.0}
+{"t": 1794697063.52, "event": "end", "name": "C. V. Raman", "status": "same", "reason": "C. V. Raman is the already-listed Sir Chandrasekhara Venkata Raman. NobelPrize.org confirms his 1930 Physics Nobel; the supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 10.7}
+{"t": 1794697063.61, "event": "end", "name": "William Henry Bragg", "status": "same", "reason": "William Henry Bragg is the already-known William Bragg, not a different laureate. The supplied evidence confirms his Physics Nobel Prize but does not document an IAU-approved lunar feature named after him.", "seconds": 11.6}
+{"t": 1794697064.29, "event": "end", "name": "Wilhelm R\u00f6ntgen", "status": "same", "reason": "Wilhelm R\u00f6ntgen is the already-listed Wilhelm Conrad R\u00f6ntgen. The evidence confirms his 1901 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.", "seconds": 10.2}
+{"t": 1794697065.13, "event": "end", "name": "Patrick Blackett", "status": "same", "reason": "Patrick Blackett is the already-listed Patrick M.S. Blackett, a Nobel Physics laureate. The supplied evidence does not establish an IAU-approved lunar feature named after him.", "seconds": 15.3}
+{"t": 1794697065.13, "event": "done"}

@@ -101,17 +101,26 @@ def check_candidates(m, args, telem):
     return {"checks": grouped, "budget_left": budget_left}
 
 
-def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
-    """One agent's full try at one hunt. Returns the log; the referee scores it separately."""
-    chat = Chat(role)
-    telem = Telem(budget)
-    system = (f"You are a web search agent working on an open hunt. Follow your search method.\n\n{M.render(m)}\n\n"
+def prompts(m, hunt, budget):
+    system = (f"You are a web search agent. Follow your search method.\n\n{M.render(m)}\n\n"
               f"You have ${budget:.2f} of Telem search budget. Every tool result reports what is left. "
               "When the budget runs out or you are done, call submit. Only submit items you have evidence for. "
-              "Each find must cite a URL you retrieved in this attempt whose text, as you saw it, names the item; "
-              "otherwise it scores as wrong.")
+              "Each find must cite a URL retrieved during this search whose text names the item; otherwise it scores as wrong.")
+    return system, hunt['question'] + (f"\n\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}" if hunt['y'] else "")
+
+
+def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
+    """One agent's full try at one hunt. Returns the log; the referee scores it separately."""
+    from . import pi
+    model = pi.model(role)
+    if model:
+        from .pi_searcher import attempt as pi_attempt
+        return pi_attempt(m, hunt, budget=budget, model=model)
+    chat = Chat(role)
+    telem = Telem(budget)
+    system, prompt = prompts(m, hunt, budget)
     messages = [{"role": "system", "content": system},
-                {"role": "user", "content": f"{hunt['question']}\n\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}"}]
+                {"role": "user", "content": prompt}]
     tools = [SEARCH_TOOL, FETCH_TOOL, CHECK_TOOL, SUBMIT_TOOL]
     trace, finds, notes = [], [], ""
     t0 = time.time()

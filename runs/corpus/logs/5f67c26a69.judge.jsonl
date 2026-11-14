@@ -1,0 +1,4 @@
+{"t": 1794696911.25, "event": "plan", "unmatched": 1, "reused": 0, "to_check": 1}
+{"t": 1794696911.25, "event": "start", "name": "Theodor Seuss Geisel (Dr. Seuss)"}
+{"t": 1794696916.58, "event": "end", "name": "Theodor Seuss Geisel (Dr. Seuss)", "status": "same", "reason": "Theodor Seuss Geisel is Dr. Seuss, already listed. Pulitzer records confirm his 1984 special citation, and the supplied evidence confirms the IAU-approved Mercury crater Seuss honors him.", "seconds": 5.3}
+{"t": 1794696916.58, "event": "done"}

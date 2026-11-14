@@ -1,0 +1,1436 @@
+{
+ "attempt_id": "a5fb1e8aae",
+ "method": "v002",
+ "hunt": "olympic_venus",
+ "kind": "list",
+ "x": "How many Olympic medalists have an IAU-approved surface feature on Venus named after them? Any Olympic Games and any medal count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+ "y": "",
+ "pool": "train",
+ "finds": [
+  {
+   "name": "Sonja Henie",
+   "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/2449"
+  }
+ ],
+ "notes": "The IAU gazetteer identifies Henie crater as named for the Norwegian skater and records its 1991 adoption; Olympedia confirms her three Olympic gold medals. Searches for other medalists and historical art-competition medalists did not establish further intersections, so completeness is not guaranteed.",
+ "telem_calls": [
+  {
+   "kind": "search",
+   "query": [
+    "Venus craters named after Olympic medalists athletes IAU"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Olympic champion medalist \"Venus\" \"crater\" named athlete"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" \"crater\" \"olympic\" gold medalist named"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://en.wikipedia.org/wiki/List_of_craters_on_Venus",
+    "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv"
+   ],
+   "ok": 2,
+   "cost": 0.002
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"crater\" \"venus\" \"olympic\" athlete swimmer skater"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" \"crater\" \"olympic\" \"skater\" named"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"Venus\" crater \"olympic\" \"medalist\" athlete named planetary"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" \"crater\" \"olympic\" \"athlete\" medal crater didrikson ederle henie"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "site:planetarynames.wr.usgs.gov Venus crater \"athlete\" olympic"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" \"crater\" \"olympic\" \"swimmer\" skater tennis"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"site:en.wikipedia.org/wiki/List_of_craters_on_Venus\" \"swimmer\" \"tennis\""
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 0,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"crater\" \"venus\" \"olympic\" \"swimmer\" Ederle"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" \"crater\" \"olympic\" \"sculptor\" 1932 medal"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" crater \"olympic\" \"artist\" \"medal\" sculptor"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Venus impact craters named for Olympic champions sportswomen skater swimmer athlete"
+   ],
+   "requested": [
+    "exa"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "exa"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.007,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"Venus\" \"crater\" \"tennis player\" \"Olympic\""
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"crater\" \"venus\" \"olympic champion\" \"named\""
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"crater\" \"venus\" \"olympic\" \"Henie\""
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"Venus\" \"crater\" \"skater\" \"swimmer\" athletes named after"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"crater\" \"venus\" \"golfer\" athlete female"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Sonja Henie IAU approved Venus surface feature crater named after this Olympic medalist identity",
+    "Babe Didrikson Zaharias IAU approved Venus surface feature crater named after this Olympic medalist identity",
+    "Fanny Blankers-Koen IAU approved Venus surface feature crater named after this Olympic medalist identity",
+    "Suzanne Lenglen IAU approved Venus surface feature crater named after this Olympic medalist identity",
+    "Charlotte Cooper Sterry IAU approved Venus surface feature crater named after this Olympic medalist identity"
+   ],
+   "requested": [
+    "exa"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "exa",
+    "exa",
+    "exa",
+    "exa",
+    "exa"
+   ],
+   "n": 10,
+   "dropped_referee": 0,
+   "cost": 0.035,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Gertrude Ederle IAU approved Venus surface feature crater named after this Olympic medalist identity"
+   ],
+   "requested": [
+    "exa"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "exa"
+   ],
+   "n": 2,
+   "dropped_referee": 0,
+   "cost": 0.007,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" \"crater\" \"olympic\" \"tennis\" \"player\" crater"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"Stuart\" crater Venus writer Olympic poet Dorothy medal"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "search",
+   "query": [
+    "Sonja Henie Olympic medals 1928 1932 1936 figure skating"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  },
+  {
+   "kind": "fetch",
+   "urls": [
+    "https://planetarynames.wr.usgs.gov/Feature/2449"
+   ],
+   "ok": 1,
+   "cost": 0.001
+  },
+  {
+   "kind": "search",
+   "query": [
+    "\"venus\" \"crater\" \"olympic\" \"sculptor\" sintenis medal"
+   ],
+   "requested": [
+    "parallel"
+   ],
+   "auto_routing": false,
+   "routing": null,
+   "used": [
+    "parallel"
+   ],
+   "n": 8,
+   "dropped_referee": 0,
+   "cost": 0.001,
+   "include_domains": null
+  }
+ ],
+ "telem_spent": 0.074,
+ "telem_session": "d26a6799-63c1-4be0-9687-56186060fb7d",
+ "trace": [
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "Venus craters named after Olympic medalists athletes IAU"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.079
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "Olympic champion medalist \"Venus\" \"crater\" named athlete"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.078
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" \"crater\" \"olympic\" gold medalist named"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.077
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://en.wikipedia.org/wiki/List_of_craters_on_Venus",
+     "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.075
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"crater\" \"venus\" \"olympic\" athlete swimmer skater"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.074
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" \"crater\" \"olympic\" \"skater\" named"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.073
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"Venus\" crater \"olympic\" \"medalist\" athlete named planetary"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.072
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" \"crater\" \"olympic\" \"athlete\" medal crater didrikson ederle henie"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.071
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "site:planetarynames.wr.usgs.gov Venus crater \"athlete\" olympic"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.07
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" \"crater\" \"olympic\" \"swimmer\" skater tennis"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.069
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"site:en.wikipedia.org/wiki/List_of_craters_on_Venus\" \"swimmer\" \"tennis\""
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.068
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"crater\" \"venus\" \"olympic\" \"swimmer\" Ederle"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.067
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" \"crater\" \"olympic\" \"sculptor\" 1932 medal"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.066
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" crater \"olympic\" \"artist\" \"medal\" sculptor"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.065
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "Venus impact craters named for Olympic champions sportswomen skater swimmer athlete",
+    "providers": [
+     "exa"
+    ],
+    "num_results": 8
+   },
+   "summary": {
+    "providers_used": [
+     "exa"
+    ],
+    "cost": 0.007,
+    "budget_left": 0.058
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"Venus\" \"crater\" \"tennis player\" \"Olympic\""
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.057
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"crater\" \"venus\" \"olympic champion\" \"named\""
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.056
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"crater\" \"venus\" \"olympic\" \"Henie\""
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.055
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"Venus\" \"crater\" \"skater\" \"swimmer\" athletes named after"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.054
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"crater\" \"venus\" \"golfer\" athlete female"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.053
+   }
+  },
+  {
+   "tool": "check_candidates",
+   "args": {
+    "candidates": [
+     "Sonja Henie",
+     "Babe Didrikson Zaharias",
+     "Fanny Blankers-Koen",
+     "Suzanne Lenglen",
+     "Charlotte Cooper Sterry",
+     "Gertrude Ederle"
+    ],
+    "condition": "IAU approved Venus surface feature crater named after this Olympic medalist identity",
+    "providers": [
+     "exa"
+    ],
+    "per_candidate": 2
+   },
+   "summary": {
+    "budget_left": 0.011
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" \"crater\" \"olympic\" \"tennis\" \"player\" crater"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.01
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"Stuart\" crater Venus writer Olympic poet Dorothy medal"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.009
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "Sonja Henie Olympic medals 1928 1932 1936 figure skating"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.008
+   }
+  },
+  {
+   "tool": "fetch_pages",
+   "args": {
+    "urls": [
+     "https://planetarynames.wr.usgs.gov/Feature/2449"
+    ]
+   },
+   "summary": {
+    "budget_left": 0.007
+   }
+  },
+  {
+   "tool": "web_search",
+   "args": {
+    "query": "\"venus\" \"crater\" \"olympic\" \"sculptor\" sintenis medal"
+   },
+   "summary": {
+    "providers_used": [
+     "parallel"
+    ],
+    "cost": 0.001,
+    "budget_left": 0.006
+   }
+  },
+  {
+   "tool": "submit",
+   "args": {
+    "finds": [
+     {
+      "name": "Sonja Henie",
+      "evidence_url": "https://planetarynames.wr.usgs.gov/Feature/2449"
+     }
+    ],
+    "notes": "The IAU gazetteer identifies Henie crater as named for the Norwegian skater and records its 1991 adoption; Olympedia confirms her three Olympic gold medals. Searches for other medalists and historical art-competition medalists did not establish further intersections, so completeness is not guaranteed."
+   },
+   "summary": {
+    "ok": true
+   }
+  }
+ ],
+ "url_providers": {
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv": [
+   "fetch:exa",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature+Type=9_Crater%2C+craters&Results+Per+Page=5": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature+Type=9_Crater": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Results+Per+Page=500&Target=16_Venus": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Approval+Status=Adopted+by+IAU&Feature+Type=9_Crater%2C+craters&Results+Per+Page=500&Target=15_Venus": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Venus": [
+   "exa",
+   "fetch:tavily",
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Ximena_%28crater%29": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Aglaonice_%28crater%29": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/athletes/venus-williams": [
+   "parallel"
+  ],
+  "https://www.usgs.gov/centers/astrogeology-science-center/science/venus-magellan-impact-crater-database": [
+   "exa",
+   "parallel"
+  ],
+  "https://www.salon.com/2000/09/27/olympics_update_4/": [
+   "parallel"
+  ],
+  "https://a.espncdn.com/oly/summer00/news/2000/0926/781464.html": [
+   "parallel"
+  ],
+  "https://sony.mediaroom.com/2008-08-22-Grammy-Award-Winning-Musician-Wyclef-Jean-Writes-Records-New-Song-Venus-Im-Ready-In-Honor-of-2008-Olympic-Gold-Medalist-Venus-Williams": [
+   "parallel"
+  ],
+  "https://fortune.com/2016/08/07/venus-williams-rio-olympics-loss/": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/images/pia00269-venus-stereo-image-pair-of-crater-goeppert-mayer": [
+   "parallel"
+  ],
+  "http://news.bbc.co.uk/sport2/hi/olympics2000/racquet_sports/945978.stm": [
+   "parallel"
+  ],
+  "https://www.cbsnews.com/news/venus-and-serena-williams-win-olympic-gold": [
+   "parallel"
+  ],
+  "https://everything.explained.today/Meitner_(Venusian_crater)": [
+   "parallel"
+  ],
+  "https://www.nydailynews.com/2012/08/06/olympics-2012-venus-and-serena-williams-defend-doubles-crown-beat-czech-team-in-straight-sets-for-london-gold": [
+   "parallel"
+  ],
+  "https://www.cbsnews.com/news/olympics-in-full-swing-with-first-gold-going-to-american-teen/": [
+   "parallel"
+  ],
+  "https://www.latimes.com/sports/la-xpm-2012-jun-26-la-sp-sn-tennis-olympic-team-20120626-story.html": [
+   "parallel"
+  ],
+  "https://www.cbsnews.com/app?url=https://www.cbsnews.com/news/venus-and-serena-williams-win-olympic-gold/": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/countries/VEN/sports/SWA.1": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/athletes/sven-kramer": [
+   "parallel"
+  ],
+  "http://www.olympedia.org/athletes/51650": [
+   "parallel"
+  ],
+  "https://www.yomiuri.co.jp/olympic/2022/a/kramer-sven": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/athletes/craig-webster": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/athletes/127540": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/athletes/ian-crocker": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/athletes/119131": [
+   "parallel"
+  ],
+  "https://pubs.usgs.gov/of/1998/0104/report.pdf": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents/": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=29_Venus&Feature%20Type=9_Crater,%20craters": [
+   "parallel"
+  ],
+  "https://pubs.usgs.gov/of/1994/0235/report.pdf": [
+   "exa",
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature+Type=9_Crater%2C+craters&PageSize=500&sort=name&order=desc": [
+   "parallel"
+  ],
+  "https://newikis.com/en/List_of_craters_on_Venus": [
+   "parallel"
+  ],
+  "https://science.nasa.gov/photojournal/venus-crater-golubkina/": [
+   "parallel"
+  ],
+  "https://data.nasa.gov/dataset/venus-crater-database": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_Venusian_craters": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Meitner_(Venusian_crater)": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater&Target=15_Venus&format=csv&p=1&sort=name": [
+   "parallel"
+  ],
+  "https://humanitystats.com/worlds/venus/henie": [
+   "exa",
+   "parallel"
+  ],
+  "https://science.nasa.gov/photojournal/venus-adivar-crater/": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/images/pia00239-venus-crater-aurelia/": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/images/pia00083-venus-adivar-crater/": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Venusian_crater": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/50": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/1309": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=20_Venus&Feature%20Type=9_Cratter,craters": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/87": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature+Type=9_Crater%2C+craters&Results+Per+Page=500": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=20_Venus&Feature%20Type=9_Crater%2C%20craters&pageSize=5000": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature%20Type=9_Crater&page=1": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Results+Per+Page=500&Target=20_Venus": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/news/venus-and-serena-tennis-rivalry-5-things-to-know": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Michael_Venus_(tennis)": [
+   "parallel"
+  ],
+  "https://crescentcitysports.com/former-lsu-tennis-player-michael-venus-wins-bronze-in-olympic-mens-doubles": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/athletes/94425": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/sports/tennis": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/news/venus-williams-andy-murray-wimbledon-tennis-legends-olympic-champions-love": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/athletes/gertrude-ederle": [
+   "parallel"
+  ],
+  "https://ishof.org/honoree/honoree-gertrude-ederle": [
+   "parallel"
+  ],
+  "https://www.worldaquatics.com/athletes/1165709/gertrude-ederle": [
+   "parallel"
+  ],
+  "https://www.britannica.com/biography/Gertrude-Ederle": [
+   "parallel"
+  ],
+  "https://ishof.org/one-hundred-and-fifteen-years-ago-open/": [
+   "parallel"
+  ],
+  "https://womenshistory.si.edu/blog/discover-story-gertrude-ederle-olympic-gold-medalist-and-world-record-setter-who-made-waves": [
+   "parallel"
+  ],
+  "https://www.nycgovparks.org/parks/flushing-meadows-corona-park/highlights/12065": [
+   "parallel"
+  ],
+  "https://www.biography.com/athletes/gertrude-ederle": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/results/920040": [
+   "parallel"
+  ],
+  "https://project.zo.uni-heidelberg.de/DACHS_Leiden/archive/citrep/vancrevel_tan_hockx_2009/olympic-museum.de/art/1932.htm": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/editions/10/sports/SKL": [
+   "parallel"
+  ],
+  "https://reference.org/facts/Art_competitions_at_the_1932_Summer_Olympics/BE2dNUQt": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_art_competitions": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Art_competitions_at_the_1932_Summer_Olympics": [
+   "parallel"
+  ],
+  "https://www.nytimes.com/2024/05/02/us/paris-olympics-arts-medals.html?eafs_enabled=false": [
+   "parallel"
+  ],
+  "https://arte8lusso.net/art/meet-the-artist-laurent-perbos-the-creator-of-six-venuses-for-the-olympics-in-paris/": [
+   "parallel"
+  ],
+  "https://greekreporter.com/2024/04/03/venus-de-milo-sculptures-embodying-olympic-spirit-adorn-paris": [
+   "parallel"
+  ],
+  "https://ekebergparken.com/en/artworks/venus-victrix": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/images/pia00236-venus-crater-golubkina/": [
+   "parallel"
+  ],
+  "https://www.nga.gov/collection/art-object-page.176406.html": [
+   "parallel"
+  ],
+  "https://humanitystats.com/worlds/venus/golubkina": [
+   "parallel"
+  ],
+  "https://www.hellenicaworld.com/Art/Paintings/en/GiuseppeCassioli.html": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/2449": [
+   "exa",
+   "fetch:tavily"
+  ],
+  "https://github.com/vlingenfelter/women-of-venus": [
+   "exa"
+  ],
+  "https://www.planetary.org/articles/1410": [
+   "exa",
+   "parallel"
+  ],
+  "https://wenamethestars.inkleby.com/world/venus/f/AA": [
+   "exa",
+   "parallel"
+  ],
+  "https://wenamethestars.inkleby.com/feature/2449": [
+   "exa"
+  ],
+  "https://lsusports.net/news/2016/08/08/211107390": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/news/new-zealand-s-michael-venus-and-marcus-daniell-win-tennis-doubles-bronze": [
+   "parallel"
+  ],
+  "https://www.world.tennis/en/news-and-media/articles/daniell-venus-still-floating-on-a-cloud-after-historic-olympic-bronze/": [
+   "parallel"
+  ],
+  "https://www.secsports.com/news/2016/08/venus-is-first-lsu-mens-tennis-player-in-olympics": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/news/golden-slam-tennis-winners-list": [
+   "parallel"
+  ],
+  "https://link.springer.com/article/10.1007/BF00142406": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature+Type=9_Crater%2C+craters&p=500": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Quadrangle_of_Henie": [
+   "parallel"
+  ],
+  "http://wenamethestars.inkleby.com/feature/2449": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/6487": [
+   "parallel"
+  ],
+  "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009826": [
+   "parallel"
+  ],
+  "http://wenamethestars.inkleby.com/feature/6377": [
+   "parallel"
+  ],
+  "http://wenamethestars.inkleby.com/feature/2235": [
+   "parallel"
+  ],
+  "https://science.nasa.gov/resource/margaret-mead-crater-on-venus": [
+   "parallel"
+  ],
+  "https://everything.explained.today/List_of_craters_on_Venus/": [
+   "parallel"
+  ],
+  "https://www.cyclecalcs.com/planets/venus-craters.html": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Approval+Status=Adopted+by+IAU&DiameterMax=1000&DiameterMin=30&Feature+Type=9_Crater%2C+craters&Target=15_Venus": [
+   "exa"
+  ],
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus": [
+   "exa"
+  ],
+  "https://en.wikipedia.org/wiki/Charlotte_Cooper_(tennis)": [
+   "exa"
+  ],
+  "https://www.jpl.nasa.gov/images/pia00238-venus-impact-crater-in-guinevere-planitia": [
+   "parallel"
+  ],
+  "https://pubs.usgs.gov/of/1996/0688/report.pdf": [
+   "parallel"
+  ],
+  "https://www.jpl.nasa.gov/images/pia00214-venus-lavinia-region-impact-craters": [
+   "parallel"
+  ],
+  "https://pubs.usgs.gov/publication/70186309": [
+   "parallel"
+  ],
+  "https://link.springer.com/article/10.1007/s11214-023-00966-y": [
+   "parallel"
+  ],
+  "https://planetarynames.wr.usgs.gov/Feature/5729": [
+   "parallel"
+  ],
+  "http://wenamethestars.inkleby.com/feature/5729": [
+   "parallel"
+  ],
+  "https://humanitystats.com/worlds/venus/stuart": [
+   "parallel"
+  ],
+  "https://www.lpi.usra.edu/resources/vc/vcinfo?refnum=32": [
+   "parallel"
+  ],
+  "https://www.nytimes.com/2012/08/12/sports/olympics/when-poetry-was-an-olympic-event.html": [
+   "parallel"
+  ],
+  "https://www.usgs.gov/media/images/stuart-crater-venus": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/athletes/sonja-henie": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/news/henie-soars-to-top-of-figure-skating-world": [
+   "parallel"
+  ],
+  "http://www.olympedia.org/athletes/81280": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/olympic-games/lake-placid-1932/results/figure-skating/individual-women": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/Sonja_Henie": [
+   "parallel"
+  ],
+  "https://www.britannica.com/biography/Sonja-Henie": [
+   "parallel"
+  ],
+  "https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_figure_skating": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/editions/32/sports/FSK": [
+   "parallel"
+  ],
+  "https://www.tandfonline.com/doi/abs/10.1080/09523367.2017.1280026": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/athletes/920722": [
+   "parallel"
+  ],
+  "http://www.olympedia.org/editions/9/sports/SKL": [
+   "parallel"
+  ],
+  "https://pds-rings.seti.org/press_releases/pages/PIA00xxx/PIA00236.html": [
+   "parallel"
+  ],
+  "https://www.olympics.com/en/athletes/renee-renate-alice-sintenis": [
+   "parallel"
+  ],
+  "https://www.olympedia.org/results/920027": [
+   "parallel"
+  ],
+  "http://www.olympedia.org/athletes/920867": [
+   "parallel"
+  ]
+ },
+ "url_text": {
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature%20Type=9_Crater%2C%20craters&PageSize=500&format=csv": " Planetary Names |  | Oct 01, 2006\n* 207 | Altana | Altana | Venus | 6.00 | 1.40 | 69.90 | 1.40 | 1.40 | 69.90 | 69.90 | Planetocentric, +East, 0 - 360 | Europe | Kalmyk | Crater, craters | AA | v22 | Approved | 1997 | [107] | Kalmyk first name.\n\n...\n\n* 213 | Amanda | Amanda | Venus | 12.50 | -29.20 | 94.50 | -29.20 | -29.20 | 94.50 | 94.50 | Planetocentric, +East, 0 - 360 | Europe | Latin | Crater, craters | AA | Planetary Names\n\n### Nomenclature Search Results\n\nTarget: Venus \n\nFeature Type: Crater, craters \n\n#### Add/Remove Columns \n\n| Feature ID | Feature Name | Clean Feature Name | Target | Diameter |\n| --- | --- | --- | --- | --- |\n| Center Lat/Lon | Lat/Lon Boundaries | Coordinate System | Continent | Ethnicity |\n| Feature Type | Feature Type Code | Quad | Approval Status | Approval Date |\n| Reference | Origin | Additional Info | Last Updated | |\n\n| Feature ID | Feature Name | Clean Feature Name | Target | Diameter | Center Latitude | Center Longitude | Northernmost Latitude | Southernmost Latitude | Easternmost Longitude | Westernmost Longitude | Coordinate System | Continent | Ethnicity | Feature Type | Feature Type Code | Quad | Approval Status | Approval Date | Reference | Origin | Additional Info | Last Updated |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 17 | Abigail | Abigail | Venus | 18.40 | -52.20 | 111.20 | -52.20 | -52.20 | 111.20 | 111.20 | Planetocentric, +East, 0 - 360 | Asia | Hebrew | Crater, craters | AA | v57 | Approved | 1994 | [82] | First name from Hebrew. | | Oct 01, 2006 |\n| 18 | Abika | Abika | Venus | 14.50 | -52.50 | 104.40 | -52.50 | -52.50 | 104.40 | 104.40 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v57 | Approved | 1994 | [107] | Mari first name. | | Dec 30, 2008 |\n| 19 | Abington | Abington | Venus | 21.70 | -47.80 | 277.70 | -47.80 | -47.80 | 277.70 | 277.70 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | v53 | Approved | 1994 | [99] | Frances; English actress (1737-1815). | | Oct 01, 2006 |\n| 20 | Abra | Abra | Venus | 7.20 | 6.20 | 97.40 | 6.20 | 6.20 | 97.40 | 97.40 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v23 | Approved | 1997 | [107] | Ewe first name. | | Oct 01, 2006 |\n| 43 | Adaiah | Adaiah | Venus | 18.00 | -47.30 | 253.40 | -47.30 | -47.30 | 253.40 | 253.40 | Planetocentric, +East, 0 - 360 | Asia | Hebrew | Crater, craters | AA | v52 | Approved | 1994 | [83] | Hebrew first name. | | Oct 01, 2006 |\n| 48 | Adamson | Adamson | Venus | 27.20 | -14.80 | 29.60 | -14.80 | -14.80 | 29.60 | 29.60 | Planetocentric, +East, 0 - 360 | Europe | Austria | Crater, craters | AA | v32 | Approved | 1994 | [99] | Joy; Austrian author, animal expert (1910-1980). | | Oct 01, 2006 |\n| 50 | Addams | Addams | Venus | 87.00 | -56.20 | 98.90 | -56.20 | -56.20 | 98.90 | 98.90 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v57 | Approved | 1994 | [99] | Jane; American social reformer (1860-1935). | | Oct 01, 2006 |\n| 52 | Adivar | Adivar | Venus | 30.30 | 8.90 | 76.20 | 8.90 | 8.90 | 76.20 | 76.20 | Planetocentric, +East, 0 - 360 | Asia | Turkey | Crater, craters | AA | v22 | Approved | 1991 | [99] | Halide; Turkish educator, author (1883-1964). | | Oct 01, 2006 |\n| 61 | Adzoba | Adzoba | Venus | 10.00 | 12.80 | 117.00 | 12.80 | 12.80 | 117.00 | 117.00 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v23 | Approved | 1997 | [107] | Ewe (Ghana) first name. | | Oct 01, 2006 |\n| 70 | Aethelflaed | Aethelflaed | Venus | 20.00 | -18.20 | 196.60 | -18.20 | -18.20 | 196.60 | 196.60 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | v38 | Approved | 1994 | [99] | English leader of the Mercians (c. 884-918). | | Oct 01, 2006 |\n| 73 | Afiba | Afiba | Venus | 9.50 | -47.10 | 102.70 | -47.10 | -47.10 | 102.70 | 102.70 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v47 | Approved | 1997 | [107] | Ewe first name. | | Oct 01, 2006 |\n| 74 | Afiruwa | Afiruwa | Venus | 5.20 | 4.30 | 3.80 | 4.30 | 4.30 | 3.80 | 3.80 | Planetocentric, +East, 0 - 360 | Africa | Nigeria | Crater, craters | AA | v20 | Approved | 1997 | [107] | Hausa first name. | | Oct 01, 2006 |\n| 77 | Aftenia | Aftenia | Venus | 7.00 | 49.95 | 324.00 | 49.95 | 49.95 | 324.00 | 324.00 | Planetocentric, +East, 0 - 360 | Europe | Moldova | Crater, craters | AA | v18 | Approved | 1997 | [107] | Moldavian first name. | | Apr 08, 2010 |\n| 78 | Afua | Afua | Venus | 10.00 | 15.50 | 124.00 | 15.50 | 15.50 | 124.00 | 124.00 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v24 | Approved | 1997 | [107] | Akan (Ghana) first name. | | Oct 01, 2006 |\n| 85 | Aglaonice | Aglaonice | Venus | 63.70 | -26.40 | 339.90 | -26.40 | -26.40 | 339.90 | 339.90 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | v55 | Approved | 1991 | [99] | Ancient Greek astronomer. | | Oct 01, 2006 |\n| 87 | Agnesi | Agnesi | Venus | 42.40 | -39.40 | 37.70 | -39.40 | -39.40 | 37.70 | 37.70 | Planetocentric, +East, 0 - 360 | Europe | Italy | Crater, craters | AA | v45 | Approved | 1991 | [100] | Maria; Italian mathematician (1718-1799). | | May 15, 2010 |\n| 89 | Agoe | Agoe | Venus | 6.30 | 13.10 | 4.30 | 13.10 | 13.10 | 4.30 | 4.30 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v20 | Approved | 1997 | [107] | Eve first name. | | Oct 01, 2006 |\n| 93 | Agrippina | Agrippina | Venus | 38.60 | -33.20 | 65.70 | -33.20 | -33.20 | 65.70 | 65.70 | Planetocentric, +East, 0 - 360 | Europe | Roman | Crater, craters | AA | v46 | Approved | 1991 | [99] | Roman empress (c. 13 B.C.-A.D. 33). | | Oct 01, 2006 |\n| 97 | Ahava | Ahava | Venus | 10.40 | 53.60 | 187.30 | 53.60 | 53.60 | 187.30 | 187.30 | Planetocentric, +East, 0 - 360 | Asia | Hebrew | Crater, craters | AA | v05 | Approved | 1997 | [109] | Hebrew first name. | | Oct 01, 2006 |\n| 108 | Aigul | Aigul | Venus | 6.00 | 38.20 | 280.40 | 38.20 | 38.20 | 280.40 | 280.40 | Planetocentric, +East, 0 - 360 | Europe | Kalmyk | Crater, craters | AA | v17 | Approved | 1997 | [107] | Kalmyk first name. | | Dec 30, 2008 |\n| 110 | Ailar | Ailar | Venus | 8.20 | -15.80 | 68.40 | -15.80 | -15.80 | 68.40 | 68.40 | Planetocentric, +East, 0 - 360 | Asia | Turkmenistan | Crater, craters | AA | v34 | Approved | 1997 | [107] | Turkman first name. | | Dec 30, 2008 |\n| 111 | Aimee | Aimee | Venus | 17.00 | 16.10 | 127.20 | 16.10 | 16.10 | 127.20 | 127.20 | Planetocentric, +East, 0 - 360 | Europe | France | Crater, craters | AA | v24 | Approved | 1994 | [82] | French first name. | | Oct 01, 2006 |\n| 116 | Aisha | Aisha | Venus | 10.60 | 39.30 | 53.30 | 39.30 | 39.30 | 53.30 | 53.30 | Planetocentric, +East, 0 - 360 | Asia | Kyrgyzstan | Crater, craters | AA | v09 | Approved | 1997 | [107] | Kyrgyz first name. | | Dec 30, 2008 |\n| 117 | Aita | Aita | Venus | 14.00 | 8.90 | 270.70 | 8.90 | 8.90 | 270.70 | 270.70 | Planetocentric, +East, 0 - 360 | Europe | Estonia | Crater, craters | AA | v29 | Approved | 1994 | [108] | Estonian first name. | None | Mar 26, 2014 |\n| 126 | Akeley | Akeley | Venus | 23.40 | 8.00 | 244.50 | 8.00 | 8.00 | 244.50 | 244.50 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v28 | Approved | 1994 | [99] | Delia; American explorer (1875-1970). | | Oct 01, 2006 |\n| 128 | Akhmatova | Akhmatova | Venus | 41.40 | 61.30 | 307.90 | 61.20 | 61.10 | 307.90 | 307.10 | Planetocentric, +East, 0 - 360 | Europe | Soviet | Crater, craters | AA | v07 | Approved | 1985 | [64] | Anna; Soviet poet (1889-1966). | | Dec 30, 2008 |\n| 132 | Akiko | Akiko | Venus | 17.40 | 30.60 | 187.30 | 30.60 | 30.60 | 187.30 | 187.30 | Planetocentric, +East, 0 - 360 | Asia | Japan | Crater, craters | AA | v14 | Approved | 1994 | [95] | Yosano; Japanese Tanka poetess (1878-1942). | | Oct 01, 2006 |\n| 137 | Akosua | Akosua | Venus | 6.20 | -58.60 | 18.10 | -58.60 | -58.60 | 18.10 | 18.10 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v56 | Approved | 1997 | [107] | Akan first name. | | Oct 01, 2006 |\n| 138 | Aksentyeva | Aksentyeva | Venus | 42.50 | -42.00 | 271.90 | -42.00 | -42.00 | 271.90 | 271.90 | Planetocentric, +East, 0 - 360 | Europe | Soviet | Crater, craters | AA | v53 | Approved | 1994 | [107] | Zinaida; Soviet geophysicist, astronomer (1900-1969). | | Dec 30, 2008 |\n| 141 | Akuba | Akuba | Venus | 5.50 | 9.60 | 23.00 | 9.60 | 9.60 | 23.00 | 23.00 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v20 | Approved | 1997 | [107] | Eve first name. | | Oct 01, 2006 |\n| 168 | Alcott | Alcott | Venus | 66.00 | -59.50 | 354.40 | -59.50 | -59.50 | 354.40 | 354.40 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v61 | Approved | 1991 | [75] | Louisa M.; American author (1832-1888). | | Oct 01, 2006 |\n| 186 | Alima | Alima | Venus | 10.30 | -46.00 | 229.20 | -46.00 | -46.00 | 229.20 | 229.20 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v51 | Approved | 1994 | [108] | Tatar first name. | None | Mar 26, 2014 |\n| 187 | Alimat | Alimat | Venus | 13.50 | -29.50 | 205.90 | -29.50 | -29.50 | 205.90 | 205.90 | Planetocentric, +East, 0 - 360 | Asia | Georgia | Crater, craters | AA | v50 | Approved | 1994 | [108] | Osset first name. | None | Mar 26, 2014 |\n| 14600 | Alina | Alina | Venus | 3.70 | 8.30 | 267.78 | 8.30 | 8.30 | 267.78 | 267.78 | Planetocentric, +East, 0 - 360 | Europe | France | Crater, craters | AA | v28 | Approved | Oct 25, 2009 | [109] | Short form of French first name Adeline/Adelaide. | | Oct 25, 2009 |\n| 188 | Alison | Alison | Venus | 14.40 | -4.00 | 165.60 | -4.00 | -4.00 | 165.60 | 165.60 | Planetocentric, +East, 0 - 360 | Europe | Ireland | Crater, craters | AA | v37 | Approved | 1994 | [82] | Irish first name. | | Oct 01, 2006 |\n| 194 | Alma | Alma | Venus | 16.80 | -2.40 | 228.80 | -2.40 | -2.40 | 228.80 | 228.80 | Planetocentric, +East, 0 - 360 | Asia | Kazakhstan | Crater, craters | AA | v39 | Approved | 1994 | [108] | Kazakh first name. | None | Mar 26, 2014 |\n| 197 | Almeida | Almeida | Venus | 15.50 | 46.60 | 123.30 | 46.60 | 46.60 | 123.30 | 123.30 | Planetocentric, +East, 0 - 360 | Europe | Portugal | Crater, craters | AA | v12 | Approved | 1985 | [83] | Portuguese first name. | | Oct 01, 2006 |\n| 207 | Altana | Altana | Venus | 6.00 | 1.40 | 69.90 | 1.40 | 1.40 | 69.90 | 69.90 | Planetocentric, +East, 0 - 360 | Europe | Kalmyk | Crater, craters | AA | v22 | Approved | 1997 | [107] | Kalmyk first name. | | Dec 30, 2008 |\n| 152 | Al-Taymuriyya | Al Taymuriyya | Venus | 19.00 | 32.90 | 336.10 | 32.90 | 32.90 | 336.10 | 336.10 | Planetocentric, +East, 0 - 360 | Africa | Egypt | Crater, craters | AA | v19 | Approved | 1991 | [99] | Ayesha; Egyptian author, feminist (1840-1902). | | Oct 01, 2006 |\n| 6775 | [Amalasthuna] | Amalasthuna | Venus | 15.40 | -11.50 | 342.40 | -11.50 | -11.50 | 342.40 | 342.40 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v43 | Dropped | 1991 | [99] | Ostrogoth queen (c. 498-535 A.D.). Changed to Amalasuntha. | | Dec 30, 2008 |\n| 212 | Amalasuntha | Amalasuntha | Venus | 15.40 | -11.50 | 342.40 | -11.50 | -11.50 | 342.40 | 342.40 | Planetocentric, +East, 0 - 360 | Europe | Italy | Crater, craters | AA | v43 | Approved | 1991 | [99] | Ostrogoth queen (c. 498-535 A.D.). Changed from Amalasthuna. | None | Aug 27, 2014 |\n| 213 | Amanda | Amanda | Venus | 12.50 | -29.20 | 94.50 | -29.20 | -29.20 | 94.50 | 94.50 | Planetocentric, +East, 0 - 360 | Europe | Latin | Crater, craters | AA | v47 | Approved | 1997 | [109] | Latin first name. Name changed from Lida. | | Oct 01, 2006 |\n| 217 | Amaya | Amaya | Venus | 34.50 | 11.30 | 89.40 | 11.30 | 11.30 | 89.40 | 89.40 | Planetocentric, +East, 0 - 360 | Europe | Spain | Crater, craters | AA | v22 | Approved | 1991 | [99] | Carmen; Spanish Gypsy dancer (1913-1963). | | Oct 01, 2006 |\n| 14601 | Amelia | Amelia | Venus | 3.30 | 8.57 | 280.45 | 8.57 | 8.57 | 280.45 | 280.45 | Planetocentric, +East, 0 - 360 | Europe | Latin | Crater, craters | AA | v29 | Approved | Oct 25, 2009 | [109] | First name from Latin. | | Oct 25, 2009 |\n| 224 | Amenardes | Amenardes | Venus | 27.90 | 15.00 | 54.30 | 15.00 | 15.00 | 54.30 | 54.30 | Planetocentric, +East, 0 - 360 | Africa | Egypt | Crater, craters | AA | v21 | Approved | 1991 | [99] | Egyptian princess (718-655 B.C.). | | Oct 01, 2006 |\n| 233 | Aminata | Aminata | Venus | 9.70 | 6.60 | 25.20 | 6.60 | 6.60 | 25.20 | 25.20 | Planetocentric, +East, 0 - 360 | Africa | Mali | Crater, craters | AA | v20 | Approved | 1997 | [107] | Mandingo first name. | | Oct 01, 2006 |\n| 253 | Anaxandra | Anaxandra | Venus | 20.40 | 44.20 | 162.30 | 44.20 | 44.20 | 162.30 | 162.30 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | v13 | Approved | 1994 | [99] | Greek artist (fl. c. 228 B.C.). | | Oct 01, 2006 |\n| 258 | Andami | Andami | Venus | 28.90 | -17.50 | 26.50 | -17.50 | -17.50 | 26.50 | 26.50 | Planetocentric, +East, 0 - 360 | Asia | Iran | Crater, craters | AA | v32 | Approved | 1991 | - | Iranian doctor. | | Oct 01, 2006 |\n| 263 | Andreianova | Andreianova | Venus | 66.10 | -3.00 | 68.80 | -3.00 | -3.00 | 68.80 | 68.80 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v34 | Approved | 1994 | [99] | Elena; Russian ballerina (c. 1821-c. 1855). | | Dec 30, 2008 |\n| 278 | Anicia | Anicia | Venus | 38.20 | -26.30 | 31.30 | -26.30 | -26.30 | 31.30 | 31.30 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | v45 | Approved | 1991 | [99] | Greek physician, poet (fl. c.300 B.C.). | | Oct 01, 2006 |\n| 15652 | Annabelle | Annabelle | Venus | 7.70 | -4.15 | 286.29 | -4.12 | -4.19 | 286.32 | 286.25 | Planetocentric, +East, 0 - 360 | Europe | Scotland | Crater, craters | AA | v41 | Approved | Aug 18, 2017 | [442] | Scottish first name of Latin origin. | None | Aug 23, 2017 |\n| 284 | Annia Faustina | Annia Faustina | Venus | 23.40 | 22.10 | 4.70 | 22.10 | 22.10 | 4.70 | 4.70 | Planetocentric, +East, 0 - 360 | Europe | Roman | Crater, craters | AA | v20 | Approved | 1991 | [99] | Roman empress, wife of Marcus Aurelius (125-175 A.D.). | | Oct 01, 2006 |\n| 299 | Antonina | Antonina | Venus | 13.80 | 28.10 | 106.80 | 28.10 | 28.10 | 106.80 | 106.80 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v11 | Approved | 1985 | [98] | Russian first name. | | Dec 30, 2008 |\n| 306 | Anush | Anush | Venus | 12.70 | 14.90 | 86.50 | 14.90 | 14.90 | 86.50 | 86.50 | Planetocentric, +East, 0 - 360 | Asia | Armenian | Crater, craters | AA | v22 | Approved | 1994 | [108] | Armenian first name. | None | Mar 26, 2014 |\n| 308 | Anya | Anya | Venus | 18.10 | 39.50 | 297.80 | 39.50 | 39.50 | 298.70 | 297.70 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v17 | Approved | 1985 | [98] | Russian first name. | | Dec 30, 2008 |\n| 374 | Ariadne | Ariadne | Venus | 23.60 | 43.90 | 360.00 | 43.90 | 43.70 | 359.80 | 0.20 | Planetocentric, +East, 0 - 360 | Europe | Greek | Crater, craters | AA | - | Approved | 1985 | [43] | Greek first name. | Central peak in this crater defines zero degrees longitude. | Jan 04, 2008 |\n| 430 | Asmik | Asmik | Venus | 19.50 | 3.90 | 166.40 | 3.90 | 3.90 | 166.40 | 166.40 | Planetocentric, +East, 0 - 360 | Asia | Armenian | Crater, craters | AA | v25 | Approved | 1994 | [108] | Armenian first name. | None | Mar 26, 2014 |\n| 441 | Astrid | Astrid | Venus | 10.50 | -21.40 | 335.20 | -21.40 | -21.40 | 335.20 | 335.20 | Planetocentric, +East, 0 - 360 | Europe | Scandinavian | Crater, craters | AA | v43 | Approved | 1991 | [109] | Scandinavian first name. | | Oct 01, 2006 |\n| 470 | Audrey | Audrey | Venus | 15.20 | 23.80 | 348.10 | 23.80 | 23.80 | 348.10 | 348.10 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | v31 | Approved | 1994 | [82] | English first name. | | Oct 01, 2006 |\n| 472 | Aurelia | Aurelia | Venus | 31.10 | 20.30 | 331.80 | 20.30 | 20.30 | 331.80 | 331.80 | Planetocentric, +East, 0 - 360 | Europe | Roman | Crater, craters | AA | v31 | Approved | 1991 | [99] | Mother of Julius Caesar. | | Oct 01, 2006 |\n| 483 | Austen | Austen | Venus | 45.10 | -25.00 | 168.40 | -25.00 | -25.00 | 168.40 | 168.40 | Planetocentric, +East, 0 - 360 | Europe | England | Crater, craters | AA | - | Approved | 1994 | [99] | Jane; English novelist (1775-1817). | | Oct 01, 2006 |\n| 502 | Avene | Avene | Venus | 10.00 | 40.40 | 149.40 | 40.40 | 40.40 | 149.40 | 149.40 | Planetocentric, +East, 0 - 360 | Africa | Ghana | Crater, craters | AA | v12 | Approved | 1997 | [107] | Akan (Ghana) first name. | | Oct 01, 2006 |\n| 512 | Avviyar | Avviyar | Venus | 20.60 | -18.00 | 353.70 | -18.00 | -18.00 | 353.70 | 353.70 | Planetocentric, +East, 0 - 360 | Asia | India | Crater, craters | AA | v43 | Approved | 1991 | [84] | Tamil poet (c. 100 B.C.). | | Oct 01, 2006 |\n| 518 | Ayana | Ayana | Venus | 13.80 | -29.20 | 175.50 | -29.20 | -29.20 | 175.50 | 175.50 | Planetocentric, +East, 0 - 360 | Europe | Russia | Crater, craters | AA | v49 | Approved | 1994 | [108] | Altai first name. | None | Mar 26, 2014 |\n| 519 | Ayashe | Ayashe | Venus | 6.70 | 22.70 | 31.40 | 22.70 | 22.70 | 31.40 | 31.40 | Planetocentric, +East, 0 - 360 | Africa | Nigeria | Crater, craters | AA | v21 | Approved | 1997 | [107] | Hausa first name. | | Oct 01, 2006 |\n| 520 | Ayisatu | Ayisatu | Venus | 7.00 | 34.60 | 5.50 | 34.60 | 34.60 | 5.50 | 5.50 | Planetocentric, +East, 0 - 360 | Africa | Mali | Crater, craters | AA | v08 | Approved | 1997 | [107] | Fulbe first name. | | Oct 01, 2006 |\n| 538 | Bachira | Bachira | Venus | 7.30 | 26.50 | 10.00 | 26.50 | 26.50 | 10.00 | 10.00 | Planetocentric, +East, 0 - 360 | Africa | Algeria | Crater, craters | AA | v08 | Approved | 1997 | [107] | Algerian first name. | | Oct 01, 2006 |\n| 547 | Badarzewska | Badarzewska | Venus | 29.60 | -22.60 | 137.20 | -22.60 | -22.60 | 137.20 | 137.20 | Planetocentric, +East, 0 - 360 | Europe | Poland | Crater, craters | AA | v36 | Approved | 1991 | [99] | Thekla; Polish composer (1834-1861). | | Oct 01, 2006 |\n| 559 | Bahriyat | Bahriyat | Venus | 5.00 | 50.30 | 357.50 | 50.30 | 50.30 | 357.50 | 357.50 | Planetocentric, +East, 0 - 360 | Europe | Caucasus | Crater, craters | AA | v07 | Approved | 1997 | [107] | Kumyk (Daghestan) first name. | | Dec 30, 2008 |\n| 564 | Baker | Baker | Venus | 109.00 | 62.50 | 40.30 | 62.50 | 62.50 | 40.30 | 40.30 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v02 | Approved | 1994 | [99] | Josephine; American expatriate dancer, singer (1906-1975). | Changed from Corday Patera. | Aug 27, 2014 |\n| 567 | Bakisat | Bakisat | Venus | 7.40 | 26.00 | 356.80 | 26.00 | 26.00 | 356.80 | 356.80 | Planetocentric, +East, 0 - 360 | Europe | Caucasus | Crater, craters | AA | v19 | Approved | 1997 | [107] | Chechen first name. | | Dec 30, 2008 |\n| 572 | Balch | Balch | Venus | 40.00 | 29.90 | 282.90 | 29.90 | 29.90 | 282.90 | 282.90 | Planetocentric, +East, 0 - 360 | North America | American | Crater, craters | AA | v17 | Approved | 1994 | [99] | Emily; American economist, Nobel laureate (1867-1961). | | Oct 01, 2006 |\n| 591 | Ban Zhao | Ban Zhao | Venus | 39.00 | 17.10 | 147.00 | 17.10 | 17.10 | 147.00 | 147.00 | Planetocentric, +East, 0 - 360 | Asia | China | Crater, craters | AA | v24 | Approved | 1991 | [102] | Chinese historian (c. A.D. 35-100). | | Oct 01, 2006 |\n| 602 | Baranamtarra | Baranamtarra | Venus | 25.50 | 17.90 | 267.80 | 17.90 | 17.90 | 267.80 | 267.80 | Planetocentric, +East, 0 - 360 | Asia | Assyro-Babylonian | Crater, craters | AA | v28 | Approved | 1994 | [99] | Mesopotamian queen (c. 2500 B.C.). | | Oct 01, 2006 |\n| 603 | Barauka | Barauka | Venus | 12.90 | 10.60 | 346.30 | 10.60 | 10.60 | 346.30 | 346.30 | Planetocentric, +East, 0 - 360 | Africa | Nigeria | Crater, craters | AA | v31 | Approved | 1997 | [107] | Hausa (Nigeria) first name. | | Oct 01, 2006 |\n| 614 | Barrera | Barrera | Venus | 27.00 | 16.60 | 109.40 | 16.60 | 16.60 | 109.40 | 109.40 | Planetocentric, +East, 0 - 360 | Europe | Spain | Crater, craters | AA | v23 | Approved | 1991 | [100] | Olivia; Spanish medical writer (b. 1562). | | Oct 01, 20",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature+Type=9_Crater%2C+craters&Results+Per+Page=5": " Planetary Names * 6774 | [Abduh] | Abduh | Moon | 0.00 | 14.70 | 39.00 | 14.70 | 14.70 | 39.00 | 39.00 | Planetographic, +East, -180 - 180 | Africa | Egypt | Crater, craters | AA | LAC-61 | Not Approved | - | - | Mohammed; Egyptian writer (1849-1905). | This name was never approved by the IAU. The IAU-approved name for this feature is Lyell A. | Oct 18, 2010\n* 12 | Abel | Abel | Moon | 137.35 | -34.63 | 85.78 | -",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature+Type=9_Crater": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\nFeature ID\n\n...\n\nAfrica | Egypt | Crater, craters | AA | LAC-61 | Not Approved | - | - | Mohammed; Egyptian writer (1849-1905). | This name was never approved by the IAU. The IAU-approved name for this feature is",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Results+Per+Page=500&Target=16_Venus": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\n...\n\nAfrica | Egypt | Crater, craters | AA | LAC-61 | Not Approved | - | - | Mohammed; Egyptian writer (1849-1905). | This name was never approved by the IAU. The IAU-approved name for this feature is Ly",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Approval+Status=Adopted+by+IAU&Feature+Type=9_Crater%2C+craters&Results+Per+Page=500&Target=15_Venus": " Planetary Names |  | Dec 30, 2008\n* 110 | Ailar | Ailar | Venus | 8.20 | -15.80 | 68.40 | -15.80 | -15.80\n\n...\n\nLatin | Crater, craters | AA | v47 | Approved | 1997 | [109] | Latin first name. Name changed from Lida. |  | Oct 01, 2006\n\n...\n\n|  | Oct 01, 2006\n* 963 | Caiwenji | Caiwenji | Venus | 22.60 | -12.40 | 287.60\n\n...\n\n* 1228 | Clara | Clara | Venus | 3.20 | -37.50 | 235.30 | -37.50 | -37.50 | 235.30 | 235.",
+  "https://en.wikipedia.org/wiki/List_of_craters_on_Venus": " List of craters on Venus - Wikipedia Others: 1,198 craters (23.0%) Distribution of named craters in the Solar System as of 2017. [ 1 ] [ 2 ] [ 3 ] [ 4 ] [ a ] This is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous women or female first names. [ 1 ] [ 5 ] (For features on Venus other than craters see, list List of craters on Venus - Wikipedia From Wikipedia, the free encyclopedia\nThis article should list only official names approved by the International Astronomical Union (IAU). [ 1 ]\n* Lunar : 1,624 craters (31.2%)\n* Venusian: 900 craters (17.3%)\n* Mercurian : 397 craters (7.6%)\n* Martian : 1,092 craters (21.0%)\n* Others: 1,198 craters (23.0%)\nDistribution of named craters in the Solar System as of 2017. [ 1 ] [ 2 ] [ 3 ] [ 4 ] [ a ]\n [Jump to content](#bodyContent)\n\n[![](/static/images/icons/enwiki-25.svg)  ![Wikipedia](/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg) ![The Free Encyclopedia](/static/images/mobile/copyright/wikipedia-tagline-en-25.svg)](/wiki/Main_Page)\n\n[Search](/wiki/Special:Search \"Search Wikipedia [f]\")\n\n# List of craters on Venus\n\n* [Català](https://ca.wikipedia.org/wiki/Llista_de_cr%C3%A0ters_de_Venus \"Llista de cràters de Venus – Catalan\")\n* [Deutsch](https://de.wikipedia.org/wiki/Liste_der_Venuskrater \"Liste der Venuskrater – German\")\n* [Français](https://fr.wikipedia.org/wiki/Liste_des_crat%C3%A8res_de_V%C3%A9nus \"Liste des cratères de Vénus – French\")\n* [Galego](https://gl.wikipedia.org/wiki/Lista_dos_cr%C3%A1teres_de_Venus \"Lista dos cráteres de Venus – Galician\")\n* [Italiano](https://it.wikipedia.org/wiki/Crateri_di_Venere \"Crateri di Venere – Italian\")\n* [日本語](https://ja.wikipedia.org/wiki/%E9%87%91%E6%98%9F%E3%81%AE%E3%82%AF%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC%E4%B8%80%E8%A6%A7 \"金星のクレーター一覧 – Japanese\")\n* [Nederlands](https://nl.wikipedia.org/wiki/Lijst_van_kraters_op_Venus \"Lijst van kraters op Venus – Dutch\")\n* [Polski](https://pl.wikipedia.org/wiki/Lista_krater%C3%B3w_na_Wenus \"Lista kraterów na Wenus – Polish\")\n* [Romnă](https://ro.wikipedia.org/wiki/Lista_craterelor_de_pe_Venus \"Lista craterelor de pe Venus – Romanian\")\n* [Русский](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D1%80%D0%B0%D1%82%D0%B5%D1%80%D0%BE%D0%B2_%D0%92%D0%B5%D0%BD%D0%B5%D1%80%D1%8B \"Список кратеров Венеры – Russian\")\n* [Svenska](https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_kratrar_p%C3%A5_Venus \"Lista över kratrar på Venus – Swedish\")\n* [Türkçe](https://tr.wikipedia.org/wiki/Ven%C3%BCs%27teki_kraterler_listesi \"Venüs'teki kraterler listesi – Turkish\")\n* [中文](https://zh.wikipedia.org/wiki/%E9%87%91%E6%98%9F%E4%B8%8A%E7%9A%84%E6%92%9E%E5%87%BB%E5%9D%91%E5%88%97%E8%A1%A8 \"金星上的撞击坑列表 – Chinese\")\n\n[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q665010#sitelinks-wikipedia \"Edit interlanguage links\")\n\n* [Article](/wiki/List_of_craters_on_Venus \"View the content page [c]\")\n* [Talk](/wiki/Talk:List_of_craters_on_Venus \"Discuss improvements to the content page [t]\")\n\n* [Read](/wiki/List_of_craters_on_Venus)\n* [Edit](/w/index.php?title=List_of_craters_on_Venus&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_craters_on_Venus&action=history \"Past revisions of this page [h]\")\n\n\n\nTools\n\nActions\n\n* [Read](/wiki/List_of_craters_on_Venus)\n* [Edit](/w/index.php?title=List_of_craters_on_Venus&action=edit \"Edit this page [e]\")\n* [View history](/w/index.php?title=List_of_craters_on_Venus&action=history \"Past revisions of this page [h]\")\n\nGeneral\n\n* [What links here](/wiki/Special:WhatLinksHere/List_of_craters_on_Venus \"List of all English Wikipedia pages containing links to this page [j]\")\n* [Related changes](/wiki/Special:RecentChangesLinked/List_of_craters_on_Venus \"Recent changes in pages linked from this page [k]\")\n* [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard \"Upload files [u]\")\n* [Permanent link](/w/index.php?title=List_of_craters_on_Venus&oldid=1361105315 \"Permanent link to this revision of this page\")\n* [Page information](/w/index.php?title=List_of_craters_on_Venus&action=info \"More information about this page\")\n* [Cite this page](/w/index.php?title=Special:CiteThisPage&page=List_of_craters_on_Venus&id=1361105315&wpFormIdentifier=titleform \"Information on how to cite this page\")\n* [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FList_of_craters_on_Venus)\n* [Switch to legacy parser](/w/index.php?title=List_of_craters_on_Venus&useparsoid=0)\n\nPrint/export\n\n* [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=List_of_craters_on_Venus&action=show-download-screen \"Download this page as a PDF file\")\n* [Printable version](/w/index.php?title=List_of_craters_on_Venus&printable=yes \"Printable version of this page [p]\")\n\nIn other projects\n\n* [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Impact_craters_on_Venus)\n* [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q665010 \"Structured data on this page hosted by Wikidata [g]\")\n\nAppearance\n\nFrom Wikipedia, the free encyclopedia\n\nThis article should list *only* official names approved by the [International Astronomical Union](https://en.wikipedia.org/wiki/International_Astronomical_Union \"International Astronomical Union\") (IAU).[[1]](#cite_note-Gazetteer-Venus-Craterlist-1)\n\n* [Lunar](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon \"List of craters on the Moon\"): 1,624 craters (31.2%)\n* Venusian: 900 craters (17.3%)\n* [Mercurian](https://en.wikipedia.org/wiki/List_of_craters_on_Mercury \"List of craters on Mercury\"): 397 craters (7.6%)\n* [Martian](https://en.wikipedia.org/wiki/List_of_craters_on_Mars \"List of craters on Mars\"): 1,092 craters (21.0%)\n* Others: 1,198 craters (23.0%)\n\nDistribution of named [craters](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") in the [Solar System](https://en.wikipedia.org/wiki/Solar_System \"Solar System\") as of 2017.[[1]](#cite_note-Gazetteer-Venus-Craterlist-1)[[2]](#cite_note-Gazetteer-Mercury-Craterlist-2)[[3]](#cite_note-Gazetteer-Moon-Craterlist-3)[[4]](#cite_note-Gazetteer-Mars-Craterlist-4)[[a]](#cite_note-WGPSN-Dropped-5)\n\nThis is a list of [craters](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") on [Venus](https://en.wikipedia.org/wiki/Venus \"Venus\"), [named](https://en.wikipedia.org/wiki/Planetary_nomenclature \"Planetary nomenclature\") by the [International Astronomical Union](https://en.wikipedia.org/wiki/International_Astronomical_Union \"International Astronomical Union\")'s (IAU) [Working Group for Planetary System Nomenclature](https://en.wikipedia.org/wiki/Working_Group_for_Planetary_System_Nomenclature \"Working Group for Planetary System Nomenclature\"). All craters on Venus are named after famous women or female first names.[[1]](#cite_note-Gazetteer-Venus-Craterlist-1)[[5]](#cite_note-Gazetteer-Categories-6) *(For features on Venus other than craters see, [list of montes on Venus](https://en.wikipedia.org/wiki/List_of_montes_on_Venus \"List of montes on Venus\") and [List of coronae on Venus](https://en.wikipedia.org/wiki/List_of_coronae_on_Venus \"List of coronae on Venus\").[[6]](#cite_note-Gazetteer-Target-Venus-7))*\n\nAs of 2017, there are 900 named craters on Venus,[[1]](#cite_note-Gazetteer-Venus-Craterlist-1) fewer than the [lunar](https://en.wikipedia.org/wiki/List_of_craters_on_the_Moon \"List of craters on the Moon\") and [Martian](https://en.wikipedia.org/wiki/List_of_craters_on_Mars \"List of craters on Mars\") craters but more than [on Mercury](https://en.wikipedia.org/wiki/List_of_craters_on_Mercury \"List of craters on Mercury\").[[2]](#cite_note-Gazetteer-Mercury-Craterlist-2)[[3]](#cite_note-Gazetteer-Moon-Craterlist-3)[[4]](#cite_note-Gazetteer-Mars-Craterlist-4)[[a]](#cite_note-WGPSN-Dropped-5)\n\nOther, non-planetary bodies with numerous named craters include [Callisto](https://en.wikipedia.org/wiki/Callisto_(moon) \"Callisto (moon)\") ([141](https://en.wikipedia.org/wiki/List_of_craters_on_Callisto \"List of craters on Callisto\")), [Ganymede](https://en.wikipedia.org/wiki/Ganymede_(moon) \"Ganymede (moon)\") ([131](https://en.wikipedia.org/wiki/List_of_craters_on_Ganymede \"List of craters on Ganymede\")), [Rhea](https://en.wikipedia.org/wiki/Rhea_(moon) \"Rhea (moon)\") (128), [Vesta](https://en.wikipedia.org/wiki/4_Vesta \"4 Vesta\") (90), [Ceres](https://en.wikipedia.org/wiki/Ceres_(dwarf_planet) \"Ceres (dwarf planet)\") (90), [Dione](https://en.wikipedia.org/wiki/Dione_(moon) \"Dione (moon)\") (73), [Iapetus](https://en.wikipedia.org/wiki/Iapetus_(moon) \"Iapetus (moon)\") (58), [Enceladus](https://en.wikipedia.org/wiki/Enceladus_(moon) \"Enceladus (moon)\") (53), [Tethys](https://en.wikipedia.org/wiki/Tethys_(moon) \"Tethys (moon)\") (50) and [Europa](https://en.wikipedia.org/wiki/Europa_(moon) \"Europa (moon)\") ([41](https://en.wikipedia.org/wiki/List_of_craters_on_Europa \"List of craters on Europa\")). For a full list, *see [List of craters in the Solar System](https://en.wikipedia.org/wiki/List_of_craters_in_the_Solar_System \"List of craters in the Solar System\")*.\n\nCraters on Venus (alphabetically)\n\n* [A](#A)\n* [B](#B)\n* [C](#C)\n* [D](#D)\n* [E](#E)\n* [F](#F)\n* [G](#G)\n* [H](#H)\n* [I](#I)\n* [J](#J)\n* [K](#K)\n* [L](#L)\n* [M](#M)\n* [N](#N)\n* [O](#O)\n* [P](#P)\n* [Q](#Q)\n* [R](#R)\n* [S](#S)\n* [T](#T)\n* [U](#U)\n* [V](#V)\n* [W](#W)\n* [X](#X)\n* [Y](#Y)\n* [Z](#Z)\n\n* [Dropped and not approved names](#Dropped_and_not_approved_names)\n* [See also](#See_also)\n* [References](#References)\n* [Notes](#Notes)\n* [External links](#External_links)\n\n## A\n\n[[edit](/w/index.php?title=List_of_craters_on_Venus&action=edit&section=1 \"Edit section: A\")]\n\n| [Crater](https://en.wikipedia.org/wiki/Impact_crater \"Impact crater\") | Coordinates | [Diameter](https://en.wikipedia.org/wiki/Diameter \"Diameter\") (km) | Approval Year | [Eponym](https://en.wikipedia.org/wiki/Eponym \"Eponym\") | Ref |\n| --- | --- | --- | --- | --- | --- |\n| Abigail | [52°12′S 111°12′E﻿ / ﻿52.2°S 111.2°E﻿ / -52.2; 111.2﻿ (Abigail)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=52.2_S_111.2_E_globe:venus_type:landmark&title=Abigail) | 18.4 | 1994 | [Hebrew](https://en.wikipedia.org/wiki/Hebrew_languages \"Hebrew languages\") [first name](https://en.wikipedia.org/wiki/Given_name \"Given name\") | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/17) |\n| Abika | [52°30′S 104°24′E﻿ / ﻿52.5°S 104.4°E﻿ / -52.5; 104.4﻿ (Abika)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=52.5_S_104.4_E_globe:venus_type:landmark&title=Abika) | 14.5 | 1994 | [Mari](https://en.wikipedia.org/wiki/Mari_language \"Mari language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/18) |\n| [Abington](https://en.wikipedia.org/wiki/Abington_(crater)?action=edit&redlink=1 \"Abington (crater) (page does not exist)\") | [47°48′S 82°18′W﻿ / ﻿47.8°S 82.3°W﻿ / -47.8; -82.3﻿ (Abington)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=47.8_S_82.3_W_globe:venus_type:landmark&title=Abington) | 21.7 | 1994 | [Frances Abington](https://en.wikipedia.org/wiki/Frances_Abington \"Frances Abington\"), British actress | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/19) |\n| [Abra](https://en.wikipedia.org/wiki/Abra_(crater)?action=edit&redlink=1 \"Abra (crater) (page does not exist)\") | [6°12′N 97°24′E﻿ / ﻿6.2°N 97.4°E﻿ / 6.2; 97.4﻿ (Abra)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=6.2_N_97.4_E_globe:venus_type:landmark&title=Abra) | 7.2 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/20) |\n| [Adaiah](https://en.wikipedia.org/wiki/Adaiah_(crater)?action=edit&redlink=1 \"Adaiah (crater) (page does not exist)\") | [47°18′S 106°36′W﻿ / ﻿47.3°S 106.6°W﻿ / -47.3; -106.6﻿ (Adaiah)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=47.3_S_106.6_W_globe:venus_type:landmark&title=Adaiah) | 18 | 1994 | Hebrew first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/43) |\n| [Adamson](https://en.wikipedia.org/wiki/Adamson_(crater)?action=edit&redlink=1 \"Adamson (crater) (page does not exist)\") | [14°48′S 29°36′E﻿ / ﻿14.8°S 29.6°E﻿ / -14.8; 29.6﻿ (Adamson)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=14.8_S_29.6_E_globe:venus_type:landmark&title=Adamson) | 27.2 | 1994 | [Joy Adamson](https://en.wikipedia.org/wiki/Joy_Adamson \"Joy Adamson\"), Austrian naturalist | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/48) |\n| [Addams](https://en.wikipedia.org/wiki/Addams_(crater) \"Addams (crater)\") | [56°12′S 98°54′E﻿ / ﻿56.2°S 98.9°E﻿ / -56.2; 98.9﻿ (Addams)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=56.2_S_98.9_E_globe:venus_type:landmark&title=Addams) | 87 | 1994 | [Jane Addams](https://en.wikipedia.org/wiki/Jane_Addams \"Jane Addams\"), American social reformer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/50) |\n| [Adivar](https://en.wikipedia.org/wiki/Adivar_(crater) \"Adivar (crater)\") | [8°54′N 76°12′E﻿ / ﻿8.9°N 76.2°E﻿ / 8.9; 76.2﻿ (Adivar)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=8.9_N_76.2_E_globe:venus_type:landmark&title=Adivar) | 30.3 | 1991 | [Halide Edib Adıvar](https://en.wikipedia.org/wiki/Halide_Edib_Adıvar \"Halide Edib Adıvar\"), Turkish author | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/52) |\n| [Adzoba](https://en.wikipedia.org/wiki/Adzoba_(crater)?action=edit&redlink=1 \"Adzoba (crater) (page does not exist)\") | [12°48′N 117°00′E﻿ / ﻿12.8°N 117°E﻿ / 12.8; 117﻿ (Adzoba)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=12.8_N_117_E_globe:venus_type:landmark&title=Adzoba) | 10 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/61) |\n| [Aethelflaed](https://en.wikipedia.org/wiki/Aethelflaed_(crater)?action=edit&redlink=1 \"Aethelflaed (crater) (page does not exist)\") | [18°12′S 163°24′W﻿ / ﻿18.2°S 163.4°W﻿ / -18.2; -163.4﻿ (Aethelflaed)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=18.2_S_163.4_W_globe:venus_type:landmark&title=Aethelflaed) | 20 | 1994 | [Ethelfleda](https://en.wikipedia.org/wiki/Ethelfleda \"Ethelfleda\"), [Mercian](https://en.wikipedia.org/wiki/Mercia \"Mercia\") queen | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/70) |\n| [Afiba](https://en.wikipedia.org/wiki/Afiba_(crater)?action=edit&redlink=1 \"Afiba (crater) (page does not exist)\") | [47°06′S 102°42′E﻿ / ﻿47.1°S 102.7°E﻿ / -47.1; 102.7﻿ (Afiba)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=47.1_S_102.7_E_globe:venus_type:landmark&title=Afiba) | 9.5 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/73) |\n| [Afiruwa](https://en.wikipedia.org/wiki/Afiruwa_(crater)?action=edit&redlink=1 \"Afiruwa (crater) (page does not exist)\") | [4°18′N 3°48′E﻿ / ﻿4.3°N 3.8°E﻿ / 4.3; 3.8﻿ (Afiruwa)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=4.3_N_3.8_E_globe:venus_type:landmark&title=Afiruwa) | 5.2 | 1997 | [Hausa](https://en.wikipedia.org/wiki/Hausa_language \"Hausa language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/74) |\n| [Aftenia](https://en.wikipedia.org/wiki/Aftenia_(crater)?action=edit&redlink=1 \"Aftenia (crater) (page does not exist)\") | [49°57′N 36°00′W﻿ / ﻿49.95°N 36°W﻿ / 49.95; -36﻿ (Aftenia)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=49.95_N_36_W_globe:venus_type:landmark&title=Aftenia) | 7 | 1997 | [Moldavian](https://en.wikipedia.org/wiki/Moldavian_language \"Moldavian language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/77) |\n| [Afua](https://en.wikipedia.org/wiki/Afua_(crater)?action=edit&redlink=1 \"Afua (crater) (page does not exist)\") | [15°30′N 124°00′E﻿ / ﻿15.5°N 124°E﻿ / 15.5; 124﻿ (Afua)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=15.5_N_124_E_globe:venus_type:landmark&title=Afua) | 10 | 1997 | [Akan](https://en.wikipedia.org/wiki/Akan_languages \"Akan languages\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/78) |\n| [Aglaonice](https://en.wikipedia.org/wiki/Aglaonice_(crater) \"Aglaonice (crater)\") | [26°24′S 20°06′W﻿ / ﻿26.4°S 20.1°W﻿ / -26.4; -20.1﻿ (Aglaonice)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=26.4_S_20.1_W_globe:venus_type:landmark&title=Aglaonice) | 63.7 | 1991 | [Aglaonice](https://en.wikipedia.org/wiki/Aglaonice \"Aglaonice\"), [Ancient Greek](https://en.wikipedia.org/wiki/Ancient_Greece \"Ancient Greece\") astronomer | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/85) |\n| [Agnesi](https://en.wikipedia.org/wiki/Agnesi_(crater) \"Agnesi (crater)\") | [39°24′S 37°42′E﻿ / ﻿39.4°S 37.7°E﻿ / -39.4; 37.7﻿ (Agnesi)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=39.4_S_37.7_E_globe:venus_type:landmark&title=Agnesi) | 42.4 | 1991 | [Maria Agnesi](https://en.wikipedia.org/wiki/Maria_Gaetana_Agnesi \"Maria Gaetana Agnesi\"), Italian mathematician | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/87) |\n| [Agoe](https://en.wikipedia.org/wiki/Agoe_(crater)?action=edit&redlink=1 \"Agoe (crater) (page does not exist)\") | [13°06′N 4°18′E﻿ / ﻿13.1°N 4.3°E﻿ / 13.1; 4.3﻿ (Agoe)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=13.1_N_4.3_E_globe:venus_type:landmark&title=Agoe) | 6.3 | 1997 | [Ewe](https://en.wikipedia.org/wiki/Ewe_language \"Ewe language\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/89) |\n| [Agrippina](https://en.wikipedia.org/wiki/Agrippina_(crater)?action=edit&redlink=1 \"Agrippina (crater) (page does not exist)\") | [33°12′S 65°42′E﻿ / ﻿33.2°S 65.7°E﻿ / -33.2; 65.7﻿ (Agrippina)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=33.2_S_65.7_E_globe:venus_type:landmark&title=Agrippina) | 38.6 | 1991 | [Agrippina the Elder](https://en.wikipedia.org/wiki/Agrippina_the_Elder \"Agrippina the Elder\"), [Roman](https://en.wikipedia.org/wiki/Roman_Empire \"Roman Empire\") empress | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/93) |\n| [Ahava](https://en.wikipedia.org/wiki/Ahava_(crater)?action=edit&redlink=1 \"Ahava (crater) (page does not exist)\") | [53°36′N 172°42′W﻿ / ﻿53.6°N 172.7°W﻿ / 53.6; -172.7﻿ (Ahava)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=53.6_N_172.7_W_globe:venus_type:landmark&title=Ahava) | 10.4 | 1997 | Hebrew first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/97) |\n| [Aigul](https://en.wikipedia.org/wiki/Aigul_(crater)?action=edit&redlink=1 \"Aigul (crater) (page does not exist)\") | [38°12′N 79°36′W﻿ / ﻿38.2°N 79.6°W﻿ / 38.2; -79.6﻿ (Aigul)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=38.2_N_79.6_W_globe:venus_type:landmark&title=Aigul) | 6 | 1997 | [Kalmykia](https://en.wikipedia.org/wiki/Kalmyk_people \"Kalmyk people\") first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/108) |\n| [Ailar](https://en.wikipedia.org/wiki/Ailar_(crater)?action=edit&redlink=1 \"Ailar (crater) (page does not exist)\") | [15°48′S 68°24′E﻿ / ﻿15.8°S 68.4°E﻿ / -15.8; 68.4﻿ (Ailar)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=15.8_S_68.4_E_globe:venus_type:landmark&title=Ailar) | 8.2 | 1997 | Turkman first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/110) |\n| [Aimee](https://en.wikipedia.org/wiki/Aimee_(crater)?action=edit&redlink=1 \"Aimee (crater) (page does not exist)\") | [16°06′N 127°12′E﻿ / ﻿16.1°N 127.2°E﻿ / 16.1; 127.2﻿ (Aimee)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=16.1_N_127.2_E_globe:venus_type:landmark&title=Aimee) | 17 | 1994 | French first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/111) |\n| [Aisha](https://en.wikipedia.org/wiki/Aisha_(crater)?action=edit&redlink=1 \"Aisha (crater) (page does not exist)\") | [39°18′N 53°18′E﻿ / ﻿39.3°N 53.3°E﻿ / 39.3; 53.3﻿ (Aisha)](https://geohack.toolforge.org/geohack.php?pagename=List_of_craters_on_Venus&params=39.3_N_53.3_E_globe:venus_type:landmark&title=Aisha) | 10.6 | 1997 | Arabic first name | [WGPSN](https://planetarynames.wr.usgs.gov/Feature/116) |\n| [Aita](https://en.wikipedia.org/wiki/Aita_(crater)?action=edit&redlink=1 \"Aita (crater) (page does not exist)\") | [8°54′N 89°18′W﻿ / ﻿8.9°N 89.3°W﻿ / 8.9; -89.3﻿ (Aita)](https://geohack.toolforge.org/geohack.php?pagename=List_of",
+  "https://en.wikipedia.org/wiki/Ximena_%28crater%29": " Ximena (crater) - Wikipedia Ximena (crater) - Wikipedia\nXimena is a 12.8 km diameter crater in Nuptadi Planitia on Venus. [1][2] It has a continuous ejecta radius of 10.8 km. [3] It is named after a Portuguese given name. It was accepted by the IAU in the year 1997. [1] On Venus, craters smaller than 20 km in diameter are named after common female given names. [4] Ximena (crater) - Wikipedia\nXimena is a 12.8 km diameter crat",
+  "https://en.wikipedia.org/wiki/Aglaonice_%28crater%29": " Aglaonice (crater) - Wikipedia Aglaonice (crater) - Wikipedia\nAglaonice is a crater on the surface of Venus of the Lavinia Planitia. [1] Its name derives and is named after the ancient Greek astronomer named Aglaonice. It was soon accepted and adopted by the International Astronomical Union in 1991. [2] Aglaonice (crater) - Wikipedia ## \n\nAglaonice (crater) - Wikipedia\nA view of Aglaonice on the top right along with Danilova and Saskia Aglaonice is a crater on Venus which is part of the Lavinia Planitia. [1] It was found in 1991 and named after the ancient Greek astronomer Aglaonice. [2]\n\n## \n\nAglaonice (crater) - Wikipedia\nA view of Aglaonice on the top right along with Danilova and Saskia Aglaonice is a crater on the surface",
+  "https://www.olympics.com/en/athletes/venus-williams": " Venus Williams | Biography, Competitions, Wins and Medals Venus WILLIAMS\n\nUnited States of America\nTennis\nOlympic Medals\n4 G\n1 S\nGames Participations 5\nFirst Olympic Games Sydney 2000\nYear of Birth 1980\nSocial Media\n  \nOlympic Results\n\nBiography\n\nWith four gold medals and one silver, Venus Williams is the most decorated tennis player in Olympic history ahead of her nearest rival, younger sister Serena (four golds). The two siblings' careers are very much Venus Williams | Biography, Competitions, Wins and Medals Venus WILLIAMS\n\nUnited States of America\nTennis\nOlympic Medals\n4 G\n1 S\nGames Participations 5\nFirst Olympic Games Sydney 2000\nYear of Birth 1980\nSocial Media\n  \nOlympic Results\n\nBiography\n\nWith four gold medals and one silver, Venus Williams is the most decorated tennis player in Olympic history ahead of her nearest rival, younger sister Serena (four golds). The two siblings' careers are very much Venus Williams | Biography, Competitions, Wins and Medals Venus WILLIAMS\n\nUnited States of America\nTennis\nOlympic Medals\n4 G\n1 S\nGames Participations 5\nFirst Olympic Games Sydney 2000\nYear of Birth 1980\nSocial Media\n  \nOlympic Results\n\nBiography\n\nWith four gold medals and one silver, Venus Williams is the most decorated tennis player in Olympic history ahead of her nearest rival, younger sister Serena (four golds). The two siblings' careers are very much",
+  "https://www.usgs.gov/centers/astrogeology-science-center/science/venus-magellan-impact-crater-database": " Venus Magellan Impact Crater Database | U.S. Geological Survey The Crater Database\n\nThe database tables include the name (where applied), coordinates, diameter, modification state, crater morphologic type, and mean elevation of\n\n...\n\nNumerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database The NASA Magellan spacecraft provided synthetic aperture radar (SAR) image coverage of 98% of the surface of the planet Venus, in addition to topography and several types of physical property data on the venusian surface (e.g., radar reflectivity, radar backscatter, emissivity, and rms slopes).(See Special Magellan Issue of J. Geophys. Res., v. 97, nos. E8 and E10, August 25 and Sept. 25, 1992.) T Venus Magellan Impact Crater Database | U.S. Geological Survey The Crater Database\n\nThe database tables include the name (where applied), coordinates, diameter, modification state, crater morphologic type, and mean elevation of\n\n...\n\nNumerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer Venus Magellan Impact Crater Database | U.S. Geological Survey Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Venus Magellan Impact Crater Database | U.S. Geological Survey Venus Magellan Impact Crater Database\n\nActive\nBy Astrogeology Science Center October 22, 2018\n\nCochran double-ring basin crater\n\na large crater containing only a single concentric ring inside the crater rim.\n\nVarious craters from the Venus Impact Crater Database\n\nStuart crater\n\nan example of the pristine category - essentially unaltered crater ejecta and fluidized outflow deposits, where present\n\n Venus Magellan Impact Crater Database | U.S. Geological Survey Venus Magellan Impact Crater Database\n\nActive\nBy Astrogeology Science Center October 22, 2018\n\nCochran double-ring basin crater\n\na large crater containing only a single concentric ring inside the crater rim.\n\nVarious craters from the Venus Impact Crater Database\n\nStuart crater\n\nan example of the pristine category - essentially unaltered crater ejecta and fluidized outflow deposits, where present\n\n",
+  "https://www.salon.com/2000/09/27/olympics_update_4/": " The Olympics: Wednesday - Salon.com The Olympics: Wednesday\n\nMarion Jones breezes as the drug scandal deepens, and Venus Williams, the baseball team and an unheralded wrestler lead the U.S. to gold.\n\nBy Kerry Lauerman\n\nPublished September 27, 2000 2:31PM (EDT)\n\nSalon Default\nFacebook X Reddit Email\nM arion Jones <a target=\"new\" returned to the track Wednesday for the first time since she appeared with her husband, world-champion sho The Olympics: Wednesday - Salon.com The Olympics: Wednesday\n\nMarion Jones breezes as the drug scandal deepens, and Venus Williams, the baseball team and an unheralded wrestler lead the U.S. to gold.\n\nBy Kerry Lauerman\n\nPublished September 27, 2000 2:31PM (EDT)\n\nSalon Default\nFacebook X Reddit Email\nM arion Jones <a target=\"new\" returned to the track Wednesday for the first time since she appeared with her husband, world-champion sho",
+  "https://a.espncdn.com/oly/summer00/news/2000/0926/781464.html": " Summer Olympics 2000 Add gold to Venus collection SYDNEY, Australia -- Even in celebration, Venus Williams is a captivating force on a tennis court. This time the jubilant champion thrust her arms skyward, bowed and twirled happily at the net. Then she borrowed an American flag from the stands and gave it a wave.\n*  | Venus Williams\n* Venus Williams won her 32nd straight match, and the American star received her first gold medal.\nA sellout crowd ",
+  "https://sony.mediaroom.com/2008-08-22-Grammy-Award-Winning-Musician-Wyclef-Jean-Writes-Records-New-Song-Venus-Im-Ready-In-Honor-of-2008-Olympic-Gold-Medalist-Venus-Williams": " Grammy Award-Winning Musician Wyclef Jean Writes & Records New Song, 'Venus (I'm Ready),' In Honor of 2008 Olympic Gold Medalist Venus Williams - Aug 22, 2008 News Releases\n\nGrammy Award-Winning Musician Wyclef Jean Writes & Records New Song, 'Venus (I'm Ready),' In Honor of 2008 Olympic Gold Medalist Venus Williams\n\n\"Venus (I'm Ready)\" Set To Debut As Women's Tennis Champion's Theme Song At 2008 US Open\n\nVenus Williams & Wyclef Jean Paired On Fourth Season Episode Of \"Iconoclasts,\" Premiering November 13 On Sundance Channel\n\nPRNewswire NEW YORK 08/22/2",
+  "https://fortune.com/2016/08/07/venus-williams-rio-olympics-loss/": " Venus Williams Knocked Out in Rio Upset | Fortune A CEO gave his employees Fridays off. Three years later, revenue is up about 160%\n\nVenus Williams Knocked Out in Rio Upset\n\nBy Reuters Reuters\nBy Reuters Reuters\nAugust 7, 2016, 10:52 AM ET\nAdd Fortune on Google for similar content.\nAdd us on Google\nAdd us on Google\nFormer Olympic champion Venus Williams was eliminated in the first round at the Rio Games on Saturday after Belgian underdog Kirsten ",
+  "https://www.jpl.nasa.gov/images/pia00269-venus-stereo-image-pair-of-crater-goeppert-mayer": " Venus - Stereo Image Pair of Crater Goeppert-Mayer | NASA Jet Propulsion Laboratory (JPL) JPL\nCareers\nEducation\nScience & Technology\nJPL Logo\nAbout JPL\nMissions\nNews\nGalleries\nEvents\nVisit\nTopics\nJPL Logo\nImage\n\nVenus - Stereo Image Pair of Crater Goeppert-Mayer\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 14, 1996\nThis is a stereo image pair of crater Goeppert-Mayer obtained by NASA's Magellan radar mapping mission.\nDuring the third global cycle of Magellan's radar mappi",
+  "http://news.bbc.co.uk/sport2/hi/olympics2000/racquet_sports/945978.stm": "  BBC SPORT | RACQUET SPORTS | Williams sisters become golden girls Williams sisters become golden girls\nSerena and Venus Williams Serena and Venus Williams strolled to Olympic gold\nVenus and Serena Williams of the United States crushed Dutch pair Kristie Boogert and Miriam Oremans in straight sets on Thursday to win the Olympic women's doubles title.\nThe unseeded Americans won 6-1 6-1 to give older sister Venus her second gold medal of the Games.\nOn Wednesday, sh",
+  "https://www.cbsnews.com/news/venus-and-serena-williams-win-olympic-gold": " \n    Venus and Serena Williams win Olympic gold - CBS News \"You know that in that count, there you are. It feels amazing.\"\nOn Saturday, Serena beat Maria Sharapova 6-0, 6-1 for the singles gold. She joined Steffi Graf as the only women to complete the Golden Slam — winning the Olympics and the four majors.\nLondon Olympics: Aug. 5, 2012 London Olympics: Aug. 5, 2012 43 photos\nSerena Williams dominates Sharapova to win gold Federer and Murray to play for Ol",
+  "https://everything.explained.today/Meitner_(Venusian_crater)": " Meitner (Venusian crater) explained * You are here\n* Everything Explained.Today\n* A-Z Contents\n* M\n* ME\n* MEI\n* MEIT\n* Meitner (Venusian crater)\nExplained Today\n\nMeitner (Venusian crater) explained\n\n* Meitner | \n* Location: | Venus\n* Coordinates: | -55.6°N 321.6°W\n* Eponym: | Lise Meitner\nMeitner is a multiring impact crater on Venus . This crater was named in 1979 after the female Austrian-Swedish physicist, Lise Meitner , in her h",
+  "https://www.nydailynews.com/2012/08/06/olympics-2012-venus-and-serena-williams-defend-doubles-crown-beat-czech-team-in-straight-sets-for-london-gold": " Olympics 2012: Venus and Serena Williams defend doubles crown, beat Czech team in straight sets for London gold – New York Daily News Sports\n\nOlympics 2012: Venus and Serena Williams defend doubles crown, beat Czech team in straight sets for London gold\n\nShare this:\n\n* Facebook\n* Bluesky\n* X\n\n...\n\nPUBLISHED: August 6, 2012 at 1:57 AM EDT | UPDATED: January 10, 2019 at 2:48 PM EST\nLONDON — When Czechoslovakia’s doubles team of Lucie Hradecka and Andrea Hlavackova entered Centre Court Sunday morning to ready for their noon final a",
+  "https://www.cbsnews.com/news/olympics-in-full-swing-with-first-gold-going-to-american-teen/": " \n    Olympics in full swing, with first gold going to American teen - CBS News Watch CBS News\nWorld\n\nOlympics in full swing, with first gold going to American teen\n\nAugust 6, 2016 / 11:40 PM EDT / AP\nAdd CBS News on Google\nRIO DE JANEIRO -- The Olympics began in full with the first gold medal going to an American teenager by the fearsome name of Thrasher. There was plenty of rough riding on a punishing cycling course, a smooth opener for Kevin Durant and company, and a diffi",
+  "https://www.latimes.com/sports/la-xpm-2012-jun-26-la-sp-sn-tennis-olympic-team-20120626-story.html": " Serena, Venus Williams, John Isner lead U.S. Olympic tennis team - Los Angeles Times Live Coverage\nDodgers vs. Brewers NLCS live updates: Tied game in sixth inning\nAdvertisement\nSports\n\nSerena, Venus Williams, John Isner lead U.S. Olympic tennis team\n\nBy Diane Pucin\nJune 26, 2012 12 AM PT\n* Share via Close extra sharing options\n* Email\n* Facebook\n* X\n* LinkedIn\n* Threads\n* Reddit\n* WhatsApp\n* Copy Link URL Copied!\n* Print\nThree-time Olympic gold medalist Venus Williams, just a day",
+  "https://www.cbsnews.com/app?url=https://www.cbsnews.com/news/venus-and-serena-williams-win-olympic-gold/": " \n    Venus and Serena Williams win Olympic gold - CBS News Watch CBS News\nX-DoNotUse-Sports\n\nVenus and Serena Williams win Olympic gold\n\nAugust 5, 2012 / 12:24 PM EDT / AP\nAdd CBS News on Google\nLast Updated 12:21 p.m. ET\n\n...\n\n\"You know that in that count, there you are. It feels amazing.\"\nOn Saturday, Serena beat Maria Sharapova 6-0, 6-1 for the singles gold. She joined Steffi Graf as the only women to complete the Golden Slam — winning the Olympics and",
+  "https://www.olympedia.org/countries/VEN/sports/SWA.1": " Olympedia – Venezuela in Artistic Swimming 1. Home\n2. Countries\n3. Venezuela in Artistic Swimming\n\nVenezuela in Artistic Swimming\n\n* Solo, Women | Ana Amicarella | 9 | \n* Solo, Women | María Elena Giusti | 13 | \n* Solo, Women | María Elena Giusti | 9 | \n* Duet, Women | Venezuela | 21 | \n*  | Jenny Castro • Virginia Ruiz |  | \n\n1984 Summer Olympics\n\n1988 Summer Olympics\n\n1992 Summer Olympics\n\n2000 Summer Olympics\n\nDid you know?\n\nSpeed skati",
+  "https://www.olympics.com/en/athletes/sven-kramer": " Sven KRAMER - Olympics.com Sven KRAMER\n\nNetherlands\nSpeed Skating\nOlympic Medals\n4 G\n2 S\n3 B\nGames Participations 5\nFirst Olympic Games Turin 2006\nYear of Birth 1986\nOlympic Results\n\nBiography\n\nWith nine medals to his name, the Netherlands’ Sven Kramer is the most decorated speed skater in the history of the Olympic Winter Games. At PyeongChang 2018, he became the first man to win the 5,000m title three times in a row, an e",
+  "http://www.olympedia.org/athletes/51650": " Olympedia – Vania Vázquez 1. Home\n2. Athletes\n3. Vania Vázquez\n\nVania Vázquez\n\nBiographical information\n\n* Roles | Competed in Olympic Games\n* Sex | Female\n* Full name | Vania María•Vázquez\n* Used name | Vania•Vázquez\n* Born | 3 October 1960 in Caracas, Distrito Capital (VEN)\n* Measurements | 165 cm / 53 kg\n* Affiliations | Hermandad Gallega de Venezuela AC, Caracas\n* NOC | Venezuela\n\nResults\n\n* Games | Discipline (Sport) ",
+  "https://www.yomiuri.co.jp/olympic/2022/a/kramer-sven": " スベン・クラマー（スピードスケート）のプロフィール : 北京オリンピック2022 : 読売新聞 選手プロフィル\n\n[写真] AFP\nスベン・クラマー\nSven KRAMER\n「フライングダッチマン」の愛称を持つ。父も五輪2大会出場のスピードスケート選手。中・長距離が得意で、18年平昌五輪では5000メートル3連覇を達成した。\n* X（旧Twitter）\n* Instagram\n* facebook\n* 生年月日 | 1986/04/23\n* 性別 | 男\n* 身長 | 187cm\n* 体重 | 83kg\n* 所属 | \n* 学歴 | \n* 代表国 | オランダ\n* 出身地 | \n* 競技 | スピードスケート\n* 出場予定種目 | 1500メートル 5000メートル 1万メートル 団体追い抜き\n* 主な戦績 | 06年トリノ五輪5000メートル銀、団体追い抜き銅 10年バンクーバー五輪5000メートル金、団体追い抜き銅 14年ソチ五輪5000メートル、団体追い抜き金、1万メートル銀 ",
+  "https://www.olympics.com/en/athletes/craig-webster": " Craig WEBSTER - Olympics.com ## \n\nCraig WEBSTER - Olympics.com\nCraig WEBSTER. Canada. CAN. Speed Skating. Biography. Personal Bests: 500 – 39.6 (1980); 1000 – 1:19.01 (1980); 1500 – 2:00.20 (1979); 5000 – 7\n\n## \n\nCraig WEBSTER - Olympics.com\nFirst Olympic GamesLake Placid 1980. Year of Birth1957. Olympic Results. Olympic Results. More results. Lake Placid 1980. Canada. TeamCAN. # 271,000 metres.\n\n## \n\nCraig WEBSTER - Olympics",
+  "https://www.olympedia.org/athletes/127540": " Olympedia – Vincent de Haître 1. Home\n2. Athletes\n3. Vincent de Haître\n\nVincent de Haître\n\nBiographical information\n\n* Roles | Competed in Olympic Games\n* Sex | Male\n* Full name | Vincent•de Haître\n* Used name | Vincent•de Haître\n* Nick/petnames | Quadzilla\n* Born | 16 June 1994 in Ottawa, Ontario | CAN\n* Measurements | 182 cm / 86 kg\n* NOC | Canada | CAN\n\nResults\n\n* Games | Discipline (Sport) / Event | NOC / Team | Pos | Meda",
+  "https://www.olympics.com/en/athletes/ian-crocker": " Ian CROCKER - Olympics.com Ian CROCKER\n\nUnited States of America\nSwimming\nOlympic Medals\n3 G\n1 S\n1 B\nGames Participations 3\nFirst Olympic Games Sydney 2000\nYear of Birth 1982\nOlympic Results\n\nBiography\n\nA top butterflyer who was eventually surpassed by Michael Phelps, Ian Crocker competed at three Olympic Games, in 2000, 2004, and 2008, winning five medals and three gold medals. His golds came at all three Olympics in the m",
+  "https://www.olympedia.org/athletes/119131": " Olympedia – Vanessa Crone 1. Home\n2. Athletes\n3. Vanessa Crone\n\nVanessa Crone\n\nBiographical information\n\n* Roles | Competed in Olympic Games\n* Sex | Female\n* Full name | Vanessa•Crone\n* Used name | Vanessa•Crone\n* Born | 29 October 1990 in Aurora, Ontario (CAN)\n* Measurements | 160 cm / 53 kg\n* Affiliations | Scarboro Figure Skating Club, Scarborough, Toronto (CAN)\n* NOC | Canada\n\nResults\n\n* Games | Discipline (Sport) / Ev",
+  "https://pubs.usgs.gov/of/1998/0104/report.pdf": " Data Base of Impact Craters on Venus Based On Analysis of Magellan Radar Images and Altimetry Data Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Data Base of Impact Craters on Venus Based On Analysis of Magellan Radar Images and Altimetry Data Numerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups. During Summer 1997 the IAU Committee on Planetary Nomenclature approved the suggestion that first names of females from various ethnic groups be assigned to impact craters with diamete Data Base of Impact Craters on Venus Based On Analysis of Magellan Radar Images and Altimetry Data An alternate Venus impact crater data base that includes additional information on crater morphology has been described by Herrick and Phillips (1994). An excellent source for the current thinking about impact craters on Venus and their implications can be found in the University of Arizona Press book, Venus n (Rougher and others - Editors.\n\n...\n\nNumerous impact craters >15 km in diameter on Venus Data Base of Impact Craters on Venus Based On Analysis of Magellan Radar Images and Altimetry Data Categories Included in the Database\n\nNames\n\nModification State\nCrater Type\nElevation\n\nDownload the Database\n\nGeneral Information\n\nReferences Cited\n\nVenus Crater Database\n\nIntroduction\n\n...\n\nNumerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic gr Data Base of Impact Craters on Venus Based On Analysis of Magellan Radar Images and Altimetry Data An alternate Venus impact crater data base that includes additional information on crater morphology has been described by Herrick and Phillips (1994).\n\n...\n\nNumerous impact craters >15 km in diameter on Venus have been named for famous women (last names). Some smaller impact craters <15 km in diameter have been given common female first names from various ethnic groups.\n\n...\n\nExamples of the basi",
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents/": " Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Public Invited to Propose Names for Venus Craters and Volcanic Vents\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 6, 1991\n   \nScientists of the Magellan Project, in association with the U.S. Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging ra Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Public Invited to Propose Names for Venus Craters and Volcanic Vents\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 6, 1991\n   \nScientists of the Magellan Project, in association with the U.S. Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging ra Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Public Invited to Propose Names for Venus Craters and Volcanic Vents\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 6, 1991\n   \nScientists of the Magellan Project, in association with the U.S. Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging ra",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=29_Venus&Feature%20Type=9_Crater,%20craters": " Planetary Names * 58 | Adrastus | Adrastus | Dione | 38.50 | -61.66 | 46.57 | -60.00 | -63.70 | 42.27 | 50.30 | Planetographic, +West, 0 - 360 | Europe | Greek | Crater, craters | AA | - | Approved | 1982 | [44] | King of Argos, one of the seven against Thebes, and the only one to return alive. |  | Jun 04, 2008\n* 64 | Aeneas | Aeneas | Dione | 161.00 | 25.89 | 46.27 | 34.53 | 17.95 | 36.85 | 55.21 | Planetograph",
+  "https://pubs.usgs.gov/of/1994/0235/report.pdf": " GAZETTEER OF VENUSIAN NOMENCLATURE their definitions, and the guidelines used in selecting names for each feature type. Appendix 2 contains lists of most of the sources of names and a general bibliography.\n\nname\nCRATERS\nAdivar\n\n...\n\nWilhelmina; Austrian violinist (1839-1911), Fumiko; Japanese writer (1903-1951)1 Lillian; American playwright, author (1905 -1984). Sonja; Norwegian skater (1912-1969).\n\n...\n\nMarie; French writer (1626- GAZETTEER OF VENUSIAN NOMENCLATURE ## GAZETTEER OF VENUSIAN NOMENCLATURE ### by Joel F. Russell 1 ### Open-File Report 94-235 ### May 1994 Tills report is preliminary and lias not been reviewed for conformity with U.S. Geological Survey editorial standards. Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government, ... -Shakespeare Planetary nomenclature, like te GAZETTEER OF VENUSIAN NOMENCLATURE -Shakespeare Planetary nomenclature, like terrestrial nomenclature, is used to uniquely identify a feature on the surface of a planet or satellite so that the feature can be easily located, described, and discussed. This report contains information on all surface feature nomenclature for Venus approved by the International Astronomical Union (IAU) through December 1993. Planetary nomenclature is a",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature+Type=9_Crater%2C+craters&PageSize=500&sort=name&order=desc": " Planetary Names * 73 | Afiba | Afiba | Venus | 9.50 | -47\n\n...\n\n* 188 | Alison | Alison | Venus | 14.40 | -4.00 | 165.60 | -4.00 |\n\n...\n\n* 194 | Alma | Alma | Venus | 16.80 | -2.40 | 228.80 | -2.40 | -2\n\n...\n\n* 6775 | [Amalasthuna] | Amalasthuna | Venus | 15.40 | -11.50 | 342.40 | -11.50\n\n...\n\n* 6825 | [Eve] | Eve | Venus | 23.00 | -32.00 | 0.10 | -31.90 | -32.10 | 360.00 | 0.00 | Planetocentric, +East, 0 - 360 |",
+  "https://newikis.com/en/List_of_craters_on_Venus": " List of craters on Venus - newikis.com Lunar : 1,624 craters (31.2%)\nVenusian: 900 craters (17.3%)\nMercurian : 397 craters (7.6%)\nMartian : 1,092 craters (21.0%)\nOthers: 1,198 craters (23.0%) Distribution of named craters in the Solar System as of 2017. This is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous List of craters on Venus - newikis.com Newikis\n\nList of craters on Venus\n\nThis article should list only official names approved by the International Astronomical Union (IAU).\n* Lunar : 1,624 craters (31.2%)\n* Venusian: 900 craters (17.3%)\n* Mercurian : 397 craters (7.6%)\n* Martian : 1,092 craters (21.0%)\n* Others: 1,198 craters (23.0%)\nDistribution of named craters in the Solar System as of 2017.\nThis is a list of craters on Venus , na List of craters on Venus - newikis.com Newikis\n\nList of craters on Venus\n\nThis article should list only official names approved by the International Astronomical Union (IAU).\n* Lunar : 1,624 craters (31.2%)\n* Venusian: 900 craters (17.3%)\n\n...\n\nThis is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous women or",
+  "https://science.nasa.gov/photojournal/venus-crater-golubkina/": " Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab Venus - Crater Golubkina - NASA Science This image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nPIA00236\nCredits: NASA/JPL\nImage Addition Date: 03/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet sculptor. The crater is ab",
+  "https://data.nasa.gov/dataset/venus-crater-database": " Venus Crater Database - Dataset \n          - \n        NASA Open Data Portal nasa.gov link NASA Open Data Portal\n* Datasets\n* About\nSearch\n1. Home\n2. Organizations\n3. NASA\n4. Venus Crater Database\n\nVenus Crater Database\n\nTotal Views 406\nRecent Views 23\n\n...\n\nThis web page leads to a database of images and information about the 900 or so impact craters on the surface of Venus by diameter, latitude, and name.\n\nData and Resources\n\n* Unnamed resource HTML\nExplore\n* More inform",
+  "https://www.jpl.nasa.gov/news/public-invited-to-propose-names-for-venus-craters-and-volcanic-vents": " Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Public Invited to Propose Names for Venus Craters and Volcanic Vents\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 6, 1991\n   \nScientists of the Magellan Project, in association with the U.S. Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging ra Public Invited to Propose Names for Venus Craters and Volcanic Vents | NASA Jet Propulsion Laboratory (JPL) Public Invited to Propose Names for Venus Craters and Volcanic Vents\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 6, 1991\n   \nScientists of the Magellan Project, in association with the U.S. Geological Survey, are inviting the public to propose names of notable women for the many impact craters and large volcanic vents being discovered on Venus by the Magellan spacecraft's imaging ra",
+  "https://en.wikipedia.org/wiki/List_of_Venusian_craters": " List of craters on Venus - Wikipedia From Wikipedia, the free encyclopedia\n(Redirected from List of Venusian craters )\nThis article should list only official names approved by the International Astronomical Union (IAU). [ 1 ]\n\n...\n\nDistribution of named craters in the Solar System as of 2017. [ 1 ] [ 2 ] [ 3 ] [ 4 ] [ a ]\nThis is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Pla List of craters on Venus - Wikipedia From Wikipedia, the free encyclopedia\n(Redirected from List of Venusian craters )\nThis article should list only official names approved by the International Astronomical Union (IAU). [ 1 ]\n\n...\n\nDistribution of named craters in the Solar System as of 2017. [ 1 ] [ 2 ] [ 3 ] [ 4 ] [ a ]\nThis is a list of craters on Venus , named by the International Astronomical Union 's (IAU) Working Group for Pla",
+  "https://en.wikipedia.org/wiki/Meitner_(Venusian_crater)": " Meitner (Venusian crater) - Wikipedia * Get shortened URL\n* Download QR code\nPrint/export\n* Download as PDF\n* Printable version\nIn other projects\n* Wikidata item\nAppearance\nCoordinates : 55°36′S 321°36′E ﻿ / ﻿ 55.6°S 321.6°E\nFrom Wikipedia, the free encyclopedia\n* } Radar map of Meitner crater (black band indicates lack of data) | \n* Location | Venus\n* Coordinates | 55°36′S 321°36′E ﻿ / ﻿ 55.6°S 321.6°E\n* Diameter | 149 km (93 mi)\n* E Meitner (Venusian crater) - Wikipedia * Get shortened URL\n* Download QR code\nPrint/export\n* Download as PDF\n* Printable version\nIn other projects\n* Wikidata item\nAppearance\nCoordinates : 55°36′S 321°36′E ﻿ / ﻿ 55.6°S 321.6°E\nFrom Wikipedia, the free encyclopedia\n* } Radar map of Meitner crater (black band indicates lack of data) | \n* Location | Venus\n* Coordinates | 55°36′S 321°36′E ﻿ / ﻿ 55.6°S 321.6°E\n* Diameter | 149 km (93 mi)\n* E",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature%20Type=9_Crater&Target=15_Venus&format=csv&p=1&sort=name": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\nFeature ID\n\n...\n\n* 48 | Adamson | Adamson | Venus | 27.20 | -14.80 | 29.60 | -14.80 | -14.80 | 29.60 | 29.60 | Planetocentric, +East, 0 - 360 | Europe | Austria | Crater, craters | AA | v32 | Approved | 1994 | [9",
+  "https://humanitystats.com/worlds/venus/henie": " Henie, Venus — the 70.4 km crater | Humanity Stats Humanity Stats v1\nLive\nOnline\nHumans alive 8.322B\nEarth time 06:08:20 UTC\nMission Hub\nen\nVenus · Crater · 1039th largest named feature\n\nHenie\n\nSonja; Norwegian skater (1912-1969).\nOn the surface\n70.4 km across\nAbout the width of Yellowstone — and0.6% of Venus's own diameter.\nCoordinates\n51.9° S, 146.0° E\nNamed\n1991\nImagery —\nMagellan SAR\nAll of Venus → Every named place on Venus →\nWorlds › Venus › Henie, Venus — the 70.4 km crater | Humanity Stats Humanity Stats v1\nLive\nOnline\nHumans alive 8.322B\nEarth time 06:08:20 UTC\nMission Hub\nen\nVenus · Crater · 1039th largest named feature\n\nHenie\n\nSonja; Norwegian skater (1912-1969).\nOn the surface\n70.4 km across\nAbout the width of Yellowstone — and0.6% of Venus's own diameter.\nCoordinates\n51.9° S, 146.0° E\nNamed\n1991\nImagery —\nMagellan SAR\nAll of Venus → Every named place on Venus →\nWorlds › Venus › Henie, Venus — the 70.4 km crater | Humanity Stats Henie, Venus — the 70.4 km crater | Humanity Stats # Henie Sonja; Norwegian skater (1912-1969). On the surface 70.4 km across About the width of Yellowstone — and 0.6% of Venus's own diameter. Coordinates 51.9° S, 146.0° E Named 1991 Imagery— Magellan SAR ## What Henie is Henie is a crater — a circular depression, almost always an impact scar — on Venus, 70.4 km across, centred at 51.9° S, 146.0° ",
+  "https://science.nasa.gov/photojournal/venus-adivar-crater/": " Venus - Adivar Crater - NASA Science * Feedback\n* RSS\n* About\n2 Min Read\n\nVenus – Adivar Crater\n\nMany of the impact craters of Venus revealed by NASA's Magellan spacecraft have characteristics unlike craters on any other planetary body. This crater, named Adivar, is located just north of the western Aphrodite highland.\nPIA00083\nCredits: NASA/JPL\nImage Addition Date: 02/07/1996\nTarget:\n* Venus\nIs a satellite of:\n* Sun\nMission(s):\n\n...",
+  "https://www.jpl.nasa.gov/images/pia00239-venus-crater-aurelia/": " Venus - Crater Aurelia | NASA Jet Propulsion Laboratory (JPL) JPL\nCareers\nEducation\nScience & Technology\nJPL Logo\nAbout JPL\nMissions\nNews\nGalleries\nEvents\nVisit\nTopics\nJPL Logo\nImage\n\nVenus - Crater Aurelia\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 7, 1996\nThis image from NASA's Magellan spacecraft shows a complex crater with a circular rim, terraced walls, and central peaks.\nThis Magellan image shows a complex crater, 31.9 kilometers (20 mi",
+  "https://www.jpl.nasa.gov/images/pia00083-venus-adivar-crater/": " Venus - Adivar Crater | NASA Jet Propulsion Laboratory (JPL) JPL\nCareers\nEducation\nScience & Technology\nJPL Logo\nAbout JPL\nMissions\nNews\nGalleries\nEvents\nVisit\nTopics\nJPL Logo\nImage\n\nVenus - Adivar Crater\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ Feb. 7, 1996\nMany of the impact craters of Venus revealed by NASA's Magellan spacecraft have characteristics unlike craters on any other planetary body. This crater, named Adivar, is located just north o",
+  "https://en.wikipedia.org/wiki/Venusian_crater": " List of craters on Venus - Wikipedia From Wikipedia, the free encyclopedia\n(Redirected from Venusian crater )\nThis article should list only official names approved by the International Astronomical Union (IAU). [ 1 ]\n* Lunar : 1,624 craters (31.2%)\n* Venusian: 900 craters (17.3%)\n* Mercurian : 397 craters (7.6%)\n* Martian : 1,092 craters (21.0%)\n* Others: 1,198 craters (23.0%)\nDistribution of named craters in the Solar System as of 2",
+  "https://planetarynames.wr.usgs.gov/Feature/50": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Addams\n* Clean Name | Addams\n* Feature ID | 50\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -56.20 °\n* Southmost Latitude | -56.20 °\n* Eastmost Longitude | 98.90 °\n* Westmost Longitude | 98.90 °\n* Diameter | 87.00 Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Addams\n* Clean Name | Addams\n* Feature ID | 50\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -56.20 °\n* Southmost Latitude | -56.20 °\n* Eastmost Longitude | 98.90 °\n* Westmost Longitude | 98.90 °\n* Diameter | 87.00",
+  "https://planetarynames.wr.usgs.gov/Feature/1309": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Cori\n* Clean Name | Cori\n* Feature ID | 1309\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 25.40 °\n* Southmost Latitude | 25.40 °\n* Eastmost Longitude | 72.90 °\n* Westmost Longitude | 72.90 °\n* Diameter | 56.10 km\n",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=20_Venus&Feature%20Type=9_Cratter,craters": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Cratter,craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\n...\n\n* Feature ID | Feature Name | Clean\n* Feature Name | Target | Diameter | Center Latitude | Center\n* Longitude | Northernmost Latitude | Southernmost Latitude | Easternmost Longitude | Westernmost Lo",
+  "https://planetarynames.wr.usgs.gov/Feature/87": " Planetary Names An official website of the United States government Here’s how you know Here’s how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. Home Search Search Gazetteer ",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature+Type=9_Crater%2C+craters&Results+Per+Page=500": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\nFeature ID\nFeature Name\nClean Feature Name\nTarget\nDiameter\nCenter Lat/Lon\nLat/Lon Boundaries\nCoordinate System\nContinent\nEthnicity\nFeature Type\nFeature Type Code\nQuad\nApproval Status\nApproval Date\nRefere",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=20_Venus&Feature%20Type=9_Crater%2C%20craters&pageSize=5000": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\nFeature ID\nFeature Name\nClean Feature Name\nTarget\nDiameter\n\n...\n\n* 115 | Airy-0 | Airy 0 | Mars | 0.79 | -5.07 | 0.00 | -5.07 | -5.08 | 0.01 | -0.01 | Planetocentric, +East, 0 - 360 | Europe | Great Brit",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=16_Venus&Feature%20Type=9_Crater&page=1": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\nFeature ID\nFeature Name\nClean Feature Name\nTarget\nDiameter\nCenter Lat/Lon\n\n...\n\n* Feature ID | Feature Name | Clean Feature Name | Target | Diameter | Center Latitude | Center Longitude | Northernmost Latitude | ",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Feature+Type=9_Crater%2C+craters&Results+Per+Page=500&Target=20_Venus": " Planetary Names * Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater, craters\nGo back and Refine your Search\nResults Per Page: 25 50 100 200 500\n\nAdd/Remove Columns\n\nFeature ID\nFeature Name\nClean Feature Name\nTarget\nDiameter\n\n...\n\n* Feature ID | Feature Name | Clean Feature Name | Target | Diameter | Center Latitude | Center Longitude | Northernmost Latitude | Southe",
+  "https://www.olympics.com/en/news/venus-and-serena-tennis-rivalry-5-things-to-know": " Venus and Serena: 5 things to know about this historic sibling rivalry Rivals, siblings, partners\n\nWhile their rivalry has carried through on the singles court, they’ve maintained just as long-lasting of a doubles partnership, as well, most notably on the Olympic stage.\nIn 2000, the sisters made their Olympic debut with resounding success, Venus winning the singles and then teaming up with Serena for the doubles. It was the first time since 1924 that a woman had won  Venus and Serena: 5 things to know about this historic sibling rivalry * Nine Olympic medals, including eight gold and three in doubles: 2000, 2008 and 2012\n* 14 doubles majors together\n* A combined 330 weeks at world No.1: 11 weeks for Venus; Serena the rest\n* USD $134.5 million combined prize money (not to mention endorsement deals)\n\n...\n\nHey, you look familiar…\n\nWhile tennis greats Martina Navratilova and Chris Evert have met on the singles court more than any oth",
+  "https://en.wikipedia.org/wiki/Michael_Venus_(tennis)": " Michael Venus - Wikipedia Australian Open\nQF ( 2019 , 2022 )\nFrench Open\nW ( 2017 )\nWimbledon\nF ( 2018 )\nUS Open\nSF ( 2025 )\nOther doubles tournaments\nTour Finals\nF ( 2019 )\nOlympic Games\nBronze ( 2021 )\nMixed doubles\nCareer titles\n0\nGrand Slam mixed doubles results\nAustralian Open\nSF ( 2025 )\nFrench Open\nF ( 2023 )\nWimbledon\nSF ( 2018 , 2024 )\nUS Open\nF ( 2017 , 2019 )\nMedal record\n*  | \n* Olympic Games |  |\n\n...\n\nIn the ",
+  "https://crescentcitysports.com/former-lsu-tennis-player-michael-venus-wins-bronze-in-olympic-mens-doubles": " Former LSU tennis player Michael Venus wins bronze in Olympic men's doubles – Crescent City Sports Former LSU tennis player Michael Venus wins bronze in Olympic men’s doubles\n\n* July 31, 2021\n* By LSU Athletics\n* Category: LSU , Olympic News , Tennis News\n* icon\n* icon\n* icon\nPrint Friendly, PDF & Email\nMichael Venus\nBaton Rouge — Former LSU Tennis All-American, Michael Venus, placed third and took home bronze at the 2020 Tokyo Olympics on Friday morning.\nVenus and his partner, Marcus Daniell,  Former LSU tennis player Michael Venus wins bronze in Olympic men's doubles – Crescent City Sports Former LSU tennis player Michael Venus wins bronze in Olympic men’s doubles\n\n* July 31, 2021\n* By LSU Athletics\n* Category: LSU , Olympic News , Tennis News\n* icon\n* icon\n* icon\nPrint Friendly, PDF & Email\nMichael Venus\nBaton Rouge — Former LSU Tennis All-American, Michael Venus, placed third and took home bronze at the 2020 Tokyo Olympics on Friday morning.\nVenus and his partner, Marcus Daniell, ",
+  "https://www.olympedia.org/athletes/94425": " Olympedia – Venus Williams 1. Home\n2. Athletes\n3. Venus Williams\n\nVenus Williams\n\nBiographical information\n\n* Roles | Competed in Olympic Games\n* Sex | Female\n* Full name | Venus Ebony Starr•Williams (-Preti)\n* Used name | Venus•Williams\n* Nick/petnames | Queen V\n* Born | 17 June 1980 in Lynwood, California | USA\n* Measurements | 185 cm / 75 kg\n* NOC | United States | USA\n* Medals | OG\n* Gold | 4\n* Silver | 1\n* Bronze | 0\n*",
+  "https://www.olympics.com/en/sports/tennis": " Tennis: Olympic history, rules, latest updates and upcoming events for the Olympic sport \nTennis\n\nIn association with \n\n* Olympic Debut\nAthens 1896\n* Most Gold Medals\nVenus Williams (USA)\nMore info\n\nHistory of\n\nTennis\n\nWhat is Tennis?\n\nThe modern game is played in singles (one player versus another), doubles (teams of two) and mixed doubles (mixed-gender teams) and features differing scoring systems across international events.\nTennis has a long history, but the birth of the game play",
+  "https://www.olympics.com/en/news/venus-williams-andy-murray-wimbledon-tennis-legends-olympic-champions-love": " Venus Williams and Andy Murray: Tennis champions turn back the clock at Wimbledon Venus Williams and Andy Murray at Wimbledon: Tennis legends and Olympic champs keep love for sport alive\n\nThe former Wimbledon winners and multi-time gold medallists are playing for a combined 38th time at the All-England Club, with Williams having made her debut in 1997.\nPicture by 2012 LOCOG\nBy Nick McCarvel\n03 July 2023 09:47 GMT+0 6 min read\nOver a decade ago, on the eve of the Olympic Summer ",
+  "https://www.olympics.com/en/athletes/gertrude-ederle": " Gertrude EDERLE - Olympics.com Gertrude EDERLE\n\nUnited States of America\nSwimming\nOlympic Medals\n1 G\n2 B\nGames Participations 1\nFirst Olympic Games Paris 1924\nYear of Birth 1906\nOlympic Results\n\nOlympic Results\n\nMore results\nAthlete Olympic Results Content\nYou may like",
+  "https://ishof.org/honoree/honoree-gertrude-ederle": " Gertrude Ederle - International Swimming Hall of Fame (ISHOF) * Support Us\nSearch\nSearch\nClose this search box.\n\nGertrude Ederle\n\nCountry: USA\nHonoree Type: Swimmer\nFOR THE RECORD:  OLYMPIC GAMES: 1924 gold (4x100m freestyle relay), bronze (100m, 400m freestyle); WORLD and NATIONAL RECORDS: 29 (from 1921 to 1925 – in 1922 she set 7 world records in the course of one 500m swim); First woman to swim the English Channel, 1926 (beating all previous times by men)",
+  "https://www.worldaquatics.com/athletes/1165709/gertrude-ederle": " Gertrude EDERLE | Results | World Aquatics Official \nLIVE COMPETITIONS\n\nView All Show Less\nHome United by Water\n\nGertrude\n\nEDERLE\nNationality\nUSA\nUSA\nDiscipline\nSwimming\n\nAQUA and Olympic medals\n\n3\n1\nGold\n0\nSilver\n2\nBronze\n* Results\n* Medals\n* Profile\n\nPersonal Best Results\n\nSwipe or use arrows to view full table\nSwipe horizontally to view full table\n* Event | Time | Medal | Pool Length | Age* | Competition | Comp Country | Date\n* Women's 100m Free",
+  "https://www.britannica.com/biography/Gertrude-Ederle": " Gertrude Ederle | English Channel, Olympics, Accomplishments, Biography, & Facts | Britannica Ask Anything\nTable of Contents\nTable of Contents Ask Anything\nGertrude Ederle (born October 23, 1905, New York , New York, U.S.—died November 30, 2003, Wyckoff, New Jersey) was an American swimmer who was the first woman to swim (1926) the English Channel and one of the best-known American sports personages of the 1920s.\nEderle early became an avid swimmer. She was a leading exponent of the eight-",
+  "https://ishof.org/one-hundred-and-fifteen-years-ago-open/": " One Hundred and Fifteen years ago, Open Water Pioneer Swimmer, Gertrude Ederle was born in New York City !! - International Swimming Hall of Fame (ISHOF) * Support Us\nSearch\nSearch\nClose this search box.\n\nOne Hundred and Fifteen years ago, Open Water Pioneer Swimmer, Gertrude Ederle was born in New York City !!\n\nGERTRUDE EDERLE (USA) 1965 Honor Swimmer\nFOR THE RECORD:  OLYMPIC GAMES: 1924 gold (4x100m freestyle relay), bronze (100m, 400m freestyle); WORLD and NATIONAL RECORDS: 29 (from 1921 to 1925 – in 1922 she set 7 world records in the course of",
+  "https://womenshistory.si.edu/blog/discover-story-gertrude-ederle-olympic-gold-medalist-and-world-record-setter-who-made-waves": " Discover the Story of Gertrude Ederle, an Olympic Gold Medalist and World Record Setter Who Made Waves as the First Woman to Successfully Swim the English Channel. From 1922 to 1925, she competed with the WSA, won national team titles in indoor and outdoor championships, and set twenty-nine United States national and world records in competitions from 100 to 500-meter swims. She also qualified for and swam in the 1924 Paris Olympic Games, winning gold in the 400-meter freestyle relay as the leadoff swimmer and bronze in the 100 and 400-meter freestyle indivi",
+  "https://www.nycgovparks.org/parks/flushing-meadows-corona-park/highlights/12065": " Flushing Meadows Corona Park Highlights - Ederle Amphitheater : NYC Parks This text is part of Parks’ Historical Signs Project and can be found posted within the park.\nThis amphitheater honors Gertrude Ederle, an Olympic swimmer, who began her career in the cold waters off the coast of Brooklyn, and set world’s records at the age of 12.\nGertrude Ederle was born in New York City on October 23, 1906, to successful German immigrant parents.\n\n...\n\nEderle dropped out of high",
+  "https://www.biography.com/athletes/gertrude-ederle": " Gertrude Ederle - Olympics, Death & Facts Olympians\n3. Gertrude Ederle\n\nGertrude Ederle\n\nAmerican swimmer Gertrude Ederle achieved fame when she competed in the 1924 Olympics and became the first woman to swim across the English Channel in 1926.\n\n...\n\nGertrude Ederle was a champion swimmer by her late teen years, and she competed in the 1924 Olympics. In 1926, she became the first woman to swim the English Channel; her record-breaking ach",
+  "https://www.olympedia.org/results/920040": " Olympedia – Sculpturing, Medals and Reliefs, Open Other 1932 sculpture events Sculpturing, Statues, Open Sculpturing, Unknown Event, Open | In other Games 1928 | Event type\n\nSculpturing, Medals and Reliefs, Open\n\n* Date | 30 July – 14 August 1932\n* Status | Olympic\n* Location | Los Angeles Museum of History, Science and Art, Los Angeles, California\n* Participants | 28 from 13 countries\n* Judge | Haig Patigian | USA\n* Judge | Carl Milles | SWE\n* J",
+  "https://project.zo.uni-heidelberg.de/DACHS_Leiden/archive/citrep/vancrevel_tan_hockx_2009/olympic-museum.de/art/1932.htm": " Olympic Games Art Competition 1932 Olympic Art Competition 1932 |A r t C o m p e t i t i o n s  a n d  E x h i b i t i o n\nDuring the era of the modern Olympiads it has been natural for the Sports phases of the Games to become emphasized in the public mind.\n\n...\n\n* park\n*  | 3rd | André Verbeke | BEL | Design for a Marathon Park\nSCULPTURE Medals:\n* 1932 | 1st | Józef Klukowski | POL | Sport Sculpture II\n*  | 2nd | Frederick William",
+  "https://www.olympedia.org/editions/10/sports/SKL": " Olympedia – Sculpture at the 1932 Summer Olympics Sculpture at the 1932 Summer Olympics\n\n* Dates | 30 July – 14 August 1932\n* Medal Events | 3\n* Venues | Los Angeles Museum of History, Science and Art, Los Angeles, California\nThere were two sculpture events in the 1932 Arts Competition – Medals and Reliefs, and Sculptures. Entrants could submit more than one work in each category, which led to 144 entrants from 16 nations submitting 300 exhibits.",
+  "https://reference.org/facts/Art_competitions_at_the_1932_Summer_Olympics/BE2dNUQt": " Art competitions at the 1932 Summer Olympics - Reference.org Art competitions were part of the 1932 Summer Olympics held in Los Angeles , United States , awarding medals in five categories: architecture , literature , music , painting , and sculpture , all inspired by sport-related themes.\n\n...\n\n* Medals and reliefs | Józef Klukowski (POL) \"Sport Sculpture II\" | Frederick MacMonnies (USA) \"Lindbergh Medal\" | R. Tait McKenzie (CAN) \"Shield of the Athletes\"\n\n",
+  "https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_art_competitions": " List of Olympic medalists in art competitions - Wikipedia Photograph of Pierre de Coubertin Under the pseudonyms Georges Hohrod and Martin Eschbach, IOC founder Pierre de Coubertin won a gold medal in the literature category at the 1912 Summer Olympics .\nThere were 146 medalists in the art competitions that were part of the Olympic Games from 1912 until 1948 .\n\n...\n\nWinans was one of two individuals to win medals in sport and art competitions. Painting o",
+  "https://en.wikipedia.org/wiki/Art_competitions_at_the_1932_Summer_Olympics": " Art competitions at the 1932 Summer Olympics - Wikipedia Richard Konwiarz won the bronze medal for the design of the Schlesierkampfbahn in Breslau .\nArt competitions were held as part of the 1932 Summer Olympics in Los Angeles , United States.\n\n...\n\n* Medals and reliefs | Józef Klukowski ( POL ) \"Sport Sculpture II\" | Frederick MacMonnies ( USA ) \"Lindbergh Medal\" | R. Tait McKenzie ( CAN ) \"Shield of the Athletes\"\n\nMedal table\n\n[ edit ]\nAt the time, me",
+  "https://www.nytimes.com/2024/05/02/us/paris-olympics-arts-medals.html?eafs_enabled=false": " They Used to Award Olympic Medals for Art? ## \n\nThey Used to Award Olympic Medals for Art?\nMay 2, 2024 — The gold medal sculpture at the 1924 Paris Olympics was by a Greek artist named Costas Dimitriadis. His nude, arching, 7-foot “Discobole” (\n\n## \n\nThey Used to Award Olympic Medals for Art?\nMay 2, 2024 — More than 150 Olympic arts medals were awarded, the same medals that athletes received. At the 1932 Olympics in Los Angeles, 400,000 pe",
+  "https://arte8lusso.net/art/meet-the-artist-laurent-perbos-the-creator-of-six-venuses-for-the-olympics-in-paris/": " Meet the Artist: Laurent Perbos, the Creator of « Six Venuses » for the Olympics in Paris - Arte & Lusso * Creative Lab\n* Metaverse\nSearch for:\n* Home\n* Art\n* Meet the Artist: Laurent Perbos, the Creator of « Six Venuses » for the Olympics in Paris\n\nMeet the Artist: Laurent Perbos, the Creator of « Six Venuses » for the Olympics in Paris\n\nPublished on : May 24, 2024 May 31, 2024 by Slava Noor\nArt Basel ubs arte 8 lusso art magazine in Dubai Art magazine arte 8 lusso\nThanks to the Olympics in Paris, I",
+  "https://greekreporter.com/2024/04/03/venus-de-milo-sculptures-embodying-olympic-spirit-adorn-paris": " Venus de Milo Sculptures Embodying the Olympic Spirit Adorn Paris - GreekReporter.com Credit: @alexpenfornis , French National Assembly\nSix sculptures, copies of one of the most famous Greek statues, the Venus de Milo, have been installed at the steps of the French National Assembly, the Palais Bourbon in Paris celebrating the Olympic spirit as the French capital continues its countdown for the Summer Olympic Games.\nCreated by artist Laurent Perbos the sculptures are installed for ",
+  "https://ekebergparken.com/en/artworks/venus-victrix": " Venus Victrix | Ekeberg Wednesday–sunday: 11.00–16.00 Monday & tuesday: Closed\n1. Art\n2. —\n3. Venus Victrix\n— Art\nVenus Victrix\n12 Pierre-Auguste Renoir\n\nVenus Victrix\n\n* Date 1914\n* Unveiled 2013\n* Material Bronze\n\n...\n\nVenus Victrix – Venus the Conqueror – depicts the goddess of love who has vanquished her competitors, the deities Minerva and Juno in a beauty contest. Paris, a prince of Troy, acted as the judge. Paris ",
+  "https://www.jpl.nasa.gov/images/pia00236-venus-crater-golubkina/": " Venus - Crater Golubkina | NASA Jet Propulsion Laboratory (JPL) JPL\nCareers\nEducation\nScience & Technology\nJPL Logo\nAbout JPL\nMissions\nNews\nGalleries\nEvents\nVisit\nTopics\nJPL Logo\nImage\n\nVenus - Crater Golubkina\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 7, 1996\nThis image mosaic from NASA's Magellan spacecraft shows the impact crater Golubkina.\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16",
+  "https://www.nga.gov/collection/art-object-page.176406.html": " Venus by Antonio Canova Meet the 50 makers selected from more than 1,600 submissions\n\nUtility\n\n* Shop\n* Support\nOpen Global Search\nMenu\n\nBreadcrumb\n\n1. Home\n2. Artworks\n3. Venus\n\nVenus\n\nmodel 1817/1820, carved c. 1822/1823\nafter Antonio Canova\nAssociated Names\nAntonio Canova\nSculptor, Italian, 1757 - 1822\n\n...\n\nIt is set against a neutral grey background and a marble floor with grey and white veining. ### Pedestal for \"V",
+  "https://humanitystats.com/worlds/venus/golubkina": " Golubkina, Venus — the 28.4 km crater | Humanity Stats Humanity Stats v1\nLive\nOnline\nHumans alive 8.324B\nEarth time 05:55:56 UTC\nMission Hub\nen\nVenus · Crater · 1278th largest named feature\n\nGolubkina\n\nAnna; Soviet sculptor (1864-1927).\nOn the surface\n28.4 km across\nAbout a marathon — and0.2% of Venus's own diameter.\nCoordinates\n60.3° N, 73.5° W\nNamed\n1985\nImagery —\nMagellan SAR\nAll of Venus → Every named place on Venus →\nWorlds › Venus › Named places",
+  "https://www.hellenicaworld.com/Art/Paintings/en/GiuseppeCassioli.html": " Giuseppe Cassioli - Hellenica World Giuseppe Cassioli\n\nArt Prints\n\nART\n\nBuy Fine Art\nGiuseppe Cassioli (22 October 1865 – 5 October 1942)[1] was an Italian painter and sculptor known for his Summer Olympic Games medal design.\n\n...\n\nThe Olympic medal The bronze medal from the 1980 Summer Olympics showing Cassioli's design\nIn 1923 the International Olympic Committee (IOC) launched a competition for sculptors to design the medals for t",
+  "https://planetarynames.wr.usgs.gov/Feature/2449": " Planetary Names Planetary Names ### Basic Info | Feature Name | Henie | | --- | --- | | Clean Name | Henie | | Feature ID | 2449 | | Target | Venus | | Feature Type | Crater, craters | ### Location Control Network UNKNOWN | Coordinate System | Planetocentric, +East, 0 - 360 | | --- | --- | | Northmost Latitude | -51.90 ° | | Southmost Latitude | -51.90 ° | | Eastmost Longitude | 146.00 ° | | Westmost Longitude |  Planetary Names Planetary Names ### Basic Info | Feature Name | Henie | | --- | --- | | Clean Name | Henie | | Feature ID | 2449 | | Target | Venus | | Feature Type | Crater, craters | ### Location Control Network UNKNOWN | Coordinate System | Planetocentric, +East, 0 - 360 | | --- | --- | | Northmost Latitude | -51.90 ° | | Southmost Latitude | -51.90 ° | | Eastmost Longitude | 146.00 ° | | Westmost Longitude |  ![](/static/img/us_flag_small.png)\n\nAn official website of the United States government\n\nHere’s how you know\n\n![](/static/img/icon-dot-gov.svg)\n\n**Official websites use .gov**  \nA\n**.gov** website belongs to an official government\norganization in the United States.\n\n![](/static/img/icon-https.svg)\n\n**Secure .gov websites use HTTPS**  \nA\n**lock** (\nLock\nLocked padlock icon\n\n ) or **https://** means you’ve safely connected to\nthe .gov website. Share sensitive information only on official,\nsecure websites.\n\n![Home](/static/images/logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![Close](/static/img/usa-icons/close.svg)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n![](/static/images/nomen-logo.png)\n![](/static/images/nomen-logo.png)\n![Search](/static/img/usa-icons-bg/search--white.svg)\n\n### Basic Info\n\n|  |  |\n| --- | --- |\n| Feature Name | Henie |\n| Clean Name | Henie |\n| Feature ID | 2449 |\n| Target | Venus |\n| Feature Type | Crater, craters |\n\n### Location\n\n|  |  |\n| --- | --- |\n| Coordinate System | Planetocentric, +East, 0 - 360 |\n| Northmost Latitude | -51.90 ° |\n| Southmost Latitude | -51.90 ° |\n| Eastmost Longitude | 146.00 ° |\n| Westmost Longitude | 146.00 ° |\n| Diameter | 70.40 km |\n| Center Latitude | -51.90 ° |\n| Center Longitude | 146.00 ° |\n| WKT String | POINT (146 -51.9) |\n| Quad | v58 [[pdf](https://asc-planetarynames-data.s3.us-west-2.amazonaws.com/v58_comp.pdf \"PDF map of this quad\")] |\n\n### Status and Origin\n\n|  |  |\n| --- | --- |\n| Approval Status | Adopted by IAU |\n| Approval Date | 1991 |\n| Continent | Europe |\n| Ethnicity | Norway |\n| Origin | Sonja; Norwegian skater (1912-1969). |\n| Reference | [99] - Index to Women of the World, by N.O. Ireland: F.W. Faxon Co., Westwood, Mass., 1988 (and other editions). |\n| Updated | Oct 01, 2006 3:30 PM |\n\n*The boundaries shown on the maps above are approximate and are intended\nonly to portray the locations of named features and their rough extents.*\n\n*Changes in the control network drop down are not reflected automatically on the map.\nYou may wish to select a different layer on the map to match the control network\nfor the geometry you are viewing.*\n\n### PDF maps of Venus\n\n#### About\n\n#### Nomenclature\n\n#### Documentation\n\n#### Images and GIS Data\n\n#### Other\n\n![usgs-logo](/static/images/nomen-logo.png)\n\n[USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center)\n  \n[The National Aeronautics and Space Administration (NASA)](http://www.nasa.gov)\n  \n[International Astronomical Union (IAU)](http://iau.org)\n\nThe Gazetteer of Planetary Nomenclature website is maintained by the [USGS Astrogeology Science Center](https://www.usgs.gov/centers/astrogeology-science-center/ \"astro\").\nThis work is performed on behalf of the [International Astronomical Union's](http://iau.org \"iau\") Working Group for Planetary\nSystem Nomenclature and is supported by the [National Aeronautics and Space Administration](http://www.nasa.gov \"nasa\") under an Interagency Agreement.",
+  "https://github.com/vlingenfelter/women-of-venus": " vlingenfelter/women-of-venus A collection of biographies of women who have craters named after them on the planet Venus ... # [Women of Venus](https://venus.violetlingenfelter.com) This project is a collection of biographies of women who have craters named after them on the planet Venus. Each woman's biography contains a hand-drawn picture, a short description of that woman's accomplishments, and a set of tags. Women can be v",
+  "https://www.planetary.org/articles/1410": " Where are all the women? | The Planetary Society Written by Emily Lakdawalla April 30, 2008 After ... ' ... recognized ... The reason that Dickinson and Austen are nowhere to be found on Mercury is because their names have already been used elsewhere. Venus is an Earth-sized world whose features are, with only three exceptions, named for women, factual and fictional. (The exceptions are three places that were named prior to the space age, from E Where are all the women? | The Planetary Society Here is Austen, 45 kilometers in diameter, in the southern hemisphere, on the northern edge of Artemis Corona:\nAusten crater, Venus\nNASA / JPL\n\nAusten crater, Venus\n\nThere are a little under a thousand named craters on Venus, all of them named for \"deceased women who have made outstanding or fundamental contributions to their field\" if they are over 20 kilometers in diameter or for \"common female ",
+  "https://wenamethestars.inkleby.com/world/venus/f/AA": " Venus Crater Amaya Named after Carmen Amaya - Spanish Gypsy dancer (1913-1963). ... Andreianova Named after Elena Andreianova - Russian ballerina (c. 1821-c. 1855). ... Baker Named after Josephine Baker - American expatriate dancer, singer (1906-1975). ... Danilova Named after Maria Danilova - Russian ballet dancer (1793-1810), Alexandra; Russian-American ballet dancer (1903-1997). ... Crater Duncan Nam Venus - Crater - We Name The Stars Named after Delia Akeley - American explorer (1875-1970).\nCrater\nAkhmatova\nNamed after Anna Akhmatova - Soviet poet (1889-1966).\nCrater\nAkiko\nNamed after Yosano Akiko - Japanese Tanka poetess (1878-1942).\n\n...\n\nNamed after Ayesha Al-Taymuriyya - Egyptian author, feminist (1840-1902).\nCrater\nAlcott\nNamed after Louisa M. Alcott - American author (1832-1888).\nCrater\nAlima\nTatar first name.\nCrater\nAli",
+  "https://wenamethestars.inkleby.com/feature/2449": " Henie Henie ## Henie (Venus) #### Named after Sonja Henie - Norwegian skater (1912-1969). #### A crater is a circular depression likely created by an impact event. On Venus they are named after deceased women who have made outstanding or fundamental contributions to their field (if over 20 km). If smaller common female first names are used. Image Source. Marker locations are approximate and may not alwa",
+  "https://lsusports.net/news/2016/08/08/211107390": " Tennis’ Venus Competes in Olympic First Round - LSUsports.net - The Official Website of LSU Athletics Loading…\nLoading…\nLoading…\nTennis' Venus Competes in Olympic First Round Tennis' Venus Competes in Olympic First Round\nTennis' Venus Competes in Olympic First Round\nAugust 08, 2016\nShare\nTwitter Facebook Email\n\nTennis’ Venus Competes in Olympic First Round\n\nRIO DE JANEIRO, Brazil — Former Tiger Michael Venus became the first LSU men’s tennis player to compete in the Olympic Games and played for Ne",
+  "https://www.olympics.com/en/news/new-zealand-s-michael-venus-and-marcus-daniell-win-tennis-doubles-bronze": " Michael Venus and Marcus Daniell create history for New Zealand Picture by 2021 Getty Images\n30 July 2021 08:11 GMT+0 4 min read\nNew Zealand's Michael Venus and Marcus Daniell have created history by winning their nations first Olympic Tennis medal with a 7-6 6-2 win over American's Austin Krajicek and Tennys Sandgren in the bronze medal match.\nThe last time a New Zealand player won a medal in tennis at an Olympic Games was at Stockholm 1912 when Anthony Wildi",
+  "https://www.world.tennis/en/news-and-media/articles/daniell-venus-still-floating-on-a-cloud-after-historic-olympic-bronze/": " Daniell, Venus still floating on a cloud after historic Olympic bronze | ITF Marcus Daniell and Michael Venus (NZL)\nArticle 16 Sep 2021\n\nDaniell, Venus still floating on a cloud after historic Olympic bronze\n\nCraig Gabriel\n16 Sep 2021\nTokyo 2020 Olympics\nShare:\n* Share\n* Weibo\n* Share\n* Mail\nThe year is 1912. It’s just the fifth Games of the modern Olympiad and tennis is very much a part of the global celebration of sport.\nNew Zealander, Anthony (Tony) Wilding, regarded as",
+  "https://www.secsports.com/news/2016/08/venus-is-first-lsu-mens-tennis-player-in-olympics": " Venus is first LSU men's tennis player in Olympics - Southeastern Conference SEC Sports It Just Means More It Just Means More\nOpen Schedule Ticker\nOpen Search Search Search Close Search\n\nVenus is first LSU men's tennis player in Olympics - Southeastern Conference\n\nAugust 08, 2016\nShare\n* X\n* Facebook\n\nVenus is first LSU men's tennis player in Olympics\n\nFormer Tiger Michael Venus becomes the first LSU men's tennis player to compete in the Olympic Games, playing for New Zeal",
+  "https://www.olympics.com/en/news/golden-slam-tennis-winners-list": " Golden Slam winners - full list of tennis players - Olympics.com Serena Williams is the only player to have achieved a Golden Slam in both singles and doubles.\nPicture by Getty Images\nBy Anjishnu Roy\n18 August 2024 12:38 GMT+0 3 min read\nAdd as preferred on Google\nThe Golden Slam is one of the most prestigious honours that can be achieved in the sport of tennis .\nOnly 13 tennis players have managed to win a Golden Slam in their careers so far.\nA player is said ",
+  "https://link.springer.com/article/10.1007/BF00142406": " Names on the maps of Venus: A pre-MAGELLAN review | Discover Space | Springer Nature Link Advertisement\n1. Home\n2. Earth, Moon, and Planets\n3. Article\n\nNames on the maps of Venus: A pre-MAGELLAN review\n\n* Published: July 1990\n* Volume 50 , pages 541–558 ( 1990 )\n\n...\n\nBurba 1\n* 522 Accesses\n* 35 Citations\n* Explore all metrics\n\nAbstract\n\nThe topographic features on Venus are named with female names: craters and paterae have names of famous women as well as female first names, non-crate",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus&Feature+Type=9_Crater%2C+craters&p=500": " Planetary Names * Nomenclature\n* Documentation\n* Images and GIS Data\n* Advanced Search\n* Name Request Instructions\n* News\n\nNomenclature Search Results\n\nTarget: Venus\nFeature Type: Crater, craters\n\n...\n\n|  | Oct 01, 2006\n* 74 | Afiruwa | Afiruwa | Venus | 5.20 | 4.30 | 3.80 | 4.30 | 4.30 | 3.80 | 3.80 | Planetocentric, +East, 0 - 360 | Africa | Nigeria | Crater, craters | AA | v20 | Approved | 1997 | [107] | Hausa",
+  "https://en.wikipedia.org/wiki/Quadrangle_of_Henie": " Quadrangle of Henie - Wikipedia * Log in\n\nContents\n\n* (Top)\n* 1 See also\n* 2 References\n* 3 External links\n\nQuadrangle of Henie\n\n4 languages\n* Català\n* Français\n* Nederlands\n\n...\n\nFrom Wikipedia, the free encyclopedia\nThe Quadrangle of Henie is one of the 62 quadrilateral defined by the cartography of Venus approved by the International Astronomical Union . [ 1 ]\nOn the scale maps of 1 / 5,000,000 (identified by the code V-58) i",
+  "http://wenamethestars.inkleby.com/feature/2449": " Henie We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nHenie ( Venus )\n\nNamed after Sonja Henie - Norwegian skater (1912-1969).\n\nA crater is a circular depression likely created by an impact event. On Venus they are named after deceased women who have made outstanding or fundamental contributions to their field (if over 20 km). If smaller common female first names are used.\n\nImage Source . Marker locat Henie We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nHenie ( Venus )\n\nNamed after Sonja Henie - Norwegian skater (1912-1969).\n\nA crater is a circular depression likely created by an impact event. On Venus they are named after deceased women who have made outstanding or fundamental contributions to their field (if over 20 km). If smaller common female first names are used.\n\nImage Source . Marker locat",
+  "https://planetarynames.wr.usgs.gov/Feature/6487": " Gazetteer of Planetary Nomenclature Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Wang Zhenyi\n* Clean Name | Wang Zhenyi\n* Feature ID | 6487\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | 13.20 °\n* Southmost Latitude | 13.20 °\n* Eastmost Longitude | 217.80 °\n* Westmost Longitude | 217.80 °\n* Diam",
+  "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009826": " Emplacement of Venus' Crater Outflows as Impact Melt ## \n\nEmplacement of Venus' Crater Outflows as Impact Melt\nAbstract Some of Venus' impact craters are associated with flow features that extend up to hundreds of kilometers from the crater rim, making these flows the longest crater outflows in the solar system. Various mechanisms of formation have been proposed including two end-member hypotheses (the vapor cloud origin and the impact melt origin).",
+  "http://wenamethestars.inkleby.com/feature/6377": " Vibert-Douglas Patera We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nVibert-Douglas Patera ( Venus )\n\nNamed after Allie Patera - Canadian astronomer (1894-1988).\n\nA patera is an irregular crater, or a complex one with scalloped edges. Usually the dish-shaped depression atop a volcano. On Venus they are named after famous women.\n\nImage Source . Marker locations are approximate and may not always appear to align with ",
+  "http://wenamethestars.inkleby.com/feature/2235": " Graham Patera We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nGraham Patera ( Venus )\n\nMartha; American dancer, choreographer (1894-1991). Name changed from Graham crater.\n\nA patera is an irregular crater, or a complex one with scalloped edges. Usually the dish-shaped depression atop a volcano. On Venus they are named after famous women.\n\nImage Source . Marker locations are approximate and may not always appe",
+  "https://science.nasa.gov/resource/margaret-mead-crater-on-venus": " Margaret Mead Crater on Venus - NASA Science * Solar System Resources\n* Curated Resource Packages\n* Solar System Home\n\nMargaret Mead Crater on Venus\n\nImpact crater from above.\nJanuary 30, 2019\n* Credit | NASA/JPL-Caltech\n* Historical Date | November 12, 1990\n* PIA Number | PIA00148\n* Language | * english\nThis Magellan image mosaic shows one of the largest impact craters known to exist on Venus. The crater is 170 miles (2745 kilometers) in di",
+  "https://everything.explained.today/List_of_craters_on_Venus/": " List of craters on Venus explained This is a list of crater s on Venus , named by the International Astronomical Union 's (IAU) Working Group for Planetary System Nomenclature . All craters on Venus are named after famous women or female first names. (For features on Venus other than craters see, list of montes on Venus and List of coronae on Venus .)\nAs of 2017, there are 900 named craters on Venus, fewer than the lunar and Martia",
+  "https://www.cyclecalcs.com/planets/venus-craters.html": " Craters of Venus: Is Your Name on Venus? | CycleCalcs \nCraters of Venus\n\nThe International Astronomical Union has named 881 craters on Venus, and every one carries a woman's name. Of those, 346 honor women who made outstanding contributions to their fields, and the other 535 carry female first names from around the world.\n\nIs your name on Venus?\n\nType a first name\nSearch\n\n...\n\nUnder the rule for Venus, craters wider than 20 km are named for women who",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Approval+Status=Adopted+by+IAU&DiameterMax=1000&DiameterMin=30&Feature+Type=9_Crater%2C+craters&Target=15_Venus": " Planetary Names --- | --- | --- | --- | --- | | Center Lat/Lon | Lat ... social reformer (1860-1935). | | ... 30.30 | 8.90 | 76.20 ... 8.90 | 76.20 | ... | 70 | Aethelflaed | Aethelflaed | Venus | ... 196.60 | 196.60 | Planetocentric, +East Planetary Names 85 | Aglaonice | Aglaonice | Venus | ... | 87 | Agnesi | Agnesi | Venus | 42.40 ... | Maria; Italian mathematician (1718-1799). | | May ... 4.30 | 4.30 | Planetocentric, +East, 0 ... 01, 2006 | | 93 | Agrippina | Agrippina | Venus | 38 Planetary Names | 4.00 | 4.00 | Planetocentric, +East, 0 - ... | -6.50 | 275.60 | 275.60 | ... 46] | Emily; American poet (1830-1886 ... 1537 | Dinah | Dinah | Venus | 15.60 ... | 1551 | Dix | Dix | Venus | 63 ... 00 | 329.00 | 329.",
+  "https://planetarynames.wr.usgs.gov/SearchResults?Target=15_Venus": " Planetary Names | Feature ID | Feature Name | Clean Feature Name | Target | Diameter | | --- | --- | --- | --- | --- | ... Lat/Lon | Lat/Lon Boundaries | Coordinate System | ... | Feature Type | Feature Type Code | Quad | Approval Status | Approval Date | | Reference |",
+  "https://en.wikipedia.org/wiki/Charlotte_Cooper_(tennis)": " Charlotte Cooper (tennis) | Cooper in 1900 | | | --- | --- | | Full name | Charlotte Reinagle Cooper Sterry | | Country (sports) | United Kingdom | | Born | 22 September 1870 Ealing, Middlesex, England | | Died | 10 October 1966 (aged 96) Helensburgh, Scotland | | Plays | Right–handed | | Int. Tennis HoF | 2013 (member page) | | Singles | | | Career record | no value | | Grand Slam singles results | | | Wimbledon | W (1895",
+  "https://www.jpl.nasa.gov/images/pia00238-venus-impact-crater-in-guinevere-planitia": " Venus - Impact Crater in Guinevere Planitia | NASA Jet Propulsion Laboratory (JPL) JPL\nCareers\nEducation\nScience & Technology\nJPL Logo\nAbout JPL\nMissions\nNews\nGalleries\nEvents\nVisit\nTopics\nJPL Logo\nImage\n\nVenus - Impact Crater in Guinevere Planitia\n\nJet Propulsion Laboratory https://www.jpl.nasa.gov/ March 7, 1996\nThis image mosaic from NASA's Magellan spacecraft is of an impact crater located in Guinevere Planitia on Venus.\nThis is a Magellan image mosaic of an impact crater lo",
+  "https://pubs.usgs.gov/of/1996/0688/report.pdf": " Data Base of Impact Craters on Venus Based On Analysis of Magellan Radar Images and Altimetry Data Venus Crater Database\n\nCatagories Included in the Database\n\nNames\n\nNumerous impact craters >15 km in diameter on Venus have been named for famous women (last names).\n\n...\n\nVenus Crater Database\n\nCatagories Included in the Database\n\nCrater Type\n\nThe types of crater morphologies listed on the data base are as follows:\n\n...\n\nNames Modification\n\nState\n\nCrater Type Elevation General\n\nInformatioi\n\nVenus",
+  "https://www.jpl.nasa.gov/images/pia00214-venus-lavinia-region-impact-craters": " Venus - Lavinia Region Impact Craters | NASA Jet Propulsion Laboratory (JPL) Jet Propulsion Laboratory https://www.jpl.nasa.gov/ March 7, 1996\nThree large meteorite impact craters are seen in this image obtained by NASA's Magellan spacecraft of the Lavinia region of Venus.\nThree large meteorite impact craters, with diameters that range from 37 to 50 kilometers (23 to 31 miles), are seen in this image of the Lavinia region of Venus. The image is centered at 27 degrees south",
+  "https://pubs.usgs.gov/publication/70186309": " Impact crater outflows on Venus: Morphology and emplacement mechanisms Many of the 932 impact craters discovered by the Magellan spacecraft at Venus are associated with lobate flows that originate at or near the crater rim. They extend for several to several hundred kilometers from the crater, and they commonly have a strong radar backscatter. A morphologic study of all identifiable crater outflows on Venus has revealed that many individual flows each consist of two ",
+  "https://link.springer.com/article/10.1007/s11214-023-00966-y": " Resurfacing History and Volcanic Activity of Venus | Space Science Reviews | Springer Nature Link The first approach to estimating crater production on an airless Venus is to take the size-frequency distribution of lunar craters, which have been calibrated by dating lunar samples for selected areas, and attempt to translate those curves to Venus. The knowledge required is the rate of impact on Venus relative to the moon and how large a crater on Venus would be relative to the same-sized crater",
+  "https://planetarynames.wr.usgs.gov/Feature/5729": " Planetary Names Gazetteer of Planetary Nomenclature\nMenu\n\nBasic Info\n\n* Feature Name | Stuart\n* Clean Name | Stuart\n* Feature ID | 5729\n* Target | Venus\n* Feature Type | Crater, craters\n\nLocation\n\nControl Network UNKNOWN\n* Coordinate System | Planetocentric, +East, 0 - 360\n* Northmost Latitude | -30.80 °\n* Southmost Latitude | -30.80 °\n* Eastmost Longitude | 20.20 °\n* Westmost Longitude | 20.20 °\n* Diameter | 68.",
+  "http://wenamethestars.inkleby.com/feature/5729": " Stuart We Name The Stars\n* Moon Rover\n* About\n* Inkleby\n\nStuart ( Venus )\n\nNamed after Mary Stuart - Queen of Scots (1542-1587).\n\nA crater is a circular depression likely created by an impact event. On Venus they are named after deceased women who have made outstanding or fundamental contributions to their field (if over 20 km). If smaller common female first names are used.\n\nImage Source . Marker locati",
+  "https://humanitystats.com/worlds/venus/stuart": " Stuart, Venus — the 68.6 km crater | Humanity Stats Humanity Stats v1\nLive\nOnline\nHumans alive 8.322B\nEarth time 06:08:19 UTC\nMission Hub\nen\nVenus · Crater · 1050th largest named feature\n\nStuart\n\nMary; Queen of Scots (1542-1587).\nOn the surface\n68.6 km across\nAbout the width of Yellowstone — and0.6% of Venus's own diameter.\nCoordinates\n30.8° S, 20.2° E\nNamed\n1991\nImagery —\nMagellan SAR\nAll of Venus → Every named place on Venus →\nWorlds › Venus › Na",
+  "https://www.lpi.usra.edu/resources/vc/vcinfo?refnum=32": " Venus Crater Database, $name Stuart Stuart\n\nFull Size Image (300x300 up to 1000x1000)\n\n* Name:   Stuart\n* Diameter (km) :   66.6\n* Latitude :   -30.8°\n* Longitude :  20.2°\n* Confidence Level :  1\n* Elev surrounding terrain (km) :  6051.73\n* Crater density per 1x10^6 km^2 :  1.59155\n* DN inside crater :  123\n* DN outside crater :  82\n* DN difference :  41\n* Continuous ejecta radius (km) :  83.4\n* Flow length, dist from rim (km",
+  "https://www.nytimes.com/2012/08/12/sports/olympics/when-poetry-was-an-olympic-event.html": " When Poetry Was an Olympic Event - The New York Times But few people today recall that poetry, just like the 100 meters, was an official Olympic competition from 1912 to 1948.\n\n...\n\nIn the English language, the work whose loss has most vexed literary sports lovers is a paean to fencing, “Sword Songs,” by a British poet named Dorothy Margaret Stuart. Despite winning the silver medal at the hotly contested 1924 Paris Olympics, the verse sank into obliv",
+  "https://www.usgs.gov/media/images/stuart-crater-venus": " Stuart Crater on Venus | U.S. Geological Survey U.S. flag\nAn official website of the United States government\nHere's how you know\nHere's how you know\n\nBreadcrumb\n\n1. Images\n2. Photography\n\nStuart Crater on Venus\n\nBy Astrogeology Science Center October 27, 2011\nStuart Crater on Venus\nOriginal Thumbnail Medium\n\nDetailed Description\n\nStuart crater, an example of the pristine category - essentially unaltered crater ejecta and fluidized outflow depo",
+  "https://www.olympics.com/en/athletes/sonja-henie": " Sonja HENIE - Olympics.com Sonja HENIE\n\nNorway\nFigure Skating\nOlympic Medals\n3 G\nGames Participations 4\nFirst Olympic Games Chamonix 1924\nYear of Birth 1912\nOlympic Results\n\nBiography\n\nHumble beginnings\n\n...\n\nHenie improved rapidly and by 1926 she was able to place second in the World Championships. At the 1928 St Moritz Winter Games, Henie won gold by earning the first place votes of six of the seven judges. Henie repeated",
+  "https://www.olympics.com/en/news/henie-soars-to-top-of-figure-skating-world": " Henie soars to top of figure skating world - Olympic News Henie soars to top of figure skating world\n\nSonja Henie (NOR) was just 11 years of age at Chamonix 1924, where she understandably suffered from a lack of experience and finished last in the women’s figure skating competition. At St. Moritz 1928, aged 15, she showed maturity beyond her years, impressing fans and judges alike as she deservedly claimed her first Olympic gold medal.\nPicture by IOC\n09 ",
+  "http://www.olympedia.org/athletes/81280": " Olympedia – Sonja Henie * Affiliations | Oslo SK — Oslo, Oslo | NOR\n* NOC | Norway | NOR\n* Medals | OG\n* Gold | 3\n* Silver | 0\n* Bronze | 0\n* Total | 3\n\nBiography\n\nSonja Henie was the first superstar of women’s figure skating, winning three Olympic gold medals in 1928, 1932, and 1936. She made her Olympic début in 1924 when only an 11-year-old.\n\n...\n\n* Games | Discipline (Sport) / Event | NOC / Team | Pos | Medal | As | ",
+  "https://www.olympics.com/en/olympic-games/lake-placid-1932/results/figure-skating/individual-women": " Lake Placid 1932 Individual women Results - Olympic Figure skating * Let's Move\nQuick update: We have updated our Privacy Policy. You can find it here\n\nOlympic Winter Games Lake Placid 1932\n\n* Overview\n* Results\n* Athletes\n* Stories\n* Brand\n* Medal Design\n\nLake Placid 1932 Figure skating Individual women Results\n\nLake Placid 1932 Figure skating Individual women See results Go\n\nSummary\n\nRank\nTeam\nParticipant\nResults\nNotes\nG\nNOR\n### Sonja HENIE\nResults: 7×1+\nNotes:",
+  "https://en.wikipedia.org/wiki/Sonja_Henie": " Sonja Henie - Wikipedia Oslo SK\nRetired\n1956\nMedal record\n*  | \n* Representing Norway |  | \n* Ladies' Figure skating |  | \n* Olympic Games |  | \n* Gold medal – first place | 1928 St. Moritz | Singles\n* Gold medal – first place | 1932 Lake Placid | Singles\n* Gold medal – first place | 1936 Garmisch-Partenkirchen | Singles\n* World Championships |  | \n* Gold medal – first place | 1927 Oslo | Singles\n\n...\n\nMoritz | Singles\n*",
+  "https://www.britannica.com/biography/Sonja-Henie": " Sonja Henie | Ice Skating Champion, Olympic Medalist, Norwegian Figure Skater | Britannica Moritz, Switzerland, 1928. (more)\n\nSonja Henie\n\nAmerican athlete\nAsk Anything Homework Help\nWritten and fact-checked by\n\n...\n\nSonja Henie (born April 8, 1912, Kristiania [now Oslo], Norway—died October 12, 1969, in an airplane en route to Oslo) was a Norwegian-born American world champion figure skater and Olympic gold medalist who went on to achieve success as a professional ice-skater and as a m",
+  "https://en.wikipedia.org/wiki/List_of_Olympic_medalists_in_figure_skating": " List of Olympic medalists in figure skating - Wikipedia * 1924 | France Chamonix | Austria Herma Szabo | United States Beatrix Loughran | United Kingdom Ethel Muckelt | [ 2 ]\n* 1928 | Switzerland St. Moritz | Norway Sonja Henie | Austria Fritzi Burger | United States Beatrix Loughran | [ 3 ]\n\n...\n\nThese skaters have won three or more Olympic medals.\n* Skater | Nation | Event(s) | Olympics | Gold medal – first place | Silver medal – second place | Bronz",
+  "https://www.olympedia.org/editions/32/sports/FSK": " Olympedia – Figure Skating at the 1936 Winter Olympics Figure Skating at the 1936 Winter Olympics\n\n* Dates | 8 – 15 February 1936\n* Medal Events | 3\n\n...\n\nEvents\n\n* Event | Status | Date | Participants | NOCs\n* Singles, Men | Olympic | 8 – 14 February 1936 | 25 | 12\n* Singles, Women | Olympic | 11 – 15 February 1936 | 26 | 13\n* Pairs, Mixed | Olympic | 13 February 1936 | 36 | 12\n*  |  |  | 84 (41/43) | 17 (16/16)\n\nMedals\n\n* Event | Gold |  | Silver | ",
+  "https://www.tandfonline.com/doi/abs/10.1080/09523367.2017.1280026": " A Female Medallist at the 1928 Olympic Art Competitions: The Sculptress Renée Sintenis: The International Journal of the History of Sport: Vol 33, No 13 Articles\n\nA Female Medallist at the 1928 Olympic Art Competitions: The Sculptress Renée Sintenis\n\nNatalia Camps Y Wilant Department for Sport and Exercise Sciences, University of Muenster, Tamm, Germany Correspondence camps@creacompany.de\n\n...\n\nA careful analysis of the sources used by sport historians reveals that little is known about the artists. Even less is known about female artists in this ",
+  "https://www.olympedia.org/athletes/920722": " Olympedia – Renée Sintenis 1. Home\n2. Athletes\n3. Renée Sintenis\n\nRenée Sintenis\n\nBiographical information\n\n* Roles | Competed in Olympic Games\n* Sex | Female\n* Full name | Renée (Renate Alice-)•Sintenis (-Weiß)\n\n...\n\n* Medals | OG\n* Gold | 0\n* Silver | 0\n* Bronze | 1\n* Total | 1\n\nBiography\n\nGerman sculptor Renée Sintenis, married to Emil Rudolf Weiss , a German typographer, graphic artist and poet, was known for her animal",
+  "http://www.olympedia.org/editions/9/sports/SKL": " Olympedia – Sculpture at the 1928 Summer Olympics Sculpture at the 1928 Summer Olympics\n\n* Dates | 17 May – 12 August 1928\n* Medal Events | 3\n* Venues | Stedelijk Museum, Amsterdam\nThere were two sculpture events in the 1928 Arts Competition – Medals and Reliefs, and Sculptures. Entrants could submit more than one work in each category, which led to 103 entrants from 13 nations submitting 255 sculptures.\n\n...\n\n* Sculpturing, Medals and Reliefs, O",
+  "https://pds-rings.seti.org/press_releases/pages/PIA00xxx/PIA00236.html": " Ring-Moon Systems Node - PIA00236: Venus - Crater Golubkina Ring-Moon Systems Node\nMENU\n* PIA00236: Venus - Crater Golubkina\n\nVenus - Crater Golubkina\n\n* Click the image above for a larger view\n* Full-Res JPEG (825 x 1023) (189.5 kB)\n* Full-Res TIFF (825 x 1023) (468.7 kB)\n\nCaption:\n\nThis Magellan image mosaic shows the impact crater Golubkina, first identified in Soviet Venera 15/16 data. The crater is named after Anna Golubkina (1864-1927), a Soviet scul",
+  "https://www.olympics.com/en/athletes/renee-renate-alice-sintenis": " Renée (Renate Alice-) Sintenis - Olympics.com ## \n\nRenée (Renate Alice-) Sintenis - Olympics.com\nBiography German sculptor Renée Sintenis, married to Emil Rudolf Weiss (1875-1942, German typographer, graphic artist and poet), was known for her animal sculptures in bronze, terracotta and silver. She was 1.80 m tall, with an androgynous appearance, and dominating personality.",
+  "https://www.olympedia.org/results/920027": " Olympedia – Sculpturing, Statues, Open Other 1928 sculpture events Sculpturing, Medals and Reliefs, Open Sculpturing, Unknown Event, Open | In other Games 1932 1936 1948 | Event type\n\nSculpturing, Statues, Open\n\n* Date | 17 May – 12 August 1928\n* Status | Olympic\n* Location | Stedelijk Museum, Amsterdam\n* Participants | 78 from 13 countries\n\n...\n\n* Judge | Theo van Reijn | NED\n* Judge | Ernest Wijnants | BEL\n* Judge | Dirk Wolbers | NE",
+  "http://www.olympedia.org/athletes/920867": " Olympedia – Vincenzo Gemito 1. Home\n2. Athletes\n3. Vincenzo Gemito\n\nVincenzo Gemito\n\nBiographical information\n\n* Roles | Competed in Olympic Games • Referee\n* Sex | Male\n* Full name | Vincenzo•Gemito\n\n...\n\nVincenzo Gemito was a self-taught Italian sculptor, who was abandoned by his mother at the dell’Annunziata orphanage only one day after his birth.\n\n...\n\nHis later works were silver- and goldsmiths.\nThe works date from deca"
+ },
+ "seconds": 121.4,
+ "tokens": {
+  "prompt_tokens": 931963,
+  "completion_tokens": 1581
+ },
+ "model": "openai-codex-personal/gpt-6.1-terra-fast:high",
+ "turns": 27,
+ "round": 2,
+ "role": "train",
+ "referee": {
+  "score": 1.0,
+  "correct": 1,
+  "wrong": 0,
+  "total": 1,
+  "duplicates": 0,
+  "unsupported": 0,
+  "x_only": 0,
+  "y_only": 0,
+  "missed": [],
+  "rows": [
+   {
+    "name": "Sonja Henie",
+    "url": "https://planetarynames.wr.usgs.gov/Feature/2449",
+    "providers": [
+     "exa",
+     "fetch:tavily"
+    ],
+    "status": "correct",
+    "qid": "olympic_venus-0"
+   }
+  ]
+ }
+}
