@@ -33,6 +33,12 @@ The local checkout is not current. It sits under a Codex work directory, has no 
 
 This node records the workspace and its state at inspection time. It does not record that the pipeline has run, that any hunt has been scored, or that search improved.
 
+## November 14 — checkout connected and visual debugger committed
+
+Later inspection in Pi session `01a1dba0-2171-7284-80b0-361440318b9c` found the same checkout on `pi-searcher`, now with `origin` configured and the `rsis` pipeline present. The earlier no-remote, documentation-only state above is historical, not an instruction to reconnect it. Concurrent integration committed the Pi route and viewer (`097328b` and `5f5be36`). This agent then committed only `rsis/view.html` as `f4acbde`, making the debugger smaller and animating its block-state transitions. It did not push that commit or stage `runs/`.
+
+[Watch SearchHack Run Through a Visual Debugger](../125b3125-6dfd-4a2f-87fd-c4cf6815f5ee/node.md) owns the request, runtime-view limits and outstanding human visual judgment. The repository is an active shared workspace; leave teammates' runtime reconciliation alone when working on the visual layer.
+
 ## Source
 
 Current Pi session `01a1db79-c926-7284-80b0-36135ff23ffd`, November 14, 2026. Repository inspection used `fd`, `rg`, Git and the GitHub repository API on the same day.
