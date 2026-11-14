@@ -47,7 +47,7 @@ svg.fit{display:block;width:100%;flex:1;min-height:0}
 .blk .count,.blk.active .count{fill:#000;font:700 15px var(--mono)}
 .dot{fill:#fff;filter:drop-shadow(0 0 6px currentColor)}
 .edge path{fill:none;stroke:#6f6f6f;stroke-width:1.8;transition:stroke .2s}
-.edge.hot path{stroke:#fff;stroke-width:3.5}
+.edge.hot path{stroke:#fff;stroke-width:2.6}
 .region{fill:#fff;font:700 13px var(--mono);letter-spacing:.14em}
 .region.agents{fill:var(--search)}
 .region.judge{fill:var(--judge);font-size:16px;letter-spacing:0}
@@ -116,23 +116,24 @@ const STATES = {
   start: [130, 60, "Start", 200], calibrate: [130, 130, "Measure plain search", 200], train: [130, 200, "Search", 200],
   improve: [130, 280, "Write new methods", 200], select: [130, 360, "Pick the winner", 200],
   test: [130, 440, "Score unseen questions", 200], tally: [130, 520, "Record the round", 200],
-  begin: [420, 56, null], thinking: [420, 110, "Thinking"], writing: [420, 190, "Choosing next step"],
+  begin: [390, 56, null], thinking: [420, 110, "Thinking"], writing: [420, 190, "Choosing next step"],
   web_search: [640, 110, "Search the web", 150], fetch_pages: [640, 160, "Read pages", 150],
   check_candidates: [640, 210, "Check candidates", 150], history: [640, 260, "Read past runs", 150],
   result: [738, 185, null], submit: [420, 380, "Hand in answers"], scoring: [420, 450, "Match answer key"],
   judging: [420, 520, "Judge checks the rest"], done: [420, 590, "Scored"],
 };
-// [from, to, label, shape]: an object gives the curve and where its label sits.
+// [from, to, path]: without a path the arrow runs straight between the two blocks.
 const EDGES = [
-  ["start", "calibrate", ""], ["calibrate", "train", ""], ["train", "improve", ""], ["improve", "select", ""],
-  ["select", "test", ""], ["test", "tally", ""], ["tally", "train", "", { d: "M30 520C2 520 2 200 30 200", at: [0, 0] }],
-  ["begin", "thinking", ""], ["thinking", "writing", ""],
-  ["writing", "web_search", ""], ["writing", "fetch_pages", ""], ["writing", "check_candidates", ""], ["writing", "history", ""],
-  ["web_search", "result", ""], ["fetch_pages", "result", ""], ["check_candidates", "result", ""], ["history", "result", ""],
-  ["result", "thinking", "", { d: "M738 179C738 30 420 20 420 90", at: [0, 0] }],
-  ["writing", "submit", ""], ["submit", "scoring", ""], ["scoring", "judging", ""], ["judging", "done", ""],
-  ["scoring", "done", "", { d: "M335 450C285 450 285 590 335 590", at: [0, 0] }],
-  ["submit", "done", "", { d: "M505 380C565 380 565 590 505 590", at: [0, 0] }],
+  ["start", "calibrate"], ["calibrate", "train"], ["train", "improve"], ["improve", "select"],
+  ["select", "test"], ["test", "tally"], ["tally", "train", "M30 520H10V200H30"],
+  ["begin", "thinking", "M390 56V90"], ["thinking", "writing"],
+  ["writing", "web_search", "M505 190H535V110H565"], ["web_search", "result", "M715 110H738V180"],
+  ["writing", "fetch_pages", "M505 190H535V160H565"], ["fetch_pages", "result", "M715 160H738V180"],
+  ["writing", "check_candidates", "M505 190H535V210H565"], ["check_candidates", "result", "M715 210H738V190"],
+  ["writing", "history", "M505 190H535V260H565"], ["history", "result", "M715 260H738V190"],
+  ["result", "thinking", "M743 185H752V66H450V90"],
+  ["writing", "submit"], ["submit", "scoring"], ["scoring", "judging"], ["judging", "done"],
+  ["scoring", "done", "M335 450H305V590H335"], ["submit", "done", "M505 380H535V590H505"],
 ];
 const LOOP = new Set(["start", "calibrate", "train", "improve", "select", "test", "tally"]);
 const NS = "http://www.w3.org/2000/svg";
@@ -148,23 +149,13 @@ function border(id, toward) {    // where the line from a state's centre toward 
 }
 
 function build() {
-  let out = `<defs>` + [["tip", "#6f6f6f"], ["tipHot", "#fff"]].map(([id, c]) => `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="${c}"/></marker>`).join("") + `</defs>` +
+  let out = `<defs>` + [["tip", "#6f6f6f"], ["tipHot", "#fff"]].map(([id, c]) => `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M0 0L10 5L0 10z" fill="${c}"/></marker>`).join("") + `</defs>` +
     `<line x1="278" x2="278" y1="8" y2="632" stroke="#383838"/>` +
     `<text class="region" x="30" y="24">THE LOOP</text><text class="region agents" id="region-agents" x="335" y="24">EACH AGENT</text>` +
     `<text class="region judge" id="judge-total" x="520" y="525"></text>`;
-  for (const [from, to, label, shape] of EDGES) {
-    const a = STATES[from], b = STATES[to];
-    let d, lx, ly;
-    if (shape && shape.d) {
-      d = shape.d; [lx, ly] = shape.at;
-    } else {
-      const len = Math.hypot(b[0] - a[0], b[1] - a[1]), off = shape || 0;
-      const nx = (-(b[1] - a[1]) / len) * off, ny = ((b[0] - a[0]) / len) * off;       // sideways shift for two-way pairs
-      const p = border(from, [b[0], b[1]]), q = border(to, [a[0], a[1]]);
-      d = `M${p[0] + nx} ${p[1] + ny}L${q[0] + nx} ${q[1] + ny}`;
-      lx = (p[0] + q[0]) / 2 + nx; ly = (p[1] + q[1]) / 2 + ny - 6;
-    }
-    out += `<g class="edge" id="e-${from}-${to}"><path d="${d}" marker-end="url(#tip)"/>` + (label ? `<text x="${lx}" y="${ly}">${label}</text>` : "") + `</g>`;
+  for (const [from, to, path] of EDGES) {
+    const p = border(from, STATES[to]), q = border(to, STATES[from]);
+    out += `<g class="edge" id="e-${from}-${to}"><path d="${path || `M${p[0]} ${p[1]}L${q[0]} ${q[1]}`}" marker-end="url(#tip)"/></g>`;
   }
   for (const [id, [x, y, label, w = W]] of Object.entries(STATES)) {
     if (label == null) { out += `<circle cx="${x}" cy="${y}" r="5" fill="#d8d8d8"/>`; continue; }
@@ -199,13 +190,14 @@ function paint() {               // blocks are lit by the tokens resting on them
   }
 }
 
-function hop(tk, from, to, ms) { // slide the token's dot along one arrow
+function hop(tk, from, to, hurry) { // slide the token's dot along one arrow at a steady speed
   return new Promise((done) => {
     const edge = $(`e-${from}-${to}`), path = edge.querySelector("path"), len = path.getTotalLength(), t0 = performance.now();
+    const ms = Math.max(180, len * 2.4) / (hurry ? 3 : 1);
     edge.classList.add("hot"); path.setAttribute("marker-end", "url(#tipHot)");
     tk.at = null; tk.dot.style.display = ""; paint();
     const step = (now) => {
-      const k = Math.min(1, (now - t0) / ms), e = k < 0.5 ? 2 * k * k : 1 - 2 * (1 - k) * (1 - k), pt = path.getPointAtLength(len * e);
+      const k = Math.min(1, (now - t0) / ms), pt = path.getPointAtLength(len * k);
       tk.dot.setAttribute("cx", pt.x); tk.dot.setAttribute("cy", pt.y);
       if (k < 1) return requestAnimationFrame(step);
       edge.classList.remove("hot"); path.setAttribute("marker-end", "url(#tip)");
@@ -219,7 +211,7 @@ function token(key, at) {
   let tk = tokens.get(key);
   if (!tk) {
     const dot = document.createElementNS(NS, "circle");
-    dot.setAttribute("r", 6); dot.setAttribute("class", "dot"); dot.style.display = "none";
+    dot.setAttribute("r", 7); dot.setAttribute("class", "dot"); dot.style.display = "none";
     $("dots").appendChild(dot);
     tokens.set(key, (tk = { at, target: at, dot, chain: Promise.resolve(), played: 0, waiting: 0 }));
   }
@@ -231,7 +223,7 @@ function step(tk, to) {          // queue one transition; a token that falls beh
   tk.chain = tk.chain.then(async () => {
     const from = tk.at;
     if (from !== to) {
-      if (from && $(`e-${from}-${to}`)) await hop(tk, from, to, tk.waiting > 3 ? 160 : 420);
+      if (from && $(`e-${from}-${to}`)) await hop(tk, from, to, tk.waiting > 3);
       else { tk.at = STATES[to] ? to : null; paint(); await sleep(120); }
     }
     tk.waiting--;
