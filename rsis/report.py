@@ -52,7 +52,7 @@ def write(name):
     lineage = "".join(
         f"<tr class='{m.get('status')}'><td>{m['id']}</td><td>{m.get('parent') or ''}</td><td>{m.get('status')}</td>"
         f"<td>{m.get('select_score', '')}</td><td>{html.escape(json.dumps(m['routing']))}</td>"
-        f"<td>{html.escape(m['rationale'][:240])}</td></tr>" for m in methods)
+        f"<td>{html.escape(str(m.get('rationale') or '')[:240])}</td></tr>" for m in methods)
     page = f"""<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Recursive Search Run</title><style>
 :root{{--bg:#fbfaf7;--fg:#1d1d1b;--mut:#6b6a66;--acc:#2f6fdb;--ok:#2e8b57;--line:#ddd9d0}}

@@ -1,20 +1,34 @@
 import json
+import threading
 import re
 from collections import defaultdict
 
 from .telem import SEARCH_PRICE
 
 
+_write_lock = threading.Lock()
+
+
 def append(run_dir, name, row):
-    with open(run_dir / name, "a", encoding="utf-8") as f:
-        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    # Six worker threads append at once; unlocked writes interleave on Windows and corrupt the file.
+    line = json.dumps(row, ensure_ascii=False) + "\n"
+    with _write_lock, open(run_dir / name, "a", encoding="utf-8") as f:
+        f.write(line)
 
 
 def rows(run_dir, name):
     p = run_dir / name
     if not p.exists():
         return []
-    return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+    out = []
+    for l in p.read_text(encoding="utf-8").split("\n"):
+        if l.strip():
+            try:
+                out.append(json.loads(l))
+            except ValueError:
+                # A line cut short by a killed process; skip it rather than wedge every later read.
+                pass
+    return out
 
 
 def save_log(run_dir, log):
