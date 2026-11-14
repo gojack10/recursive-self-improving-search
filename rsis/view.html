@@ -114,7 +114,7 @@ svg.chart{display:block;width:100%;height:100%;flex:1;min-height:0}
     <svg class="chart" id="machine" viewBox="0 0 990 462"></svg>
   </div>
   <div class="panel tree">
-    <h2>Run tree</h2>
+    <h2 id="tree-title">Run tree</h2>
     <div class="fill" id="tree"></div>
   </div>
   <div class="panel">
@@ -122,7 +122,7 @@ svg.chart{display:block;width:100%;height:100%;flex:1;min-height:0}
     <div id="agents"></div>
   </div>
   <div class="panel">
-    <h2 title="Line: each iteration's winner re-run on the fixed held-out test tasks. Dots left of a column: that iteration's candidates at their score on its two select tasks; the tick is the current method on the same two tasks. The two are different task sets.">Method iterations</h2>
+    <h2 title="Line: each iteration's winner re-run on the fixed held-out test tasks. Dots left of a column: that iteration's candidates at their score on its two select tasks; the tick is the current method on the same two tasks. The two are different task sets." id="chart-title">Method iterations</h2>
     <svg class="chart" id="chart" viewBox="0 0 900 420"></svg>
   </div>
 </div>
@@ -335,11 +335,49 @@ function agents(s) {
   }
 }
 
+// One question: each scored search of it, the verdict on every answer it handed in, and the answers it missed.
+const VERDICT = { correct: "resolved", verified_gap: "resolved", wrong: "discarded", unsupported: "discarded", duplicate: "not_examined" };
+function answers(s) {
+  const node = (status, kind, label, note, title, inner) =>
+    `<li class="${status}"><div class="node" title="${esc(title)}"><svg class="pip" viewBox="0 0 20 16" style="color:var(--${status === "discarded" ? "urgent" : status})"><path d="${FRAME}${GLYPH[status]}"/></svg>` +
+    `<span class="kind">${esc(kind)}</span><span class="label">${esc(label)}</span><span class="score">${esc(note)}</span></div>${inner ? `<ul>${inner}</ul>` : ""}</li>`;
+  const searches = s.task_searches.map((x) => node("resolved", "search", `${x.method} ${x.role}${x.round ? " r" + x.round : ""}`,
+    `${num(x.score)} · ${x.correct} correct, ${x.wrong} wrong of ${x.total}`, x.attempt_id,
+    x.answers.map((a) => node(VERDICT[a.status] || "not_examined", a.status === "verified_gap" ? "verified by judge" : a.status, a.name, a.reason || "", a.url || "")).join("") +
+    x.missed.map((m) => node("not_examined", "missed", m, "", "")).join("")));
+  return searches.length ? `<h2 style="margin-top:12px">Answers handed in</h2><ul>${searches.join("")}</ul>` : `<div class="empty">No search of this question has been scored yet.</div>`;
+}
+
+// One question: the score of each search of it, in the order they were scored.
+function scores(s) {
+  const L = 70, R = 860, T = 40, B = 360, y = (v) => B - (B - T) * Math.max(0, Math.min(1, v));
+  const xs = s.task_searches, step = (R - L) / Math.max(4, xs.length), x = (i) => L + (i + 0.5) * step;
+  let out = "";
+  for (const v of [0, 0.25, 0.5, 0.75, 1])
+    out += `<line x1="${L}" x2="${R}" y1="${y(v)}" y2="${y(v)}" stroke="${v === 1 ? "#6f6f6f" : "#202020"}" ${v === 1 ? 'stroke-dasharray="6 5"' : ""}/>` +
+      `<text x="${L - 12}" y="${y(v) + 4}" fill="#585858" font-size="12" text-anchor="end">${v}</text>`;
+  out += `<text x="${R}" y="${T - 10}" fill="#8c8c8c" font-size="12" text-anchor="end">1.0 = every answer found, nothing wrong</text>`;
+  if (s.baseline != null)
+    out += `<line x1="${L}" x2="${R}" y1="${y(s.baseline)}" y2="${y(s.baseline)}" stroke="var(--in_progress)" stroke-dasharray="6 5"/>` +
+      `<text x="${R}" y="${y(s.baseline) - 6}" fill="var(--in_progress)" font-size="12" text-anchor="end">baseline v000 ${num(s.baseline)}</text>`;
+  if (xs.length > 1) out += `<polyline points="${xs.map((p, i) => `${x(i)},${y(p.score)}`).join(" ")}" fill="none" stroke="#fff" stroke-width="2"/>`;
+  xs.forEach((p, i) => {
+    out += `<circle cx="${x(i)}" cy="${y(p.score)}" r="5.5" fill="#fff"/>` +
+      `<text x="${x(i)}" y="${y(p.score) - 12}" fill="#fff" font-size="12" text-anchor="middle">${num(p.score)} (${p.correct}/${p.total})</text>` +
+      `<text x="${x(i)}" y="${B + 24}" fill="#8c8c8c" font-size="12" text-anchor="middle">${esc(p.method)}</text>` +
+      `<text x="${x(i)}" y="${B + 42}" fill="#585858" font-size="11" text-anchor="middle">${esc(p.role)}${p.round ? " r" + p.round : ""}</text>`;
+  });
+  $("chart").innerHTML = out;
+}
+
 function tree(s) {
+  const below = s.task ? answers(s) : "";
   if (!s.nodes.length) {
-    $("tree").innerHTML = `<div class="empty">No tree in this run yet. The loop writes it (python -m rsis round); a single trial search does not.</div>`;
+    $("tree").innerHTML = `<div class="empty">No tree in this run yet. The loop writes it (python -m rsis round); a single trial search does not.</div>` + below;
     return;
   }
+  const here = {};                 // on a question tab: each method's scores on this question
+  for (const x of s.task_searches || []) (here[x.method] ||= []).push(num(x.score));
   const by = new Map(s.nodes.map((n) => [n.id, { ...n, children: [] }])), roots = [];
   for (const n of by.values()) (n.parent && by.has(n.parent) ? by.get(n.parent).children : roots).push(n);
   const fresh = seen ? new Set(s.nodes.filter((n) => !seen.has(n.id)).map((n) => n.id)) : new Set();
@@ -349,10 +387,10 @@ function tree(s) {
     return `<li class="${status} ${fresh.has(n.id) ? "new" : ""}"><div class="node" title="${esc(n.summary)}">` +
       `<svg class="pip" viewBox="0 0 20 16" style="color:var(--${status})"><title>${esc(n.status)}</title><path d="${FRAME}${GLYPH[status]}"/></svg>` +
       `<span class="kind">${esc(n.kind)}</span><span class="label">${esc(n.name)}</span>` +
-      (n.select_score != null ? `<span class="score">select ${num(n.select_score)}</span>` : "") + `</div>` +
+      (here[n.method] ? `<span class="score">this question ${here[n.method].join(", ")}</span>` : n.select_score != null ? `<span class="score">select ${num(n.select_score)}</span>` : "") + `</div>` +
       (n.children.length ? `<ul>${n.children.map(li).join("")}</ul>` : "") + `</li>`;
   };
-  $("tree").innerHTML = `<ul>${roots.map(li).join("")}</ul>`;
+  $("tree").innerHTML = `<ul>${roots.map(li).join("")}</ul>` + below;
 }
 
 function chart(s) {
@@ -418,7 +456,11 @@ function render(s) {
   $("done").textContent = s.searches_done + (s.failed ? `, ${s.failed} failed` : "");
   $("spend").textContent = "$" + num(s.spend, 3);
   $("error").textContent = s.last_error ? `last failure: ${s.last_error}` : "";
-  machine(s); agents(s); tree(s); chart(s);
+
+  $("chart-title").textContent = s.task ? "Scores on this question" : "Method iterations";
+  machine(s); agents(s);
+  tree(s);
+  s.task ? scores(s) : chart(s);
 }
 
 async function poll() {

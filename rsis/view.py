@@ -308,7 +308,7 @@ def tree_nodes(run_dir, methods):
             parent[c.name] = d.name
         m = by_node.get(d.name)
         nodes.append({"id": d.name, "name": head.get("name"), "kind": head.get("kind"), "status": head.get("status"),
-                      "summary": head.get("micro_summary"), "t": born(d),
+                      "summary": head.get("micro_summary"), "t": born(d), "method": m.get("id") if m else None,
                       "select_score": m.get("select_score") if m else None})
     for n in nodes:
         n["parent"] = parent.get(n["id"])
@@ -339,6 +339,28 @@ def phase(state, nodes, rows, errors, methods, running):
     return "idle", None
 
 
+def task_searches(d, rows, task):
+    """Every scored search of one question with the verdict on each answer it handed in and the answers it missed."""
+    out = []
+    for r in rows:
+        if r["hunt"] != task:
+            continue
+        ref = (read_json(d / "logs" / f"{r['attempt_id']}.json") or {}).get("referee") or {}
+        out.append({**{k: r.get(k) for k in ("attempt_id", "method", "role", "round", "score", "correct", "wrong", "total")},
+                    "answers": [{k: a.get(k) for k in ("name", "status", "reason", "url")} for a in ref.get("rows") or []],
+                    "missed": ref.get("missed") or []})
+    return out
+
+
+def baseline(name, rows, task):
+    """The starting method's mean score on one question: from this run if it searched it, else the latest run that did."""
+    for run_rows in [rows, *(read_rows(RUNS / r / "attempts.jsonl") for r in runs_by_recency() if r != name)]:
+        scores = [r["score"] for r in run_rows if r.get("hunt") == task and r.get("method") == "v000"]
+        if scores:
+            return round(sum(scores) / len(scores), 4)
+    return None
+
+
 def snapshot(name, task=None):
     d = RUNS / name
     logs = d / "logs"
@@ -351,6 +373,7 @@ def snapshot(name, task=None):
     return {
         "name": name, "phase": ph, "iteration": rnd, "state": state, "agents": shown(found, ph, time.time(), task), "nodes": nodes,
         "runs": runs_by_recency(), "tasks": tasks(rows, found), "task": task,
+        "task_searches": task_searches(d, rows, task) if task else None, "baseline": baseline(name, rows, task) if task else None,
         "methods": [{k: m.get(k) for k in ("id", "parent", "round", "status", "select_score")} for m in methods],
         "spend": round(sum(r.get("spent") or 0 for r in rows), 3), "searches_done": len(rows), "failed": len(errors),
         "last_error": (errors[-1].get("error") or "")[:300] if errors else None,
