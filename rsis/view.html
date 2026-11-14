@@ -60,6 +60,14 @@ details{position:absolute;right:12px;top:10px;border:1px solid var(--edge);backg
 summary{cursor:pointer;color:var(--muted)}
 details div{display:flex;gap:8px;align-items:center;margin-top:4px}
 .sw{width:24px;height:0;border-top:3px solid var(--ours)}.sw.base{border-top:3px dashed var(--base)}.sw.fill{height:10px;border:0;background:#3ddc8440}
+#reveal{border:1px solid #fff;background:var(--bg);color:#fff;font:700 14px var(--mono);padding:6px 14px;cursor:pointer;border-radius:0;align-self:center}
+#reveal:hover{background:#fff;color:#000}
+#answers{position:absolute;inset:118px 14px 56px 14px;background:var(--bg);border:1px solid var(--edge);padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:18px;overflow:auto;z-index:3}
+#answers[hidden]{display:none}
+#answers h3{margin:0 0 6px;font:700 16px var(--display)}
+#answers .ours h3{color:var(--ours)}#answers .base h3{color:var(--base)}
+#answers p{margin:0;font:500 14px/1.5 var(--display);color:#fff}
+#answers p.wrong{color:var(--bad);text-decoration:line-through}
 #methods{flex:none;border-top:1px solid var(--line);padding-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .method{border:1px solid var(--edge);padding:3px 10px;font:600 14px var(--display);color:#fff}
 .method small{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
@@ -96,6 +104,7 @@ details div{display:flex;gap:8px;align-items:center;margin-top:4px}
       <div><span class="sw"></span>Ours</div><div><span class="sw base"></span>Plain search</div><div><span class="sw fill"></span>Ahead of plain search</div>
     </details>
     <svg class="fit" id="chart" viewBox="0 0 900 400"></svg>
+    <div id="answers" hidden></div>
     <div id="methods"></div>
   </div>
 </div>
@@ -108,7 +117,7 @@ const pretty = (name) => name.replaceAll("_", " ");
 const methodName = (id) => (id === "v000" ? "plain search" : /^v\d+$/.test(id) ? "method " + Number(id.slice(1)) : id);
 const view = new URLSearchParams(location.search);   // task: one question, else every unseen question; run: a named run, else the latest
 const put = (el, html) => { if (el.dataset.html !== html) el.innerHTML = el.dataset.html = html; };   // unchanged parts stay put: clicks land, arrivals animate once
-let knownMethods = null;
+let knownMethods = null, revealed = false;
 
 // The state machine. Blocks are states, arrows are transitions; [x, y, label, width]. A null label is a junction dot.
 const W = 170, H = 40;
@@ -294,7 +303,15 @@ function score(s) {
     `<div class="base"><b>${pct(base)}</b>Plain search</div>` +
     `<div class="${gap > 0 ? "up" : gap < 0 ? "down" : ""}"><b>${gap == null ? "–" : (gap > 0 ? "+" : "") + gap}</b>points</div>` +
     `<div><b>${esc(methodName(st.current || "v000"))}</b>in use</div>` +
-    `<div><b>${s.searches_done}</b>searches</div><div><b>$${Number(s.spend).toFixed(2)}</b>spent</div>`);
+    (task && task.length ? `<div><b>${Math.max(...task.map((x) => x.correct))}</b>most found, of ${task[task.length - 1].total}</div>` : "") +
+    `<div><b>${s.searches_done}</b>searches</div><div><b>$${Number(s.spend).toFixed(2)}</b>spent</div>` +
+    (task && task.length ? `<button id="reveal">${revealed ? "Hide answers" : "Show answers"}</button>` : ""));
+  // The answers behind the numbers: plain search's best list beside ours.
+  const best = (list) => list.reduce((a, b) => (!a || b.correct > a.correct ? b : a), null);
+  const column = (cls, title, x) => `<div class="${cls}"><h3>${title}${x ? ` · ${x.correct} found` : ""}</h3>` +
+    (x ? x.answers.filter((a) => a.status !== "duplicate").map((a) => `<p class="${["correct", "verified_gap"].includes(a.status) ? "" : "wrong"}" title="${esc(a.reason || a.url)}">${esc(a.name)}</p>`).join("") : "<p>not searched yet</p>") + `</div>`;
+  $("answers").hidden = !(revealed && task && task.length);
+  if (task) put($("answers"), column("base", "Plain search", best(task.filter((x) => x.method === "v000"))) + column("ours", "Ours", best(task.filter((x) => x.method !== "v000"))));
 
   const L = 60, R = 860, T = 30, B = 340, n = Math.max(5, points.length);
   const x = (i) => L + (i + 0.5) * (R - L) / n, y = (v) => B - (B - T) * Math.max(0, Math.min(1, v));
@@ -352,6 +369,7 @@ $("tabs").onclick = (e) => {
   history.replaceState(null, "", "?" + view);
   poll().catch(() => {});
 };
+$("stats").onclick = (e) => { if (e.target.id === "reveal") { revealed = !revealed; poll().catch(() => {}); } };
 poll();
 setInterval(() => poll().catch(() => {}), 500);
 </script>
