@@ -1,14 +1,22 @@
+import os
 import re
+import sqlite3
+import threading
+import time
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
 
 from . import tavily
-from .config import REFEREE_DOMAINS
+from .config import REFEREE_DOMAINS, ROOT
 from .llm import Chat
 from .telem import url_key
 
 WRONG_PENALTY = 0.5
-MAX_GAP_CHECKS = 20
+# Gap checks from every search being scored share this pool; each one is a Tavily search and a judge call.
+JUDGE_POOL = ThreadPoolExecutor(int(os.environ.get("JUDGE_WORKERS", "10")))
+VERDICTS = ROOT / "runs" / "judge_verdicts.sqlite"
+verdicts_lock = threading.Lock()
 
 
 def norm(s):
@@ -66,26 +74,21 @@ def judge_call(judge, hunt, name, known, r, snippets):
         "already-known items. "
         "Say yes only if it is a different item and the evidence clearly shows it satisfies the criterion. "
         "meets_x and meets_y say which of the two conditions the evidence supports.",
-        f"Criterion: {hunt['criterion']}\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}\n"
+        f"Criterion: {hunt['criterion']}\n" + (f"Condition X: {hunt['x']}\nCondition Y: {hunt['y']}\n" if hunt["y"] else "") +
         f"Already-known items: {known}\nClaimed item: {name}\n"
         f"Tavily answer: {r.get('answer')}\nEvidence:\n{snippets}")
 
 
-def gap_check(name, hunt, judge):
-    """Independent check, through Tavily rather than the searcher's Telem route, for a find Wikidata lacks."""
-    try:
-        r = tavily.search(f"{name} {hunt['criterion']}", max_results=5, exclude_domains=REFEREE_DOMAINS)
-    except Exception as e:
-        # Unchecked, so not credited: the same treatment as a find past MAX_GAP_CHECKS.
-        return "wrong", f"gap check unavailable: {str(e)[:120]}", None
+def gap_check(name, hunt, judge, verified):
+    """Independent check, through Tavily rather than the searcher's Telem route, for a find the answer key lacks.
+    verified maps the normalized name of each answer the judge has already accepted for this task to its name."""
+    r = tavily.search(f"{name} {hunt['criterion']}", max_results=5, exclude_domains=REFEREE_DOMAINS)
     snippets = "\n".join(f"- {x.get('title') or ''}: {(x.get('content') or '')[:300]}" for x in (r.get("results") or []) if isinstance(x, dict))
-    known = "; ".join(t["label"] for t in hunt["truth"])
-    try:
-        v = judge_call(judge, hunt, name, known, r, snippets)
-    except Exception as e:
-        return "wrong", f"gap judge unavailable: {str(e)[:120]}", None
+    known = "; ".join([*(t["label"] for t in hunt["truth"]), *verified.values()])
+    v = judge_call(judge, hunt, name, known, r, snippets)
     if v.get("verdict") == "same":
-        return "same", v.get("reason", ""), match_one(str(v.get("same_as") or ""), hunt["truth"])
+        same = str(v.get("same_as") or "")
+        return "same", v.get("reason", ""), match_one(same, hunt["truth"]) or (norm(same) if norm(same) in verified else None)
     status = "verified_gap" if v.get("verdict") == "yes" else "wrong"
     half = None
     if status == "wrong":
@@ -93,14 +96,62 @@ def gap_check(name, hunt, judge):
     return status, v.get("reason", ""), half
 
 
-def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, url_text=None):
+def verdicts_db():
+    VERDICTS.parent.mkdir(exist_ok=True)
+    db = sqlite3.connect(VERDICTS)
+    db.execute("CREATE TABLE IF NOT EXISTS verdicts (task TEXT, answer TEXT, name TEXT, status TEXT, reason TEXT, extra TEXT, "
+               "judge TEXT, checked_at TEXT DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (task, answer))")
+    return db
+
+
+def judge_all(names, hunt, emit):
+    """A verdict for every find the answer key lacks. A verdict the judge already gave for this task is reused,
+    so each distinct answer is judged once, however many searches submit it."""
+    with verdicts_lock:
+        db = verdicts_db()
+        stored = db.execute("SELECT answer, name, status, reason, extra FROM verdicts WHERE task = ?", (hunt["name"],)).fetchall()
+        db.close()
+    known = {a: (st, why, extra) for a, _, st, why, extra in stored}
+    verified = {a: name for a, name, st, _, _ in stored if st == "verified_gap"}
+    todo = list({norm(n): n for n in names if norm(n) not in known}.values())
+    if names:
+        emit(event="plan", unmatched=len(names), reused=len(names) - len(todo), to_check=len(todo))
+    for n in names:
+        if norm(n) in known:
+            st, why, _ = known[norm(n)]
+            emit(event="end", name=n, status=st, reason=why, reused=True)
+    judge = Chat("judge")
+
+    def one(name):
+        emit(event="start", name=name)
+        started = time.monotonic()
+        try:
+            verdict = gap_check(name, hunt, judge, verified)
+        except Exception as e:
+            # Unchecked, so not credited and not remembered: the next search to submit it is checked again.
+            verdict = ("wrong", f"gap check unavailable: {str(e)[:120]}", None)
+        else:
+            with verdicts_lock:
+                db = verdicts_db()
+                db.execute("INSERT OR REPLACE INTO verdicts (task, answer, name, status, reason, extra, judge) VALUES (?,?,?,?,?,?,?)",
+                           (hunt["name"], norm(name), name, *verdict, judge.cfg["model"]))
+                db.commit()
+                db.close()
+        emit(event="end", name=name, status=verdict[0], reason=verdict[1], seconds=round(time.monotonic() - started, 1))
+        return norm(name), verdict
+
+    known.update(JUDGE_POOL.map(one, todo))
+    if names:
+        emit(event="done")
+    return known
+
+
+def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, url_text=None, on_event=None):
     truth = hunt["truth"]
-    seen, rows = set(), []
     retrieved = {url_key(u) for u in url_providers if url_key(u)}
     texts = {}
     for u, txt in (url_text or {}).items():
         texts[url_key(u)] = texts.get(url_key(u), "") + " " + norm(txt)
-    unsupported_seen = set()
 
     by_qid = {t["qid"]: [t["label"], *t["aliases"]] for t in truth}
 
@@ -108,54 +159,64 @@ def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, ur
         # A matched find may be named on the page by any of its known names, not only the searcher's spelling.
         names = [name, *by_qid.get(qid, [])]
         return url_key(url) in retrieved and (not texts or any(mentions(texts.get(url_key(url), ""), n) for n in names))
-    judge = Chat("judge") if check_gaps else None
-    gaps = 0
-    for f in finds:
-        if not isinstance(f, dict):
-            continue
-        name = str(f.get("name") or "").strip()
-        url = str(f.get("evidence_url") or "")
-        qid = match(name, truth)
-        key = qid or norm(name)
-        row = {"name": name, "url": url, "providers": sorted(next((p for u, p in url_providers.items() if url_key(u) == url_key(url)), []))}
-        if not key:
-            row["status"] = "wrong"
-        elif key in seen or (key in unsupported_seen and not supported(url, name, qid)):
-            row["status"] = "duplicate"
-        elif require_evidence and not supported(url, name, qid):
-            # The cited URL must be one this attempt retrieved through Telem, and its text must mention the find,
-            # so recital from memory with an arbitrary retrieved URL scores as wrong.
-            row["status"] = "unsupported"
-            unsupported_seen.add(key)
-        elif qid:
-            row["status"], row["qid"] = "correct", qid
-            seen.add(qid)
-        elif check_gaps and gaps < MAX_GAP_CHECKS:
-            gaps += 1
-            status, row["reason"], extra = gap_check(name, hunt, judge)
-            if status == "same":
-                # Another name for a known item: correct the first time it is found.
-                row["status"] = "duplicate" if extra is None or extra in seen else "correct"
-                if extra:
-                    row["qid"] = extra
-                    seen.add(extra)
+
+    def walk(verdict):
+        seen, rows, unsupported_seen = set(), [], set()
+        for f in finds:
+            if not isinstance(f, dict):
+                continue
+            name = str(f.get("name") or "").strip()
+            url = str(f.get("evidence_url") or "")
+            qid = match(name, truth)
+            key = qid or norm(name)
+            row = {"name": name, "url": url, "providers": sorted(next((p for u, p in url_providers.items() if url_key(u) == url_key(url)), []))}
+            if not key:
+                row["status"] = "wrong"
+            elif key in seen or (key in unsupported_seen and not supported(url, name, qid)):
+                row["status"] = "duplicate"
+            elif require_evidence and not supported(url, name, qid):
+                # The cited URL must be one this attempt retrieved through Telem, and its text must mention the find,
+                # so recital from memory with an arbitrary retrieved URL scores as wrong.
+                row["status"] = "unsupported"
+                unsupported_seen.add(key)
+            elif qid:
+                row["status"], row["qid"] = "correct", qid
+                seen.add(qid)
+            elif check_gaps:
+                status, row["reason"], extra = verdict(name)
+                if status == "same":
+                    # Another name for an item in the key or already verified: correct the first time it is found.
+                    row["status"] = "duplicate" if extra is None or extra in seen else "correct"
+                    if extra:
+                        row["qid"] = extra
+                        seen.add(extra)
+                else:
+                    row["status"], row["half"] = status, extra
+                seen.add(key)
             else:
-                row["status"], row["half"] = status, extra
-            seen.add(key)
-        else:
-            row["status"] = "wrong"
-            seen.add(key)
-        rows.append(row)
+                row["status"] = "wrong"
+                seen.add(key)
+            rows.append(row)
+        return rows, seen
+
+    # Which finds need the judge does not depend on its verdicts, so collect them, judge them together, then score.
+    unmatched = []
+    walk(lambda name: unmatched.append(name) or ("wrong", "", None))
+    verdicts = judge_all(unmatched, hunt, on_event or (lambda **e: None)) if check_gaps else {}
+    rows, seen = walk(lambda name: verdicts[norm(name)])
     # A find first cited badly and later cited properly is a duplicate, not a wrong answer.
     for r in rows:
         if r["status"] == "unsupported" and (match(r["name"], truth) or norm(r["name"])) in seen:
             r["status"] = "duplicate"
     correct = sum(r["status"] in ("correct", "verified_gap") for r in rows)
     wrong = sum(r["status"] in ("wrong", "unsupported") for r in rows)
-    total = len(truth) + sum(r["status"] == "verified_gap" for r in rows)
+    # The full answer is the key plus every answer the judge has verified for this task, in this search or an earlier one.
+    # A question with no key is therefore scored against the best list found so far.
+    pool = {a: v for a, v in verdicts.items() if v[0] == "verified_gap"}
+    total = len(truth) + len(pool)
     return {"score": round(max(0.0, correct - WRONG_PENALTY * wrong) / max(total, 1), 4),
             "correct": correct, "wrong": wrong, "total": total,
             "duplicates": sum(r["status"] == "duplicate" for r in rows),
             "unsupported": sum(r["status"] == "unsupported" for r in rows),
             "x_only": sum(r.get("half") == "x_only" for r in rows), "y_only": sum(r.get("half") == "y_only" for r in rows),
-            "missed": [t["label"] for t in truth if t["qid"] not in seen], "rows": rows}
+            "missed": [t["label"] for t in truth if t["qid"] not in seen] + [a for a in pool if a not in seen], "rows": rows}

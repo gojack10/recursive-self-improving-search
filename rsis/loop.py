@@ -1,6 +1,8 @@
 import json
 import os
 import random
+import threading
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 from . import history as H
@@ -66,7 +68,7 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
     try:
         log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
                                        require_evidence=not log["method"].startswith("closed-book"),
-                                       url_text=log.get("url_text"))
+                                       url_text=log.get("url_text"), on_event=judge_events(d, log["attempt_id"]))
     except Exception as e:
         log["error"] = f"scoring failed: {str(e)[:400]}"
         H.save_log(d, log)
@@ -81,6 +83,17 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
           f"{row['correct']}/{row['total']} wrong={row['wrong']} ${row['spent']:.3f}", flush=True)
     row["label"] = role
     return row
+
+
+def judge_events(d, attempt_id):
+    """The judge's progress on one search, appended to logs/<attempt>.judge.jsonl for the live view."""
+    path, lock = d / "logs" / f"{attempt_id}.judge.jsonl", threading.Lock()
+
+    def emit(**event):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with lock, path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"t": round(time.time(), 2), **event}) + "\n")
+    return emit
 
 
 def method_caused(error):
@@ -366,11 +379,11 @@ def recursion_test(name, gens=None):
     return out
 
 
-def trial(method_paths, hunt_names=None, repeats=1, name="trials"):
+def trial(method_paths, hunt_names=None, repeats=1, name="trials", pool="test"):
     """Run hand-written methods head to head on the same hunts and budget. For testing tactics outside the loop."""
     d = run_dir(name)
     methods = [json.loads(open(p, encoding="utf-8").read()) for p in method_paths]
-    hunt_names = hunt_names or HU.pool("test")
+    hunt_names = hunt_names or HU.pool(pool)
     rows = batch(d, [(m, h, "trial") for m in methods for h in hunt_names for _ in range(repeats)], 0)
     print(f"{'method':16} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
     for m in methods:
