@@ -1,0 +1,77 @@
+---
+id: "a21a1d82-0ac0-4a8e-8ddf-eee4b76c6d02"
+name: "Run the Harness Through Pi on Codex Personal"
+micro_summary: "Commits the SearchHack harness to headless Pi agents on Jack's Codex personal route with Telem as the only search service."
+status: "in_progress"
+see_also: [{"target":"35c78938-a7ca-40fc-9a43-b8cd6bb746b8","reason":"Owns the repository and local checkout where this work lives."},{"target":"66c093b3-8a71-4111-8f04-33d6aab95079","reason":"Earlier commitment to start on browser-harness; this build runs on Telem only and the commitment was not revisited."},{"target":"919d9854-bd80-4845-aaef-0fef947fbc1f","reason":"Explains the score fields; the judged re-score of the first Pi search is recorded there."},{"target":"9a2b74d6-d0f2-44a5-b6d3-a35fbf465439","reason":"Still owns task choice; the task-difficulty question below bears on it."}]
+position: 2048
+---
+**Kind:** Agreed Work
+
+## Creation — November 14, 2026
+
+### Observed conditions
+
+At about noon Jack asked a Claude Code session to read his recent SearchHack commits and the repository README, because he had said he would build the harness that hour. The assistant found that a full pipeline was already on GitHub `main`, pushed from Alyssa's account (`allyalyssa`) starting 11:21, and that the README described it accurately. The pipeline called models through an OpenAI-compatible API key and the referee called Tavily directly. Jack then said:
+
+> "Okay, looks like my group mate finished up some harness stuff. Um and I'm gonna pick up the harness stuff for now. They're focusing on search."
+
+When the assistant asked for a Tavily key and a model key, Jack answered:
+
+> "I think we should just use t telem only unless you think we should use Tel Aviv as well. I mean I'm open to anything, I'm not married to anything. For models, don't forget we're using Pi as our harness and we're gonna do a custom pie harness. We can use my Pi harness as like an example, right? [...] Um we have codex personal connections, right? So we can utilize that for Astra and also for um Terra."
+
+"Tel Aviv" is a dictation of Tavily.
+
+### Inference and response
+
+Jack's commitments for the harness:
+
+- **Telem is the only search service.** Tavily is called only as a provider inside Telem.
+- **Pi is the harness.** Searchers run as headless Pi agents with custom tools, using his own Pi setup as the example.
+- **Models come from Codex personal**, Pi's `openai-codex-personal` route, not from API keys.
+
+He named Astra and Terra for that route. Terra is not on it; see below.
+
+[Score One Pi-Run Search on Calatrava Bridges](../2f708580-00da-4bad-a64c-8c318beefbb9/node.md) records the first run under these commitments.
+
+## Where the work stopped
+
+All code is on the local branch `pi-searcher` in `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`, **uncommitted and not pushed**. The branch starts at `c308b93`. GitHub `main` has moved on since: `25e6db0` from Alyssa's account at 12:27, "shape-aware ensemble lenses, verify agreed finds, two-list join".
+
+**Built and run once:**
+
+- `pi/search-tools.ts`, a Pi extension with `web_search`, `fetch_pages` and `submit` tools. Each call runs `python -m rsis.pi_tool`.
+- `rsis/pi_tool.py`, the tool backend. It reuses the repository's Telem client, keeping the spend ledger, pricing and the wikidata.org block in one place, and stores each search's ledger in a locked state file.
+- `rsis/pi_searcher.py`, which runs one search as `pi --print --mode json` with discovery off and only the Codex router and search tools loaded. It returns the same log shape as `searcher.attempt`, so the referee and history read it unchanged. `python -m rsis.pi_searcher METHOD TASK` runs and scores one search.
+- `rsis/pi.py`, the shared Pi command line.
+- `rsis/llm.py`: a role whose model is written `pi:<provider>/<id>` answers through headless Pi without tools.
+- `rsis/tavily.py`: with no `TAVILY_API_KEY`, the referee's double-check goes through Telem pinned to Tavily.
+- A git-ignored `.env` with the hackathon Telem key, `TELEM_BASE_URL=https://hack.telem.ai/api/router` and `JUDGE_MODEL=pi:openai-codex-personal/gpt-6-sol`. The other model fields are still the example placeholders.
+
+**Not done:**
+
+1. The improver still calls `Chat("improver")` with tool calls. That path raises an error for Pi roles; the improver must become a Pi agent like the searcher.
+2. `rsis/loop.py` still calls the old API `searcher.attempt`, not `pi_searcher.attempt`.
+3. The searcher omits `check_candidates`, the anchor-and-verify tool the API searcher has.
+4. `.env.example` and the README do not mention `TELEM_BASE_URL`. Teammates using the default `router.telem.ai` will get a 401.
+5. Nothing is committed, merged with `main` or pushed.
+
+## Open questions
+
+- **Terra.** Codex personal offers Astra, Sol and Luna. Terra 6.1 appears only under the separately billed `openai` provider. The run used Luna on the assistant's guess that Terra was meant as a searcher weaker than the improver. Jack has not chosen.
+- **Judge family.** The README's guard keeps the judge outside the improver's model family. On Codex personal, judge and improver are both GPT models.
+- **Task difficulty.** In the team discussion a groupmate asked why a frontier model would not answer the tasks easily. Jack answered that searchers are cut off from Wikidata and can only use Telem. The assistant observed that this blocks the lookup route, not the model's memory. Before opening the answer files it recalled 8 of 8 women Chemistry laureates, 6 of 6 UK-born Turing winners and 3 of 3 Palme d'Or and Best Picture films. That is the assistant's recall, not a measured model score. Since then Alyssa's account added an evidence-required rule and harder test tasks.
+- **Budget and routing.** Each auto-routed query fans out to seven providers at about $0.028, so the $0.08 per-search cap allows about three queries. Whether the cap should change, or whether cheaper routing is the first lesson the improver should find, is open.
+- **Baseline.** The assistant proposed running the seed method on every task to find the ones with room to improve, estimating about ten minutes and $3 of Telem. Jack did not answer before asking for this save.
+
+## Next
+
+Jack asked that the next agent assess the open questions and unfinished items. Before running anything, it should pull the latest search work from `main` and judge whether it is relevant to the Pi path:
+
+> "document where we left off your open questions and not done yet next agent will asses that stuff and pull latest search stuff is it relevatn to us before we run anything? we did recent sifttext commits and also groupmates committed more"
+
+`rsis/llm.py` and `rsis/tavily.py` are the files most likely to conflict with work on `main`.
+
+## Source
+
+Claude Code session `a5499697-1483-4ea4-b150-ec7263fe5161`, November 14, 2026, retained at [artifacts/chats/claude-searchhack-pi-harness.jsonl](artifacts/chats/claude-searchhack-pi-harness.jsonl). Repository state was read with Git and the GitHub API during the session.

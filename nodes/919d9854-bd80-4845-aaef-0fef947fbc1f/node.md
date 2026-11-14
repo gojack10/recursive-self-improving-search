@@ -38,3 +38,13 @@ Only `correct`, `wrong`, and `total` enter the formula. The assistant proposed k
 ## Sources
 
 [Codex conversation](artifacts/chats/codex-searchhack-scoring-fields.jsonl), lines 243–286. The [referee](https://github.com/gojack10/recursive-self-improving-search/blob/6a49311/rsis/referee.py#L71), [stored row](https://github.com/gojack10/recursive-self-improving-search/blob/6a49311/rsis/history.py#L30), [improver context](https://github.com/gojack10/recursive-self-improving-search/blob/6a49311/rsis/improver.py#L53), and [comparison command](https://github.com/gojack10/recursive-self-improving-search/blob/6a49311/rsis/loop.py#L281) establish the field uses. The Pi example came from `runs/pi-trial/attempts.jsonl` and `rsis/pi_searcher.py` on the local `pi-searcher` branch.
+
+## November 14 development — the same search scored with the judge
+
+### Observed conditions
+
+In a separate Claude Code session, the assistant re-scored the same Pi search with the gap judge enabled. The judge ran as `pi:openai-codex-personal/gpt-6-sol` at low effort, and the gap check went through Telem pinned to Tavily. The same 35 finds scored **0.7903**: 27 correct, 5 wrong, 31 total. Most of the change came from the judge matching English names to Wikidata's local labels, such as "Alamillo Bridge" to Puente del Alamillo. It also accepted 8 bridges missing from Wikidata. [Score One Pi-Run Search on Calatrava Bridges](../2f708580-00da-4bad-a64c-8c318beefbb9/node.md) holds the full result.
+
+### Inference and response
+
+The paired score that was unavailable above now exists for this one search: 0.0 without the judge, 0.79 with it. Dropping the judge would have scored this search 0.0, mostly for name mismatches. The proposal to remove it remains unselected.
