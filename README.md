@@ -34,7 +34,7 @@ The seed method `v000` is Telem's own auto-routing with a plain agent, so the cu
 
 **Hunts.** Twelve "find every X" hunts across people, works and structures (`rsis/hunts.py`). Each answer set is computed from Wikidata and cached in `data/hunts/`. Searchers never see it, and `wikidata.org` results are dropped in the Telem wrapper.
 
-**Referee.** Finds are matched to Wikidata labels and aliases. A find Wikidata lacks gets an independent check through Tavily (a separate route from the searcher's Telem calls) and a judge model outside the improver's model family. Score = (correct - 0.5 x wrong) / answer-set size. Duplicates don't count.
+**Referee.** Finds are matched to Wikidata labels and aliases. A find Wikidata lacks gets an independent check through Tavily (a separate route from the searcher's Telem calls) and a judge model outside the improver's model family. Score = (correct - 0.5 x wrong) / answer-set size. Duplicates don't count. Every find must cite a URL that the attempt actually retrieved through Telem (search result, verify check or fetched page). A find recited from memory counts as wrong, so the score measures search, not model knowledge. Only the closed-book contestant in `compare` is exempt. The `hadid` answer set includes Wikidata items such as individual stations named after places ("Alpenzoo", "Hungerburg"), so no contestant's ceiling there is 1.0. We disclose that and do not prune it.
 
 **X-and-Y hunts.** Every hunt is "items that meet condition X and condition Y" (Hugo *and* Nebula, astronaut *and* physician). Each hunt names its two conditions, and the searcher sees them. The fastest reliable way through such a hunt is anchor-and-verify:
 
@@ -47,7 +47,7 @@ The referee's judge records whether a wrong find met only X or only Y (`x_only`,
 
 **Plateau matrix.** If the winner's test re-run doesn't beat the best so far by more than the noise band for two rounds in a row, the next round is a breakout round: fresh improvers, each given a different slice of history and a different earlier version. Two breakouts in a row without a gain stops the run as "levelled off".
 
-**Recursion test.** Generations 0, 3, 6... each get the same improvement job: start from `v000`, with history (attempts, lineage, provider yield, tree nodes) frozen at the end of round 1, and the same budget. Only the method the improver searches with changes. Rising successor scores mean the system got better at improving, not only at searching. Flat bars mean continual learning, and we report it that way.
+**Recursion test.** Generations 0, 3, 6... each get the same improvement job: start from `v000`, with history (attempts, lineage, provider yield, tree nodes) frozen at the end of round 1, and the same budget. Only the method the improver searches with changes. The improver's prompt always shows `v000`, so it can't just copy generation N's text; generation N only drives its searches, and the number of searches it ran is recorded. The improver never sees test-pool scores. Rising successor scores mean the system got better at improving, not only at searching. Flat bars mean continual learning, and we report it that way.
 
 **Records.** Attempts are numeric rows in `runs/<name>/attempts.jsonl`. Method versions, lessons, rounds and adoptions are nodes in the SiftText `node.md` layout under `runs/<name>/tree/`, kept apart from the synced `nodes/` tree.
 
@@ -94,7 +94,7 @@ It prints score, correct, wrong, x_only, y_only and Telem spend for each method.
 | contestant | what it is |
 |---|---|
 | `frontier-closed-book` | `FRONTIER_MODEL` (e.g. Opus or GPT Astra) answering from memory, no search |
-| `frontier+harness` | the frontier model driving the plain `v000` harness through Telem |
+| `frontier+our-method` | the frontier model running our best method in one attempt with the ensemble's whole Telem budget |
 | `ours-method` | the cheap searcher with the best evolved method (or `methods/anchor_verify.json` if no run exists) |
 | `ours-ensemble` | three cheap searchers with that method, each through a different lens (anchor on X, anchor on Y, recall then verify). Finds that two searchers agree on are kept; the rest go through batched Telem verification and a judge before submission |
 
@@ -103,7 +103,11 @@ Why the ensemble should win on accuracy:
 - **Precision:** every find needs agreement or a verified search result, so half-matches and recalled-but-wrong items get dropped. A closed-book frontier answer has no such check.
 - **Cost:** cheap verify routes keep it affordable, at about $0.30 of Telem per hunt.
 
-This is a design argument, not a measured result; the table comes from the first real run. The ensemble spends about four times the Telem budget of a single attempt, and the comparison table shows spend next to score so that isn't hidden.
+This is a design argument, not a measured result; the table comes from the first real run. `frontier+our-method` gets the same Telem budget as the ensemble, so a win can't come from extra spend alone. Each contestant runs each hunt twice by default (`--repeats`). Finds the judge accepted as Wikidata gaps are printed for a hand check before any score is quoted.
+
+**Number for the slide:** the final method's held-out test score minus `v000`'s, each run three times under evidence-required scoring, shown against the noise band, with the closed-book score beside it.
+
+**Framing for Telem:** `v000` is Telem's default routing. The evolved method is expressed entirely in Telem knobs (providers, tier, batch queries, verify route), so it is a tuning layer on top of Telem's router rather than a replacement. Show the Telem console trajectories for `v000` and the winning method side by side; the session IDs are in `attempts.jsonl`.
 
 ```
 python -m rsis compare --run main -n 3

@@ -107,7 +107,7 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
             except Exception as e:
                 out = {"error": str(e)[:500]}
             trace.append({"tool": name, "args": args, "summary": {k: out[k] for k in out if k not in ("results", "pages", "checks")}})
-            messages.append({"role": "tool", "tool_call_id": c["id"], "content": json.dumps(out)[:12000]})
+            messages.append({"role": "tool", "tool_call_id": c["id"], "content": json.dumps(out)[:40000]})
         if done:
             break
     return {"attempt_id": uuid.uuid4().hex[:10], "method": m["id"], "hunt": hunt["name"], "kind": hunt["kind"],

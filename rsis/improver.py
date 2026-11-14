@@ -53,7 +53,7 @@ Make the candidates differ from each other in a meaningful way. Call propose whe
 def context(run_dir, start, attempt_ids, extra="", as_of_round=None):
     """What the improver sees. as_of_round freezes the view, so every recursion-test generation gets the same job."""
     def visible(r):
-        return r.get("role") != "rtest" and (as_of_round is None or (r.get("round") or 0) <= as_of_round)
+        return r.get("role") != "rtest" and r.get("pool") != "test" and (as_of_round is None or (r.get("round") or 0) <= as_of_round)
     rows = [r for r in H.rows(run_dir, "attempts.jsonl") if visible(r)]
     scores = H.method_scores(rows)
     methods = [m for m in M.all_methods(run_dir) if m.get("status") != "recursion-test"
@@ -70,12 +70,12 @@ def context(run_dir, start, attempt_ids, extra="", as_of_round=None):
 
 
 def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improver", extra="",
-            as_of_round=None, allowed_nodes=None):
+            as_of_round=None, allowed_nodes=None, prompt_method=None):
     """Write k candidates from `start`, searching with `search_method`. In normal rounds both are the current method;
     the recursion test holds `start` fixed and varies `search_method` across generations."""
     chat = Chat(role)
     telem = Telem(IMPROVER_BUDGET)
-    messages = [{"role": "system", "content": SYSTEM.format(k=k, method=M.render(search_method))},
+    messages = [{"role": "system", "content": SYSTEM.format(k=k, method=M.render(prompt_method or search_method))},
                 {"role": "user", "content": context(run_dir, start, attempt_ids, extra, as_of_round)}]
     tools = [HIST_TOOL, READ_TOOL, LOG_TOOL, SEARCH_TOOL, PROPOSE_TOOL]
     trace = []
@@ -91,7 +91,7 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
             args = parse_obj(c["function"].get("arguments"))
             trace.append({"tool": name, "args": args if name != "propose" else "..."})
             if name == "propose" and args.get("candidates"):
-                return args, {"trace": trace, "telem_spent": telem.spent, "telem_session": telem.session_id,
+                return args, {"trace": trace, "web_searches": sum(t["tool"] == "web_search" for t in trace), "telem_spent": telem.spent, "telem_session": telem.session_id,
                               "tokens": chat.usage}
             try:
                 if name == "propose":

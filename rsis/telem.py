@@ -15,6 +15,13 @@ FETCH_PRICE = 0.001
 PROVIDERS = sorted(SEARCH_PRICE)
 
 
+def url_key(url):
+    u = (url or "").strip().lower().split("#")[0]
+    for pre in ("https://", "http://"):
+        u = u.removeprefix(pre)
+    return u.removeprefix("www.").rstrip("/")
+
+
 def blocked(url):
     host = (urlparse(url).hostname or "").lower()
     return any(host == d or host.endswith("." + d) for d in REFEREE_DOMAINS)
@@ -82,7 +89,7 @@ class Telem:
         return {"results": results, "providers_used": used, "cost": round(cost, 5),
                 "budget_left": round(self.budget - self.spent, 4)}
 
-    def fetch(self, urls, max_chars=6000):
+    def fetch(self, urls, max_chars=30000):
         urls = [u for u in urls if not blocked(u)][:5]
         if not urls:
             return {"pages": []}
@@ -92,6 +99,9 @@ class Telem:
         pages = []
         for run in r.get("preprocessor_runs", []):
             for f in (run.get("output_payload") or {}).get("fetched_results", []):
+                if f.get("content"):
+                    with self.lock:
+                        self.url_providers.setdefault(f.get("url"), set()).add("fetch:" + str(f.get("provider")))
                 pages.append({"url": f.get("url"), "status": f.get("status"), "provider": f.get("provider"),
                               "content": (f.get("content") or "")[:max_chars]})
         cost = FETCH_PRICE * len(urls)

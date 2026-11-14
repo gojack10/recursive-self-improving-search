@@ -41,6 +41,7 @@ cp.add_argument("--method", help="method JSON; default is the current method of 
 cp.add_argument("--run", default="main")
 cp.add_argument("--hunts", nargs="*")
 cp.add_argument("-n", type=int, default=3, help="searchers in the ensemble")
+cp.add_argument("--repeats", type=int, default=2)
 for c in ("calibrate", "round", "run", "recursion-test", "report"):
     s = sub.add_parser(c)
     s.add_argument("--name", default="main")
@@ -60,7 +61,7 @@ elif a.cmd == "smoke":
 elif a.cmd == "trial":
     loop.trial(a.methods, a.hunts, a.repeats)
 elif a.cmd == "compare":
-    loop.compare(a.method, a.run, a.hunts, a.n)
+    loop.compare(a.method, a.run, a.hunts, a.n, repeats=a.repeats)
 elif a.cmd == "calibrate":
     loop.calibrate(a.name)
 elif a.cmd == "round":

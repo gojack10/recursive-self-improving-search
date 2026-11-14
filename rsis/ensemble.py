@@ -7,7 +7,7 @@ from .config import ATTEMPT_BUDGET
 from .llm import Chat
 from .referee import norm
 from .searcher import attempt, check_candidates
-from .telem import Telem
+from .telem import Telem, url_key
 
 LENSES = [
     "For this attempt, anchor on condition X: enumerate everything that meets X, then verify Y for each candidate.",
@@ -16,6 +16,10 @@ LENSES = [
     "then search for pages that list the intersection directly, and verify every recalled item before submitting.",
 ]
 VERIFY_BUDGET = 0.06
+
+
+def ensemble_budget(n, budget=ATTEMPT_BUDGET):
+    return n * budget + VERIFY_BUDGET
 
 
 def lens(m, i):
@@ -30,7 +34,9 @@ def merge(logs):
             k = norm(f.get("name") or "")
             if not k:
                 continue
-            it = items.setdefault(k, {"name": f["name"], "evidence_url": f.get("evidence_url"), "votes": set()})
+            it = items.setdefault(k, {"name": f["name"], "urls": [], "votes": set()})
+            if url_key(f.get("evidence_url")) in {url_key(u) for u in log["url_providers"]}:
+                it["urls"].append(f["evidence_url"])
             it["votes"].add(log["attempt_id"])
     return items
 
@@ -42,7 +48,8 @@ def judge_checks(chat, hunt, checks):
         part = {n: checks[n] for n in names[i:i + 12]}
         v = chat.json(
             "You verify candidate answers from search results. Reply as JSON {\"keep\": [candidate strings]}. "
-            "Keep a candidate only if its results clearly show it meets BOTH conditions.",
+            "Keep a candidate if its results make it more likely than not that it meets BOTH conditions. "
+            "Drop it if the results show it meets only one condition or say nothing about it.",
             f"Condition X: {hunt['x']}\nCondition Y: {hunt['y']}\nResults per candidate:\n{json.dumps(part)[:20000]}")
         keep |= {k for k in v.get("keep", []) if isinstance(k, str)}
     return keep
@@ -55,21 +62,29 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
     with ThreadPoolExecutor(n) as ex:
         logs = list(ex.map(lambda i: attempt(lens(m, i), hunt, budget=budget, role=role), range(n)))
     items = merge(logs)
-    agreed = [it for it in items.values() if len(it["votes"]) >= 2]
-    single = [it for it in items.values() if len(it["votes"]) < 2]
+    # Agreement needs at least one searcher-retrieved URL; anything else goes through verification.
+    agreed = [it for it in items.values() if len(it["votes"]) >= 2 and it["urls"]]
+    single = [it for it in items.values() if not (len(it["votes"]) >= 2 and it["urls"])]
     telem = Telem(VERIFY_BUDGET)
     kept = []
     if single:
-        q = {f"{it['name']} {hunt['criterion']}": it for it in single}
-        out = check_candidates(m, {"candidates": [it["name"] for it in single], "condition": hunt["criterion"],
-                                   "per_candidate": 3}, telem)
-        checks = {k: v for k, v in out["checks"].items() if k in q}
-        ok = judge_checks(Chat(role), hunt, checks)
-        for k in ok:
-            if k in q:
-                urls = [r["url"] for r in checks[k]]
-                kept.append({**q[k], "evidence_url": q[k]["evidence_url"] or (urls[0] if urls else None)})
-    finds = [{"name": it["name"], "evidence_url": it["evidence_url"]} for it in agreed + kept]
+        by_norm = {norm(it["name"]): it for it in single}
+        checks = {}
+        for i in range(0, len(single), 25):
+            out = check_candidates(m, {"candidates": [it["name"] for it in single[i:i + 25]],
+                                       "condition": hunt["criterion"], "per_candidate": 3}, telem)
+            for q, results in out["checks"].items():
+                if q == "_error":
+                    continue
+                cand = q[:-len(hunt["criterion"])].strip() if q.endswith(hunt["criterion"]) else q
+                checks[cand] = results
+        for k in judge_checks(Chat(role), hunt, checks):
+            it = by_norm.get(norm(k[:-len(hunt["criterion"])] if k.endswith(hunt["criterion"]) else k))
+            if it:
+                urls = [r["url"] for r in checks.get(it["name"], [])]
+                if urls or it["urls"]:
+                    kept.append({**it, "evidence_url": urls[0] if urls else it["urls"][0]})
+    finds = [{"name": it["name"], "evidence_url": it.get("evidence_url") or it["urls"][0]} for it in agreed + kept]
     url_providers = {}
     for log in logs:
         for u, ps in log["url_providers"].items():

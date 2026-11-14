@@ -5,9 +5,10 @@ from difflib import SequenceMatcher
 from . import tavily
 from .config import REFEREE_DOMAINS
 from .llm import Chat
+from .telem import url_key
 
 WRONG_PENALTY = 0.5
-MAX_GAP_CHECKS = 12
+MAX_GAP_CHECKS = 40
 
 
 def norm(s):
@@ -67,9 +68,10 @@ def gap_check(name, hunt, judge):
     return status, v.get("reason", ""), half
 
 
-def score(finds, hunt, url_providers, check_gaps=True):
+def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True):
     truth = hunt["truth"]
     seen, rows = set(), []
+    retrieved = {url_key(u) for u in url_providers}
     judge = Chat("judge") if check_gaps else None
     gaps = 0
     for f in finds:
@@ -78,9 +80,12 @@ def score(finds, hunt, url_providers, check_gaps=True):
         name = (f.get("name") or "").strip()
         qid = match(name, truth)
         key = qid or norm(name)
-        row = {"name": name, "url": f.get("evidence_url"), "providers": sorted(url_providers.get(f.get("evidence_url"), []))}
+        row = {"name": name, "url": f.get("evidence_url"), "providers": sorted(next((p for u, p in url_providers.items() if url_key(u) == url_key(f.get("evidence_url"))), []))}
         if key in seen:
             row["status"] = "duplicate"
+        elif require_evidence and url_key(f.get("evidence_url")) not in retrieved:
+            # Only URLs this attempt actually retrieved through Telem count, so recital from memory scores as wrong.
+            row["status"] = "unsupported"
         elif qid:
             row["status"], row["qid"] = "correct", qid
             seen.add(qid)
@@ -100,10 +105,11 @@ def score(finds, hunt, url_providers, check_gaps=True):
             row["status"] = "wrong"
         rows.append(row)
     correct = sum(r["status"] in ("correct", "verified_gap") for r in rows)
-    wrong = sum(r["status"] == "wrong" for r in rows)
+    wrong = sum(r["status"] in ("wrong", "unsupported") for r in rows)
     total = len(truth) + sum(r["status"] == "verified_gap" for r in rows)
     return {"score": round(max(0.0, correct - WRONG_PENALTY * wrong) / max(total, 1), 4),
             "correct": correct, "wrong": wrong, "total": total,
             "duplicates": sum(r["status"] == "duplicate" for r in rows),
+            "unsupported": sum(r["status"] == "unsupported" for r in rows),
             "x_only": sum(r.get("half") == "x_only" for r in rows), "y_only": sum(r.get("half") == "y_only" for r in rows),
             "missed": [t["label"] for t in truth if t["qid"] not in seen], "rows": rows}

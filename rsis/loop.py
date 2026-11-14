@@ -50,7 +50,8 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
     hunt = HU.load(hunt_name)
     log = make(hunt) if make else attempt(m, hunt)
     log["round"], log["role"] = rnd, role
-    log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps)
+    log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
+                                   require_evidence=not log["method"].startswith("closed-book"))
     H.save_log(d, log)
     row = H.table_row(log, log["referee"])
     H.append(d, "attempts.jsonl", row)
@@ -247,14 +248,16 @@ def recursion_test(name, gens=None):
     test = HU.pool("test")
     out = []
     for g in gens:
-        props, _ = improve(d, tree, v0, M.load(d, g), first_ids, k=1, as_of_round=1, allowed_nodes=allowed)
+        props, meta = improve(d, tree, v0, M.load(d, g), first_ids, k=1, as_of_round=1, allowed_nodes=allowed,
+                              prompt_method=v0)
         c = next(c for c in props["candidates"] if isinstance(c, dict) and c.get("instructions"))
         succ = {"id": f"rt-{g}", "parent": "v000", "rationale": c.get("rationale", ""), "instructions": c["instructions"],
                 "routing": merge_routing(v0["routing"], c.get("routing")), "routing_rules": c.get("routing_rules", ""),
                 "fetch_policy": c.get("fetch_policy", ""), "status": "recursion-test", "node": None}
         M.save(d, succ)
         rows = batch(d, [(succ, h, "rtest") for h in test], 0)
-        out.append({"generation": g, "successor": succ["id"], "score": round(mean([r["score"] for r in rows]), 4)})
+        out.append({"generation": g, "successor": succ["id"], "score": round(mean([r["score"] for r in rows]), 4),
+                    "improver_web_searches": meta["web_searches"]})
         print(out[-1], flush=True)
     H.append(d, "recursion_test.jsonl", {"results": out, "hunts": test})
     return out
@@ -275,10 +278,11 @@ def trial(method_paths, hunt_names=None, repeats=1, name="trials"):
     return rows
 
 
-def compare(method_path=None, run_name="main", hunt_names=None, n=3, name="compare"):
+def compare(method_path=None, run_name="main", hunt_names=None, n=3, name="compare", repeats=2):
     """Our cheap-searcher system against a frontier model on the same hunts and referee.
     Contestants: frontier closed-book, frontier with the plain v000 harness, our best method, our ensemble of it."""
-    from .ensemble import answer, closed_book
+    from .config import ATTEMPT_BUDGET
+    from .ensemble import answer, closed_book, ensemble_budget
     d = run_dir(name)
     if method_path:
         best = json.loads(open(method_path, encoding="utf-8").read())
@@ -287,13 +291,15 @@ def compare(method_path=None, run_name="main", hunt_names=None, n=3, name="compa
         best = M.load(rd, state(rd)["current"]) if state(rd) else json.loads((M.SEED / "anchor_verify.json").read_text(encoding="utf-8"))
     v0 = json.loads((M.SEED / "v000.json").read_text(encoding="utf-8"))
     hunt_names = hunt_names or HU.pool("test")
+    big = ensemble_budget(n)
     contestants = [
         ("frontier-closed-book", None, lambda h: closed_book(h)),
-        ("frontier+harness", v0, lambda h: attempt({**v0, "id": "frontier+v000"}, h, role="frontier")),
-        ("ours-method", best, lambda h: attempt(best, h)),
+        # The frontier model gets our best method and the ensemble's whole Telem budget in one attempt.
+        ("frontier+our-method", best, lambda h: attempt({**best, "id": f"frontier+{best['id']}"}, h, budget=big, role="frontier")),
+        ("ours-method", best, lambda h: attempt(best, h, budget=ATTEMPT_BUDGET)),
         ("ours-ensemble", best, lambda h: answer(best, h, n=n)),
     ]
-    jobs = [(label, m, h, make) for label, m, make in contestants for h in hunt_names]
+    jobs = [(label, m, h, make) for label, m, make in contestants for h in hunt_names for _ in range(repeats)]
     with ThreadPoolExecutor(WORKERS) as ex:
         rows = list(ex.map(lambda j: safe_run(d, j[1], j[2], 0, j[0], make=j[3]), jobs))
     summary = []
@@ -306,6 +312,17 @@ def compare(method_path=None, run_name="main", hunt_names=None, n=3, name="compa
              "spend": round(sum(r["spent"] for r in rs), 4), "failed": sum(1 for r in rows if r["label"] == label and r.get("failed"))}
         summary.append(s)
         print(f"{label:22} {s['score']:6.3f} {s['correct']:8} {s['wrong']:6} {s['x_only']:7} {s['y_only']:7} ${s['spend']:6.3f}")
-    H.append(d, "compare.jsonl", {"method": best["id"], "hunts": hunt_names, "summary": summary,
+    gaps = []
+    for r in rows:
+        if r.get("failed"):
+            continue
+        log = H.load_log(d, r["attempt_id"])
+        gaps += [{"contestant": r.get("role"), "hunt": r["hunt"], "name": x["name"], "reason": x.get("reason")}
+                 for x in log["referee"]["rows"] if x["status"] == "verified_gap"]
+    if gaps:
+        print("Wikidata-gap finds the judge accepted; check these by hand before quoting scores:")
+        for g in gaps:
+            print(f"  {g['contestant']:22} {g['hunt']:20} {g['name']}")
+    H.append(d, "compare.jsonl", {"gaps_to_hand_check": gaps, "method": best["id"], "hunts": hunt_names, "summary": summary,
                                   "per_hunt": [{k: r.get(k) for k in ("label", "hunt", "score", "correct", "wrong", "total")} for r in rows]})
     return summary

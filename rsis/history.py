@@ -32,7 +32,7 @@ def table_row(log, s):
     return {"attempt_id": log["attempt_id"], "round": log.get("round"), "role": log.get("role"), "method": log["method"],
             "hunt": log["hunt"], "kind": log["kind"], "pool": log["pool"], "score": s["score"], "correct": s["correct"],
             "wrong": s["wrong"], "total": s["total"], "duplicates": s["duplicates"],
-            "x_only": s.get("x_only", 0), "y_only": s.get("y_only", 0), "spent": log["telem_spent"],
+            "x_only": s.get("x_only", 0), "y_only": s.get("y_only", 0), "unsupported": s.get("unsupported", 0), "spent": log["telem_spent"],
             "searches": sum(c["kind"] == "search" for c in log["telem_calls"]),
             "fetches": sum(c["kind"] == "fetch" for c in log["telem_calls"]),
             "seconds": log["seconds"], "telem_session": log["telem_session"]}
