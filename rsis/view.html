@@ -2,145 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>rsis live view</title>
+<title>RSIS</title>
 <style>
-/* Palette, status colours and status pips follow the SiftText landing page. */
+/* One colour per thing: searchers, the method writer, the judge, our score, plain search, kept and dropped. */
 :root{
-  --bg:#060606;--panel:#0c0c0c;--line:#202020;--edge:#383838;--fg:#d8d8d8;--bright:#fff;--muted:#8c8c8c;--dim:#585858;
-  --in_progress:#5a8cc7;--resolved:#6b9b7a;--discarded:#4a4a4a;--not_examined:#8a8a8a;--urgent:#b85450;
-  --display:ABCAreal,system-ui,sans-serif;--mono:ABCArealMono,"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --bg:#060606;--panel:#0c0c0c;--line:#202020;--edge:#383838;--fg:#e6e6e6;--muted:#8c8c8c;--dim:#585858;
+  --search:#35c9ff;--writer:#ffd23f;--judge:#c77dff;--ours:#3ddc84;--base:#ff8a3d;--good:#3ddc84;--bad:#ff5a52;
+  --display:ABCAreal,"Inter","Helvetica Neue",system-ui,sans-serif;--mono:ABCArealMono,"JetBrains Mono",ui-monospace,Menlo,monospace;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;padding:10px 12px;background:var(--bg);color:var(--fg);font:12px/1.5 var(--mono);-webkit-font-smoothing:antialiased;
+body{margin:0;padding:10px 12px;background:var(--bg);color:var(--fg);font:14px/1.5 var(--mono);-webkit-font-smoothing:antialiased;
   display:grid;grid-template-rows:auto auto 1fr;gap:8px;overflow:hidden}
-h1{margin:0;color:#fff;font:500 18px/24px var(--display);letter-spacing:-.03em}
-h2{margin:0 0 6px;color:var(--muted);font:400 10px/14px var(--mono);letter-spacing:.14em;text-transform:uppercase;flex:none}
-.top{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
-.stat{color:var(--muted)}
-.stat b{color:#fff;font-weight:500}
-#error{color:var(--urgent)}
-select{background:var(--panel);color:#fff;border:1px solid var(--edge);font:inherit;padding:1px 4px;border-radius:0}
-#tabs{display:flex;gap:4px;overflow-x:auto;white-space:nowrap}
-.tab{flex:none;border:1px solid var(--edge);background:var(--panel);color:var(--muted);padding:2px 10px;cursor:pointer;font:inherit;border-radius:0}
-.tab.on{background:#fff;color:#000;border-color:#fff}
-.tab .live{color:var(--in_progress)}
-.tab.on .live{color:#000}
-#about{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}
-#about b{color:#fff;font-weight:500}
-.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;min-height:0}
-.panel{border:1px solid var(--edge);background:var(--panel);padding:10px 12px;min-height:0;min-width:0;display:flex;flex-direction:column;overflow:hidden}
-.fill{flex:1;min-height:0;overflow:auto}
+.panel{border:1px solid var(--edge);background:var(--panel);padding:12px 14px;min-height:0;min-width:0;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.label{color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;flex:none}
+#question{font:600 26px/1.25 var(--display);color:#fff;letter-spacing:-.02em}
+#tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tab{border:1px solid var(--edge);background:var(--bg);color:var(--muted);padding:5px 14px;cursor:pointer;font:500 14px var(--mono);border-radius:0}
+.tab:hover{color:#fff;border-color:#fff}
+.tab.on{background:#fff;color:#000;border-color:#fff;font-weight:700}
+.tab b{font-weight:700;color:var(--ours)}.tab.on b{color:#000}
+.tab i{font-style:normal;color:var(--search)}
 
-.blk rect{fill:#0c0c0c;stroke:#6f6f6f;stroke-width:1.2;transition:fill .25s,stroke .25s}
-.blk text{fill:#d8d8d8;font-size:12px;text-anchor:middle;dominant-baseline:central}
-.blk.entry rect{stroke:#d8d8d8;stroke-width:2.4}
-.blk.active rect{fill:#fff;stroke:#fff;filter:drop-shadow(0 0 10px rgba(255,255,255,.55))}
-.blk.active text{fill:#000}
-.blk .badge{fill:var(--in_progress);stroke:none;filter:none;display:none}
+#lights{flex-direction:row;gap:28px;align-items:center;flex-wrap:wrap;padding:10px 14px}
+#lights strong{font:700 16px var(--display);letter-spacing:.08em;color:#fff}
+.light{display:flex;gap:9px;align-items:center;font-size:15px;font-weight:600;color:#fff}
+.light i{width:13px;height:13px;background:var(--c);box-shadow:0 0 10px var(--c);animation:pulse 1.4s ease-in-out infinite}
+.light.off{color:var(--dim);font-weight:400}.light.off i{background:#2a2a2a;box-shadow:none;animation:none}
+.light.alert{margin-left:auto;color:var(--bad)}
+
+.main{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:0}
+svg.fit{display:block;width:100%;flex:1;min-height:0}
+.blk rect{fill:#0c0c0c;stroke:#7a7a7a;stroke-width:1.8;transition:fill .25s,stroke .25s}
+.blk text{fill:#e6e6e6;font-size:13px;font-weight:600;text-anchor:middle;dominant-baseline:central}
+.blk.entry rect{stroke:#fff;stroke-width:2.6}
+.blk.active rect{fill:var(--c,#fff);stroke:var(--c,#fff);filter:drop-shadow(0 0 10px var(--c,#fff))}
+.blk.active text{fill:#000;font-weight:700}
+#b-thinking,#b-writing,#b-web_search,#b-fetch_pages,#b-check_candidates,#b-history,#b-submit{--c:var(--search)}
+#b-scoring,#b-judging{--c:var(--judge)}
+#b-done{--c:var(--good)}
+.blk .badge{fill:#fff;stroke:#000;stroke-width:1.5;filter:none;display:none}
 .blk.many .badge{display:block}
-.dot{fill:#fff;filter:drop-shadow(0 0 6px #fff)}
-.blk .count{fill:#000;font-size:11px}
-.edge path{fill:none;stroke:#6f6f6f;stroke-width:1.2;transition:stroke .2s}
+.blk .count,.blk.active .count{fill:#000;font-size:13px;font-weight:700}
+.dot{fill:#fff;filter:drop-shadow(0 0 6px currentColor)}
+.edge path{fill:none;stroke:#6f6f6f;stroke-width:1.5;transition:stroke .2s}
 .edge text{fill:#8c8c8c;font-size:10px;text-anchor:middle}
-.edge.hot path{stroke:#fff;stroke-width:2.4}
+.edge.hot path{stroke:#fff;stroke-width:3}
 .edge.hot text{fill:#fff}
-.region{fill:#585858;font-size:10px;letter-spacing:.14em}
-svg.chart{display:block;width:100%;height:100%;flex:1;min-height:0}
+.region{fill:#8c8c8c;font-size:11px;letter-spacing:.14em;font-weight:600}
 
-#agents{flex:1;min-height:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-auto-rows:minmax(0,1fr);gap:8px}
-.agent{border:1px solid var(--line);min-height:0;min-width:0;display:flex;flex-direction:column;background:#080808}
-.agent.idle{opacity:.55}
-.agent .head{flex:none;padding:5px 8px;border-bottom:1px solid var(--line);white-space:nowrap;overflow:hidden}
-.agent .head div{overflow:hidden;text-overflow:ellipsis}
-.agent .role{color:#fff;letter-spacing:.12em;text-transform:uppercase}
-.agent .chip{float:right;padding:0 6px;color:#000;background:var(--in_progress)}
-.agent .chip.scoring,.agent .chip.judging{background:#b8853d}.agent .chip.done{background:var(--resolved)}.agent .chip.stalled{background:var(--urgent)}
-.agent .sub{color:var(--muted)}
-.agent .log{flex:1;min-height:0;overflow:auto;padding:4px 8px;font-size:11px;line-height:1.45;word-break:break-word}
-.log .turn{color:var(--dim);border-top:1px solid var(--line);margin-top:3px}
-.log .think{color:var(--muted);font-style:italic}
-.log .say{color:var(--fg)}
-.log .call{color:#fff}
-.log .result{color:var(--resolved)}
-.log .hit{color:var(--dim);padding-left:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.log .error{color:var(--urgent)}
-.log .judge{color:#b8853d;border-top:1px solid var(--line);margin-top:3px}
-.log .verdict{color:#c9a56a}
-.log .live{color:var(--in_progress)}
-.log .live::after{content:"▍";animation:pulse 1s steps(2) infinite}
-.quiet,.empty{color:var(--dim)}
-
-.tree ul{list-style:none;margin:0;padding:0}
-.tree ul ul{margin-left:13px}
-.tree ul ul>li{position:relative;padding-left:22px}
-.tree ul ul>li::before{content:'';position:absolute;left:0;top:0;height:14px;width:16px;border-left:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a}
-.tree ul ul>li::after{content:'';position:absolute;left:0;top:0;bottom:0;border-left:1px solid #3a3a3a}
-.tree ul ul>li:last-child::after{display:none}
-.tree .node{display:flex;gap:8px;align-items:center;padding:2px 0}
-.pip{flex:none;width:28px;height:20px;fill:none;stroke:currentColor;stroke-width:1.2}
-.tree .kind{flex:none;color:var(--dim);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.tree .label{color:#c8c8c8;font:500 14px/20px var(--display)}
-.tree .score{color:var(--muted)}
-.tree .discarded>.node .label{color:var(--dim)}
-.tree .new>.node{animation:grow .8s ease-out}
-.tree .new>.node .label{color:#fff}
-@keyframes grow{from{opacity:0;transform:translateY(-10px)}}
-.pulse{animation:pulse 1s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.25}}
+#stats{display:flex;gap:26px;flex-wrap:wrap;flex:none}
+#stats div{color:var(--muted);font-size:12px}
+#stats b{display:block;font:700 32px/1.1 var(--display);color:#fff;letter-spacing:-.02em}
+#stats .ours b{color:var(--ours)}#stats .base b{color:var(--base)}#stats .up b{color:var(--good)}#stats .down b{color:var(--bad)}
+details{position:absolute;right:12px;top:10px;border:1px solid var(--edge);background:var(--bg);padding:6px 10px;font-size:12px;z-index:2}
+summary{cursor:pointer;color:var(--muted)}
+details div{display:flex;gap:8px;align-items:center;margin-top:4px}
+.sw{width:24px;height:0;border-top:3px solid var(--ours)}.sw.base{border-top:3px dashed var(--base)}.sw.fill{height:10px;border:0;background:#3ddc8440}
+#methods{flex:none;border-top:1px solid var(--line);padding-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.method{border:1px solid var(--edge);padding:3px 10px;font:600 14px var(--display);color:#fff}
+.method small{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+.method.dropped{color:var(--dim);text-decoration:line-through;border-color:var(--line)}.method.dropped small{color:var(--bad);text-decoration:none;display:inline-block}
+.method.kept small{color:var(--good)}
+.method.used{border-color:var(--ours);box-shadow:0 0 10px #3ddc8455}.method.used small{color:var(--ours)}
+.method.trying{border-color:var(--writer)}.method.trying small{color:var(--writer);animation:pulse 1.2s ease-in-out infinite}
+.method.new{animation:arrive 1.6s ease-out}
+@keyframes arrive{from{opacity:0;transform:translateY(10px);box-shadow:0 0 24px #fff}}
+.land{animation:land 1.6s ease-out}
+@keyframes land{from{opacity:0;r:22}}
+@keyframes pulse{50%{opacity:.3}}
 </style>
 </head>
 <body>
 
-<div class="top">
-  <h1>rsis live view</h1>
-  <span class="stat">run <select id="run"></select></span>
-  <span class="stat">loop <b id="phase">…</b></span>
-  <span class="stat">current method <b id="current">…</b></span>
-  <span class="stat">best test <b id="best">…</b></span>
-  <span class="stat">searches <b id="done">…</b></span>
-  <span class="stat">Telem <b id="spend">…</b></span>
-  <span id="error"></span>
-</div>
-
-<div>
+<div class="panel">
+  <div class="label">Question</div>
+  <div id="question">…</div>
   <div id="tabs"></div>
-  <div id="about"></div>
 </div>
 
-<div class="grid">
+<div class="panel" id="lights"></div>
+
+<div class="main">
   <div class="panel">
-    <h2 title="Loop row: read from the files the run has written. Agent rows: each token replays the transitions in that agent's Pi event stream, in order.">Active state</h2>
-    <svg class="chart" id="machine" viewBox="0 0 990 462"></svg>
-  </div>
-  <div class="panel tree">
-    <h2 id="tree-title">Run tree</h2>
-    <div class="fill" id="tree"></div>
+    <div class="label" title="Top row: the loop, read from the files the run has written. Below: each agent's token replays the steps in its own event stream.">What is happening now</div>
+    <svg class="fit" id="machine" viewBox="0 0 990 462"></svg>
   </div>
   <div class="panel">
-    <h2>Agents</h2>
-    <div id="agents"></div>
-  </div>
-  <div class="panel">
-    <h2 title="Line: each iteration's winner re-run on the fixed held-out test tasks. Dots left of a column: that iteration's candidates at their score on its two select tasks; the tick is the current method on the same two tasks. The two are different task sets." id="chart-title">Method iterations</h2>
-    <svg class="chart" id="chart" viewBox="0 0 900 420"></svg>
+    <div class="label">Score, same search budget</div>
+    <div id="stats"></div>
+    <details open><summary>Legend</summary>
+      <div><span class="sw"></span>Ours</div><div><span class="sw base"></span>Plain search</div><div><span class="sw fill"></span>Ahead of plain search</div>
+    </details>
+    <svg class="fit" id="chart" viewBox="0 0 900 400"></svg>
+    <div id="methods"></div>
   </div>
 </div>
 
 <script>
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const num = (v, d = 2) => (v == null ? "–" : Number(v).toFixed(d));
-const FRAME = "M5 2H2v12h3m10-12h3v12h-3";
-const GLYPH = { in_progress: "M6 9c2-5 6 4 8-2", resolved: "M6 8l3 3 5-7", discarded: "m-8-9 6 6m0-6-6 6", not_examined: "" };
-const view = new URLSearchParams(location.search);   // run: a chosen run, else follow the latest; task: one question, else the whole run
-const choose = (key, value) => {
-  value ? view.set(key, value) : view.delete(key);
-  if (key === "run") view.delete("task");
-  history.replaceState(null, "", "?" + view);
-  poll().catch(() => {});
-};
-let seen = null;
+const pct = (v) => (v == null ? "–" : Math.round(v * 100) + "%");
+const pretty = (name) => name.replaceAll("_", " ");
+const methodName = (id) => (id === "v000" ? "plain search" : /^v\d+$/.test(id) ? "method " + Number(id.slice(1)) : id);
+const view = new URLSearchParams(location.search);   // task: one question, else every unseen question; run: a named run, else the latest
+const put = (el, html) => { if (el.dataset.html !== html) el.innerHTML = el.dataset.html = html; };   // unchanged parts stay put: clicks land, arrivals animate once
+let knownMethods = null;
 
 // The state machine. Blocks are states, arrows are transitions; [x, y, label, width]. A null label is a junction dot.
 const W = 96, H = 32;
@@ -287,6 +254,7 @@ function machine(s) {
       const catchUp = first || !a.running;
       tk = token(a.id, catchUp ? a.path[a.path.length - 1] || null : "begin");
       tk.played = catchUp ? a.path.length : 0;
+      tk.dot.style.fill = a.role === "improver" ? "var(--writer)" : "var(--search)";
     }
     while (tk.played < a.path.length) step(tk, a.path[tk.played++]);
   }
@@ -302,173 +270,93 @@ function machine(s) {
   $("judge-total").textContent = judging.length ? `${judging.reduce((n, a) => n + a.judge.checked, 0)}/${judging.reduce((n, a) => n + a.judge.to_check, 0)} checked` : "";
 }
 
-const MARK = { turn: "", think: "~ ", say: "> ", call: "→ ", result: "← ", hit: "· ", error: "! ", judge: "⚖ ", verdict: "⚖ " };
 
-function agents(s) {
-  const box = $("agents"), ids = new Set(s.agents.map((a) => a.id));
-  for (const el of [...box.children]) if (!ids.has(el.dataset.id)) el.remove();
-  if (!s.agents.length) { box.innerHTML = `<div class="quiet" data-id="">No Pi agent has written a log in this run yet.</div>`; return; }
-  for (const a of s.agents) {
-    let el = box.querySelector(`[data-id="${a.id}"]`);
-    if (!el) {
-      el = document.createElement("div"); el.className = "agent"; el.dataset.id = a.id;
-      el.innerHTML = `<div class="head"></div><div class="log"></div>`;
-      box.appendChild(el);
-    }
-    el.classList.toggle("idle", !a.running);
-    const chip = a.state === "judging" ? `judging ${a.judge.checked}/${a.judge.to_check} · ${Math.round(a.scoring_s)}s` : a.state === "scoring" ? `key match ${Math.round(a.scoring_s)}s` : a.state === "done" && a.score ? `scored ${num(a.score.score)}` : a.state;
-    const facts = [`${a.turns} turns`, `${Math.round(a.agent_s)}s agent`];
-    if (a.scoring_s != null && a.state === "done") facts.push(`${Math.round(a.scoring_s)}s scoring`);
-    if (a.judge) facts.push(`judge ${a.judge.checked}/${a.judge.to_check} checked, ${a.judge.reused} reused`);
-    if (a.left != null) facts.push(`$${num(a.left, 3)} left of $${num(a.budget, 2)}`);
-    if (a.score) facts.push(`${a.score.correct} correct, ${a.score.wrong} wrong of ${a.score.total}`);
-    el.querySelector(".head").innerHTML =
-      `<div><span class="chip ${esc(a.state)}">${esc(chip)}</span><span class="role">${esc(a.role)}</span> ${esc(a.method || "")} <span class="sub">${esc(a.model || "model not reported yet")}</span></div>` +
-      `<div class="sub" title="${esc(a.task)}">${esc(a.task)}</div><div class="sub">${esc(facts.join(" · "))}</div>`;
-    if (el.dataset.v !== a.v) {
-      const log = el.querySelector(".log"), stick = log.scrollHeight - log.scrollTop - log.clientHeight < 40;
-      log.innerHTML = a.lines.map(([k, text]) => `<div class="${k}">${MARK[k] ?? ""}${esc(text)}</div>`).join("") +
-        (a.live ? `<div class="live">${esc(a.live.slice(-400))}</div>` : "");
-      if (stick) log.scrollTop = log.scrollHeight;
-      el.dataset.v = a.v;
-    }
-  }
+function lights(s) {
+  const running = s.agents.filter((a) => a.running);
+  const searching = running.filter((a) => a.role !== "improver" && !["scoring", "judging"].includes(a.state)).length;
+  const writing = running.some((a) => a.role === "improver");
+  const judged = s.agents.filter((a) => a.judge && !a.judge.done);
+  const checked = judged.reduce((n, a) => n + a.judge.checked, 0), toCheck = judged.reduce((n, a) => n + a.judge.to_check, 0);
+  const light = (on, colour, text) => `<div class="light ${on ? "" : "off"}" style="--c:var(--${colour})"><i></i>${text}</div>`;
+  put($("lights"), `<strong>RSIS</strong>` +
+    light(searching, "search", searching ? `${searching} searching` : "searchers") +
+    light(writing, "writer", writing ? "writing new methods" : "method writer") +
+    light(judged.length, "judge", judged.length ? `judge ${checked} / ${toCheck}` : "judge") +
+    (s.failed ? `<div class="light alert" style="--c:var(--bad)" title="${esc(s.last_error)}"><i></i>${s.failed} failed</div>` : ""));
 }
 
-// One question: each scored search of it, the verdict on every answer it handed in, and the answers it missed.
-const VERDICT = { correct: "resolved", verified_gap: "resolved", wrong: "discarded", unsupported: "discarded", duplicate: "not_examined" };
-function answers(s) {
-  const node = (status, kind, label, note, title, inner) =>
-    `<li class="${status}"><div class="node" title="${esc(title)}"><svg class="pip" viewBox="0 0 20 16" style="color:var(--${status === "discarded" ? "urgent" : status})"><path d="${FRAME}${GLYPH[status]}"/></svg>` +
-    `<span class="kind">${esc(kind)}</span><span class="label">${esc(label)}</span><span class="score">${esc(note)}</span></div>${inner ? `<ul>${inner}</ul>` : ""}</li>`;
-  const searches = s.task_searches.map((x) => node("resolved", "search", `${x.method} ${x.role}${x.round ? " r" + x.round : ""}`,
-    `${num(x.score)} · ${x.correct} correct, ${x.wrong} wrong of ${x.total}`, x.attempt_id,
-    x.answers.map((a) => node(VERDICT[a.status] || "not_examined", a.status === "verified_gap" ? "verified by judge" : a.status, a.name, a.reason || "", a.url || "")).join("") +
-    x.missed.map((m) => node("not_examined", "missed", m, "", "")).join("")));
-  return searches.length ? `<h2 style="margin-top:12px">Answers handed in</h2><ul>${searches.join("")}</ul>` : `<div class="empty">No search of this question has been scored yet.</div>`;
-}
+// Ours against plain search. Every unseen question: one point per round. One question: one point per search of it.
+function score(s) {
+  const st = s.state || {}, task = s.task_searches;
+  const base = task ? s.baseline : st.baseline_test;
+  const points = task ? task.map((x) => ({ v: x.score, label: methodName(x.method) }))
+    : [...(base == null ? [] : [{ v: base, label: "start" }]), ...(st.test_points || []).map((p) => ({ v: p.test, label: String(p.round) }))];
+  const mine = task ? [...task].reverse().find((x) => x.method === st.current) || task[task.length - 1] : null;
+  const ours = task ? mine && mine.score : points.length ? points[points.length - 1].v : null;
+  const gap = ours == null || base == null ? null : Math.round((ours - base) * 100);
+  put($("stats"),
+    `<div class="ours"><b>${pct(ours)}</b>Ours${mine ? ` · ${mine.correct} of ${mine.total}` : ""}</div>` +
+    `<div class="base"><b>${pct(base)}</b>Plain search</div>` +
+    `<div class="${gap > 0 ? "up" : gap < 0 ? "down" : ""}"><b>${gap == null ? "–" : (gap > 0 ? "+" : "") + gap}</b>points</div>` +
+    `<div><b>${esc(methodName(st.current || "v000"))}</b>in use</div>` +
+    `<div><b>${s.searches_done}</b>searches</div><div><b>$${Number(s.spend).toFixed(2)}</b>spent</div>`);
 
-// One question: the score of each search of it, in the order they were scored.
-function scores(s) {
-  const L = 70, R = 860, T = 40, B = 360, y = (v) => B - (B - T) * Math.max(0, Math.min(1, v));
-  const xs = s.task_searches, step = (R - L) / Math.max(4, xs.length), x = (i) => L + (i + 0.5) * step;
+  const L = 60, R = 860, T = 30, B = 340, n = Math.max(5, points.length);
+  const x = (i) => L + (i + 0.5) * (R - L) / n, y = (v) => B - (B - T) * Math.max(0, Math.min(1, v));
   let out = "";
   for (const v of [0, 0.25, 0.5, 0.75, 1])
-    out += `<line x1="${L}" x2="${R}" y1="${y(v)}" y2="${y(v)}" stroke="${v === 1 ? "#6f6f6f" : "#202020"}" ${v === 1 ? 'stroke-dasharray="6 5"' : ""}/>` +
-      `<text x="${L - 12}" y="${y(v) + 4}" fill="#585858" font-size="12" text-anchor="end">${v}</text>`;
-  out += `<text x="${R}" y="${T - 10}" fill="#8c8c8c" font-size="12" text-anchor="end">1.0 = every answer found, nothing wrong</text>`;
-  if (s.baseline != null)
-    out += `<line x1="${L}" x2="${R}" y1="${y(s.baseline)}" y2="${y(s.baseline)}" stroke="var(--in_progress)" stroke-dasharray="6 5"/>` +
-      `<text x="${R}" y="${y(s.baseline) - 6}" fill="var(--in_progress)" font-size="12" text-anchor="end">baseline v000 ${num(s.baseline)}</text>`;
-  if (xs.length > 1) out += `<polyline points="${xs.map((p, i) => `${x(i)},${y(p.score)}`).join(" ")}" fill="none" stroke="#fff" stroke-width="2"/>`;
-  xs.forEach((p, i) => {
-    out += `<circle cx="${x(i)}" cy="${y(p.score)}" r="5.5" fill="#fff"/>` +
-      `<text x="${x(i)}" y="${y(p.score) - 12}" fill="#fff" font-size="12" text-anchor="middle">${num(p.score)} (${p.correct}/${p.total})</text>` +
-      `<text x="${x(i)}" y="${B + 24}" fill="#8c8c8c" font-size="12" text-anchor="middle">${esc(p.method)}</text>` +
-      `<text x="${x(i)}" y="${B + 42}" fill="#585858" font-size="11" text-anchor="middle">${esc(p.role)}${p.round ? " r" + p.round : ""}</text>`;
+    out += `<line x1="${L}" x2="${R}" y1="${y(v)}" y2="${y(v)}" stroke="#202020"/><text x="${L - 10}" y="${y(v) + 5}" fill="#8c8c8c" font-size="13" text-anchor="end">${v * 100}%</text>`;
+  out += `<text x="${L}" y="${T - 12}" fill="#585858" font-size="12">100% = every answer found, none wrong</text>`;
+  if (base != null) {
+    if (points.length > 1)
+      out += `<polygon points="${points.map((p, i) => `${x(i)},${y(Math.max(p.v, base))}`).join(" ")} ${x(points.length - 1)},${y(base)} ${x(0)},${y(base)}" fill="#3ddc8440"/>`;
+    out += `<line x1="${L}" x2="${R}" y1="${y(base)}" y2="${y(base)}" stroke="var(--base)" stroke-width="3" stroke-dasharray="9 7"/>` +
+      `<text x="${R}" y="${y(base) + 20}" fill="var(--base)" font-size="15" font-weight="700" text-anchor="end">Plain search ${pct(base)}</text>`;
+  }
+  if (points.length > 1) out += `<polyline points="${points.map((p, i) => `${x(i)},${y(p.v)}`).join(" ")}" fill="none" stroke="var(--ours)" stroke-width="4" stroke-linejoin="round"/>`;
+  points.forEach((p, i) => {
+    const last = i === points.length - 1;
+    out += `<circle cx="${x(i)}" cy="${y(p.v)}" r="${last ? 9 : 6}" fill="var(--ours)" ${last ? 'class="land"' : ""}/>` +
+      `<text x="${x(i)}" y="${y(p.v) - 16}" fill="#fff" font-size="${last ? 18 : 13}" font-weight="700" text-anchor="middle">${last && !task ? "Ours " : ""}${pct(p.v)}</text>` +
+      `<text x="${x(i)}" y="${B + 22}" fill="#8c8c8c" font-size="12" text-anchor="middle">${esc(p.label)}</text>`;
   });
-  $("chart").innerHTML = out;
+  if (!task) out += `<text x="${(L + R) / 2}" y="${B + 44}" fill="#585858" font-size="12" text-anchor="middle">round</text>`;
+  put($("chart"), out);
 }
 
-function tree(s) {
-  const below = s.task ? answers(s) : "";
-  if (!s.nodes.length) {
-    $("tree").innerHTML = `<div class="empty">No tree in this run yet. The loop writes it (python -m rsis round); a single trial search does not.</div>` + below;
-    return;
-  }
-  const here = {};                 // on a question tab: each method's scores on this question
-  for (const x of s.task_searches || []) (here[x.method] ||= []).push(num(x.score));
-  const by = new Map(s.nodes.map((n) => [n.id, { ...n, children: [] }])), roots = [];
-  for (const n of by.values()) (n.parent && by.has(n.parent) ? by.get(n.parent).children : roots).push(n);
-  const fresh = seen ? new Set(s.nodes.filter((n) => !seen.has(n.id)).map((n) => n.id)) : new Set();
-  seen = new Set(s.nodes.map((n) => n.id));
-  const li = (n) => {
-    const status = n.status in GLYPH ? n.status : "not_examined";
-    return `<li class="${status} ${fresh.has(n.id) ? "new" : ""}"><div class="node" title="${esc(n.summary)}">` +
-      `<svg class="pip" viewBox="0 0 20 16" style="color:var(--${status})"><title>${esc(n.status)}</title><path d="${FRAME}${GLYPH[status]}"/></svg>` +
-      `<span class="kind">${esc(n.kind)}</span><span class="label">${esc(n.name)}</span>` +
-      (here[n.method] ? `<span class="score">this question ${here[n.method].join(", ")}</span>` : n.select_score != null ? `<span class="score">select ${num(n.select_score)}</span>` : "") + `</div>` +
-      (n.children.length ? `<ul>${n.children.map(li).join("")}</ul>` : "") + `</li>`;
-  };
-  $("tree").innerHTML = `<ul>${roots.map(li).join("")}</ul>` + below;
-}
-
-function chart(s) {
-  const st = s.state || {}, points = st.test_points || [];
-  const L = 70, R = 860, T = 40, B = 360, y = (v) => B - (B - T) * Math.max(0, Math.min(1, v));
-  const cols = Math.max(4, points.length, s.iteration || 0, ...s.methods.map((m) => m.round || 0));
-  const step = (R - L) / cols, x = (i) => L + i * step;
-  let out = "";
-  for (const v of [0, 0.25, 0.5, 0.75, 1])
-    out += `<line x1="${L}" x2="${R}" y1="${y(v)}" y2="${y(v)}" stroke="${v === 1 ? "#6f6f6f" : "#202020"}" ${v === 1 ? 'stroke-dasharray="6 5"' : ""}/>` +
-      `<text x="${L - 12}" y="${y(v) + 4}" fill="#585858" font-size="12" text-anchor="end">${v}</text>`;
-  out += `<text x="${R}" y="${T - 10}" fill="#8c8c8c" font-size="12" text-anchor="end">1.0 = every answer found, nothing wrong</text>`;
-  for (let i = 0; i <= cols; i++) out += `<text x="${x(i)}" y="${B + 24}" fill="#585858" font-size="12" text-anchor="middle">${i === 0 ? "seed" : i}</text>`;
-  out += `<text x="${(L + R) / 2}" y="${B + 48}" fill="#585858" font-size="12" text-anchor="middle">iteration</text>`;
-  if (st.baseline_test != null) {
-    const n = st.noise || 0;
-    out += `<rect x="${L}" width="${R - L}" y="${y(st.baseline_test + n)}" height="${Math.max(1, y(st.baseline_test - n) - y(st.baseline_test + n))}" fill="#ffffff0a"/>` +
-      `<line x1="${L}" x2="${R}" y1="${y(st.baseline_test)}" y2="${y(st.baseline_test)}" stroke="#8c8c8c" stroke-dasharray="2 5"/>` +
-      `<text x="${R}" y="${y(st.baseline_test) - 6}" fill="#8c8c8c" font-size="12" text-anchor="end">v000 baseline ${num(st.baseline_test)} ± ${num(n)}</text>`;
-  }
-  // The winner's test re-run, one point per finished iteration, starting from the seed.
-  const main = [{ x: x(0), y: y(st.baseline_test ?? 0), id: "v000", known: st.baseline_test != null }];
-  for (const p of points) main.push({ x: x(p.round), y: y(p.test), id: p.method, known: true, adopted: p.adopted, test: p.test, breakout: p.breakout });
-  // Candidates branch from the winner of the iteration before.
-  for (const m of s.methods) {
-    if (!m.round || m.status === "recursion-test") continue;
-    const from = main[Math.min(m.round - 1, main.length - 1)], p = points.find((q) => q.round === m.round);
-    const score = p && p.select ? p.select[m.id] : m.select_score;
-    const cx = x(m.round) - step * 0.38, cy = score == null ? from.y : y(score);
-    const colour = m.status === "adopted" || m.status === "superseded" ? "var(--resolved)" : m.status === "discarded" ? "#5a5a5a" : "var(--in_progress)";
-    out += `<line x1="${from.x}" y1="${from.y}" x2="${cx}" y2="${cy}" stroke="${colour}" stroke-width="1"/>` +
-      `<circle cx="${cx}" cy="${cy}" r="4" fill="${m.status === "discarded" ? "#060606" : colour}" stroke="${colour}" class="${m.status === "candidate" ? "pulse" : ""}"><title>${esc(m.id)} ${esc(m.status)}${score == null ? "" : " select " + num(score)}</title></circle>` +
-      `<text x="${cx}" y="${cy - 9}" fill="${colour}" font-size="11" text-anchor="middle">${esc(m.id)}</text>`;
-    const cur = p && p.select ? p.select[m.parent] : null;
-    if (cur != null) out += `<line x1="${cx - 9}" x2="${cx + 9}" y1="${y(cur)}" y2="${y(cur)}" stroke="#8c8c8c"><title>${esc(m.parent)} select ${num(cur)}</title></line>`;
-  }
-  out += `<polyline points="${main.map((p) => `${p.x},${p.y}`).join(" ")}" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>`;
-  for (const p of main)
-    out += `<circle cx="${p.x}" cy="${p.y}" r="5.5" fill="${p.adopted || (p.id === "v000" && p.known) ? "#fff" : "#060606"}" stroke="#fff" stroke-width="1.5"/>` +
-      `<text x="${p.x + 9}" y="${p.y - 9}" fill="#fff" font-size="12">${esc(p.id)}${p.test != null ? " " + num(p.test) : p.known ? "" : " (not calibrated)"}${p.breakout ? " breakout" : ""}</text>`;
-  if (s.iteration) out += `<text x="${x(s.iteration)}" y="${T + 16}" fill="var(--in_progress)" font-size="12" text-anchor="middle" class="pulse">${esc(s.phase)}</text>`;
-  $("chart").innerHTML = out;
+function methods(s) {
+  const current = (s.state || {}).current;
+  const state = (m) => m.id === current ? ["used", "in use"] : m.status === "discarded" ? ["dropped", "dropped"] : m.status === "candidate" ? ["trying", "trying"] : ["kept", "kept"];
+  const list = s.methods.filter((m) => m.id !== "v000" && m.status !== "recursion-test"), shown = list.slice(-6);
+  const fresh = knownMethods ? new Set(list.filter((m) => !knownMethods.has(m.id)).map((m) => m.id)) : new Set();
+  put($("methods"), `<span class="label" style="margin:0">Methods tried</span>` + (list.length > shown.length ? `<span style="color:var(--dim)">+${list.length - shown.length} earlier</span>` : "") +
+    (shown.map((m) => { const [c, text] = state(m); return `<span class="method ${c} ${fresh.has(m.id) ? "new" : ""}"><small>${text}</small>${esc(methodName(m.id))}</span>`; }).join("") || `<span style="color:var(--dim)">none yet</span>`));
+  knownMethods = new Set(list.map((m) => m.id));
 }
 
 function render(s) {
-  if (!s.name) { $("run").innerHTML = "<option>no runs yet</option>"; return; }
-  const st = s.state || {};
-  const runs = `<option value="">latest (${esc(s.runs[0])})</option>` + s.runs.map((r) => `<option>${esc(r)}</option>`).join("");
-  if ($("run").dataset.runs !== runs) { $("run").innerHTML = $("run").dataset.runs = runs; }
-  $("run").value = view.get("run") || "";
+  if (!s.name) { put($("question"), "No run yet"); return; }
   const tab = (name, label) => `<button class="tab ${(s.task || "") === name ? "on" : ""}" data-task="${esc(name)}">${label}</button>`;
-  const tabs = tab("", "whole run") + s.tasks.map((t) => {
+  put($("tabs"), tab("", "All unseen questions") + s.tasks.map((t) => {
     const best = Math.max(-1, ...t.searches.map((x) => x.score));
-    return tab(t.name, esc(t.name) + (t.running ? ` <span class="live">● ${t.running}</span>` : "") + (best >= 0 ? ` ${num(best)}` : ""));
-  }).join("");
-  if ($("tabs").dataset.tabs !== tabs) { $("tabs").innerHTML = $("tabs").dataset.tabs = tabs; }   // unchanged tabs stay put, so a click lands
+    return tab(t.name, esc(pretty(t.name)) + (t.running ? ` <i>●</i>` : "") + (best >= 0 ? ` <b>${pct(best)}</b>` : ""));
+  }).join(""));
   const t = s.tasks.find((x) => x.name === s.task);
-  $("about").innerHTML = t ? `<span title="${esc(t.question)}"><b>${esc(t.question)}</b></span>` : "";
-  $("about").innerHTML += t ? " · " + (t.searches.map((x) => `${esc(x.method)} ${esc(x.role)}${x.round ? " r" + x.round : ""} <b>${num(x.score)}</b> (${x.correct} correct, ${x.wrong} wrong of ${x.total})`).join(" · ") || "no scored search yet") : "";
-  $("phase").textContent = s.phase + (s.iteration ? `, iteration ${s.iteration}` : "");
-  $("current").textContent = st.current || "–";
-  $("best").textContent = num(st.best_test);
-  $("done").textContent = s.searches_done + (s.failed ? `, ${s.failed} failed` : "");
-  $("spend").textContent = "$" + num(s.spend, 3);
-  $("error").textContent = s.last_error ? `last failure: ${s.last_error}` : "";
-
-  $("chart-title").textContent = s.task ? "Scores on this question" : "Method iterations";
-  machine(s); agents(s);
-  tree(s);
-  s.task ? scores(s) : chart(s);
+  put($("question"), esc(t ? t.question : "Average over the questions the method never trained on"));
+  lights(s); machine(s); score(s); methods(s);
 }
 
 async function poll() {
   const r = await fetch(`/api/run?name=${encodeURIComponent(view.get("run") || "")}&task=${encodeURIComponent(view.get("task") || "")}`);
   render(await r.json());
 }
-$("run").onchange = (e) => choose("run", e.target.value);
-$("tabs").onclick = (e) => { const b = e.target.closest(".tab"); if (b) choose("task", b.dataset.task); };
+$("tabs").onclick = (e) => {
+  const b = e.target.closest(".tab");
+  if (!b) return;
+  b.dataset.task ? view.set("task", b.dataset.task) : view.delete("task");
+  history.replaceState(null, "", "?" + view);
+  poll().catch(() => {});
+};
 poll();
 setInterval(() => poll().catch(() => {}), 500);
 </script>
