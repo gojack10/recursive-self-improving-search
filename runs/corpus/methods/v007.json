@@ -17,7 +17,7 @@
  },
  "routing_rules": "Parallel alone, default tier, 8 results for baseline and residual discovery, 4 for exact missing-fact checks. No routine also variants or broad auto-routing. Price candidate batches as the sum of queries and provider charges; fewer results are not presumed cheaper. Exa alone with 4 results for selected unresolved identities where ambiguity, conflicting evidence or inaccessibility warrants the higher cost. At most one initial Exa discovery probe after Parallel stagnation, continued only if it contributes useful new identities or evidence. Try a genuinely different scope partition on Parallel before buying provider diversity for a repetitive query. Authoritative-domain filters are for targeted evidence, not general frontier coverage; relax failed filters. Use publication-date filters only when publication date itself determines eligibility, and verify effective dates in content.",
  "fetch_policy": "Reuse cached source facts. Fetch authoritative pages that can settle missing identity or predicates, and useful multi-candidate lists, rather than every result. When a list is used for scope coverage, inspect its stated subtype, date range and pagination/section links; an excerpt or one section is not an exhausted category. Follow only sections tied to a promising uncovered partition, without committing to bulk census extraction. After a blocked or uninformative page, make one targeted alternate-source attempt rather than a fetch chain.",
- "status": "adopted",
+ "status": "superseded",
  "node": "cc0ca3f3-3e07-40c0-bf09-24974de3b7b3",
  "created": "2026-11-14T15:23:22",
  "select_score": 0.8971,

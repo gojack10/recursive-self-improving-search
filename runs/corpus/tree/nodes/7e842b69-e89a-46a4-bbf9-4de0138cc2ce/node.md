@@ -25,3 +25,5 @@ Both attempts returned only correct items but left the population incompletely i
 - Round 5: seen again in attempt 8dc4c7b9b7: Repeated conjunction variants and familiar-name queries persisted despite v007's pivot rule; 48 searches still returned three of four items. This repeats the coverage-control failure, not evidence for a newly identified missing subtype.
 
 - Round 5: seen again in attempt 59f7c7f036: Discovery repeatedly restricted the population to familiar occupations and feature types, followed by large familiar-name checks; a partial list was not converted into explicit record coverage. The matched successful attempt supports testing record inspection, but does not establish causality.
+
+- Round 6: seen again in attempt 07f00b5bba: Repeated conjunction variants and familiar-name checks returned three of four items with funds remaining. This repeats incomplete coverage; the trace does not establish the identity or subtype of the missed item.

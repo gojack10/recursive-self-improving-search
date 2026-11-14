@@ -2,7 +2,7 @@
 id: "583d8a24-587a-4a61-912a-115de34f88d1"
 name: "Method v010"
 micro_summary: "Test a conditional record-level join instead of relying on search rankings to surface intersections. The full-recall 387787ee6f inspected list sections and checked source-backed identities, whereas 59"
-status: "in_progress"
+status: "discarded"
 kind: "Idea"
 see_also: []
 ---
@@ -34,3 +34,5 @@ Parent: v007
  "status": "candidate"
 }
 ```
+
+Discarded in round 5: select 0.692 vs current 0.875.

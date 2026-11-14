@@ -2,7 +2,7 @@
 id: "19febaf5-6ef3-49be-ba5b-92482a64fb08"
 name: "Method v009"
 micro_summary: "Make v007's largely advisory pivot rule executable through query admission and persistent cooldowns. The inspected 48-search attempt illustrates noncompliance rather than disproving the pivot hypothes"
-status: "in_progress"
+status: "discarded"
 kind: "Idea"
 see_also: []
 ---
@@ -34,3 +34,5 @@ Parent: v007
  "status": "candidate"
 }
 ```
+
+Discarded in round 5: select 0.861 vs current 0.875.

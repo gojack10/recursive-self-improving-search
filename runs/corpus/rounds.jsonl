@@ -2,3 +2,4 @@
 {"t": 1794697878.84, "round": 2, "method": "v003", "test": 0.7364, "adopted": true, "select": {"v002": 0.7928, "v003": 0.9118, "v004": 0.6323}, "train": 1.0, "breakout": false, "new_lessons": true, "telem_total": 3.0871, "tavily_credits": 88}
 {"t": 1794698430.21, "round": 3, "method": "v006", "test": 0.7659, "adopted": true, "select": {"v003": 0.7778, "v005": 0.7916, "v006": 0.8334}, "train": 0.9375, "breakout": true, "new_lessons": true, "telem_total": 3.8891, "tavily_credits": 99}
 {"t": 1794698982.47, "round": 4, "method": "v007", "test": 0.809, "adopted": true, "select": {"v006": 0.8516, "v007": 0.8971, "v008": 0.3824}, "train": 0.95, "breakout": true, "new_lessons": true, "telem_total": 4.6121, "tavily_credits": 107}
+{"t": 1794700281.53, "round": 5, "method": "v007", "test": 0.7566, "adopted": false, "select": {"v007": 0.875, "v009": 0.8611, "v010": 0.6917}, "train": 0.75, "breakout": false, "new_lessons": false, "telem_total": 6.219, "tavily_credits": 5}
