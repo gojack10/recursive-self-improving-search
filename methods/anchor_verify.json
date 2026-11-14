@@ -1,0 +1,9 @@
+{
+ "id": "anchor_verify",
+ "parent": "v000",
+ "rationale": "Hand-written anchor-and-verify tactic for 'X and Y' hunts: enumerate the more listable condition from list pages, then verify the other condition per candidate with cheap batched checks.",
+ "instructions": "Every hunt asks for items meeting condition X AND condition Y.\n1. Plan: decide which condition is easier to enumerate as a complete list (an award's winners, an architect's works, a profession's members). That is the anchor. The other is the filter.\n2. Enumerate the anchor: search for list and category pages ('list of ...', '... winners', '... works'), with query variants in one batch via 'also'. Fetch the one or two most complete list pages and extract every candidate.\n3. If the intersection itself has a list page (e.g. 'novels that won both ...', 'physician astronauts'), search for it first; it can replace step 2.\n4. Verify the filter: send all candidates to check_candidates with the filter condition as search words. Keep a candidate only when a result clearly shows it meets the filter.\n5. Spend leftover budget enumerating from a second, differently phrased list source to catch candidates the first list missed, then verify those too.\n6. Submit only verified items, each with the URL that showed the filter condition. Never submit items that meet only one condition.",
+ "routing": {"auto_routing": false, "providers": ["exa", "brave"], "tier": "default", "num_results": 10, "verify_providers": ["parallel"]},
+ "routing_rules": "Use exa for semantic list discovery ('list of ...'), brave for exact names and category pages. Restrict to en.wikipedia.org with include_domains when looking for list or category pages. Use the cheap verify route for check_candidates.",
+ "fetch_policy": "Fetch list pages during enumeration. Do not fetch pages for single-candidate verification unless the check results are ambiguous."
+}

@@ -24,7 +24,8 @@ PROPOSE_TOOL = tool("propose", "Finish: record lessons, link repeated failures t
         "rationale": {"type": "string"}, "instructions": {"type": "string"},
         "routing": {"type": "object", "properties": {
             "auto_routing": {"type": "boolean"}, "providers": {"type": "array", "items": {"type": "string"}},
-            "tier": {"type": "string"}, "num_results": {"type": "integer"}}},
+            "tier": {"type": "string"}, "num_results": {"type": "integer"},
+            "verify_providers": {"type": "array", "items": {"type": "string"}}}},
         "routing_rules": {"type": "string"}, "fetch_policy": {"type": "string"}},
         "required": ["rationale", "instructions", "routing", "routing_rules", "fetch_policy"]}}},
     ["lessons", "candidates"])
@@ -34,7 +35,9 @@ verified finds and penalizes wrong ones. Your job is to write {k} candidate succ
 hunts nobody has seen yet, at the same Telem budget. Candidates must be general tactics, not answers to past hunts.
 
 The method controls the searcher's instructions and its routing across Telem's providers (which engines, auto-routing,
-tier, results per provider, domain and date filters, when to fetch). Provider spend comes out of a fixed budget, so a
+tier, results per provider, domain and date filters, when to fetch, and which providers check_candidates uses).
+Every hunt is "items that meet condition X and condition Y". Searchers can enumerate one side and verify the other
+with check_candidates; which side to anchor on, and how to route each phase, are part of the method. Provider spend comes out of a fixed budget, so a
 cheaper route buys more searches. Use the provider yield table: it attributes each correct find to the providers that
 surfaced its evidence.
 
@@ -62,7 +65,8 @@ def context(run_dir, start, attempt_ids, extra="", as_of_round=None):
             f"Provider yield:\n```json\n{json.dumps(H.provider_yield(run_dir, rows), indent=1)}\n```\n\n"
             f"Attempts you may open with read_attempt (train hunts only):\n"
             + "\n".join(json.dumps({k: r[k] for k in ('attempt_id', 'method', 'hunt', 'kind', 'score', 'correct', 'wrong',
-                                                         'total', 'spent', 'searches', 'fetches')}) for r in att) + extra)
+                                                         'total', 'x_only', 'y_only', 'spent', 'searches', 'fetches') if k in r}) for r in att)
+            + "\n\nx_only / y_only count wrong finds that met only one of the hunt's two conditions." + extra)
 
 
 def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improver", extra="",
@@ -105,7 +109,8 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
                         ref = log.get("referee", {})
                         out = {"hunt": log["hunt"], "notes": log["notes"], "trace": log["trace"][:40],
                                "telem_calls": log["telem_calls"][:40], "spent": log["telem_spent"],
-                               "verdicts": [{kk: r.get(kk) for kk in ("name", "status", "providers")} for r in ref.get("rows", [])],
+                               "conditions": {"x": log.get("x"), "y": log.get("y")},
+                               "verdicts": [{kk: r.get(kk) for kk in ("name", "status", "half", "providers")} for r in ref.get("rows", [])],
                                "missed_count": len(ref.get("missed", []))}
                 elif name == "web_search":
                     out = run_search(search_method, args.pop("query", "") or "search tactics for exhaustive list finding", args, telem)

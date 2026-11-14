@@ -36,4 +36,5 @@ def render(m):
     default = "Telem auto-routing (accuracy)" if r.get("auto_routing") else f"providers {r.get('providers')}"
     return (f"## Search method {m['id']}\n\n{m['instructions']}\n\n### Routing policy\n"
             f"Default route: {default}, tier {r.get('tier', 'default')}, {r.get('num_results', 8)} results per provider.\n"
+            f"check_candidates route: {r.get('verify_providers') or 'same as default'}.\n"
             f"{m.get('routing_rules', '')}\n\n### Fetch policy\n{m.get('fetch_policy', '')}")

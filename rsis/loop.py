@@ -256,3 +256,18 @@ def recursion_test(name, gens=None):
         print(out[-1], flush=True)
     H.append(d, "recursion_test.jsonl", {"results": out, "hunts": test})
     return out
+
+
+def trial(method_paths, hunt_names=None, repeats=1, name="trials"):
+    """Run hand-written methods head to head on the same hunts and budget. For testing tactics outside the loop."""
+    d = run_dir(name)
+    methods = [json.loads(open(p, encoding="utf-8").read()) for p in method_paths]
+    hunt_names = hunt_names or HU.pool("test")
+    rows = batch(d, [(m, h, "trial") for m in methods for h in hunt_names for _ in range(repeats)], 0)
+    print(f"{'method':16} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
+    for m in methods:
+        rs = [r for r in rows if r["method"] == m["id"] and not r.get("failed")]
+        print(f"{m['id']:16} {mean([r['score'] for r in rs]):6.3f} {sum(r['correct'] for r in rs):8} "
+              f"{sum(r['wrong'] for r in rs):6} {sum(r['x_only'] for r in rs):7} {sum(r['y_only'] for r in rs):7} "
+              f"${sum(r['spent'] for r in rs):6.3f}")
+    return rows

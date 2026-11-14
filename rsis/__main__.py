@@ -32,6 +32,10 @@ p = argparse.ArgumentParser(prog="python -m rsis")
 sub = p.add_subparsers(dest="cmd", required=True)
 sub.add_parser("build-hunts")
 sub.add_parser("smoke")
+tr = sub.add_parser("trial")
+tr.add_argument("methods", nargs="+", help="method JSON files, e.g. methods/v000.json methods/anchor_verify.json")
+tr.add_argument("--hunts", nargs="*")
+tr.add_argument("--repeats", type=int, default=1)
 for c in ("calibrate", "round", "run", "recursion-test", "report"):
     s = sub.add_parser(c)
     s.add_argument("--name", default="main")
@@ -48,6 +52,8 @@ if a.cmd == "build-hunts":
     hunts.build()
 elif a.cmd == "smoke":
     smoke()
+elif a.cmd == "trial":
+    loop.trial(a.methods, a.hunts, a.repeats)
 elif a.cmd == "calibrate":
     loop.calibrate(a.name)
 elif a.cmd == "round":

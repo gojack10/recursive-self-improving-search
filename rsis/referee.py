@@ -41,13 +41,19 @@ def gap_check(name, hunt, judge):
     snippets = "\n".join(f"- {x['title']}: {x['content'][:300]}" for x in r.get("results", []))
     known = "; ".join(t["label"] for t in hunt["truth"])
     v = judge.json(
-        "You check one claimed answer against web evidence. Reply as JSON {\"verdict\": \"yes\"|\"no\"|\"same\", \"reason\": str}. "
+        "You check one claimed answer against web evidence. Reply as JSON {\"verdict\": \"yes\"|\"no\"|\"same\", "
+        "\"meets_x\": bool, \"meets_y\": bool, \"reason\": str}. "
         "Say same if the claimed item is another name for one of the already-known items. "
-        "Say yes only if it is a different item and the evidence clearly shows it satisfies the criterion.",
-        f"Criterion: {hunt['criterion']}\nAlready-known items: {known}\nClaimed item: {name}\n"
+        "Say yes only if it is a different item and the evidence clearly shows it satisfies the criterion. "
+        "meets_x and meets_y say which of the two conditions the evidence supports.",
+        f"Criterion: {hunt['criterion']}\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}\n"
+        f"Already-known items: {known}\nClaimed item: {name}\n"
         f"Tavily answer: {r.get('answer')}\nEvidence:\n{snippets}")
     status = {"yes": "verified_gap", "same": "duplicate"}.get(v.get("verdict"), "wrong")
-    return status, v.get("reason", "")
+    half = None
+    if status == "wrong":
+        half = "x_only" if v.get("meets_x") and not v.get("meets_y") else "y_only" if v.get("meets_y") and not v.get("meets_x") else "neither"
+    return status, v.get("reason", ""), half
 
 
 def score(finds, hunt, url_providers, check_gaps=True):
@@ -69,7 +75,7 @@ def score(finds, hunt, url_providers, check_gaps=True):
             seen.add(qid)
         elif check_gaps and gaps < MAX_GAP_CHECKS:
             gaps += 1
-            row["status"], row["reason"] = gap_check(name, hunt, judge)
+            row["status"], row["reason"], row["half"] = gap_check(name, hunt, judge)
             seen.add(key)
         else:
             row["status"] = "wrong"
@@ -80,4 +86,5 @@ def score(finds, hunt, url_providers, check_gaps=True):
     return {"score": round(max(0.0, correct - WRONG_PENALTY * wrong) / max(total, 1), 4),
             "correct": correct, "wrong": wrong, "total": total,
             "duplicates": sum(r["status"] == "duplicate" for r in rows),
+            "x_only": sum(r.get("half") == "x_only" for r in rows), "y_only": sum(r.get("half") == "y_only" for r in rows),
             "missed": [t["label"] for t in truth if t["qid"] not in seen], "rows": rows}

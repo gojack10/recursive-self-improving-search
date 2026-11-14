@@ -36,6 +36,15 @@ The seed method `v000` is Telem's own auto-routing with a plain agent, so the cu
 
 **Referee.** Finds are matched to Wikidata labels and aliases. A find Wikidata lacks gets an independent check through Tavily (a separate route from the searcher's Telem calls) and a judge model outside the improver's model family. Score = (correct - 0.5 x wrong) / answer-set size. Duplicates don't count.
 
+**X-and-Y hunts.** Every hunt is "items that meet condition X and condition Y" (Hugo *and* Nebula, astronaut *and* physician). Each hunt names its two conditions, and the searcher sees them. The fastest reliable way through such a hunt is anchor-and-verify:
+
+1. Pick the side that is easier to list completely (an award's winners, an architect's works) as the anchor.
+2. Enumerate it from list pages, using Telem batch query variants and a list-friendly route.
+3. Verify the other condition for every candidate with `check_candidates`. It sends one query per candidate in Telem batches of five over a cheap verify route (`routing.verify_providers`).
+4. Submit only the candidates that pass.
+
+The referee's judge records whether a wrong find met only X or only Y (`x_only`, `y_only`). The improver sees those counts, so "returned half-matches" is a failure it can learn from. Which side to anchor, and how to route each phase, belong to the method. That keeps them learnable rather than hard-coded: the seed `v000` doesn't use the tactic, and the hand-written `methods/anchor_verify.json` is a reference to trial against.
+
 **Plateau matrix.** If the winner's test re-run doesn't beat the best so far by more than the noise band for two rounds in a row, the next round is a breakout round: fresh improvers, each given a different slice of history and a different earlier version. Two breakouts in a row without a gain stops the run as "levelled off".
 
 **Recursion test.** Generations 0, 3, 6... each get the same improvement job: start from `v000`, with history (attempts, lineage, provider yield, tree nodes) frozen at the end of round 1, and the same budget. Only the method the improver searches with changes. Rising successor scores mean the system got better at improving, not only at searching. Flat bars mean continual learning, and we report it that way.
@@ -71,6 +80,12 @@ Needs Python 3.10+ and nothing else (standard library only).
 7. Open `runs/main/report.html`. It shows the test curve against the Telem auto-routing baseline, the recursion bars, Telem provider yield (correct finds per dollar for each provider) and the method lineage.
 
 `python -m rsis round --name main` runs a single round.
+
+To test a search tactic by hand, write a method JSON and run it head to head against others on the same hunts and budget:
+```
+python -m rsis trial methods/v000.json methods/anchor_verify.json --hunts turing_uk abel --repeats 2
+```
+It prints score, correct, wrong, x_only, y_only and Telem spend for each method. Attempts go to `runs/trials/`.
 
 ## Budget
 
