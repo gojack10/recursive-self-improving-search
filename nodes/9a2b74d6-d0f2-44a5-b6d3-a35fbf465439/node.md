@@ -64,3 +64,21 @@ He also floated a second comparison, conditional on the method working and on ti
 The assistant suggested that the judges compare the two answers without knowing which method produced which. Jack did not respond to that. The sample size and budget remain unselected.
 
 Source: Pi session `01a1db79-c926-7284-80b0-36135ff23ffd`, retained under [Team Backgrounds and a Proposed Work Split](../a7769974-3ff8-4e30-9fd4-975bf08ff6f2/node.md) at `artifacts/chats/pi-searchhack-team-intros.jsonl`.
+
+## November 14 — left to the next agent at the hackathon
+
+### Observed conditions
+
+In a separate Pi session during the SearchHack kickoff, that session's assistant twice told Jack that building needed one decision from him: what the searchers hunt for, and how a right answer is told from a wrong one. Jack replied:
+
+> "what the searchers hunt for" next agent thinks about this
+
+He chose no task, referee, comparison or budget in that session.
+
+Three things observed that morning bear on the choice. The kickoff's judging slide puts 40% on use of Telem, and submission is at 4:15 PM with a three-minute walkthrough; both are recorded in [SearchHack Participation and Rules](../5c47051d-90b9-43e6-ba5a-1b885c7f4ad3/node.md). Telem's hackathon console has a Benchmarks form that runs a task corpus against several configurations and judges the results, and it shows a judge state on every logged conversation; [Probe Telem's Hackathon Console and Router](../ef8ce25e-76e5-429d-86d5-433010cbd615/node.md) records that the corpus list was empty and that no judge score had appeared.
+
+### Inference and response
+
+The question stays open and now belongs to the next agent working with Jack. That assistant suggested asking an organizer how to obtain a corpus and what an arm looks like, since a usable Benchmarks run could serve as referee and comparison. That is a lead, not a selection. The preferences Jack stated in the sections above, including a scored task with a known answer, stand as he left them.
+
+Source: Pi session `01a1db5b-1827-7182-a648-9aafa0a72ac9`, November 14, 2026, retained under the probe node at `artifacts/chats/pi-searchhack-kickoff-telem-probe.jsonl`.
