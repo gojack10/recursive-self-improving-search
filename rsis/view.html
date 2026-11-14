@@ -33,23 +33,24 @@ body{margin:0;padding:10px 12px;background:var(--bg);color:var(--fg);font:14px/1
 
 .main{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:0}
 svg.fit{display:block;width:100%;flex:1;min-height:0}
-.blk rect{fill:#0c0c0c;stroke:#7a7a7a;stroke-width:1.8;transition:fill .25s,stroke .25s}
-.blk text{fill:#e6e6e6;font-size:13px;font-weight:600;text-anchor:middle;dominant-baseline:central}
-.blk.entry rect{stroke:#fff;stroke-width:2.6}
-.blk.active rect{fill:var(--c,#fff);stroke:var(--c,#fff);filter:drop-shadow(0 0 10px var(--c,#fff))}
+/* Every block carries the colour of its part of the machine, dim at rest and solid when something is on it. */
+.blk{--c:#fff}
+.blk rect{fill:color-mix(in srgb,var(--c) 9%,#0c0c0c);stroke:color-mix(in srgb,var(--c) 60%,#000);stroke-width:2.2;transition:fill .25s,stroke .25s}
+.blk text{fill:#fff;font:600 15px var(--display);text-anchor:middle;dominant-baseline:central}
+.blk.active rect{fill:var(--c);stroke:var(--c);filter:drop-shadow(0 0 12px var(--c))}
 .blk.active text{fill:#000;font-weight:700}
 #b-thinking,#b-writing,#b-web_search,#b-fetch_pages,#b-check_candidates,#b-history,#b-submit{--c:var(--search)}
 #b-scoring,#b-judging{--c:var(--judge)}
 #b-done{--c:var(--good)}
-.blk .badge{fill:#fff;stroke:#000;stroke-width:1.5;filter:none;display:none}
+.blk .badge{fill:#fff;stroke:#000;stroke-width:2;filter:none;display:none}
 .blk.many .badge{display:block}
-.blk .count,.blk.active .count{fill:#000;font-size:13px;font-weight:700}
+.blk .count,.blk.active .count{fill:#000;font:700 15px var(--mono)}
 .dot{fill:#fff;filter:drop-shadow(0 0 6px currentColor)}
-.edge path{fill:none;stroke:#6f6f6f;stroke-width:1.5;transition:stroke .2s}
-.edge text{fill:#8c8c8c;font-size:10px;text-anchor:middle}
-.edge.hot path{stroke:#fff;stroke-width:3}
-.edge.hot text{fill:#fff}
-.region{fill:#8c8c8c;font-size:11px;letter-spacing:.14em;font-weight:600}
+.edge path{fill:none;stroke:#6f6f6f;stroke-width:1.8;transition:stroke .2s}
+.edge.hot path{stroke:#fff;stroke-width:3.5}
+.region{fill:#fff;font:700 13px var(--mono);letter-spacing:.14em}
+.region.agents{fill:var(--search)}
+.region.judge{fill:var(--judge);font-size:16px;letter-spacing:0}
 
 #stats{display:flex;gap:26px;flex-wrap:wrap;flex:none}
 #stats div{color:var(--muted);font-size:12px}
@@ -86,7 +87,7 @@ details div{display:flex;gap:8px;align-items:center;margin-top:4px}
 <div class="main">
   <div class="panel">
     <div class="label" title="Top row: the loop, read from the files the run has written. Below: each agent's token replays the steps in its own event stream.">What is happening now</div>
-    <svg class="fit" id="machine" viewBox="0 0 990 462"></svg>
+    <svg class="fit" id="machine" viewBox="0 0 760 640"></svg>
   </div>
   <div class="panel">
     <div class="label">Score, same search budget</div>
@@ -110,29 +111,30 @@ const put = (el, html) => { if (el.dataset.html !== html) el.innerHTML = el.data
 let knownMethods = null;
 
 // The state machine. Blocks are states, arrows are transitions; [x, y, label, width]. A null label is a junction dot.
-const W = 96, H = 32;
+const W = 170, H = 40;
 const STATES = {
-  start: [62, 58, "start"], calibrate: [206, 58, "calibrate"], train: [350, 58, "train"], improve: [494, 58, "improve"],
-  select: [638, 58, "select"], test: [782, 58, "test"], tally: [926, 58, "tally"], trial: [206, 112, "trial"],
-  begin: [36, 259, null], thinking: [150, 259, "thinking"], writing: [310, 259, "writing call"],
-  web_search: [500, 196, "web_search", 140], fetch_pages: [500, 238, "fetch_pages", 140],
-  check_candidates: [500, 280, "check_candidates", 140], history: [500, 322, "history", 140],
-  result: [650, 259, null], submit: [500, 404, "submit / propose", 140], scoring: [676, 404, "key match"], judging: [810, 404, "judge"], done: [936, 404, "done", 76],
+  start: [130, 60, "Start", 200], calibrate: [130, 130, "Measure plain search", 200], train: [130, 200, "Search", 200],
+  improve: [130, 280, "Write new methods", 200], select: [130, 360, "Pick the winner", 200],
+  test: [130, 440, "Score unseen questions", 200], tally: [130, 520, "Record the round", 200],
+  begin: [420, 56, null], thinking: [420, 110, "Thinking"], writing: [420, 190, "Choosing next step"],
+  web_search: [640, 110, "Search the web", 150], fetch_pages: [640, 160, "Read pages", 150],
+  check_candidates: [640, 210, "Check candidates", 150], history: [640, 260, "Read past runs", 150],
+  result: [738, 185, null], submit: [420, 380, "Hand in answers"], scoring: [420, 450, "Match answer key"],
+  judging: [420, 520, "Judge checks the rest"], done: [420, 590, "Scored"],
 };
-// [from, to, label, shape]: a number shifts a two-way pair apart; an object gives the curve and where its label sits.
+// [from, to, label, shape]: an object gives the curve and where its label sits.
 const EDGES = [
-  ["start", "calibrate", ""], ["start", "trial", ""], ["calibrate", "train", ""],
-  ["train", "improve", "scored"], ["improve", "select", "methods"], ["select", "test", "winner"],
-  ["test", "tally", "scored"], ["tally", "train", "next iteration", { d: "M926 42C926 8 350 8 350 42", at: [638, 12] }],
+  ["start", "calibrate", ""], ["calibrate", "train", ""], ["train", "improve", ""], ["improve", "select", ""],
+  ["select", "test", ""], ["test", "tally", ""], ["tally", "train", "", { d: "M30 520C2 520 2 200 30 200", at: [0, 0] }],
   ["begin", "thinking", ""], ["thinking", "writing", ""],
   ["writing", "web_search", ""], ["writing", "fetch_pages", ""], ["writing", "check_candidates", ""], ["writing", "history", ""],
   ["web_search", "result", ""], ["fetch_pages", "result", ""], ["check_candidates", "result", ""], ["history", "result", ""],
-  ["result", "thinking", "result, next turn", { d: "M650 253C650 130 150 130 150 243", at: [400, 152] }],
-  ["writing", "submit", ""], ["submit", "scoring", "finds"], ["scoring", "judging", ""], ["judging", "done", "score"],
-  ["scoring", "done", "all in answer key", { d: "M676 388C676 356 936 356 936 388", at: [806, 358] }],
-  ["submit", "done", "proposal (improver)", { d: "M500 420C500 456 936 456 936 420", at: [718, 458] }],
+  ["result", "thinking", "", { d: "M738 179C738 30 420 20 420 90", at: [0, 0] }],
+  ["writing", "submit", ""], ["submit", "scoring", ""], ["scoring", "judging", ""], ["judging", "done", ""],
+  ["scoring", "done", "", { d: "M335 450C285 450 285 590 335 590", at: [0, 0] }],
+  ["submit", "done", "", { d: "M505 380C565 380 565 590 505 590", at: [0, 0] }],
 ];
-const LOOP = new Set(["start", "calibrate", "train", "improve", "select", "test", "tally", "trial"]);
+const LOOP = new Set(["start", "calibrate", "train", "improve", "select", "test", "tally"]);
 const NS = "http://www.w3.org/2000/svg";
 const tokens = new Map();        // "loop" and one per agent: { at, dot, chain, played, waiting }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -147,8 +149,9 @@ function border(id, toward) {    // where the line from a state's centre toward 
 
 function build() {
   let out = `<defs>` + [["tip", "#6f6f6f"], ["tipHot", "#fff"]].map(([id, c]) => `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="${c}"/></marker>`).join("") + `</defs>` +
-    `<text class="region" x="14" y="18">LOOP</text><text class="region" id="region-agents" x="14" y="176">AGENTS</text>` +
-    `<text class="region" id="judge-total" x="810" y="436" text-anchor="middle"></text>`;
+    `<line x1="278" x2="278" y1="8" y2="632" stroke="#383838"/>` +
+    `<text class="region" x="30" y="24">THE LOOP</text><text class="region agents" id="region-agents" x="335" y="24">EACH AGENT</text>` +
+    `<text class="region judge" id="judge-total" x="520" y="525"></text>`;
   for (const [from, to, label, shape] of EDGES) {
     const a = STATES[from], b = STATES[to];
     let d, lx, ly;
@@ -166,7 +169,7 @@ function build() {
   for (const [id, [x, y, label, w = W]] of Object.entries(STATES)) {
     if (label == null) { out += `<circle cx="${x}" cy="${y}" r="5" fill="#d8d8d8"/>`; continue; }
     out += `<g class="blk ${id === "start" ? "entry" : ""}" id="b-${id}"><rect x="${x - w / 2}" y="${y - H / 2}" width="${w}" height="${H}"/><text class="name" x="${x}" y="${y}">${label}</text>` +
-      `<rect class="badge" x="${x + w / 2 - 9}" y="${y - H / 2 - 9}" width="18" height="18"/><text class="count" x="${x + w / 2}" y="${y - H / 2}"></text></g>`;
+      `<rect class="badge" x="${x + w / 2 - 13}" y="${y - H / 2 - 13}" width="26" height="26"/><text class="count" x="${x + w / 2}" y="${y - H / 2}"></text></g>`;
   }
   $("machine").innerHTML = out + `<g id="dots"></g>`;
   built = true;
@@ -265,9 +268,9 @@ function machine(s) {
   }
   paint();
   const running = s.agents.filter((a) => a.running).length;
-  $("region-agents").textContent = "AGENTS" + (running ? ` · ${running} running` : "");
+  $("region-agents").textContent = "EACH AGENT" + (running ? ` · ${running} running` : "");
   const judging = s.agents.filter((a) => a.state === "judging" && a.judge);
-  $("judge-total").textContent = judging.length ? `${judging.reduce((n, a) => n + a.judge.checked, 0)}/${judging.reduce((n, a) => n + a.judge.to_check, 0)} checked` : "";
+  $("judge-total").textContent = judging.length ? `${judging.reduce((n, a) => n + a.judge.checked, 0)} / ${judging.reduce((n, a) => n + a.judge.to_check, 0)}` : "";
 }
 
 
