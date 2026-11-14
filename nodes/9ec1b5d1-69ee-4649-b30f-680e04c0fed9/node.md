@@ -39,3 +39,28 @@ On the morning of the event, while answering [Can the Improver Be a Stronger Mod
 This adds a fifth commitment for the build: GPT 6 Astra at medium effort runs the improver and Terra 6.1 at high effort runs the searchers. It replaces the Idea's unselected proposal that the improver use the same cheap model as the searchers. The bake-off was not run. The assistant's advice to keep both models fixed all day and disclose them in the demo was not separately answered. The guards from [Define and Prevent Reward Hacking in the Search Loop](../e9cf4b7a-3426-4266-a93e-e9aa6491ee9d/node.md) and the plateau matrix in [Detect a Plateau in the Improvement Loop](../420ced74-9291-45ef-b2ec-546f2224c283/node.md) are answers held by those Questions.
 
 Source: Claude Code session `4e8b589f-0715-428e-a9d1-de646827b5e8`, retained at [the plateau node's copy](../420ced74-9291-45ef-b2ec-546f2224c283/artifacts/chats/claude-searchhack-questions-answered.jsonl).
+
+## November 14 development — terminology and the remaining three hours
+
+### Observed conditions
+
+At the event Jack asked to save SiftText and change the terminology: turn hunt to the task, attempt to search, and round to iteration, and define all of those. He then laid out the remaining time. Of about four hours, the first hour was spent planning and is done. About three hours remain:
+
+- **Next hour:** his two groupmates find tasks while Jack implements the harness. Jack said: "I'll be handling the harness for this first hour".
+- **Second hour:** testing and evaluations for the process. Demo work starts then only if there is time or bandwidth.
+- **Third hour:** demo is the main focus. Testing and evaluations move to the back burner, kept for an emergency.
+
+### Inference and response
+
+**Current terminology for this project.** Use these terms from here on; earlier nodes keep their original wording as history.
+
+- **Task** (formerly hunt): the assignment given to a searcher, with an answer key or referee. Example: find every Olympic medallist who later sat in a national parliament.
+- **Search** (formerly attempt): one agent's full run at one task under one method version. It returns finds and receives a score. A search contains many queries.
+- **Query**: one web search call inside a search. This replaces the older use of "search" for a single query.
+- **Iteration** (formerly round): one full improvement cycle. Searches run on train tasks, the improver writes candidate method versions, the current and candidate methods run unseen select tasks, and the winner re-runs on held-out test tasks.
+- **Method version**: one frozen set of searcher instructions and search settings. A new version is a new version, not an edit of the old one.
+- **Harness**: the code that runs searches and iterations, calls the improver, applies scoring and records the results.
+
+The three-hour split is Jack's schedule for the rest of the event, not a result. Task finding belongs to the two groupmates in the next hour; the harness belongs to Jack in that same hour. What counts as working at each step remains governed by the task, referee and comparison choices in [Choose the PoC Task and Success Evidence](../9a2b74d6-d0f2-44a5-b6d3-a35fbf465439/node.md).
+
+Source: current Pi session `01a1db79-c926-7284-80b0-36135ff23ffd`, retained under [Team Backgrounds and a Proposed Work Split](../a7769974-3ff8-4e30-9fd4-975bf08ff6f2/node.md) at `artifacts/chats/pi-searchhack-team-intros.jsonl`.
