@@ -27,7 +27,7 @@ def norm(s):
 
 
 def match(name, truth):
-    for variant in (name, re.split(r" by | - | – |, | \(", name)[0]):
+    for variant in (name, re.split(r" by | - | – | — |; |, | \(", name)[0]):
         q = match_one(variant, truth)
         if q:
             return q
