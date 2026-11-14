@@ -68,6 +68,7 @@ elif a.cmd == "compare":
 elif a.cmd == "calibrate":
     loop.calibrate(a.name)
 elif a.cmd == "round":
+    loop.baseline(a.name)
     loop.one_round(a.name, k=a.k)
 elif a.cmd == "run":
     loop.run(a.name, a.rounds, k=a.k, max_spend=a.max_spend, keep_going=a.keep_going)

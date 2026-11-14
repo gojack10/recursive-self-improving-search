@@ -64,6 +64,7 @@ class Stream:
         self.states, self.lines, self.count = [], [], 0
         self.live, self.turns, self.model, self.ended, self.left, self.tokens = "", 0, None, False, None, 0
         self.about, self.seen_phase = None, None
+        self.first_t = self.last_t = None      # arrival time of the first and latest event
 
     def go(self, state):
         if not self.states or self.states[-1] != state:
@@ -103,6 +104,8 @@ class Stream:
         if not isinstance(e, dict):
             return
         kind = e.get("type")
+        if e.get("t"):
+            self.first_t, self.last_t = self.first_t or e["t"], e["t"]
         if kind == "turn_start":
             self.turns += 1
             self.go("thinking")
@@ -231,7 +234,8 @@ def agents(d, rows):
             about = s.describe(logs / f"{aid}.state.json")
             improver = about.get("actor") == "improver"
             row, scored_file = by_id.get(aid), logs / f"{aid}.json"
-            started, last = born(f), f.stat().st_mtime
+            # Times come from the recording itself, so a run cloned from the repository reads the same as a live one.
+            started, last = s.first_t or born(f), s.last_t or f.stat().st_mtime
             path = list(s.states)
             judge, judged = judge_progress(logs / f"{aid}.judge.jsonl")
             if s.ended and not improver:
@@ -242,7 +246,7 @@ def agents(d, rows):
                 path.append("done")
             final = bool(path) and path[-1] == "done"
             stalled = not final and now - last > STALE_SECONDS
-            finished = (born(scored_file) if scored_file.exists() else last) if final else None
+            finished = ((row or {}).get("t") or (born(scored_file) if scored_file.exists() else last)) if final else None
             out.append((s, {
                 "id": aid, "role": "improver" if improver else (row or {}).get("role"), "model": s.model,
                 "method": about.get("method"), "task": about.get("task"), "hunt": about.get("hunt") or (row or {}).get("hunt"), "budget": about.get("budget"), "left": s.left,
