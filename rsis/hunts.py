@@ -148,7 +148,22 @@ def load(name):
     # Hand-added alternative names (data/aliases.json) for answers whose Wikidata label nobody would search for.
     overrides = json.loads((ROOT / "data" / "aliases.json").read_text(encoding="utf-8"))
     drop = overrides["_drop"].get(name, {})
-    h["truth"] = [t for t in h["truth"] if t["label"] not in drop]
+    # Items that share a normalized label or alias are one answer; otherwise the second can never be matched.
+    from .referee import norm
+    merged, by_name = [], {}
+    for t in h["truth"]:
+        if t["label"] in drop:
+            continue
+        names = {norm(n) for n in [t["label"], *t["aliases"]] if norm(n)}
+        hit = next((by_name[n] for n in names if n in by_name), None)
+        if hit:
+            hit["aliases"] += [a for a in [t["label"], *t["aliases"]] if a not in hit["aliases"] and a != hit["label"]]
+        else:
+            hit = {**t, "aliases": list(t["aliases"])}
+            merged.append(hit)
+        for n in names:
+            by_name.setdefault(n, hit)
+    h["truth"] = merged
     extra = overrides.get(name, {})
     for t in h["truth"]:
         t["aliases"] = t["aliases"] + [a for a in extra.get(t["label"], []) if a not in t["aliases"]]

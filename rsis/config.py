@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 def load_env():
     env = ROOT / ".env"
     if env.exists():
-        for line in env.read_text(encoding="utf-8").splitlines():
+        for line in env.read_text(encoding="utf-8-sig").splitlines():
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
                 k, v = line.removeprefix("export ").split("=", 1)

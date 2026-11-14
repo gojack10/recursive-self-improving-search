@@ -1,4 +1,5 @@
 import json
+import re
 import math
 import uuid
 from collections import Counter
@@ -30,7 +31,7 @@ class Tree:
         for p in self.dir.glob("*/node.md"):
             text = p.read_text(encoding="utf-8")
             front = text.split("\n---\n", 1)[0].removeprefix("---\n")
-            head = dict(l.split(": ", 1) for l in front.splitlines() if ": " in l)
+            head = dict(l.split(": ", 1) for l in front.split("\n") if ": " in l)
             out.append({"id": json.loads(head["id"]), "name": json.loads(head["name"]), "kind": json.loads(head["kind"]),
                         "summary": json.loads(head["micro_summary"]), "status": json.loads(head["status"]), "text": text})
         return out
@@ -54,9 +55,15 @@ class Tree:
         return [{"id": n["id"], "kind": n["kind"], "name": n["name"], "summary": n["summary"], "status": n["status"]}
                 for s, n in scored[:k] if s > 0]
 
-    def read(self, nid):
+    def read(self, nid, max_round=None):
         p = self.dir / nid / "node.md"
-        return p.read_text(encoding="utf-8") if p.exists() else "no such node"
+        if not p.exists():
+            return "no such node"
+        text = p.read_text(encoding="utf-8")
+        if max_round is not None:
+            text = "\n".join(l for l in text.split("\n")
+                             if not (re.match(r"- Round (\d+):", l) and int(re.match(r"- Round (\d+):", l)[1]) > max_round))
+        return text
 
     def set_status(self, nid, status):
         p = self.dir / nid / "node.md"

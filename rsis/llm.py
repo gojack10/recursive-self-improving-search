@@ -10,10 +10,12 @@ class Chat:
         self.cfg = role(role_name)
         self.usage = {"prompt_tokens": 0, "completion_tokens": 0}
 
-    def complete(self, messages, tools=None, json_mode=False):
+    def complete(self, messages, tools=None, json_mode=False, force=None):
         body = {"model": self.cfg["model"], "messages": messages}
         if tools:
             body["tools"] = tools
+        if force:
+            body["tool_choice"] = {"type": "function", "function": {"name": force}}
         if self.cfg["effort"]:
             body["reasoning_effort"] = self.cfg["effort"]
         if json_mode:

@@ -69,19 +69,27 @@ def merge(logs):
     return items
 
 
+def merged_text(sources):
+    out = {}
+    for src in sources:
+        for u, t in src.items():
+            out[u] = out.get(u, "") + " " + t
+    return out
+
+
 def judge_checks(chat, hunt, checks):
     """keep: results make it more likely than not that the candidate meets both conditions.
     reject: results positively show it fails a condition. Silence is neither."""
     keep, reject = set(), set()
     names = list(checks)
-    for i in range(0, len(names), 12):
-        part = {n: checks[n] for n in names[i:i + 12]}
+    for i in range(0, len(names), 6):
+        part = {n: [{**r, "summary": (r.get("summary") or "")[:200]} for r in checks[n]] for n in names[i:i + 6]}
         v = chat.json(
             "You verify candidate answers from search results. Reply as JSON {\"keep\": [names], \"reject\": [names]}. "
             "Put a candidate in keep if its results make it more likely than not that it meets BOTH conditions. "
             "Put it in reject only if the results show it fails a condition (for example it meets only one). "
             "Leave it out of both lists if the results say nothing useful.",
-            f"Condition X: {hunt['x']}\nCondition Y: {hunt['y']}\nResults per candidate:\n{json.dumps(part)[:20000]}")
+            f"Condition X: {hunt['x']}\nCondition Y: {hunt['y']}\nResults per candidate:\n{json.dumps(part)}")
         keep |= {norm(k) for k in v.get("keep", []) if isinstance(k, str)}
         reject |= {norm(k) for k in v.get("reject", []) if isinstance(k, str)}
     return keep, reject
@@ -103,10 +111,11 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
     for i in range(0, len(queue), 25):
         out = check_candidates(m, {"candidates": [it["name"] for it in queue[i:i + 25]],
                                    "condition": hunt["criterion"], "per_candidate": 3}, telem)
-        if "_error" in out["checks"]:
-            break
+        failed = out["checks"].pop("_error", None)
         for q, results in out["checks"].items():
             checks[norm(q[:-len(hunt["criterion"])] if q.endswith(hunt["criterion"]) else q)] = results
+        if failed:
+            break
     keep, reject = judge_checks(Chat(role), hunt, {it["name"]: checks[norm(it["name"])] for it in queue
                                                    if norm(it["name"]) in checks}) if checks else (set(), set())
     finds = []
@@ -130,7 +139,7 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
             "telem_spent": round(sum(l["telem_spent"] for l in logs) + telem.spent, 4),
             "telem_session": logs[0]["telem_session"], "trace": [],
             "url_providers": {u: sorted(p) for u, p in url_providers.items()},
-            "url_text": {u: t for log in logs for u, t in log["url_text"].items()} | telem.url_text,
+            "url_text": merged_text([log["url_text"] for log in logs] + [telem.url_text]),
             "seconds": round(time.time() - t0, 1), "sub_attempts": [l["attempt_id"] for l in logs]}
 
 

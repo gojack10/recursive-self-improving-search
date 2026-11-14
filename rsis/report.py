@@ -36,6 +36,8 @@ def bars(rows):
 def write(name):
     d = run_dir(name)
     s = state(d)
+    if s is None:
+        return f"no run named {name}"
     methods = M.all_methods(d)
     py = H.provider_yield(d)
     attempts = H.rows(d, "attempts.jsonl")

@@ -19,7 +19,7 @@ def norm(s):
 
 
 def match(name, truth):
-    for variant in (name, re.split(r" by | - | – |, |: | \(", name)[0]):
+    for variant in (name, re.split(r" by | - | – |, | \(", name)[0]):
         q = match_one(variant, truth)
         if q:
             return q
@@ -50,9 +50,12 @@ STOP = {"the", "and", "of", "for", "flight", "prize", "award", "airport", "disas
 
 
 def mentions(text, name):
-    """Lenient: at least one distinctive word of the name (4+ letters, not generic) appears in the retrieved text."""
-    words = [w for w in norm(name).split() if len(w) >= 4 and w not in STOP] or norm(name).split()
-    return any(f" {w} " in f" {text} " for w in words)
+    """Every number in the name and at least one distinctive word (4+ letters, not generic) appear in the text."""
+    toks = norm(name).split()
+    digits = [w for w in toks if w.isdigit()]
+    words = [w for w in toks if len(w) >= 4 and w not in STOP and not w.isdigit()] or [w for w in toks if not w.isdigit()]
+    padded = f" {text} "
+    return all(f" {d} " in padded for d in digits) and (not words or any(f" {w} " in padded for w in words))
 
 
 def gap_check(name, hunt, judge):
@@ -86,6 +89,10 @@ def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, ur
     texts = {}
     for u, txt in (url_text or {}).items():
         texts[url_key(u)] = texts.get(url_key(u), "") + " " + norm(txt)
+    unsupported_seen = set()
+
+    def supported(url, name):
+        return url_key(url) in retrieved and (not texts or mentions(texts.get(url_key(url), ""), name))
     judge = Chat("judge") if check_gaps else None
     gaps = 0
     for f in finds:
@@ -96,13 +103,13 @@ def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, ur
         qid = match(name, truth)
         key = qid or norm(name)
         row = {"name": name, "url": url, "providers": sorted(next((p for u, p in url_providers.items() if url_key(u) == url_key(url)), []))}
-        if key in seen:
+        if key in seen or (key in unsupported_seen and not supported(url, name)):
             row["status"] = "duplicate"
-        elif require_evidence and (url_key(url) not in retrieved or (texts and not mentions(texts.get(url_key(url), ""), name))):
+        elif require_evidence and not supported(url, name):
             # The cited URL must be one this attempt retrieved through Telem, and its text must mention the find,
             # so recital from memory with an arbitrary retrieved URL scores as wrong.
             row["status"] = "unsupported"
-            seen.add(key)
+            unsupported_seen.add(key)
         elif qid:
             row["status"], row["qid"] = "correct", qid
             seen.add(qid)
@@ -121,6 +128,10 @@ def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, ur
         else:
             row["status"] = "wrong"
         rows.append(row)
+    # A find first cited badly and later cited properly is a duplicate, not a wrong answer.
+    for r in rows:
+        if r["status"] == "unsupported" and (match(r["name"], truth) or norm(r["name"])) in seen:
+            r["status"] = "duplicate"
     correct = sum(r["status"] in ("correct", "verified_gap") for r in rows)
     wrong = sum(r["status"] in ("wrong", "unsupported") for r in rows)
     total = len(truth) + sum(r["status"] == "verified_gap" for r in rows)

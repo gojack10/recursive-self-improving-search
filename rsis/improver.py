@@ -79,8 +79,9 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
                 {"role": "user", "content": context(run_dir, start, attempt_ids, extra, as_of_round)}]
     tools = [HIST_TOOL, READ_TOOL, LOG_TOOL, SEARCH_TOOL, PROPOSE_TOOL]
     trace = []
-    for _ in range(MAX_TURNS):
-        msg = chat.complete(messages, tools=tools)
+    for turn in range(MAX_TURNS):
+        last = turn >= MAX_TURNS - 2
+        msg = chat.complete(messages, tools=[PROPOSE_TOOL] if last else tools, force="propose" if last else None)
         messages.append({**msg, "role": "assistant", "content": msg.get("content") or ""})
         calls = msg.get("tool_calls") or []
         if not calls:
@@ -100,7 +101,7 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
                     out = tree.search(args.get("query", ""), kinds=args.get("kinds"), allowed=allowed_nodes)
                 elif name == "read_node":
                     nid = args.get("id", "")
-                    out = tree.read(nid)[:6000] if allowed_nodes is None or nid in allowed_nodes else "not available"
+                    out = tree.read(nid, as_of_round)[:6000] if allowed_nodes is None or nid in allowed_nodes else "not available"
                 elif name == "read_attempt":
                     if args.get("attempt_id") not in attempt_ids:
                         out = "not available"

@@ -131,7 +131,7 @@ def new_candidates(d, tree, props, parent, rnd):
     return out
 
 
-def record_lessons(tree, props, probe):
+def record_lessons(tree, props, probe, rnd=0):
     for l in props.get("lessons", []):
         if not isinstance(l, dict) or not l.get("body"):
             continue
@@ -140,8 +140,9 @@ def record_lessons(tree, props, probe):
                    f"{body}\n\n**Tested scope:** {l.get('scope', 'not stated')}\n\n**Evidence attempts:** {l.get('evidence_attempts', [])}",
                    parent=probe)
     for f in props.get("failure_links", []):
-        if isinstance(f, dict) and isinstance(f.get("node_id"), str) and (tree.dir / f["node_id"]).exists():
-            tree.append(f["node_id"], f"- Seen again in attempt {f.get('attempt_id')}: {f.get('why', '')}")
+        if isinstance(f, dict) and isinstance(f.get("node_id"), str) and f["node_id"].strip(".") \
+                and (tree.dir / f["node_id"] / "node.md").exists() and (tree.dir / f["node_id"]).exists():
+            tree.append(f["node_id"], f"- Round {rnd}: seen again in attempt {f.get('attempt_id')}: {f.get('why', '')}")
     return bool(props.get("lessons"))
 
 
@@ -150,7 +151,14 @@ def one_round(name, k=2, breakout=False):
     tree = Tree(d)
     s = state(d)
     rnd = s["round"] + 1
+    for m in M.all_methods(d):
+        if m.get("status") == "adopted" and m["id"] != s["current"]:
+            m["status"] = "discarded" if m.get("round", 0) >= rnd else "superseded"
+            M.save(d, m)
     cur = M.load(d, s["current"])
+    if cur.get("status") != "adopted":
+        cur["status"] = "adopted"
+        M.save(d, cur)
     print(f"round {rnd}: current {cur['id']}{' (breakout)' if breakout else ''}", flush=True)
     probe = tree.write("Probe", f"Round {rnd}", f"Improve {cur['id']} and trial candidates on unseen hunts.",
                        f"Current method: {cur['id']}", parent=s["goal"])
@@ -161,17 +169,17 @@ def one_round(name, k=2, breakout=False):
     if not breakout:
         props, _ = improve(d, tree, cur, cur, train_ids, k=k)
         cands = new_candidates(d, tree, props, cur, rnd)
-        new_lessons = record_lessons(tree, props, probe)
+        new_lessons = record_lessons(tree, props, probe, rnd)
     else:
         # Fresh improvers, each with a different slice of history and a different earlier version to build on.
         olds = [m for m in M.all_methods(d) if m.get("status") in ("adopted", "superseded")] or [cur]
         cands, new_lessons = [], False
         for _ in range(k):
             base = random.choice(olds)
-            ids = set(random.sample(sorted(train_ids), max(1, len(train_ids) // 2)))
+            ids = set(random.sample(sorted(train_ids), max(1, len(train_ids) // 2))) if train_ids else set()
             props, _ = improve(d, tree, base, base, ids, k=1)
             cands += new_candidates(d, tree, props, base, rnd)
-            new_lessons |= record_lessons(tree, props, probe)
+            new_lessons |= record_lessons(tree, props, probe, rnd)
 
     sel = rotate(HU.pool("select"), rnd, 2)
     rows = batch(d, [(m, h, "select") for m in [cur, *cands] for h in sel], rnd)
@@ -255,8 +263,12 @@ def recursion_test(name, gens=None):
     test = HU.pool("test")
     out = []
     for g in gens:
-        props, meta = improve(d, tree, v0, M.load(d, g), first_ids, k=1, as_of_round=1, allowed_nodes=allowed,
-                              prompt_method=v0)
+        try:
+            props, meta = improve(d, tree, v0, M.load(d, g), first_ids, k=1, as_of_round=1, allowed_nodes=allowed,
+                                  prompt_method=v0)
+        except Exception as e:
+            print(f"generation {g}: improver failed: {str(e)[:200]}", flush=True)
+            continue
         c = next((c for c in props["candidates"] if isinstance(c, dict) and c.get("instructions")), None)
         if c is None:
             print(f"generation {g}: improver proposed no usable candidate", flush=True)

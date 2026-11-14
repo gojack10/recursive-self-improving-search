@@ -11,6 +11,10 @@ MAX_TURNS = 30
 MAX_RESULT_CHARS = 40000
 
 
+def as_list(v):
+    return [v] if isinstance(v, str) else list(v or [])
+
+
 def fit(out):
     """Serialize a tool result within MAX_RESULT_CHARS as valid JSON, budget first, dropping the lowest-ranked rows."""
     out = {"budget_left": out.get("budget_left"), **out}
@@ -20,6 +24,19 @@ def fit(out):
         rows.sort(key=lambda r: r.get("rank") or 0)
         del rows[max(1, len(rows) * 3 // 4) if len(rows) > 4 else len(rows) - 1:]
         text = json.dumps(out, ensure_ascii=False)
+    checks = out.get("checks")
+    while len(text) > MAX_RESULT_CHARS and checks and max(len(v) for v in checks.values() if isinstance(v, list)) > 1:
+        for k, v in checks.items():
+            if isinstance(v, list) and len(v) > 1:
+                checks[k] = v[:-1]
+        text = json.dumps(out, ensure_ascii=False)
+    while len(text) > MAX_RESULT_CHARS and checks:
+        for r in (v for v in checks.values() if isinstance(v, list)):
+            for row in r:
+                row["summary"] = (row.get("summary") or "")[:len(row.get("summary") or "") // 2]
+        text = json.dumps(out, ensure_ascii=False)
+        if all(not row.get("summary") for v in checks.values() if isinstance(v, list) for row in v):
+            break
     return text if len(text) <= MAX_RESULT_CHARS else text[:MAX_RESULT_CHARS]
 
 SEARCH_TOOL = tool("web_search", "Search the web through the Telem router. Omit providers to use the method's default route.", {
@@ -53,7 +70,7 @@ def run_search(m, query, args, telem):
     r = m["routing"]
     providers = args.get("providers")
     auto = args.get("auto_routing", r.get("auto_routing") if not providers else False)
-    return telem.search(query, also=args.get("also"), providers=providers or (None if auto else r.get("providers")), auto_routing=auto,
+    return telem.search(query, also=as_list(args.get("also")), providers=providers or (None if auto else r.get("providers")), auto_routing=auto,
                         tier=args.get("tier", r.get("tier", "default")),
                         num_results=args.get("num_results", r.get("num_results", 8)),
                         include_domains=args.get("include_domains"),
@@ -65,7 +82,7 @@ def check_candidates(m, args, telem):
     r = m["routing"]
     providers = args.get("providers") or r.get("verify_providers") or r.get("providers")
     per = args.get("per_candidate", 2)
-    queries = [f"{c} {args['condition']}" for c in args.get("candidates", [])[:25]]
+    queries = [f"{c} {args['condition']}" for c in as_list(args.get("candidates"))[:25]]
     grouped, budget_left = {}, None
     for i in range(0, len(queries), 5):
         chunk = queries[i:i + 5]
@@ -98,8 +115,9 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
     tools = [SEARCH_TOOL, FETCH_TOOL, CHECK_TOOL, SUBMIT_TOOL]
     trace, finds, notes = [], [], ""
     t0 = time.time()
-    for _ in range(MAX_TURNS):
-        msg = chat.complete(messages, tools=tools)
+    for turn in range(MAX_TURNS):
+        last = turn >= MAX_TURNS - 2
+        msg = chat.complete(messages, tools=[SUBMIT_TOOL] if last else tools, force="submit" if last else None)
         messages.append({**msg, "role": "assistant", "content": msg.get("content") or ""})
         calls = msg.get("tool_calls") or []
         if not calls:
@@ -113,14 +131,17 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
                 if name == "web_search":
                     out = run_search(m, args.pop("query", "") or hunt["question"], args, telem)
                 elif name == "fetch_pages":
-                    urls = args.get("urls", [])[:5]
+                    urls = as_list(args.get("urls"))[:5]
                     out = telem.fetch(urls, max_chars=MAX_RESULT_CHARS // max(1, len(urls)) - 500)
                 elif name == "check_candidates":
                     out = check_candidates(m, args, telem)
                 elif name == "submit":
-                    finds = [f for f in args.get("finds", []) if isinstance(f, dict)]
-                    notes, done = args.get("notes", ""), True
-                    out = {"ok": True}
+                    if not isinstance(args.get("finds"), list) and not last:
+                        out = {"error": "submit arguments did not parse; call submit again with a finds list"}
+                    else:
+                        finds = [f for f in as_list(args.get("finds")) if isinstance(f, dict)]
+                        notes, done = args.get("notes", ""), True
+                        out = {"ok": True}
                 else:
                     out = {"error": f"unknown tool {name}"}
             except Exception as e:

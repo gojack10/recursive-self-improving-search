@@ -63,6 +63,14 @@ class Telem:
         if published_before:
             s["published_before"] = published_before
         queries = [query, *(also or [])][:5]
+        per_query = sum(SEARCH_PRICE.get(p, 0.005) for p in providers) if providers else 0.010
+        if tier in ("extended", "max"):
+            per_query += sum(EXTENDED_SURCHARGE.get(p, 0) for p in (providers or []))
+        affordable = int((self.budget - self.spent) // per_query) if per_query else len(queries)
+        if affordable < 1:
+            return {"error": "budget exhausted", "results": [], "budget_left": round(self.budget - self.spent, 4)}
+        queries = queries[:affordable]
+        query = queries[0]
         user_input = {"query": query} if len(queries) == 1 else [{"query": q} for q in queries]
         r = self._post("/v1/search", {"user_input": user_input, "search": s})
         results, used, dropped = [], [], 0
@@ -82,8 +90,9 @@ class Telem:
                     continue
                 with self.lock:
                     self.url_providers.setdefault(url, set()).add(p)
-                    self.url_text[url] = (self.url_text.get(url, "") + " " + (res.get("title") or "") + " "
-                                          + (res.get("summary") or res.get("excerpt") or ""))[:4000]
+                    if len(self.url_text.get(url, "")) < 4000:
+                        self.url_text[url] = (self.url_text.get(url, "") + " " + (res.get("title") or "") + " "
+                                              + (res.get("summary") or res.get("excerpt") or ""))
                 results.append({"provider": p, "query": run.get("query"), "rank": res.get("rank"), "url": url, "title": res.get("title"),
                                 "summary": (res.get("summary") or res.get("excerpt") or "")[:400]})
         with self.lock:
