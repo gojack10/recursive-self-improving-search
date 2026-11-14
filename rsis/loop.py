@@ -221,6 +221,13 @@ def one_round(name, k=2, breakout=False):
         if m.get("status") == "adopted" and m["id"] != s["current"]:
             m["status"] = "discarded" if m.get("round", 0) >= rnd else "superseded"
             M.save(d, m)
+        elif m.get("status") == "candidate":
+            # Left over from a round that was killed before selection finished.
+            m["status"] = "discarded"
+            M.save(d, m)
+            if m.get("node"):
+                Tree(d).set_status(m["node"], "discarded")
+                Tree(d).append(m["node"], "Discarded: its round was interrupted before selection.")
     cur = M.load(d, s["current"])
     if cur.get("status") != "adopted":
         cur["status"] = "adopted"
