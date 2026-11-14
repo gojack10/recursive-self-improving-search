@@ -84,7 +84,7 @@ Needs Python 3.10+ and nothing else (standard library only).
    ```
    python -m rsis build-hunts
    ```
-4. Measure the noise band. This runs `v000` three times on the four test hunts. A failed attempt scores 0 and is logged to `runs/main/errors.jsonl`; check that file if a score looks off.
+4. Measure the noise band. This runs `v000` three times on the four test hunts. An attempt that fails for infrastructure reasons (API errors, timeouts) is logged to `runs/main/errors.jsonl` and left out of averages, and comparisons use only hunts that every side completed. An attempt the method itself breaks (for example by overflowing the model's context) scores 0.
    ```
    python -m rsis calibrate --name main
    ```

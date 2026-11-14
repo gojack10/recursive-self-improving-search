@@ -119,6 +119,10 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
     try:
         for turn in range(MAX_TURNS):
             last = turn >= MAX_TURNS - 2
+            for old in messages[:-8]:
+                if old["role"] == "tool" and len(old["content"]) > 3000:
+                    old["content"] = old["content"][:3000] + ' ... [older result truncated; fetch again if needed]"}'
+
             msg = chat.complete(messages, tools=[SUBMIT_TOOL] if last else tools, force="submit" if last else None)
             messages.append({**msg, "role": "assistant", "content": msg.get("content") or ""})
             calls = msg.get("tool_calls") or []

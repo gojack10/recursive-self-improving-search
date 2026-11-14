@@ -79,46 +79,51 @@ def improve(run_dir, tree, start, search_method, attempt_ids, k=2, role="improve
                 {"role": "user", "content": context(run_dir, start, attempt_ids, extra, as_of_round)}]
     tools = [HIST_TOOL, READ_TOOL, LOG_TOOL, SEARCH_TOOL, PROPOSE_TOOL]
     trace = []
-    for turn in range(MAX_TURNS):
-        last = turn >= MAX_TURNS - 2
-        msg = chat.complete(messages, tools=[PROPOSE_TOOL] if last else tools, force="propose" if last else None)
-        messages.append({**msg, "role": "assistant", "content": msg.get("content") or ""})
-        calls = msg.get("tool_calls") or []
-        if not calls:
-            messages.append({"role": "user", "content": "Call propose now."})
-            continue
-        for c in calls:
-            name = c["function"]["name"]
-            args = parse_obj(c["function"].get("arguments"))
-            trace.append({"tool": name, "args": args if name != "propose" else "..."})
-            if name == "propose" and isinstance(args.get("candidates"), list) and any(
-                    isinstance(c, dict) and c.get("instructions") for c in args["candidates"]):
-                return args, {"trace": trace, "web_searches": sum(t["tool"] == "web_search" for t in trace), "telem_spent": telem.spent, "telem_session": telem.session_id,
-                              "tokens": chat.usage}
-            try:
-                if name == "propose":
-                    out = {"error": "propose needs candidates as a list of objects, each with instructions and routing"}
-                elif name == "search_history":
-                    out = tree.search(args.get("query", ""), kinds=args.get("kinds"), allowed=allowed_nodes)
-                elif name == "read_node":
-                    nid = args.get("id", "")
-                    out = tree.read(nid, as_of_round)[:6000] if allowed_nodes is None or nid in allowed_nodes else "not available"
-                elif name == "read_attempt":
-                    if args.get("attempt_id") not in attempt_ids:
-                        out = "not available"
+    try:
+        for turn in range(MAX_TURNS):
+            last = turn >= MAX_TURNS - 2
+            msg = chat.complete(messages, tools=[PROPOSE_TOOL] if last else tools, force="propose" if last else None)
+            messages.append({**msg, "role": "assistant", "content": msg.get("content") or ""})
+            calls = msg.get("tool_calls") or []
+            if not calls:
+                messages.append({"role": "user", "content": "Call propose now."})
+                continue
+            for c in calls:
+                name = c["function"]["name"]
+                args = parse_obj(c["function"].get("arguments"))
+                trace.append({"tool": name, "args": args if name != "propose" else "..."})
+                if name == "propose" and isinstance(args.get("candidates"), list) and any(
+                        isinstance(c, dict) and c.get("instructions") for c in args["candidates"]):
+                    return args, {"trace": trace, "web_searches": sum(t["tool"] == "web_search" for t in trace), "telem_spent": telem.spent, "telem_session": telem.session_id,
+                                  "tokens": chat.usage}
+                try:
+                    if name == "propose":
+                        out = {"error": "propose needs candidates as a list of objects, each with instructions and routing"}
+                    elif name == "search_history":
+                        out = tree.search(args.get("query", ""), kinds=args.get("kinds"), allowed=allowed_nodes)
+                    elif name == "read_node":
+                        nid = args.get("id", "")
+                        out = tree.read(nid, as_of_round)[:6000] if allowed_nodes is None or nid in allowed_nodes else "not available"
+                    elif name == "read_attempt":
+                        if args.get("attempt_id") not in attempt_ids:
+                            out = "not available"
+                        else:
+                            log = H.load_log(run_dir, args["attempt_id"])
+                            ref = log.get("referee", {})
+                            out = {"hunt": log["hunt"], "notes": log["notes"], "trace": log["trace"][:40],
+                                   "telem_calls": log["telem_calls"][:40], "spent": log["telem_spent"],
+                                   "conditions": {"x": log.get("x"), "y": log.get("y")},
+                                   "verdicts": [{kk: r.get(kk) for kk in ("name", "status", "half", "providers")} for r in ref.get("rows", [])],
+                                   "missed_count": len(ref.get("missed", []))}
+                    elif name == "web_search":
+                        out = run_search(search_method, args.pop("query", "") or "search tactics for exhaustive list finding", args, telem)
                     else:
-                        log = H.load_log(run_dir, args["attempt_id"])
-                        ref = log.get("referee", {})
-                        out = {"hunt": log["hunt"], "notes": log["notes"], "trace": log["trace"][:40],
-                               "telem_calls": log["telem_calls"][:40], "spent": log["telem_spent"],
-                               "conditions": {"x": log.get("x"), "y": log.get("y")},
-                               "verdicts": [{kk: r.get(kk) for kk in ("name", "status", "half", "providers")} for r in ref.get("rows", [])],
-                               "missed_count": len(ref.get("missed", []))}
-                elif name == "web_search":
-                    out = run_search(search_method, args.pop("query", "") or "search tactics for exhaustive list finding", args, telem)
-                else:
-                    out = {"error": f"unknown tool {name}"}
-            except Exception as e:
-                out = {"error": str(e)[:500]}
-            messages.append({"role": "tool", "tool_call_id": c["id"], "content": json.dumps(out, ensure_ascii=False)[:12000]})
-    raise RuntimeError("improver did not propose")
+                        out = {"error": f"unknown tool {name}"}
+                except Exception as e:
+                    out = {"error": str(e)[:500]}
+                messages.append({"role": "tool", "tool_call_id": c["id"], "content": json.dumps(out, ensure_ascii=False)[:12000]})
+        raise RuntimeError("improver did not propose")
+    except Exception as e:
+        e.telem_spent = telem.spent
+        raise
+
