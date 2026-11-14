@@ -361,6 +361,11 @@ def baseline(name, rows, task):
     return None
 
 
+def title(m):
+    """A method's name in a few words: the one its writer gave, else the opening words of its rationale."""
+    return m.get("title") or " ".join(re.split(r"[:.;,]", str(m.get("rationale") or ""), maxsplit=1)[0].split()[:5])
+
+
 def snapshot(name, task=None):
     d = RUNS / name
     logs = d / "logs"
@@ -374,7 +379,7 @@ def snapshot(name, task=None):
         "name": name, "phase": ph, "iteration": rnd, "state": state, "agents": shown(found, ph, time.time(), task), "nodes": nodes,
         "runs": runs_by_recency(), "tasks": tasks(rows, found), "task": task,
         "task_searches": task_searches(d, rows, task) if task else None, "baseline": baseline(name, rows, task) if task else None,
-        "methods": [{k: m.get(k) for k in ("id", "parent", "round", "status", "select_score")} for m in methods],
+        "methods": [{**{k: m.get(k) for k in ("id", "parent", "round", "status", "select_score")}, "title": title(m)} for m in methods],
         "spend": round(sum(r.get("spent") or 0 for r in rows), 3), "searches_done": len(rows), "failed": len(errors),
         "last_error": (errors[-1].get("error") or "")[:300] if errors else None,
     }

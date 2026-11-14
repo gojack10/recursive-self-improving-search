@@ -189,7 +189,8 @@ def new_candidates(d, tree, props, parent, rnd):
     for c in props.get("candidates", []):
         if not isinstance(c, dict) or not c.get("instructions"):
             continue
-        m = {"id": M.next_id(d), "parent": parent["id"], "round": rnd, "rationale": c.get("rationale", ""),
+        m = {"id": M.next_id(d), "parent": parent["id"], "round": rnd, "title": str(c.get("title") or ""),
+             "rationale": c.get("rationale", ""),
              "instructions": c["instructions"], "routing": merge_routing(parent["routing"], c.get("routing")),
              "routing_rules": c.get("routing_rules", ""), "fetch_policy": c.get("fetch_policy", ""), "status": "candidate"}
         m["rationale"] = str(m["rationale"])

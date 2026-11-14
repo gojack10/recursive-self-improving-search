@@ -42,9 +42,6 @@ svg.fit{display:block;width:100%;flex:1;min-height:0}
 #b-thinking,#b-writing,#b-web_search,#b-fetch_pages,#b-check_candidates,#b-history,#b-submit{--c:var(--search)}
 #b-scoring,#b-judging{--c:var(--judge)}
 #b-done{--c:var(--good)}
-.blk .badge{fill:#fff;stroke:#000;stroke-width:2;filter:none;display:none}
-.blk.many .badge{display:block}
-.blk .count,.blk.active .count{fill:#000;font:700 15px var(--mono)}
 .dot{fill:#fff;filter:drop-shadow(0 0 6px currentColor)}
 .edge path{fill:none;stroke:#6f6f6f;stroke-width:1.8;transition:stroke .2s}
 .edge.hot path{stroke:#fff;stroke-width:2.6}
@@ -56,27 +53,25 @@ svg.fit{display:block;width:100%;flex:1;min-height:0}
 #stats div{color:var(--muted);font-size:12px}
 #stats b{display:block;font:700 32px/1.1 var(--display);color:#fff;letter-spacing:-.02em}
 #stats .ours b{color:var(--ours)}#stats .base b{color:var(--base)}#stats .up b{color:var(--good)}#stats .down b{color:var(--bad)}
-details{position:absolute;right:12px;top:10px;border:1px solid var(--edge);background:var(--bg);padding:6px 10px;font-size:12px;z-index:2}
-summary{cursor:pointer;color:var(--muted)}
-details div{display:flex;gap:8px;align-items:center;margin-top:4px}
-.sw{width:24px;height:0;border-top:3px solid var(--ours)}.sw.base{border-top:3px dashed var(--base)}.sw.fill{height:10px;border:0;background:#3ddc8440}
 #reveal{border:1px solid #fff;background:var(--bg);color:#fff;font:700 14px var(--mono);padding:6px 14px;cursor:pointer;border-radius:0;align-self:center}
 #reveal:hover{background:#fff;color:#000}
-#answers{position:absolute;inset:118px 14px 56px 14px;background:var(--bg);border:1px solid var(--edge);padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:18px;overflow:auto;z-index:3}
+#answers{position:absolute;inset:118px 14px 14px 14px;background:var(--bg);border:1px solid var(--edge);padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:18px;overflow:auto;z-index:3}
 #answers[hidden]{display:none}
 #answers h3{margin:0 0 6px;font:700 16px var(--display)}
 #answers .ours h3{color:var(--ours)}#answers .base h3{color:var(--base)}
 #answers p{margin:0;font:500 14px/1.5 var(--display);color:#fff}
 #answers p.wrong{color:var(--bad);text-decoration:line-through}
-#methods{flex:none;border-top:1px solid var(--line);padding-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.method{border:1px solid var(--edge);padding:3px 10px;font:600 14px var(--display);color:#fff}
-.method small{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
-.method.dropped{color:var(--dim);text-decoration:line-through;border-color:var(--line)}.method.dropped small{color:var(--bad);text-decoration:none;display:inline-block}
-.method.kept small{color:var(--good)}
-.method.used{border-color:var(--ours);box-shadow:0 0 10px #3ddc8455}.method.used small{color:var(--ours)}
-.method.trying{border-color:var(--writer)}.method.trying small{color:var(--writer);animation:pulse 1.2s ease-in-out infinite}
-.method.new{animation:arrive 1.6s ease-out}
-@keyframes arrive{from{opacity:0;transform:translateY(10px);box-shadow:0 0 24px #fff}}
+.split{flex:1;min-height:0;display:flex;gap:14px}
+#delta{flex:none;width:250px;overflow:auto;padding-left:6px;background:linear-gradient(var(--edge),var(--edge)) 10px 0/2px 100% no-repeat}
+#delta div{position:relative;padding:6px 0 6px 24px;font:600 14px/1.25 var(--display);color:#fff}
+#delta div::before{content:"";position:absolute;left:0;top:10px;width:10px;height:10px;background:var(--c);box-shadow:0 0 8px var(--c)}
+#delta b{font:700 18px var(--display);margin-right:8px;color:var(--c)}
+#delta .used{--c:var(--ours)}#delta .kept{--c:#2f9d62}#delta .dropped{--c:var(--bad);color:var(--dim)}
+#delta .trying{--c:var(--writer)}#delta .trying::before{animation:pulse 1.2s ease-in-out infinite}
+#delta .lesson{--c:var(--judge);font:500 12px/1.3 var(--display);color:#b9b9b9}
+#delta .lesson::before{width:6px;height:6px;left:2px;top:11px;box-shadow:none}
+#delta .new{animation:arrive 1.6s ease-out}
+@keyframes arrive{from{opacity:0;transform:translateY(10px);text-shadow:0 0 18px #fff}}
 .land{animation:land 1.6s ease-out}
 @keyframes land{from{opacity:0;r:22}}
 @keyframes pulse{50%{opacity:.3}}
@@ -95,17 +90,13 @@ details div{display:flex;gap:8px;align-items:center;margin-top:4px}
 <div class="main">
   <div class="panel">
     <div class="label" title="Top row: the loop, read from the files the run has written. Below: each agent's token replays the steps in its own event stream.">What is happening now</div>
-    <svg class="fit" id="machine" viewBox="0 0 760 640"></svg>
+    <div class="split"><svg class="fit" id="machine" viewBox="0 0 760 640"></svg><div id="delta"></div></div>
   </div>
   <div class="panel">
     <div class="label">Score, same search budget</div>
     <div id="stats"></div>
-    <details open><summary>Legend</summary>
-      <div><span class="sw"></span>Ours</div><div><span class="sw base"></span>Plain search</div><div><span class="sw fill"></span>Ahead of plain search</div>
-    </details>
     <svg class="fit" id="chart" viewBox="0 0 900 400"></svg>
     <div id="answers" hidden></div>
-    <div id="methods"></div>
   </div>
 </div>
 
@@ -117,7 +108,7 @@ const pretty = (name) => name.replaceAll("_", " ");
 const methodName = (id) => (id === "v000" ? "plain search" : /^v\d+$/.test(id) ? "method " + Number(id.slice(1)) : id);
 const view = new URLSearchParams(location.search);   // task: one question, else every unseen question; run: a named run, else the latest
 const put = (el, html) => { if (el.dataset.html !== html) el.innerHTML = el.dataset.html = html; };   // unchanged parts stay put: clicks land, arrivals animate once
-let knownMethods = null, revealed = false;
+let known = null, revealed = false;
 
 // The state machine. Blocks are states, arrows are transitions; [x, y, label, width]. A null label is a junction dot.
 const W = 170, H = 40;
@@ -169,7 +160,7 @@ function build() {
   for (const [id, [x, y, label, w = W]] of Object.entries(STATES)) {
     if (label == null) { out += `<circle cx="${x}" cy="${y}" r="5" fill="#d8d8d8"/>`; continue; }
     out += `<g class="blk ${id === "start" ? "entry" : ""}" id="b-${id}"><rect x="${x - w / 2}" y="${y - H / 2}" width="${w}" height="${H}"/><text class="name" x="${x}" y="${y}">${label}</text>` +
-      `<rect class="badge" x="${x + w / 2 - 13}" y="${y - H / 2 - 13}" width="26" height="26"/><text class="count" x="${x + w / 2}" y="${y - H / 2}"></text></g>`;
+      `<g class="who" transform="translate(${x + w / 2 - 10} ${y - H / 2})"></g></g>`;
   }
   $("machine").innerHTML = out + `<g id="dots"></g>`;
   built = true;
@@ -188,14 +179,13 @@ function route(from, to) {
 
 function paint() {               // blocks are lit by the tokens resting on them
   const counts = {};
-  for (const [key, tk] of tokens) if (tk.at) (counts[tk.at] ||= { n: 0, loop: false }), key === "loop" ? (counts[tk.at].loop = true) : counts[tk.at].n++;
+  for (const [key, tk] of tokens) if (tk.at) (counts[tk.at] ||= []), key === "loop" || counts[tk.at].push(tk.dot.style.fill);
   for (const id of Object.keys(STATES)) {
     const el = $("b-" + id);
     if (!el) continue;
     const c = counts[id];
     el.classList.toggle("active", !!c);
-    el.classList.toggle("many", !!c && c.n > 1);
-    el.querySelector(".count").textContent = c && c.n > 1 ? c.n : "";
+    el.querySelector(".who").innerHTML = (c || []).map((fill, i) => `<circle cx="${-i * 17}" r="7" fill="${fill}" stroke="#000" stroke-width="2"/>`).join("");
   }
 }
 
@@ -336,14 +326,20 @@ function score(s) {
   put($("chart"), out);
 }
 
-function methods(s) {
-  const current = (s.state || {}).current;
-  const state = (m) => m.id === current ? ["used", "in use"] : m.status === "discarded" ? ["dropped", "dropped"] : m.status === "candidate" ? ["trying", "trying"] : ["kept", "kept"];
-  const list = s.methods.filter((m) => m.id !== "v000" && m.status !== "recursion-test"), shown = list.slice(-6);
-  const fresh = knownMethods ? new Set(list.filter((m) => !knownMethods.has(m.id)).map((m) => m.id)) : new Set();
-  put($("methods"), `<span class="label" style="margin:0">Methods tried</span>` + (list.length > shown.length ? `<span style="color:var(--dim)">+${list.length - shown.length} earlier</span>` : "") +
-    (shown.map((m) => { const [c, text] = state(m); return `<span class="method ${c} ${fresh.has(m.id) ? "new" : ""}"><small>${text}</small>${esc(methodName(m.id))}</span>`; }).join("") || `<span style="color:var(--dim)">none yet</span>`));
-  knownMethods = new Set(list.map((m) => m.id));
+// The tree as it grew: each method in a few words with what became of it, and each lesson written from the searches.
+function delta(s) {
+  const current = (s.state || {}).current, by = new Map(s.methods.map((m) => [m.id, m]));
+  const items = s.nodes.filter((n) => (n.kind === "Idea" && by.has(n.method)) || n.kind === "What We Learned");
+  const fresh = known ? new Set(items.filter((n) => !known.has(n.id)).map((n) => n.id)) : new Set();
+  known = new Set(items.map((n) => n.id));
+  const box = $("delta"), atEnd = box.scrollHeight - box.scrollTop - box.clientHeight < 40;
+  put(box, items.map((n) => {
+    const m = by.get(n.method), arrived = fresh.has(n.id) ? "new" : "";
+    if (!m) return `<div class="lesson ${arrived}" title="${esc(n.summary)}">${esc(n.name)}</div>`;
+    const state = m.id === current ? "used" : m.status === "discarded" ? "dropped" : m.status === "candidate" ? "trying" : "kept";
+    return `<div class="${state} ${arrived}" title="${esc(n.summary)}"><b>${Number(m.id.slice(1))}</b>${esc(m.id === "v000" ? "Plain search" : m.title)}</div>`;
+  }).join(""));
+  if (atEnd) box.scrollTop = box.scrollHeight;
 }
 
 function render(s) {
@@ -355,7 +351,7 @@ function render(s) {
   }).join(""));
   const t = s.tasks.find((x) => x.name === s.task);
   put($("question"), esc(t ? t.question : "Average over the questions the method never trained on"));
-  lights(s); machine(s); score(s); methods(s);
+  lights(s); machine(s); score(s); delta(s);
 }
 
 async function poll() {

@@ -21,13 +21,14 @@ PROPOSE_TOOL = tool("propose", "Finish: record lessons, link repeated failures t
     "failure_links": {"type": "array", "items": {"type": "object", "properties": {
         "attempt_id": {"type": "string"}, "node_id": {"type": "string"}, "why": {"type": "string"}}}},
     "candidates": {"type": "array", "items": {"type": "object", "properties": {
+        "title": {"type": "string", "description": "Three to five plain words naming the method."},
         "rationale": {"type": "string"}, "instructions": {"type": "string"},
         "routing": {"type": "object", "properties": {
             "auto_routing": {"type": "boolean"}, "providers": {"type": "array", "items": {"type": "string"}},
             "tier": {"type": "string"}, "num_results": {"type": "integer"},
             "verify_providers": {"type": "array", "items": {"type": "string"}}}},
         "routing_rules": {"type": "string"}, "fetch_policy": {"type": "string"}},
-        "required": ["rationale", "instructions", "routing", "routing_rules", "fetch_policy"]}}},
+        "required": ["title", "rationale", "instructions", "routing", "routing_rules", "fetch_policy"]}}},
     ["lessons", "candidates"])
 
 SYSTEM = """You improve a web search method. Searchers follow the method on open hunts ("find every X"); a referee scores
