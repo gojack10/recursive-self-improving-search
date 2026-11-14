@@ -328,9 +328,9 @@ def one_round(name, k=2, breakout=False):
     return s
 
 
-def run(name, rounds, k=2, max_spend=30.0):
+def run(name, rounds, k=2, max_spend=30.0, keep_going=False):
     """Main loop with the plateau matrix: two flat rounds in a row trigger a breakout round;
-    two breakouts in a row without a counted gain stop the run as 'levelled off'."""
+    two breakouts in a row without a counted gain stop the run as 'levelled off', unless keep_going."""
     d = init(name)
     if state(d)["noise"] is None:
         calibrate(name)
@@ -339,7 +339,7 @@ def run(name, rounds, k=2, max_spend=30.0):
         if telem_total(d) > max_spend:
             print("spend cap reached")
             break
-        if s["breakouts_without_gain"] >= 2:
+        if s["breakouts_without_gain"] >= 2 and not keep_going:
             print("levelled off: two breakout rounds without a counted gain")
             break
         last = s["test_points"][-1] if s["test_points"] else None

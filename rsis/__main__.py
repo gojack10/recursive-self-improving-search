@@ -50,6 +50,7 @@ for c in ("calibrate", "round", "run", "recursion-test", "report"):
     if c == "run":
         s.add_argument("--rounds", type=int, default=8)
         s.add_argument("--max-spend", type=float, default=30.0)
+        s.add_argument("--keep-going", action="store_true", help="do not stop when the run has levelled off")
     if c in ("run", "round"):
         s.add_argument("-k", type=int, default=2)
     if c == "recursion-test":
@@ -69,7 +70,7 @@ elif a.cmd == "calibrate":
 elif a.cmd == "round":
     loop.one_round(a.name, k=a.k)
 elif a.cmd == "run":
-    loop.run(a.name, a.rounds, k=a.k, max_spend=a.max_spend)
+    loop.run(a.name, a.rounds, k=a.k, max_spend=a.max_spend, keep_going=a.keep_going)
 elif a.cmd == "recursion-test":
     print(json.dumps(loop.recursion_test(a.name, a.gens), indent=1))
 if a.cmd in ("calibrate", "round", "run", "recursion-test", "report"):
