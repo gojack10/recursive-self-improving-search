@@ -91,8 +91,12 @@ def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, ur
         texts[url_key(u)] = texts.get(url_key(u), "") + " " + norm(txt)
     unsupported_seen = set()
 
-    def supported(url, name):
-        return url_key(url) in retrieved and (not texts or mentions(texts.get(url_key(url), ""), name))
+    by_qid = {t["qid"]: [t["label"], *t["aliases"]] for t in truth}
+
+    def supported(url, name, qid=None):
+        # A matched find may be named on the page by any of its known names, not only the searcher's spelling.
+        names = [name, *by_qid.get(qid, [])]
+        return url_key(url) in retrieved and (not texts or any(mentions(texts.get(url_key(url), ""), n) for n in names))
     judge = Chat("judge") if check_gaps else None
     gaps = 0
     for f in finds:
@@ -103,9 +107,11 @@ def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, ur
         qid = match(name, truth)
         key = qid or norm(name)
         row = {"name": name, "url": url, "providers": sorted(next((p for u, p in url_providers.items() if url_key(u) == url_key(url)), []))}
-        if key in seen or (key in unsupported_seen and not supported(url, name)):
+        if not key:
+            row["status"] = "wrong"
+        elif key in seen or (key in unsupported_seen and not supported(url, name, qid)):
             row["status"] = "duplicate"
-        elif require_evidence and not supported(url, name):
+        elif require_evidence and not supported(url, name, qid):
             # The cited URL must be one this attempt retrieved through Telem, and its text must mention the find,
             # so recital from memory with an arbitrary retrieved URL scores as wrong.
             row["status"] = "unsupported"
@@ -127,6 +133,7 @@ def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, ur
             seen.add(key)
         else:
             row["status"] = "wrong"
+            seen.add(key)
         rows.append(row)
     # A find first cited badly and later cited properly is a duplicate, not a wrong answer.
     for r in rows:

@@ -92,7 +92,7 @@ class Telem:
                     self.url_providers.setdefault(url, set()).add(p)
                     if len(self.url_text.get(url, "")) < 4000:
                         self.url_text[url] = (self.url_text.get(url, "") + " " + (res.get("title") or "") + " "
-                                              + (res.get("summary") or res.get("excerpt") or ""))
+                                              + (res.get("summary") or res.get("excerpt") or "")[:400])
                 results.append({"provider": p, "query": run.get("query"), "rank": res.get("rank"), "url": url, "title": res.get("title"),
                                 "summary": (res.get("summary") or res.get("excerpt") or "")[:400]})
         with self.lock:

@@ -68,19 +68,19 @@ SUBMIT_TOOL = tool("submit", "Submit your final list. Each find needs the URL th
 
 def run_search(m, query, args, telem):
     r = m["routing"]
-    providers = args.get("providers")
+    providers = as_list(args.get("providers")) or None
     auto = args.get("auto_routing", r.get("auto_routing") if not providers else False)
     return telem.search(query, also=as_list(args.get("also")), providers=providers or (None if auto else r.get("providers")), auto_routing=auto,
                         tier=args.get("tier", r.get("tier", "default")),
                         num_results=args.get("num_results", r.get("num_results", 8)),
-                        include_domains=args.get("include_domains"),
+                        include_domains=as_list(args.get("include_domains")) or None,
                         published_after=args.get("published_after"), published_before=args.get("published_before"))
 
 
 def check_candidates(m, args, telem):
     """One query per candidate, sent to Telem as batches of five. Results come back grouped by candidate."""
     r = m["routing"]
-    providers = args.get("providers") or r.get("verify_providers") or r.get("providers")
+    providers = as_list(args.get("providers")) or r.get("verify_providers") or r.get("providers")
     per = args.get("per_candidate", 2)
     queries = [f"{c} {args['condition']}" for c in as_list(args.get("candidates"))[:25]]
     grouped, budget_left = {}, None
@@ -126,6 +126,9 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
         done = False
         for c in calls:
             name = c["function"]["name"]
+            if done:
+                messages.append({"role": "tool", "tool_call_id": c["id"], "content": '{"error": "already submitted"}'})
+                continue
             args = parse_obj(c["function"].get("arguments"))
             try:
                 if name == "web_search":
@@ -136,11 +139,13 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
                 elif name == "check_candidates":
                     out = check_candidates(m, args, telem)
                 elif name == "submit":
-                    if not isinstance(args.get("finds"), list) and not last:
-                        out = {"error": "submit arguments did not parse; call submit again with a finds list"}
+                    raw = args.get("finds")
+                    good = [f for f in as_list(raw) if isinstance(f, dict)]
+                    final = turn == MAX_TURNS - 1
+                    if (not isinstance(raw, list) or (raw and not good)) and not final:
+                        out = {"error": "submit needs finds as a list of {name, evidence_url} objects; call submit again"}
                     else:
-                        finds = [f for f in as_list(args.get("finds")) if isinstance(f, dict)]
-                        notes, done = args.get("notes", ""), True
+                        finds, notes, done = good, args.get("notes", ""), True
                         out = {"ok": True}
                 else:
                     out = {"error": f"unknown tool {name}"}

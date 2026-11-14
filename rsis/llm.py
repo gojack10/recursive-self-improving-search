@@ -14,12 +14,19 @@ class Chat:
         body = {"model": self.cfg["model"], "messages": messages}
         if tools:
             body["tools"] = tools
-        if force:
-            body["tool_choice"] = {"type": "function", "function": {"name": force}}
         if self.cfg["effort"]:
             body["reasoning_effort"] = self.cfg["effort"]
         if json_mode:
             body["response_format"] = {"type": "json_object"}
+        if force:
+            # Some endpoints reject a forced function choice; fall back to the unforced call.
+            try:
+                return self._send({**body, "tool_choice": {"type": "function", "function": {"name": force}}})
+            except RuntimeError:
+                pass
+        return self._send(body)
+
+    def _send(self, body):
         for i in range(3):
             r = post_json(self.cfg["base_url"].rstrip("/") + "/chat/completions", body,
                           {"Authorization": f"Bearer {self.cfg['api_key']}"}, timeout=300)
@@ -38,6 +45,8 @@ class Chat:
 
 
 def parse_obj(text):
+    if isinstance(text, dict):
+        return text
     text = text or ""
     start, end = text.find("{"), text.rfind("}")
     try:

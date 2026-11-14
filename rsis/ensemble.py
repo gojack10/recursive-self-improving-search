@@ -69,6 +69,15 @@ def merge(logs):
     return items
 
 
+def safe_attempt(m, hunt, budget, role):
+    """One failed searcher should not discard the other searchers' paid work."""
+    try:
+        return attempt(m, hunt, budget=budget, role=role)
+    except Exception as e:
+        print(f"  ensemble searcher {m['id']} failed: {str(e)[:200]}", flush=True)
+        return None
+
+
 def merged_text(sources):
     out = {}
     for src in sources:
@@ -100,7 +109,9 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
     more searchers agree on, and send the rest through batched Telem verification before submitting."""
     t0 = time.time()
     with ThreadPoolExecutor(n) as ex:
-        logs = list(ex.map(lambda i: attempt(lens(m, hunt, i), hunt, budget=budget, role=role), range(n)))
+        logs = [l for l in ex.map(lambda i: safe_attempt(lens(m, hunt, i), hunt, budget, role), range(n)) if l]
+    if not logs:
+        raise RuntimeError("every ensemble searcher failed")
     items = merge(logs)
     agreed = [it for it in items.values() if len(it["votes"]) >= 2 and it["urls"]]
     single = [it for it in items.values() if not (len(it["votes"]) >= 2 and it["urls"])]
