@@ -4,7 +4,7 @@ import math
 import uuid
 from collections import Counter
 
-from .history import tokens
+from .history import append, tokens
 
 
 class Tree:
@@ -24,7 +24,12 @@ class Tree:
         (d / "node.md").write_text(text + f"**Kind:** {kind}\n\n{body}\n", encoding="utf-8")
         if parent:
             (self.dir / parent / "children" / nid).write_text("", encoding="utf-8")
+        self.record(event="write", id=nid, kind=kind, name=name, summary=summary, status=status, parent=parent)
         return nid
+
+    def record(self, **event):
+        """Tree changes in the order they happened; node files only hold the latest state."""
+        append(self.dir.parent.parent, "tree_events.jsonl", event)
 
     def nodes(self):
         out = []
@@ -77,6 +82,7 @@ class Tree:
         t = p.read_text(encoding="utf-8")
         old = next(l for l in t.splitlines() if l.startswith("status: "))
         p.write_text(t.replace(old, f"status: {json.dumps(status)}", 1), encoding="utf-8")
+        self.record(event="status", id=nid, status=status)
 
     def append(self, nid, section):
         if not self.exists(nid):
