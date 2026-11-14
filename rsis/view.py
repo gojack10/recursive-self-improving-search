@@ -24,7 +24,7 @@ TOOL_STATE = {"web_search": "web_search", "fetch_pages": "fetch_pages", "check_c
               "submit": "submit", "propose": "submit"}
 STREAMS, LOCK = {}, threading.Lock()
 KEEP_LINES, SHOW_LINES, LIVE_CHARS, STALE_SECONDS = 300, 80, 1500, 900
-ROLE_PHASE = {"noise": "calibrate", "train": "train", "select": "select", "test": "test", "rtest": "recursion",
+ROLE_PHASE = {"noise": "calibrate", "baseline": "calibrate", "train": "train", "select": "select", "test": "test", "rtest": "recursion",
               "trial": "trial", "pi-trial": "trial"}
 
 

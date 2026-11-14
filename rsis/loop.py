@@ -172,6 +172,16 @@ def calibrate(name, runs=3):
     print(f"noise band {s['noise']}  baseline test {s['best_test']}")
 
 
+def baseline(name):
+    """Plain search on every question of the corpus that has no plain-search attempt in this run yet,
+    so each question can be compared against it."""
+    d = init(name)
+    done = {r["hunt"] for r in H.rows(d, "attempts.jsonl") if r["method"] == "v000"}
+    missing = [h for p in ("train", "select", "test") for h in HU.pool(p) if h not in done]
+    if missing:
+        batch(d, [(M.load(d, "v000"), h, "baseline") for h in missing], 0)
+
+
 def merge_routing(base, new):
     new = new if isinstance(new, dict) else {}
     r = {**base, **new}
@@ -335,6 +345,7 @@ def run(name, rounds, k=2, max_spend=30.0, keep_going=False):
     d = init(name)
     if state(d)["noise"] is None:
         calibrate(name)
+    baseline(name)
     for _ in range(rounds):
         s = state(d)
         if telem_total(d) > max_spend:
