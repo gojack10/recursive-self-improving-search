@@ -58,16 +58,8 @@ def mentions(text, name):
     return all(f" {d} " in padded for d in digits) and (not words or any(f" {w} " in padded for w in words))
 
 
-def gap_check(name, hunt, judge):
-    """Independent check, through Tavily rather than the searcher's Telem route, for a find Wikidata lacks."""
-    try:
-        r = tavily.search(f"{name} {hunt['criterion']}", max_results=5, exclude_domains=REFEREE_DOMAINS)
-    except RuntimeError as e:
-        # Unchecked, so not credited: the same treatment as a find past MAX_GAP_CHECKS.
-        return "wrong", f"gap check unavailable: {str(e)[:120]}", None
-    snippets = "\n".join(f"- {x['title']}: {x['content'][:300]}" for x in r.get("results", []))
-    known = "; ".join(t["label"] for t in hunt["truth"])
-    v = judge.json(
+def judge_call(judge, hunt, name, known, r, snippets):
+    return judge.json(
         "You check one claimed answer against web evidence. Reply as JSON {\"verdict\": \"yes\"|\"no\"|\"same\", "
         "\"same_as\": str|null, \"meets_x\": bool, \"meets_y\": bool, \"reason\": str}. "
         "Say same, and copy the known item's name into same_as, if the claimed item is another name for one of the "
@@ -77,6 +69,21 @@ def gap_check(name, hunt, judge):
         f"Criterion: {hunt['criterion']}\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}\n"
         f"Already-known items: {known}\nClaimed item: {name}\n"
         f"Tavily answer: {r.get('answer')}\nEvidence:\n{snippets}")
+
+
+def gap_check(name, hunt, judge):
+    """Independent check, through Tavily rather than the searcher's Telem route, for a find Wikidata lacks."""
+    try:
+        r = tavily.search(f"{name} {hunt['criterion']}", max_results=5, exclude_domains=REFEREE_DOMAINS)
+    except Exception as e:
+        # Unchecked, so not credited: the same treatment as a find past MAX_GAP_CHECKS.
+        return "wrong", f"gap check unavailable: {str(e)[:120]}", None
+    snippets = "\n".join(f"- {x.get('title') or ''}: {(x.get('content') or '')[:300]}" for x in (r.get("results") or []) if isinstance(x, dict))
+    known = "; ".join(t["label"] for t in hunt["truth"])
+    try:
+        v = judge_call(judge, hunt, name, known, r, snippets)
+    except Exception as e:
+        return "wrong", f"gap judge unavailable: {str(e)[:120]}", None
     if v.get("verdict") == "same":
         return "same", v.get("reason", ""), match_one(str(v.get("same_as") or ""), hunt["truth"])
     status = "verified_gap" if v.get("verdict") == "yes" else "wrong"

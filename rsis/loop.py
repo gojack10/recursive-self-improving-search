@@ -53,7 +53,10 @@ def init(name):
 def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
     hunt = HU.load(hunt_name)
     log = make(hunt) if make else attempt(m, hunt)
-    if log.get("error"):
+    if log.get("error") and method_caused(log["error"]) and "finds" in log:
+        # The method itself broke the attempt (e.g. its fetch policy overflowed the context): that is a result, score it.
+        log["finds"] = []
+    elif log.get("error"):
         print(f"  r{rnd} {role:9} {log['method']} {hunt_name:22} FAILED after ${log['telem_spent']:.3f}: {log['error'][:150]}", flush=True)
         H.append(d, "errors.jsonl", {"round": rnd, "role": role, "method": log["method"], "hunt": hunt_name,
                                      "error": log["error"], "spent": log["telem_spent"]})
@@ -78,6 +81,11 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
           f"{row['correct']}/{row['total']} wrong={row['wrong']} ${row['spent']:.3f}", flush=True)
     row["label"] = role
     return row
+
+
+def method_caused(error):
+    e = error.lower()
+    return ("http 400" in e or "http 413" in e) and any(w in e for w in ("context", "token", "too long", "maximum"))
 
 
 def safe_run(d, m, hunt_name, rnd, role, make=None):
@@ -137,8 +145,11 @@ def calibrate(name, runs=3):
     test = HU.pool("test")
     rows = batch(d, [(m, h, "noise") for _ in range(runs) for h in test], 0)
     # A calibration run with any failed hunt is dropped, so every run averages the same hunts.
-    per_run = [ok_mean(rows[i * len(test):(i + 1) * len(test)]) for i in range(runs)
-               if not any(r.get("failed") for r in rows[i * len(test):(i + 1) * len(test)])]
+    # Runs are compared on the hunts they all completed; a run with nothing in common drops out.
+    for i, r in enumerate(rows):
+        r["run"] = i // len(test)
+    fair = paired(rows, lambda r: r["run"])
+    per_run = [x for x in (ok_mean([r for r in fair if r["run"] == i]) for i in range(runs)) if x is not None]
     if not per_run:
         raise RuntimeError("every calibration run failed; see errors.jsonl")
     s["noise"] = round(max(per_run) - min(per_run), 4)
@@ -173,16 +184,15 @@ def new_candidates(d, tree, props, parent, rnd):
 
 
 def record_lessons(tree, props, probe, rnd=0):
-    for l in props.get("lessons", []):
+    for l in props.get("lessons") or []:
         if not isinstance(l, dict) or not l.get("body"):
             continue
         body = str(l["body"])
         tree.write("What We Learned", str(l.get("title") or body[:60]), body[:200],
                    f"{body}\n\n**Tested scope:** {l.get('scope', 'not stated')}\n\n**Evidence attempts:** {l.get('evidence_attempts', [])}",
                    parent=probe)
-    for f in props.get("failure_links", []):
-        if isinstance(f, dict) and isinstance(f.get("node_id"), str) and f["node_id"].strip(".") \
-                and (tree.dir / f["node_id"] / "node.md").exists() and (tree.dir / f["node_id"]).exists():
+    for f in props.get("failure_links") or []:
+        if isinstance(f, dict) and tree.exists(f.get("node_id")):
             tree.append(f["node_id"], f"- Round {rnd}: seen again in attempt {f.get('attempt_id')}: {' '.join(str(f.get('why', '')).split())}")
     return bool(props.get("lessons"))
 
@@ -194,7 +204,8 @@ def safe_improve(d, tree, start, search_method, ids, k):
         return props
     except Exception as e:
         print(f"improver failed, round continues with no candidates: {str(e)[:200]}", flush=True)
-        H.append(d, "errors.jsonl", {"role": "improver", "method": start["id"], "error": str(e)[:1000]})
+        H.append(d, "errors.jsonl", {"role": "improver", "method": start["id"], "error": str(e)[:1000],
+                                     "spent": round(getattr(e, "telem_spent", 0.0), 4)})
         return {}
 
 
@@ -247,7 +258,7 @@ def one_round(name, k=2, breakout=False):
             m["status"] = "adopted"
             tree.set_status(m["node"], "resolved")
             tree.write("Agreed Work", f"Adopt {m['id']}", f"{m['id']} beat {cur['id']} on unseen select hunts.",
-                       f"Select scores: {json.dumps(by)}\nHunts: {sel}", parent=m["node"])
+                       f"Select scores: {json.dumps(by)}", parent=m["node"])
             cur["status"] = "superseded"
             M.save(d, cur)
         else:
@@ -334,6 +345,7 @@ def recursion_test(name, gens=None):
             H.append(d, "improver_spend.jsonl", {"method": f"rt-{g}", "spent": round(meta["telem_spent"], 4)})
         except Exception as e:
             print(f"generation {g}: improver failed: {str(e)[:200]}", flush=True)
+            H.append(d, "improver_spend.jsonl", {"method": f"rt-{g}", "spent": round(getattr(e, "telem_spent", 0.0), 4)})
             continue
         c = next((c for c in props["candidates"] if isinstance(c, dict) and c.get("instructions")), None)
         if c is None:

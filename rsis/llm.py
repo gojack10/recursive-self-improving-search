@@ -38,7 +38,7 @@ class Chat:
         else:
             raise RuntimeError(f"no choices from {self.cfg['model']}: {str(r)[:300]}")
         for k in self.usage:
-            self.usage[k] += (r.get("usage") or {}).get(k, 0)
+            self.usage[k] += ((r.get("usage") or {}).get(k) or 0)
         return r["choices"][0]["message"]
 
     def complete_through_pi(self, messages, tools):

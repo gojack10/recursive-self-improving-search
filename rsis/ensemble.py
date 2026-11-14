@@ -103,8 +103,8 @@ def judge_checks(chat, hunt, checks):
             "Put it in reject only if the results show it fails a condition (for example it meets only one). "
             "Leave it out of both lists if the results say nothing useful.",
             f"Condition X: {hunt['x']}\nCondition Y: {hunt['y']}\nResults per candidate:\n{json.dumps(part)}")
-        keep |= {norm(k) for k in v.get("keep", []) if isinstance(k, str)}
-        reject |= {norm(k) for k in v.get("reject", []) if isinstance(k, str)}
+        keep |= {norm(k) for k in v.get("keep") or [] if isinstance(k, str)}
+        reject |= {norm(k) for k in v.get("reject") or [] if isinstance(k, str)}
     return keep, reject
 
 
@@ -135,8 +135,13 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
             checks[norm(q[:-len(hunt["criterion"])] if q.endswith(hunt["criterion"]) else q)] = results
         if failed:
             break
-    keep, reject = judge_checks(Chat(role), hunt, {it["name"]: checks[norm(it["name"])] for it in queue
-                                                   if norm(it["name"]) in checks}) if checks else (set(), set())
+    try:
+        keep, reject = judge_checks(Chat(role), hunt, {it["name"]: checks[norm(it["name"])] for it in queue
+                                                       if norm(it["name"]) in checks}) if checks else (set(), set())
+    except Exception as e:
+        # Judge unavailable: keep what two searchers agreed on rather than discard the paid search.
+        print(f"  ensemble judge failed, keeping agreed finds only: {str(e)[:150]}", flush=True)
+        keep, reject = set(), set()
     finds = []
     for it in queue:
         k = norm(it["name"])
@@ -169,7 +174,7 @@ def closed_book(hunt, role="frontier"):
     chat = Chat(role)
     v = chat.json("Answer from your own knowledge. Reply as JSON {\"finds\": [{\"name\": str}]}. List every item you are "
                   "confident about; wrong items cost points.", f"{hunt['question']}\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}")
-    finds = [{"name": f["name"], "evidence_url": None} for f in v.get("finds", []) if isinstance(f, dict) and f.get("name")]
+    finds = [{"name": f["name"], "evidence_url": None} for f in v.get("finds") or [] if isinstance(f, dict) and f.get("name")]
     return {"attempt_id": uuid.uuid4().hex[:10], "method": f"closed-book:{chat.cfg['model']}", "hunt": hunt["name"],
             "kind": hunt["kind"], "pool": hunt["pool"], "x": hunt["x"], "y": hunt["y"], "finds": finds, "notes": "",
             "telem_calls": [], "telem_spent": 0.0, "telem_session": None, "trace": [], "url_providers": {}, "url_text": {},
