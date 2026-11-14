@@ -45,6 +45,21 @@ The seed method `v000` is Telem's own auto-routing with a plain agent, so the cu
 
 The referee's judge records whether a wrong find met only X or only Y (`x_only`, `y_only`). The improver sees those counts, so "returned half-matches" is a failure it can learn from. Which side to anchor, and how to route each phase, belong to the method. That keeps them learnable rather than hard-coded: the seed `v000` doesn't use the tactic, and the hand-written `methods/anchor_verify.json` is a reference to trial against.
 
+**Question shapes.** Scored hunts cover several "times X and Y happened" shapes, so a better method has to be better across them (`FRAMES` in `rsis/hunts.py`):
+
+| shape | example hunt |
+|---|---|
+| intersection | novels that won both the Hugo and the Nebula |
+| triple | women who are both astronauts and physicians |
+| negation | Hugo winners that did *not* win the Nebula |
+| sequence | astronauts who later sat in a national legislature |
+| events | air disasters with 300 or more deaths |
+
+**Open hunts** (`rsis/open_hunts.py`) push the same shapes into niche territory where no answer key exists, such as reported dogs that swallowed something at a beach and needed a vet, studies that contradict the "three-second goldfish memory" claim, or lightning strikes during a live football match. There is no recall score. Every find must cite a URL the attempt retrieved, then passes a Tavily check and a judge on both conditions, and the result is "how many verified". One stress test (a dog eating a pickle on a beach in its owner's arms) probably has zero real cases, so it measures whether the system invents answers. Open hunts are demo pieces and stay out of the loop's scores.
+```
+python -m rsis.open_hunts methods/anchor_verify.json --hunts goldfish_memory_rebuttals dog_pickle_beach
+```
+
 **Plateau matrix.** If the winner's test re-run doesn't beat the best so far by more than the noise band for two rounds in a row, the next round is a breakout round: fresh improvers, each given a different slice of history and a different earlier version. Two breakouts in a row without a gain stops the run as "levelled off".
 
 **Recursion test.** Generations 0, 3, 6... each get the same improvement job: start from `v000`, with history (attempts, lineage, provider yield, tree nodes) frozen at the end of round 1, and the same budget. Only the method the improver searches with changes. The improver's prompt always shows `v000`, so it can't just copy generation N's text; generation N only drives its searches, and the number of searches it ran is recorded. The improver never sees test-pool scores. Rising successor scores mean the system got better at improving, not only at searching. Flat bars mean continual learning, and we report it that way.

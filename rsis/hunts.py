@@ -65,6 +65,21 @@ HUNTS = {
         question="Find every aviation accident or incident in which at least 300 people died.",
         criterion="aviation accident or incident with at least 300 deaths",
         where="?x wdt:P31/wdt:P279* wd:Q744913; wdt:P1120 ?n. FILTER(?n >= 300)"),
+    "women_astronaut_physicians": dict(x='woman astronaut', y='physician / medical doctor', frame="triple",
+        kind="people", pool="select",
+        question="Find every woman who has been an astronaut and is also a trained physician (medical doctor).",
+        criterion="woman who is both an astronaut and a physician",
+        where="?x wdt:P31 wd:Q5; wdt:P106 wd:Q11631; wdt:P106 wd:Q39631; wdt:P21 wd:Q6581072."),
+    "hugo_not_nebula": dict(x='won the Hugo Award for Best Novel', y='did NOT win the Nebula Award for Best Novel', frame="negation",
+        kind="works", pool="train",
+        question="Find every novel that won the Hugo Award for Best Novel but did not win the Nebula Award for Best Novel.",
+        criterion="novel that won the Hugo Award for Best Novel and did not win the Nebula Award for Best Novel",
+        where='?h rdfs:label "Hugo Award for Best Novel"@en. ?n rdfs:label "Nebula Award for Best Novel"@en. ?x p:P166/ps:P166 ?h. FILTER NOT EXISTS {?x p:P166/ps:P166 ?n} FILTER NOT EXISTS {?x wdt:P31 wd:Q5}'),
+    "astronaut_legislators": dict(x='flew or trained as an astronaut / cosmonaut', y='later served as a member of a national legislature', frame="sequence",
+        kind="people", pool="select",
+        question="Find every astronaut or cosmonaut who has served as a member of a national parliament or legislature.",
+        criterion="astronaut or cosmonaut who served as a member of a national parliament or legislature",
+        where="?x wdt:P31 wd:Q5; wdt:P106 wd:Q11631; wdt:P39 ?p. ?p wdt:P279* wd:Q486839."),
     "wirth_languages": dict(x='programming language', y='designed by Niklaus Wirth',
         kind="works", pool="select",
         question="Find every programming language designed by Niklaus Wirth.",
@@ -116,6 +131,16 @@ def build(names=None):
                                                        "built": time.strftime("%Y-%m-%d")}, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"{name}: {len(truth)}")
         time.sleep(1)
+
+
+# Question shapes the hunts cover. A hunt without a frame is a plain X-and-Y intersection.
+FRAMES = {
+    "intersection": "items that meet X and Y",
+    "triple": "items that meet X, Y and Z at once",
+    "negation": "items that meet X but not Y",
+    "sequence": "items that did X and later did Y",
+    "events": "times an event of type X happened with property Y",
+}
 
 
 def load(name):

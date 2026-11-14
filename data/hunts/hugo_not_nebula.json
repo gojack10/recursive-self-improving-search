@@ -1,0 +1,278 @@
+{
+ "name": "hugo_not_nebula",
+ "x": "won the Hugo Award for Best Novel",
+ "y": "did NOT win the Nebula Award for Best Novel",
+ "frame": "negation",
+ "kind": "works",
+ "pool": "train",
+ "question": "Find every novel that won the Hugo Award for Best Novel but did not win the Nebula Award for Best Novel.",
+ "criterion": "novel that won the Hugo Award for Best Novel and did not win the Nebula Award for Best Novel",
+ "where": "?h rdfs:label \"Hugo Award for Best Novel\"@en. ?n rdfs:label \"Nebula Award for Best Novel\"@en. ?x p:P166/ps:P166 ?h. FILTER NOT EXISTS {?x p:P166/ps:P166 ?n} FILTER NOT EXISTS {?x wdt:P31 wd:Q5}",
+ "truth": [
+  {
+   "qid": "Q7306263",
+   "label": "Redshirts",
+   "aliases": [
+    "Redshirts: A Novel with Three Codas"
+   ]
+  },
+  {
+   "qid": "Q30337352",
+   "label": "The Obelisk Gate",
+   "aliases": [
+    "Obelisk Gate"
+   ]
+  },
+  {
+   "qid": "Q122238085",
+   "label": "Nettle & Bone",
+   "aliases": [
+    "Nettle and Bone"
+   ]
+  },
+  {
+   "qid": "Q427110",
+   "label": "Way Station",
+   "aliases": [
+    "Way Station (novel)",
+    "Here Gather the Stars"
+   ]
+  },
+  {
+   "qid": "Q543562",
+   "label": "The Diamond Age",
+   "aliases": [
+    "The Diamond Age or, a Young Lady's Illustrated Primer"
+   ]
+  },
+  {
+   "qid": "Q607112",
+   "label": "The Three-Body Problem",
+   "aliases": [
+    "Three-Body Problem"
+   ]
+  },
+  {
+   "qid": "Q749783",
+   "label": "The Man in the High Castle",
+   "aliases": [
+    "Man in the High Castle"
+   ]
+  },
+  {
+   "qid": "Q2567510",
+   "label": "This Immortal",
+   "aliases": [
+    "...And Call Me Conrad"
+   ]
+  },
+  {
+   "qid": "Q2719299",
+   "label": "To Say Nothing of the Dog",
+   "aliases": [
+    "To say nothing of the dog, or, How we found the bishop's bird stump at last"
+   ]
+  },
+  {
+   "qid": "Q356107",
+   "label": "Cyteen",
+   "aliases": []
+  },
+  {
+   "qid": "Q471679",
+   "label": "Rainbows End",
+   "aliases": []
+  },
+  {
+   "qid": "Q492207",
+   "label": "Starship Troopers",
+   "aliases": []
+  },
+  {
+   "qid": "Q586831",
+   "label": "A Case of Conscience",
+   "aliases": []
+  },
+  {
+   "qid": "Q734976",
+   "label": "Lord of Light",
+   "aliases": []
+  },
+  {
+   "qid": "Q782075",
+   "label": "The Snow Queen",
+   "aliases": []
+  },
+  {
+   "qid": "Q929821",
+   "label": "Stranger in a Strange Land",
+   "aliases": []
+  },
+  {
+   "qid": "Q932592",
+   "label": "Foundation's Edge",
+   "aliases": []
+  },
+  {
+   "qid": "Q945382",
+   "label": "Double Star",
+   "aliases": []
+  },
+  {
+   "qid": "Q1168659",
+   "label": "The Graveyard Book",
+   "aliases": []
+  },
+  {
+   "qid": "Q1410482",
+   "label": "The Moon Is a Harsh Mistress",
+   "aliases": []
+  },
+  {
+   "qid": "Q1416458",
+   "label": "Stand on Zanzibar",
+   "aliases": []
+  },
+  {
+   "qid": "Q1474920",
+   "label": "Jonathan Strange & Mr Norrell",
+   "aliases": []
+  },
+  {
+   "qid": "Q1659714",
+   "label": "A Canticle for Leibowitz",
+   "aliases": []
+  },
+  {
+   "qid": "Q1751584",
+   "label": "Downbelow Station",
+   "aliases": []
+  },
+  {
+   "qid": "Q1798059",
+   "label": "Hyperion",
+   "aliases": []
+  },
+  {
+   "qid": "Q2292400",
+   "label": "A Deepness in the Sky",
+   "aliases": []
+  },
+  {
+   "qid": "Q2301398",
+   "label": "Spin",
+   "aliases": []
+  },
+  {
+   "qid": "Q2350387",
+   "label": "The Demolished Man",
+   "aliases": []
+  },
+  {
+   "qid": "Q2419894",
+   "label": "Barrayar",
+   "aliases": []
+  },
+  {
+   "qid": "Q2502043",
+   "label": "To Your Scattered Bodies Go",
+   "aliases": []
+  },
+  {
+   "qid": "Q2502176",
+   "label": "The Uplift War",
+   "aliases": []
+  },
+  {
+   "qid": "Q2884527",
+   "label": "Mirror Dance",
+   "aliases": []
+  },
+  {
+   "qid": "Q3135306",
+   "label": "Where Late the Sweet Birds Sang",
+   "aliases": []
+  },
+  {
+   "qid": "Q3209683",
+   "label": "The Big Time",
+   "aliases": []
+  },
+  {
+   "qid": "Q3227984",
+   "label": "The Wanderer",
+   "aliases": []
+  },
+  {
+   "qid": "Q3294967",
+   "label": "Blue Mars",
+   "aliases": []
+  },
+  {
+   "qid": "Q3294970",
+   "label": "Green Mars",
+   "aliases": []
+  },
+  {
+   "qid": "Q3520291",
+   "label": "The City & the City",
+   "aliases": []
+  },
+  {
+   "qid": "Q3523959",
+   "label": "They'd Rather Be Right",
+   "aliases": []
+  },
+  {
+   "qid": "Q3655248",
+   "label": "The Vor Game",
+   "aliases": []
+  },
+  {
+   "qid": "Q19346391",
+   "label": "Hominids",
+   "aliases": []
+  },
+  {
+   "qid": "Q25217632",
+   "label": "The Fifth Season",
+   "aliases": []
+  },
+  {
+   "qid": "Q58221164",
+   "label": "A Fire Upon the Deep",
+   "aliases": []
+  },
+  {
+   "qid": "Q82566838",
+   "label": "A Memory Called Empire",
+   "aliases": []
+  },
+  {
+   "qid": "Q105722561",
+   "label": "A Desolation Called Peace",
+   "aliases": []
+  },
+  {
+   "qid": "Q123300220",
+   "label": "Some Desperate Glory",
+   "aliases": []
+  },
+  {
+   "qid": "Q133842917",
+   "label": "The Tainted Cup",
+   "aliases": []
+  },
+  {
+   "qid": "Q138775929",
+   "label": "The Everlasting",
+   "aliases": []
+  },
+  {
+   "qid": "Q46751",
+   "label": "Harry Potter and the Goblet of Fire",
+   "aliases": []
+  }
+ ],
+ "built": "2026-11-14"
+}

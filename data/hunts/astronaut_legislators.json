@@ -1,0 +1,291 @@
+{
+ "name": "astronaut_legislators",
+ "x": "flew or trained as an astronaut / cosmonaut",
+ "y": "later served as a member of a national legislature",
+ "frame": "sequence",
+ "kind": "people",
+ "pool": "select",
+ "question": "Find every astronaut or cosmonaut who has served as a member of a national parliament or legislature.",
+ "criterion": "astronaut or cosmonaut who served as a member of a national parliament or legislature",
+ "where": "?x wdt:P31 wd:Q5; wdt:P106 wd:Q11631; wdt:P39 ?p. ?p wdt:P279* wd:Q486839.",
+ "truth": [
+  {
+   "qid": "Q44371",
+   "label": "Valentina Tereshkova",
+   "aliases": [
+    "Valentina Vladimirovna Tereshkova"
+   ]
+  },
+  {
+   "qid": "Q7327",
+   "label": "Юрий Алексеевич Гагарин",
+   "aliases": [
+    "Yuriy Gagarin",
+    "Yury Gagarin",
+    "Yuri Alekseyevich Gagarin",
+    "Yuri Alexeyevich Gagarin",
+    "Yuriy Alekseyevich Gagarin",
+    "Yuriy Alexeyevich Gagarin",
+    "Yury Alekseyevich Gagarin",
+    "Yury Alexeyevich Gagarin",
+    "Yuri Gagarin"
+   ]
+  },
+  {
+   "qid": "Q152318",
+   "label": "Svetlana Savitskaya",
+   "aliases": [
+    "Svetlana Yevgenyevna Savitskaya"
+   ]
+  },
+  {
+   "qid": "Q182642",
+   "label": "John Glenn",
+   "aliases": [
+    "John Herschel Glenn Jr."
+   ]
+  },
+  {
+   "qid": "Q152298",
+   "label": "Gherman Titov",
+   "aliases": [
+    "German Titov",
+    "German Stepanovich Titov",
+    "Gherman Stepanovich Titov"
+   ]
+  },
+  {
+   "qid": "Q252726",
+   "label": "Vitaly Sevastyanov",
+   "aliases": [
+    "Vitaly Ivanovich Sevastyanov"
+   ]
+  },
+  {
+   "qid": "Q254985",
+   "label": "Vladimír Remek",
+   "aliases": [
+    "Vladimir Remek"
+   ]
+  },
+  {
+   "qid": "Q255764",
+   "label": "Yelena Kondakova",
+   "aliases": [
+    "Yelena Vladimirovna Kondakova"
+   ]
+  },
+  {
+   "qid": "Q313399",
+   "label": "Vladimir Shatalov",
+   "aliases": [
+    "Vladimir Aleksandrovich Shatalov"
+   ]
+  },
+  {
+   "qid": "Q317643",
+   "label": "Marcos Pontes",
+   "aliases": [
+    "Marcos Cesar Pontes"
+   ]
+  },
+  {
+   "qid": "Q357510",
+   "label": "Mark Kelly",
+   "aliases": [
+    "Mark E. Kelly",
+    "Mark Edward Kelly",
+    "Mark E. Kelly",
+    "Mark Edward Kelly"
+   ]
+  },
+  {
+   "qid": "Q358437",
+   "label": "Bill Nelson",
+   "aliases": [
+    "Clarence William Nelson II"
+   ]
+  },
+  {
+   "qid": "Q362902",
+   "label": "Arnaldo Tamayo Méndez",
+   "aliases": [
+    "Arnaldo Tamayo",
+    "Arnaldo Tamayo Mendez"
+   ]
+  },
+  {
+   "qid": "Q364451",
+   "label": "Береговой, Георгий Тимофеевич",
+   "aliases": [
+    "Beregovoy",
+    "Georgy Timofeyevich Beregovoy",
+    "Береговой Г. Т.",
+    "Береговой Георгий",
+    "Береговой Георгий Тимофеевич",
+    "Береговой, Г. Т.",
+    "Береговой, Георгий",
+    "Георгий Береговой",
+    "Георгий Тимофеевич Береговой",
+    "Georgy Beregovoy"
+   ]
+  },
+  {
+   "qid": "Q381541",
+   "label": "Aleksei Yeliseyev",
+   "aliases": [
+    "Aleksei Stanislavovich Eliseev"
+   ]
+  },
+  {
+   "qid": "Q382150",
+   "label": "Leonid Kadeniuk",
+   "aliases": [
+    "Leonid Konstantinovich Kadenyuk",
+    "Leonid Kostyantynovych Kadenyuk"
+   ]
+  },
+  {
+   "qid": "Q434546",
+   "label": "Pyotr Klimuk",
+   "aliases": [
+    "Klimuk",
+    "Pyotr Ilyich Klimuk",
+    "Пётр Ільіч Клімук"
+   ]
+  },
+  {
+   "qid": "Q448547",
+   "label": "Pedro Duque",
+   "aliases": [
+    "Pedro Duque Duque",
+    "Pedro Francisco Duque Duque"
+   ]
+  },
+  {
+   "qid": "Q457064",
+   "label": "Roman Romanenko",
+   "aliases": [
+    "Roman Yurievich Romanenko",
+    "Roman Yuryevich Romanenko"
+   ]
+  },
+  {
+   "qid": "Q461807",
+   "label": "Maksim Surayev",
+   "aliases": [
+    "Maksim Viktorovich Surayev"
+   ]
+  },
+  {
+   "qid": "Q467732",
+   "label": "Musa Manarov",
+   "aliases": [
+    "Musa Khiramanovich Manarov"
+   ]
+  },
+  {
+   "qid": "Q519256",
+   "label": "Jake Garn",
+   "aliases": [
+    "Edwin Garn",
+    "Edwin Jacob Garn"
+   ]
+  },
+  {
+   "qid": "Q560360",
+   "label": "Talgat Musabayev",
+   "aliases": [
+    "Talgat Amangeldyuly Musabayev"
+   ]
+  },
+  {
+   "qid": "Q592219",
+   "label": "Anton Shkaplerov",
+   "aliases": [
+    "Anton Nikolaevich Shkaplerov"
+   ]
+  },
+  {
+   "qid": "Q957368",
+   "label": "Franco Malerba",
+   "aliases": [
+    "Franco Egidio Malerba"
+   ]
+  },
+  {
+   "qid": "Q974431",
+   "label": "William John Knight",
+   "aliases": [
+    "William Knight",
+    "William J. Knight",
+    "Pete Knight"
+   ]
+  },
+  {
+   "qid": "Q2474284",
+   "label": "Magomed Tolboyev",
+   "aliases": [
+    "Magomed Omarovich Tolboev"
+   ]
+  },
+  {
+   "qid": "Q3492123",
+   "label": "Yelena Serova",
+   "aliases": [
+    "Yelena Olegovna Serova"
+   ]
+  },
+  {
+   "qid": "Q641389",
+   "label": "Nikolai Budarin",
+   "aliases": [
+    "Nikolai Mikhailovich Budarin",
+    "Nikolay Budarin",
+    "Nikolay Mikhaylovich Budarin"
+   ]
+  },
+  {
+   "qid": "Q703321",
+   "label": "Marc Garneau",
+   "aliases": [
+    "Joseph Jean-Pierre Marc Garneau",
+    "Joseph Jean-Pierre Marc Garneau"
+   ]
+  },
+  {
+   "qid": "Q928034",
+   "label": "Aleksandr Samokutyayev",
+   "aliases": [
+    "Aleksandr Mikhailovich Samokutyaev",
+    "Aleksandr Mikhaylovich Samokutyayev"
+   ]
+  },
+  {
+   "qid": "Q108886",
+   "label": "Harrison Schmitt",
+   "aliases": []
+  },
+  {
+   "qid": "Q235266",
+   "label": "Liu Yang",
+   "aliases": []
+  },
+  {
+   "qid": "Q353687",
+   "label": "Pham Tuan",
+   "aliases": []
+  },
+  {
+   "qid": "Q456840",
+   "label": "Georgi Ivanov",
+   "aliases": []
+  },
+  {
+   "qid": "Q727572",
+   "label": "Umberto Guidoni",
+   "aliases": []
+  }
+ ],
+ "built": "2026-11-14"
+}

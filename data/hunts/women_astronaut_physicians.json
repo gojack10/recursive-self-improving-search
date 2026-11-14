@@ -1,0 +1,135 @@
+{
+ "name": "women_astronaut_physicians",
+ "x": "woman astronaut",
+ "y": "physician / medical doctor",
+ "frame": "triple",
+ "kind": "people",
+ "pool": "select",
+ "question": "Find every woman who has been an astronaut and is also a trained physician (medical doctor).",
+ "criterion": "woman who is both an astronaut and a physician",
+ "where": "?x wdt:P31 wd:Q5; wdt:P106 wd:Q11631; wdt:P106 wd:Q39631; wdt:P21 wd:Q6581072.",
+ "truth": [
+  {
+   "qid": "Q232441",
+   "label": "Laurel Clark",
+   "aliases": [
+    "Laurel Blair Clark",
+    "Laurel Blair Salton Clark"
+   ]
+  },
+  {
+   "qid": "Q234306",
+   "label": "Chiaki Mukai",
+   "aliases": [
+    "Chiaki Naito"
+   ]
+  },
+  {
+   "qid": "Q235580",
+   "label": "Claudie Haigneré",
+   "aliases": [
+    "Claudie André-Deshays",
+    "Claudie Haignere"
+   ]
+  },
+  {
+   "qid": "Q34091",
+   "label": "Mae Jemison",
+   "aliases": [
+    "Mae C. Jemison",
+    "Mae Carol Jemison",
+    "Mae EL Jemison",
+    "Mae Carol Jemison"
+   ]
+  },
+  {
+   "qid": "Q2742047",
+   "label": "Patricia Robertson",
+   "aliases": [
+    "Patricia Consolatrix Hilliard Robertson"
+   ]
+  },
+  {
+   "qid": "Q3479150",
+   "label": "Serena M. Auñón-Chancellor",
+   "aliases": [
+    "Serena Maria Auñón-Chancellor"
+   ]
+  },
+  {
+   "qid": "Q3574186",
+   "label": "Yvonne Cagle",
+   "aliases": [
+    "Yvonne Darlene Cagle"
+   ]
+  },
+  {
+   "qid": "Q28716025",
+   "label": "Mariam Fardous",
+   "aliases": [
+    "Mariam H. Fardous",
+    "Mariam Hamed Fardous",
+    "Maryam Hamed Al-Firdous",
+    "Maryam Hamed Firdous"
+   ]
+  },
+  {
+   "qid": "Q99495235",
+   "label": "Carmen Possnig",
+   "aliases": [
+    "Carmen Lisa Caroline Possnig"
+   ]
+  },
+  {
+   "qid": "Q237470",
+   "label": "Anna Lee Fisher",
+   "aliases": [
+    "Anna Fisher",
+    "Anna L. Fisher",
+    "Anna L. Tingle",
+    "Anna Lee Tingle Fisher",
+    "Anna Tingle"
+   ]
+  },
+  {
+   "qid": "Q254298",
+   "label": "Margaret Rhea Seddon",
+   "aliases": [
+    "Rhea Seddon",
+    "M R Seddon",
+    "M. R. Seddon",
+    "M. Rhea Seddon",
+    "M.R. Seddon",
+    "Margaret R. Seddon",
+    "Margaret Seddon",
+    "MR Seddon"
+   ]
+  },
+  {
+   "qid": "Q258385",
+   "label": "Roberta Bondar",
+   "aliases": [
+    "Roberta Lynn Bondar"
+   ]
+  },
+  {
+   "qid": "Q264460",
+   "label": "Ellen S. Baker",
+   "aliases": [
+    "Ellen Baker",
+    "Ellen Louise Shulman Baker"
+   ]
+  },
+  {
+   "qid": "Q533560",
+   "label": "Marianne Merchez",
+   "aliases": []
+  },
+  {
+   "qid": "Q28735811",
+   "label": "Shawna Pandya",
+   "aliases": []
+  }
+ ],
+ "built": "2026-11-14"
+}
