@@ -72,9 +72,37 @@ python -m rsis.open_hunts methods/anchor_verify.json --hunts goldfish_memory_reb
 
 ## Running it, step by step
 
-Needs Python 3.10+ and nothing else (standard library only).
+Needs Python 3.10+ (standard library only), Node.js 22.19+, and Pi for subscription-based model calls.
 
-1. Copy `.env.example` to `.env`. Fill in `TELEM_API_KEY`, `TAVILY_API_KEY` and an OpenAI-compatible endpoint (`LLM_BASE_URL`, `LLM_API_KEY`). Set the model IDs your endpoint uses for the searcher (Terra 6.1, high), the improver (GPT 6 Astra, medium) and the judge.
+### Install Pi and connect your own Codex account
+
+Install [Node.js](https://nodejs.org/) and [Python](https://www.python.org/downloads/) if needed, then:
+
+```sh
+npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+pi
+```
+
+Inside Pi, enter `/login`, select **OpenAI (ChatGPT Plus/Pro)** / **openai-codex**, and finish the browser sign-in with your own account. Exit Pi after login. Credentials stay in your local Pi setup; do not commit or share them.
+
+From this repository, copy `.env.example` to `.env` (`cp .env.example .env` on macOS/Linux, `Copy-Item .env.example .env` in PowerShell). Fill in `TELEM_API_KEY`. The example uses stock Pi's `openai-codex` provider, so no custom account router or model API key is required. `TELEM_BASE_URL` is the hackathon router. Tavily evidence checks also go through Telem; no separate Tavily key is needed.
+
+```dotenv
+SEARCHER_MODEL=pi:openai-codex/gpt-6.1-terra
+SEARCHER_EFFORT=high
+IMPROVER_MODEL=pi:openai-codex/gpt-6-astra
+IMPROVER_EFFORT=medium
+JUDGE_MODEL=pi:openai-codex/gpt-6-sol
+JUDGE_EFFORT=low
+```
+
+Use `pi --list-models 'openai-codex'` to see models your installed Pi exposes. If Terra is missing, update Pi before running. Both the searcher and improver run as Pi agents using this repository's tools; the judge runs through Pi without tools. The same-family judge is a separate evidence check, not independent model-family confirmation.
+
+**Jack's machine:** the same code also accepts `pi:openai-codex-personal/gpt-6.1-terra-fast` for the searcher and `pi:openai-codex-personal/gpt-6-astra` for the improver. Only that provider loads `~/.pi/agent/extensions/codex-workspaces.ts`. The `-fast` aliases belong to Jack's custom router; stock Pi users should use the ordinary IDs above. Keep these personal overrides in the untracked `.env`.
+
+### Run the pipeline
+
+1. Finish the local `.env` setup above. The existing API path also remains available: use plain model IDs and configure `LLM_BASE_URL` / `LLM_API_KEY` instead of `pi:` roles.
 2. Check every key and model with one cheap call each:
    ```
    python -m rsis smoke

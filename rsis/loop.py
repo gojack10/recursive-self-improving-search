@@ -18,6 +18,7 @@ WORKERS = 6
 def run_dir(name):
     d = ROOT / "runs" / name
     d.mkdir(parents=True, exist_ok=True)
+    os.environ["RSIS_RUN_DIR"] = str(d)
     return d
 
 
