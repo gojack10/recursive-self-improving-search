@@ -1,10 +1,10 @@
 {
  "goal": "6072bc4d-87a7-47e0-a67e-ee6d6ef0c353",
  "current": "v007",
- "round": 4,
+ "round": 5,
  "best_test": 0.809,
  "noise": 0.0,
- "flat_rounds": 0,
+ "flat_rounds": 1,
  "breakouts_without_gain": 0,
  "test_points": [
   {
@@ -70,6 +70,22 @@
    "new_lessons": true,
    "telem_total": 4.6121,
    "tavily_credits": 107
+  },
+  {
+   "round": 5,
+   "method": "v007",
+   "test": 0.7566,
+   "adopted": false,
+   "select": {
+    "v007": 0.875,
+    "v009": 0.8611,
+    "v010": 0.6917
+   },
+   "train": 0.75,
+   "breakout": false,
+   "new_lessons": false,
+   "telem_total": 6.219,
+   "tavily_credits": 5
   }
  ],
  "baseline_test": 0.6274,

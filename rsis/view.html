@@ -289,7 +289,8 @@ function lights(s) {
 function score(s) {
   const st = s.state || {}, task = s.task_searches;
   const base = task ? s.baseline : st.baseline_test;
-  const points = task ? task.map((x) => ({ v: x.score, label: methodName(x.method) }))
+  // One question: plain search first, then our methods' searches in the order they ran.
+  const points = task ? [...(base == null ? [] : [{ v: base, label: "plain search" }]), ...task.filter((x) => x.method !== "v000").map((x) => ({ v: x.score, label: methodName(x.method) }))]
     : [...(base == null ? [] : [{ v: base, label: "start" }]), ...(st.test_points || []).map((p) => ({ v: p.test, label: String(p.round) }))];
   const mine = task ? [...task].reverse().find((x) => x.method === st.current) || task[task.length - 1] : null;
   const ours = task ? mine && mine.score : points.length ? points[points.length - 1].v : null;

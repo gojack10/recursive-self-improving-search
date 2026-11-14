@@ -1,0 +1,6 @@
+{"t": 1794700542.52, "event": "plan", "unmatched": 2, "reused": 0, "to_check": 2}
+{"t": 1794700542.52, "event": "start", "name": "Svante August Arrhenius \u2014 Arrhenius crater; Nobel Prize in Chemistry 1903"}
+{"t": 1794700542.52, "event": "start", "name": "Antoine Henri Becquerel \u2014 Becquerel crater; Nobel Prize in Physics 1903"}
+{"t": 1794700548.86, "event": "end", "name": "Svante August Arrhenius \u2014 Arrhenius crater; Nobel Prize in Chemistry 1903", "status": "wrong", "reason": "gap check unavailable: https://hack.telem.ai/api/router/v1/search -> HTTP 429: {\"detail\":\"Rate limit exceeded (200 requests/minute for this acc", "seconds": 6.3}
+{"t": 1794700548.88, "event": "end", "name": "Antoine Henri Becquerel \u2014 Becquerel crater; Nobel Prize in Physics 1903", "status": "wrong", "reason": "gap check unavailable: https://hack.telem.ai/api/router/v1/search -> HTTP 429: {\"detail\":\"Rate limit exceeded (200 requests/minute for this acc", "seconds": 6.4}
+{"t": 1794700548.88, "event": "done"}

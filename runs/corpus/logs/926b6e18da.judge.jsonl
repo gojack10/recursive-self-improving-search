@@ -1,0 +1,4 @@
+{"t": 1794700112.96, "event": "plan", "unmatched": 1, "reused": 0, "to_check": 1}
+{"t": 1794700112.96, "event": "start", "name": "Ariel Durant"}
+{"t": 1794700120.01, "event": "end", "name": "Ariel Durant", "status": "verified_gap", "reason": "Ariel Durant shared the Pulitzer Prize for General Nonfiction with Will Durant in 1968. The IAU planetary names record identifies Venus\u2019s Durant crater as named for Ariel, the American writer (1898\u20131981), and lists it as approved in 1994. She is distinct from all already-known people.", "seconds": 7.1}
+{"t": 1794700120.01, "event": "done"}

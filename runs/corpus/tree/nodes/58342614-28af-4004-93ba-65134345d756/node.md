@@ -13,3 +13,5 @@ Attempt dd908a9aad found all four valid items but submitted one additional wrong
 **Tested scope:** General intersection hunts; unsupported identity joins and query-premise contamination
 
 **Evidence attempts:** ['dd908a9aad']
+
+- Round 6: seen again in attempt dd908a9aad: The already documented wrong submission followed searches containing an asserted match and a check of the other predicate. Link the existing weak-predicate failure rather than create another lesson.

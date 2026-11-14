@@ -1,0 +1,25 @@
+{
+ "id": "v011",
+ "parent": "v007",
+ "round": 6,
+ "title": "Budgeted Challenger Discovery Probe",
+ "rationale": "Preserve v007's scope-preserving cheap search, but distinguish scope stagnation from provider saturation using a bounded Brave challenger. Brave's attributed 96.3 correct finds per dollar exceeds Exa's 82.6, though neither establishes marginal value. Unlike broad routing or v009's stronger query admission rules, this tests an explicit alternative index at a controlled opportunity cost; verification remains on Parallel.",
+ "instructions": "Define X and Y precisely, including entity unit, exclusions, eligible subtypes, group rules and effective dates. Start sequentially with one broad X-only, one broad Y-only and one conjunction search, without familiar-name or occupational narrowing. Maintain deduplicated X/Y frontiers, an identity/evidence ledger, and a scope ledger recording every added restriction. Derive a few meaningful partitions from source taxonomies, not an exhaustive cross-product. Choose the next frontier by expected verified additions per discovery-plus-resolution cost. Work in short discovery/check rounds; each round's reverse-frontier or neglected-subtype probe must remove a recorded restriction or address a genuinely untested partition. Check source-backed candidates only for missing predicates in small, individually priced batches. Supply established identity and evidence, not conjectured claims. Silence means unresolved, not false; reject only on contradictory evidence or an applicable exhaustive source. After two discovery searches add no plausible identities, stop conjunction paraphrases and run a genuinely different scope partition on Parallel. If that also adds no identities and the result sets mostly repeat already inspected evidence, consider one Brave challenge on the best unresolved broad frontier or source-derived partition. Do not use provider diversity to repeat a narrowed familiar-name query. Before buying it, compare its full cost plus likely checks with the best available Parallel probe; skip it when promising cheap checks or uncovered partitions dominate. Cap all Brave discovery charges at 15% of the initial budget, and buy no probe unless verification remains affordable. Immediately check its new source-backed identities on Parallel. A second Brave probe is allowed only after the first produces a newly verified intersection; new URLs, duplicate entities and unsupported names do not qualify. Continue normal Parallel scope search otherwise. Keep at least 35% of initial funds reserved for evidence; stop discovery when pending checks require the remainder. Before submission, perform up to three affordable residual probes of distinct untested restrictions, stopping after two produce neither candidates nor useful evidence. Audit identity, both predicates, subtype and effective date. Submit supported intersections only; saturation is not completeness.",
+ "routing": {
+  "auto_routing": false,
+  "providers": [
+   "parallel"
+  ],
+  "tier": "default",
+  "num_results": 8,
+  "verify_providers": [
+   "parallel"
+  ]
+ },
+ "routing_rules": "Parallel alone, default tier, 8 results for baseline and residual discovery and 4 for missing-fact checks. Challenger: Brave alone, default tier, 8 results, subject to the 15% discovery-charge cap and outcome gate; it replaces, rather than supplements, routine Exa discovery. Exa alone with 4 results is reserved for promising individual verification cases with ambiguity, conflicts or inaccessible evidence. No auto-routing, routine also variants or multi-provider batches. Price every query and candidate at actual charges; do not presume fewer results cost less. Count discovery plus follow-up verification when evaluating challenger yield, and do not credit duplicate finds to marginal gain. Domain filters are for targeted evidence, relaxed after failure, not general coverage. Publication-date filters only when publication date determines eligibility; otherwise verify effective dates in content.",
+ "fetch_policy": "Reuse cached source facts. Fetch authoritative pages that settle missing predicates or identity, and useful multi-candidate lists. Inspect scope, date ranges and pagination before claiming list coverage; follow only promising uncovered sections. Fetch Brave-discovered evidence under the same standards as Parallel evidence, not merely because it comes from a new provider. An engine summary or repeated assertion is not independent proof. After a blocked or uninformative fetch, make one targeted alternate-source attempt rather than a fetch chain.",
+ "status": "discarded",
+ "node": "f12338fd-7af1-470d-bb1d-0990eebbfd98",
+ "created": "2026-11-14T15:55:05",
+ "select_score": 0.8677
+}

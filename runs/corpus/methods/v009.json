@@ -18,7 +18,8 @@
  },
  "routing_rules": "Parallel alone, default tier, 8 results for discovery and 4 for exact missing facts and check_candidates. No routine also variants or auto-routing. Charge each candidate and provider separately; result limits are not assumed to reduce prices. Exa alone, 4 results, for individual evidence conflicts or identity ambiguity. Allow at most one Exa discovery probe only after a genuinely different Parallel scope partition fails, continuing only on useful incremental identities or evidence. Use domain filters only for targeted source checks, relax failed filters, and use publication-date filters only when publication date determines eligibility.",
  "fetch_policy": "Reuse cached facts. Fetch authoritative pages settling missing facts or useful candidate lists. Record each list's scope, date, sections and pagination; never equate an excerpt with coverage. Fetch only sections justified by an action ticket. A blocked or uninformative fetch permits one targeted alternate source, not a chain. Include fetch costs in action tickets.",
- "status": "candidate",
+ "status": "discarded",
  "node": "19febaf5-6ef3-49be-ba5b-92482a64fb08",
- "created": "2026-11-14T15:45:17"
+ "created": "2026-11-14T15:45:17",
+ "select_score": 0.8611
 }

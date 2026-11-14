@@ -18,7 +18,8 @@
  },
  "routing_rules": "Parallel alone, default tier, 8 results for source discovery and residual probes; 4 for exact unresolved facts and check_candidates. No routine also variants, auto-routing or bulk Exa checking. Budget each candidate separately and do not presume fewer results cost less. Exa alone with 4 results for selected ambiguous or conflicting identities; at most one initial discovery probe after a different Parallel partition has failed, continued only with useful incremental evidence. Authoritative-domain filters target record evidence, not general coverage; relax failed filters. Publication-date filters apply only to publication-date eligibility; verify effective dates in source content.",
  "fetch_policy": "Fetch a promising structured list or source section once, recording actual visible rows, section boundaries, filters, pagination and dates. Reuse all extracted facts. Follow a next-page or section link only within the capped pilot or an explicitly justified incremental extension. Prefer accessible record views over repeated fetches of truncated pages. Do not assume a requested large page size was honored. One targeted alternate-source attempt after a blocked or uninformative fetch; abandon extraction if still unusable. Fetch authoritative individual records to settle identity or unresolved predicates, not every search result.",
- "status": "candidate",
+ "status": "discarded",
  "node": "583d8a24-587a-4a61-912a-115de34f88d1",
- "created": "2026-11-14T15:45:17"
+ "created": "2026-11-14T15:45:17",
+ "select_score": 0.6917
 }

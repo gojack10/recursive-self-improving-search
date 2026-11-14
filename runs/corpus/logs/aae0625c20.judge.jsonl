@@ -1,0 +1,3 @@
+{"t": 1794700073.54, "event": "plan", "unmatched": 1, "reused": 1, "to_check": 0}
+{"t": 1794700073.54, "event": "end", "name": "Georgia O'Keeffe", "status": "wrong", "reason": "The evidence confirms Georgia O\u2019Keeffe received the Presidential Medal of Freedom in 1977, but does not establish an IAU-approved Venus feature named after her. O\u2019Keeffe crater is on Mercury, not Venus.", "reused": true}
+{"t": 1794700073.54, "event": "done"}
