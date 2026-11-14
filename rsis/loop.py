@@ -144,8 +144,11 @@ def calibrate(name, runs=3):
     test = HU.pool("test")
     rows = batch(d, [(m, h, "noise") for _ in range(runs) for h in test], 0)
     # A calibration run with any failed hunt is dropped, so every run averages the same hunts.
-    per_run = [ok_mean(rows[i * len(test):(i + 1) * len(test)]) for i in range(runs)
-               if not any(r.get("failed") for r in rows[i * len(test):(i + 1) * len(test)])]
+    # Runs are compared on the hunts they all completed; a run with nothing in common drops out.
+    for i, r in enumerate(rows):
+        r["run"] = i // len(test)
+    fair = paired(rows, lambda r: r["run"])
+    per_run = [x for x in (ok_mean([r for r in fair if r["run"] == i]) for i in range(runs)) if x is not None]
     if not per_run:
         raise RuntimeError("every calibration run failed; see errors.jsonl")
     s["noise"] = round(max(per_run) - min(per_run), 4)
@@ -180,16 +183,15 @@ def new_candidates(d, tree, props, parent, rnd):
 
 
 def record_lessons(tree, props, probe, rnd=0):
-    for l in props.get("lessons", []):
+    for l in props.get("lessons") or []:
         if not isinstance(l, dict) or not l.get("body"):
             continue
         body = str(l["body"])
         tree.write("What We Learned", str(l.get("title") or body[:60]), body[:200],
                    f"{body}\n\n**Tested scope:** {l.get('scope', 'not stated')}\n\n**Evidence attempts:** {l.get('evidence_attempts', [])}",
                    parent=probe)
-    for f in props.get("failure_links", []):
-        if isinstance(f, dict) and isinstance(f.get("node_id"), str) and f["node_id"].strip(".") \
-                and (tree.dir / f["node_id"] / "node.md").exists() and (tree.dir / f["node_id"]).exists():
+    for f in props.get("failure_links") or []:
+        if isinstance(f, dict) and tree.exists(f.get("node_id")):
             tree.append(f["node_id"], f"- Round {rnd}: seen again in attempt {f.get('attempt_id')}: {' '.join(str(f.get('why', '')).split())}")
     return bool(props.get("lessons"))
 

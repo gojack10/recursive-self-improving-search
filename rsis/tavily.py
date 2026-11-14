@@ -18,5 +18,5 @@ def search(query, max_results=5, include_answer=True, exclude_domains=None):
         body["exclude_domains"] = exclude_domains
     r = post_json("https://api.tavily.com/search", body, {"Authorization": f"Bearer {os.environ['TAVILY_API_KEY']}"})
     with _lock:
-        credits_used += (r.get("usage") or {}).get("credits", 1)
+        credits_used += int((r.get("usage") or {}).get("credits") or 1)
     return r

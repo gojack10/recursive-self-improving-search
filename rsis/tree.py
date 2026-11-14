@@ -55,10 +55,15 @@ class Tree:
         return [{"id": n["id"], "kind": n["kind"], "name": n["name"], "summary": n["summary"], "status": n["status"]}
                 for s, n in scored[:k] if s > 0]
 
+    def exists(self, nid):
+        # Node ids come from model output; only plain UUIDs may name a path, so nothing escapes the run's tree.
+        uuid_like = isinstance(nid, str) and re.fullmatch(r"[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}", nid)
+        return bool(uuid_like) and (self.dir / nid / "node.md").exists()
+
     def read(self, nid, max_round=None):
-        p = self.dir / nid / "node.md"
-        if not p.exists():
+        if not self.exists(nid):
             return "no such node"
+        p = self.dir / nid / "node.md"
         text = p.read_text(encoding="utf-8")
         if max_round is not None:
             text = "\n".join(l for l in text.split("\n")
@@ -66,11 +71,15 @@ class Tree:
         return text
 
     def set_status(self, nid, status):
+        if not self.exists(nid):
+            return
         p = self.dir / nid / "node.md"
         t = p.read_text(encoding="utf-8")
         old = next(l for l in t.splitlines() if l.startswith("status: "))
         p.write_text(t.replace(old, f"status: {json.dumps(status)}", 1), encoding="utf-8")
 
     def append(self, nid, section):
+        if not self.exists(nid):
+            return
         p = self.dir / nid / "node.md"
         p.write_text(p.read_text(encoding="utf-8") + "\n" + section + "\n", encoding="utf-8")
