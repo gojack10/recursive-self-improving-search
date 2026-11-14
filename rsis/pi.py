@@ -4,6 +4,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 from pathlib import Path
 
@@ -56,8 +57,17 @@ def agent(model, system, prompt, state, tools_role, work):
         env = {**os.environ, 'RSIS_STATE': str(state_file), 'RSIS_ROOT': str(ROOT),
                'RSIS_PYTHON': sys.executable, 'RSIS_TOOLS': str(schemas), 'FACTORY_FLOOR': '1'}
         with stream.open('w', encoding='utf-8') as output:
-            result = subprocess.run(command(model, system, prompt, [ROOT / 'pi' / 'search-tools.ts'], 'json'),
-                                    cwd=directory, env=env, stdout=output, stderr=subprocess.STDOUT, timeout=900)
+            process = subprocess.Popen(command(model, system, prompt, [ROOT / 'pi' / 'search-tools.ts'], 'json'),
+                                       cwd=directory, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                       encoding='utf-8', errors='replace')
+            limit = threading.Timer(900, process.kill)
+            limit.start()
+            for line in process.stdout:
+                # Each event is recorded with the time it arrived, so a saved run can be replayed at its real pace.
+                output.write(f'{{"t":{time.time():.3f},{line[1:]}' if line.startswith('{"') else line)
+                output.flush()
+            limit.cancel()
+            returncode = process.wait()
     usage, turns, errors = {'prompt_tokens': 0, 'completion_tokens': 0}, 0, []
     for line in stream.read_text(encoding='utf-8').splitlines():
         try:
@@ -76,6 +86,6 @@ def agent(model, system, prompt, state, tools_role, work):
         if message.get('errorMessage'):
             errors.append(message['errorMessage'])
     state = json.loads(state_file.read_text(encoding='utf-8'))
-    if result.returncode or not state['finished']:
+    if returncode or not state['finished']:
         raise RuntimeError(f"Pi {model} did not finish: {'; '.join(errors[-3:]) or 'no submission'}")
     return state, {'seconds': round(time.monotonic() - started, 1), 'tokens': usage, 'model': model, 'turns': turns}
