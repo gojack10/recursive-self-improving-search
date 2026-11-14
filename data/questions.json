@@ -1,159 +1,1280 @@
 [
  {
   "name": "nobel_moon",
-  "question": "How many Nobel Prize laureates have an IAU-approved surface feature on the Moon named after them? Count each person once, even if several features carry their name. Satellite craters (e.g. \"Bohr A\") do not count separately. Use IAU names in force as of November 2026. List each laureate.",
+  "pool": "test",
+  "question": "How many Nobel Prize laureates have an IAU-approved surface feature on Moon named after them? Satellite craters (e.g. \"Bohr A\") do not count separately. Count each person once. Use IAU names in force as of November 2026. List each laureate.",
   "answers": [
-   "Abdus Salam",
-   "Adolf von Baeyer",
-   "Albert A. Michelson",
-   "Albert Einstein",
-   "Alexis Carrel",
-   "Allvar Gullstrand",
-   "Alphonse Laveran",
-   "Arne Tiselius",
-   "Arthur H. Compton",
-   "Arthur Harden",
-   "Artturi Virtanen",
-   "August Krogh",
-   "Bernardo Houssay",
-   "C.T.R. Wilson",
-   "Camillo Golgi",
-   "Carl Bosch",
-   "Charles Edouard Guillaume",
-   "Charles Glover Barkla",
-   "Charles Sherrington",
-   "Christiaan Eijkman",
-   "Clinton Davisson",
-   "Corneille Heymans",
-   "Edward V. Appleton",
+   {
+    "name": "Abdus Salam",
+    "aliases": [
+     "Salam"
+    ]
+   },
+   {
+    "name": "Adolf von Baeyer",
+    "aliases": [
+     "von Baeyer"
+    ]
+   },
+   {
+    "name": "Albert A. Michelson",
+    "aliases": [
+     "Michelson"
+    ]
+   },
+   {
+    "name": "Albert Einstein",
+    "aliases": [
+     "Einstein"
+    ]
+   },
+   {
+    "name": "Alexis Carrel",
+    "aliases": [
+     "Carrel"
+    ]
+   },
+   {
+    "name": "Allvar Gullstrand",
+    "aliases": [
+     "Gullstrand"
+    ]
+   },
+   {
+    "name": "Alphonse Laveran",
+    "aliases": [
+     "Laveran"
+    ]
+   },
+   {
+    "name": "Arne Tiselius",
+    "aliases": [
+     "Tiselius"
+    ]
+   },
+   {
+    "name": "Arthur H. Compton",
+    "aliases": [
+     "Compton"
+    ]
+   },
+   {
+    "name": "Arthur Harden",
+    "aliases": [
+     "Harden"
+    ]
+   },
+   {
+    "name": "Artturi Virtanen",
+    "aliases": [
+     "Virtanen"
+    ]
+   },
+   {
+    "name": "August Krogh",
+    "aliases": [
+     "Krogh"
+    ]
+   },
+   {
+    "name": "Bernardo Houssay",
+    "aliases": [
+     "Houssay"
+    ]
+   },
+   {
+    "name": "C.T.R. Wilson",
+    "aliases": [
+     "Wilson"
+    ]
+   },
+   {
+    "name": "Camillo Golgi",
+    "aliases": [
+     "Golgi"
+    ]
+   },
+   {
+    "name": "Carl Bosch",
+    "aliases": [
+     "Bosch"
+    ]
+   },
+   {
+    "name": "Charles Edouard Guillaume",
+    "aliases": [
+     "Guillaume"
+    ]
+   },
+   {
+    "name": "Charles Glover Barkla",
+    "aliases": [
+     "Barkla"
+    ]
+   },
+   {
+    "name": "Christiaan Eijkman",
+    "aliases": [
+     "Eijkman"
+    ]
+   },
+   {
+    "name": "Clinton Davisson",
+    "aliases": [
+     "Davisson"
+    ]
+   },
+   {
+    "name": "Corneille Heymans",
+    "aliases": [
+     "Heymans"
+    ]
+   },
+   {
+    "name": "Edward V. Appleton",
+    "aliases": [
+     "Appleton"
+    ]
+   },
    "Emil Fischer",
-   "Emil von Behring",
-   "Enrico Fermi",
-   "Ernest Lawrence",
-   "Ernest Rutherford",
-   "Erwin Schrödinger",
-   "Francis W. Aston",
-   "Frederick G. Banting",
-   "Frederick Soddy",
-   "Fridtjof Nansen",
-   "Frits Zernike",
-   "Fritz Haber",
-   "Frédéric Joliot",
-   "Gabriel Lippmann",
-   "Georg von Békésy",
-   "George de Hevesy",
-   "Gerty Cori",
-   "Guglielmo Marconi",
+   {
+    "name": "Emil von Behring",
+    "aliases": [
+     "von Behring"
+    ]
+   },
+   {
+    "name": "Enrico Fermi",
+    "aliases": [
+     "Fermi"
+    ]
+   },
+   {
+    "name": "Ernest Lawrence",
+    "aliases": [
+     "Lawrence"
+    ]
+   },
+   {
+    "name": "Ernest Rutherford",
+    "aliases": [
+     "Rutherford"
+    ]
+   },
+   {
+    "name": "Erwin Schrödinger",
+    "aliases": [
+     "Schrodinger"
+    ]
+   },
+   {
+    "name": "Francis W. Aston",
+    "aliases": [
+     "Aston"
+    ]
+   },
+   {
+    "name": "Frederick G. Banting",
+    "aliases": [
+     "Banting"
+    ]
+   },
+   {
+    "name": "Frederick Soddy",
+    "aliases": [
+     "Soddy"
+    ]
+   },
+   {
+    "name": "Fridtjof Nansen",
+    "aliases": [
+     "Nansen"
+    ]
+   },
+   {
+    "name": "Frits Zernike",
+    "aliases": [
+     "Zernike"
+    ]
+   },
+   {
+    "name": "Fritz Haber",
+    "aliases": [
+     "Haber"
+    ]
+   },
+   {
+    "name": "Frédéric Joliot",
+    "aliases": [
+     "Joliot"
+    ]
+   },
+   {
+    "name": "Gabriel Lippmann",
+    "aliases": [
+     "Lippmann"
+    ]
+   },
+   {
+    "name": "Georg von Békésy",
+    "aliases": [
+     "von Bekesy"
+    ]
+   },
+   {
+    "name": "George de Hevesy",
+    "aliases": [
+     "Hevesy"
+    ]
+   },
+   {
+    "name": "Gerty Cori",
+    "aliases": [
+     "Cori"
+    ]
+   },
+   {
+    "name": "Guglielmo Marconi",
+    "aliases": [
+     "Marconi"
+    ]
+   },
    "Hans Fischer",
-   "Harold C. Urey",
-   "Heike Kamerlingh Onnes",
-   "Hendrik A. Lorentz",
-   "Henri Becquerel",
-   "Henri Moissan",
-   "Igor Tamm",
-   "Ilya Mechnikov",
-   "Irving Langmuir",
-   "Ivan Pavlov",
-   "J.J. Thomson",
-   "Jacobus van 't Hoff",
-   "James Chadwick",
-   "James Franck",
-   "Jaroslav Heyrovsky",
-   "Johannes Diderik van der Waals",
-   "Johannes Fibiger",
-   "John Cockcroft",
-   "Joseph Erlanger",
-   "Karl Landsteiner",
-   "Kurt Alder",
-   "Lev Landau",
-   "Lord Rayleigh",
-   "Marie Curie",
-   "Max Born",
-   "Max Planck",
-   "Max Theiler",
-   "Max von Laue",
-   "Niels Bohr",
-   "Niels Ryberg Finsen",
-   "Norman Haworth",
-   "Otto Hahn",
-   "Otto Wallach",
-   "Owen Willans Richardson",
-   "Patrick Blackett",
-   "Paul Ehrlich",
-   "Paul Karrer",
-   "Paul Sabatier",
-   "Percy W. Bridgman",
-   "Peter Debye",
-   "Pierre Curie",
-   "Pieter Zeeman",
-   "Richard Kuhn",
-   "Richard Zsigmondy",
-   "Rita Levi-Montalcini",
-   "Robert A. Millikan",
-   "Robert Koch",
-   "Santiago Ramón y Cajal",
-   "Alexander Fleming",
-   "C.V. Raman",
-   "Cyril Hinshelwood",
-   "Henry Dale",
-   "Howard Florey",
-   "William Ramsay",
-   "Svante Arrhenius",
-   "The Svedberg",
-   "Theodor Kocher",
-   "Theodore W. Richards",
-   "Victor F. Hess",
-   "Victor Grignard",
-   "Walther Nernst",
-   "Wilhelm Röntgen",
-   "Wilhelm Ostwald",
-   "Willem Einthoven",
-   "William Henry Bragg",
-   "Wolfgang Pauli"
+   {
+    "name": "Harold C. Urey",
+    "aliases": [
+     "Urey"
+    ]
+   },
+   {
+    "name": "Heike Kamerlingh Onnes",
+    "aliases": [
+     "Kamerlingh Onnes"
+    ]
+   },
+   {
+    "name": "Hendrik A. Lorentz",
+    "aliases": [
+     "Lorentz"
+    ]
+   },
+   {
+    "name": "Henri Becquerel",
+    "aliases": [
+     "Becquerel"
+    ]
+   },
+   {
+    "name": "Henri Moissan",
+    "aliases": [
+     "Moissan"
+    ]
+   },
+   {
+    "name": "Igor Y. Tamm",
+    "aliases": [
+     "Tamm"
+    ]
+   },
+   {
+    "name": "Ilya Mechnikov",
+    "aliases": [
+     "Mechnikov"
+    ]
+   },
+   {
+    "name": "Irving Langmuir",
+    "aliases": [
+     "Langmuir"
+    ]
+   },
+   {
+    "name": "Ivan Pavlov",
+    "aliases": [
+     "Pavlov"
+    ]
+   },
+   {
+    "name": "J.J. Thomson",
+    "aliases": [
+     "Thomson"
+    ]
+   },
+   {
+    "name": "Jacobus H. van 't Hoff",
+    "aliases": [
+     "van t Hoff"
+    ]
+   },
+   {
+    "name": "James Chadwick",
+    "aliases": [
+     "Chadwick"
+    ]
+   },
+   {
+    "name": "James Franck",
+    "aliases": [
+     "Franck"
+    ]
+   },
+   {
+    "name": "Jaroslav Heyrovsky",
+    "aliases": [
+     "Heyrovsky"
+    ]
+   },
+   {
+    "name": "Johannes Diderik van der Waals",
+    "aliases": [
+     "Van der Waals"
+    ]
+   },
+   {
+    "name": "Johannes Fibiger",
+    "aliases": [
+     "Fibiger"
+    ]
+   },
+   {
+    "name": "John Cockcroft",
+    "aliases": [
+     "Cockcroft"
+    ]
+   },
+   {
+    "name": "Joseph Erlanger",
+    "aliases": [
+     "Erlanger"
+    ]
+   },
+   {
+    "name": "Karl Landsteiner",
+    "aliases": [
+     "Landsteiner"
+    ]
+   },
+   {
+    "name": "Kurt Alder",
+    "aliases": [
+     "Alder"
+    ]
+   },
+   {
+    "name": "Lev Landau",
+    "aliases": [
+     "Landau"
+    ]
+   },
+   {
+    "name": "Lord Rayleigh",
+    "aliases": [
+     "Rayleigh"
+    ]
+   },
+   {
+    "name": "Marie Curie",
+    "aliases": [
+     "Sklodowska"
+    ]
+   },
+   {
+    "name": "Max Born",
+    "aliases": [
+     "Born"
+    ]
+   },
+   {
+    "name": "Max Planck",
+    "aliases": [
+     "Planck"
+    ]
+   },
+   {
+    "name": "Max Theiler",
+    "aliases": [
+     "Theiler"
+    ]
+   },
+   {
+    "name": "Max von Laue",
+    "aliases": [
+     "Laue"
+    ]
+   },
+   {
+    "name": "Niels Bohr",
+    "aliases": [
+     "Bohr"
+    ]
+   },
+   {
+    "name": "Niels Ryberg Finsen",
+    "aliases": [
+     "Finsen"
+    ]
+   },
+   {
+    "name": "Norman Haworth",
+    "aliases": [
+     "Haworth"
+    ]
+   },
+   {
+    "name": "Otto Hahn",
+    "aliases": [
+     "Hahn"
+    ]
+   },
+   {
+    "name": "Otto Wallach",
+    "aliases": [
+     "Wallach"
+    ]
+   },
+   {
+    "name": "Owen Willans Richardson",
+    "aliases": [
+     "Richardson"
+    ]
+   },
+   {
+    "name": "Patrick M.S. Blackett",
+    "aliases": [
+     "Blackett"
+    ]
+   },
+   {
+    "name": "Paul Ehrlich",
+    "aliases": [
+     "Ehrlich"
+    ]
+   },
+   {
+    "name": "Paul Karrer",
+    "aliases": [
+     "Karrer"
+    ]
+   },
+   {
+    "name": "Paul Sabatier",
+    "aliases": [
+     "Sabatier"
+    ]
+   },
+   {
+    "name": "Percy W. Bridgman",
+    "aliases": [
+     "Bridgman"
+    ]
+   },
+   {
+    "name": "Peter Debye",
+    "aliases": [
+     "Debye"
+    ]
+   },
+   {
+    "name": "Pierre Curie",
+    "aliases": [
+     "Curie"
+    ]
+   },
+   {
+    "name": "Pieter Zeeman",
+    "aliases": [
+     "Zeeman"
+    ]
+   },
+   {
+    "name": "Richard Kuhn",
+    "aliases": [
+     "Kuhn"
+    ]
+   },
+   {
+    "name": "Richard Zsigmondy",
+    "aliases": [
+     "Zsigmondy"
+    ]
+   },
+   {
+    "name": "Rita Levi-Montalcini",
+    "aliases": [
+     "Levi-Montalcini"
+    ]
+   },
+   {
+    "name": "Robert A. Millikan",
+    "aliases": [
+     "Millikan"
+    ]
+   },
+   {
+    "name": "Robert Koch",
+    "aliases": [
+     "Koch"
+    ]
+   },
+   {
+    "name": "Santiago Ramón y Cajal",
+    "aliases": [
+     "Cajal"
+    ]
+   },
+   {
+    "name": "Sir Alexander Fleming",
+    "aliases": [
+     "Fleming"
+    ]
+   },
+   {
+    "name": "Sir Chandrasekhara Venkata Raman",
+    "aliases": [
+     "Raman"
+    ]
+   },
+   {
+    "name": "Sir Charles Sherrington",
+    "aliases": [
+     "Sherrington"
+    ]
+   },
+   {
+    "name": "Sir Cyril Hinshelwood",
+    "aliases": [
+     "Hinshelwood"
+    ]
+   },
+   {
+    "name": "Sir Henry Dale",
+    "aliases": [
+     "Dale"
+    ]
+   },
+   {
+    "name": "Sir Howard Florey",
+    "aliases": [
+     "Florey"
+    ]
+   },
+   {
+    "name": "Sir William Ramsay",
+    "aliases": [
+     "Ramsay"
+    ]
+   },
+   {
+    "name": "Svante Arrhenius",
+    "aliases": [
+     "Arrhenius"
+    ]
+   },
+   {
+    "name": "The Svedberg",
+    "aliases": [
+     "Svedberg"
+    ]
+   },
+   {
+    "name": "Theodor Kocher",
+    "aliases": [
+     "Mons Kocher",
+     "Kocher"
+    ]
+   },
+   {
+    "name": "Theodore W. Richards",
+    "aliases": [
+     "Richards"
+    ]
+   },
+   {
+    "name": "Victor F. Hess",
+    "aliases": [
+     "Hess"
+    ]
+   },
+   {
+    "name": "Victor Grignard",
+    "aliases": [
+     "Grignard"
+    ]
+   },
+   {
+    "name": "Walther Nernst",
+    "aliases": [
+     "Nernst"
+    ]
+   },
+   {
+    "name": "Wilhelm Conrad Röntgen",
+    "aliases": [
+     "Rontgen"
+    ]
+   },
+   {
+    "name": "Wilhelm Ostwald",
+    "aliases": [
+     "Ostwald"
+    ]
+   },
+   {
+    "name": "Willem Einthoven",
+    "aliases": [
+     "Einthoven"
+    ]
+   },
+   {
+    "name": "William Bragg",
+    "aliases": [
+     "Bragg"
+    ]
+   },
+   {
+    "name": "Wolfgang Pauli",
+    "aliases": [
+     "Pauli"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "nobel_mercury",
+  "pool": "select",
+  "question": "How many Nobel Prize laureates have an IAU-approved surface feature on Mercury named after them? Count each person once. Use IAU names in force as of November 2026. List each laureate.",
+  "answers": [
+   {
+    "name": "Bjørnstjerne Bjørnson",
+    "aliases": [
+     "Bjornson"
+    ]
+   },
+   {
+    "name": "Carl Spitteler",
+    "aliases": [
+     "Spitteler"
+    ]
+   },
+   {
+    "name": "Ernest Hemingway",
+    "aliases": [
+     "Hemingway"
+    ]
+   },
+   {
+    "name": "Gabriela Mistral",
+    "aliases": [
+     "Mistral"
+    ]
+   },
+   {
+    "name": "Gerhart Hauptmann",
+    "aliases": [
+     "Hauptmann"
+    ]
+   },
+   {
+    "name": "Giosuè Carducci",
+    "aliases": [
+     "Carducci"
+    ]
+   },
+   {
+    "name": "Halldór Laxness",
+    "aliases": [
+     "Laxness"
+    ]
+   },
+   {
+    "name": "Ivan Bunin",
+    "aliases": [
+     "Bunin"
+    ]
+   },
+   {
+    "name": "José Echegaray",
+    "aliases": [
+     "Echegaray"
+    ]
+   },
+   {
+    "name": "Juan Ramón Jiménez",
+    "aliases": [
+     "Jimenez"
+    ]
+   },
+   {
+    "name": "Nadine Gordimer",
+    "aliases": [
+     "Gordimer"
+    ]
+   },
+   {
+    "name": "Rabindranath Tagore",
+    "aliases": [
+     "Thakur"
+    ]
+   },
+   {
+    "name": "Rudyard Kipling",
+    "aliases": [
+     "Kipling"
+    ]
+   },
+   {
+    "name": "Seamus Heaney",
+    "aliases": [
+     "Heaney"
+    ]
+   },
+   {
+    "name": "Toni Morrison",
+    "aliases": [
+     "Morrison"
+    ]
+   },
+   {
+    "name": "William Butler Yeats",
+    "aliases": [
+     "Yeats"
+    ]
+   },
+   {
+    "name": "William Faulkner",
+    "aliases": [
+     "Faulkner"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "nobel_venus",
+  "pool": "select",
+  "question": "How many Nobel Prize laureates have an IAU-approved surface feature on Venus named after them? Count each person once. Use IAU names in force as of November 2026. List each laureate.",
+  "answers": [
+   {
+    "name": "Bertha von Suttner",
+    "aliases": [
+     "von Suttner"
+    ]
+   },
+   {
+    "name": "Emily Greene Balch",
+    "aliases": [
+     "Balch"
+    ]
+   },
+   {
+    "name": "Gerty Cori",
+    "aliases": [
+     "Cori"
+    ]
+   },
+   {
+    "name": "Grazia Deledda",
+    "aliases": [
+     "Deledda"
+    ]
+   },
+   {
+    "name": "Irène Joliot-Curie",
+    "aliases": [
+     "Joliot Curie"
+    ]
+   },
+   {
+    "name": "Jane Addams",
+    "aliases": [
+     "Addams"
+    ]
+   },
+   {
+    "name": "Maria Goeppert Mayer",
+    "aliases": [
+     "Goeppert Mayer"
+    ]
+   },
+   {
+    "name": "Nelly Sachs",
+    "aliases": [
+     "Sachs Patera"
+    ]
+   },
+   {
+    "name": "Pearl Buck",
+    "aliases": [
+     "Buck"
+    ]
+   },
+   {
+    "name": "Selma Lagerlöf",
+    "aliases": [
+     "Lagerlof"
+    ]
+   },
+   {
+    "name": "Sigrid Undset",
+    "aliases": [
+     "Undset"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "nobel_mars",
+  "pool": "train",
+  "question": "How many Nobel Prize laureates have an IAU-approved surface feature on Mars named after them? Count each person once. Use IAU names in force as of November 2026. List each laureate.",
+  "answers": [
+   {
+    "name": "Ernest Rutherford",
+    "aliases": [
+     "Rutherford"
+    ]
+   },
+   {
+    "name": "Fridtjof Nansen",
+    "aliases": [
+     "Nansen"
+    ]
+   },
+   {
+    "name": "Henri Becquerel",
+    "aliases": [
+     "Becquerel"
+    ]
+   },
+   {
+    "name": "Hermann J. Muller",
+    "aliases": [
+     "Muller"
+    ]
+   },
+   {
+    "name": "Joshua Lederberg",
+    "aliases": [
+     "Lederberg"
+    ]
+   },
+   {
+    "name": "Lord Rayleigh",
+    "aliases": [
+     "Rayleigh"
+    ]
+   },
+   {
+    "name": "Marie Curie",
+    "aliases": [
+     "Sklodowska"
+    ]
+   },
+   {
+    "name": "Pierre Curie",
+    "aliases": [
+     "Curie"
+    ]
+   },
+   {
+    "name": "Svante Arrhenius",
+    "aliases": [
+     "Arrhenius"
+    ]
+   },
+   {
+    "name": "Wilhelm Wien",
+    "aliases": [
+     "Wien"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "oscar_venus",
+  "pool": "train",
+  "question": "How many Academy Award winners have an IAU-approved surface feature on Venus named after them? Count competitive, honorary and juvenile Oscars actually received, not nominations. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Anna Magnani",
+   "Ethel Barrymore",
+   "Greta Garbo",
+   "Judy Garland"
   ]
  },
  {
   "name": "oscar_mercury",
+  "pool": "train",
   "question": "How many Academy Award winners have an IAU-approved surface feature on Mercury named after them? Count Oscars actually received by the person, not nominations; Best Foreign Language Film awards go to the country and do not count. Count each person once. Use IAU names in force as of November 2026. List each person.",
   "answers": [
    "Aaron Copland",
-   {
-    "name": "Dr. Seuss",
-    "aliases": [
-     "Theodor Geisel",
-     "Theodor Seuss Geisel",
-     "Seuss"
-    ]
-   },
+   "Dr. Seuss",
    "John Lennon",
    "Walt Disney"
   ]
  },
  {
+  "name": "pulitzer_venus",
+  "pool": "select",
+  "question": "How many Pulitzer Prize winners have an IAU-approved surface feature on Venus named after them? Any Pulitzer category, including special citations, counts. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Edith Wharton",
+   "Edna Ferber",
+   "Edna St. Vincent Millay",
+   "Marguerite Higgins",
+   "Marianne Moore",
+   "Pearl Buck",
+   "Sara Teasdale",
+   "Susan Glaspell",
+   "Willa Cather"
+  ]
+ },
+ {
+  "name": "pulitzer_mercury",
+  "pool": "test",
+  "question": "How many Pulitzer Prize winners have an IAU-approved surface feature on Mercury named after them? Any Pulitzer category, including special citations, counts. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Aaron Copland",
+   "Charles Ives",
+   "Dr. Seuss",
+   "Duke Ellington",
+   "Ernest Hemingway",
+   "Gwendolyn Brooks",
+   "Scott Joplin",
+   "Sylvia Plath",
+   "Thelonious Monk",
+   "Toni Morrison",
+   "William Faulkner"
+  ]
+ },
+ {
   "name": "grammy_venus",
+  "pool": "train",
   "question": "How many Grammy Award winners have an IAU-approved surface feature on Venus named after them? Count competitive Grammys, Lifetime Achievement Awards and Trustees Awards, including awards given to a group the person belonged to; Grammy Hall of Fame entries for recordings do not count. Count each person once. Use IAU names in force as of November 2026. List each person.",
   "answers": [
    "Billie Holiday",
    "Judy Garland",
    "Maria Callas",
-   {
-    "name": "Maybelle Carter",
-    "aliases": [
-     "Mother Maybelle Carter"
-    ]
-   },
+   "Maybelle Carter",
    "Patsy Cline"
   ]
  },
  {
+  "name": "grammy_mercury",
+  "pool": "test",
+  "question": "How many Grammy Award winners have an IAU-approved surface feature on Mercury named after them? Count competitive Grammys, Lifetime Achievement Awards and Trustees Awards, including awards given to a group the person belonged to; Grammy Hall of Fame entries for recordings do not count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Aaron Copland",
+   "Antônio Carlos Jobim",
+   "Chuck Berry",
+   "Duke Ellington",
+   "Enrico Caruso",
+   "Freddie Mercury",
+   "Igor Stravinsky",
+   "John Lennon",
+   "Ma Rainey",
+   "Maya Angelou",
+   "Miriam Makeba",
+   "Thelonious Monk",
+   "Walt Disney"
+  ]
+ },
+ {
   "name": "olympic_venus",
+  "pool": "train",
   "question": "How many Olympic medalists have an IAU-approved surface feature on Venus named after them? Any Olympic Games and any medal count. Count each person once. Use IAU names in force as of November 2026. List each person.",
   "answers": [
    "Sonja Henie"
   ]
  },
  {
+  "name": "nobel_physics_moon",
+  "pool": "test",
+  "question": "How many Nobel Prize in Physics laureates have an IAU-approved surface feature on the Moon named after them? Satellite craters (e.g. \"Bohr A\") do not count separately. Count each person once. Use IAU names in force as of November 2026. List each laureate.",
+  "answers": [
+   {
+    "name": "Abdus Salam",
+    "aliases": [
+     "Salam"
+    ]
+   },
+   {
+    "name": "Albert A. Michelson",
+    "aliases": [
+     "Michelson"
+    ]
+   },
+   {
+    "name": "Albert Einstein",
+    "aliases": [
+     "Einstein"
+    ]
+   },
+   {
+    "name": "Arthur H. Compton",
+    "aliases": [
+     "Compton"
+    ]
+   },
+   {
+    "name": "C.T.R. Wilson",
+    "aliases": [
+     "Wilson"
+    ]
+   },
+   {
+    "name": "Charles Edouard Guillaume",
+    "aliases": [
+     "Guillaume"
+    ]
+   },
+   {
+    "name": "Charles Glover Barkla",
+    "aliases": [
+     "Barkla"
+    ]
+   },
+   {
+    "name": "Clinton Davisson",
+    "aliases": [
+     "Davisson"
+    ]
+   },
+   {
+    "name": "Edward V. Appleton",
+    "aliases": [
+     "Appleton"
+    ]
+   },
+   {
+    "name": "Enrico Fermi",
+    "aliases": [
+     "Fermi"
+    ]
+   },
+   {
+    "name": "Ernest Lawrence",
+    "aliases": [
+     "Lawrence"
+    ]
+   },
+   {
+    "name": "Erwin Schrödinger",
+    "aliases": [
+     "Schrodinger"
+    ]
+   },
+   {
+    "name": "Frits Zernike",
+    "aliases": [
+     "Zernike"
+    ]
+   },
+   {
+    "name": "Gabriel Lippmann",
+    "aliases": [
+     "Lippmann"
+    ]
+   },
+   {
+    "name": "Guglielmo Marconi",
+    "aliases": [
+     "Marconi"
+    ]
+   },
+   {
+    "name": "Heike Kamerlingh Onnes",
+    "aliases": [
+     "Kamerlingh Onnes"
+    ]
+   },
+   {
+    "name": "Hendrik A. Lorentz",
+    "aliases": [
+     "Lorentz"
+    ]
+   },
+   {
+    "name": "Henri Becquerel",
+    "aliases": [
+     "Becquerel"
+    ]
+   },
+   {
+    "name": "Igor Y. Tamm",
+    "aliases": [
+     "Tamm"
+    ]
+   },
+   {
+    "name": "J.J. Thomson",
+    "aliases": [
+     "Thomson"
+    ]
+   },
+   {
+    "name": "James Chadwick",
+    "aliases": [
+     "Chadwick"
+    ]
+   },
+   {
+    "name": "James Franck",
+    "aliases": [
+     "Franck"
+    ]
+   },
+   {
+    "name": "Johannes Diderik van der Waals",
+    "aliases": [
+     "Van der Waals"
+    ]
+   },
+   {
+    "name": "John Cockcroft",
+    "aliases": [
+     "Cockcroft"
+    ]
+   },
+   {
+    "name": "Lev Landau",
+    "aliases": [
+     "Landau"
+    ]
+   },
+   {
+    "name": "Lord Rayleigh",
+    "aliases": [
+     "Rayleigh"
+    ]
+   },
+   {
+    "name": "Marie Curie",
+    "aliases": [
+     "Sklodowska"
+    ]
+   },
+   {
+    "name": "Max Born",
+    "aliases": [
+     "Born"
+    ]
+   },
+   {
+    "name": "Max Planck",
+    "aliases": [
+     "Planck"
+    ]
+   },
+   {
+    "name": "Max von Laue",
+    "aliases": [
+     "Laue"
+    ]
+   },
+   {
+    "name": "Niels Bohr",
+    "aliases": [
+     "Bohr"
+    ]
+   },
+   {
+    "name": "Owen Willans Richardson",
+    "aliases": [
+     "Richardson"
+    ]
+   },
+   {
+    "name": "Patrick M.S. Blackett",
+    "aliases": [
+     "Blackett"
+    ]
+   },
+   {
+    "name": "Percy W. Bridgman",
+    "aliases": [
+     "Bridgman"
+    ]
+   },
+   {
+    "name": "Pierre Curie",
+    "aliases": [
+     "Curie"
+    ]
+   },
+   {
+    "name": "Pieter Zeeman",
+    "aliases": [
+     "Zeeman"
+    ]
+   },
+   {
+    "name": "Robert A. Millikan",
+    "aliases": [
+     "Millikan"
+    ]
+   },
+   {
+    "name": "Sir Chandrasekhara Venkata Raman",
+    "aliases": [
+     "Raman"
+    ]
+   },
+   {
+    "name": "Victor F. Hess",
+    "aliases": [
+     "Hess"
+    ]
+   },
+   {
+    "name": "Wilhelm Conrad Röntgen",
+    "aliases": [
+     "Rontgen"
+    ]
+   },
+   {
+    "name": "William Bragg",
+    "aliases": [
+     "Bragg"
+    ]
+   },
+   {
+    "name": "Wolfgang Pauli",
+    "aliases": [
+     "Pauli"
+    ]
+   }
+  ]
+ },
+ {
+  "name": "freedom_venus",
+  "pool": "select",
+  "question": "How many Presidential Medal of Freedom recipients have an IAU-approved surface feature on Venus named after them? Posthumous awards count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Ariel Durant",
+   "Helen Keller",
+   "Helen B. Taussig",
+   "Margaret Mead",
+   "Martha Graham",
+   "Rachel Carson"
+  ]
+ },
+ {
+  "name": "freedom_mercury",
+  "pool": "test",
+  "question": "How many Presidential Medal of Freedom recipients have an IAU-approved surface feature on Mercury named after them? Posthumous awards count. Count each person once. Use IAU names in force as of November 2026. List each person.",
+  "answers": [
+   "Aaron Copland",
+   "Alexander Calder",
+   "Alvin Ailey",
+   "Duke Ellington",
+   "Edward Steichen",
+   "George Balanchine",
+   "Maya Angelou",
+   "Toni Morrison",
+   "Walt Disney"
+  ]
+ },
+ {
   "name": "rock_hall_venus",
+  "pool": "train",
   "question": "How many Rock and Roll Hall of Fame inductees have an IAU-approved surface feature on Venus named after them? Inductions as part of a group count. Count each person once. Use IAU names in force as of November 2026. List each person.",
   "answers": [
    "Billie Holiday"
@@ -161,22 +1282,18 @@
  },
  {
   "name": "rock_hall_mercury",
+  "pool": "train",
   "question": "How many Rock and Roll Hall of Fame inductees have an IAU-approved surface feature on Mercury named after them? Inductions as part of a group count. Count each person once. Use IAU names in force as of November 2026. List each person.",
   "answers": [
    "Chuck Berry",
-   {
-    "name": "Freddie Mercury",
-    "aliases": [
-     "Farrokh Bulsara",
-     "Bulsara"
-    ]
-   },
+   "Freddie Mercury",
    "John Lennon",
    "Ma Rainey"
   ]
  },
  {
   "name": "kennedy_venus",
+  "pool": "train",
   "question": "How many Kennedy Center Honors recipients have an IAU-approved surface feature on Venus named after them? Count each person once. Use IAU names in force as of November 2026. List each person.",
   "answers": [
    "Alexandra Danilova",
@@ -185,6 +1302,7 @@
  },
  {
   "name": "kennedy_mercury",
+  "pool": "train",
   "question": "How many Kennedy Center Honors recipients have an IAU-approved surface feature on Mercury named after them? Count each person once. Use IAU names in force as of November 2026. List each person.",
   "answers": [
    "Aaron Copland",

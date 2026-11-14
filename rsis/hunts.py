@@ -149,7 +149,7 @@ QUESTIONS = ROOT / "data" / "questions.json"
 def questions():
     """Questions supplied as a file: a JSON list of {"question", and optionally "name", "pool", "answers"}.
     An answer is a name or {"name", "aliases"}. A question with no answers has no key, so the judge rules on
-    every find. Pool is train, select or test to put the question in the loop; without one it only runs by name."""
+    every find. Pool is train, select or test; without one the question only runs by name."""
     if not QUESTIONS.exists():
         return {}
     out = {}
@@ -193,4 +193,5 @@ def load(name):
 
 
 def pool(p):
-    return [n for n, h in {**HUNTS, **questions()}.items() if h["pool"] == p]
+    # A question file is the whole corpus; the built-in Wikidata hunts are the corpus only without one.
+    return [n for n, h in (questions() or HUNTS).items() if h["pool"] == p]
