@@ -10,8 +10,8 @@ def load_env():
         for line in env.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip())
+                k, v = line.removeprefix("export ").split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip("'\""))
 
 
 load_env()

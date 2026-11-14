@@ -66,7 +66,7 @@ HUNTS = {
         criterion="aviation accident or incident with at least 300 deaths",
         where="?x wdt:P31/wdt:P279* wd:Q744913; wdt:P1120 ?n. FILTER(?n >= 300)"),
     "women_astronaut_physicians": dict(x='woman astronaut', y='physician / medical doctor', frame="triple",
-        kind="people", pool="select",
+        kind="people", pool="train",
         question="Find every woman who has been an astronaut and is also a trained physician (medical doctor).",
         criterion="woman who is both an astronaut and a physician",
         where="?x wdt:P31 wd:Q5; wdt:P106 wd:Q11631; wdt:P106 wd:Q39631; wdt:P21 wd:Q6581072."),

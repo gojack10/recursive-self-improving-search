@@ -59,11 +59,11 @@ def merge(logs):
     items = {}
     for log in logs:
         for f in log["finds"]:
-            k = norm(f.get("name") or "")
+            k = norm(str(f.get("name") or ""))
             if not k:
                 continue
-            it = items.setdefault(k, {"name": f["name"], "urls": [], "votes": set()})
-            if url_key(f.get("evidence_url")) in {url_key(u) for u in log["url_providers"]}:
+            it = items.setdefault(k, {"name": str(f["name"]), "urls": [], "votes": set()})
+            if url_key(str(f.get("evidence_url") or "")) in {url_key(u) for u in log["url_providers"]}:
                 it["urls"].append(f["evidence_url"])
             it["votes"].add(log["attempt_id"])
     return items
@@ -130,6 +130,7 @@ def answer(m, hunt, n=3, budget=ATTEMPT_BUDGET, role="searcher"):
             "telem_spent": round(sum(l["telem_spent"] for l in logs) + telem.spent, 4),
             "telem_session": logs[0]["telem_session"], "trace": [],
             "url_providers": {u: sorted(p) for u, p in url_providers.items()},
+            "url_text": {u: t for log in logs for u, t in log["url_text"].items()} | telem.url_text,
             "seconds": round(time.time() - t0, 1), "sub_attempts": [l["attempt_id"] for l in logs]}
 
 
@@ -142,5 +143,5 @@ def closed_book(hunt, role="frontier"):
     finds = [{"name": f["name"], "evidence_url": None} for f in v.get("finds", []) if isinstance(f, dict) and f.get("name")]
     return {"attempt_id": uuid.uuid4().hex[:10], "method": f"closed-book:{chat.cfg['model']}", "hunt": hunt["name"],
             "kind": hunt["kind"], "pool": hunt["pool"], "x": hunt["x"], "y": hunt["y"], "finds": finds, "notes": "",
-            "telem_calls": [], "telem_spent": 0.0, "telem_session": None, "trace": [], "url_providers": {},
+            "telem_calls": [], "telem_spent": 0.0, "telem_session": None, "trace": [], "url_providers": {}, "url_text": {},
             "seconds": round(time.time() - t0, 1), "tokens": chat.usage}

@@ -1,3 +1,4 @@
+import http.client
 import json
 import time
 import urllib.error
@@ -18,7 +19,7 @@ def post_json(url, body, headers, timeout=120, retries=3):
                 time.sleep(2 ** i * 2)
                 continue
             raise RuntimeError(f"{url} -> HTTP {e.code}: {msg}") from None
-        except (urllib.error.URLError, TimeoutError):
+        except (urllib.error.URLError, http.client.HTTPException, ConnectionError, TimeoutError, OSError, ValueError):
             if i < retries - 1:
                 time.sleep(2 ** i * 2)
                 continue

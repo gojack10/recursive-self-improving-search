@@ -53,7 +53,7 @@ def run(method_path, names, out_dir=ROOT / "runs" / "open"):
     for name in names:
         h = hunt(name)
         log = attempt(m, h)
-        s = referee.score(log["finds"], h, log["url_providers"])
+        s = referee.score(log["finds"], h, log["url_providers"], url_text=log["url_text"])
         log["referee"] = s
         (out_dir / f"{name}-{log['attempt_id']}.json").write_text(json.dumps(log, indent=1, ensure_ascii=False), encoding="utf-8")
         verified = [r for r in s["rows"] if r["status"] == "verified_gap"]

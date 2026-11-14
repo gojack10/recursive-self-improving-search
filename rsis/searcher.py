@@ -8,6 +8,19 @@ from .llm import Chat, parse_obj, tool
 from .telem import PROVIDERS, Telem
 
 MAX_TURNS = 30
+MAX_RESULT_CHARS = 40000
+
+
+def fit(out):
+    """Serialize a tool result within MAX_RESULT_CHARS as valid JSON, budget first, dropping the lowest-ranked rows."""
+    out = {"budget_left": out.get("budget_left"), **out}
+    text = json.dumps(out, ensure_ascii=False)
+    rows = out.get("results")
+    while len(text) > MAX_RESULT_CHARS and rows:
+        rows.sort(key=lambda r: r.get("rank") or 0)
+        del rows[max(1, len(rows) * 3 // 4) if len(rows) > 4 else len(rows) - 1:]
+        text = json.dumps(out, ensure_ascii=False)
+    return text if len(text) <= MAX_RESULT_CHARS else text[:MAX_RESULT_CHARS]
 
 SEARCH_TOOL = tool("web_search", "Search the web through the Telem router. Omit providers to use the method's default route.", {
     "query": {"type": "string"},
@@ -56,8 +69,11 @@ def check_candidates(m, args, telem):
     grouped, budget_left = {}, None
     for i in range(0, len(queries), 5):
         chunk = queries[i:i + 5]
-        out = telem.search(chunk[0], also=chunk[1:], providers=providers, auto_routing=not providers,
-                           tier="default", num_results=per)
+        try:
+            out = telem.search(chunk[0], also=chunk[1:], providers=providers, auto_routing=not providers,
+                               tier="default", num_results=per)
+        except Exception as e:
+            out = {"error": str(e)[:300]}
         if out.get("error"):
             grouped["_error"] = out["error"]
             break
@@ -74,7 +90,9 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
     telem = Telem(budget)
     system = (f"You are a web search agent working on an open hunt. Follow your search method.\n\n{M.render(m)}\n\n"
               f"You have ${budget:.2f} of Telem search budget. Every tool result reports what is left. "
-              "When the budget runs out or you are done, call submit. Only submit items you have evidence for.")
+              "When the budget runs out or you are done, call submit. Only submit items you have evidence for. "
+              "Each find must cite a URL you retrieved in this attempt whose text, as you saw it, names the item; "
+              "otherwise it scores as wrong.")
     messages = [{"role": "system", "content": system},
                 {"role": "user", "content": f"{hunt['question']}\n\nCondition X: {hunt['x']}\nCondition Y: {hunt['y']}"}]
     tools = [SEARCH_TOOL, FETCH_TOOL, CHECK_TOOL, SUBMIT_TOOL]
@@ -95,7 +113,8 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
                 if name == "web_search":
                     out = run_search(m, args.pop("query", "") or hunt["question"], args, telem)
                 elif name == "fetch_pages":
-                    out = telem.fetch(args.get("urls", []))
+                    urls = args.get("urls", [])[:5]
+                    out = telem.fetch(urls, max_chars=MAX_RESULT_CHARS // max(1, len(urls)) - 500)
                 elif name == "check_candidates":
                     out = check_candidates(m, args, telem)
                 elif name == "submit":
@@ -107,12 +126,12 @@ def attempt(m, hunt, budget=ATTEMPT_BUDGET, role="searcher"):
             except Exception as e:
                 out = {"error": str(e)[:500]}
             trace.append({"tool": name, "args": args, "summary": {k: out[k] for k in out if k not in ("results", "pages", "checks")}})
-            messages.append({"role": "tool", "tool_call_id": c["id"], "content": json.dumps(out)[:40000]})
+            messages.append({"role": "tool", "tool_call_id": c["id"], "content": fit(out)})
         if done:
             break
     return {"attempt_id": uuid.uuid4().hex[:10], "method": m["id"], "hunt": hunt["name"], "kind": hunt["kind"],
             "x": hunt["x"], "y": hunt["y"],
             "pool": hunt["pool"], "finds": finds, "notes": notes, "telem_calls": telem.calls,
             "telem_spent": round(telem.spent, 4), "telem_session": telem.session_id, "trace": trace,
-            "url_providers": {u: sorted(p) for u, p in telem.url_providers.items()},
+            "url_providers": {u: sorted(p) for u, p in telem.url_providers.items()}, "url_text": telem.url_text,
             "seconds": round(time.time() - t0, 1), "tokens": chat.usage}

@@ -37,6 +37,7 @@ class Telem:
         self.session_id = None
         self.calls = []
         self.url_providers = {}
+        self.url_text = {}
         self.lock = threading.Lock()
 
     def _post(self, path, body):
@@ -77,8 +78,12 @@ class Telem:
                 if blocked(url):
                     dropped += 1
                     continue
+                if not url:
+                    continue
                 with self.lock:
                     self.url_providers.setdefault(url, set()).add(p)
+                    self.url_text[url] = (self.url_text.get(url, "") + " " + (res.get("title") or "") + " "
+                                          + (res.get("summary") or res.get("excerpt") or ""))[:4000]
                 results.append({"provider": p, "query": run.get("query"), "rank": res.get("rank"), "url": url, "title": res.get("title"),
                                 "summary": (res.get("summary") or res.get("excerpt") or "")[:400]})
         with self.lock:
@@ -102,6 +107,7 @@ class Telem:
                 if f.get("content"):
                     with self.lock:
                         self.url_providers.setdefault(f.get("url"), set()).add("fetch:" + str(f.get("provider")))
+                        self.url_text[f.get("url")] = self.url_text.get(f.get("url"), "") + " " + f["content"][:max_chars]
                 pages.append({"url": f.get("url"), "status": f.get("status"), "provider": f.get("provider"),
                               "content": (f.get("content") or "")[:max_chars]})
         cost = FETCH_PRICE * len(urls)

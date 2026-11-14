@@ -38,10 +38,21 @@ def match_one(name, truth):
                 continue
             if n == c:
                 return t["qid"]
+            if re.findall(r"\d+", n) != re.findall(r"\d+", c):
+                continue
             r = SequenceMatcher(None, n, c).ratio()
             if r > best_r:
                 best, best_r = t["qid"], r
     return best if best_r >= 0.9 else None
+
+
+STOP = {"the", "and", "of", "for", "flight", "prize", "award", "airport", "disaster", "novel", "film", "river", "bridge"}
+
+
+def mentions(text, name):
+    """Lenient: at least one distinctive word of the name (4+ letters, not generic) appears in the retrieved text."""
+    words = [w for w in norm(name).split() if len(w) >= 4 and w not in STOP] or norm(name).split()
+    return any(f" {w} " in f" {text} " for w in words)
 
 
 def gap_check(name, hunt, judge):
@@ -68,24 +79,30 @@ def gap_check(name, hunt, judge):
     return status, v.get("reason", ""), half
 
 
-def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True):
+def score(finds, hunt, url_providers, check_gaps=True, require_evidence=True, url_text=None):
     truth = hunt["truth"]
     seen, rows = set(), []
-    retrieved = {url_key(u) for u in url_providers}
+    retrieved = {url_key(u) for u in url_providers if url_key(u)}
+    texts = {}
+    for u, txt in (url_text or {}).items():
+        texts[url_key(u)] = texts.get(url_key(u), "") + " " + norm(txt)
     judge = Chat("judge") if check_gaps else None
     gaps = 0
     for f in finds:
         if not isinstance(f, dict):
             continue
-        name = (f.get("name") or "").strip()
+        name = str(f.get("name") or "").strip()
+        url = str(f.get("evidence_url") or "")
         qid = match(name, truth)
         key = qid or norm(name)
-        row = {"name": name, "url": f.get("evidence_url"), "providers": sorted(next((p for u, p in url_providers.items() if url_key(u) == url_key(f.get("evidence_url"))), []))}
+        row = {"name": name, "url": url, "providers": sorted(next((p for u, p in url_providers.items() if url_key(u) == url_key(url)), []))}
         if key in seen:
             row["status"] = "duplicate"
-        elif require_evidence and url_key(f.get("evidence_url")) not in retrieved:
-            # Only URLs this attempt actually retrieved through Telem count, so recital from memory scores as wrong.
+        elif require_evidence and (url_key(url) not in retrieved or (texts and not mentions(texts.get(url_key(url), ""), name))):
+            # The cited URL must be one this attempt retrieved through Telem, and its text must mention the find,
+            # so recital from memory with an arbitrary retrieved URL scores as wrong.
             row["status"] = "unsupported"
+            seen.add(key)
         elif qid:
             row["status"], row["qid"] = "correct", qid
             seen.add(qid)

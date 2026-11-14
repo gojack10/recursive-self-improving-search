@@ -1,4 +1,5 @@
 import json
+import os
 import random
 from concurrent.futures import ThreadPoolExecutor
 
@@ -26,7 +27,9 @@ def state(d):
 
 
 def save_state(d, s):
-    (d / "state.json").write_text(json.dumps(s, indent=1))
+    tmp = d / "state.json.tmp"
+    tmp.write_text(json.dumps(s, indent=1))
+    os.replace(tmp, d / "state.json")
 
 
 def init(name):
@@ -51,7 +54,8 @@ def run_and_score(d, m, hunt_name, rnd, role, check_gaps=True, make=None):
     log = make(hunt) if make else attempt(m, hunt)
     log["round"], log["role"] = rnd, role
     log["referee"] = referee.score(log["finds"], hunt, log["url_providers"], check_gaps=check_gaps,
-                                   require_evidence=not log["method"].startswith("closed-book"))
+                                   require_evidence=not log["method"].startswith("closed-book"),
+                                   url_text=log.get("url_text"))
     H.save_log(d, log)
     row = H.table_row(log, log["referee"])
     H.append(d, "attempts.jsonl", row)
@@ -68,7 +72,8 @@ def safe_run(d, m, hunt_name, rnd, role, make=None):
         mid = m["id"] if m else role
         print(f"  r{rnd} {role:9} {mid} {hunt_name:22} FAILED: {str(e)[:200]}", flush=True)
         H.append(d, "errors.jsonl", {"round": rnd, "role": role, "method": mid, "hunt": hunt_name, "error": str(e)[:1000]})
-        return {"method": mid, "hunt": hunt_name, "score": 0.0, "failed": True}
+        return {"method": mid, "hunt": hunt_name, "label": role, "score": 0.0, "failed": True,
+                "correct": 0, "wrong": 0, "x_only": 0, "y_only": 0, "spent": 0.0}
 
 
 def batch(d, jobs, rnd):
@@ -119,7 +124,7 @@ def new_candidates(d, tree, props, parent, rnd):
         m = {"id": M.next_id(d), "parent": parent["id"], "round": rnd, "rationale": c.get("rationale", ""),
              "instructions": c["instructions"], "routing": merge_routing(parent["routing"], c.get("routing")),
              "routing_rules": c.get("routing_rules", ""), "fetch_policy": c.get("fetch_policy", ""), "status": "candidate"}
-        m["node"] = tree.write("Idea", f"Method {m['id']}", c["rationale"][:200],
+        m["node"] = tree.write("Idea", f"Method {m['id']}", m["rationale"][:200],
                                f"Parent: {parent['id']}\n\n```json\n{json.dumps(m, indent=1, ensure_ascii=False)}\n```",
                                parent=parent["node"])
         out.append(M.save(d, m))
@@ -128,11 +133,14 @@ def new_candidates(d, tree, props, parent, rnd):
 
 def record_lessons(tree, props, probe):
     for l in props.get("lessons", []):
-        tree.write("What We Learned", l["title"], l["body"][:200],
-                   f"{l['body']}\n\n**Tested scope:** {l['scope']}\n\n**Evidence attempts:** {l.get('evidence_attempts', [])}",
+        if not isinstance(l, dict) or not l.get("body"):
+            continue
+        body = str(l["body"])
+        tree.write("What We Learned", str(l.get("title") or body[:60]), body[:200],
+                   f"{body}\n\n**Tested scope:** {l.get('scope', 'not stated')}\n\n**Evidence attempts:** {l.get('evidence_attempts', [])}",
                    parent=probe)
     for f in props.get("failure_links", []):
-        if f.get("node_id") and (tree.dir / f["node_id"]).exists():
+        if isinstance(f, dict) and isinstance(f.get("node_id"), str) and (tree.dir / f["node_id"]).exists():
             tree.append(f["node_id"], f"- Seen again in attempt {f.get('attempt_id')}: {f.get('why', '')}")
     return bool(props.get("lessons"))
 
@@ -204,8 +212,7 @@ def one_round(name, k=2, breakout=False):
     s["test_points"].append(point)
     if rnd == 1:
         s["tree_r1"] = [n["id"] for n in tree.nodes()]
-    tree.append(probe, f"Select scores: {json.dumps(by)}\nWinner: {winner['id']} (adopted={adopted})\n"
-                       f"Test re-run: {test_score:.3f} (best {s['best_test']}, noise {noise})")
+    tree.append(probe, f"Select scores: {json.dumps(by)}\nWinner: {winner['id']} (adopted={adopted})")
     tree.set_status(probe, "resolved")
     save_state(d, s)
     H.append(d, "rounds.jsonl", point)
@@ -250,7 +257,10 @@ def recursion_test(name, gens=None):
     for g in gens:
         props, meta = improve(d, tree, v0, M.load(d, g), first_ids, k=1, as_of_round=1, allowed_nodes=allowed,
                               prompt_method=v0)
-        c = next(c for c in props["candidates"] if isinstance(c, dict) and c.get("instructions"))
+        c = next((c for c in props["candidates"] if isinstance(c, dict) and c.get("instructions")), None)
+        if c is None:
+            print(f"generation {g}: improver proposed no usable candidate", flush=True)
+            continue
         succ = {"id": f"rt-{g}", "parent": "v000", "rationale": c.get("rationale", ""), "instructions": c["instructions"],
                 "routing": merge_routing(v0["routing"], c.get("routing")), "routing_rules": c.get("routing_rules", ""),
                 "fetch_policy": c.get("fetch_policy", ""), "status": "recursion-test", "node": None}
@@ -271,10 +281,10 @@ def trial(method_paths, hunt_names=None, repeats=1, name="trials"):
     rows = batch(d, [(m, h, "trial") for m in methods for h in hunt_names for _ in range(repeats)], 0)
     print(f"{'method':16} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
     for m in methods:
-        rs = [r for r in rows if r["method"] == m["id"] and not r.get("failed")]
+        rs = [r for r in rows if r["method"] == m["id"]]
         print(f"{m['id']:16} {mean([r['score'] for r in rs]):6.3f} {sum(r['correct'] for r in rs):8} "
               f"{sum(r['wrong'] for r in rs):6} {sum(r['x_only'] for r in rs):7} {sum(r['y_only'] for r in rs):7} "
-              f"${sum(r['spent'] for r in rs):6.3f}")
+              f"${sum(r['spent'] for r in rs):6.3f}  failed {sum(1 for r in rs if r.get('failed'))}")
     return rows
 
 
@@ -305,13 +315,13 @@ def compare(method_path=None, run_name="main", hunt_names=None, n=3, name="compa
     summary = []
     print(f"{'contestant':22} {'score':>6} {'correct':>8} {'wrong':>6} {'x_only':>7} {'y_only':>7} {'spend':>7}")
     for label, *_ in contestants:
-        rs = [r for r in rows if r["label"] == label and not r.get("failed")]
+        rs = [r for r in rows if r["label"] == label]
         s = {"contestant": label, "score": round(mean([r["score"] for r in rs]), 4),
              "correct": sum(r["correct"] for r in rs), "wrong": sum(r["wrong"] for r in rs),
              "x_only": sum(r["x_only"] for r in rs), "y_only": sum(r["y_only"] for r in rs),
              "spend": round(sum(r["spent"] for r in rs), 4), "failed": sum(1 for r in rows if r["label"] == label and r.get("failed"))}
         summary.append(s)
-        print(f"{label:22} {s['score']:6.3f} {s['correct']:8} {s['wrong']:6} {s['x_only']:7} {s['y_only']:7} ${s['spend']:6.3f}")
+        print(f"{label:22} {s['score']:6.3f} {s['correct']:8} {s['wrong']:6} {s['x_only']:7} {s['y_only']:7} ${s['spend']:6.3f}  failed {s['failed']}")
     gaps = []
     for r in rows:
         if r.get("failed"):
