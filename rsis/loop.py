@@ -116,7 +116,9 @@ def paired(rows, key):
         groups.setdefault(key(r), set())
         if not r.get("failed"):
             groups[key(r)].add(r["hunt"])
-    common = set.intersection(*groups.values()) if groups else set()
+    # A group with no successful hunt (a crashed candidate) drops out instead of emptying the comparison.
+    live = [g for g in groups.values() if g]
+    common = set.intersection(*live) if live else set()
     return [r for r in rows if r["hunt"] in common and not r.get("failed")]
 
 
