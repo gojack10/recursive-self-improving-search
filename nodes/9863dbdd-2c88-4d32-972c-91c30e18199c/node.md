@@ -2,7 +2,7 @@
 id: "9863dbdd-2c88-4d32-972c-91c30e18199c"
 name: "Rework SearchHack Visuals With Blank Page"
 micro_summary: "Combine Blank Page motion direction with SiftText styling for the SearchHack visual and a later presentation."
-status: "in_progress"
+status: "resolved"
 see_also: [{"target":"125b3125-6dfd-4a2f-87fd-c4cf6815f5ee","reason":"Owns the existing SiftText-styled passive debugger and retained source conversation to build from."}]
 scope: "Preserve the Blank Page skill and Jack's intended synthesis with existing SearchHack visuals, without starting design or implementation."
 position: 2048
@@ -37,3 +37,11 @@ This capture installs nothing, changes no visual code and starts no presentation
 - X post above, verified on November 14, 2026; GitHub README inspected the same day.
 - Current Pi session `01a1dbff-e3b7-76a4-8f33-a5776403bb89`, from bookmark lookup through Jack's save request. Retained conversation entrance: `artifacts/chats/pi-blank-page-visuals.jsonl`.
 - Earlier source entrance: `artifacts/chats/pi-searchhack-visual-debugger.jsonl`, linked to the existing retained copy under the debugger owner. The original chat's tool records at lines 48–62 establish the GitHub clone, style inspection and static HTML output.
+
+## Completion — the visual direction was adopted
+
+In the subsequent November 14 conversation, Jack chose the SiftText look for a separate narrated presentation, insisted on using Blank Page, and explicitly said “Go to build.” This settles this **Idea** as adopted for the SearchHack presentation, not as a general proof that the style or skill works best. The original bookmark-only capture and its no-implementation boundary above describe the earlier state; they are no longer an instruction to stop the now-authorized presentation work.
+
+[Build the Narrated SearchHack Presentation](../75d4a132-b1ea-4bbd-ab8c-e2f4d8d7cac7/node.md) owns the selected explanatory sequence, repeated clarity corrections, purposeful colour and handoff. Its child owns the final narration-synced 2:50 export and the defective earlier file that must not be mistaken for it. [Create the SearchHack Hackathon Thumbnail](../fea94d44-0459-403f-9e1f-2c065499108c/node.md) owns Jack's separate image request and design revisions. These completed pieces do not resolve the independently open live-debugger work or establish recursive improvement.
+
+The existing local `artifacts/explainer/` directory holds the brief, references, HTML, fonts and export scripts; `/Users/jack/Downloads/rsis-explainer` points to it. The full native source is retained once at `artifacts/chats/pi-searchhack-narrated-presentation.jsonl`, Pi session `01a1dc0c-a596-779d-89b4-26e063f0bfba`. The new work/evidence nodes associate that same retained copy rather than independent chat duplicates. No Blank Page/Stewdio plugin was installed, and no remote media backup is implied.
