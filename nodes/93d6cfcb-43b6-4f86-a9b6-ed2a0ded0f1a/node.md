@@ -3,6 +3,7 @@ id: "93d6cfcb-43b6-4f86-a9b6-ed2a0ded0f1a"
 name: "Prioritize Readable Progress in the Live Dashboard"
 micro_summary: "Records team and visitor feedback on the relative value of state, score, tree and logs in the SearchHack demonstration."
 status: "resolved"
+kind: "What We Learned"
 scope: "Preserve the reported audience feedback, team layout discussion and their presentation implications without claiming dashboard variations were built."
 see_also: [{"target":"75d4a132-b1ea-4bbd-ab8c-e2f4d8d7cac7","reason":"The presentation applied this discussion as a visual handoff explaining what to watch on the live screen."}]
 position: 3072
@@ -28,5 +29,9 @@ Jack subsequently asked to apply the feedback to the presentation. That produced
 ## Completion and remaining choice
 
 This synthesis is complete because it preserves the audience report, team priorities, unresolved choice and actual presentation response. The parent live-debugger work remains open. The dashboard variations remain unbuilt and await a layout choice/alignment if Jack resumes that work; no new next marker or implementation commitment is inferred from this capture.
+
+## Subsequent reconciliation — parallel dashboard delivery
+
+The unbuilt-variations statement above was the presentation session's scope and evidence. In the parallel corpus/demo session, Jack did select version C from three static alternatives, then directed the actual live redesign. [Simplify the Demo Dashboard Around Activity and Scores](../7c3eef5a-62d9-4385-9f6c-da2acd114a4a/node.md) records that delivery, including removal of logs, lights/dots, a vertical state machine and the restored nested tree. Do not re-ask the already settled C choice merely because this earlier feedback capture stopped before it. This supplements the resolved synthesis without attributing the live work to the presentation agent. Source: [parallel implementation conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl), C selection `da7e4ae3` and subsequent visual corrections.
 
 Source: Pi session `01a1dc0c-a596-779d-89b4-26e063f0bfba`, user `d1d52401` (full supplied conversation), assistant's following alignment response, user `280f7a27` (apply feedback to presentation) and `4e3d5a53` (tree delta). `artifacts/chats/pi-searchhack-narrated-presentation.jsonl` links the retained session; `artifacts/repository` links the existing checkout at `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`. No external project was moved or changed by this save.

@@ -48,3 +48,13 @@ In a separate Claude Code session, the assistant re-scored the same Pi search wi
 ### Inference and response
 
 The paired score that was unavailable above now exists for this one search: 0.0 without the judge, 0.79 with it. Dropping the judge would have scored this search 0.0, mostly for name mismatches. The proposal to remove it remains unselected.
+
+## November 14 — later scorer and recorded-field changes
+
+[Judge Every Unmatched Answer and Reuse Verdicts](../82df17c2-9999-4aba-9009-91d932430e9f/node.md) records Jack choosing Astra medium, all eligible unmatched answers instead of the per-search 20-check cap, ten shared workers and a per-task SQLite verdict cache. The answer-set denominator is now the key plus the pool of verified gaps across searches. An answer that the key lacks therefore needs independent evidence, not automatic rejection or automatic credit.
+
+[Correct Unconfirmed-Answer Penalties and Re-score the Corpus](../bd434935-7e66-4ef0-81e2-e835905031ea/node.md) records the later distinction: confirmed missing answers get credit; contradicted answers and unsupported submissions cost half a point; `unconfirmed` answers get neither credit nor penalty. It also owns the em-dash name-matching bug and HTTP 429 mis-scoring. These are substantive scorer changes, not new search-method gains.
+
+The formula remains `max(0, correct - 0.5 * wrong) / max(total, 1)`. Correct answers need not imply a score of 1.0, because incorrect/unsupported extras still cost points and the pool may grow. Conversely a high supplied-key count is not necessarily the full denominator. Search-row `seconds` excludes judging; `spent` is estimated searcher Telem spend, not all judge/model costs. New rows have a write time `t`. The corpus's retrospective rewrite preserves raw submissions/timing but not every historical score in every file; use the correction node's boundary before replaying or comparing.
+
+This resolved field clarification is supplemented, not reopened as a new task. Source: [corpus/demo conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl); `artifacts/repository` reaches the current code and recordings.

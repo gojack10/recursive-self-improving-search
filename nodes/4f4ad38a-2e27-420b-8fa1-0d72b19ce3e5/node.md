@@ -23,5 +23,11 @@ The assistant recommended preserving the intended search/scoring work and compar
 
 This is parallel to the viewer work, with shared runner/logging changes coordinated between owners. It is not a request for a new harness or a test suite. No speed implementation, extra experiment or agent dispatch occurred in this conversation after the first iteration. Complete this unit by recording the measured cause, the authorized response and its resulting duration or explicit remaining limitation.
 
+## November 14 — diagnosis and later limitation
+
+[Diagnose First-Iteration Latency](../72cfa59a-de11-4374-8049-6ba0e76c6061/node.md) completes the bounded read-only investigation: serial referee calls accounted for about 214 seconds on the first iteration's path, and even instantaneous scoring left about 145 seconds in that measurement. [Parallel cached judging](../82df17c2-9999-4aba-9009-91d932430e9f/node.md) was subsequently implemented with Jack's approval, while the task set, cap and judge model also changed. The later corpus job took 2,149 seconds for calibration/baselines and four iterations before its stop, not 30–60 seconds per iteration. No controlled before/after measurement holds those changed conditions fixed. This parent stays in progress for the target, with the cause and authorized response now known; it is no longer waiting for initial dispatch.
+
+Source: [later conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl). The original `pi-first` directory referenced below was later deleted under Jack's explicit reset; use the retained first-iteration record and later diagnostic receipt rather than treating that path as available.
+
 ## Source and artifacts
 [Conversation](artifacts/chats/pi-searchhack-first-iteration.jsonl), Pi session `01a1dbe5-7190-7284-80b0-36172f8d088c`. `artifacts/repository` links `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`; inspect its `runs/pi-first/` and runner source in place. The first-iteration owner retains the small terminal completion log.

@@ -3,6 +3,7 @@ id: "32e42590-c3cd-42d2-ad59-b2ff06b72f22"
 name: "Show Instruction Lineage Beside Agent Progress"
 micro_summary: "Connects a downward-growing instruction tree with a time-and-score view of agent attempts."
 status: "in_progress"
+kind: "Idea"
 see_also: []
 scope: "Preserve the accepted visual concept, not a completed interface or scripted outcome."
 position: 4096
@@ -28,3 +29,9 @@ The former deferral was: "Resume only after the pre-hackathon PoC establishes a 
 [Watch SearchHack Run Through a Visual Debugger](../125b3125-6dfd-4a2f-87fd-c4cf6815f5ee/node.md) owns that commitment, implementation and visual corrections. The original reference image remains inspiration; the implemented right-hand view uses method scores rather than invented spatial search trajectories. This Idea is resumed while the chosen application remains under review; no search-improvement result follows.
 
 Source: Pi session `01a1dba0-2171-7284-80b0-361440318b9c`, retained under the child work's `artifacts/chats/pi-searchhack-visual-debugger.jsonl`.
+
+## November 14 — selected two-panel application
+
+The debugger child now links the [delivered simplified dashboard](../7c3eef5a-62d9-4385-9f6c-da2acd114a4a/node.md): a vertical active-state machine and compact nested method/lesson tree beside an enlarged baseline-versus-ours score view. Logs and answer rows are no longer competing tree panes. The result reflects Jack's live design selection and corrections, not an invented search trajectory.
+
+[Record SearchHack Runs for Programmatic Replay](../9d36cea8-fd14-4648-8edf-996864526dd8/node.md) preserves the still-unbuilt player despite recorded timestamps. The earlier assistant suggestion is now an explicit replay request, but no completed timed playback follows. Source: [later conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl).

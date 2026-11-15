@@ -3,6 +3,7 @@ id: "a21a1d82-0ac0-4a8e-8ddf-eee4b76c6d02"
 name: "Run the Harness Through Pi on Codex Personal"
 micro_summary: "Commits the SearchHack harness to headless Pi agents on Jack's Codex personal route with Telem as the only search service."
 status: "in_progress"
+kind: "Agreed Work"
 see_also: [{"target":"35c78938-a7ca-40fc-9a43-b8cd6bb746b8","reason":"Owns the repository and local checkout where this work lives."},{"target":"66c093b3-8a71-4111-8f04-33d6aab95079","reason":"Earlier commitment to start on browser-harness; this build runs on Telem only and the commitment was not revisited."},{"target":"919d9854-bd80-4845-aaef-0fef947fbc1f","reason":"Explains the score fields; the judged re-score of the first Pi search is recorded there."},{"target":"9a2b74d6-d0f2-44a5-b6d3-a35fbf465439","reason":"Still owns task choice; the task-difficulty question below bears on it."}]
 position: 2048
 ---
@@ -34,7 +35,7 @@ He named Astra and Terra for that route. Terra is not on it; see below.
 
 [Score One Pi-Run Search on Calatrava Bridges](../2f708580-00da-4bad-a64c-8c318beefbb9/node.md) records the first run under these commitments.
 
-## Where the work stopped
+## Where the work stopped — historical first handoff
 
 All code is on the local branch `pi-searcher` in `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`, **uncommitted and not pushed**. The branch starts at `c308b93`. GitHub `main` has moved on since: `25e6db0` from Alyssa's account at 12:27, "shape-aware ensemble lenses, verify agreed finds, two-list join".
 
@@ -90,4 +91,12 @@ Evidence: November 14 Codex session 01a1dbcf-50f5-7863-8922-e412ff6886fa, includ
 
 The first-iteration child now records the authorized `pi-first` run and reconciliation commit `eab1366`. Ten scored searches and one candidate proposal completed in 351 seconds. Original `v000` and proposed `v001` tied at perfect selection scores; `v000` stayed and scored 0.8357 on held-out tasks. No improvement is established. The merge and viewer-animation commit remain local in this session; runtime files and `runs/` were not pushed by this agent.
 
-The next independent harness work is [Reduce SearchHack Iteration Time](../4f4ad38a-2e27-420b-8fa1-0d72b19ce3e5/node.md); the visual branch owns actual-activity visibility and Pi event display. Coordinate shared runner/logging edits. Task-difficulty and answer-key work belongs to the task-selection branch. No new worker has been launched by this save. Source: the first-iteration child's retained conversation and run artifacts.
+At that handoff the next independent harness work was [Reduce SearchHack Iteration Time](../4f4ad38a-2e27-420b-8fa1-0d72b19ce3e5/node.md); the visual branch owns actual-activity visibility and Pi event display. Coordinate shared runner/logging edits. Task-difficulty and answer-key work belongs to the task-selection branch. No new worker has been launched by this save. Source: the first-iteration child's retained conversation and run artifacts.
+
+## November 14 — full corpus delivery
+
+[Run Six Corpus Iterations and Record Their Limits](../b8186822-2aae-4874-9e04-9b1ec191aa33/node.md) records the later run on the replacement 18-task corpus: Terra-fast high searchers, Astra medium improver **and judge**, plain search on every task, and six completed iterations. Both the improver and judge now use the same family by Jack's explicit model selection; the earlier outside-family guard is not satisfied and must not be claimed. The judge is a separate evidence route, not independent model-family confirmation.
+
+[Judge Every Unmatched Answer and Reuse Verdicts](../82df17c2-9999-4aba-9009-91d932430e9f/node.md) and its correction replace capped serial judging with persisted parallel verdicts. The first Pi integration's unfinished items above were delivered before this final run. The previous run folders were deleted with Jack's explicit reset; their notes remain history rather than working replay inputs.
+
+The [published demo](../0915aad5-fdae-435e-9620-e2e38b14d35a/node.md) is on GitHub main at `8e0dec9` with blank example keys, stock-Pi instructions and committed corpus data. The loop is stopped, not running indefinitely. This harness owner stays active through the unresolved speed and interpretation limitations, not because source code is still uncommitted. Source: [corpus/demo conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl).

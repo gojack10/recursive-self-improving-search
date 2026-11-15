@@ -2,7 +2,7 @@
 id: "49b9b605-895f-4812-ad18-c874bbc354d8"
 name: "Expose SearchHack Activity and Pi Turns"
 micro_summary: "Make the passive viewer show actual work and readable agent output rather than an opaque phase label."
-status: "in_progress"
+status: "resolved"
 kind: "Agreed Work"
 see_also: [{"target":"fee4d2ea-c29d-45fc-8498-2002830f8f8f","reason":"Follows Jack watching the first complete iteration and finding its activity opaque."},{"target":"4f4ad38a-2e27-420b-8fa1-0d72b19ce3e5","reason":"Parallel latency work may share runner and event changes; coordinate ownership rather than replace the same plumbing independently."}]
 position: 2048
@@ -26,6 +26,14 @@ Phase names such as train/select/test describe a search's role in the experiment
 Coordinate changes to shared runner/logging code with the latency work. This save records continuation, not dispatch of either agent. Finish when Jack can follow what each actor is doing and inspect its inputs/outputs; visual acceptance remains his.
 
 Jack also approved a concise explanation style for this project after rejecting score-heavy summaries: begin with "We tried to make the search agent better. This run didn’t show an improvement," then explain the few steps. For a comparison question, headings and actual actor inputs/outputs made the Turing task and tie understandable. He said "keep this style."
+
+## Completion and subsequent UI selection — November 14
+
+The next session implemented the requested granular state and readable per-agent Pi log panes in the four-pane viewer. The scorer emits per-answer progress so completed searching no longer appears only as an opaque train block. This bounded implementation completed; the later lack of visible log panes is an explicit design change, not evidence it never ran.
+
+Jack and the team then chose to cut unreadable streaming panes from the demo. The sibling [Simplify the Demo Dashboard Around Activity and Scores](../7c3eef5a-62d9-4385-9f6c-da2acd114a4a/node.md) records that choice and delivered lights/dots, while preserving raw Pi streams on disk. The judge emits JSON progress per check but its internal Pi transport remains text; a full live judge Pi-turn stream was not delivered. The visual debugger parent remains open for separate replay work and remaining presentation limits; resolution here is not comprehensive visual acceptance.
+
+Source: [later conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl), initial four-pane request `75190b2c`, later simplification `b2660cf4` and selected C `da7e4ae3`.
 
 ## Source and artifacts
 Pi session `01a1dbe5-7190-7284-80b0-36172f8d088c`, retained once under the first-iteration owner and linked here as [conversation](artifacts/chats/pi-searchhack-first-iteration.jsonl). `artifacts/repository` links `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`; source files and existing Pi logs stay there. Pi documentation was read at `/Users/jack/.local/share/pi-mono/packages/coding-agent/docs/json.md`. No screenshots were taken.

@@ -3,6 +3,7 @@ id: "420ced74-9291-45ef-b2ec-546f2224c283"
 name: "Detect a Plateau in the Improvement Loop"
 micro_summary: "Asks how the loop should recognize that improvement has stalled and what should happen then."
 status: "resolved"
+kind: "Question"
 scope: "Answer how the SearchHack loop recognizes a stall and responds, keeping Jack's endorsement separate from untested thresholds and unobserved results."
 see_also: [{"target":"9b2ff11d-f8bd-4aec-b03f-c7052c3bdd8d","reason":"Deferred question on detecting idea basins; Jack's note names idea basins as a possible answer."},{"target":"f12a53f8-8dc2-4c1b-b482-cfde6778d2bb","reason":"Reports of stalled runs, a flat-best-score trigger and the Bespoke Labs idea-basin findings; the authors' numbers, about code and ML tasks, not web search."},{"target":"c83b7182-abe0-444a-9a4d-e5b05812a4ef","reason":"Fork-and-Flush's never-firing stall trigger and its fresh-context result shaped the noise band and the breakout round."},{"target":"9ec1b5d1-69ee-4649-b30f-680e04c0fed9","reason":"The repeat-round signal reuses Jack's selected rule that a failure seen before links to an existing node."},{"target":"1f90ecfa-a4a4-4e6b-9861-9744aeba6ce5","reason":"The breakout round draws on this deferred fresh-agent idea; its status is unchanged here."},{"target":"87e216ba-5f84-408a-a381-c15b71b4937b","reason":"The breakout round gives each fresh improver a different slice of history, drawing on this deferred idea; its status is unchanged here."}]
 position: 3072
@@ -67,6 +68,14 @@ No loop has run. No noise band has been measured and no plateau, basin or breako
 ## Completion
 
 Answered for the SearchHack build by Jack's judgment on November 14, 2026. The decisive answer is the response matrix above: a repeated-idea plateau gets a breakout round, a new-but-losing plateau leads to a difficulty check and then stopping, and a near-ceiling score leads to harder hunts. The detection thresholds and stop rule are kept with it as revisable defaults, not as tested or separately endorsed values.
+
+## November 14 — observed stop and continuation override
+
+The earlier "No loop has run" statements describe the original answer's evidence, not the final day's state. The [six-iteration corpus Probe](../b8186822-2aae-4874-9e04-9b1ec191aa33/node.md) applied these defaults. Its 0.2605 calibration spread was too large for the gradual single-iteration gains to count; two breakout iterations therefore stopped the first job after iteration 4. That stop was observed, but did not establish an idea basin or a true ceiling.
+
+Jack then authorized another 20 iterations. The assistant introduced `--keep-going`, set this run's operational band to zero, retained the original measurement separately, reset counters, and used a $40 cumulative estimated search-spend cap. Those are continuation choices, not a revalidated noise estimator or a newly confirmed plateau law. The loop was stopped for submission after iteration 6; rerunning as-is is not evidence a further 20 already completed. The `run` command's iteration count means additional iterations, while its spend cap is cumulative across resumes. This question stays resolved as an adopted practical answer with later observations; the defaults are still revisable.
+
+Source: [later conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl), 20-more approval `6bbc4b90` and submission-time stop correction `727cd86a`.
 
 ## Source
 

@@ -3,6 +3,7 @@ id: "9ec1b5d1-69ee-4649-b30f-680e04c0fed9"
 name: "Build the Hackathon Around the Recursive Searcher"
 micro_summary: "Commits the SearchHack build to the recursive framing and the design choices Jack selected."
 status: "in_progress"
+kind: "Agreed Work"
 scope: "Record Jack's commitments for the November 14 build; the work completes when the build is attempted and its outcome recorded."
 see_also: [{"target":"7dfde31d-0c39-4772-9f05-92e4c5613a26","reason":"decided from The Searcher That Searches for How to Search, which keeps the proposed mechanism and its unselected parts."},{"target":"bf8823dd-9e4e-4bed-8430-ca258d5471fd","reason":"The model whose light form the hackathon agents' nodes will follow."}]
 position: 8192
@@ -64,3 +65,11 @@ At the event Jack asked to save SiftText and change the terminology: turn hunt t
 The three-hour split is Jack's schedule for the rest of the event, not a result. Task finding belongs to the two groupmates in the next hour; the harness belongs to Jack in that same hour. What counts as working at each step remains governed by the task, referee and comparison choices in [Choose the PoC Task and Success Evidence](../9a2b74d6-d0f2-44a5-b6d3-a35fbf465439/node.md).
 
 Source: current Pi session `01a1db79-c926-7284-80b0-36135ff23ffd`, retained under [Team Backgrounds and a Proposed Work Split](../a7769974-3ff8-4e30-9fd4-975bf08ff6f2/node.md) at `artifacts/chats/pi-searchhack-team-intros.jsonl`.
+
+## November 14 — build attempted, demo delivered, qualifications preserved
+
+The committed framing was implemented: the writer searches with the current method and reads the run's lessons and earlier methods. [Run Six Corpus Iterations and Record Their Limits](../b8186822-2aae-4874-9e04-9b1ec191aa33/node.md) records a 62%-to-85% corrected held-out trajectory, the original 26-point calibration spread, the stop/continuation changes and the fact that retrospective scoring did not change method adoptions. Jack selected Astra medium for the judge as well as the improver, despite the earlier different-family guard.
+
+Jack later said the separate recursion test was not needed for this demo; it was not run. The growing method tree is an explanation of implemented history use, not by itself a measured causal recursion result. The broader build remains active through its unresolved children. Concrete public delivery is completed in [Publish the Runnable Demo and Recorded Results on Main](../0915aad5-fdae-435e-9620-e2e38b14d35a/node.md); the replay player and custom-question/model-key UI are not delivered.
+
+Source: [corpus/demo conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl). This does not alter the older selected terminology: task, search, query and iteration remain the prose terms even where code stores hunt, attempt and round.

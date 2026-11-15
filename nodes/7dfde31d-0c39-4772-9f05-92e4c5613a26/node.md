@@ -3,7 +3,8 @@ id: "7dfde31d-0c39-4772-9f05-92e4c5613a26"
 name: "The Searcher That Searches for How to Search"
 micro_summary: "Develops a search agent that improves its own method by searching its history and the web with that same method."
 status: "in_progress"
-scope: "Preserve the recursive design Jack selected for SearchHack and the assistant's proposed mechanism, without claiming a built loop or an improvement result."
+kind: "Idea"
+scope: "Preserve the originating recursive design, its later implementation and evidential limits without treating higher search scores as proof of better improving."
 see_also: [{"target":"2f0d64f3-6886-4dc8-8256-81fec882d62c","reason":"Jack's November 13 lean toward calling this continual learning; this node records his November 14 choice of recursion for the hackathon."},{"target":"9a2b74d6-d0f2-44a5-b6d3-a35fbf465439","reason":"Owns the still-unselected task, scorer and comparison this design depends on."},{"target":"f12a53f8-8dc2-4c1b-b482-cfde6778d2bb","reason":"Research findings that shaped the improver, history index and stall trigger proposals."},{"target":"bf8823dd-9e4e-4bed-8430-ca258d5471fd","reason":"Jack approved a light form of this model for the nodes the hackathon agents write."},{"target":"32e42590-c3cd-42d2-ad59-b2ff06b72f22","reason":"Deferred lineage-and-progress visual; Jack supplied a reference image for the progress side."},{"target":"c5749fc3-e9ea-4a72-84d7-e2fbeac032c5","reason":"Faithful record-keeping and improved later performance remain separate claims."}]
 position: 7168
 ---
@@ -42,6 +43,14 @@ The assistant judged SiftText suited to the method-and-lessons layer: its outlin
 The first save of this node listed Jack's four choices in a "Jack's selections" section here: recursion as the framing, the core design, failure links to nodes and a light state-machine form for agent-written nodes. Under the [Epistemic State Machine](../bf8823dd-9e4e-4bed-8430-ca258d5471fd/node.md), a commitment to act is Agreed Work, not part of an Idea. Jack asked for the fix. Those choices and their quotations now live in the sibling [Build the Hackathon Around the Recursive Searcher](../9ec1b5d1-69ee-4649-b30f-680e04c0fed9/node.md), decided from this node.
 
 This Idea stays in progress for the parts not chosen. The two-layer record split, task choice, recursion test, improver details and day plan above were offered but not selected. No loop was built, no task was run and no improvement or recursion result exists.
+
+## November 14 — mechanism implemented, recursion test unrun
+
+The earlier no-loop/no-result statement belongs to this Idea's first capture. [Run Six Corpus Iterations and Record Their Limits](../b8186822-2aae-4874-9e04-9b1ec191aa33/node.md) now records the implemented mechanism: a method writer uses the current method for research and reads retained lessons/logs to propose successors. The completed searches show a descriptive score gain under a corrected referee, not independent evidence that its improving ability improved.
+
+Jack explicitly did not want the separate `recursion-test` for this demo. That counterfactual and any broader claim about recursion remain unobserved; they are not automatic new work. The public README states that the command exists but was not run. This update records application without turning the historical Idea into Agreed Work or reclassifying the evidence as proof.
+
+Source: [corpus/demo conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl), `6bbc4b90` and `0d79d8d5`.
 
 ## Source
 

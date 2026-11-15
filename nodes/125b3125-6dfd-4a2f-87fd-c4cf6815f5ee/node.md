@@ -3,6 +3,7 @@ id: "125b3125-6dfd-4a2f-87fd-c4cf6815f5ee"
 name: "Watch SearchHack Run Through a Visual Debugger"
 micro_summary: "Build a passive state-machine view beside the growing run tree and method iterations."
 status: "in_progress"
+kind: "Agreed Work"
 scope: "Provide a readable live debugger while the CLI runs SearchHack, without controlling searches from the page."
 see_also: [{"target":"35c78938-a7ca-40fc-9a43-b8cd6bb746b8","reason":"Owns the checkout and GitHub repository containing the debugger."}]
 position: 1024
@@ -41,11 +42,19 @@ The child [Separate Run Trees From Search Traces](../46e25542-1842-409f-9e82-18d
 
 Jack watched the activated viewer during the completed `pi-first` iteration. His judgment was that the flashing train label was opaque: it did not explain what the system was doing, and should have said scoring when searches had already submitted and scoring was pending. He requested readable Pi output/turn blocks and finer actual-activity visibility, while explicitly keeping the discussion out of implementation and detailed design. This is feedback on the delivered passive viewer, not approval of the final visual design. [Expose SearchHack Activity and Pi Turns](../49b9b605-895f-4812-ad18-c874bbc354d8/node.md) owns the next work and existing JSON-stream affordance. The [completed iteration](../fee4d2ea-c29d-45fc-8498-2002830f8f8f/node.md) owns the run results and retained new conversation.
 
+## November 14 — demo layout delivered; playback still open
+
+The [granular activity and Pi-turn work](../49b9b605-895f-4812-ad18-c874bbc354d8/node.md) was implemented in four panes, then Jack selected a simpler demo. [Simplify the Demo Dashboard Around Activity and Scores](../7c3eef5a-62d9-4385-9f6c-da2acd114a4a/node.md) owns the consequential change: two main panels, lights instead of logs, a vertical state machine, a compact nested method/lesson tree and an explicit plain-search comparison. Answers are revealed by a separate button, never method-tree nodes. Jack's five supplied final screenshots are committed with the README.
+
+[Record SearchHack Runs for Programmatic Replay](../9d36cea8-fd14-4648-8edf-996864526dd8/node.md) remains active. Timestamps were added and the recordings published, but no replay player or 2x speed control was built. The viewer is still a passive file reader. The source and current screenshots are on main at `8e0dec9`; the earlier local-only status above is historical. No prior graphical acceptance is invented, and the agent's routine checks established startup/syntax, not rendered-browser correctness.
+
+Source: [later conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl). The parked `/private/tmp/rsis-live-patch/` refactor mentioned in the earlier development is not a dependency of this delivered version.
+
 ## November 14 — team and visitor readability feedback
 
 [Prioritize Readable Progress in the Live Dashboard](../93d6cfcb-43b6-4f86-a9b6-ed2a0ded0f1a/node.md) preserves the later team/visitor discussion supplied by Jack: enlarge the question, lead with the state machine and baseline score graph, keep the growing tree, and subordinate logs/answers. The reported visitor wanted clear explanation and the ability to try different input; it is one supplied conversation, not a verified panel-wide verdict. The team did not settle one screen versus multiple screens, and this presentation session did not build the proposed static dashboard variants.
 
-The separate narrated presentation applied this feedback to its four-part demo handoff. Its video export reused the concurrently developed viewer renderer and a local read-only replay adapter. That exported reconstruction is not a repo replay feature or completion of this live-debugger work. The historical implementation and first-iteration observations above stay intact; this work remains in progress for the outstanding interface judgment and layout decision.
+The separate narrated presentation applied this feedback to its four-part demo handoff. Its video export reused the concurrently developed viewer renderer and a local read-only replay adapter. That exported reconstruction is not a repo replay feature or completion of this live-debugger work. The historical implementation and first-iteration observations above stay intact. The separate corpus/demo conversation records the later C selection and live implementation in the preceding section; the layout decision was unresolved only within the presentation account, not globally. This work remains open for in-repo playback and outstanding human interface judgment.
 
 ## Source and artifacts
 Pi session `01a1dba0-2171-7284-80b0-361440318b9c`, retained at [the conversation](artifacts/chats/pi-searchhack-visual-debugger.jsonl). `artifacts/repository` links the existing checkout at `/Users/jack/Documents/Codex/2026-11-14/how/work/recursive-self-improving-search`; it is not a copied code archive. The transcript names the supplied image paths; their temporary clipboard files are not independently retained here.
