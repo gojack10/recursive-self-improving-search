@@ -1972,13 +1972,13 @@
  "round": 5,
  "role": "select",
  "referee": {
-  "score": 0.75,
-  "correct": 5,
-  "wrong": 1,
-  "total": 6,
+  "score": 0.8571,
+  "correct": 6,
+  "wrong": 0,
+  "total": 7,
   "duplicates": 0,
   "unsupported": 0,
-  "x_only": 1,
+  "x_only": 0,
   "y_only": 0,
   "missed": [
    "Helen B. Taussig"
@@ -2039,9 +2039,9 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "The evidence confirms Georgia O’Keeffe received the Presidential Medal of Freedom in 1977, but does not establish an IAU-approved Venus feature named after her. O’Keeffe crater is on Mercury, not Venus.",
-    "status": "wrong",
-    "half": "x_only"
+    "reason": "Georgia O'Keeffe is the already-known Georgia O’Keeffe, with only an apostrophe variation. The evidence confirms her 1977 Medal of Freedom; her Venus crater is already listed.",
+    "status": "correct",
+    "qid": "georgia okeeffe okeeffe crater"
    }
   ]
  }

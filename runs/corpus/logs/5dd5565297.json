@@ -755,13 +755,13 @@
  "round": 1,
  "role": "select",
  "referee": {
-  "score": 0.5833,
-  "correct": 4,
-  "wrong": 1,
-  "total": 6,
+  "score": 0.7143,
+  "correct": 5,
+  "wrong": 0,
+  "total": 7,
   "duplicates": 0,
   "unsupported": 0,
-  "x_only": 1,
+  "x_only": 0,
   "y_only": 0,
   "missed": [
    "Ariel Durant",
@@ -774,7 +774,6 @@
     "providers": [
      "exa"
     ],
-    "reason": "Rachel Carson is already listed. The supplied evidence confirms her posthumous Presidential Medal of Freedom but does not establish an IAU-approved Venus feature named after her.",
     "status": "correct",
     "qid": "freedom_venus-5"
    },
@@ -785,7 +784,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Martha Graham is already listed. The supplied evidence confirms her 1976 Presidential Medal of Freedom but does not establish an IAU-approved Venus feature named Graham Patera.",
     "status": "correct",
     "qid": "freedom_venus-4"
    },
@@ -796,7 +794,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Helen Keller is already listed. The supplied excerpts do not explicitly establish her medal award or an IAU-approved Venus feature named Keller Patera; these flags indicate insufficient evidence, not disproof.",
     "status": "correct",
     "qid": "freedom_venus-1"
    },
@@ -806,7 +803,6 @@
     "providers": [
      "exa"
     ],
-    "reason": "Margaret Mead is already listed. The evidence supports her posthumous Presidential Medal of Freedom award in 1979 and the IAU-approved Venus crater Mead, named for her in 1991.",
     "status": "correct",
     "qid": "freedom_venus-3"
    },
@@ -816,9 +812,9 @@
     "providers": [
      "exa"
     ],
-    "reason": "Georgia O’Keeffe received the Presidential Medal of Freedom, but O’Keeffe crater is on Mercury, not Venus. The supplied evidence does not establish an IAU-approved Venus feature named after her.",
-    "status": "wrong",
-    "half": "x_only"
+    "reason": "Georgia O’Keeffe received the Presidential Medal of Freedom in 1977. The IAU planetary gazetteer lists O'Keeffe crater on Venus as approved in 1994, named for Georgia, the American artist (1887–1986). She is distinct from all already-known recipients.",
+    "status": "verified_gap",
+    "half": null
    }
   ]
  }

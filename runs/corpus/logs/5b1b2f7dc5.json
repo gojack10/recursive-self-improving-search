@@ -641,10 +641,10 @@
  "round": 0,
  "role": "noise",
  "referee": {
-  "score": 0.6538,
+  "score": 0.6,
   "correct": 9,
-  "wrong": 1,
-  "total": 13,
+  "wrong": 0,
+  "total": 15,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 1,
@@ -653,7 +653,9 @@
    "Chuck Berry",
    "Ma Rainey",
    "Miriam Makeba",
-   "Walt Disney"
+   "Walt Disney",
+   "charles ives",
+   "muddy waters"
   ],
   "rows": [
    {
@@ -720,8 +722,8 @@
      "fetch:tavily",
      "you"
     ],
-    "reason": "The evidence confirms Alicia de Larrocha won four competitive Grammy Awards, but does not establish an IAU-approved surface feature on Mercury named after her.",
-    "status": "wrong",
+    "reason": "The evidence confirms four competitive Grammy wins but does not establish an IAU-approved surface feature on Mercury named after Alicia de Larrocha.",
+    "status": "unconfirmed",
     "half": "x_only"
    },
    {

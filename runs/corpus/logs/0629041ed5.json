@@ -719,16 +719,17 @@
  "round": 0,
  "role": "noise",
  "referee": {
-  "score": 0.8462,
-  "correct": 12,
-  "wrong": 2,
-  "total": 13,
+  "score": 0.8667,
+  "correct": 13,
+  "wrong": 0,
+  "total": 15,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 1,
   "y_only": 0,
   "missed": [
-   "Walt Disney"
+   "Walt Disney",
+   "charles ives"
   ],
   "rows": [
    {
@@ -776,8 +777,8 @@
     "providers": [
      "fetch:tavily"
     ],
-    "reason": "The evidence confirms Alicia de Larrocha won four competitive Grammy Awards, but does not establish an IAU-approved surface feature on Mercury named after her.",
-    "status": "wrong",
+    "reason": "The evidence confirms four competitive Grammy wins but does not establish an IAU-approved surface feature on Mercury named after Alicia de Larrocha.",
+    "status": "unconfirmed",
     "half": "x_only"
    },
    {
@@ -866,9 +867,9 @@
     "providers": [
      "brave"
     ],
-    "reason": "The supplied evidence establishes neither qualifying Grammy recognition for Muddy Waters nor an IAU-approved Mercury surface feature named after him. The profiles shown are unrelated namesakes.",
-    "status": "wrong",
-    "half": "neither"
+    "reason": "Muddy Waters won competitive Grammys and a Grammy Lifetime Achievement Award. The IAU planetary gazetteer lists Mercury’s Waters crater as approved on December 19, 2012, honoring McKinley Morganfield (Muddy Waters). He is distinct from all already-known people.",
+    "status": "verified_gap",
+    "half": null
    }
   ]
  }

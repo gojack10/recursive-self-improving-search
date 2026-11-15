@@ -1566,17 +1566,18 @@
  "round": 3,
  "role": "select",
  "referee": {
-  "score": 0.6667,
+  "score": 0.5714,
   "correct": 4,
   "wrong": 0,
-  "total": 6,
+  "total": 7,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 0,
   "y_only": 0,
   "missed": [
    "Ariel Durant",
-   "Helen B. Taussig"
+   "Helen B. Taussig",
+   "georgia okeeffe okeeffe crater"
   ],
   "rows": [
    {

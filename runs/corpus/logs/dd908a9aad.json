@@ -1112,10 +1112,10 @@
  "round": 3,
  "role": "train",
  "referee": {
-  "score": 0.875,
-  "correct": 4,
-  "wrong": 1,
-  "total": 4,
+  "score": 1.0,
+  "correct": 5,
+  "wrong": 0,
+  "total": 5,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 0,
@@ -1168,9 +1168,9 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The supplied evidence neither documents Muddy Waters’s Rock Hall induction nor identifies an IAU-approved Mercury surface feature named after him. The Muddy Waters snippet concerns an unrelated farming professional.",
-    "status": "wrong",
-    "half": "neither"
+    "reason": "Muddy Waters is already listed. The evidence confirms his 1987 Rock Hall induction but does not independently establish the IAU-approved Mercury feature.",
+    "status": "correct",
+    "qid": "muddy waters waters crater"
    }
   ]
  }

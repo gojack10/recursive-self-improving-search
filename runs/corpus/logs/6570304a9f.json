@@ -2450,7 +2450,7 @@
     "providers": [
      "parallel"
     ],
-    "reason": "Philipp Lenard won the 1905 Nobel Prize in Physics, but the IAU revoked the lunar crater name Lenard in 2020. Its historical approval therefore does not qualify as a name in force for the requested cutoff.",
+    "reason": "Philipp Lenard won the 1905 Nobel Prize in Physics, but the IAU revoked the lunar crater name Lenard in 2020. The supplied lists reflect its former approval, not an in-force name.",
     "status": "wrong",
     "half": "x_only"
    },

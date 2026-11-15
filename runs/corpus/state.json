@@ -1,16 +1,16 @@
 {
  "goal": "6072bc4d-87a7-47e0-a67e-ee6d6ef0c353",
- "current": "v007",
- "round": 5,
- "best_test": 0.809,
+ "current": "v012",
+ "round": 6,
+ "best_test": 0.8495,
  "noise": 0.0,
- "flat_rounds": 1,
+ "flat_rounds": 0,
  "breakouts_without_gain": 0,
  "test_points": [
   {
    "round": 1,
    "method": "v002",
-   "test": 0.6939,
+   "test": 0.6909,
    "adopted": true,
    "select": {
     "v000": 0.5834,
@@ -26,7 +26,7 @@
   {
    "round": 2,
    "method": "v003",
-   "test": 0.7364,
+   "test": 0.7215,
    "adopted": true,
    "select": {
     "v002": 0.7928,
@@ -42,7 +42,7 @@
   {
    "round": 3,
    "method": "v006",
-   "test": 0.7659,
+   "test": 0.7741,
    "adopted": true,
    "select": {
     "v003": 0.7778,
@@ -58,7 +58,7 @@
   {
    "round": 4,
    "method": "v007",
-   "test": 0.809,
+   "test": 0.8187,
    "adopted": true,
    "select": {
     "v006": 0.8516,
@@ -74,7 +74,7 @@
   {
    "round": 5,
    "method": "v007",
-   "test": 0.7566,
+   "test": 0.7935,
    "adopted": false,
    "select": {
     "v007": 0.875,
@@ -86,9 +86,25 @@
    "new_lessons": false,
    "telem_total": 6.219,
    "tavily_credits": 5
+  },
+  {
+   "round": 6,
+   "method": "v012",
+   "test": 0.8495,
+   "adopted": true,
+   "select": {
+    "v007": 0.7059,
+    "v011": 0.8677,
+    "v012": 0.8971
+   },
+   "train": 1.0,
+   "breakout": false,
+   "new_lessons": true,
+   "telem_total": 7.346,
+   "tavily_credits": 6
   }
  ],
- "baseline_test": 0.6274,
+ "baseline_test": 0.6202,
  "tree_r1": [
   "a648dde9-35ff-463c-9e20-5e8fd8642ff6",
   "ffd3d422-822c-46eb-b0fc-c466cc67cdd1",

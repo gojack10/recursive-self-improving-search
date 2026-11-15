@@ -1322,10 +1322,10 @@
  "round": 1,
  "role": "test",
  "referee": {
-  "score": 0.6154,
+  "score": 0.6,
   "correct": 9,
-  "wrong": 2,
-  "total": 13,
+  "wrong": 0,
+  "total": 15,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 1,
@@ -1334,7 +1334,9 @@
    "Antônio Carlos Jobim",
    "Ma Rainey",
    "Miriam Makeba",
-   "Walt Disney"
+   "Walt Disney",
+   "charles ives",
+   "muddy waters"
   ],
   "rows": [
    {
@@ -1352,8 +1354,8 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The Recording Academy evidence lists Bartók with 0 wins and 1 nomination; no qualifying honorary Grammy is established. The supplied evidence also does not establish an IAU-approved Mercury feature named after him.",
-    "status": "wrong",
+    "reason": "The Recording Academy lists zero competitive wins, but the evidence does not establish whether Bartók received a qualifying honorary award. It also provides no IAU evidence for a Mercury surface feature named after him.",
+    "status": "unconfirmed",
     "half": "neither"
    },
    {
@@ -1390,8 +1392,8 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The evidence confirms Alicia de Larrocha won four competitive Grammy Awards, but does not establish an IAU-approved surface feature on Mercury named after her.",
-    "status": "wrong",
+    "reason": "The evidence confirms four competitive Grammy wins but does not establish an IAU-approved surface feature on Mercury named after Alicia de Larrocha.",
+    "status": "unconfirmed",
     "half": "x_only"
    },
    {

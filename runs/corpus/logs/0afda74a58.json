@@ -1694,16 +1694,17 @@
  "round": 5,
  "role": "select",
  "referee": {
-  "score": 0.8333,
+  "score": 0.7143,
   "correct": 5,
   "wrong": 0,
-  "total": 6,
+  "total": 7,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 0,
   "y_only": 0,
   "missed": [
-   "Ariel Durant"
+   "Ariel Durant",
+   "georgia okeeffe okeeffe crater"
   ],
   "rows": [
    {
