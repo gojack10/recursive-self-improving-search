@@ -40,6 +40,8 @@ Plain search is method `v000`: an ordinary agent using Telem's default routing. 
 | 5 | `v007` (no change) | 79% |
 | 6 | `v012` | 85% |
 
+![All unseen questions: ours 85% against plain search 62% over six rounds](docs/result-all-unseen.png)
+
 Read this honestly:
 
 - **The score went from 62% to 85%** at the same $0.08 search budget per question.
@@ -54,14 +56,14 @@ Method 7 (`v007`) is the latest method that has answered all 18 questions. Metho
 
 | Question | Used for | Answers in key | Plain search | Ours (method 7) | Points |
 |---|---|---|---|---|---|
-| nobel moon | unseen | 107 | 39% · 42 found · 3 runs | 79% · 84 found · 2 runs | +40 |
+| [nobel moon](docs/result-nobel-moon.png) | unseen | 107 | 39% · 42 found · 3 runs | 79% · 84 found · 2 runs | +40 |
 | pulitzer mercury | unseen | 11 | 70% · 8 found · 3 runs | 84% · 10 found · 2 runs | +14 |
-| grammy mercury | unseen | 13 | 73% · 11 found · 3 runs | 87% · 13 found · 2 runs | +14 |
+| [grammy mercury](docs/result-grammy-mercury.png) | unseen | 13 | 73% · 11 found · 3 runs | 87% · 13 found · 2 runs | +14 |
 | nobel physics moon | unseen | 42 | 47% · 20 found · 3 runs | 79% · 33 found · 2 runs | +32 |
-| freedom mercury | unseen | 9 | 81% · 7 found · 3 runs | 75% · 7 found · 2 runs | -6 |
+| [freedom mercury](docs/result-freedom-mercury.png) | unseen | 9 | 81% · 7 found · 3 runs | 75% · 7 found · 2 runs | -6 |
 | nobel mercury | selection | 17 | 71% · 13 found | 60% · 10 found · 2 runs | -11 |
 | nobel venus | selection | 11 | 82% · 9 found | 100% · 11 found · 2 runs | +18 |
-| pulitzer venus | selection | 9 | 60% · 6 found | 90% · 9 found | +30 |
+| [pulitzer venus](docs/result-pulitzer-venus.png) | selection | 9 | 60% · 6 found | 90% · 9 found | +30 |
 | freedom venus | selection | 6 | 43% · 3 found | 86% · 6 found | +43 |
 | nobel mars | practice | 10 | 80% · 8 found | 30% · 4 found | -50 |
 | oscar venus | practice | 4 | 50% · 2 found | 88% · 4 found · 2 runs | +38 |
@@ -79,6 +81,26 @@ Method 7 (`v007`) is the latest method that has answered all 18 questions. Metho
 - "Found" is correct answers. The score also subtracts half a point for each answer the evidence contradicts or that cites a page not mentioning it.
 - Only the five "unseen" rows are a fair test. Method 7 was chosen using the selection questions, and the practice questions fed the lessons it was written from.
 - Every question in this corpus has an answer key. The viewer's "Show answers" button lists both sides' answers for any question.
+
+### Four questions from the viewer
+
+Each screenshot is one question's tab: the line is every search of that question by our methods, in the order they ran, and the dashed line is plain search. The big green number is the latest search by the method in use (method 12), so it can differ from the method 7 average in the table.
+
+**Nobel laureates on the Moon** (unseen, 107 answers): 39% for plain search, 85% for ours.
+
+![Nobel / Moon](docs/result-nobel-moon.png)
+
+**Grammy winners on Mercury** (unseen): 73% for plain search, 100% for ours, including two answers the answer key lacked.
+
+![Grammy / Mercury](docs/result-grammy-mercury.png)
+
+**Medal of Freedom recipients on Mercury** (unseen): the close one. 81% for plain search, 89% for ours, and four of our earlier searches were below plain search.
+
+![Medal of Freedom / Mercury](docs/result-freedom-mercury.png)
+
+**Pulitzer winners on Venus** (selection): 60% for plain search, 80% for ours on the latest search, 90% at best.
+
+![Pulitzer / Venus](docs/result-pulitzer-venus.png)
 
 ## How it works
 
