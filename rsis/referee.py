@@ -68,11 +68,13 @@ def mentions(text, name):
 
 def judge_call(judge, hunt, name, known, r, snippets):
     return judge.json(
-        "You check one claimed answer against web evidence. Reply as JSON {\"verdict\": \"yes\"|\"no\"|\"same\", "
-        "\"same_as\": str|null, \"meets_x\": bool, \"meets_y\": bool, \"reason\": str}. "
+        "You check one claimed answer against web evidence. Reply as JSON {\"verdict\": \"yes\"|\"no\"|\"unknown\"|\"same\", "
+        "\"same_as\": str|null, \"meets_x\": bool, \"meets_y\": bool, \"reason\": str, \"search\": str|null}. "
         "Say same, and copy the known item's name into same_as, if the claimed item is another name for one of the "
         "already-known items. "
         "Say yes only if it is a different item and the evidence clearly shows it satisfies the criterion. "
+        "Say no only if the evidence shows it fails the criterion. Say unknown if the evidence does not settle it, "
+        "and put in search one short web query that would settle the missing fact. "
         "meets_x and meets_y say which of the two conditions the evidence supports.",
         f"Criterion: {hunt['criterion']}\n" + (f"Condition X: {hunt['x']}\nCondition Y: {hunt['y']}\n" if hunt["y"] else "") +
         f"Already-known items: {known}\nClaimed item: {name}\n"
@@ -86,12 +88,18 @@ def gap_check(name, hunt, judge, verified):
     snippets = "\n".join(f"- {x.get('title') or ''}: {(x.get('content') or '')[:300]}" for x in (r.get("results") or []) if isinstance(x, dict))
     known = "; ".join([*(t["label"] for t in hunt["truth"]), *verified.values()])
     v = judge_call(judge, hunt, name, known, r, snippets)
+    if v.get("verdict") not in ("yes", "same") and v.get("search"):
+        # One lookup rarely returns both halves of a criterion: look up the fact the judge is missing, then rule again.
+        more = tavily.search(str(v["search"])[:200], max_results=5, exclude_domains=REFEREE_DOMAINS)
+        snippets += "\n" + "\n".join(f"- {x.get('title') or ''}: {(x.get('content') or '')[:300]}" for x in (more.get("results") or []) if isinstance(x, dict))
+        v = judge_call(judge, hunt, name, known, r, snippets)
     if v.get("verdict") == "same":
         same = str(v.get("same_as") or "")
         return "same", v.get("reason", ""), match_one(same, hunt["truth"]) or (norm(same) if norm(same) in verified else None)
-    status = "verified_gap" if v.get("verdict") == "yes" else "wrong"
+    # Wrong only when the evidence contradicts the answer; an answer nobody could settle is unconfirmed and costs nothing.
+    status = {"yes": "verified_gap", "no": "wrong"}.get(v.get("verdict"), "unconfirmed")
     half = None
-    if status == "wrong":
+    if status != "verified_gap":
         half = "x_only" if v.get("meets_x") and not v.get("meets_y") else "y_only" if v.get("meets_y") and not v.get("meets_x") else "neither"
     return status, v.get("reason", ""), half
 
@@ -129,7 +137,7 @@ def judge_all(names, hunt, emit):
             verdict = gap_check(name, hunt, judge, verified)
         except Exception as e:
             # Unchecked, so not credited and not remembered: the next search to submit it is checked again.
-            verdict = ("wrong", f"gap check unavailable: {str(e)[:120]}", None)
+            verdict = ("unconfirmed", f"gap check unavailable: {str(e)[:120]}", None)
         else:
             with verdicts_lock:
                 db = verdicts_db()
