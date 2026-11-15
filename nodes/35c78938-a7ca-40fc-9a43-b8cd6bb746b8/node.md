@@ -48,6 +48,14 @@ The recorded corpus, methods, tree, raw search/Pi logs and verdict SQLite file a
 
 The project contains an earlier snapshot of SiftText's project/KB nodes. This new knowledge save does not silently update that copied tree on GitHub. Source: [later conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl).
 
+## November 14 — later local Ask maintenance
+
+[Remove a Requested Ask Result and Keep New Searches Local](../08dfa32b-ed6d-4559-8682-15893d92334e/node.md) records the subsequent server restart, deletion of one identified local result and six cached verdicts, and the existing uncommitted `asks/` ignore rule. New ad hoc searches stay separate from the deliberately tracked demonstration corpus.
+
+The earlier clean-checkout statement applies to the published snapshot, not the later shared workspace: the local checkout now has uncommitted concurrent Ask/browser and documentation changes, and serves Ask at `/` with the recorded dashboard at `/history`. This maintenance save does not claim those changes are released or sweep them into a source commit. The published delivery child remains resolved for its historical main snapshot.
+
+Source: the existing [corpus/demo conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl), later requests `9d3320ee`, `6ace37ab`, `1753f700`. The same retained transcript and canonical repository association are reused.
+
 ## Source
 
 Current Pi session `01a1db79-c926-7284-80b0-36135ff23ffd`, November 14, 2026. Repository inspection used `fd`, `rg`, Git and the GitHub repository API on the same day.

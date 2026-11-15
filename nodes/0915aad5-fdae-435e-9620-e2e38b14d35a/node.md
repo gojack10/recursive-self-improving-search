@@ -38,5 +38,9 @@ README now explains the loop, keys versus judge pool, accounts needed only for n
 
 This publication work resolves. It does not complete the separate replay-player or custom-question/model-key UI requests, prove the search gain, or silently sync these newly saved SiftText nodes back into the project's copied knowledge tree.
 
+## Later local runtime, distinct from this publication
+
+The subsequent [Ask-result maintenance](../08dfa32b-ed6d-4559-8682-15893d92334e/node.md) inspected a dirty shared checkout with an additional Ask page: local `/` now serves Ask and `/history` serves the recorded dashboard. That source was not committed or pushed by the maintenance action. The no-key viewing observation above belongs to the already published snapshot; it is not a claim that new Ask searches can run without credentials. `asks/` is locally git-ignored, while the committed demonstration corpus remains intentionally tracked. This supplements the completed delivery without reopening it or attributing other contributors' local code to this save.
+
 ## Source and artifacts
 [Conversation](artifacts/chats/pi-searchhack-corpus-demo.jsonl), main-delivery request `95cf8642`, no-keys correction `27539adc`, thumbnail/readability `5538d528`, all-results request `db9d3da5`, screenshots `2771b3b7`. `artifacts/repository` links the actual checkout, where Git history, source and image files stay. The SiftText transcript is retained locally once and linked, not copied into GitHub.
