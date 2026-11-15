@@ -1288,15 +1288,17 @@
  "round": 5,
  "role": "select",
  "referee": {
-  "score": 1.0,
+  "score": 0.9,
   "correct": 9,
   "wrong": 0,
-  "total": 9,
+  "total": 10,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 0,
   "y_only": 0,
-  "missed": [],
+  "missed": [
+   "ariel durant"
+  ],
   "rows": [
    {
     "name": "Sara Teasdale",

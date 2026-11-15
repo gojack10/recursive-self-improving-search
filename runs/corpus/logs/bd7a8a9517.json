@@ -1278,7 +1278,7 @@
     "providers": [
      "parallel"
     ],
-    "reason": "Philipp Lenard won the 1905 Nobel Prize in Physics, but the IAU revoked the lunar crater name Lenard in 2020. Its historical approval in 2008 does not establish an IAU-approved name in force as of November 2026.",
+    "reason": "Lenard won the 1905 Nobel Prize in Physics, but the IAU withdrew the lunar crater name Lenard on 12 August 2020. Its historical naming therefore does not qualify as a name in force.",
     "status": "wrong",
     "half": "x_only"
    },
@@ -1371,7 +1371,7 @@
     "providers": [
      "parallel"
     ],
-    "reason": "Johannes Stark won the 1919 Nobel Prize in Physics, but the IAU revoked the lunar crater name Stark in 2020. Its historical naming does not establish an IAU-approved name in force for the requested cutoff.",
+    "reason": "Johannes Stark won the 1919 Nobel Prize in Physics, but the IAU revoked the lunar crater name Stark in 2020 because of his Nazi affiliation. That former name therefore does not qualify.",
     "status": "wrong",
     "half": "x_only"
    },

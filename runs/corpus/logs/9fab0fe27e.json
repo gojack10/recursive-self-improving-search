@@ -2240,13 +2240,13 @@
  "round": 5,
  "role": "test",
  "referee": {
-  "score": 0.6154,
-  "correct": 10,
-  "wrong": 4,
-  "total": 13,
+  "score": 0.8,
+  "correct": 12,
+  "wrong": 0,
+  "total": 15,
   "duplicates": 0,
   "unsupported": 0,
-  "x_only": 2,
+  "x_only": 1,
   "y_only": 0,
   "missed": [
    "Enrico Caruso",
@@ -2269,8 +2269,8 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The Recording Academy evidence lists Bartók with 0 wins and 1 nomination; no qualifying honorary Grammy is established. The supplied evidence also does not establish an IAU-approved Mercury feature named after him.",
-    "status": "wrong",
+    "reason": "The Recording Academy lists zero competitive wins, but the evidence does not establish whether Bartók received a qualifying honorary award. It also provides no IAU evidence for a Mercury surface feature named after him.",
+    "status": "unconfirmed",
     "half": "neither"
    },
    {
@@ -2315,9 +2315,9 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The supplied evidence credits Charles Ives with a competitive Grammy, but does not establish an IAU-approved Mercury surface feature named after him in force as of November 2026.",
-    "status": "wrong",
-    "half": "x_only"
+    "reason": "The evidence credits Charles Ives with a competitive Grammy for Symphony No. 4 in 1965. The IAU planetary gazetteer lists the approved Mercury crater Ives, named for Charles Ives (1874–1954), approved in 1979. He is distinct from all already-known people.",
+    "status": "verified_gap",
+    "half": null
    },
    {
     "name": "Antônio Carlos Jobim",
@@ -2334,8 +2334,8 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The evidence confirms Alicia de Larrocha won four competitive Grammy Awards, but does not establish an IAU-approved surface feature on Mercury named after her.",
-    "status": "wrong",
+    "reason": "The evidence confirms four competitive Grammy wins but does not establish an IAU-approved surface feature on Mercury named after Alicia de Larrocha.",
+    "status": "unconfirmed",
     "half": "x_only"
    },
    {
@@ -2380,9 +2380,9 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The supplied evidence establishes neither qualifying Grammy recognition for Muddy Waters nor an IAU-approved Mercury surface feature named after him. The profiles shown are unrelated namesakes.",
-    "status": "wrong",
-    "half": "neither"
+    "reason": "Muddy Waters won competitive Grammys and a Grammy Lifetime Achievement Award. The IAU planetary gazetteer lists Mercury’s Waters crater as approved on December 19, 2012, honoring McKinley Morganfield (Muddy Waters). He is distinct from all already-known people.",
+    "status": "verified_gap",
+    "half": null
    }
   ]
  }

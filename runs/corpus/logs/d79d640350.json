@@ -1556,7 +1556,7 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The evidence confirms Samuel Beckett won the 1969 Nobel Prize in Literature, but does not establish an IAU-approved surface feature on Mercury named after him in force as of November 2026.",
+    "reason": "Samuel Beckett won the 1969 Nobel Prize in Literature, but the IAU-approved Mercury crater Beckett honors Clarice Beckett, the Australian painter, not Samuel Beckett.",
     "status": "wrong",
     "half": "x_only"
    },
@@ -1667,7 +1667,7 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Pablo Neruda won the 1971 Nobel Prize in Literature, but Mercury’s Neruda crater was reassigned in 2022 to honor Jan Neruda. The current IAU record therefore does not support counting Pablo Neruda under names in force as of November 2026.",
+    "reason": "Pablo Neruda was a Nobel laureate, but Mercury’s Neruda crater no longer honors him. Its namesake was changed in 2022; the supplied IAU record identifies Jan Neruda instead.",
     "status": "wrong",
     "half": "x_only"
    },

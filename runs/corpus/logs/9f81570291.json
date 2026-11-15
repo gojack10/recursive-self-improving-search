@@ -784,17 +784,19 @@
  "round": 0,
  "role": "noise",
  "referee": {
-  "score": 0.8077,
+  "score": 0.7333,
   "correct": 11,
-  "wrong": 1,
-  "total": 13,
+  "wrong": 0,
+  "total": 15,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 0,
   "y_only": 0,
   "missed": [
    "Antônio Carlos Jobim",
-   "Thelonious Monk"
+   "Thelonious Monk",
+   "charles ives",
+   "muddy waters"
   ],
   "rows": [
    {
@@ -815,8 +817,8 @@
      "fetch:tavily",
      "seltz"
     ],
-    "reason": "The Recording Academy evidence lists Bartók with 0 wins and 1 nomination; no qualifying honorary Grammy is established. The supplied evidence also does not establish an IAU-approved Mercury feature named after him.",
-    "status": "wrong",
+    "reason": "The Recording Academy lists zero competitive wins, but the evidence does not establish whether Bartók received a qualifying honorary award. It also provides no IAU evidence for a Mercury surface feature named after him.",
+    "status": "unconfirmed",
     "half": "neither"
    },
    {

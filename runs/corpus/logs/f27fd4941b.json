@@ -956,7 +956,6 @@
     "providers": [
      "fetch:tavily"
     ],
-    "reason": "The claimed laureate is already listed. NobelPrize.org confirms his 1901 Physics Nobel Prize, but the supplied evidence does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-39"
    },
@@ -978,7 +977,6 @@
      "exa",
      "fetch:tavily"
     ],
-    "reason": "Pieter Zeeman is already listed. NobelPrize.org confirms his 1902 Physics Nobel; the supplied crater evidence does not explicitly establish IAU approval or its namesake.",
     "status": "correct",
     "qid": "nobel_physics_moon-35"
    },
@@ -989,7 +987,6 @@
      "exa",
      "parallel"
     ],
-    "reason": "Henri Becquerel is already listed. The evidence identifies him as a 1903 Nobel Prize in Physics laureate and the namesake of the lunar crater Becquerel.",
     "status": "correct",
     "qid": "nobel_physics_moon-17"
    },
@@ -1000,7 +997,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Pierre Curie is already listed. The supplied NobelPrize.org evidence confirms his 1903 Physics Nobel, but does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-34"
    },
@@ -1032,7 +1028,7 @@
     "providers": [
      "brave"
     ],
-    "reason": "Lenard won the 1905 Nobel Prize in Physics, but the IAU withdrew the lunar crater name Lenard in 2020. It therefore does not qualify as an approved name in force for the requested cutoff.",
+    "reason": "Philipp Lenard won the 1905 Nobel Prize in Physics, but the IAU Gazetteer lists the lunar crater name Lenard (feature 14503) as 'Dropped, disallowed,' not a name currently in force.",
     "status": "wrong",
     "half": "x_only"
    },
@@ -1042,7 +1038,6 @@
     "providers": [
      "fetch:tavily"
     ],
-    "reason": "J. J. Thomson is the already-known J.J. Thomson. The supplied Nobel evidence confirms his 1906 Physics prize, but does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-19"
    },
@@ -1052,7 +1047,6 @@
     "providers": [
      "fetch:tavily"
     ],
-    "reason": "The claimed laureate is already listed as Albert A. Michelson. The supplied evidence confirms his 1907 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-1"
    },
@@ -1062,7 +1056,6 @@
     "providers": [
      "ceramic"
     ],
-    "reason": "Gabriel Lippmann is already listed. The supplied evidence confirms his 1908 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-13"
    },
@@ -1072,7 +1065,6 @@
     "providers": [
      "fetch:tavily"
     ],
-    "reason": "The claimed laureate is already listed as Guglielmo Marconi. The supplied evidence consists of unrelated professional profiles and establishes neither a Nobel Prize in Physics nor an IAU-approved lunar namesake.",
     "status": "correct",
     "qid": "nobel_physics_moon-14"
    },
@@ -1084,7 +1076,6 @@
      "parallel",
      "tavily"
     ],
-    "reason": "Max von Laue is already listed. The supplied evidence confirms his 1914 Nobel Prize in Physics but does not establish an IAU-approved lunar feature named Laue.",
     "status": "correct",
     "qid": "nobel_physics_moon-29"
    },
@@ -1107,7 +1098,6 @@
      "fetch:tavily",
      "you"
     ],
-    "reason": "Charles Glover Barkla is already listed. NobelPrize.org confirms his 1917 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-6"
    },
@@ -1118,7 +1108,6 @@
      "exa",
      "fetch:tavily"
     ],
-    "reason": "Max Planck is already listed. He received the 1918 Nobel Prize in Physics, and the IAU-approved lunar crater Planck is named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-28"
    },
@@ -1129,7 +1118,7 @@
      "brave",
      "you"
     ],
-    "reason": "The evidence establishes Johannes Stark as a Nobel Prize in Physics laureate, but does not establish an IAU-approved lunar feature named after him in force as of November 2026.",
+    "reason": "Johannes Stark won the 1919 Nobel Prize in Physics, but the IAU revoked the lunar crater name Stark in 2020. Its historical approval does not satisfy the current-name requirement.",
     "status": "wrong",
     "half": "x_only"
    },
@@ -1140,7 +1129,6 @@
      "exa",
      "fetch:tavily"
     ],
-    "reason": "Albert Einstein is already listed. The supplied evidence confirms his 1921 Nobel Prize in Physics but does not establish the IAU-approved lunar feature Einstein.",
     "status": "correct",
     "qid": "nobel_physics_moon-2"
    },
@@ -1151,7 +1139,6 @@
      "exa",
      "seltz"
     ],
-    "reason": "Niels Bohr is already listed. The supplied evidence supports his Nobel Prize in Physics but does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-30"
    },
@@ -1162,7 +1149,6 @@
      "exa",
      "fetch:tavily"
     ],
-    "reason": "James Franck is already listed. NobelPrize.org confirms his 1925 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-21"
    },
@@ -1183,7 +1169,6 @@
     "providers": [
      "seltz"
     ],
-    "reason": "The claimed laureate is already listed. NobelPrize.org confirms his 1928 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-31"
    },
@@ -1194,7 +1179,6 @@
      "exa",
      "fetch:tavily"
     ],
-    "reason": "Already listed as Erwin Schrödinger. NobelPrize.org confirms his 1933 Physics Nobel, and the lunar evidence identifies the IAU-named crater Schrödinger as honoring him.",
     "status": "correct",
     "qid": "nobel_physics_moon-11"
    },
@@ -1214,7 +1198,6 @@
     "providers": [
      "seltz"
     ],
-    "reason": "James Chadwick is already listed. The evidence confirms his 1935 Nobel Prize in Physics but does not explicitly establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-20"
    },
@@ -1235,7 +1218,6 @@
      "exa",
      "fetch:tavily"
     ],
-    "reason": "Enrico Fermi is already listed. The evidence identifies him as the 1938 Nobel Prize in Physics laureate and namesake of the lunar crater Fermi, approved by the IAU in 1964.",
     "status": "correct",
     "qid": "nobel_physics_moon-9"
    },
@@ -1267,7 +1249,6 @@
     "providers": [
      "tavily"
     ],
-    "reason": "John Cockcroft is already listed. The evidence identifies him as a 1951 Nobel Prize in Physics laureate and the namesake of the lunar crater Cockcroft, named in 1970.",
     "status": "correct",
     "qid": "nobel_physics_moon-23"
    },
@@ -1277,7 +1258,6 @@
     "providers": [
      "exa"
     ],
-    "reason": "Max Born is already listed. He won the 1954 Nobel Prize in Physics, and the IAU-approved lunar crater Born is named after him; it is not a satellite crater.",
     "status": "correct",
     "qid": "nobel_physics_moon-27"
    },
@@ -1288,7 +1268,6 @@
      "exa",
      "fetch:tavily"
     ],
-    "reason": "Lev Landau is already listed. NobelPrize.org confirms his 1962 Physics Nobel, but the supplied evidence does not establish an IAU-approved lunar feature named after him.",
     "status": "correct",
     "qid": "nobel_physics_moon-24"
    }

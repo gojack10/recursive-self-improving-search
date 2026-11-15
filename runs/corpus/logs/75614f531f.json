@@ -1091,7 +1091,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Jane Addams, a 1931 Nobel Peace Prize laureate, is already listed. The evidence identifies Venus’s Addams crater as named for her and adopted by the IAU in 1994.",
     "status": "correct",
     "qid": "nobel_venus-5"
    },
@@ -1102,7 +1101,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Emily Greene Balch is already listed. She was a Nobel Peace Prize laureate, and the supplied evidence identifies Balch as an IAU-listed crater on Venus named for her.",
     "status": "correct",
     "qid": "nobel_venus-1"
    },
@@ -1113,7 +1111,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Pearl S. Buck is the already-known Pearl Buck, the 1938 Nobel laureate in Literature. The IAU Planetary Names evidence lists Venus’s Buck crater as approved in 1991 and named for her.",
     "status": "correct",
     "qid": "nobel_venus-8"
    },
@@ -1124,7 +1121,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Gerty Cori is already listed. NobelPrize.org confirms her 1947 Nobel Prize, and the supplied evidence identifies Venus’s Cori crater as named after her and adopted by the IAU in 1991.",
     "status": "correct",
     "qid": "nobel_venus-2"
    },
@@ -1135,7 +1131,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Grazia Deledda, the 1926 Nobel laureate in Literature, is already listed. The IAU evidence identifies Venus’s approved Deledda crater as named for her.",
     "status": "correct",
     "qid": "nobel_venus-3"
    },
@@ -1146,7 +1141,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Maria Goeppert-Mayer is the already-known Maria Goeppert Mayer. The planetary nomenclature evidence identifies her as a Nobel laureate and lists Venus’s Goeppert-Mayer crater as approved in 1991.",
     "status": "correct",
     "qid": "nobel_venus-6"
    },
@@ -1157,7 +1151,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Irène Joliot-Curie is already listed. The evidence confirms her 1935 Nobel Prize in Chemistry and the IAU-adopted Joliot-Curie crater on Venus.",
     "status": "correct",
     "qid": "nobel_venus-4"
    },
@@ -1168,7 +1161,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Selma Lagerlöf is already listed. NobelPrize.org confirms her 1909 Literature Nobel, but the supplied evidence does not establish an IAU-approved Venus feature named after her.",
     "status": "correct",
     "qid": "nobel_venus-9"
    },
@@ -1179,7 +1171,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Nelly Sachs, the 1966 Nobel laureate in Literature, is already listed. The IAU Gazetteer confirms Sachs Patera on Venus is named for her and was approved in 1991.",
     "status": "correct",
     "qid": "nobel_venus-7"
    },
@@ -1191,7 +1182,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "Sigrid Undset, the 1928 Nobel laureate in Literature, is already listed. The Venus crater list identifies Undset crater as named for her; she must not be counted again.",
     "status": "correct",
     "qid": "nobel_venus-10"
    },
@@ -1203,7 +1193,6 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "The claimed laureate is already listed. NobelPrize.org confirms her 1905 Peace Prize, and the Venus feature list includes von Suttner crater. The supplied excerpts do not independently establish IAU approval status as of November 2026.",
     "status": "correct",
     "qid": "nobel_venus-0"
    }

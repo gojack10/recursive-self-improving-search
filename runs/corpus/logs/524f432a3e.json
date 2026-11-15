@@ -669,10 +669,10 @@
  "round": 1,
  "role": "select",
  "referee": {
-  "score": 0.6667,
+  "score": 0.6,
   "correct": 6,
   "wrong": 0,
-  "total": 9,
+  "total": 10,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 0,
@@ -680,7 +680,8 @@
   "missed": [
    "Edna Ferber",
    "Marguerite Higgins",
-   "Susan Glaspell"
+   "Susan Glaspell",
+   "ariel durant"
   ],
   "rows": [
    {

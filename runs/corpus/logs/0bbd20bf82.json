@@ -1788,15 +1788,17 @@
  "round": 4,
  "role": "test",
  "referee": {
-  "score": 0.8846,
-  "correct": 13,
-  "wrong": 3,
-  "total": 13,
+  "score": 0.9333,
+  "correct": 14,
+  "wrong": 0,
+  "total": 15,
   "duplicates": 0,
   "unsupported": 0,
   "x_only": 1,
   "y_only": 0,
-  "missed": [],
+  "missed": [
+   "charles ives"
+  ],
   "rows": [
    {
     "name": "Maya Angelou",
@@ -1814,8 +1816,8 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "The Recording Academy evidence lists Bartók with 0 wins and 1 nomination; no qualifying honorary Grammy is established. The supplied evidence also does not establish an IAU-approved Mercury feature named after him.",
-    "status": "wrong",
+    "reason": "The Recording Academy lists zero competitive wins, but the evidence does not establish whether Bartók received a qualifying honorary award. It also provides no IAU evidence for a Mercury surface feature named after him.",
+    "status": "unconfirmed",
     "half": "neither"
    },
    {
@@ -1883,8 +1885,8 @@
     "providers": [
      "parallel"
     ],
-    "reason": "The evidence confirms Alicia de Larrocha won four competitive Grammy Awards, but does not establish an IAU-approved surface feature on Mercury named after her.",
-    "status": "wrong",
+    "reason": "The evidence confirms four competitive Grammy wins but does not establish an IAU-approved surface feature on Mercury named after Alicia de Larrocha.",
+    "status": "unconfirmed",
     "half": "x_only"
    },
    {
@@ -1951,9 +1953,9 @@
      "fetch:tavily",
      "parallel"
     ],
-    "reason": "The supplied evidence establishes neither qualifying Grammy recognition for Muddy Waters nor an IAU-approved Mercury surface feature named after him. The profiles shown are unrelated namesakes.",
-    "status": "wrong",
-    "half": "neither"
+    "reason": "Muddy Waters won competitive Grammys and a Grammy Lifetime Achievement Award. The IAU planetary gazetteer lists Mercury’s Waters crater as approved on December 19, 2012, honoring McKinley Morganfield (Muddy Waters). He is distinct from all already-known people.",
+    "status": "verified_gap",
+    "half": null
    }
   ]
  }

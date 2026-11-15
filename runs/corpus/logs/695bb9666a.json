@@ -1216,10 +1216,10 @@
  "round": 1,
  "role": "select",
  "referee": {
-  "score": 0.1667,
+  "score": 0.1429,
   "correct": 2,
   "wrong": 2,
-  "total": 6,
+  "total": 7,
   "duplicates": 0,
   "unsupported": 2,
   "x_only": 0,
@@ -1228,7 +1228,8 @@
    "Ariel Durant",
    "Helen Keller",
    "Helen B. Taussig",
-   "Martha Graham"
+   "Martha Graham",
+   "georgia okeeffe okeeffe crater"
   ],
   "rows": [
    {

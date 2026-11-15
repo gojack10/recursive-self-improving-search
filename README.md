@@ -32,51 +32,53 @@ Plain search is method `v000`: an ordinary agent using Telem's default routing. 
 
 | Round | Method in use | Score on the 5 unseen questions |
 |---|---|---|
-| start | plain search (`v000`) | 63% |
+| start | plain search (`v000`), 3 runs | 62% |
 | 1 | `v002` | 69% |
-| 2 | `v003` | 74% |
+| 2 | `v003` | 72% |
 | 3 | `v006` | 77% |
-| 4 | `v007` | 81% |
+| 4 | `v007` | 82% |
+| 5 | `v007` (no change) | 79% |
+| 6 | `v012` | 85% |
 
 Read this honestly:
 
-- **The score rose every round**, from 63% to 81%, at the same $0.08 search budget per question.
-- **It is not proven beyond noise.** Plain search run three times on the same five questions varied by 26 points, almost all from the two Moon questions. The gain is smaller than that spread.
+- **The score went from 62% to 85%** at the same $0.08 search budget per question.
+- **It is not proven beyond noise.** Plain search run three times on the same five questions varied by 26 points, almost all from the two Moon questions. Round 5 repeated method 7 and moved 3 points with no change to the method.
 - **All 18 questions share one shape** (an award crossed with a planet). The run shows the method got better at this kind of question, not at search in general.
-- **The run was continued past round 4.** Round 5 kept method 7, and its repeat on the same five questions scored 76%, which is the run-to-run spread showing. The viewer shows whatever is recorded.
+- **Scores were re-computed once** from the saved answers after the judge was fixed: it had been counting answers it could not confirm as wrong. It now makes a second lookup, and only an answer the evidence contradicts costs points. Which method each round kept was decided on the earlier scores.
+- **The system found answers the answer key lacks.** The judge confirmed five, including Muddy Waters (Waters crater, Mercury) and Ariel Durant (Venus). These are added to the answer list for every method, plain search included.
 
-## Plain search against our latest method, question by question
+## Plain search against method 7, question by question
 
-Plain search is `v000`. Ours is method 7 (`v007`), the latest method the loop kept. Both had the same $0.08 search budget per question. Scores are averaged where a method answered a question more than once.
+Method 7 (`v007`) is the latest method that has answered all 18 questions. Method 12 replaced it in round 6 and has only answered the selection and unseen questions. Both sides had the same $0.08 search budget per question. Scores are averaged where a method answered a question more than once.
 
 | Question | Used for | Answers in key | Plain search | Ours (method 7) | Points |
 |---|---|---|---|---|---|
 | nobel moon | unseen | 107 | 39% · 42 found · 3 runs | 79% · 84 found · 2 runs | +40 |
 | pulitzer mercury | unseen | 11 | 70% · 8 found · 3 runs | 84% · 10 found · 2 runs | +14 |
-| grammy mercury | unseen | 13 | 77% · 11 found · 3 runs | 75% · 12 found · 2 runs | -2 |
+| grammy mercury | unseen | 13 | 73% · 11 found · 3 runs | 87% · 13 found · 2 runs | +14 |
 | nobel physics moon | unseen | 42 | 47% · 20 found · 3 runs | 79% · 33 found · 2 runs | +32 |
 | freedom mercury | unseen | 9 | 81% · 7 found · 3 runs | 75% · 7 found · 2 runs | -6 |
 | nobel mercury | selection | 17 | 71% · 13 found | 60% · 10 found · 2 runs | -11 |
 | nobel venus | selection | 11 | 82% · 9 found | 100% · 11 found · 2 runs | +18 |
-| pulitzer venus | selection | 9 | 67% · 6 found | 100% · 9 found | +33 |
-| freedom venus | selection | 6 | 50% · 3 found | 75% · 5 found | +25 |
+| pulitzer venus | selection | 9 | 60% · 6 found | 90% · 9 found | +30 |
+| freedom venus | selection | 6 | 43% · 3 found | 86% · 6 found | +43 |
 | nobel mars | practice | 10 | 80% · 8 found | 30% · 4 found | -50 |
 | oscar venus | practice | 4 | 50% · 2 found | 88% · 4 found · 2 runs | +38 |
 | oscar mercury | practice | 4 | 75% · 3 found | 75% · 3 found · 2 runs | 0 |
 | grammy venus | practice | 5 | 40% · 2 found | 100% · 5 found · 2 runs | +60 |
 | olympic venus | practice | 1 | 0% · 0 found | 100% · 1 found · 2 runs | +100 |
 | rock hall venus | practice | 1 | 100% · 1 found | 100% · 1 found | 0 |
-| rock hall mercury | practice | 4 | 80% · 4 found | 70% · 4 found | -10 |
+| rock hall mercury | practice | 4 | 80% · 4 found | 100% · 5 found | +20 |
 | kennedy venus | practice | 2 | 100% · 2 found | 100% · 2 found | 0 |
 | kennedy mercury | practice | 4 | 100% · 4 found | 62% · 3 found | -38 |
-| **Average, 5 unseen** | | | **63%** | **78%** | **+15** |
-| **Average, all 18** | | | **67%** | **81%** | **+14** |
+| **Average, 5 unseen** | | | **62%** | **81%** | **+19** |
+| **Average, all 18** | | | **66%** | **83%** | **+17** |
 
-- Method 7 is ahead on 9 questions, level on 3 and behind on 6.
-- "Found" is correct answers. The score also subtracts half a point for each wrong answer, so a method can find as many and still score lower.
+- Method 7 is ahead on 11 questions, level on 3 and behind on 4.
+- "Found" is correct answers. The score also subtracts half a point for each answer the evidence contradicts or that cites a page not mentioning it.
 - Only the five "unseen" rows are a fair test. Method 7 was chosen using the selection questions, and the practice questions fed the lessons it was written from.
-- The largest loss is Nobel / Mars: method 7 handed in 8 names, 4 counted, 2 were ruled wrong and 2 cited pages that did not mention them.
-- Every question in this corpus has an answer key. For a question without one, the same row would show the verified answers each side found; the viewer's "Show answers" button lists both sides' answers for any question.
+- Every question in this corpus has an answer key. The viewer's "Show answers" button lists both sides' answers for any question.
 
 ## How it works
 
