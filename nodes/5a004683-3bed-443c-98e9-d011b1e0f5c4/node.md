@@ -47,3 +47,11 @@ Source for these later developments: Pi session `01a1dc0c-a596-779d-89b4-26e063f
 
 ## Source
 Pi session `01a1c899-999a-74b0-9115-d80780824acd`, November 10, 2026 local time. Source snapshot proposed at `artifacts/chats/pi-searchhack-planning.jsonl`; the other new nodes will link to that one retained copy. No remote transcript backup is requested.
+
+## November 14 — live questions, browser verification and manual successor
+
+The later [live Ask work](../3a90afa6-16bf-41ac-815b-ee7d903e7de4/node.md), under the repository branch, adds a working question-entry front page at `http://127.0.0.1:8765/` and moves the recorded dashboard to `/history`, with the final film available there. It does not implement the historical timed replay player. The Ask judge now lets Astras read and interact with real pages in isolated headless Chromes, separately from the corpus scorer. A visible six-to-three live loss prompted hand-written v013; its two follow-up comparisons tied baseline on submitted browser-confirmed counts and remained slower. These local changes are uncommitted; no new selection or recursive-improver experiment ran. Earlier prose applying the pre-repair noise spread to re-scored figures remains historical and is limited by this node’s warning and the re-scored-results owner.
+
+[How Search Memory and Basin Escape Reach a Live Searcher](../88a76971-c148-40b0-b20a-0c1d0499e78b/node.md) answers Jack’s implementation confusion: method writers read history; live searchers execute frozen instructions, and breakout detection is between rounds rather than within a search. Raw Ask records do not automatically train the next method.
+
+Source for this continuation: [live Ask dialogue](artifacts/chats/pi-searchhack-live-ask.jsonl), Pi session `01a1dca5-5a49-7752-b607-0409d8641da4`.

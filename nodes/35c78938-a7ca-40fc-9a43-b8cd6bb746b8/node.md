@@ -59,3 +59,9 @@ Source: the existing [corpus/demo conversation](artifacts/chats/pi-searchhack-co
 ## Source
 
 Current Pi session `01a1db79-c926-7284-80b0-36135ff23ffd`, November 14, 2026. Repository inspection used `fd`, `rg`, Git and the GitHub repository API on the same day.
+
+## November 14 — local live-input and browser-judge continuation
+
+[Build the Live Ask Comparison Beside Recorded History](../3a90afa6-16bf-41ac-815b-ee7d903e7de4/node.md) records the new local Ask front page, historical page with film, iterative headless-browser Astra judge and hand-written v013 iteration. This supersedes the earlier clean-checkout observation as current workspace guidance: the project is dirty with these uncommitted changes. No project Git commit or push was requested in this continuation; the published main result remains a separate historical delivery. Training state remains v012; Ask serves v013 without a selection-pool promotion. The child records preserve actual ties, latency and the distinction between saving memory and automatically using it.
+
+Source for this continuation: [live Ask dialogue](artifacts/chats/pi-searchhack-live-ask.jsonl), Pi session `01a1dca5-5a49-7752-b607-0409d8641da4`.
